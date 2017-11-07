@@ -1,9 +1,6 @@
-# SkeletonView
+![](Assets/header.jpg)
 
 <p align="center">
-    <a href="https://dashboard.buddybuild.com/apps/59e21f30b84107000143844a/build/latest?branch=master">
-        <img src="https://dashboard.buddybuild.com/api/statusImage?appID=59e21f30b84107000143844a&branch=master&build=latest" />
-    </a>
     <img src="https://img.shields.io/badge/Swift-4.0-orange.svg" />
     <a href="https://cocoapods.org/pods/SkeletonView">
         <img src="https://img.shields.io/cocoapods/v/SkeletonView.svg" alt="CocoaPods" />
@@ -21,7 +18,7 @@
 
 
 
-## 🚀 Features
+## 🌟 Features
 
 - [x] Easy to use
 - [x] All UIViews are skeletonables
@@ -38,6 +35,8 @@
 ### 🔮 Example
 
 To run the example project, clone the repo, and run `SkeletonViewExample` target.
+
+![](Assets/demoApp.png)
 
 ## 📲 Installation
 
