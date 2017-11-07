@@ -24,6 +24,7 @@
 ## 🚀 Features
 
 - [x] Easy to use
+- [x] All UIViews are skeletonables
 - [x] Fully customizable
 - [x] Interface Builder friendly
 - [x] Simple Swift syntax
@@ -34,7 +35,7 @@
 * iOS 9.0+
 * Swift 4
 
-## 🔮 Example
+### 🔮 Example
 
 To run the example project, clone the repo, and run `SkeletonViewExample` target.
 
@@ -63,9 +64,53 @@ Import SkeletonView in proper place.
 import SkeletonView
 ```
 
-```Swift-4
-view.isSkeletonable = true
+Now, you only need set what views will be `skeletonables`. You can do this by two ways:
+
+**Using code:**
+```swift
+avatarImageView.isSkeletonable = true
 ```
+**Using IB/Storyboards:**
+
+![](Assets/storyboard.png)
+
+Then, when you decide and set the views, only need show the 'skeleton'. For this, you have **4** choices:
+<table>
+<tr>
+<td width="25%">
+`Solid`
+</td>
+<td width="75%">
+```view.showSkeleton()```
+</td>
+</tr
+<tr>
+<td width="25%">
+`Solid Animated`
+</td>
+<td width="75%">
+```view.showAnimatedSkeleton()```
+</td>
+</tr>
+<tr>
+<td width="25%">
+`Gradient`
+</td>
+<td width="70%">
+```view.showGradientSkeleton()```
+</td>
+</tr>
+<tr>
+<td width="30%">
+`Gradient Animated`
+</td>
+<td width="75%">
+```view.showAnimatedGradientSkeleton()```
+</td>
+</tr>
+</table>
+
+###  Collections
 
 ### `SkeletonUITableViewDataSource`
 
@@ -76,24 +121,39 @@ public protocol Selectable {
     var isSelectable: Bool { get set }
 }
 ```
-###  Collections
 
 ### 📰 Multiline text
 
 
 ![](Assets/multilines.png)
 
-When you use elements with texts. ```SkeletonView``` draws lines to simulate text lines.
-Also, you can decide how many lines you want. If you set ```numberOfLines``` to zero, then it will calculate how many lines you need to populate whole skeleton and it will be included. Instead, if you set to one, two or another number greater than zero, only it will included this number of skeletons lines.
+When you use elements with texts. ```SkeletonView``` draws lines to simulate text.
+Also, you can decide how many lines you want. If you set ```numberOfLines``` to zero, then it will calculate how many lines you need to populate whole skeleton and it will be included. Instead, if you set to one, two or another number greater than zero, only it will included this number of lines.
 
 ### 🎨 Custom colors
+
+You can decide what color is tinted the skeleton. You only need to pass as parameter what color or gradient you want.
+
+**Using solid colors**
+``` swift
+view.showSkeleton(usingColor: UIColor.midnightBlue) // Solid
+```
+**Using gradients**
+``` swift
+let gradient = SkeletonGradient(baseColor: UIColor.midnightBlue)
+view.showGradientSkeleton(usingGradient: gradient) // Gradient
+```
+
+```SkeletonView``` features 20 flat colors 🤙🏼:
+
+![](Assets/flatcolors.png)
 
 ### 🤓 Custom animations
 
 ### 👨‍👧‍👦 Hierarchy
 
 ### 📚 Documentation
-Coming soon...
+Coming soon...😅
 
 ## ❤️ Contributed
 This is an open source project, so feel free to contribute. How?
