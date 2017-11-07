@@ -61,12 +61,12 @@ github "Juanpe/SkeletonView"
 
 You only need **3** steps to use `SkeletonView`:
 
-1. Import SkeletonView in proper place.
+**1.** Import SkeletonView in proper place.
 ```swift
 import SkeletonView
 ```
 
-2. Now, you only need set what views will be `skeletonables`. You can do this by two ways:
+**2.** Now, you only need set what views will be `skeletonables`. You can do this by two ways:
 
 **Using code:**
 ```swift
@@ -76,7 +76,7 @@ avatarImageView.isSkeletonable = true
 
 ![](Assets/storyboard.png)
 
-3. Then, when you decide and set the views, only need show the **skeleton**. For this, you have **4** choices:
+**3.** Then, when you decide and set the views, only need show the **skeleton**. For this, you have **4** choices:
 
 ```swift
 (1) view.showSkeleton()                 // Solid
