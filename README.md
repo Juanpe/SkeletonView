@@ -83,23 +83,19 @@ Then, when you decide and set the views, only need show the **skeleton**. For th
 (4) view.showAnimatedGradientSkeleton() // Gradient animated
 ```
 
-| Solid | Gradient | Solid Animated | Gradient animated
-
-![](Assets/solid.png) | ![](Assets/solid.png) | ![](Assets/solid.png) | ![](Assets/solid.png) 
-
 <table>
 <tr>
 <td width="25%">
-<center>**Solid**</center>
+<center>Solid</center>
 </td>
 <td width="25%">
-<center>**Gradient**</center>
+<center>Gradient</center>
 </td>
 <td width="25%">
-<center>**Solid Animated**</center>
+<center>Solid Animated</center>
 </td>
 <td width="25%">
-<center>**Gradient Animated**</center>
+<center>Gradient Animated</center>
 </td>
 </tr>
 <tr>
