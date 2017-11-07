@@ -59,12 +59,14 @@ github "Juanpe/SkeletonView"
 
 ## 🐒 How to use
 
-Import SkeletonView in proper place.
+You only need **3** steps to use `SkeletonView`:
+
+1. Import SkeletonView in proper place.
 ```swift
 import SkeletonView
 ```
 
-Now, you only need set what views will be `skeletonables`. You can do this by two ways:
+2. Now, you only need set what views will be `skeletonables`. You can do this by two ways:
 
 **Using code:**
 ```swift
@@ -74,7 +76,7 @@ avatarImageView.isSkeletonable = true
 
 ![](Assets/storyboard.png)
 
-Then, when you decide and set the views, only need show the **skeleton**. For this, you have **4** choices:
+3. Then, when you decide and set the views, only need show the **skeleton**. For this, you have **4** choices:
 
 ```swift
 (1) view.showSkeleton()                 // Solid
@@ -82,6 +84,12 @@ Then, when you decide and set the views, only need show the **skeleton**. For th
 (3) view.showAnimatedSkeleton()         // Solid animated
 (4) view.showAnimatedGradientSkeleton() // Gradient animated
 ```
+
+**Preview**
+
+Solid  | Gradient | Solid Animated  | Gradient Animated
+------------- | ------------- | ------------- | -------------
+![](Assets/solid.png)  | ![](Assets/gradient.png)  | ![](Assets/solid_animated.gif)  | ![](Assets/gradient_animated.gif)
 
 <table>
 <tr>
