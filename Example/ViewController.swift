@@ -9,71 +9,108 @@
 import UIKit
 import SkeletonView
 
+let colors = [(UIColor.turquoise,"turquoise"), (UIColor.emerald,"emerald"), (UIColor.peterRiver,"peterRiver"), (UIColor.amethyst,"amethyst"),(UIColor.wetAsphalt,"wetAsphalt"), (UIColor.nephritis,"nephritis"), (UIColor.belizeHole,"belizeHole"), (UIColor.wisteria,"wisteria"), (UIColor.midnightBlue,"midnightBlue"), (UIColor.sunFlower,"sunFlower"), (UIColor.carrot,"carrot"), (UIColor.alizarin,"alizarin"),(UIColor.clouds,"clouds"), (UIColor.concrete,"concrete"), (UIColor.flatOrange,"flatOrange"), (UIColor.pumpkin,"pumpkin"), (UIColor.pomegranate,"pomegranate"), (UIColor.silver,"silver"), (UIColor.asbestos,"asbestos")]
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var colorSelectedView: UIView! {
+        didSet {
+            colorSelectedView.layer.cornerRadius = 5
+            colorSelectedView.layer.masksToBounds = true
+            colorSelectedView.backgroundColor = SkeletonDefaultConfig.tintColor
+        }
+    }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        view.isSkeletonable = true
-        
-//        view.showAnimatedGradientSkeleton()
-//        view.showAnimatedSkeleton(usingColor: UIColor.sunFlower)
-        
-//        view.showAnimatedGradientSkeleton(usingGradient: SkeletonGradient(baseColor: UIColor.red, secundaryColor: UIColor.green))
-//        view.showAnimatedGradientSkeleton(usingGradient: SkeletonGradient(baseColor: UIColor.belizeHole))
-//        sendrequest()
+    @IBOutlet weak var switchAnimated: UISwitch!
+    @IBOutlet weak var skeletonTypeSelector: UISegmentedControl!
+    
+    var type: SkeletonType {
+        return skeletonTypeSelector.selectedSegmentIndex == 0 ? .solid : .gradient
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        view.showAnimatedGradientSkeleton()
         view.showSkeleton()
     }
-    
-    func sendrequest() {
-        
-        let url = URL(string: "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY")
-        
-        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
-            
-            if let data = data {
-                do {
-                    // Convert the data to JSON
-                    let jsonSerialized = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
-                    
-                    if let json = jsonSerialized, let url = json["url"], let explanation = json["explanation"] {
-                        print(url)
-                        print(explanation)
-                        DispatchQueue.main.async {
-//                            self.view.hideSkeleton(reloadDataAfter: false)
-//                            self.tableview.reloadData()
-                        }
-                    }
-                }  catch let error as NSError {
-                    print(error.localizedDescription)
-                }
-            } else if let error = error {
-                print(error.localizedDescription)
-            }
+
+    @IBAction func changeAnimated(_ sender: Any) {
+        if switchAnimated.isOn {
+            view.startSkeletonAnimation()
+        } else {
+            view.stopSkeletonAnimation()
         }
-        
-        task.resume()
     }
     
-    @IBAction func hideSkeletons(_ sender: Any) {
-        view.hideSkeleton()
+    @IBAction func changeSkeletonType(_ sender: Any) {
+        refreshSkeleton()
     }
     
-    @IBAction func show(_ sender: Any) {
-//        view.showAnimatedSkeleton(usingColor: UIColor.clouds)
-        view.showGradientSkeleton()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.view.startSkeletonAnimation()
+    @IBAction func btnChangeColorTouchUpInside(_ sender: Any) {
+        showAlertPicker()
+    }
+    
+    func refreshSkeleton() {
+        self.view.hideSkeleton()
+        if type == .gradient { showGradientSkeleton() }
+        else { showSolidSkeleton() }
+    }
+    
+    func showSolidSkeleton() {
+        if switchAnimated.isOn {
+            view.showAnimatedSkeleton(usingColor: colorSelectedView.backgroundColor!)
+        } else {
+            view.showSkeleton(usingColor: colorSelectedView.backgroundColor!)
         }
-//        view.showGradientSkeleton(withDirection: .rightLeft)
-//        view.showAnimatedGradientSkeleton()
+    }
+    
+    func showGradientSkeleton() {
+        let gradient = SkeletonGradient(baseColor: colorSelectedView.backgroundColor!)
+        if switchAnimated.isOn {
+            view.showAnimatedGradientSkeleton(usingGradient: gradient)
+        } else {
+            view.showGradientSkeleton(usingGradient: gradient)
+        }
+    }
+    
+    func showAlertPicker() {
+       
+        let alertView = UIAlertController(title: "Select color", message: "\n\n\n\n\n\n", preferredStyle: .alert)
+        
+        let pickerView = UIPickerView(frame: CGRect(x: 0, y: 50, width: 260, height: 115))
+        pickerView.dataSource = self
+        pickerView.delegate = self
+        
+        alertView.view.addSubview(pickerView)
+        
+        let action = UIAlertAction(title: "OK", style: .default) { [unowned pickerView, unowned self] _ in
+            let row = pickerView.selectedRow(inComponent: 0)
+            self.colorSelectedView.backgroundColor = colors[row].0
+            self.refreshSkeleton()
+        }
+        alertView.addAction(action)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertView.addAction(cancelAction)
+        
+        present(alertView, animated: false, completion: {
+            pickerView.frame.size.width = alertView.view.frame.size.width
+        })
+    }
+}
+
+extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+       return colors.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return colors[row].1
     }
 }
 
@@ -90,7 +127,6 @@ extension ViewController: SkeletonUITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellIdentifier", for: indexPath) as! Cell
         cell.label1.text = "cell => \(indexPath.row)"
-        cell.drawCell(row: indexPath.row)
         return cell
     }
 }

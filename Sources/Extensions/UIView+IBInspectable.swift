@@ -23,7 +23,7 @@ public extension UIView {
     }
     
     var isSkeletonActive: Bool {
-        return status == .on
+        return status == .on || (subviewsSkeletonables.first(where: { $0.isSkeletonActive }) != nil)
     }
 }
 

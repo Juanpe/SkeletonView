@@ -53,7 +53,6 @@ struct SkeletonLayer {
     
     private var maskLayer: CALayer
     private weak var holder: UIView?
-    var removeWhenStopped: Bool = true
     
     var type: SkeletonType {
         return maskLayer is CAGradientLayer ? .gradient : .solid
@@ -91,6 +90,5 @@ extension SkeletonLayer {
     
     func stopAnimation() {
         contentLayer.stopAnimation(forKey: "skeletonAnimation")
-        if removeWhenStopped { removeLayer() }
     }
 }
