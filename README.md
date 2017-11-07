@@ -82,6 +82,22 @@ Then, when you decide and set the views, only need show the **skeleton**. For th
 (3) view.showAnimatedSkeleton()         // Solid animated
 (4) view.showAnimatedGradientSkeleton() // Gradient animated
 ```
+<table>
+<tr>
+<td width="25%">
+<img src="Assets/solid.png"></img>
+</td>
+<td width="25%">
+<img src="Assets/gradient.png"></img>
+</td>
+<td width="25%">
+<img src="Assets/solid_animated.png"></img>
+</td>
+<td width="25%">
+<img src="Assets/gradient_animated.png"></img>
+</td>
+</tr
+</table>
 
 ###  Collections
 
