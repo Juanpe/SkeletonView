@@ -87,10 +87,6 @@ avatarImageView.isSkeletonable = true
 
 **Preview**
 
-Solid  | Gradient | Solid Animated  | Gradient Animated
-------------- | ------------- | ------------- | -------------
-![](Assets/solid.png)  | ![](Assets/gradient.png)  | ![](Assets/solid_animated.gif)  | ![](Assets/gradient_animated.gif)
-
 <table>
 <tr>
 <td width="25%">
