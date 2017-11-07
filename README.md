@@ -85,18 +85,32 @@ Then, when you decide and set the views, only need show the **skeleton**. For th
 <table>
 <tr>
 <td width="25%">
+<center>**Solid**</center>
+</td>
+<td width="25%">
+<center>**Gradient**</center>
+</td>
+<td width="25%">
+<center>**Solid Animated**</center>
+</td>
+<td width="25%">
+<center>**Gradient Animated**</center>
+</td>
+</tr>
+<tr>
+<td width="25%">
 <img src="Assets/solid.png"></img>
 </td>
 <td width="25%">
 <img src="Assets/gradient.png"></img>
 </td>
 <td width="25%">
-<img src="Assets/solid_animated.png"></img>
+<img src="Assets/solid_animated.gif"></img>
 </td>
 <td width="25%">
-<img src="Assets/gradient_animated.png"></img>
+<img src="Assets/gradient_animated.gif"></img>
 </td>
-</tr
+</tr>
 </table>
 
 ###  Collections
