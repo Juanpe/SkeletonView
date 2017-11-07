@@ -118,7 +118,8 @@ avatarImageView.isSkeletonable = true
 </tr>
 </table>
 
-> **IMPORTANT!** ```SkeletonView``` is recursive, so you want show the skeleton in all skeletonable views, you only need execute show method in the main container view. For example, with UIViewControllers
+> **IMPORTANT!**
+>```SkeletonView``` is recursive, so you want show the skeleton in all skeletonable views, you only need execute show method in the main container view. For example, with UIViewControllers
 
 ###  Collections
 
