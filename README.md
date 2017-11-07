@@ -74,41 +74,14 @@ avatarImageView.isSkeletonable = true
 
 ![](Assets/storyboard.png)
 
-Then, when you decide and set the views, only need show the 'skeleton'. For this, you have **4** choices:
-<table>
-<tr>
-<td width="25%">
-`Solid`
-</td>
-<td width="75%">
-```view.showSkeleton()```
-</td>
-</tr
-<tr>
-<td width="25%">
-`Solid Animated`
-</td>
-<td width="75%">
-```view.showAnimatedSkeleton()```
-</td>
-</tr>
-<tr>
-<td width="25%">
-`Gradient`
-</td>
-<td width="70%">
-```view.showGradientSkeleton()```
-</td>
-</tr>
-<tr>
-<td width="30%">
-`Gradient Animated`
-</td>
-<td width="75%">
-```view.showAnimatedGradientSkeleton()```
-</td>
-</tr>
-</table>
+Then, when you decide and set the views, only need show the **skeleton**. For this, you have **4** choices:
+
+```swift
+(1) view.showSkeleton()                 // Solid
+(2) view.showGradientSkeleton()         // Gradient
+(3) view.showAnimatedSkeleton()         // Solid animated
+(4) view.showAnimatedGradientSkeleton() // Gradient animated
+```
 
 ###  Collections
 
