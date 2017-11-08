@@ -45,7 +45,7 @@ This library try to be a very easy library, and isolated from your code.
 
 ### 🔮 Example
 
-To run the example project, clone the repo, and run `SkeletonViewExample` target.
+To run the example project, clone the repo and run `SkeletonViewExample` target.
 
 ![](Assets/demoApp.png)
 
@@ -69,14 +69,14 @@ github "Juanpe/SkeletonView"
 
 ## 🐒 How to use
 
-You only need **3** steps to use `SkeletonView`:
+Only **3** steps needed to use `SkeletonView`:
 
 **1.** Import SkeletonView in proper place.
 ```swift
 import SkeletonView
 ```
 
-**2.** Now, set what views will be `skeletonables`. You can do this by two ways:
+**2.** Now, set which views will be `skeletonables`. You achieve this in two ways:
 
 **Using code:**
 ```swift
@@ -86,7 +86,7 @@ avatarImageView.isSkeletonable = true
 
 ![](Assets/storyboard.png)
 
-**3.** Then, when you set the views, you can show the **skeleton**. To do it, you have **4** choices:
+**3.** Once you've set the views, you can show the **skeleton**. To do so, you have **4** choices:
 
 ```swift
 (1) view.showSkeleton()                 // Solid
@@ -129,13 +129,13 @@ avatarImageView.isSkeletonable = true
 </table>
 
 > **IMPORTANT!**
->>```SkeletonView``` is recursive, so if you want show the skeleton in all skeletonable views, you only need execute the show method in the main container view. For example, with UIViewControllers
+>>```SkeletonView``` is recursive, so if you want show the skeleton in all skeletonable views, you only need to call the show method in the main container view. For example, with UIViewControllers
 
 ### 🌿 Collections
 
-Now, ```SkeletonView``` only is compatible with ```UITableView```. We are working hard to support ```UICollectionView``` too 💪🏼
+ Currently, ```SkeletonView``` only is compatible with ```UITableView```. We are working hard to support ```UICollectionView``` too 💪🏼
 
-If you want to show the skeleton in a ```UITableView```, you need to conform ```SkeletonTableViewDataSource``` protocol.
+If you want to show the skeleton in a ```UITableView```, you need to conform to ```SkeletonTableViewDataSource``` protocol.
 
 ``` swift
 public protocol SkeletonTableViewDataSource: UITableViewDataSource {
@@ -144,7 +144,7 @@ public protocol SkeletonTableViewDataSource: UITableViewDataSource {
     func collectionSkeletonView(_ skeletonView: UITableView, cellIdenfierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier
 }
 ```
-You can see, this protocol inherit from ```UITableViewDataSource``, so you can replace this protocol for the skeleton protocol.
+As you can see, this protocol inherits from ```UITableViewDataSource``, so you can replace this protocol with the skeleton protocol.
 
 This protocol has a default implementation:
 
@@ -159,7 +159,7 @@ func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection s
 // It calculates how many cells need to populate whole tableview
 ```
 
- So you only need to specify the cell identifier for cells. This method doesn't have default implementation
+There is only one method you need to implement to let Skeleton know the cell identifier. This method doesn't have default implementation:
  ``` swift
  func collectionSkeletonView(_ skeletonView: UITableView, cellIdenfierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier
  ```
@@ -176,12 +176,12 @@ func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection s
 
 ![](Assets/multilines.png)
 
-When you use elements with texts. ```SkeletonView``` draws lines to simulate text.
-Also, you can decide how many lines you want. If you set ```numberOfLines``` to zero, then it will calculate how many lines you need to populate whole skeleton and it will be included. Instead, if you set to one, two or another number greater than zero, only it will included this number of lines.
+When using elements with text, ```SkeletonView``` draws lines to simulate text.
+Besides, you can decide how many lines you want. If  ```numberOfLines``` is set to zero, it will calculate how many lines needed to populate the whole skeleton and it will be drawn. Instead, if you set it to one, two or any number greater than zero, it will only draw this number of lines.
 
 ### 🎨 Custom colors
 
-You can decide what color is tinted the skeleton. You only need to pass as parameter what color or gradient you want.
+You can decide which color the skeleton is tinted with. You only need to pass as a parameter the color or gradient you want.
 
 **Using solid colors**
 ``` swift
@@ -200,27 +200,33 @@ view.showGradientSkeleton(usingGradient: gradient) // Gradient
 
 ### 🤓 Custom animations
 
-Now, ```SkeletonView``` has built-in two animations, *pulse* for solid skeletons and *sliding* for gradients. It's by default.
+Now, ```SkeletonView``` has two built-in animations, *pulse* for solid skeletons and *sliding* for gradients.
 
-But, if you want to do your own skeleton animation, it's very simple. You need indicate as parameters a ```SkeletonLayerAnimation```
+Besides, if you want to do your own skeleton animation, it's really easy.
+
+
+Skeleton provides the `showAnimatedSkeleton` function which has a ```SkeletonLayerAnimation``` closure where you can define your custom animation.
 
 ```swift
 public typealias SkeletonLayerAnimation = (CALayer) -> CAAnimation
 ```
 
-Then, you can execute the next code to show the skeleton:
+You can call the function like this:
 
 ```swift
 view.showAnimatedSkeleton { (layer) -> CAAnimation in
-  // Insert here your animation
+  let animation = CAAnimation()
+  // Customize here your animation
+  
+  return animation
 }
 ```
 
 ### 👨‍👧‍👦 Hierarchy
 
-```SkeletonView``` is recursive, so to improve the performance, we need to stop recursive method as soon as possible. For this reason, you must set Skeletonable the container view, because if the container doesn't is Skeletonable break the loop.
+Since ```SkeletonView``` is recursive, and we want skeleton to be very efficient, we want to stop recursion as soon as possible. For this reason, you must set the container view as `Skeletonable`, because Skeleton will stop looking for `skeletonable` subviews as soon as a view is not Skeletonable, breaking then the recursion.
 
-Better with some examples:
+Because an image is worth a thousand words:
 
 > ```ìsSkeletonable```= ☠️
 
