@@ -160,7 +160,7 @@ view.showGradientSkeleton(usingGradient: gradient) // Gradient
 ```SkeletonView``` features 20 flat colors 🤙🏼:
 
 ![](Assets/flatcolors.png)
-*Image captured from website [https://flatuicolors.com](https://flatuicolors.com)*
+###### Image captured from website [https://flatuicolors.com](https://flatuicolors.com)
 
 ### 🤓 Custom animations
 
