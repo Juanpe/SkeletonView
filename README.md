@@ -143,7 +143,8 @@ You can see, this protocol inherit from ```UITableViewDataSource``, so you can r
 This protocol has a default implementation:
 
 ``` swift
-func numSections(in collectionSkeletonView: UITableView) -> Int // Default 1
+func numSections(in collectionSkeletonView: UITableView) -> Int
+// Default: 1
 ```
 
 ``` swift
@@ -152,7 +153,15 @@ func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection s
 // It calculates how many cells need to populate whole tableview
 ```
 
- so you only need to specify the cell identifier for cells.
+ So you only need to specify the cell identifier for cells. This method doesn't have default implementation
+ ``` swift
+ func collectionSkeletonView(_ skeletonView: UITableView, cellIdenfierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier
+
+ // Example:
+ func collectionSkeletonView(_ skeletonView: UITableView, cellIdenfierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+    return "CellIdentifier"
+}
+ ```
 
 ### 📰 Multiline text
 
