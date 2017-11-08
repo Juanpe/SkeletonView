@@ -1,9 +1,10 @@
 Pod::Spec.new do |s|
   s.name         = "SkeletonView"
   s.version      = "1.0"
-  s.summary      = ""
+  s.summary      = "An elegant way to show users that something is happening and also prepare them to which contents he is waiting"
   s.description  = <<-DESC
-    Your description here.
+  Today almost all apps have async processes, as API requests, long runing processes, etc. And while the processes are working, usually developers place a loading view to show users that something is going on.
+  SkeletonView has been conceived to address this need, an elegant way to show users that something is happening and also prepare them to which contents he is waiting.
   DESC
   s.homepage     = ""
   s.license      = { :type => "MIT", :file => "LICENSE" }

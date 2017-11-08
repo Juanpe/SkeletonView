@@ -35,13 +35,13 @@
 
 ### 🎤 Introduction
 
-Today almost all apps have async process,  as API requests, long process, etc. And while the process is working, normally developers put a loading to show users that something is happening.
+Today almost all apps have async processes, as API requests, long runing processes, etc. And while the processes are working, usually developers place a loading view to show users that something is going on.
 
-For this reason born ```SkeletonView```, an elegant way to show users that something is happening and also prepare users to which contents he is waiting.
+```SkeletonView``` has been conceived to address this need, an elegant way to show users that something is happening and also prepare them to which contents he is waiting.
 
-This library try to be a very easy library, and isolated from your code.
+Enjoy it! 🙂
 
-*Project generated with [SwiftPlate](https://github.com/JohnSundell/SwiftPlate)*
+###### Project generated with [SwiftPlate](https://github.com/JohnSundell/SwiftPlate)
 
 ### 🔮 Example
 
@@ -217,7 +217,7 @@ You can call the function like this:
 view.showAnimatedSkeleton { (layer) -> CAAnimation in
   let animation = CAAnimation()
   // Customize here your animation
-  
+
   return animation
 }
 ```
