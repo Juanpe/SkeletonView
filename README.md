@@ -114,7 +114,7 @@ avatarImageView.isSkeletonable = true
 <img src="Assets/gradient.png"></img>
 </td>
 <td width="25%">
-<img src="Assets/solid_animated2.gif"></img>
+<img src="Assets/solid_animated.gif"></img>
 </td>
 <td width="25%">
 <img src="Assets/gradient_animated.gif"></img>
@@ -184,6 +184,15 @@ view.showAnimatedSkeleton { (layer) -> CAAnimation in
 ```SkeletonView``` is recursive, so to improve the performance, we need to stop recursive method as soon as possible. For this reason, you must set Skeletonable the container view, because if the container doesn't is Skeletonable break the loop.
 
 Better with some examples:
+
+> ```ìsSkeletonable```= ☠️
+
+| Configuration | Result
+|------- | -------
+|![](Assets/no_skeletonable.png) | ![](Assets/no_skeletonables_result.png)
+|![](Assets/container_skeletonable.png) | ![](Assets/container_skeletonable_result.png)
+|![](Assets/all_skeletonables.png) | ![](Assets/all_skeletonables_result.png)
+
 
 
 ### 📚 Documentation
