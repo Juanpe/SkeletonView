@@ -24,7 +24,7 @@ class SkeletonLayerFactory {
     }
 }
 
-public typealias SkeletonLayerAnimation = () -> CAAnimation
+public typealias SkeletonLayerAnimation = (CALayer) -> CAAnimation
 
 public enum SkeletonType {
     case solid
@@ -42,9 +42,9 @@ public enum SkeletonType {
     var layerAnimation: SkeletonLayerAnimation {
         switch self {
         case .solid:
-            return { CALayer.Animations.pulse }
+            return { $0.pulse }
         case .gradient:
-            return { CALayer.Animations.sliding }
+            return { $0.sliding }
         }
     }
 }

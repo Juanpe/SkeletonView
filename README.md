@@ -23,6 +23,7 @@
 - [x] Easy to use
 - [x] All UIViews are skeletonables
 - [x] Fully customizable
+- [x] Universal (iPhone & iPad)
 - [x] Interface Builder friendly
 - [x] Simple Swift syntax
 - [x] Lightweight readable codebase
@@ -113,7 +114,7 @@ avatarImageView.isSkeletonable = true
 <img src="Assets/gradient.png"></img>
 </td>
 <td width="25%">
-<img src="Assets/solid_animated.gif"></img>
+<img src="Assets/solid_animated2.gif"></img>
 </td>
 <td width="25%">
 <img src="Assets/gradient_animated.gif"></img>

@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        view.showSkeleton()
+        view.showAnimatedSkeleton()
     }
 
     @IBAction func changeAnimated(_ sender: Any) {

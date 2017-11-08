@@ -19,12 +19,24 @@ extension UIColor {
         )
     }
     
+    func isLight() -> Bool {
+        // algorithm from: http://www.w3.org/WAI/ER/WD-AERT/#color-contrast
+        guard let components = cgColor.components,
+              components.count >= 3 else { return false }
+        let brightness = ((components[0] * 299) + (components[1] * 587) + (components[2] * 114)) / 1000
+        return !(brightness < 0.5)
+    }
+    
+    public var complementaryColor: UIColor {
+        return isLight() ? darker : lighter
+    }
+    
     public var lighter: UIColor {
-        return adjust(by: 1.2)
+        return adjust(by: 1.35)
     }
     
     public var darker: UIColor {
-        return adjust(by: 0.96)
+        return adjust(by: 0.94)
     }
     
     func adjust(by percent: CGFloat) -> UIColor {
@@ -34,7 +46,7 @@ extension UIColor {
     }
     
     func makeGradient() -> [UIColor] {
-        return [self, self.darker, self]
+        return [self, self.complementaryColor, self]
     }
 }
 
