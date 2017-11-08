@@ -116,6 +116,7 @@ extension UIView {
         guard isSkeletonActive,
             let layer = skeletonLayer else { return }
         layer.stopAnimation()
+        layer.removeLayer()
         skeletonLayer = nil
         status = .off
     }
