@@ -127,7 +127,7 @@ avatarImageView.isSkeletonable = true
 
 ### 🌿 Collections
 
-Now, ```SkeletonView``` only is compatible with ```UITableView```. We are working hard to support ```UICollectionView``` too :musle:
+Now, ```SkeletonView``` only is compatible with ```UITableView```. We are working hard to support ```UICollectionView``` too 💪🏼
 
 If you want to show the skeleton in a ```UITableView```, you need to conform ```SkeletonTableViewDataSource``` protocol.
 
