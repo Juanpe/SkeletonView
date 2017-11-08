@@ -35,6 +35,12 @@
 
 ### 🎤 Introduction
 
+Today almost all apps have async process,  as API requests, long process, etc. And while the process is working, normally developers put a loading to show users that something is happening.
+
+For this reason born ```SkeletonView```, an elegant way to show users that something is happening and also prepare users to which contents he is waiting.
+
+This library try to be a very easy library, and isolated from your code.
+
 *Project generated with [SwiftPlate](https://github.com/JohnSundell/SwiftPlate)*
 
 ### 🔮 Example
