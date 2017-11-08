@@ -11,6 +11,6 @@ Pod::Spec.new do |s|
   s.author             = { "Juanpe Catalán" => "juanpecm@gmail.com" }
   s.social_media_url   = ""
   s.ios.deployment_target = "9.0"
-  s.source       = { :git => ".git", :tag => s.version.to_s }
+  s.source       = { :git => "https://github.com/Juanpe/SkeletonView.git", :tag => s.version.to_s }
   s.source_files  = "Sources/**/*"
 end
