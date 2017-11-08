@@ -32,6 +32,10 @@
 * iOS 9.0+
 * Swift 4
 
+### 🎤 Introduction
+
+*Project generated with [SwiftPlate](https://github.com/JohnSundell/SwiftPlate)*
+
 ### 🔮 Example
 
 To run the example project, clone the repo, and run `SkeletonViewExample` target.
@@ -120,15 +124,13 @@ avatarImageView.isSkeletonable = true
 > **IMPORTANT!**
 >>```SkeletonView``` is recursive, so if you want show the skeleton in all skeletonable views, you only need execute show method in the main container view. For example, with UIViewControllers
 
-###  Collections
-
-### `SkeletonUITableViewDataSource`
-
- The `Selectable` protocol dictates whether an item is available (`isSelectable`), as observed by the size of the Overlay's dot.
+### 🌿 Collections
 
 ``` swift
-public protocol Selectable {
-    var isSelectable: Bool { get set }
+public protocol SkeletonUITableViewDataSource: UITableViewDataSource {
+    func numSections(in collectionSkeletonView: UITableView) -> Int
+    func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdenfierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier
 }
 ```
 
@@ -160,7 +162,28 @@ view.showGradientSkeleton(usingGradient: gradient) // Gradient
 
 ### 🤓 Custom animations
 
+Now, ```SkeletonView``` has built-in two animations, *pulse* for solid skeletons and *sliding* for gradients. It's by default.
+
+But, if you want to do your own skeleton animation, it's very simple. You need indicate as parameters a ```SkeletonLayerAnimation```
+
+```swift
+public typealias SkeletonLayerAnimation = (CALayer) -> CAAnimation
+```
+
+Then, you can execute the next code to show the skeleton:
+
+```swift
+view.showAnimatedSkeleton { (layer) -> CAAnimation in
+  // Insert here your animation
+}
+```
+
 ### 👨‍👧‍👦 Hierarchy
+
+```SkeletonView``` is recursive, so to improve the performance, we need to stop recursive method as soon as possible. For this reason, you must set Skeletonable the container view, because if the container doesn't is Skeletonable break the loop.
+
+Better with some examples:
+
 
 ### 📚 Documentation
 Coming soon...😅
