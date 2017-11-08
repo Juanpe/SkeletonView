@@ -156,8 +156,10 @@ func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection s
  So you only need to specify the cell identifier for cells. This method doesn't have default implementation
  ``` swift
  func collectionSkeletonView(_ skeletonView: UITableView, cellIdenfierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier
+ ```
 
- // Example:
+**Example**
+ ``` swift
  func collectionSkeletonView(_ skeletonView: UITableView, cellIdenfierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
     return "CellIdentifier"
 }
