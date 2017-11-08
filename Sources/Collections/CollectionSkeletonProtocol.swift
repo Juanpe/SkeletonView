@@ -54,7 +54,7 @@ extension UITableView: CollectionSkeleton {
     }
     
     func addDummyDataSource() {
-        guard let originalDataSource = self.dataSource as? SkeletonUITableViewDataSource,
+        guard let originalDataSource = self.dataSource as? SkeletonTableViewDataSource,
               !(originalDataSource is SkeletonCollectionDataSource)
             else { return }
         let dataSource = SkeletonCollectionDataSource(tableViewDataSource: originalDataSource)

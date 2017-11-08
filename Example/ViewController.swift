@@ -114,7 +114,7 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
 }
 
-extension ViewController: SkeletonUITableViewDataSource {
+extension ViewController: SkeletonTableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 9

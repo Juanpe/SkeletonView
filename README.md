@@ -127,13 +127,32 @@ avatarImageView.isSkeletonable = true
 
 ### 🌿 Collections
 
+Now, ```SkeletonView``` only is compatible with ```UITableView```. We are working hard to support ```UICollectionView``` too :musle:
+
+If you want to show the skeleton in a ```UITableView```, you need to conform ```SkeletonTableViewDataSource``` protocol.
+
 ``` swift
-public protocol SkeletonUITableViewDataSource: UITableViewDataSource {
+public protocol SkeletonTableViewDataSource: UITableViewDataSource {
     func numSections(in collectionSkeletonView: UITableView) -> Int
     func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int
     func collectionSkeletonView(_ skeletonView: UITableView, cellIdenfierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier
 }
 ```
+You can see, this protocol inherit from ```UITableViewDataSource``, so you can replace this protocol for the skeleton protocol.
+
+This protocol has a default implementation:
+
+``` swift
+func numSections(in collectionSkeletonView: UITableView) -> Int // Default 1
+```
+
+``` swift
+func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int
+// Default:
+// It calculates how many cells need to populate whole tableview
+```
+
+ so you only need to specify the cell identifier for cells.
 
 ### 📰 Multiline text
 

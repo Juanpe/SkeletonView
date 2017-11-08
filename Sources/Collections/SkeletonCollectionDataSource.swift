@@ -12,10 +12,10 @@ public typealias ReusableCellIdentifier = String
 
 class SkeletonCollectionDataSource: NSObject {
     
-    weak var originalTableViewDataSource: SkeletonUITableViewDataSource?
+    weak var originalTableViewDataSource: SkeletonTableViewDataSource?
     weak var originalCollectionViewDataSource: UICollectionViewDataSource?
     
-    convenience init(tableViewDataSource: SkeletonUITableViewDataSource? = nil, collectionViewDataSource: UICollectionViewDataSource? = nil) {
+    convenience init(tableViewDataSource: SkeletonTableViewDataSource? = nil, collectionViewDataSource: UICollectionViewDataSource? = nil) {
         self.init()
         self.originalTableViewDataSource = tableViewDataSource
         self.originalCollectionViewDataSource = collectionViewDataSource
