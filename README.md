@@ -70,7 +70,7 @@ You only need **3** steps to use `SkeletonView`:
 import SkeletonView
 ```
 
-**2.** Now, you only need set what views will be `skeletonables`. You can do this by two ways:
+**2.** Now, set what views will be `skeletonables`. You can do this by two ways:
 
 **Using code:**
 ```swift
@@ -80,7 +80,7 @@ avatarImageView.isSkeletonable = true
 
 ![](Assets/storyboard.png)
 
-**3.** Then, when you decide and set the views, only need show the **skeleton**. For this, you have **4** choices:
+**3.** Then, when you set the views, you can show the **skeleton**. To do it, you have **4** choices:
 
 ```swift
 (1) view.showSkeleton()                 // Solid
@@ -123,7 +123,7 @@ avatarImageView.isSkeletonable = true
 </table>
 
 > **IMPORTANT!**
->>```SkeletonView``` is recursive, so if you want show the skeleton in all skeletonable views, you only need execute show method in the main container view. For example, with UIViewControllers
+>>```SkeletonView``` is recursive, so if you want show the skeleton in all skeletonable views, you only need execute the show method in the main container view. For example, with UIViewControllers
 
 ### 🌿 Collections
 
@@ -190,6 +190,7 @@ Better with some examples:
 | Configuration | Result
 |------- | -------
 |![](Assets/no_skeletonable.png) | ![](Assets/no_skeletonables_result.png)
+|![](Assets/container_no_skeletonable.png) | ![](Assets/no_skeletonables_result.png)
 |![](Assets/container_skeletonable.png) | ![](Assets/container_skeletonable_result.png)
 |![](Assets/all_skeletonables.png) | ![](Assets/all_skeletonables_result.png)
 
