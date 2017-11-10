@@ -44,7 +44,7 @@ extension UIView {
         set { objc_setAssociatedObject(self, &AssociatedKeys.status, newValue, AssociationPolicy.retain.objc) }
     }
 
-    private var skeletonable: Bool! {
+    fileprivate var skeletonable: Bool! {
         get { return objc_getAssociatedObject(self, &AssociatedKeys.skeletonable) as? Bool ?? false }
         set { objc_setAssociatedObject(self, &AssociatedKeys.skeletonable, newValue, AssociationPolicy.retain.objc) }
     }
