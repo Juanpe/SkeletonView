@@ -31,7 +31,7 @@
 ### 📋 Supported OS & SDK Versions
 
 * iOS 9.0+
-* Swift 4
+* Swift 4 (Swift 3 compatible)
 
 ### 🎤 Introduction
 
@@ -144,7 +144,7 @@ public protocol SkeletonTableViewDataSource: UITableViewDataSource {
     func collectionSkeletonView(_ skeletonView: UITableView, cellIdenfierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier
 }
 ```
-As you can see, this protocol inherits from ```UITableViewDataSource``, so you can replace this protocol with the skeleton protocol.
+As you can see, this protocol inherits from ```UITableViewDataSource```, so you can replace this protocol with the skeleton protocol.
 
 This protocol has a default implementation:
 
