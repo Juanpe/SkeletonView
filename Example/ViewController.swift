@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     }
 
     @IBOutlet weak var switchAnimated: UISwitch!
+    @IBOutlet weak var switchHidden: UISwitch!
     @IBOutlet weak var skeletonTypeSelector: UISegmentedControl!
     
     var type: SkeletonType {
@@ -42,6 +43,15 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func changeHidden(_ sender: Any) {
+        if switchHidden.isOn {
+            view.hideSkeleton()
+        } else {
+            if type == .gradient { showGradientSkeleton() }
+            else { showSolidSkeleton() }
+        }
+    }
+
     @IBAction func changeSkeletonType(_ sender: Any) {
         refreshSkeleton()
     }
@@ -51,6 +61,7 @@ class ViewController: UIViewController {
     }
     
     func refreshSkeleton() {
+        guard !switchHidden.isOn else { return }
         self.view.hideSkeleton()
         if type == .gradient { showGradientSkeleton() }
         else { showSolidSkeleton() }
