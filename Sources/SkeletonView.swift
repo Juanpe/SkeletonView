@@ -68,14 +68,14 @@ extension UIView {
                         })
     }
 
-    func startSkeletonLayerAnimationBlock(_ anim: SkeletonLayerAnimation? = nil) -> VoidBlock {
+    fileprivate func startSkeletonLayerAnimationBlock(_ anim: SkeletonLayerAnimation? = nil) -> VoidBlock {
         return {
             guard let layer = self.skeletonLayer else { return }
             layer.start(anim)
         }
     }
 
-    var stopSkeletonLayerAnimationBlock: VoidBlock {
+    fileprivate var stopSkeletonLayerAnimationBlock: VoidBlock {
         return {
             guard let layer = self.skeletonLayer else { return }
             layer.stopAnimation()
