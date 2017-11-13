@@ -17,6 +17,10 @@ DerivedData/
 !default.perspectivev3
 xcuserdata/
 
+## AppCode
+.idea
+.idea/
+
 ## Other
 *.moved-aside
 *.xccheckout
