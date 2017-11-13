@@ -9,13 +9,13 @@
 import UIKit
 
 extension UIView {
-    
+
     func addDummyDataSourceIfNeeded() {
         guard let collection = self as? CollectionSkeleton else { return }
         collection.addDummyDataSource()
         collection.disableScrolling()
     }
-    
+
     func removeDummyDataSourceIfNeeded(reloadAfter reload: Bool = true) {
         guard let collection = self as? CollectionSkeleton else { return }
         collection.removeDummyDataSource(reloadAfter: reload)
@@ -36,7 +36,6 @@ private enum AssociatedKeys {
 }
 
 extension CollectionSkeleton where Self: UIScrollView {
-    
     func addDummyDataSource() {}
     func removeDummyDataSource(reloadAfter: Bool) {}
     func disableScrolling() { isScrollEnabled = false }
@@ -44,16 +43,18 @@ extension CollectionSkeleton where Self: UIScrollView {
 }
 
 extension UITableView: CollectionSkeleton {
-    
-    var skeletonDataSource: SkeletonCollectionDataSource? {
-        get { return objc_getAssociatedObject(self, &AssociatedKeys.dummyDataSource) as? SkeletonCollectionDataSource }
+
+    public var skeletonDataSource: SkeletonCollectionDataSource? {
+        get {
+            return objc_getAssociatedObject(self, &AssociatedKeys.dummyDataSource) as? SkeletonCollectionDataSource
+        }
         set {
             objc_setAssociatedObject(self, &AssociatedKeys.dummyDataSource, newValue, AssociationPolicy.retain.objc)
             self.dataSource = newValue
         }
     }
-    
-    func addDummyDataSource() {
+
+    func addDummyDataSource() { // todo rename to "activateSkeletonDataSource"
         guard let originalDataSource = self.dataSource as? SkeletonTableViewDataSource,
               !(originalDataSource is SkeletonCollectionDataSource)
             else { return }
@@ -61,8 +62,8 @@ extension UITableView: CollectionSkeleton {
         self.skeletonDataSource = dataSource
         reloadData()
     }
-    
-    func removeDummyDataSource(reloadAfter: Bool) {
+
+    func removeDummyDataSource(reloadAfter: Bool) { // todo rename to "deactivateSkeletonDataSource"
         guard let dataSource = self.dataSource as? SkeletonCollectionDataSource else { return }
         self.skeletonDataSource = nil
         self.dataSource = dataSource.originalTableViewDataSource
@@ -71,8 +72,8 @@ extension UITableView: CollectionSkeleton {
 }
 
 extension UICollectionView: CollectionSkeleton {
-    
-    var skeletonDataSource: SkeletonCollectionDataSource? {
+
+    public var skeletonDataSource: SkeletonCollectionDataSource? {
         get { return objc_getAssociatedObject(self, &AssociatedKeys.dummyDataSource) as? SkeletonCollectionDataSource }
         set { objc_setAssociatedObject(self, &AssociatedKeys.dummyDataSource, newValue, AssociationPolicy.retain.objc) }
     }

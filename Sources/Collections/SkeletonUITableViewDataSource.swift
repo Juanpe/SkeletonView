@@ -11,14 +11,14 @@ import UIKit
 public protocol SkeletonTableViewDataSource: UITableViewDataSource {
     func numSections(in collectionSkeletonView: UITableView) -> Int
     func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int
-    func collectionSkeletonView(_ skeletonView: UITableView, cellIdenfierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier
 }
 
 public extension SkeletonTableViewDataSource {
-    
+
     func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Int(ceil(skeletonView.frame.height/skeletonView.rowHeight))
     }
-    
+
     func numSections(in collectionSkeletonView: UITableView) -> Int { return 1 }
 }

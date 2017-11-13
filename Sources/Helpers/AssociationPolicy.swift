@@ -16,7 +16,7 @@ enum AssociationPolicy: UInt {
     case copyNonatomic = 3
     case retain = 769
     case retainNonatomic = 1
-    
+
     var objc: objc_AssociationPolicy {
         return objc_AssociationPolicy(rawValue: rawValue)!
     }

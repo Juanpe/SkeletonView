@@ -17,7 +17,7 @@ extension ContainsMultilineText {
 }
 
 extension UILabel: ContainsMultilineText {
-    var numLines: Int { 
+    var numLines: Int {
         return numberOfLines
     }
 }

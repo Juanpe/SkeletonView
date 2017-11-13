@@ -9,7 +9,7 @@
 import UIKit
 
 protocol PrepareForSkeleton {
-    func prepareViewForSkeleton() 
+    func prepareViewForSkeleton()
 }
 
 extension UILabel: PrepareForSkeleton {
