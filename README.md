@@ -8,8 +8,8 @@
     <a href="https://github.com/Carthage/Carthage">
         <img src="https://img.shields.io/badge/carthage-compatible-4BC51D.svg?style=flat" alt="Carthage" />
     </a>
-    <a href="https://twitter.com/juanpe_catalan">
-        <img src="https://img.shields.io/badge/contact-@juanpe_catalan-blue.svg?style=flat" alt="Twitter: @juanpe_catalan" />
+    <a href="https://twitter.com/JuanpeCatalan">
+        <img src="https://img.shields.io/badge/contact-@JuanpeCatalan-blue.svg?style=flat" alt="Twitter: @JuanpeCatalan" />
     </a>
     <a href="https://opensource.org/licenses/MIT">
   <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License" />
@@ -252,7 +252,7 @@ See [all contributors](https://github.com/Juanpe/SkeletonView/graphs/contributor
 
 ## 👨🏻‍💻 Author
 [1.1]: http://i.imgur.com/tXSoThF.png
-[1]: http://www.twitter.com/juanpe_catalan
+[1]: http://www.twitter.com/JuanpeCatalan
 
 * Juanpe Catalán [![alt text][1.1]][1]
 
