@@ -1,6 +1,9 @@
 ![](Assets/header.jpg)
 
 <p align="center">
+    <a href="https://travis-ci.org/Juanpe/SkeletonView">
+      <img src="https://img.shields.io/travis/Juanpe/SkeletonView.svg">
+    </a>
     <img src="https://img.shields.io/badge/Swift-4.0-orange.svg" />
     <a href="https://cocoapods.org/pods/SkeletonView">
         <img src="https://img.shields.io/cocoapods/v/SkeletonView.svg" alt="CocoaPods" />
