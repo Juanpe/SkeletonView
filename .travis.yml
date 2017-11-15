@@ -1,0 +1,6 @@
+language: objective-c
+osx_image: xcode9
+script:
+  - xcodebuild -project SkeletonView.xcodeproj -target SkeletonView-iOS -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 7,OS=11'
+  - xcodebuild -project SkeletonView.xcodeproj -target SkeletonViewExample -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 7,OS=11'
+after_success:
