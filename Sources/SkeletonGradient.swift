@@ -8,7 +8,7 @@
 
 import UIKit
 
-typealias GradientVector = (x: CGPoint, y: CGPoint)
+typealias GradientPoint = (x: CGPoint, y: CGPoint)
 
 public enum GradientDirection {
     case leftRight
@@ -20,7 +20,7 @@ public enum GradientDirection {
     case topRightBottomLeft
     case bottomLeftTopRight
     
-    var vector: GradientVector {
+    var vector: GradientPoint {
         switch self {
         case .leftRight:
             return (x: CGPoint(x: 0, y: 0.5), y: CGPoint(x: 1, y: 0.5))
