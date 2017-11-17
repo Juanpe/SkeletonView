@@ -39,6 +39,22 @@
 * iOS 9.0+
 * Swift 4 (Swift 3 compatible)
 
+## 🗂 Table of Contents
+
+  * [Introduction](#-introduction)
+  * [Example Project](#-example)
+  * [Installation](#-installation)
+    * [Cocoapods](#using-cocoapods)
+    * [Carthage](#using-carthage)
+  * [How to use](#-how-to-use)
+    * [Collections](#-collections)
+    * [Multiline text](#-multiline-text)
+    * [Custom colors](#-custom-colors)
+    * [Custom animations](#-custom-animations)
+    * [Hierarchy](#-hierarchy)
+  * [Documentation](#-documentation)
+
+
 ### 🎤 Introduction
 
 Today almost all apps have async processes, such as Api requests, long running processes, etc. And while the processes are working, usually developers place a loading view to show users that something is going on.
