@@ -22,6 +22,28 @@
     </a>
 </p>
 
+Today almost all apps have async processes, such as Api requests, long running processes, etc. And while the processes are working, usually developers place a loading view to show users that something is going on.
+
+```SkeletonView``` has been conceived to address this need, an elegant way to show users that something is happening and also prepare them to which contents he is waiting.
+
+Enjoy it! 🙂
+
+* [Features](#-features)
+* [Requirements](#-supported-os--sdk-versions)
+* [Example Project](#-example)
+* [Installation](#-installation)
+  * [Cocoapods](#using-cocoapods)
+  * [Carthage](#using-carthage)
+* [How to use](#-how-to-use)
+  * [Collections](#-collections)
+  * [Multiline text](#-multiline-text)
+  * [Custom colors](#-custom-colors)
+  * [Custom animations](#-custom-animations)
+  * [Hierarchy](#-hierarchy)
+* [Documentation](#-documentation)
+* [Contributed](#-contributed)
+* [Author](#-author)
+* [License](#-license)
 
 
 ## 🌟 Features
@@ -38,32 +60,6 @@
 
 * iOS 9.0+
 * Swift 4 (Swift 3 compatible)
-
-## 🗂 Table of Contents
-
-  * [Introduction](#-introduction)
-  * [Example Project](#-example)
-  * [Installation](#-installation)
-    * [Cocoapods](#using-cocoapods)
-    * [Carthage](#using-carthage)
-  * [How to use](#-how-to-use)
-    * [Collections](#-collections)
-    * [Multiline text](#-multiline-text)
-    * [Custom colors](#-custom-colors)
-    * [Custom animations](#-custom-animations)
-    * [Hierarchy](#-hierarchy)
-  * [Documentation](#-documentation)
-
-
-### 🎤 Introduction
-
-Today almost all apps have async processes, such as Api requests, long running processes, etc. And while the processes are working, usually developers place a loading view to show users that something is going on.
-
-```SkeletonView``` has been conceived to address this need, an elegant way to show users that something is happening and also prepare them to which contents he is waiting.
-
-Enjoy it! 🙂
-
-###### Project generated with [SwiftPlate](https://github.com/JohnSundell/SwiftPlate)
 
 ### 🔮 Example
 
@@ -271,6 +267,8 @@ This is an open source project, so feel free to contribute. How?
 - Propose your own fixes, suggestions and open a pull request with the changes.
 
 See [all contributors](https://github.com/Juanpe/SkeletonView/graphs/contributors)
+
+###### Project generated with [SwiftPlate](https://github.com/JohnSundell/SwiftPlate)
 
 ## 👨🏻‍💻 Author
 [1.1]: http://i.imgur.com/tXSoThF.png
