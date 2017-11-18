@@ -105,7 +105,7 @@ extension UIStackView {
 
 extension UIView {
     
-    func addSkeletonLayer(withType type: SkeletonType, usingColors colors: [UIColor], animated: Bool, animation: SkeletonLayerAnimation? = nil) {
+    func addSkeletonLayer(withType type: SkeletonType, usingColors colors: [UIColor], gradientDirection direction: GradientDirection? = nil, animated: Bool, animation: SkeletonLayerAnimation? = nil) {
         self.skeletonLayer = SkeletonLayerFactory().makeLayer(withType: type, usingColors: colors, andHolder: self)
         layer.insertSublayer(skeletonLayer!.contentLayer, at: UInt32.max)
         if animated { skeletonLayer!.start(animation) }
