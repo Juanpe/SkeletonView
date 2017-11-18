@@ -18,8 +18,8 @@ public enum GradientDirection {
     case topLeftBottomRight
     case bottomRightTopLeft
     
-    public var slidingAnimation: SkeletonLayerAnimation {
-        return SkeletonAnimationBuilder().makeSlidingAnimation(with: self)
+    public func slidingAnimation(duration: CFTimeInterval = 1.5) -> SkeletonLayerAnimation {
+        return SkeletonAnimationBuilder().makeSlidingAnimation(withDirection: self, duration: duration)
     }
     
     var startPoint: GradientAnimationPoint {
@@ -62,7 +62,7 @@ public class SkeletonAnimationBuilder {
     public init() {
     }
     
-    public func makeSlidingAnimation(with direction: GradientDirection, duration: CFTimeInterval = 1.5) -> SkeletonLayerAnimation {
+    public func makeSlidingAnimation(withDirection direction: GradientDirection, duration: CFTimeInterval = 1.5) -> SkeletonLayerAnimation {
         return { layer in
             
             let startPointAnim = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.startPoint))

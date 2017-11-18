@@ -249,9 +249,9 @@ view.showAnimatedSkeleton { (layer) -> CAAnimation in
 Today, you can create **sliding animations** for gradients, deciding the **direction** and setting the **duration** of the animation (default = 1.5s).
 
 ```swift
-// func makeSlidingAnimation(with direction: GradientDirection, duration: CFTimeInterval = 1.5) -> SkeletonLayerAnimation
+// func makeSlidingAnimation(withDirection direction: GradientDirection, duration: CFTimeInterval = 1.5) -> SkeletonLayerAnimation
 
-let animation = SkeletonAnimationBuilder().makeSlidingAnimation(with: .leftToRight)
+let animation = SkeletonAnimationBuilder().makeSlidingAnimation(withDirection: .leftToRight)
 view.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
 
 ```
@@ -267,9 +267,9 @@ view.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
 | .topLeftBottomRight | ![](Assets/sliding_topLeft_to_bottomRight.gif)
 | .bottomRightTopLeft | ![](Assets/sliding_bottomRight_to_topLeft.gif)
 
-> **TRICK!**
+> **😉 TRICK!**
 Exist another way to create sliding animations, just using this shortcut:
->>```let animation = GradientDirection.leftToRight.slidingAnimation```
+>>```let animation = GradientDirection.leftToRight.slidingAnimation()```
 
 ### 👨‍👧‍👦 Hierarchy
 
