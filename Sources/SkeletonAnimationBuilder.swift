@@ -66,12 +66,12 @@ public class SkeletonAnimationBuilder {
         return { layer in
             
             let startPointAnim = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.startPoint))
-            startPointAnim.fromValue = NSValue(cgPoint: direction.startPoint.from)
-            startPointAnim.toValue = NSValue(cgPoint: direction.startPoint.to)
+            startPointAnim.fromValue = direction.startPoint.from
+            startPointAnim.toValue = direction.startPoint.to
             
             let endPointAnim = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.endPoint))
-            endPointAnim.fromValue = NSValue(cgPoint: direction.endPoint.from)
-            endPointAnim.toValue = NSValue(cgPoint: direction.endPoint.to)
+            endPointAnim.fromValue = direction.endPoint.from
+            endPointAnim.toValue = direction.endPoint.to
             
             let animGroup = CAAnimationGroup()
             animGroup.animations = [startPointAnim, endPointAnim]
