@@ -203,7 +203,9 @@ You can decide which color the skeleton is tinted with. You only need to pass as
 
 **Using solid colors**
 ``` swift
-view.showSkeleton(usingColor: UIColor.midnightBlue) // Solid
+view.showSkeleton(usingColor: UIColor.gray) // Solid
+// or
+view.showSkeleton(usingColor: UIColor(red: 25.0, green: 30.0, blue: 255.0, alpha: 1.0))
 ```
 **Using gradients**
 ``` swift
@@ -211,7 +213,9 @@ let gradient = SkeletonGradient(baseColor: UIColor.midnightBlue)
 view.showGradientSkeleton(usingGradient: gradient) // Gradient
 ```
 
-```SkeletonView``` features 20 flat colors 🤙🏼:
+Besides, ```SkeletonView``` features 20 flat colors 🤙🏼
+
+```UIColor.turquoise, UIColor.greenSea, UIColor.sunFlower, UIColor.flatOrange  ...```
 
 ![](Assets/flatcolors.png)
 ###### Image captured from website [https://flatuicolors.com](https://flatuicolors.com)
@@ -239,6 +243,33 @@ view.showAnimatedSkeleton { (layer) -> CAAnimation in
   return animation
 }
 ```
+
+**NEW** It's available ```SkeletonAnimationBuilder```. It's a builder to make ```SkeletonLayerAnimation```.
+
+Today, you can create **sliding animations** for gradients, deciding the **direction** and setting the **duration** of the animation (default = 1.5s).
+
+```swift
+// func makeSlidingAnimation(with direction: GradientDirection, duration: CFTimeInterval = 1.5) -> SkeletonLayerAnimation
+
+let animation = SkeletonAnimationBuilder().makeSlidingAnimation(with: .leftToRight)
+view.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
+
+```
+
+```GradientDirection``` is an enum, with this cases:
+
+|  Direction | Preview
+|------- | -------
+| .leftRight | ![](Assets/sliding_left_to_right.gif)
+| .rightLeft | ![](Assets/sliding_right_to_left.gif)
+| .topBottom | ![](Assets/sliding_top_to_bottom.gif)  
+| .bottomTop | ![](Assets/sliding_bottom_to_top.gif)
+| .topLeftBottomRight | ![](Assets/sliding_topLeft_to_bottomRight.gif)
+| .bottomRightTopLeft | ![](Assets/sliding_bottomRight_to_topLeft.gif)
+
+> **TRICK!**
+Exist another way to create sliding animations, just using this shortcut:
+>>```let animation = GradientDirection.leftToRight.slidingAnimation```
 
 ### 👨‍👧‍👦 Hierarchy
 
