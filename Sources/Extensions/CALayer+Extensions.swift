@@ -39,7 +39,11 @@ extension CALayer {
     func addMultilinesLayers(lines: Int, type: SkeletonType) {
         let numberOfSublayers = calculateNumLines(maxLines: lines)
         for index in 0..<numberOfSublayers {
-            let layer = SkeletonLayerFactory().makeMultilineLayer(withType: type, for: index, width: Int(bounds.width))
+            var width = Int(bounds.width)
+            if SkeletonDefaultConfig.multilineLastLineShorter && index == numberOfSublayers-1 && numberOfSublayers != 1 {
+                width -= Int(Double(width)*0.2);
+            }
+            let layer = SkeletonLayerFactory().makeMultilineLayer(withType: type, for: index, width: width)
             addSublayer(layer)
         }
     }
