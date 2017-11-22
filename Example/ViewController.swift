@@ -14,6 +14,14 @@ let colors = [(UIColor.turquoise,"turquoise"), (UIColor.emerald,"emerald"), (UIC
 class ViewController: UIViewController {
     
     @IBOutlet weak var tableview: UITableView!
+    
+    @IBOutlet weak var avatarImage: UIImageView! {
+        didSet {
+            avatarImage.layer.cornerRadius = avatarImage.frame.width/2
+            avatarImage.layer.masksToBounds = true
+        }
+    }
+    
     @IBOutlet weak var colorSelectedView: UIView! {
         didSet {
             colorSelectedView.layer.cornerRadius = 5

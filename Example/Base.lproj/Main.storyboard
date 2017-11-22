@@ -195,6 +195,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="BEI-dU-kr2"/>
                     <connections>
+                        <outlet property="avatarImage" destination="nMj-pU-5wJ" id="9fa-Z7-vYi"/>
                         <outlet property="colorSelectedView" destination="iGp-rp-t1d" id="0Zm-9d-jRU"/>
                         <outlet property="skeletonTypeSelector" destination="xOL-Sq-r4i" id="yTr-8L-I4Y"/>
                         <outlet property="switchAnimated" destination="vz0-qg-GcZ" id="d2R-8x-lRb"/>
