@@ -17,4 +17,6 @@ public enum SkeletonDefaultConfig {
     public static let multilineHeight = 15
     
     public static let multilineSpacing = 10
+    
+    public static let multilineLastLineShorter = true
 }
