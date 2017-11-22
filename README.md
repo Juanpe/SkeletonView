@@ -65,7 +65,7 @@ Enjoy it! 🙂
 
 To run the example project, clone the repo and run `SkeletonViewExample` target.
 
-![](Assets/demoApp.png)
+![](Assets/demoApp2.png)
 
 ## 📲 Installation
 
