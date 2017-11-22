@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         didSet {
             avatarImage.layer.cornerRadius = avatarImage.frame.width/2
             avatarImage.layer.masksToBounds = true
-        }
+        } 
     }
     
     @IBOutlet weak var colorSelectedView: UIView! {
