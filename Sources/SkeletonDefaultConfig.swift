@@ -14,9 +14,9 @@ public enum SkeletonDefaultConfig {
     
     public static let gradient = SkeletonGradient(baseColor: tintColor)
     
-    public static let multilineHeight = 15
+    public static let multilineHeight: CGFloat = 15
     
-    public static let multilineSpacing = 10
+    public static let multilineSpacing: CGFloat = 10
     
-    public static let multilineLastLineShorter = true
+    public static let multilineLastLineFillPercent = 70
 }
