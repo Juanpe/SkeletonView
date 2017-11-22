@@ -192,10 +192,22 @@ There is only one method you need to implement to let Skeleton know the cell ide
 ### 📰 Multiline text
 
 
-![](Assets/multilines.png)
+![](Assets/multilines2.png)
 
 When using elements with text, ```SkeletonView``` draws lines to simulate text.
 Besides, you can decide how many lines you want. If  ```numberOfLines``` is set to zero, it will calculate how many lines needed to populate the whole skeleton and it will be drawn. Instead, if you set it to one, two or any number greater than zero, it will only draw this number of lines.
+
+**NEW** Now, you can set the filling percent of the last line. **Default: 80%**
+
+To modify the percent **using code**, set the property:
+```swift
+descriptionTextView.lastLineFillPercent = 50
+```
+
+Or, if you prefer use **IB/Storyboard**:
+
+![](Assets/lastline_storyboard.png)
+
 
 ### 🎨 Custom colors
 
