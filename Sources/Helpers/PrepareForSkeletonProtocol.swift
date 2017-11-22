@@ -15,12 +15,14 @@ protocol PrepareForSkeleton {
 extension UILabel: PrepareForSkeleton {
     func prepareViewForSkeleton() {
         text = nil
+        resignFirstResponder()
     }
 }
 
 extension UITextView: PrepareForSkeleton {
     func prepareViewForSkeleton() {
         text = nil
+        resignFirstResponder()
     }
 }
 

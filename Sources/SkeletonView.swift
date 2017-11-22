@@ -28,6 +28,7 @@ public extension UIView {
     
     func hideSkeleton(reloadDataAfter reload: Bool = true) {
         removeDummyDataSourceIfNeeded(reloadAfter: reload)
+        isUserInteractionEnabled = true
         recursiveSearch(inArray: subviewsSkeletonables,
                         leafBlock: { removeSkeletonLayer() },
                         recursiveBlock: {
@@ -57,6 +58,7 @@ extension UIView {
         recursiveSearch(inArray: subviewsSkeletonables,
                         leafBlock: {
                             guard !isSkeletonActive else { return }
+                            isUserInteractionEnabled = false
                             (self as? PrepareForSkeleton)?.prepareViewForSkeleton()
                             addSkeletonLayer(withType: type, usingColors: colors, animated: animated, animation: animation)
                         }) {
