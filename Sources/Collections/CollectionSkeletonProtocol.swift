@@ -41,6 +41,7 @@ extension CollectionSkeleton where Self: UIScrollView {
     func removeDummyDataSource(reloadAfter: Bool) {}
     func disableScrolling() { isScrollEnabled = false }
     func enableScrolling() { isScrollEnabled = true }
+    
 }
 
 extension UITableView: CollectionSkeleton {
@@ -68,12 +69,33 @@ extension UITableView: CollectionSkeleton {
         self.dataSource = dataSource.originalTableViewDataSource
         if reloadAfter { self.reloadData() }
     }
+    
 }
 
 extension UICollectionView: CollectionSkeleton {
     
     var skeletonDataSource: SkeletonCollectionDataSource? {
         get { return objc_getAssociatedObject(self, &AssociatedKeys.dummyDataSource) as? SkeletonCollectionDataSource }
-        set { objc_setAssociatedObject(self, &AssociatedKeys.dummyDataSource, newValue, AssociationPolicy.retain.objc) }
+        set {
+            objc_setAssociatedObject(self, &AssociatedKeys.dummyDataSource, newValue, AssociationPolicy.retain.objc)
+            self.dataSource = newValue
+        }
     }
+    
+    func addDummyDataSource() {
+        guard let originalDataSource = self.dataSource as? SkeletonUICollectionViewDataSource,
+              !(originalDataSource is SkeletonCollectionDataSource)
+            else { return }
+        let dataSource = SkeletonCollectionDataSource(collectionViewDataSource: originalDataSource)
+        self.skeletonDataSource = dataSource
+        reloadData()
+    }
+    
+    func removeDummyDataSource(reloadAfter: Bool) {
+        guard let dataSource = self.dataSource as? SkeletonCollectionDataSource else { return }
+        self.skeletonDataSource = nil
+        self.dataSource = dataSource.originalCollectionViewDataSource
+        if reloadAfter { self.reloadData() }
+    }
+    
 }
