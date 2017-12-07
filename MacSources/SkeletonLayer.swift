@@ -14,14 +14,16 @@ class SkeletonLayerFactory {
         return SkeletonLayer(withType: type, usingColors: colors, andSkeletonHolder: holder)
     }
     
-    func makeMultilineLayer(withType type: SkeletonType, for index: Int, width: CGFloat) -> CALayer {
+    func makeMultilineLayer(withType type: SkeletonType, for index: Int, width: CGFloat, height: CGFloat) -> CALayer {
         let spaceRequiredForEachLine = SkeletonDefaultConfig.multilineHeight + SkeletonDefaultConfig.multilineSpacing
         let layer = type.layer
         layer.anchorPoint = .zero
         layer.name = CALayer.skeletonSubLayersName
-        layer.frame = CGRect(x: 0.0, y: CGFloat(index) * spaceRequiredForEachLine, width: width, height: SkeletonDefaultConfig.multilineHeight)
+        layer.frame = CGRect(x: 0.0, y: CGFloat(index) * spaceRequiredForEachLine, width: width, height: height)
         return layer
     }
+    
+    
 }
 
 public typealias SkeletonLayerAnimation = (CALayer) -> CAAnimation
@@ -77,7 +79,7 @@ struct SkeletonLayer {
     
     func addMultilinesIfNeeded() {
         guard let multiLineView = holder as? ContainsMultilineText else { return }
-        maskLayer.addMultilinesLayers(lines: multiLineView.numLines, type: type, lastLineFillPercent: multiLineView.lastLineFillingPercent)
+        maskLayer.addMultilinesLayers(lines: multiLineView.numLines, type: type, lastLineFillPercent: multiLineView.lastLineFillingPercent, desiredLineHeight: multiLineView.desiredMultilineHeight)
     }
 }
 

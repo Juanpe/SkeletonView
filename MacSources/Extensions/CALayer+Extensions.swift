@@ -36,23 +36,23 @@ extension CALayer {
         return sublayers?.filter { $0.name == CALayer.skeletonSubLayersName } ?? [CALayer]()
     }
     
-    func addMultilinesLayers(lines: Int, type: SkeletonType, lastLineFillPercent: Int) {
-        let numberOfSublayers = calculateNumLines(maxLines: lines)
+    func addMultilinesLayers(lines: Int, type: SkeletonType, lastLineFillPercent: Int, desiredLineHeight: CGFloat) {
+        let numberOfSublayers = calculateNumLines(maxLines: lines, lineHeight: desiredLineHeight)
         for index in 0..<numberOfSublayers {
             var width = bounds.width
             
-            if index == numberOfSublayers-1 && numberOfSublayers != 1 {
+            if index == numberOfSublayers-1 {
                 width = width * CGFloat(lastLineFillPercent)/100;
             }
             
-            let layer = SkeletonLayerFactory().makeMultilineLayer(withType: type, for: index, width: width)
+            let layer = SkeletonLayerFactory().makeMultilineLayer(withType: type, for: index, width: width, height: desiredLineHeight)
             addSublayer(layer)
         }
     }
     
-    private func calculateNumLines(maxLines: Int) -> Int {
-        let spaceRequitedForEachLine = SkeletonDefaultConfig.multilineHeight + SkeletonDefaultConfig.multilineSpacing
-        var numberOfSublayers = Int(round(CGFloat(bounds.height)/CGFloat(spaceRequitedForEachLine)))
+    private func calculateNumLines(maxLines: Int, lineHeight: CGFloat) -> Int {
+        let spaceRequiredForEachLine = lineHeight + SkeletonDefaultConfig.multilineSpacing
+        var numberOfSublayers = Int(round(CGFloat(bounds.height)/CGFloat(spaceRequiredForEachLine)))
         if maxLines != 0,  maxLines <= numberOfSublayers { numberOfSublayers = maxLines }
         return numberOfSublayers
     }
