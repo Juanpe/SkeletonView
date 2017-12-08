@@ -159,7 +159,7 @@ If you want to show the skeleton in a ```UITableView```, you need to conform to 
 public protocol SkeletonTableViewDataSource: UITableViewDataSource {
     func numSections(in collectionSkeletonView: UITableView) -> Int
     func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int
-    func collectionSkeletonView(_ skeletonView: UITableView, cellIdenfierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier
 }
 ```
 As you can see, this protocol inherits from ```UITableViewDataSource```, so you can replace this protocol with the skeleton protocol.
@@ -179,12 +179,12 @@ func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection s
 
 There is only one method you need to implement to let Skeleton know the cell identifier. This method doesn't have default implementation:
  ``` swift
- func collectionSkeletonView(_ skeletonView: UITableView, cellIdenfierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier
+ func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier
  ```
 
 **Example**
  ``` swift
- func collectionSkeletonView(_ skeletonView: UITableView, cellIdenfierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+ func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
     return "CellIdentifier"
 }
  ```
