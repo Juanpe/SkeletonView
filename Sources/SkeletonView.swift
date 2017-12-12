@@ -101,7 +101,7 @@ extension UITableViewCell {
 
 extension UICollectionView {
     override var subviewsSkeletonables: [UIView] {
-        return visibleCells.filter { $0.isSkeletonable }
+        return subviews.filter { $0.isSkeletonable }
     }
 }
 

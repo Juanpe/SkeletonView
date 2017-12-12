@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MgF-g7-tsh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MgF-g7-tsh">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -342,10 +342,10 @@
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfg-bb-9lT">
-                                                    <rect key="frame" x="106" y="42" width="257" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfg-bb-9lT">
+                                                    <rect key="frame" x="106" y="28" width="257" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="21" id="q8g-l0-3N2"/>
+                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="71" id="q8g-l0-3N2"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -360,7 +360,7 @@
                                             <constraint firstItem="z1F-Nt-bfR" firstAttribute="top" secondItem="leC-hi-lPD" secondAttribute="top" constant="19" id="KtL-ut-9Ih"/>
                                             <constraint firstItem="z1F-Nt-bfR" firstAttribute="leading" secondItem="leC-hi-lPD" secondAttribute="leading" constant="12" id="ZgX-PS-cwG"/>
                                             <constraint firstAttribute="trailing" secondItem="hfg-bb-9lT" secondAttribute="trailing" constant="12" id="ome-JU-bmo"/>
-                                            <constraint firstItem="hfg-bb-9lT" firstAttribute="top" secondItem="leC-hi-lPD" secondAttribute="top" constant="42" id="q8f-7D-gnB"/>
+                                            <constraint firstItem="hfg-bb-9lT" firstAttribute="top" secondItem="leC-hi-lPD" secondAttribute="top" constant="28" id="q8f-7D-gnB"/>
                                             <constraint firstItem="hfg-bb-9lT" firstAttribute="leading" secondItem="z1F-Nt-bfR" secondAttribute="trailing" constant="12" id="xVn-bQ-PZs"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
