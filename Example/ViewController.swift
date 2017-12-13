@@ -58,6 +58,14 @@ class ViewController: UIViewController {
         showAlertPicker()
     }
     
+    @IBAction func startSkeleton(_ sender: Any) {
+        view.showSkeleton()
+    }
+    
+    @IBAction func stopSkeleton(_ sender: Any) {
+        view.hideSkeleton()
+    }
+    
     func refreshSkeleton() {
         self.view.hideSkeleton()
         if type == .gradient { showGradientSkeleton() }
