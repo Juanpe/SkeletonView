@@ -17,7 +17,6 @@ public protocol SkeletonTableViewDataSource: UITableViewDataSource {
 public extension SkeletonTableViewDataSource {
     
     func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(Int(ceil(skeletonView.frame.height/skeletonView.rowHeight)))
         return Int(ceil(skeletonView.frame.height/skeletonView.rowHeight))
     }
     
