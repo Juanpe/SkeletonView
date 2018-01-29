@@ -20,12 +20,12 @@ extension NSView {
     }
     
     var maxWidthEstimated: CGFloat {
-        let constraintsWidth = constraints.filter({ $0.firstAttribute == NSLayoutConstraint.Attribute.width })
+        let constraintsWidth = constraints.filter({ $0.firstAttribute == .width })
         return max(between: frame.size.width, andContantsOf: constraintsWidth)
     }
     
     var maxHeightEstimated: CGFloat {
-        let constraintsHeight = constraints.filter({ $0.firstAttribute == NSLayoutConstraint.Attribute.height })
+        let constraintsHeight = constraints.filter({ $0.firstAttribute == .height })
         return max(between: frame.size.height, andContantsOf: constraintsHeight)
     }
     

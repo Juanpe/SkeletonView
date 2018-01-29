@@ -49,26 +49,3 @@ extension NSColor {
     }
 }
 
-public extension NSColor {
-    static var greenSea     = NSColor(0x16a085)
-    static var turquoise    = NSColor(0x1abc9c)
-    static var emerald      = NSColor(0x2ecc71)
-    static var peterRiver   = NSColor(0x3498db)
-    static var amethyst     = NSColor(0x9b59b6)
-    static var wetAsphalt   = NSColor(0x34495e)
-    static var nephritis    = NSColor(0x27ae60)
-    static var belizeHole   = NSColor(0x2980b9)
-    static var wisteria     = NSColor(0x8e44ad)
-    static var midnightBlue = NSColor(0x2c3e50)
-    static var sunFlower    = NSColor(0xf1c40f)
-    static var carrot       = NSColor(0xe67e22)
-    static var alizarin     = NSColor(0xe74c3c)
-    static var clouds       = NSColor(0xecf0f1)
-    static var concrete     = NSColor(0x95a5a6)
-    static var flatOrange   = NSColor(0xf39c12)
-    static var pumpkin      = NSColor(0xd35400)
-    static var pomegranate  = NSColor(0xc0392b)
-    static var silver       = NSColor(0xbdc3c7)
-    static var asbestos     = NSColor(0x7f8c8d)
-}
-

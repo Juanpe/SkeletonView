@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		82EB0A6A201FB9010089B9B1 /* SkeletonColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EB0A68201FB86C0089B9B1 /* SkeletonColor.swift */; };
+		82EB0A6B201FB9560089B9B1 /* NSColor+Skeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FC9F511FD8800C0032C763 /* NSColor+Skeleton.swift */; };
 		82FC9F3A1FD87F9F0032C763 /* SkeletonAnimationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FC9F2E1FD87F3D0032C763 /* SkeletonAnimationBuilder.swift */; };
 		82FC9F3B1FD87F9F0032C763 /* SkeletonDefaultConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FC9F2F1FD87F3D0032C763 /* SkeletonDefaultConfig.swift */; };
 		82FC9F3C1FD87F9F0032C763 /* SkeletonGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FC9F311FD87F3D0032C763 /* SkeletonGradient.swift */; };
@@ -17,7 +19,6 @@
 		82FC9F4C1FD87FEA0032C763 /* PrepareForSkeletonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FC9F431FD87FE30032C763 /* PrepareForSkeletonProtocol.swift */; };
 		82FC9F4D1FD87FEA0032C763 /* RecursiveProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FC9F441FD87FE30032C763 /* RecursiveProtocol.swift */; };
 		82FC9F571FD880310032C763 /* CALayer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FC9F4F1FD8800C0032C763 /* CALayer+Extensions.swift */; };
-		82FC9F581FD880310032C763 /* NSColor+Skeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FC9F511FD8800C0032C763 /* NSColor+Skeleton.swift */; };
 		82FC9F591FD880310032C763 /* NSView+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FC9F521FD8800C0032C763 /* NSView+Frame.swift */; };
 		82FC9F5A1FD880310032C763 /* NSView+IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FC9F501FD8800C0032C763 /* NSView+IBInspectable.swift */; };
 		82FC9FBB1FD897960032C763 /* SkeletonViewMac.plist in Resources */ = {isa = PBXBuildFile; fileRef = 82FC9FBA1FD897960032C763 /* SkeletonViewMac.plist */; };
@@ -75,6 +76,7 @@
 /* Begin PBXFileReference section */
 		52D6D97C1BEFF229002C0205 /* SkeletonView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SkeletonView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82E4EA941FD87D3700F60FEC /* SkeletonViewMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SkeletonViewMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82EB0A68201FB86C0089B9B1 /* SkeletonColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkeletonColor.swift; sourceTree = "<group>"; };
 		82FC9F2A1FD87F3C0032C763 /* SkeletonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkeletonView.swift; sourceTree = "<group>"; };
 		82FC9F2C1FD87F3C0032C763 /* SkeletonLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkeletonLayer.swift; sourceTree = "<group>"; };
 		82FC9F2E1FD87F3D0032C763 /* SkeletonAnimationBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkeletonAnimationBuilder.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				82FC9F4E1FD87FF30032C763 /* Extensions */,
 				82FC9F411FD87FBD0032C763 /* Helpers */,
 				82FC9F2E1FD87F3D0032C763 /* SkeletonAnimationBuilder.swift */,
+				82EB0A68201FB86C0089B9B1 /* SkeletonColor.swift */,
 				82FC9F2F1FD87F3D0032C763 /* SkeletonDefaultConfig.swift */,
 				82FC9F311FD87F3D0032C763 /* SkeletonGradient.swift */,
 				82FC9F2C1FD87F3C0032C763 /* SkeletonLayer.swift */,
@@ -474,15 +477,16 @@
 				82FC9F3D1FD87F9F0032C763 /* SkeletonLayer.swift in Sources */,
 				82FC9F3E1FD87F9F0032C763 /* SkeletonView.swift in Sources */,
 				82FC9F3B1FD87F9F0032C763 /* SkeletonDefaultConfig.swift in Sources */,
-				82FC9F581FD880310032C763 /* NSColor+Skeleton.swift in Sources */,
 				82FC9F5A1FD880310032C763 /* NSView+IBInspectable.swift in Sources */,
 				82FC9F4B1FD87FEA0032C763 /* ContainsMultilineText.swift in Sources */,
 				82FC9F3A1FD87F9F0032C763 /* SkeletonAnimationBuilder.swift in Sources */,
+				82EB0A6A201FB9010089B9B1 /* SkeletonColor.swift in Sources */,
 				82FC9F3C1FD87F9F0032C763 /* SkeletonGradient.swift in Sources */,
 				82FC9F591FD880310032C763 /* NSView+Frame.swift in Sources */,
 				82FC9F571FD880310032C763 /* CALayer+Extensions.swift in Sources */,
 				82FC9F4A1FD87FEA0032C763 /* AssociationPolicy.swift in Sources */,
 				82FC9F4D1FD87FEA0032C763 /* RecursiveProtocol.swift in Sources */,
+				82EB0A6B201FB9560089B9B1 /* NSColor+Skeleton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -709,7 +713,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -735,7 +739,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

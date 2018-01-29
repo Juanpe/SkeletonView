@@ -10,7 +10,7 @@ import AppKit
 
 public enum SkeletonDefaultConfig {
     
-    public static let tintColor = NSColor.clouds
+    public static let tintColor = SkeletonColor.clouds
     
     public static let gradient = SkeletonGradient(baseColor: tintColor)
     
