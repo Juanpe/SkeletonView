@@ -190,6 +190,9 @@ There is only one method you need to implement to let Skeleton know the cell ide
 }
  ```
 
+> **IMPORTANT!**
+> If you are using resizable cells (`tableView.rowHeight = UITableViewAutomaticDimension` ), it's mandatory define the `estimatedRowHeight`.
+
 ### 📰 Multiline text
 
 
@@ -308,6 +311,7 @@ Coming soon...😅
 
 * [x] Set the filling percent of the last line in multiline elements
 * [x] Add more gradient animations
+* [x] Supported resizable cells
 * [ ] CollectionView compatible
 * [ ] Add recovery state
 * [ ] Custom collections compatible
