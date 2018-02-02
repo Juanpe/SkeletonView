@@ -8,4 +8,5 @@
 
 import UIKit
 
+// Work in progress
 protocol SkeletonUICollectionViewDataSource: UICollectionViewDataSource {}

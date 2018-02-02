@@ -14,11 +14,13 @@ class SkeletonCollectionDataSource: NSObject {
     
     weak var originalTableViewDataSource: SkeletonTableViewDataSource?
     weak var originalCollectionViewDataSource: UICollectionViewDataSource?
+    var rowHeight: CGFloat = 0.0
     
-    convenience init(tableViewDataSource: SkeletonTableViewDataSource? = nil, collectionViewDataSource: UICollectionViewDataSource? = nil) {
+    convenience init(tableViewDataSource: SkeletonTableViewDataSource? = nil, collectionViewDataSource: UICollectionViewDataSource? = nil, rowHeight: CGFloat = 0.0) {
         self.init()
         self.originalTableViewDataSource = tableViewDataSource
         self.originalCollectionViewDataSource = collectionViewDataSource
+        self.rowHeight = rowHeight
     }
 }
 
@@ -40,7 +42,7 @@ extension SkeletonCollectionDataSource: UITableViewDataSource {
     }
 }
 
-// MARK: - UICollectionViewDataSource
+// MARK: - [WIP] UICollectionViewDataSource
 extension SkeletonCollectionDataSource: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
