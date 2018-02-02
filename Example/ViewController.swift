@@ -13,7 +13,12 @@ let colors = [(UIColor.turquoise,"turquoise"), (UIColor.emerald,"emerald"), (UIC
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var tableview: UITableView! {
+        didSet {
+            tableview.rowHeight = UITableViewAutomaticDimension
+            tableview.estimatedRowHeight = 120.0
+        }
+    }
     
     @IBOutlet weak var avatarImage: UIImageView! {
         didSet {
