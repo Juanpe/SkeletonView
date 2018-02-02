@@ -1,6 +1,17 @@
 # Change Log
 All notable changes to this project will be documented in this file
 
+## [Resizable (1.0.5)](https://github.com/Juanpe/SkeletonView/releases/tag/1.0.5)
+
+### New
+- Now you can use table views with resizable cells.
+
+### Bug fixes
+- Solved issues.
+ [#17](https://github.com/Juanpe/SkeletonView/issues/17),
+ [#30](https://github.com/Juanpe/SkeletonView/issues/30),
+ [#34](https://github.com/Juanpe/SkeletonView/issues/34).
+
 ## [Filled or not (1.0.4)](https://github.com/Juanpe/SkeletonView/releases/tag/1.0.4)
 
 ### New
