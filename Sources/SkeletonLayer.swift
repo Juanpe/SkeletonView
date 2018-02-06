@@ -10,7 +10,7 @@ import UIKit
 
 class SkeletonLayerFactory {
     
-    func makeLayer(withType type: SkeletonType, usingColors colors: [UIColor], andHolder holder: UIView) -> SkeletonLayer {
+    func makeSkeletonLayer(withType type: SkeletonType, usingColors colors: [UIColor], andHolder holder: UIView) -> SkeletonLayer {
         return SkeletonLayer(withType: type, usingColors: colors, andSkeletonHolder: holder)
     }
     
