@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 public protocol SkeletonUICollectionViewDataSource: UICollectionViewDataSource {
     func numSections(in collectionSkeletonView: UICollectionView) -> Int
     func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int
@@ -17,9 +18,9 @@ public protocol SkeletonUICollectionViewDataSource: UICollectionViewDataSource {
 public extension SkeletonUICollectionViewDataSource {
     
     func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let flowlayout = skeletonView.collectionViewLayout as? UICollectionViewFlowLayout else { return 0 }
-        return Int(ceil(skeletonView.frame.height/flowlayout.itemSize.height))
+        return skeletonView.estimatedNumberOfRows
     }
     
     func numSections(in collectionSkeletonView: UICollectionView) -> Int { return 1 }
 }
+

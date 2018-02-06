@@ -41,6 +41,7 @@ Enjoy it! 🙂
   * [Custom animations](#-custom-animations)
   * [Hierarchy](#-hierarchy)
 * [Documentation](#-documentation)
+* [Next steps](#-next-steps)
 * [Contributed](#-contributed)
 * [Author](#-author)
 * [License](#-license)
@@ -189,6 +190,9 @@ There is only one method you need to implement to let Skeleton know the cell ide
 }
  ```
 
+> **IMPORTANT!**
+> If you are using resizable cells (`tableView.rowHeight = UITableViewAutomaticDimension` ), it's mandatory define the `estimatedRowHeight`.
+
 ### 📰 Multiline text
 
 
@@ -197,7 +201,7 @@ There is only one method you need to implement to let Skeleton know the cell ide
 When using elements with text, ```SkeletonView``` draws lines to simulate text.
 Besides, you can decide how many lines you want. If  ```numberOfLines``` is set to zero, it will calculate how many lines needed to populate the whole skeleton and it will be drawn. Instead, if you set it to one, two or any number greater than zero, it will only draw this number of lines.
 
-**NEW** Now, you can set the filling percent of the last line. **Default: 80%**
+**NEW** Now, you can set the filling percent of the last line. **Default: 70%**
 
 To modify the percent **using code**, set the property:
 ```swift
@@ -302,6 +306,17 @@ Because an image is worth a thousand words:
 
 ### 📚 Documentation
 Coming soon...😅
+
+## 📬 Next steps
+
+* [x] Set the filling percent of the last line in multiline elements
+* [x] Add more gradient animations
+* [x] Supported resizable cells
+* [ ] CollectionView compatible
+* [ ] Add recovery state
+* [ ] Custom collections compatible
+* [ ] Add animations when it shows/hides the skeletons
+* [ ] MacOS and WatchOS compatible
 
 ## ❤️ Contributed
 This is an open source project, so feel free to contribute. How?

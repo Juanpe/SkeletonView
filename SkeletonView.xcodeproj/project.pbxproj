@@ -21,6 +21,9 @@
 		F5307E3B1FB123C100EE67C5 /* ContainsMultilineText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5307E3A1FB123C100EE67C5 /* ContainsMultilineText.swift */; };
 		F5307E411FB3B84500EE67C5 /* SkeletonView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* SkeletonView.framework */; };
 		F5307E421FB3B84500EE67C5 /* SkeletonView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* SkeletonView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F54CF5E42024CEB000330B0D /* UIView+CollectionSkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54CF5E12024CEAF00330B0D /* UIView+CollectionSkeleton.swift */; };
+		F54CF5E52024CEB000330B0D /* UITableView+CollectionSkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54CF5E22024CEAF00330B0D /* UITableView+CollectionSkeleton.swift */; };
+		F54CF5E62024CEB000330B0D /* UICollectionView+CollectionSkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54CF5E32024CEB000330B0D /* UICollectionView+CollectionSkeleton.swift */; };
 		F56B94461FAE20AF0095662F /* PrepareForSkeletonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56B94451FAE20AF0095662F /* PrepareForSkeletonProtocol.swift */; };
 		F5F622411FAC6E31007C062A /* UIColor+Skeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F622401FAC6E31007C062A /* UIColor+Skeleton.swift */; };
 		F5F622431FAC81FD007C062A /* CALayer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F622421FAC81FD007C062A /* CALayer+Extensions.swift */; };
@@ -76,6 +79,9 @@
 		F5307E361FB1076E00EE67C5 /* SkeletonUITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonUITableViewDataSource.swift; sourceTree = "<group>"; };
 		F5307E381FB1078E00EE67C5 /* SkeletonUICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonUICollectionViewDataSource.swift; sourceTree = "<group>"; };
 		F5307E3A1FB123C100EE67C5 /* ContainsMultilineText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainsMultilineText.swift; sourceTree = "<group>"; };
+		F54CF5E12024CEAF00330B0D /* UIView+CollectionSkeleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+CollectionSkeleton.swift"; sourceTree = "<group>"; };
+		F54CF5E22024CEAF00330B0D /* UITableView+CollectionSkeleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+CollectionSkeleton.swift"; sourceTree = "<group>"; };
+		F54CF5E32024CEB000330B0D /* UICollectionView+CollectionSkeleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+CollectionSkeleton.swift"; sourceTree = "<group>"; };
 		F56B94451FAE20AF0095662F /* PrepareForSkeletonProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareForSkeletonProtocol.swift; sourceTree = "<group>"; };
 		F5F622401FAC6E31007C062A /* UIColor+Skeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Skeleton.swift"; sourceTree = "<group>"; };
 		F5F622421FAC81FD007C062A /* CALayer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extensions.swift"; sourceTree = "<group>"; };
@@ -172,6 +178,9 @@
 				F5F899EA1FAB9DA3002E8FDA /* SkeletonCollectionDataSource.swift */,
 				F5307E381FB1078E00EE67C5 /* SkeletonUICollectionViewDataSource.swift */,
 				F5307E361FB1076E00EE67C5 /* SkeletonUITableViewDataSource.swift */,
+				F54CF5E32024CEB000330B0D /* UICollectionView+CollectionSkeleton.swift */,
+				F54CF5E22024CEAF00330B0D /* UITableView+CollectionSkeleton.swift */,
+				F54CF5E12024CEAF00330B0D /* UIView+CollectionSkeleton.swift */,
 			);
 			path = Collections;
 			sourceTree = "<group>";
@@ -346,9 +355,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5F899D01FAA6A4D002E8FDA /* UIView+IBInspectable.swift in Sources */,
+				F54CF5E42024CEB000330B0D /* UIView+CollectionSkeleton.swift in Sources */,
 				F5307E371FB1076E00EE67C5 /* SkeletonUITableViewDataSource.swift in Sources */,
 				8933C7851EB5B820000D00A4 /* SkeletonView.swift in Sources */,
 				F5307E301FB0EC9D00EE67C5 /* SkeletonDefaultConfig.swift in Sources */,
+				F54CF5E52024CEB000330B0D /* UITableView+CollectionSkeleton.swift in Sources */,
 				F5307E321FB0F42F00EE67C5 /* RecursiveProtocol.swift in Sources */,
 				F5F622431FAC81FD007C062A /* CALayer+Extensions.swift in Sources */,
 				F5F899ED1FAB9F04002E8FDA /* CollectionSkeletonProtocol.swift in Sources */,
@@ -356,6 +367,7 @@
 				F5F899EB1FAB9DA3002E8FDA /* SkeletonCollectionDataSource.swift in Sources */,
 				F5F622411FAC6E31007C062A /* UIColor+Skeleton.swift in Sources */,
 				F5F899D21FAB9630002E8FDA /* AssociationPolicy.swift in Sources */,
+				F54CF5E62024CEB000330B0D /* UICollectionView+CollectionSkeleton.swift in Sources */,
 				F56B94461FAE20AF0095662F /* PrepareForSkeletonProtocol.swift in Sources */,
 				F5307E391FB1078E00EE67C5 /* SkeletonUICollectionViewDataSource.swift in Sources */,
 				F5307E3B1FB123C100EE67C5 /* ContainsMultilineText.swift in Sources */,
