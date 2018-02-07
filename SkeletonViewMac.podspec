@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "SkeletonView"
+  s.name         = "SkeletonViewMac"
   s.version      = "1.0.5"
   s.summary      = "An elegant way to show users that something is happening and also prepare them to which contents he is waiting"
   s.description  = <<-DESC
@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author             = { "Juanpe Catalán" => "juanpecm@gmail.com" }
   s.social_media_url   = "https://twitter.com/JuanpeCatalan"
-  s.ios.deployment_target = "9.0"
+  s.osx.deployment_target = "10.11"
   s.source       = { :git => "https://github.com/Juanpe/SkeletonView.git", :tag => s.version.to_s }
-  s.source_files  = "Sources/**/*"
+  s.source_files  = "MacSources/**/*"
 end
