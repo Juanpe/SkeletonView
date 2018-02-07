@@ -30,7 +30,10 @@ public extension UIView {
         removeDummyDataSourceIfNeeded(reloadAfter: reload)
         isUserInteractionEnabled = true
         recursiveSearch(inArray: subviewsSkeletonables,
-                        leafBlock: { removeSkeletonLayer() },
+                        leafBlock: {
+                            (self as? PrepareForSkeleton)?.recoverViewState()
+                            removeSkeletonLayer()
+                        },
                         recursiveBlock: {
                             $0.hideSkeleton(reloadDataAfter: reload)
                         })
