@@ -1,6 +1,15 @@
 # Change Log
 All notable changes to this project will be documented in this file
 
+## [ (1.1)](https://github.com/Juanpe/SkeletonView/releases/tag/1.1)
+
+### New
+- Now ```SkeletonView```support **UICollectionViews**! 🎉.  (thanks @Renatdz)
+
+### Bug fixes
+- Solved issue #39. Gradient animation did not work when app becomes active.
+
+
 ## [Resizable (1.0.5)](https://github.com/Juanpe/SkeletonView/releases/tag/1.0.5)
 
 ### New
