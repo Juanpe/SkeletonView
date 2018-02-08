@@ -60,7 +60,7 @@ Enjoy it! 🙂
 ### 📋 Supported OS & SDK Versions
 
 * iOS 9.0+
-* Swift 4 (Swift 3 compatible)
+* Swift 4
 
 ### 🔮 Example
 
@@ -152,7 +152,9 @@ avatarImageView.isSkeletonable = true
 
 ### 🌿 Collections
 
- Currently, ```SkeletonView``` only is compatible with ```UITableView```. We are working hard to support ```UICollectionView``` too 💪🏼
+ Now, ```SkeletonView``` is compatible with ```UITableView``` and ```UICollectionView```.
+
+###### UITableView
 
 If you want to show the skeleton in a ```UITableView```, you need to conform to ```SkeletonTableViewDataSource``` protocol.
 
@@ -192,6 +194,20 @@ There is only one method you need to implement to let Skeleton know the cell ide
 
 > **IMPORTANT!**
 > If you are using resizable cells (`tableView.rowHeight = UITableViewAutomaticDimension` ), it's mandatory define the `estimatedRowHeight`.
+
+###### UICollectionView
+
+For ```UICollectionView```, you need to conform to ```SkeletonCollectionViewDataSource``` protocol.
+
+``` swift
+public protocol SkeletonCollectionViewDataSource: UICollectionViewDataSource {
+    func numSections(in collectionSkeletonView: UICollectionView) -> Int
+    func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> ReusableCellIdentifier
+}
+```
+
+The rest of the process is the same as ```UITableView```
 
 ### 📰 Multiline text
 
@@ -312,7 +328,7 @@ Coming soon...😅
 * [x] Set the filling percent of the last line in multiline elements
 * [x] Add more gradient animations
 * [x] Supported resizable cells
-* [ ] CollectionView compatible
+* [x] CollectionView compatible
 * [ ] Add recovery state
 * [ ] Custom collections compatible
 * [ ] Add animations when it shows/hides the skeletons
