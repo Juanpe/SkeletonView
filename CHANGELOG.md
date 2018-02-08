@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file
 ## [Needed(1.1)(WIP)](https://github.com/Juanpe/SkeletonView/releases/tag/1.1)
 
 ### New
-- Now ```SkeletonView```support **UICollectionViews**! 🎉.  (thanks @Renatdz)
+- Now ```SkeletonView```supports **UICollectionViews**! 🎉.  (thanks @Renatdz)
 
 ### Bug fixes
 - Solved issue #39. Gradient animation did not work when app becomes active.
