@@ -74,12 +74,12 @@ public extension CALayer {
     
     var sliding: CAAnimation {
         let startPointAnim = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.startPoint))
-        startPointAnim.fromValue = NSValue(cgPoint:CGPoint(x: -1, y: 0.5))
-        startPointAnim.toValue = NSValue(cgPoint:CGPoint(x:1, y: 0.5))
+        startPointAnim.fromValue = CGPoint(x: -1, y: 0.5)
+        startPointAnim.toValue = CGPoint(x:1, y: 0.5)
         
         let endPointAnim = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.endPoint))
-        endPointAnim.fromValue = NSValue(cgPoint:CGPoint(x: 0, y: 0.5))
-        endPointAnim.toValue = NSValue(cgPoint:CGPoint(x:2, y: 0.5))
+        endPointAnim.fromValue = CGPoint(x: 0, y: 0.5)
+        endPointAnim.toValue = CGPoint(x:2, y: 0.5)
         
         let animGroup = CAAnimationGroup()
         animGroup.animations = [startPointAnim, endPointAnim]
