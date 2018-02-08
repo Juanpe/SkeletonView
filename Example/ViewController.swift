@@ -131,7 +131,7 @@ extension ViewController: SkeletonTableViewDataSource {
         return 9
     }
     
-    func collectionSkeletonView(_ skeletonView: UITableView, cellIdenfierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
         return "CellIdentifier"
     }
     
