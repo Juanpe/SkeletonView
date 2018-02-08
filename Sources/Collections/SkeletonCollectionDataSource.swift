@@ -13,10 +13,10 @@ public typealias ReusableCellIdentifier = String
 class SkeletonCollectionDataSource: NSObject {
     
     weak var originalTableViewDataSource: SkeletonTableViewDataSource?
-    weak var originalCollectionViewDataSource: UICollectionViewDataSource?
+    weak var originalCollectionViewDataSource: SkeletonUICollectionViewDataSource?
     var rowHeight: CGFloat = 0.0
     
-    convenience init(tableViewDataSource: SkeletonTableViewDataSource? = nil, collectionViewDataSource: UICollectionViewDataSource? = nil, rowHeight: CGFloat = 0.0) {
+    convenience init(tableViewDataSource: SkeletonTableViewDataSource? = nil, collectionViewDataSource: SkeletonUICollectionViewDataSource? = nil, rowHeight: CGFloat = 0.0) {
         self.init()
         self.originalTableViewDataSource = tableViewDataSource
         self.originalCollectionViewDataSource = collectionViewDataSource
@@ -40,20 +40,24 @@ extension SkeletonCollectionDataSource: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         return cell
     }
+    
 }
 
-// MARK: - [WIP] UICollectionViewDataSource
+// MARK: - UICollectionViewDataSource
 extension SkeletonCollectionDataSource: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return originalCollectionViewDataSource?.numSections(in: collectionView) ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return originalCollectionViewDataSource?.collectionSkeletonView(collectionView, numberOfItemsInSection: section) ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cellIdentifier = originalCollectionViewDataSource?.collectionSkeletonView(collectionView, cellIdenfierForItemAt: indexPath) ?? ""
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath)
+        return cell
     }
+    
 }

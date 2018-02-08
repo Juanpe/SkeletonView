@@ -99,6 +99,18 @@ extension UITableViewCell {
     }
 }
 
+extension UICollectionView {
+    override var subviewsSkeletonables: [UIView] {
+        return subviews.filter { $0.isSkeletonable }
+    }
+}
+
+extension UICollectionViewCell {
+    override var subviewsSkeletonables: [UIView] {
+        return contentView.subviews.filter { $0.isSkeletonable }
+    }
+}
+
 extension UIStackView {
     override var subviewsSkeletonables: [UIView] {
         return arrangedSubviews.filter { $0.isSkeletonable }

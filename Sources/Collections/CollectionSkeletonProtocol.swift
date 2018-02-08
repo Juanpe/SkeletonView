@@ -28,5 +28,5 @@ extension CollectionSkeleton where Self: UIScrollView {
     func removeDummyDataSource(reloadAfter: Bool) {}
     func disableScrolling() { isScrollEnabled = false }
     func enableScrolling() { isScrollEnabled = true }
+    
 }
-

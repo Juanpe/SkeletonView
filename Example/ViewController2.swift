@@ -1,28 +1,23 @@
 //
-//  ViewController.swift
-//  SkeletonViewExample
+//  ViewController2.swift
+//  SkeletonView-iOS
 //
-//  Created by Juanpe Catalán on 02/11/2017.
+//  Created by Renato Mendes on 28/11/2017.
 //  Copyright © 2017 SkeletonView. All rights reserved.
 //
 
 import UIKit
 import SkeletonView
 
-class ViewController: UIViewController {
+class ViewController2: UIViewController {
     
-    @IBOutlet weak var tableview: UITableView! {
-        didSet {
-            tableview.rowHeight = UITableViewAutomaticDimension
-            tableview.estimatedRowHeight = 120.0
-        }
-    }
+    @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var avatarImage: UIImageView! {
         didSet {
             avatarImage.layer.cornerRadius = avatarImage.frame.width/2
             avatarImage.layer.masksToBounds = true
-        } 
+        }
     }
     
     @IBOutlet weak var colorSelectedView: UIView! {
@@ -32,7 +27,7 @@ class ViewController: UIViewController {
             colorSelectedView.backgroundColor = SkeletonDefaultConfig.tintColor
         }
     }
-
+    
     @IBOutlet weak var switchAnimated: UISwitch!
     @IBOutlet weak var skeletonTypeSelector: UISegmentedControl!
     
@@ -44,7 +39,7 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         view.showAnimatedSkeleton()
     }
-
+    
     @IBAction func changeAnimated(_ sender: Any) {
         if switchAnimated.isOn {
             view.startSkeletonAnimation()
@@ -85,7 +80,7 @@ class ViewController: UIViewController {
     }
     
     func showAlertPicker() {
-       
+        
         let alertView = UIAlertController(title: "Select color", message: "\n\n\n\n\n\n", preferredStyle: .alert)
         
         let pickerView = UIPickerView(frame: CGRect(x: 0, y: 50, width: 260, height: 115))
@@ -110,14 +105,14 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+extension ViewController2: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-       return colors.count
+        return colors.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -125,20 +120,22 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
 }
 
-extension ViewController: SkeletonTableViewDataSource {
+extension ViewController2: SkeletonUICollectionViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 9
     }
     
-    func collectionSkeletonView(_ skeletonView: UITableView, cellIdenfierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+    func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdenfierForItemAt indexPath: IndexPath) -> ReusableCellIdentifier {
         return "CellIdentifier"
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CellIdentifier", for: indexPath) as! Cell
-        cell.label1.text = "cell => \(indexPath.row)"
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellIdentifier", for: indexPath) as! CollectionCell
+        cell.label1.text = "cell => \(indexPath.item)"
         return cell
     }
+    
 }
+
 
