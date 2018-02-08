@@ -13,6 +13,7 @@ private enum AssociatedKeys {
     static var status = "status"
     static var skeletonLayer = "layer"
     static var flowDelegate = "flowDelegate"
+    static var isSkeletonAnimated = "isSkeletonAnimated"
 }
 
 public extension UIView {
@@ -48,6 +49,11 @@ extension UIView {
     var status: Status! {
         get { return objc_getAssociatedObject(self, &AssociatedKeys.status) as? Status ?? .off }
         set { objc_setAssociatedObject(self, &AssociatedKeys.status, newValue, AssociationPolicy.retain.objc) }
+    }
+    
+    var skeletonIsAnimated: Bool! {
+        get { return objc_getAssociatedObject(self, &AssociatedKeys.isSkeletonAnimated) as? Bool ?? false }
+        set { objc_setAssociatedObject(self, &AssociatedKeys.isSkeletonAnimated, newValue, AssociationPolicy.retain.objc) }
     }
 
     fileprivate var skeletonable: Bool! {

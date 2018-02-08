@@ -10,26 +10,29 @@ import UIKit
 
 extension UIView {
     
-    enum Notifications {
-        static let becomeActive = NSNotification.Name.UIApplicationDidBecomeActive
-        static let enterForeground = NSNotification.Name.UIApplicationDidEnterBackground
+    enum Constants {
+        static let becomeActiveNotification = NSNotification.Name.UIApplicationDidBecomeActive
+        static let enterForegroundNotification = NSNotification.Name.UIApplicationDidEnterBackground
+        static let needAnimatedSkeletonKey = "needAnimateSkeleton"
     }
     
     func addAppNotificationsObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(appDidBecomeActive), name: Notifications.becomeActive, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(appDidEnterBackground), name: Notifications.enterForeground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(appDidBecomeActive), name: Constants.becomeActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(appDidEnterBackground), name: Constants.enterForegroundNotification, object: nil)
     }
     
     func removeAppNoticationsObserver() {
-        NotificationCenter.default.removeObserver(self, name: Notifications.becomeActive, object: nil)
-        NotificationCenter.default.removeObserver(self, name: Notifications.enterForeground, object: nil)
+        NotificationCenter.default.removeObserver(self, name: Constants.becomeActiveNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: Constants.enterForegroundNotification, object: nil)
     }
     
     @objc func appDidBecomeActive() {
-        
+        if UserDefaults.standard.bool(forKey: Constants.needAnimatedSkeletonKey) {
+            startSkeletonAnimation()
+        }
     }
     
     @objc func appDidEnterBackground() {
-        
+        UserDefaults.standard.set((isSkeletonActive && skeletonIsAnimated), forKey: Constants.needAnimatedSkeletonKey)
     }
 }

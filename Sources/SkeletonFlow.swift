@@ -16,11 +16,11 @@ protocol SkeletonFlowDelegate {
 class SkeletonFlowHandler: SkeletonFlowDelegate {
     
     func willBeginShowingSkeletons(withRootView rootView: UIView) {
-        // Add observer to application status
+        rootView.addAppNotificationsObservers()
     }
     
     func willBeginHidingSkeletons(withRootView rootView: UIView) {
-        // remove observers
+        rootView.removeAppNoticationsObserver()
         rootView.flowDelegate = nil
     }
 }
