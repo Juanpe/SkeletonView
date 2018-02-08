@@ -1,7 +1,7 @@
 # Change Log
 All notable changes to this project will be documented in this file
 
-## [Needed(1.1)(WIP)](https://github.com/Juanpe/SkeletonView/releases/tag/1.1)
+## [Needed (1.1)](https://github.com/Juanpe/SkeletonView/releases/tag/1.1)
 
 ### New
 - Now ```SkeletonView```supports **UICollectionViews**! 🎉.  (thanks @Renatdz)
