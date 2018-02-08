@@ -12,6 +12,7 @@ private enum AssociatedKeys {
     static var skeletonable = "skeletonable"
     static var status = "status"
     static var skeletonLayer = "layer"
+    static var flowDelegate = "flowDelegate"
 }
 
 public extension UIView {
@@ -32,6 +33,11 @@ extension UIView {
     enum Status {
         case on
         case off
+    }
+    
+    var flowDelegate: SkeletonFlowDelegate? {
+        get { return objc_getAssociatedObject(self, &AssociatedKeys.flowDelegate) as? SkeletonFlowDelegate }
+        set { objc_setAssociatedObject(self, &AssociatedKeys.flowDelegate, newValue, AssociationPolicy.retain.objc) }
     }
     
     var skeletonLayer: SkeletonLayer? {

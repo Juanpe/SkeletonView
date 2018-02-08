@@ -120,13 +120,13 @@ extension ViewController2: UIPickerViewDelegate, UIPickerViewDataSource {
     }
 }
 
-extension ViewController2: SkeletonUICollectionViewDataSource {
+extension ViewController2: SkeletonCollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 9
     }
     
-    func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdenfierForItemAt indexPath: IndexPath) -> ReusableCellIdentifier {
+    func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> ReusableCellIdentifier {
         return "CellIdentifier"
     }
     

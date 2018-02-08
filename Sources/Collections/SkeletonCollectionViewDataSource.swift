@@ -9,13 +9,13 @@
 import UIKit
 
 
-public protocol SkeletonUICollectionViewDataSource: UICollectionViewDataSource {
+public protocol SkeletonCollectionViewDataSource: UICollectionViewDataSource {
     func numSections(in collectionSkeletonView: UICollectionView) -> Int
     func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int
-    func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdenfierForItemAt indexPath: IndexPath) -> ReusableCellIdentifier
+    func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> ReusableCellIdentifier
 }
 
-public extension SkeletonUICollectionViewDataSource {
+public extension SkeletonCollectionViewDataSource {
     
     func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return skeletonView.estimatedNumberOfRows

@@ -24,7 +24,7 @@ extension UICollectionView: CollectionSkeleton {
     }
     
     func addDummyDataSource() {
-        guard let originalDataSource = self.dataSource as? SkeletonUICollectionViewDataSource,
+        guard let originalDataSource = self.dataSource as? SkeletonCollectionViewDataSource,
             !(originalDataSource is SkeletonCollectionDataSource)
             else { return }
         
