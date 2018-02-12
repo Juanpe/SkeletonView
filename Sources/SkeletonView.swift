@@ -32,7 +32,6 @@ public extension UIView {
     }
     
     func startSkeletonAnimation(_ anim: SkeletonLayerAnimation? = nil) {
-        skeletonIsAnimated = true
         recursiveSearch(inArray: subviewsSkeletonables,
                         leafBlock:  startSkeletonLayerAnimationBlock(anim)) {
                             $0.startSkeletonAnimation(anim)
@@ -51,6 +50,7 @@ public extension UIView {
 extension UIView {
     
     func showSkeleton(withType type: SkeletonType = .solid, usingColors colors: [UIColor], animated: Bool = false, animation: SkeletonLayerAnimation? = nil) {
+        skeletonIsAnimated = animated
         flowDelegate = SkeletonFlowHandler()
         flowDelegate?.willBeginShowingSkeletons(withRootView: self)
         recursiveShowSkeleton(withType: type, usingColors: colors, animated: animated, animation: animation)
