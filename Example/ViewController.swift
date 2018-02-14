@@ -40,6 +40,13 @@ class ViewController: UIViewController {
         return skeletonTypeSelector.selectedSegmentIndex == 0 ? .solid : .gradient
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableview.isSkeletonable = true
+        tableview.rowHeight = UITableViewAutomaticDimension
+        tableview.estimatedRowHeight = 200
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         view.showAnimatedSkeleton()
