@@ -32,6 +32,7 @@ public extension UIView {
     }
     
     func startSkeletonAnimation(_ anim: SkeletonLayerAnimation? = nil) {
+        skeletonIsAnimated = true
         recursiveSearch(inArray: subviewsSkeletonables,
                         leafBlock:  startSkeletonLayerAnimationBlock(anim)) {
                             $0.startSkeletonAnimation(anim)
