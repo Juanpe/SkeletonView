@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file
 
+## [Hotfix (1.1.1)](https://github.com/Juanpe/SkeletonView/releases/tag/1.1.1)
+
+### Bug fixes
+- Now yes, solved issue #39
+
 ## [Needed (1.1)](https://github.com/Juanpe/SkeletonView/releases/tag/1.1)
 
 ### New
