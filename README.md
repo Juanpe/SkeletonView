@@ -63,6 +63,7 @@ Enjoy it! 🙂
 ### 📋 Supported OS & SDK Versions
 
 * iOS 9.0+
+* tvOS 9.0+
 * Swift 4
 
 ### 🔮 Example
