@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "52D6D97B1BEFF229002C0205"
+               BlueprintIdentifier = "17DD0DFF207FB27400C56334"
                BuildableName = "SkeletonView.framework"
-               BlueprintName = "SkeletonView-iOS"
+               BlueprintName = "SkeletonView-tvOS"
                ReferencedContainer = "container:SkeletonView.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "52D6D97B1BEFF229002C0205"
+            BlueprintIdentifier = "17DD0DFF207FB27400C56334"
             BuildableName = "SkeletonView.framework"
-            BlueprintName = "SkeletonView-iOS"
+            BlueprintName = "SkeletonView-tvOS"
             ReferencedContainer = "container:SkeletonView.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "52D6D97B1BEFF229002C0205"
+            BlueprintIdentifier = "17DD0DFF207FB27400C56334"
             BuildableName = "SkeletonView.framework"
-            BlueprintName = "SkeletonView-iOS"
+            BlueprintName = "SkeletonView-tvOS"
             ReferencedContainer = "container:SkeletonView.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
