@@ -1,5 +1,5 @@
 language: objective-c
-osx_image: xcode9
+osx_image: xcode9.3
 script:
   - xcodebuild -project SkeletonView.xcodeproj -target SkeletonView-iOS -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 7,OS=11'
   - xcodebuild -project SkeletonView.xcodeproj -target SkeletonView-tvOS -sdk appletvsimulator -destination 'platform=tvOS Simulator,name=Apple TV,OS=11'
