@@ -16,10 +16,18 @@ extension UICollectionView: CollectionSkeleton {
     }
     
     var skeletonDataSource: SkeletonCollectionDataSource? {
-        get { return objc_getAssociatedObject(self, &DataSourceAssociatedKeys.dummyDataSource) as? SkeletonCollectionDataSource }
+        get { return objc_getAssociatedObject(self, &CollectionAssociatedKeys.dummyDataSource) as? SkeletonCollectionDataSource }
         set {
-            objc_setAssociatedObject(self, &DataSourceAssociatedKeys.dummyDataSource, newValue, AssociationPolicy.retain.objc)
+            objc_setAssociatedObject(self, &CollectionAssociatedKeys.dummyDataSource, newValue, AssociationPolicy.retain.objc)
             self.dataSource = newValue
+        }
+    }
+    
+    var skeletonDelegate: SkeletonCollectionDelegate? {
+        get { return objc_getAssociatedObject(self, &CollectionAssociatedKeys.dummyDelegate) as? SkeletonCollectionDelegate }
+        set {
+            objc_setAssociatedObject(self, &CollectionAssociatedKeys.dummyDelegate, newValue, AssociationPolicy.retain.objc)
+            self.delegate = newValue
         }
     }
     
@@ -39,5 +47,8 @@ extension UICollectionView: CollectionSkeleton {
         self.dataSource = dataSource.originalCollectionViewDataSource
         if reloadAfter { self.reloadData() }
     }
-    
+}
+
+extension UICollectionView: GenericCollectionView {
+    var scrollView: UIScrollView { return self }
 }

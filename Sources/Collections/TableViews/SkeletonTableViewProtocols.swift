@@ -1,5 +1,5 @@
 //
-//  SkeletonUITableViewDataSource.swift
+//  SkeletonTableViewProtocols.swift
 //  SkeletonView-iOS
 //
 //  Created by Juanpe Catalán on 06/11/2017.
@@ -21,4 +21,7 @@ public extension SkeletonTableViewDataSource {
     }
     
     func numSections(in collectionSkeletonView: UITableView) -> Int { return 1 }
+}
+
+public protocol SkeletonTableViewDelegate: UITableViewDelegate {
 }

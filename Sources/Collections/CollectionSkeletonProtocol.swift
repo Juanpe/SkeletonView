@@ -8,12 +8,14 @@
 
 import UIKit
 
-enum DataSourceAssociatedKeys {
+enum CollectionAssociatedKeys {
     static var dummyDataSource = "dummyDataSource"
+    static var dummyDelegate = "dummyDelegate"
 }
 
 protocol CollectionSkeleton {
     var skeletonDataSource: SkeletonCollectionDataSource? { get set }
+    var skeletonDelegate: SkeletonCollectionDelegate? { get set }
     var estimatedNumberOfRows: Int { get }
     
     func addDummyDataSource()

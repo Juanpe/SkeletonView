@@ -40,7 +40,6 @@ extension SkeletonCollectionDataSource: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         return cell
     }
-    
 }
 
 // MARK: - UICollectionViewDataSource
@@ -59,5 +58,4 @@ extension SkeletonCollectionDataSource: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath)
         return cell
     }
-    
 }
