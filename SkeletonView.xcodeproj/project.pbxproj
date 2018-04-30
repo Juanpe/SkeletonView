@@ -35,6 +35,9 @@
 		F51DF871206E91B300D23301 /* SkeletonReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51DF870206E91B300D23301 /* SkeletonReusableCell.swift */; };
 		F51DF873206E91FB00D23301 /* GenericCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51DF872206E91FB00D23301 /* GenericCollectionView.swift */; };
 		F51DF879206E9F5500D23301 /* SkeletonCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51DF878206E9F5500D23301 /* SkeletonCollectionDelegate.swift */; };
+		F51ED28320973CBB008B2434 /* SkeletonCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51DF878206E9F5500D23301 /* SkeletonCollectionDelegate.swift */; };
+		F51ED28420973CC6008B2434 /* GenericCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51DF872206E91FB00D23301 /* GenericCollectionView.swift */; };
+		F51ED28520973CC9008B2434 /* SkeletonReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51DF870206E91B300D23301 /* SkeletonReusableCell.swift */; };
 		F5307E2C1FAF6BC900EE67C5 /* SkeletonGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5307E2B1FAF6BC900EE67C5 /* SkeletonGradient.swift */; };
 		F5307E2E1FB0E5E400EE67C5 /* UIView+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5307E2D1FB0E5E400EE67C5 /* UIView+Frame.swift */; };
 		F5307E301FB0EC9D00EE67C5 /* SkeletonDefaultConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5307E2F1FB0EC9D00EE67C5 /* SkeletonDefaultConfig.swift */; };
@@ -459,11 +462,13 @@
 			files = (
 				17DD0E1F207FB32100C56334 /* RecursiveProtocol.swift in Sources */,
 				17DD0E1E207FB32100C56334 /* PrepareForSkeletonProtocol.swift in Sources */,
+				F51ED28520973CC9008B2434 /* SkeletonReusableCell.swift in Sources */,
 				17DD0E17207FB28F00C56334 /* SkeletonLayer.swift in Sources */,
 				17DD0E08207FB28900C56334 /* CollectionSkeletonProtocol.swift in Sources */,
 				17DD0E0B207FB28900C56334 /* SkeletonTableViewProtocols.swift in Sources */,
 				17DD0E0D207FB28900C56334 /* UITableView+CollectionSkeleton.swift in Sources */,
 				17DD0E0E207FB28900C56334 /* UIView+CollectionSkeleton.swift in Sources */,
+				F51ED28320973CBB008B2434 /* SkeletonCollectionDelegate.swift in Sources */,
 				17DD0E18207FB28F00C56334 /* SkeletonView.swift in Sources */,
 				17DD0E19207FB28F00C56334 /* SkeletonFlow.swift in Sources */,
 				17DD0E09207FB28900C56334 /* SkeletonCollectionDataSource.swift in Sources */,
@@ -474,6 +479,7 @@
 				17DD0E11207FB28C00C56334 /* UIView+Frame.swift in Sources */,
 				17DD0E15207FB28F00C56334 /* SkeletonDefaultConfig.swift in Sources */,
 				17DD0E10207FB28C00C56334 /* UIColor+Skeleton.swift in Sources */,
+				F51ED28420973CC6008B2434 /* GenericCollectionView.swift in Sources */,
 				17DD0E0A207FB28900C56334 /* SkeletonCollectionViewProtocols.swift in Sources */,
 				17DD0E1C207FB32100C56334 /* AssociationPolicy.swift in Sources */,
 				17DD0E1D207FB32100C56334 /* ContainsMultilineText.swift in Sources */,
