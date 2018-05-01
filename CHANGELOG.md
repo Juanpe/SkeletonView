@@ -1,6 +1,15 @@
 # Change Log
 All notable changes to this project will be documented in this file
 
+## [On TV (1.2)](https://github.com/Juanpe/SkeletonView/releases/tag/1.2)
+
+### New
+- Now ```SkeletonView``` is **tvOS** compatible! 🎉.  (thanks @mihai8804858)
+
+### Bug fixes
+- Solved issue [#46](https://github.com/Juanpe/SkeletonView/issues/46). It crashes the application when tap on it, didSelect called and crash.
+
+
 ## [Hotfix (1.1.1)](https://github.com/Juanpe/SkeletonView/releases/tag/1.1.1)
 
 ### Bug fixes
