@@ -49,6 +49,7 @@ Enjoy it! 🙂
 * [Documentation](#-documentation)
 * [Next steps](#-next-steps)
 * [Contributed](#-contributed)
+* [Mentions](#-mentions)
 * [Author](#-author)
 * [License](#-license)
 
@@ -351,6 +352,13 @@ This is an open source project, so feel free to contribute. How?
 See [all contributors](https://github.com/Juanpe/SkeletonView/graphs/contributors)
 
 ###### Project generated with [SwiftPlate](https://github.com/JohnSundell/SwiftPlate)
+
+## 📢 Mentions
+
+- [iOS Dev Weekly 327](https://iosdevweekly.com/issues/327#start)
+- [Hacking with Swift Articles](https://www.hackingwithswift.com/articles/40/skeletonview-makes-loading-content-beautiful)
+- [Top 10 Swift Articles November](https://medium.mybridge.co/swift-top-10-articles-for-the-past-month-v-nov-2017-dfed7861cd65)
+- [30 Amazing iOS Swift Libraries (v2018)](https://medium.mybridge.co/30-amazing-ios-swift-libraries-for-the-past-year-v-2018-7cf15027eee9)
 
 ## 👨🏻‍💻 Author
 [1.1]: http://i.imgur.com/tXSoThF.png
