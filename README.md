@@ -355,10 +355,16 @@ See [all contributors](https://github.com/Juanpe/SkeletonView/graphs/contributor
 
 ## 📢 Mentions
 
-- [iOS Dev Weekly 327](https://iosdevweekly.com/issues/327#start)
+- [iOS Dev Weekly #327](https://iosdevweekly.com/issues/327#start)
 - [Hacking with Swift Articles](https://www.hackingwithswift.com/articles/40/skeletonview-makes-loading-content-beautiful)
 - [Top 10 Swift Articles November](https://medium.mybridge.co/swift-top-10-articles-for-the-past-month-v-nov-2017-dfed7861cd65)
 - [30 Amazing iOS Swift Libraries (v2018)](https://medium.mybridge.co/30-amazing-ios-swift-libraries-for-the-past-year-v-2018-7cf15027eee9)
+- [AppCoda Weekly #44](http://digest.appcoda.com/issues/appcoda-weekly-issue-44-81899)
+- [iOS Cookies Newsletter #103](https://us11.campaign-archive.com/?u=cd1f3ed33c6527331d82107ba&id=48131a516d)
+- [Swift Developments Newsletter #113](https://andybargh.com/swiftdevelopments-113/)
+- [iOS Goodies #204](http://ios-goodies.com/post/167557280951/week-204)
+- [Swift Weekly #96](http://digest.swiftweekly.com/issues/swift-weekly-issue-96-81759)
+
 
 ## 👨🏻‍💻 Author
 [1.1]: http://i.imgur.com/tXSoThF.png
