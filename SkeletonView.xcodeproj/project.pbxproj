@@ -53,6 +53,8 @@
 		F56B94461FAE20AF0095662F /* PrepareForSkeletonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56B94451FAE20AF0095662F /* PrepareForSkeletonProtocol.swift */; };
 		F587FB84202CBFC8002DB5FE /* SkeletonFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587FB83202CBFC8002DB5FE /* SkeletonFlow.swift */; };
 		F587FB86202CEC95002DB5FE /* UIView+UIApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587FB85202CEC95002DB5FE /* UIView+UIApplicationDelegate.swift */; };
+		F5D3FB0B209DCAA300003FCF /* SubviewsSkeletonables.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D3FB0A209DCAA300003FCF /* SubviewsSkeletonables.swift */; };
+		F5D3FB0C209DCAA300003FCF /* SubviewsSkeletonables.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D3FB0A209DCAA300003FCF /* SubviewsSkeletonables.swift */; };
 		F5F622411FAC6E31007C062A /* UIColor+Skeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F622401FAC6E31007C062A /* UIColor+Skeleton.swift */; };
 		F5F622431FAC81FD007C062A /* CALayer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F622421FAC81FD007C062A /* CALayer+Extensions.swift */; };
 		F5F622451FACA338007C062A /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F622441FACA338007C062A /* Cell.swift */; };
@@ -116,6 +118,7 @@
 		F56B94451FAE20AF0095662F /* PrepareForSkeletonProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareForSkeletonProtocol.swift; sourceTree = "<group>"; };
 		F587FB83202CBFC8002DB5FE /* SkeletonFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonFlow.swift; sourceTree = "<group>"; };
 		F587FB85202CEC95002DB5FE /* UIView+UIApplicationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+UIApplicationDelegate.swift"; sourceTree = "<group>"; };
+		F5D3FB0A209DCAA300003FCF /* SubviewsSkeletonables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubviewsSkeletonables.swift; sourceTree = "<group>"; };
 		F5F622401FAC6E31007C062A /* UIColor+Skeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Skeleton.swift"; sourceTree = "<group>"; };
 		F5F622421FAC81FD007C062A /* CALayer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extensions.swift"; sourceTree = "<group>"; };
 		F5F622441FACA338007C062A /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
@@ -197,10 +200,11 @@
 				F5307E351FB106BF00EE67C5 /* Helpers */,
 				F51DE1081FBF70A70037919A /* SkeletonAnimationBuilder.swift */,
 				F5307E2F1FB0EC9D00EE67C5 /* SkeletonDefaultConfig.swift */,
+				F587FB83202CBFC8002DB5FE /* SkeletonFlow.swift */,
 				F5307E2B1FAF6BC900EE67C5 /* SkeletonGradient.swift */,
 				F5F899E81FAB9D2B002E8FDA /* SkeletonLayer.swift */,
 				8933C7841EB5B820000D00A4 /* SkeletonView.swift */,
-				F587FB83202CBFC8002DB5FE /* SkeletonFlow.swift */,
+				F5D3FB0A209DCAA300003FCF /* SubviewsSkeletonables.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -474,6 +478,7 @@
 				17DD0E09207FB28900C56334 /* SkeletonCollectionDataSource.swift in Sources */,
 				17DD0E0C207FB28900C56334 /* UICollectionView+CollectionSkeleton.swift in Sources */,
 				17DD0E13207FB28C00C56334 /* UIView+UIApplicationDelegate.swift in Sources */,
+				F5D3FB0C209DCAA300003FCF /* SubviewsSkeletonables.swift in Sources */,
 				17DD0E12207FB28C00C56334 /* UIView+IBInspectable.swift in Sources */,
 				17DD0E14207FB28F00C56334 /* SkeletonAnimationBuilder.swift in Sources */,
 				17DD0E11207FB28C00C56334 /* UIView+Frame.swift in Sources */,
@@ -506,6 +511,7 @@
 				F5F899EB1FAB9DA3002E8FDA /* SkeletonCollectionDataSource.swift in Sources */,
 				F5F622411FAC6E31007C062A /* UIColor+Skeleton.swift in Sources */,
 				F587FB84202CBFC8002DB5FE /* SkeletonFlow.swift in Sources */,
+				F5D3FB0B209DCAA300003FCF /* SubviewsSkeletonables.swift in Sources */,
 				F5F899D21FAB9630002E8FDA /* AssociationPolicy.swift in Sources */,
 				F54CF5E62024CEB000330B0D /* UICollectionView+CollectionSkeleton.swift in Sources */,
 				F56B94461FAE20AF0095662F /* PrepareForSkeletonProtocol.swift in Sources */,

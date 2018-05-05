@@ -57,7 +57,7 @@ extension UIView {
         recursiveShowSkeleton(withType: type, usingColors: colors, animated: animated, animation: animation)
     }
     
-    fileprivate func recursiveShowSkeleton(withType type: SkeletonType = .solid, usingColors colors: [UIColor], animated: Bool = false, animation: SkeletonLayerAnimation? = nil) {
+    fileprivate func recursiveShowSkeleton(withType type: SkeletonType, usingColors colors: [UIColor], animated: Bool, animation: SkeletonLayerAnimation?) {
         addDummyDataSourceIfNeeded()
         recursiveSearch(inArray: subviewsSkeletonables,
                         leafBlock: {
@@ -70,7 +70,7 @@ extension UIView {
         }
     }
     
-    fileprivate func recursiveHideSkeleton(reloadDataAfter reload: Bool = true) {
+    fileprivate func recursiveHideSkeleton(reloadDataAfter reload: Bool) {
         removeDummyDataSourceIfNeeded()
         isUserInteractionEnabled = true
         recursiveSearch(inArray: subviewsSkeletonables,
@@ -93,42 +93,6 @@ extension UIView {
             guard let layer = self.skeletonLayer else { return }
             layer.stopAnimation()
         }
-    }
-}
-
-extension UIView {
-    @objc var subviewsSkeletonables: [UIView] {
-        return subviews.filter { $0.isSkeletonable }
-    }
-}
-
-extension UITableView {
-    override var subviewsSkeletonables: [UIView] {
-        return visibleCells.filter { $0.isSkeletonable }
-    }
-}
-
-extension UITableViewCell {
-    override var subviewsSkeletonables: [UIView] {
-        return contentView.subviews.filter { $0.isSkeletonable }
-    }
-}
-
-extension UICollectionView {
-    override var subviewsSkeletonables: [UIView] {
-        return subviews.filter { $0.isSkeletonable }
-    }
-}
-
-extension UICollectionViewCell {
-    override var subviewsSkeletonables: [UIView] {
-        return contentView.subviews.filter { $0.isSkeletonable }
-    }
-}
-
-extension UIStackView {
-    override var subviewsSkeletonables: [UIView] {
-        return arrangedSubviews.filter { $0.isSkeletonable }
     }
 }
 

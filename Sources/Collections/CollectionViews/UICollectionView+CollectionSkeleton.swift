@@ -36,7 +36,7 @@ extension UICollectionView: CollectionSkeleton {
             !(originalDataSource is SkeletonCollectionDataSource)
             else { return }
         
-        let dataSource = SkeletonCollectionDataSource(collectionViewDataSource: originalDataSource, rowHeight: 0.0)
+        let dataSource = SkeletonCollectionDataSource(collectionViewDataSource: originalDataSource)
         self.skeletonDataSource = dataSource
         reloadData()
     }
