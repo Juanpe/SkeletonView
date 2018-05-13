@@ -63,6 +63,7 @@ extension UIView {
                         leafBlock: {
                             guard !isSkeletonActive else { return }
                             isUserInteractionEnabled = false
+                            saveViewState()
                             (self as? PrepareForSkeleton)?.prepareViewForSkeleton()
                             addSkeletonLayer(withType: type, usingColors: colors, animated: animated, animation: animation)
         }) {
@@ -75,6 +76,7 @@ extension UIView {
         isUserInteractionEnabled = true
         recursiveSearch(inArray: subviewsSkeletonables,
                         leafBlock: {
+                            recoverViewState(forced: true)
                             removeSkeletonLayer()
                         }, recursiveBlock: {
                             $0.recursiveHideSkeleton(reloadDataAfter: reload)

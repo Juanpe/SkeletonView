@@ -48,6 +48,9 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         view.showAnimatedSkeleton()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.view.hideSkeleton()
+        }
     }
 
     @IBAction func changeAnimated(_ sender: Any) {
