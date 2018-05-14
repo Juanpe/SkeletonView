@@ -26,6 +26,9 @@
     <a href="https://twitter.com/intent/tweet?text=Wow%20This%20library%20is%20awesome:&url=https%3A%2F%2Fgithub.com%2FJuanpe%2FSkeletonView">
       <img src="https://img.shields.io/twitter/url/https/github.com/Juanpe/SkeletonView.svg?style=social" alt="License" />
     </a>
+    <a href="https://twitter.com/JuanpeCatalan">
+      <img src="https://img.shields.io/twitter/follow/JuanpeCatalan.svg?style=social&label=Follow" alt="Twitter" />
+    </a>
 </p>
 
 Today almost all apps have async processes, such as Api requests, long running processes, etc. And while the processes are working, usually developers place a loading view to show users that something is going on.
