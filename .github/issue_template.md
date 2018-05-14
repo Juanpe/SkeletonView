@@ -1,5 +1,7 @@
 ⚠️ Please fill out this template when filing an issue.
 
+#### 🙏🏼 *Please check if it already exists other issue related with yours.*
+
 ### What did you do?
 
 *Please replace this with what you did.*
