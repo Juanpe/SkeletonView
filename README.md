@@ -368,6 +368,8 @@ See [all contributors](https://github.com/Juanpe/SkeletonView/graphs/contributor
 - [iOS Goodies #204](http://ios-goodies.com/post/167557280951/week-204)
 - [Swift Weekly #96](http://digest.swiftweekly.com/issues/swift-weekly-issue-96-81759)
 - [CocoaControls](https://www.cocoacontrols.com/controls/skeletonview)
+- [Awesome iOS Newsletter #74](https://ios.libhunt.com/newsletter/74)
+
 
 
 ## 👨🏻‍💻 Author
