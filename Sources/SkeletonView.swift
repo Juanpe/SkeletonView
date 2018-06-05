@@ -77,14 +77,9 @@ extension UIView {
 
     fileprivate func recursiveShowSkeleton(withType type: SkeletonType, usingColors colors: [UIColor], animated: Bool, animation: SkeletonLayerAnimation?, root: UIView? = nil) {
         addDummyDataSourceIfNeeded()
-
-        subviewsSkeletonables.recursiveSearch(leafBlock: {
-            guard !isSkeletonActive else { return }
-            isUserInteractionEnabled = false
-            saveViewState()
-            (self as? PrepareForSkeleton)?.prepareViewForSkeleton()
-            addSkeletonLayer(withType: type, usingColors: colors, animated: animated, animation: animation)
-        }) { subview in
+        subviewsSkeletonables.recursiveSearch(
+            leafBlock: showSkeletonLeafBlock(withType: type, usingColors:colors, animated: animated, animation: animation)
+        ) { subview in
             subview.recursiveShowSkeleton(withType: type, usingColors: colors, animated: animated, animation: animation)
         }
 
@@ -103,12 +98,20 @@ extension UIView {
             if isSkeletonActive {
                 updateSkeletonLayer(usingColors: colors, animated: animated, animation: animation)
             } else {
-                isUserInteractionEnabled = false
-                (self as? PrepareForSkeleton)?.prepareViewForSkeleton()
-                addSkeletonLayer(withType: type, usingColors: colors, animated: animated, animation: animation)
+                showSkeletonLeafBlock(withType: type, usingColors: colors, animated: animated, animation: animation)()
             }
-        }) {
-            $0.recursiveUpdateSkeleton(withType: type, usingColors: colors, animated: animated, animation: animation)
+        }) { view in
+            view.recursiveUpdateSkeleton(withType: type, usingColors: colors, animated: animated, animation: animation)
+        }
+    }
+
+    fileprivate func showSkeletonLeafBlock(withType type: SkeletonType, usingColors colors: [UIColor], animated: Bool, animation: SkeletonLayerAnimation?) -> VoidBlock {
+        return {
+            guard !self.isSkeletonActive else { return }
+            self.isUserInteractionEnabled = false
+            self.saveViewState()
+            (self as? PrepareForSkeleton)?.prepareViewForSkeleton()
+            self.addSkeletonLayer(withType: type, usingColors: colors, animated: animated, animation: animation)
         }
     }
     
