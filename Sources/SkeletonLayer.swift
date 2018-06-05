@@ -55,6 +55,13 @@ struct SkeletonLayer {
         self.maskLayer.tint(withColors: colors)
     }
     
+    func update(usingColors colors: [UIColor]) {
+        if let bounds = self.holder?.bounds { 
+            self.maskLayer.bounds = bounds
+        }
+        self.maskLayer.tint(withColors: colors)
+    }
+    
     func removeLayer() {
         maskLayer.removeFromSuperlayer()
     }
