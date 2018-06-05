@@ -71,6 +71,7 @@ extension UIView {
             flowDelegate = SkeletonFlowHandler()
             flowDelegate?.willBeginShowingSkeletons(withRootView: self)
         }
+        flowDelegate?.willBeginUpdatingSkeletons(withRootView: self)
         recursiveUpdateSkeleton(withType: type, usingColors: colors, animated: animated, animation: animation)
     }
 
