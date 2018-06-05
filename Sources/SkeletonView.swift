@@ -93,7 +93,7 @@ extension UIView {
     }
 
     fileprivate func recursiveUpdateSkeleton(withType type: SkeletonType, usingColors colors: [UIColor], animated: Bool, animation: SkeletonLayerAnimation?) {
-        addDummyDataSourceIfNeeded()
+        updateDummyDataSourceIfNeeded()
         subviewsSkeletonables.recursiveSearch(leafBlock: {
             if skeletonLayer?.type != type {
                 hideSkeleton()
