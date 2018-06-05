@@ -228,17 +228,25 @@ The rest of the process is the same as ```UITableView```
 When using elements with text, ```SkeletonView``` draws lines to simulate text.
 Besides, you can decide how many lines you want. If  ```numberOfLines``` is set to zero, it will calculate how many lines needed to populate the whole skeleton and it will be drawn. Instead, if you set it to one, two or any number greater than zero, it will only draw this number of lines.
 
-**NEW** Now, you can set the filling percent of the last line. **Default: 70%**
+###### Customize
 
-To modify the percent **using code**, set the property:
+You can set some properties for multilines elements.
+- Filling percent of the last line.
+  - values: **(0...100)**
+  - default: **70%**
+- Corner radius of lines. (**NEW**)
+  - values: **(0...10)**
+  - default: **0**
+
+To modify the percent or radius **using code**, set the properties:
 ```swift
 descriptionTextView.lastLineFillPercent = 50
+descriptionTextView.linesCornerRadius = 5
 ```
 
 Or, if you prefer use **IB/Storyboard**:
 
 ![](Assets/lastline_storyboard.png)
-
 
 ### 🎨 Custom colors
 
@@ -341,7 +349,7 @@ Coming soon...😅
 * [x] Supported resizable cells
 * [x] CollectionView compatible
 * [x] tvOS compatible
-* [ ] Add recovery state
+* [x] Add recovery state
 * [ ] Custom collections compatible
 * [ ] Add animations when it shows/hides the skeletons
 * [ ] MacOS and WatchOS compatible
