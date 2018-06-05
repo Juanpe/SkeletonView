@@ -19,6 +19,7 @@ protocol CollectionSkeleton {
     var estimatedNumberOfRows: Int { get }
     
     func addDummyDataSource()
+    func updateDummyDataSource()
     func removeDummyDataSource(reloadAfter: Bool)
     func disableUserInteraction()
     func enableUserInteraction()
