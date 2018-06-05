@@ -228,14 +228,14 @@ The rest of the process is the same as ```UITableView```
 When using elements with text, ```SkeletonView``` draws lines to simulate text.
 Besides, you can decide how many lines you want. If  ```numberOfLines``` is set to zero, it will calculate how many lines needed to populate the whole skeleton and it will be drawn. Instead, if you set it to one, two or any number greater than zero, it will only draw this number of lines.
 
-###### Customize
+##### 🎛 Customize
 
 You can set some properties for multilines elements.
 - **Filling percent** of the last line.
   - values: `0...100`
   - default: `70%`
 - **Corner radius** of lines. (**NEW**)
-  - values: `0...10`
+  - values: `0...10
   - default: `0`
 
 To modify the percent or radius **using code**, set the properties:
