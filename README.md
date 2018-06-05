@@ -26,6 +26,9 @@
     <a href="https://twitter.com/intent/tweet?text=Wow%20This%20library%20is%20awesome:&url=https%3A%2F%2Fgithub.com%2FJuanpe%2FSkeletonView">
       <img src="https://img.shields.io/twitter/url/https/github.com/Juanpe/SkeletonView.svg?style=social" alt="License" />
     </a>
+    <a href="https://twitter.com/JuanpeCatalan">
+      <img src="https://img.shields.io/twitter/follow/JuanpeCatalan.svg?style=social&label=Follow" alt="Twitter" />
+    </a>
 </p>
 
 Today almost all apps have async processes, such as Api requests, long running processes, etc. And while the processes are working, usually developers place a loading view to show users that something is going on.
@@ -364,6 +367,9 @@ See [all contributors](https://github.com/Juanpe/SkeletonView/graphs/contributor
 - [Swift Developments Newsletter #113](https://andybargh.com/swiftdevelopments-113/)
 - [iOS Goodies #204](http://ios-goodies.com/post/167557280951/week-204)
 - [Swift Weekly #96](http://digest.swiftweekly.com/issues/swift-weekly-issue-96-81759)
+- [CocoaControls](https://www.cocoacontrols.com/controls/skeletonview)
+- [Awesome iOS Newsletter #74](https://ios.libhunt.com/newsletter/74)
+
 
 
 ## 👨🏻‍💻 Author
@@ -371,6 +377,8 @@ See [all contributors](https://github.com/Juanpe/SkeletonView/graphs/contributor
 [1]: http://www.twitter.com/JuanpeCatalan
 
 * Juanpe Catalán [![alt text][1.1]][1]
+
+<a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/CDou4xtIK"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy me a coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;"><span style="margin-left:5px"></span></a>
 
 ## 👮🏻 License
 
