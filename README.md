@@ -231,12 +231,12 @@ Besides, you can decide how many lines you want. If  ```numberOfLines``` is set 
 ###### Customize
 
 You can set some properties for multilines elements.
-- Filling percent of the last line.
-  - values: **(0...100)**
-  - default: **70%**
-- Corner radius of lines. (**NEW**)
-  - values: **(0...10)**
-  - default: **0**
+- **Filling percent** of the last line.
+  - values: `0...100`
+  - default: `70%`
+- **Corner radius** of lines. (**NEW**)
+  - values: `0...10`
+  - default: `0`
 
 To modify the percent or radius **using code**, set the properties:
 ```swift
@@ -246,7 +246,7 @@ descriptionTextView.linesCornerRadius = 5
 
 Or, if you prefer use **IB/Storyboard**:
 
-![](Assets/lastline_storyboard.png)
+![](Assets/multiline_customize.png)
 
 ### 🎨 Custom colors
 
