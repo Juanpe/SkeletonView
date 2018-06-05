@@ -10,6 +10,7 @@ import UIKit
 
 protocol SkeletonFlowDelegate {
     func willBeginShowingSkeletons(withRootView rootView: UIView)
+    func willBeginUpdatingSkeletons(withRootView rootView: UIView)
     func willBeginHidingSkeletons(withRootView rootView: UIView)
 }
 
@@ -17,6 +18,9 @@ class SkeletonFlowHandler: SkeletonFlowDelegate {
     
     func willBeginShowingSkeletons(withRootView rootView: UIView) {
         rootView.addAppNotificationsObservers()
+    }
+    
+    func willBeginUpdatingSkeletons(withRootView rootView: UIView) {
     }
     
     func willBeginHidingSkeletons(withRootView rootView: UIView) {
