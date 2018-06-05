@@ -76,7 +76,7 @@ extension UIView {
         isUserInteractionEnabled = true
         recursiveSearch(inArray: subviewsSkeletonables,
                         leafBlock: {
-                            recoverViewState(forced: true)
+                            recoverViewState(forced: false)
                             removeSkeletonLayer()
                         }, recursiveBlock: {
                             $0.recursiveHideSkeleton(reloadDataAfter: reload)
