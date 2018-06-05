@@ -29,6 +29,8 @@
 		17DD0E1D207FB32100C56334 /* ContainsMultilineText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5307E3A1FB123C100EE67C5 /* ContainsMultilineText.swift */; };
 		17DD0E1E207FB32100C56334 /* PrepareForSkeletonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56B94451FAE20AF0095662F /* PrepareForSkeletonProtocol.swift */; };
 		17DD0E1F207FB32100C56334 /* RecursiveProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5307E311FB0F42F00EE67C5 /* RecursiveProtocol.swift */; };
+		3B83EE4720C41488005178A4 /* ContainsMultilineText.swift in Headers */ = {isa = PBXBuildFile; fileRef = 3B83EE4520C41488005178A4 /* ContainsMultilineText.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B83EE4820C41488005178A4 /* UIView+IBInspectable.swift in Headers */ = {isa = PBXBuildFile; fileRef = 3B83EE4620C41488005178A4 /* UIView+IBInspectable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		88DEA97F1FCDBD78006C80EF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DEA97D1FCDBD1F006C80EF /* Constants.swift */; };
 		8933C7851EB5B820000D00A4 /* SkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7841EB5B820000D00A4 /* SkeletonView.swift */; };
 		F51DE1091FBF70A70037919A /* SkeletonAnimationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51DE1081FBF70A70037919A /* SkeletonAnimationBuilder.swift */; };
@@ -98,6 +100,8 @@
 		17DD0E00207FB27400C56334 /* SkeletonView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SkeletonView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		17DD0E1A207FB2C200C56334 /* SkeletonView-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SkeletonView-tvOS.plist"; sourceTree = "<group>"; };
 		17DD0E1B207FB2C200C56334 /* SkeletonView-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SkeletonView-iOS.plist"; sourceTree = "<group>"; };
+		3B83EE4520C41488005178A4 /* ContainsMultilineText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContainsMultilineText.swift; path = Sources/Helpers/ContainsMultilineText.swift; sourceTree = "<group>"; };
+		3B83EE4620C41488005178A4 /* UIView+IBInspectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+IBInspectable.swift"; path = "Sources/Extensions/UIView+IBInspectable.swift"; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* SkeletonView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SkeletonView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88DEA97D1FCDBD1F006C80EF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8933C7841EB5B820000D00A4 /* SkeletonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkeletonView.swift; sourceTree = "<group>"; };
@@ -165,6 +169,8 @@
 		52D6D9721BEFF229002C0205 = {
 			isa = PBXGroup;
 			children = (
+				3B83EE4520C41488005178A4 /* ContainsMultilineText.swift */,
+				3B83EE4620C41488005178A4 /* UIView+IBInspectable.swift */,
 				F5F899F31FABA607002E8FDA /* Example */,
 				8933C7811EB5B7E0000D00A4 /* Sources */,
 				52D6D99C1BEFF38C002C0205 /* Configs */,
@@ -325,6 +331,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B83EE4720C41488005178A4 /* ContainsMultilineText.swift in Headers */,
+				3B83EE4820C41488005178A4 /* UIView+IBInspectable.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
