@@ -67,8 +67,10 @@ extension UIView {
     
     func updateSkeleton(withType type: SkeletonType = .solid, usingColors colors: [UIColor], animated: Bool = false, animation: SkeletonLayerAnimation? = nil) {
         skeletonIsAnimated = animated
-        flowDelegate = SkeletonFlowHandler()
-        flowDelegate?.willBeginShowingSkeletons(withRootView: self)
+        if flowDelegate == nil {
+            flowDelegate = SkeletonFlowHandler()
+            flowDelegate?.willBeginShowingSkeletons(withRootView: self)
+        }
         recursiveUpdateSkeleton(withType: type, usingColors: colors, animated: animated, animation: animation)
     }
 
