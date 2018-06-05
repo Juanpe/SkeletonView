@@ -86,12 +86,7 @@ extension UIView {
     fileprivate func recursiveShowSkeleton(withType type: SkeletonType, usingColors colors: [UIColor], animated: Bool, animation: SkeletonLayerAnimation?) {
         addDummyDataSourceIfNeeded()
         recursiveSearch(inArray: subviewsSkeletonables,
-                        leafBlock: {
-                            guard !isSkeletonActive else { return }
-                            isUserInteractionEnabled = false
-                            (self as? PrepareForSkeleton)?.prepareViewForSkeleton()
-                            addSkeletonLayer(withType: type, usingColors: colors, animated: animated, animation: animation)
-        }) {
+                        leafBlock: showSkeletonLeafBlock(withType: type, usingColors:colors, animated: animated, animation: animation)) {
             $0.recursiveShowSkeleton(withType: type, usingColors: colors, animated: animated, animation: animation)
         }
     }
@@ -107,12 +102,19 @@ extension UIView {
                             if isSkeletonActive {
                                 updateSkeletonLayer(usingColors: colors, animated: animated, animation: animation)
                             } else {
-                                isUserInteractionEnabled = false
-                                (self as? PrepareForSkeleton)?.prepareViewForSkeleton()
-                                addSkeletonLayer(withType: type, usingColors: colors, animated: animated, animation: animation)
+                                showSkeletonLeafBlock(withType: type, usingColors:colors, animated: animated, animation: animation)()
                             }
         }) {
             $0.recursiveUpdateSkeleton(withType: type, usingColors: colors, animated: animated, animation: animation)
+        }
+    }
+
+    fileprivate func showSkeletonLeafBlock(withType type: SkeletonType, usingColors colors: [UIColor], animated: Bool, animation: SkeletonLayerAnimation?) -> VoidBlock {
+        return {
+            guard !self.isSkeletonActive else { return }
+            self.isUserInteractionEnabled = false
+            (self as? PrepareForSkeleton)?.prepareViewForSkeleton()
+            self.addSkeletonLayer(withType: type, usingColors: colors, animated: animated, animation: animation)
         }
     }
     
