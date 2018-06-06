@@ -231,12 +231,14 @@ Besides, you can decide how many lines you want. If  ```numberOfLines``` is set 
 ##### 🎛 Customize
 
 You can set some properties for multilines elements.
-- **Filling percent** of the last line.
-  - values: `0...100`
-  - default: `70%`
-- **Corner radius** of lines. (**NEW**)
-  - values: `0...10`
-  - default: `0`
+
+
+| Property | Values | Default | Preview
+| ------- | ------- |------- | -------
+| **Filling percent** of the last line. | `0...100` | `70%` | ![](Assets/multiline_lastline.png)
+| **Corner radius** of lines. (**NEW**) | `0...10` | `0` | ![](Assets/multiline_corner.png)
+
+
 
 To modify the percent or radius **using code**, set the properties:
 ```swift
