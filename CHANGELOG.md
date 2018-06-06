@@ -1,6 +1,16 @@
 # Change Log
 All notable changes to this project will be documented in this file
 
+## [State (1.2.1)](https://github.com/Juanpe/SkeletonView/releases/tag/1.2.1)
+
+### New
+
+- You can set the corner radius multiline elements (thanks @B4V4-G)
+- Save view state when skeleton appears and recovery when it is hidden (@juanpe)
+
+### Bug fixes
+- Solved issue [#51](https://github.com/Juanpe/SkeletonView/issues/51). Support inspectable properties when using Carthage. (thanks @eduardbosch)
+
 ## [On TV (1.2)](https://github.com/Juanpe/SkeletonView/releases/tag/1.2)
 
 ### New

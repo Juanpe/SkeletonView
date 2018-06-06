@@ -235,7 +235,7 @@ You can set some properties for multilines elements.
   - values: `0...100`
   - default: `70%`
 - **Corner radius** of lines. (**NEW**)
-  - values: `0...10
+  - values: `0...10`
   - default: `0`
 
 To modify the percent or radius **using code**, set the properties:
