@@ -40,7 +40,7 @@ extension UILabel {
     
     override func recoverViewState(forced: Bool) {
         super.recoverViewState(forced: forced)
-        text = text == "" || forced ? viewState?.text : text
+        text = text == " " || forced ? viewState?.text : text
     }
 }
 
@@ -52,7 +52,7 @@ extension UITextView {
     
     override func recoverViewState(forced: Bool) {
         super.recoverViewState(forced: forced)
-        text = text == "" || forced ? viewState?.text : text
+        text = text == " " || forced ? viewState?.text : text
     }
 }
 
