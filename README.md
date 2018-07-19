@@ -51,7 +51,7 @@ Enjoy it! 🙂
   * [Hierarchy](#-hierarchy)
 * [Documentation](#-documentation)
 * [Next steps](#-next-steps)
-* [Contributed](#-contributed)
+* [Contributing](#-contributing)
 * [Mentions](#-mentions)
 * [Author](#-author)
 * [License](#-license)
@@ -315,7 +315,7 @@ view.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
 |------- | -------
 | .leftRight | ![](Assets/sliding_left_to_right.gif)
 | .rightLeft | ![](Assets/sliding_right_to_left.gif)
-| .topBottom | ![](Assets/sliding_top_to_bottom.gif)  
+| .topBottom | ![](Assets/sliding_top_to_bottom.gif)
 | .bottomTop | ![](Assets/sliding_bottom_to_top.gif)
 | .topLeftBottomRight | ![](Assets/sliding_topLeft_to_bottomRight.gif)
 | .bottomRightTopLeft | ![](Assets/sliding_bottomRight_to_topLeft.gif)
@@ -356,7 +356,7 @@ Coming soon...😅
 * [ ] Add animations when it shows/hides the skeletons
 * [ ] MacOS and WatchOS compatible
 
-## ❤️ Contributed
+## ❤️ Contributing
 This is an open source project, so feel free to contribute. How?
 - Open an [issue](https://github.com/Juanpe/SkeletonView/issues/new).
 - Send feedback via [email](mailto://juanpecatalan.com).
