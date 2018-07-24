@@ -11,7 +11,7 @@ import UIKit
 public protocol SkeletonTableViewDataSource: UITableViewDataSource {
     func numSections(in collectionSkeletonView: UITableView) -> Int
     func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int
-    func collectionSkeletonView(_ skeletonView: UITableView, cellIdenfierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier
 }
 
 public extension SkeletonTableViewDataSource {
@@ -21,6 +21,13 @@ public extension SkeletonTableViewDataSource {
     }
     
     func numSections(in collectionSkeletonView: UITableView) -> Int { return 1 }
+
+    /// Keeping the misspelled version around until it can be deprecated
+    /// Right now, it just calls the new correctly spelled method and returns its result
+    @available(*, deprecated, renamed: "collectionSkeletonView(_:cellIdentifierForRowAt:)")
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdenfierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        return collectionSkeletonView(skeletonView, cellIdentifierForRowAt: indexPath)
+    }
 }
 
 public protocol SkeletonTableViewDelegate: UITableViewDelegate {
