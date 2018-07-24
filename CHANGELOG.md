@@ -1,6 +1,15 @@
 # Change Log
 All notable changes to this project will be documented in this file
 
+## [New face (1.2.2)](https://github.com/Juanpe/SkeletonView/releases/tag/1.2.2)
+
+### New
+
+- Rebranding
+
+### Bug fixes
+- Solved issue [#23](https://github.com/Juanpe/SkeletonView/issues/23). Problem with UIStackView . (thanks @giantramen )
+
 ## [State (1.2.1)](https://github.com/Juanpe/SkeletonView/releases/tag/1.2.1)
 
 ### New
