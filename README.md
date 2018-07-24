@@ -1,4 +1,4 @@
-![](Assets/header.jpg)
+![](Assets/header2.jpg)
 
 <p align="center">
     <a href="https://travis-ci.org/Juanpe/SkeletonView">
@@ -76,8 +76,6 @@ Enjoy it! 🙂
 ### 🔮 Example
 
 To run the example project, clone the repo and run `SkeletonViewExample` target.
-
-![](Assets/demoApp2.png)
 
 ## 📲 Installation
 
