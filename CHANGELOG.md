@@ -1,6 +1,16 @@
 # Change Log
 All notable changes to this project will be documented in this file
 
+## [Typo (1.2.3)](https://github.com/Juanpe/SkeletonView/releases/tag/1.2.3)
+
+### Fixes
+
+- Fix typo in `SkeletonTableViewDataSource` protocol
+
+### Improvements
+
+- Now it takes in account the `UIStackView` to calculate the `SkeletonLayer` bounds (thanks @giantramen)
+
 ## [New face (1.2.2)](https://github.com/Juanpe/SkeletonView/releases/tag/1.2.2)
 
 ### New
@@ -8,7 +18,7 @@ All notable changes to this project will be documented in this file
 - Rebranding
 
 ### Bug fixes
-- Solved issue [#23](https://github.com/Juanpe/SkeletonView/issues/23). Problem with UIStackView . (thanks @giantramen )
+- Solved issue [#23](https://github.com/Juanpe/SkeletonView/issues/23). Problem with UIStackView. (thanks @giantramen)
 
 ## [State (1.2.1)](https://github.com/Juanpe/SkeletonView/releases/tag/1.2.1)
 
