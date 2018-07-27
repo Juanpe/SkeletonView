@@ -31,7 +31,7 @@
     </a>
 </p>
 
-🌎  Translations: [ [🇨🇳](https://github.com/Juanpe/SkeletonView/blob/master/README_zh.md) ]
+🌎  Translations: [ [🇨🇳](https://github.com/Juanpe/SkeletonView/blob/master/README_zh.md) by [@WhatsXie](https://twitter.com/WhatsXie) ]
 
 Today almost all apps have async processes, such as Api requests, long running processes, etc. And while the processes are working, usually developers place a loading view to show users that something is going on.
 
