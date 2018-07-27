@@ -31,98 +31,98 @@
     </a>
 </p>
 
-🌎  Translations: [ [🇨🇳](https://github.com/Juanpe/SkeletonView/README_zh.md) ]
+🌎  翻译: [ [原版的](https://github.com/Juanpe/SkeletonView) ]
 
-Today almost all apps have async processes, such as Api requests, long running processes, etc. And while the processes are working, usually developers place a loading view to show users that something is going on.
+今天，几乎所有的应用程序都有异步流程，例如：Api请求、长时间运行的流程等。虽然流程正在运行，但通常开发人员会设置一个加载视图来向用户显示正在发生的事情。
 
-```SkeletonView``` has been conceived to address this need, an elegant way to show users that something is happening and also prepare them to which contents he is waiting.
+```SkeletonView``` 已经构想出来满足这种需求，这是一种优雅的方式，向用户展示正在发生的事情，并为他们等待的内容做好准备。
 
-Enjoy it! 🙂
+好好享受! 🙂
 
-* [Features](#-features)
-* [Requirements](#-supported-os--sdk-versions)
-* [Example Project](#-example)
-* [Installation](#-installation)
-  * [Cocoapods](#using-cocoapods)
-  * [Carthage](#using-carthage)
-* [How to use](#-how-to-use)
-  * [Collections](#-collections)
-  * [Multiline text](#-multiline-text)
-  * [Custom colors](#-custom-colors)
-  * [Custom animations](#-custom-animations)
-  * [Hierarchy](#-hierarchy)
-* [Documentation](#-documentation)
-* [Next steps](#-next-steps)
-* [Contributing](#-contributing)
-* [Mentions](#-mentions)
-* [Author](#-author)
-* [License](#-license)
+* [特征](#-特征)
+* [版本要求](#-版本要求)
+* [示例项目](#-示例)
+* [安装](#-安装)
+  * [Cocoapods](#使用-cocoapods)
+  * [Carthage](#使用-carthage)
+* [如何使用](#-如何使用)
+  * [集合](#-集合)
+  * [多行文字](#-多行文字)
+  * [自定义颜色](#-自定义颜色)
+  * [自定义动画](#-自定义动画)
+  * [等级制度](#-等级制度)
+* [文档](#-文档)
+* [下一步](#-下一步)
+* [特约](#-特约)
+* [提及](#-提及)
+* [作者](#-作者)
+* [许可证](#-许可证)
 
 
-## 🌟 Features
+## 🌟 特征
 
-- [x] Easy to use
-- [x] All UIViews are skeletonables
-- [x] Fully customizable
-- [x] Universal (iPhone & iPad)
-- [x] Interface Builder friendly
-- [x] Simple Swift syntax
-- [x] Lightweight readable codebase
+- [x] 使用方便
+- [x] 支持所有 UIView
+- [x] 完全可定制
+- [x] 通用（iPhone和iPad）
+- [x] Interface Builder 友好
+- [x] 简单的 Swift 语法
+- [x] 轻量级可读代码库
 
-### 📋 Supported OS & SDK Versions
+### 📋 版本要求
 
 * iOS 9.0+
 * tvOS 9.0+
 * Swift 4
 
-### 🔮 Example
+### 🔮 示例
 
-To run the example project, clone the repo and run `SkeletonViewExample` target.
+要运行示例项目，请克隆并运行 `SkeletonViewExample` 项目。
 
-## 📲 Installation
+## 📲 安装
 
-#### Using [CocoaPods](https://cocoapods.org)
+#### 使用 [CocoaPods](https://cocoapods.org)
 
-Edit your `Podfile` and specify the dependency:
+使用 CocoaPods 编辑您的 Podfile 并指定依赖项：
 
 ```ruby
 pod "SkeletonView"
 ```
 
-#### Using [Carthage](https://github.com/carthage)
+#### 使用 [Carthage](https://github.com/carthage)
 
-Edit your `Cartfile` and specify the dependency:
+编辑您的 Cartfile 并指定依赖项:
 
 ```bash
 github "Juanpe/SkeletonView"
 ```
 
-## 🐒 How to use
+## 🐒 如何使用
 
-Only **3** steps needed to use `SkeletonView`:
+只需 **3** 个步骤即可使用 `SkeletonView`:
 
-**1.** Import SkeletonView in proper place.
+**1.** 在适当的位置导入SkeletonView
 ```swift
 import SkeletonView
 ```
 
-**2.** Now, set which views will be `skeletonables`. You achieve this in two ways:
+**2.** 现在，您可以通过两种设置方式实现 `SkeletonView` 效果
 
-**Using code:**
+**使用纯代码：**
 ```swift
 avatarImageView.isSkeletonable = true
 ```
-**Using IB/Storyboards:**
+**使用 IB/Storyboards：**
 
 ![](Assets/storyboard.png)
 
-**3.** Once you've set the views, you can show the **skeleton**. To do so, you have **4** choices:
+**3.** 设置视图后，可以显示 **skeleton**. 并且您有 **4** 种效果可供选择:
 
 ```swift
-(1) view.showSkeleton()                 // Solid
-(2) view.showGradientSkeleton()         // Gradient
-(3) view.showAnimatedSkeleton()         // Solid animated
-(4) view.showAnimatedGradientSkeleton() // Gradient animated
+(1) view.showSkeleton()                 // 固体
+(2) view.showGradientSkeleton()         // 渐变
+(3) view.showAnimatedSkeleton()         // 纯色动画
+(4) view.showAnimatedGradientSkeleton() // 渐变动画
 ```
 
 **Preview**
@@ -130,16 +130,16 @@ avatarImageView.isSkeletonable = true
 <table>
 <tr>
 <td width="25%">
-<center>Solid</center>
+<center>固体</center>
 </td>
 <td width="25%">
-<center>Gradient</center>
+<center>渐变</center>
 </td>
 <td width="25%">
-<center>Solid Animated</center>
+<center>纯色动画</center>
 </td>
 <td width="25%">
-<center>Gradient Animated</center>
+<center>渐变动画</center>
 </td>
 </tr>
 <tr>
@@ -158,16 +158,16 @@ avatarImageView.isSkeletonable = true
 </tr>
 </table>
 
-> **IMPORTANT!**
->>```SkeletonView``` is recursive, so if you want show the skeleton in all skeletonable views, you only need to call the show method in the main container view. For example, with UIViewControllers
+> **重要!**
+>>```SkeletonView``` 是递归的，所以如果你想在所有可骨架化的视图中显示骨架，你只需要在主容器视图中调用show方法。例如，使用UIViewControllers
 
-### 🌿 Collections
+### 🌿 集合
 
- Now, ```SkeletonView``` is compatible with ```UITableView``` and ```UICollectionView```.
+现在，```SkeletonView``` 兼容 ```UITableView``` 和 ```UICollectionView```。
 
 ###### UITableView
 
-If you want to show the skeleton in a ```UITableView```, you need to conform to ```SkeletonTableViewDataSource``` protocol.
+如果你要显示 skeleton 在一个 ```UITableView```上，你需要符合 ```SkeletonTableViewDataSource``` 协议。
 
 ``` swift
 public protocol SkeletonTableViewDataSource: UITableViewDataSource {
@@ -176,39 +176,40 @@ public protocol SkeletonTableViewDataSource: UITableViewDataSource {
     func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier
 }
 ```
-As you can see, this protocol inherits from ```UITableViewDataSource```, so you can replace this protocol with the skeleton protocol.
+如您所见，此协议继承自 UITableViewDataSource，因此您可以使用骨架协议替换此协议。
 
-This protocol has a default implementation:
+该协议具有默认实现：
 
 ``` swift
 func numSections(in collectionSkeletonView: UITableView) -> Int
-// Default: 1
+// 默认值：1
 ```
 
 ``` swift
 func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int
-// Default:
-// It calculates how many cells need to populate whole tableview
+// 默认值：
+// 它计算填充整个tableview需要多少个单元格
 ```
 
-There is only one method you need to implement to let Skeleton know the cell identifier. This method doesn't have default implementation:
+为了让Skeleton知道单元标识符，您只需要实现一种方法。此方法没有默认实现：
+
  ``` swift
  func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier
  ```
 
-**Example**
+**示例**
  ``` swift
  func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
     return "CellIdentifier"
 }
  ```
 
-> **IMPORTANT!**
-> If you are using resizable cells (`tableView.rowHeight = UITableViewAutomaticDimension` ), it's mandatory define the `estimatedRowHeight`.
+> **重要!**
+> 如果您使用可调整大小的单元格 (`tableView.rowHeight = UITableViewAutomaticDimension` )，则必须定义 `estimatedRowHeight`。
 
 ###### UICollectionView
 
-For ```UICollectionView```, you need to conform to ```SkeletonCollectionViewDataSource``` protocol.
+要为 ```UICollectionView``` 设置效果, 您需要符合 ```SkeletonCollectionViewDataSource``` 协议。
 
 ``` swift
 public protocol SkeletonCollectionViewDataSource: UICollectionViewDataSource {
@@ -218,88 +219,88 @@ public protocol SkeletonCollectionViewDataSource: UICollectionViewDataSource {
 }
 ```
 
-The rest of the process is the same as ```UITableView```
+其余操作与 ```UITableView``` 相同。
 
-### 📰 Multiline text
+### 📰 多行文字
 
 
 ![](Assets/multilines2.png)
 
-When using elements with text, ```SkeletonView``` draws lines to simulate text.
-Besides, you can decide how many lines you want. If  ```numberOfLines``` is set to zero, it will calculate how many lines needed to populate the whole skeleton and it will be drawn. Instead, if you set it to one, two or any number greater than zero, it will only draw this number of lines.
+使用带有文本的元素时， ```SkeletonView``` 绘制线条以模拟文本。此外，您可以决定您想要多少行。如果 ```numberOfLines``` 设置为零，它将计算填充整个骨架所需的行数，并将绘制它。相反，如果将其设置为一，二或任何大于零的数字，它将只绘制此行数。
 
-##### 🎛 Customize
+##### 🎛 定制
 
-You can set some properties for multilines elements.
+您可以为多行元素设置一些属性。
 
 
-| Property | Values | Default | Preview
+| 属性 | 值范围 | 默认 | 延时
 | ------- | ------- |------- | -------
-| **Filling percent** of the last line. | `0...100` | `70%` | ![](Assets/multiline_lastline.png)
-| **Corner radius** of lines. (**NEW**) | `0...10` | `0` | ![](Assets/multiline_corner.png)
+| **Filling percent** 最后一行的长度百分比 | `0...100` | `70%` | ![](Assets/multiline_lastline.png)
+| **Corner radius** 条目圆角半径. (**新**) | `0...10` | `0` | ![](Assets/multiline_corner.png)
 
 
 
-To modify the percent or radius **using code**, set the properties:
+**纯代码**修改百分比或半径：
+
 ```swift
 descriptionTextView.lastLineFillPercent = 50
 descriptionTextView.linesCornerRadius = 5
 ```
 
-Or, if you prefer use **IB/Storyboard**:
+或者，如果您更喜欢使用 **IB/Storyboard**:
 
 ![](Assets/multiline_customize.png)
 
-### 🎨 Custom colors
+### 🎨 自定义颜色
 
-You can decide which color the skeleton is tinted with. You only need to pass as a parameter the color or gradient you want.
+您可以决定 ```SkeletonView``` 的显示颜色。您只需要传递颜色或渐变的参数。
 
-**Using solid colors**
+**使用纯色**
 ``` swift
-view.showSkeleton(usingColor: UIColor.gray) // Solid
-// or
+view.showSkeleton(usingColor: UIColor.gray) // 固体效果
+// 或者
 view.showSkeleton(usingColor: UIColor(red: 25.0, green: 30.0, blue: 255.0, alpha: 1.0))
 ```
-**Using gradients**
+**使用渐变色**
 ``` swift
 let gradient = SkeletonGradient(baseColor: UIColor.midnightBlue)
-view.showGradientSkeleton(usingGradient: gradient) // Gradient
+view.showGradientSkeleton(usingGradient: gradient) // 梯度效果
 ```
 
-Besides, ```SkeletonView``` features 20 flat colors 🤙🏼
+此外， ```SkeletonView``` 附带的 20 种颜色 🤙🏼
 
 ```UIColor.turquoise, UIColor.greenSea, UIColor.sunFlower, UIColor.flatOrange  ...```
 
 ![](Assets/flatcolors.png)
-###### Image captured from website [https://flatuicolors.com](https://flatuicolors.com)
+###### 从网站 [https://flatuicolors.com](https://flatuicolors.com)捕获的图像
 
-### 🤓 Custom animations
+### 🤓 自定义动画
 
-Now, ```SkeletonView``` has two built-in animations, *pulse* for solid skeletons and *sliding* for gradients.
+现在，```SkeletonView``` 有两个内置动画，*pulse* 脉冲效果和 *sliding* 渐变滑动效果。
 
-Besides, if you want to do your own skeleton animation, it's really easy.
+此外，如果你想做自己的 skeleton 动画，那真的很容易。
 
 
-Skeleton provides the `showAnimatedSkeleton` function which has a ```SkeletonLayerAnimation``` closure where you can define your custom animation.
+Skeleton 提供了 `showAnimatedSkeleton` 一个具有 ```SkeletonLayerAnimation``` 闭包的功能，您可以在其中定义自定义动画。
 
 ```swift
 public typealias SkeletonLayerAnimation = (CALayer) -> CAAnimation
 ```
 
-You can call the function like this:
+您可以像这样调用函数：
 
 ```swift
 view.showAnimatedSkeleton { (layer) -> CAAnimation in
   let animation = CAAnimation()
-  // Customize here your animation
+  // 在这里自定义你的动画
 
   return animation
 }
 ```
 
-**NEW** It's available ```SkeletonAnimationBuilder```. It's a builder to make ```SkeletonLayerAnimation```.
+**新** 它可用 ```SkeletonAnimationBuilder```。这是一个 ```SkeletonLayerAnimation```的衍生。
 
-Today, you can create **sliding animations** for gradients, deciding the **direction** and setting the **duration** of the animation (default = 1.5s).
+今天，您可以为渐变创建 **滑动动画**，确定 **方向** 并设置动画的 **持续时间**  (默认值 = 1.5s)。
 
 ```swift
 // func makeSlidingAnimation(withDirection direction: GradientDirection, duration: CFTimeInterval = 1.5) -> SkeletonLayerAnimation
@@ -309,9 +310,9 @@ view.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
 
 ```
 
-```GradientDirection``` is an enum, with this cases:
+```GradientDirection``` 是一个枚举，在这种情况下：
 
-|  Direction | Preview
+|  方向 | 效果
 |------- | -------
 | .leftRight | ![](Assets/sliding_left_to_right.gif)
 | .rightLeft | ![](Assets/sliding_right_to_left.gif)
@@ -320,19 +321,19 @@ view.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
 | .topLeftBottomRight | ![](Assets/sliding_topLeft_to_bottomRight.gif)
 | .bottomRightTopLeft | ![](Assets/sliding_bottomRight_to_topLeft.gif)
 
-> **😉 TRICK!**
-Exist another way to create sliding animations, just using this shortcut:
+> **😉 技巧!**
+存在另一种创建滑动动画的方法，只需使用此快捷方式：
 >>```let animation = GradientDirection.leftToRight.slidingAnimation()```
 
-### 👨‍👧‍👦 Hierarchy
+### 👨‍👧‍👦 等级制度
 
-Since ```SkeletonView``` is recursive, and we want skeleton to be very efficient, we want to stop recursion as soon as possible. For this reason, you must set the container view as `Skeletonable`, because Skeleton will stop looking for `skeletonable` subviews as soon as a view is not Skeletonable, breaking then the recursion.
+由于 ```SkeletonView``` 是递归的，我们希望 skeleton 效率高效, 我们希望尽快停止递归。因此，您必须将容器视图设置为 `Skeletonable` ，因为`skeletonable` 一旦视图不是 Skeletonable, Skeleton 将停止查找子视图，然后断开递归。
 
-Because an image is worth a thousand words:
+一图胜千言：
 
-> ```ìsSkeletonable```= ☠️
+> 设置 ```ìsSkeletonable```= ☠️
 
-| Configuration | Result
+| 分组 | 结果
 |------- | -------
 |![](Assets/no_skeletonable.png) | ![](Assets/no_skeletonables_result.png)
 |![](Assets/container_no_skeletonable.png) | ![](Assets/no_skeletonables_result.png)
@@ -341,32 +342,33 @@ Because an image is worth a thousand words:
 
 
 
-### 📚 Documentation
-Coming soon...😅
+### 📚 文档
+快出来...😅
 
-## 📬 Next steps
+## 📬 下一步
 
-* [x] Set the filling percent of the last line in multiline elements
-* [x] Add more gradient animations
-* [x] Supported resizable cells
-* [x] CollectionView compatible
-* [x] tvOS compatible
-* [x] Add recovery state
-* [ ] Custom collections compatible
-* [ ] Add animations when it shows/hides the skeletons
-* [ ] MacOS and WatchOS compatible
+* [x] 设置多行元素中最后一行的填充百分比
+* [x] 添加更多渐变动画
+* [x] 支持可调整大小的单元
+* [x] CollectionView 兼容
+* [x] tvOS 兼容
+* [x] 添加恢复状态
+* [ ] 自定义集合兼容
+* [ ] 在显示/隐藏骨架时添加动画
+* [ ] MacOS 和 WatchOS兼容
 
-## ❤️ Contributing
-This is an open source project, so feel free to contribute. How?
-- Open an [issue](https://github.com/Juanpe/SkeletonView/issues/new).
-- Send feedback via [email](mailto://juanpecatalan.com).
-- Propose your own fixes, suggestions and open a pull request with the changes.
+## ❤️ 特约
+这是一个开源项目，所以请随时贡献。怎么样？
 
-See [all contributors](https://github.com/Juanpe/SkeletonView/graphs/contributors)
+- 打开一个 [issue](https://github.com/Juanpe/SkeletonView/issues/new)
+- 反馈通过发送 [email](mailto://juanpecatalan.com)
+- 提出您自己的修复和建议，并带有拉取的请求。
 
-###### Project generated with [SwiftPlate](https://github.com/JohnSundell/SwiftPlate)
+查看 [所有贡献者](https://github.com/Juanpe/SkeletonView/graphs/contributors)
 
-## 📢 Mentions
+###### 使用 [SwiftPlate](https://github.com/JohnSundell/SwiftPlate) 生成的项目
+
+## 📢 提及
 
 - [iOS Dev Weekly #327](https://iosdevweekly.com/issues/327#start)
 - [Hacking with Swift Articles](https://www.hackingwithswift.com/articles/40/skeletonview-makes-loading-content-beautiful)
@@ -382,7 +384,7 @@ See [all contributors](https://github.com/Juanpe/SkeletonView/graphs/contributor
 
 
 
-## 👨🏻‍💻 Author
+## 👨🏻‍💻 作者
 [1.1]: http://i.imgur.com/tXSoThF.png
 [1]: http://www.twitter.com/JuanpeCatalan
 
@@ -390,7 +392,7 @@ See [all contributors](https://github.com/Juanpe/SkeletonView/graphs/contributor
 
 <a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/CDou4xtIK"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy me a coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;"><span style="margin-left:5px"></span></a>
 
-## 👮🏻 License
+## 👮🏻 许可证
 
 ```
 MIT License
