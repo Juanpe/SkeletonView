@@ -12,12 +12,12 @@ extension UIView {
     func addDummyDataSourceIfNeeded() {
         guard let collection = self as? CollectionSkeleton else { return }
         collection.addDummyDataSource()
-        collection.disableScrolling()
+        collection.disableUserInteraction()
     }
     
     func removeDummyDataSourceIfNeeded(reloadAfter reload: Bool = true) {
         guard let collection = self as? CollectionSkeleton else { return }
         collection.removeDummyDataSource(reloadAfter: reload)
-        collection.enableScrolling()
+        collection.enableUserInteraction()
     }
 }

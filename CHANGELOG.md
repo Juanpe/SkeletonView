@@ -1,6 +1,44 @@
 # Change Log
 All notable changes to this project will be documented in this file
 
+## [Typo (1.2.3)](https://github.com/Juanpe/SkeletonView/releases/tag/1.2.3)
+
+### Fixes
+
+- Fix typo in `SkeletonTableViewDataSource` protocol
+
+### Improvements
+
+- Now it takes in account the `UIStackView` to calculate the `SkeletonLayer` bounds (thanks @giantramen)
+
+## [New face (1.2.2)](https://github.com/Juanpe/SkeletonView/releases/tag/1.2.2)
+
+### New
+
+- Rebranding
+
+### Bug fixes
+- Solved issue [#23](https://github.com/Juanpe/SkeletonView/issues/23). Problem with UIStackView. (thanks @giantramen)
+
+## [State (1.2.1)](https://github.com/Juanpe/SkeletonView/releases/tag/1.2.1)
+
+### New
+
+- You can set the corner radius multiline elements (thanks @B4V4-G)
+- Save view state when skeleton appears and recovery when it is hidden (@juanpe)
+
+### Bug fixes
+- Solved issue [#51](https://github.com/Juanpe/SkeletonView/issues/51). Support inspectable properties when using Carthage. (thanks @eduardbosch)
+
+## [On TV (1.2)](https://github.com/Juanpe/SkeletonView/releases/tag/1.2)
+
+### New
+- Now ```SkeletonView``` is **tvOS** compatible! 🎉.  (thanks @mihai8804858)
+
+### Bug fixes
+- Solved issue [#46](https://github.com/Juanpe/SkeletonView/issues/46). It crashes the application when tap on it, didSelect called and crash.
+
+
 ## [Hotfix (1.1.1)](https://github.com/Juanpe/SkeletonView/releases/tag/1.1.1)
 
 ### Bug fixes

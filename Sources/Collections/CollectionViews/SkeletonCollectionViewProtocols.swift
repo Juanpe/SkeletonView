@@ -1,5 +1,5 @@
 //
-//  SkeletonUICollectionViewDataSource.swift
+//  SkeletonCollectionViewProtocols.swift
 //  SkeletonView-iOS
 //
 //  Created by Juanpe Catalán on 06/11/2017.
@@ -23,4 +23,6 @@ public extension SkeletonCollectionViewDataSource {
     
     func numSections(in collectionSkeletonView: UICollectionView) -> Int { return 1 }
 }
+
+public protocol SkeletonCollectionViewDelegate: UICollectionViewDelegate { }
 

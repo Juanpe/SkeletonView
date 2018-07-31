@@ -39,11 +39,10 @@ extension SkeletonCollectionDataSource: UITableViewDataSource {
         if let cell = originalTableViewDataSource?.collectionSkeletonView(tableView, cellForRowAt: indexPath) {
             return cell
         } else {
-            let cellIdentifier = originalTableViewDataSource?.collectionSkeletonView(tableView, cellIdenfierForRowAt: indexPath) ?? ""
+            let cellIdentifier = originalTableViewDataSource?.collectionSkeletonView(tableView, cellIdentifierForRowAt: indexPath) ?? ""
             return tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         }
     }
-    
 }
 
 // MARK: - UICollectionViewDataSource
@@ -62,5 +61,4 @@ extension SkeletonCollectionDataSource: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath)
         return cell
     }
-    
 }

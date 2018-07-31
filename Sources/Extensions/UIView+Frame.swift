@@ -12,6 +12,18 @@ import UIKit
 extension UIView {
     
     var maxBoundsEstimated: CGRect {
+        if let parentStackView = (superview as? UIStackView) {
+            var origin: CGPoint = .zero
+            switch parentStackView.alignment {
+            case .center:
+                origin.x = maxWidthEstimated / 2
+            case .trailing:
+                origin.x = maxWidthEstimated
+            default:
+                break
+            }
+            return CGRect(origin: origin, size: maxSizeEstimated)
+        }
         return CGRect(origin: .zero, size: maxSizeEstimated)
     }
     
@@ -20,12 +32,12 @@ extension UIView {
     }
     
     var maxWidthEstimated: CGFloat {
-        let constraintsWidth = constraints.filter({ $0.firstAttribute == NSLayoutAttribute.width })
+        let constraintsWidth = nonContentSizeLayoutConstraints.filter({ $0.firstAttribute == NSLayoutAttribute.width })
         return max(between: frame.size.width, andContantsOf: constraintsWidth)
     }
     
     var maxHeightEstimated: CGFloat {
-        let constraintsHeight = constraints.filter({ $0.firstAttribute == NSLayoutAttribute.height })
+        let constraintsHeight = nonContentSizeLayoutConstraints.filter({ $0.firstAttribute == NSLayoutAttribute.height })
         return max(between: frame.size.height, andContantsOf: constraintsHeight)
     }
     
@@ -36,5 +48,9 @@ extension UIView {
             return tempMax
         })
         return max
+    }
+    
+    var nonContentSizeLayoutConstraints: [NSLayoutConstraint] {
+        return constraints.filter({ "\(type(of: $0))" != "NSContentSizeLayoutConstraint" })
     }
 }

@@ -1,5 +1,5 @@
 //
-//  SkeletonUITableViewDataSource.swift
+//  SkeletonTableViewProtocols.swift
 //  SkeletonView-iOS
 //
 //  Created by Juanpe Catalán on 06/11/2017.
@@ -11,7 +11,7 @@ import UIKit
 public protocol SkeletonTableViewDataSource: UITableViewDataSource {
     func numSections(in collectionSkeletonView: UITableView) -> Int
     func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int
-    func collectionSkeletonView(_ skeletonView: UITableView, cellIdenfierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier
     func collectionSkeletonView(_ skeletonView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
 }
 
@@ -23,8 +23,18 @@ public extension SkeletonTableViewDataSource {
     
     func numSections(in collectionSkeletonView: UITableView) -> Int { return 1 }
 
+    /// Keeping the misspelled version around until it can be deprecated
+    /// Right now, it just calls the new correctly spelled method and returns its result
+    @available(*, deprecated, renamed: "collectionSkeletonView(_:cellIdentifierForRowAt:)")
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdenfierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        return collectionSkeletonView(skeletonView, cellIdentifierForRowAt: indexPath)
+    }
+
     func collectionSkeletonView(_ skeletonView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let identifier = collectionSkeletonView(skeletonView, cellIdenfierForRowAt: indexPath)
+        let identifier = collectionSkeletonView(skeletonView, cellIdentifierForRowAt: indexPath)
         return skeletonView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
     }
+}
+
+public protocol SkeletonTableViewDelegate: UITableViewDelegate {
 }
