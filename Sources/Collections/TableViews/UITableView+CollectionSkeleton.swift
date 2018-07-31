@@ -58,6 +58,3 @@ extension UITableView: CollectionSkeleton {
         return estimatedRowHeight
     }
 }
-
-
-
