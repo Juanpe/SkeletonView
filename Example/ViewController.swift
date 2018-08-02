@@ -42,7 +42,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        SkeletonAppearance.default.tintColor = .red
         tableview.isSkeletonable = true
     }
     
