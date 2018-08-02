@@ -15,11 +15,11 @@ class SkeletonLayerFactory {
     }
     
     func makeMultilineLayer(withType type: SkeletonType, for index: Int, width: CGFloat, multilineCornerRadius: Int) -> CALayer {
-        let spaceRequiredForEachLine = SkeletonConfig.shared.multilineHeight + SkeletonConfig.shared.multilineSpacing
+        let spaceRequiredForEachLine = SkeletonView.appearance.multilineHeight + SkeletonView.appearance.multilineSpacing
         let layer = type.layer
         layer.anchorPoint = .zero
         layer.name = CALayer.skeletonSubLayersName
-        layer.frame = CGRect(x: 0.0, y: CGFloat(index) * spaceRequiredForEachLine, width: width, height: SkeletonConfig.shared.multilineHeight)
+        layer.frame = CGRect(x: 0.0, y: CGFloat(index) * spaceRequiredForEachLine, width: width, height: SkeletonView.appearance.multilineHeight)
         
         layer.cornerRadius = CGFloat(multilineCornerRadius)
         layer.masksToBounds = true
