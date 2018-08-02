@@ -10,19 +10,19 @@ import UIKit
 
 public extension UIView {
     
-    func showSkeleton(usingColor color: UIColor = SkeletonDefaultConfig.tintColor) {
+    func showSkeleton(usingColor color: UIColor = SkeletonConfig.shared.tintColor) {
         showSkeleton(withType: .solid, usingColors: [color])
     }
     
-    func showGradientSkeleton(usingGradient gradient: SkeletonGradient = SkeletonDefaultConfig.gradient) {
+    func showGradientSkeleton(usingGradient gradient: SkeletonGradient = SkeletonConfig.shared.gradient) {
         showSkeleton(withType: .gradient, usingColors: gradient.colors)
     }
     
-    func showAnimatedSkeleton(usingColor color: UIColor = SkeletonDefaultConfig.tintColor, animation: SkeletonLayerAnimation? = nil) {
+    func showAnimatedSkeleton(usingColor color: UIColor = SkeletonConfig.shared.tintColor, animation: SkeletonLayerAnimation? = nil) {
         showSkeleton(withType: .solid, usingColors: [color], animated: true, animation: animation)
     }
     
-    func showAnimatedGradientSkeleton(usingGradient gradient: SkeletonGradient = SkeletonDefaultConfig.gradient, animation: SkeletonLayerAnimation? = nil) {
+    func showAnimatedGradientSkeleton(usingGradient gradient: SkeletonGradient = SkeletonConfig.shared.gradient, animation: SkeletonLayerAnimation? = nil) {
         showSkeleton(withType: .gradient, usingColors: gradient.colors, animated: true, animation: animation)
     }
     
