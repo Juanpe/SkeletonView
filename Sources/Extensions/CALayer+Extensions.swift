@@ -51,7 +51,7 @@ extension CALayer {
     }
     
     private func calculateNumLines(maxLines: Int) -> Int {
-        let spaceRequitedForEachLine = SkeletonView.appearance.multilineHeight + SkeletonView.appearance.multilineSpacing
+        let spaceRequitedForEachLine = SkeletonAppearance.default.multilineHeight + SkeletonAppearance.default.multilineSpacing
         var numberOfSublayers = Int(round(CGFloat(bounds.height)/CGFloat(spaceRequitedForEachLine)))
         if maxLines != 0,  maxLines <= numberOfSublayers { numberOfSublayers = maxLines }
         return numberOfSublayers

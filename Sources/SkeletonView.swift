@@ -2,25 +2,21 @@
 
 import UIKit
 
-public enum SkeletonView: Customizable {
-    public static var appearance: SkeletonAppearance = SkeletonViewAppearance.shared
-}
-
 public extension UIView {
     
-    func showSkeleton(usingColor color: UIColor = SkeletonView.appearance.defaultTintColor) {
+    func showSkeleton(usingColor color: UIColor = SkeletonAppearance.default.tintColor) {
         showSkeleton(withType: .solid, usingColors: [color])
     }
     
-    func showGradientSkeleton(usingGradient gradient: SkeletonGradient = SkeletonView.appearance.defaultGradient) {
+    func showGradientSkeleton(usingGradient gradient: SkeletonGradient = SkeletonAppearance.default.gradient) {
         showSkeleton(withType: .gradient, usingColors: gradient.colors)
     }
     
-    func showAnimatedSkeleton(usingColor color: UIColor = SkeletonView.appearance.defaultTintColor, animation: SkeletonLayerAnimation? = nil) {
+    func showAnimatedSkeleton(usingColor color: UIColor = SkeletonAppearance.default.tintColor, animation: SkeletonLayerAnimation? = nil) {
         showSkeleton(withType: .solid, usingColors: [color], animated: true, animation: animation)
     }
     
-    func showAnimatedGradientSkeleton(usingGradient gradient: SkeletonGradient = SkeletonView.appearance.defaultGradient, animation: SkeletonLayerAnimation? = nil) {
+    func showAnimatedGradientSkeleton(usingGradient gradient: SkeletonGradient = SkeletonAppearance.default.gradient, animation: SkeletonLayerAnimation? = nil) {
         showSkeleton(withType: .gradient, usingColors: gradient.colors, animated: true, animation: animation)
     }
     

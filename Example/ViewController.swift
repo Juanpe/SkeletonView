@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         didSet {
             colorSelectedView.layer.cornerRadius = 5
             colorSelectedView.layer.masksToBounds = true
-            colorSelectedView.backgroundColor = SkeletonView.appearance.defaultTintColor
+            colorSelectedView.backgroundColor = SkeletonAppearance.default.tintColor
         }
     }
 
@@ -42,6 +42,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        SkeletonAppearance.default.tintColor = .red
         tableview.isSkeletonable = true
     }
     
