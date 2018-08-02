@@ -49,6 +49,7 @@ Enjoy it! 🙂
   * [Collections](#-collections)
   * [Multiline text](#-multiline-text)
   * [Custom colors](#-custom-colors)
+  * [Appearance](#-appearance)
   * [Custom animations](#-custom-animations)
   * [Hierarchy](#-hierarchy)
 * [Documentation](#-documentation)
@@ -273,9 +274,22 @@ Besides, ```SkeletonView``` features 20 flat colors 🤙🏼
 ![](Assets/flatcolors.png)
 ###### Image captured from website [https://flatuicolors.com](https://flatuicolors.com)
 
+### 🦋 Appearance
+
+**NEW** The skeletons have a default appearance. So, when you don't specify the color, gradient or multilines properties, `SkeletonView` uses the default values.
+
+Default values:
+- **tintColor**: UIColor
+- **gradient**: SkeletonGradient
+- **multilineHeight**: CGFloat
+- **multilineSpacing**: CGFloat
+- **multilineLastLineFillPercent**: Int
+- **multilineCornerRadius**: Int _0_
+
+
 ### 🤓 Custom animations
 
-Now, ```SkeletonView``` has two built-in animations, *pulse* for solid skeletons and *sliding* for gradients.
+```SkeletonView``` has two built-in animations, *pulse* for solid skeletons and *sliding* for gradients.
 
 Besides, if you want to do your own skeleton animation, it's really easy.
 
@@ -297,7 +311,7 @@ view.showAnimatedSkeleton { (layer) -> CAAnimation in
 }
 ```
 
-**NEW** It's available ```SkeletonAnimationBuilder```. It's a builder to make ```SkeletonLayerAnimation```.
+It's available ```SkeletonAnimationBuilder```. It's a builder to make ```SkeletonLayerAnimation```.
 
 Today, you can create **sliding animations** for gradients, deciding the **direction** and setting the **duration** of the animation (default = 1.5s).
 
@@ -352,6 +366,7 @@ Coming soon...😅
 * [x] CollectionView compatible
 * [x] tvOS compatible
 * [x] Add recovery state
+* [x] Custom default appearance
 * [ ] Custom collections compatible
 * [ ] Add animations when it shows/hides the skeletons
 * [ ] MacOS and WatchOS compatible

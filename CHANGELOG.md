@@ -1,6 +1,16 @@
 # Change Log
 All notable changes to this project will be documented in this file
 
+## [Custom defaults (1.3)](https://github.com/Juanpe/SkeletonView/releases/tag/1.3)
+
+### New
+
+- Default values customizables. Now you can set the default values of Skeleton appearance.(thanks @reececomo)
+  - issues: [[#50](https://github.com/Juanpe/SkeletonView/issues/50), [#83](https://github.com/Juanpe/SkeletonView/issues/83)]
+
+### Bug fixes
+- Solved issue [#41](https://github.com/Juanpe/SkeletonView/issues/41). Now, Skeleton works if UICollectionView cell's Nib is registered in code. (thanks @kjoneandrei)
+
 ## [Typo (1.2.3)](https://github.com/Juanpe/SkeletonView/releases/tag/1.2.3)
 
 ### Fixes
