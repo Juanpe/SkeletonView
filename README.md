@@ -280,11 +280,23 @@ Besides, ```SkeletonView``` features 20 flat colors 🤙🏼
 
 Default values:
 - **tintColor**: UIColor
+    - *default: .clouds*
 - **gradient**: SkeletonGradient
+  - *default: SkeletonGradient(baseColor: .clouds)*
 - **multilineHeight**: CGFloat
+  - *default: 15*
 - **multilineSpacing**: CGFloat
+  - *default: 10*
 - **multilineLastLineFillPercent**: Int
-- **multilineCornerRadius**: Int _0_
+  - *default: 70*
+- **multilineCornerRadius**: Int
+  - *default: 0*
+
+To get these default values you can use `SkeletonAppearance.default`. Using this property you can set the values as well:
+```Swift
+SkeletonAppearance.default.multilineHeight = 20
+SkeletonAppearance.default.tintColor = .green
+```
 
 
 ### 🤓 Custom animations
