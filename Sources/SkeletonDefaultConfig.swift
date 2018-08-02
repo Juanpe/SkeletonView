@@ -1,5 +1,5 @@
 //
-//  SkeletonDefaultConfig.swift
+//  SkeletonConfig.shared.swift
 //  SkeletonView-iOS
 //
 //  Created by Juanpe Catalán on 06/11/2017.
@@ -8,17 +8,30 @@
 
 import UIKit
 
-public enum SkeletonDefaultConfig {
-        
-        public static let tintColor = UIColor.clouds
-        
-        public static let gradient = SkeletonGradient(baseColor: tintColor)
-        
-        public static let multilineHeight: CGFloat = 15
-        
-        public static let multilineSpacing: CGFloat = 10
-        
-        public static let multilineLastLineFillPercent = 70
-        
-        public static let multilineCornerRadius = 0
+public struct SkeletonConfig {
+    
+    // MARK: - Defaults
+    
+    public static var shared = SkeletonConfig(
+            tintColor: .clouds,
+            gradient: SkeletonGradient(baseColor: .clouds),
+            multilineHeight: 15,
+            multilineSpacing: 10,
+            multilineLastLineFillPercent: 70,
+            multilineCornerRadius: 0
+        )
+    
+    // MARK: - Properties
+    
+    public var tintColor: UIColor
+    
+    public var gradient: SkeletonGradient
+    
+    public var multilineHeight: CGFloat
+    
+    public var multilineSpacing: CGFloat
+    
+    public var multilineLastLineFillPercent: Int
+    
+    public var multilineCornerRadius: Int
 }
