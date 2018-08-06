@@ -1,28 +1,22 @@
-//
-//  SkeletonView.swift
-//  SkeletonView
-//
-//  Created by Juanpe Catalán on 01/11/2017.
 //  Copyright © 2017 SkeletonView. All rights reserved.
-//
 
 import UIKit
 
 public extension UIView {
     
-    func showSkeleton(usingColor color: UIColor = SkeletonConfig.shared.tintColor) {
+    func showSkeleton(usingColor color: UIColor = SkeletonAppearance.default.tintColor) {
         showSkeleton(withType: .solid, usingColors: [color])
     }
     
-    func showGradientSkeleton(usingGradient gradient: SkeletonGradient = SkeletonConfig.shared.gradient) {
+    func showGradientSkeleton(usingGradient gradient: SkeletonGradient = SkeletonAppearance.default.gradient) {
         showSkeleton(withType: .gradient, usingColors: gradient.colors)
     }
     
-    func showAnimatedSkeleton(usingColor color: UIColor = SkeletonConfig.shared.tintColor, animation: SkeletonLayerAnimation? = nil) {
+    func showAnimatedSkeleton(usingColor color: UIColor = SkeletonAppearance.default.tintColor, animation: SkeletonLayerAnimation? = nil) {
         showSkeleton(withType: .solid, usingColors: [color], animated: true, animation: animation)
     }
     
-    func showAnimatedGradientSkeleton(usingGradient gradient: SkeletonGradient = SkeletonConfig.shared.gradient, animation: SkeletonLayerAnimation? = nil) {
+    func showAnimatedGradientSkeleton(usingGradient gradient: SkeletonGradient = SkeletonAppearance.default.gradient, animation: SkeletonLayerAnimation? = nil) {
         showSkeleton(withType: .gradient, usingColors: gradient.colors, animated: true, animation: animation)
     }
     

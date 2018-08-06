@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         didSet {
             colorSelectedView.layer.cornerRadius = 5
             colorSelectedView.layer.masksToBounds = true
-            colorSelectedView.backgroundColor = SkeletonConfig.shared.tintColor
+            colorSelectedView.backgroundColor = SkeletonAppearance.default.tintColor
         }
     }
 
