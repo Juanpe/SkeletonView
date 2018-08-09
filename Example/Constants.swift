@@ -1,10 +1,4 @@
-//
-//  Constants.swift
-//  SkeletonView-iOS
-//
-//  Created by Renato Mendes on 28/11/2017.
-//  Copyright © 2017 SkeletonView. All rights reserved.
-//
+//  Copyright © 2018 SkeletonView. All rights reserved.
 
 import UIKit
 
