@@ -83,14 +83,13 @@ To run the example project, clone the repo and run `SkeletonViewExample` target.
 
 ## 📲 Installation
 
-<details>
-<summary>Using [CocoaPods](https://cocoapods.org)</summary>
+#### Using [CocoaPods](https://cocoapods.org)
+
 Edit your `Podfile` and specify the dependency:
 
 ```ruby
 pod "SkeletonView"
 ```
-</details>
 
 #### Using [Carthage](https://github.com/carthage)
 
