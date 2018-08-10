@@ -26,10 +26,10 @@ func skeletonLog(_ message: String) {
 
 extension UIView {
 
-    public func skeletonDescription(short: Bool = false) -> String {
+    public var skeletonDescription: String {
         var description = "<\(type(of: self)): \(Unmanaged.passUnretained(self).toOpaque())"
         let subSkeletons = subviewsSkeletonables
-        if !short, subSkeletons.count != 0 {
+        if subSkeletons.count != 0 {
             description += " | (\(subSkeletons.count)) subSkeletons"
         }
         if isSkeletonable {
@@ -40,10 +40,10 @@ extension UIView {
 
     public func skeletonHierarchy(index: Int = 0) -> String {
         var description = index == 0 ? "\n ⬇⬇ ☠️ Root view hierarchy with Skeletons ⬇⬇ \n" : ""
-        description += "\(index == 0 ? "\n" : "   ") \(skeletonDescription()) \n"
+        description += "\(index == 0 ? "\n" : 3.whitespaces) \(skeletonDescription) \n"
         subviewsToSkeleton.forEach {
-            description += String(repeating: " ", count: index)
-            description += $0.skeletonHierarchy(index: index + 3)
+            description += (index + 2).whitespaces
+            description += $0.skeletonHierarchy(index: index + 1)
         }
         return description
     }

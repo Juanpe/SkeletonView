@@ -52,7 +52,7 @@ Enjoy it! 🙂
   * [Appearance](#-appearance)
   * [Custom animations](#-custom-animations)
   * [Hierarchy](#-hierarchy)
-* [Debug](#-debug)
+  * [Debug](#-debug)
 * [Documentation](#-documentation)
 * [Next steps](#-next-steps)
 * [Contributing](#-contributing)
@@ -370,7 +370,29 @@ Because an image is worth a thousand words:
 ### 🔬 Debug
 
 **NEW** In order to facilitate the debug tasks when something is not working fine. `SkeletonView` has a **debug mode**.
- 
+
+To activate the debug mode, you need to create an Environment variable and activate it.
+
+![](Assets/debug_mode.png)
+
+Then, when skeleton is showed, `SkeletonView` will print the hierarchy.
+
+<details><summary>Open to see an output example </summary>
+<p>
+![](Assets/hierarchy_output.png)
+</p>
+</details>
+
+
+Besides, `UIViews` have available a new property with skeleton info:
+```swift
+var skeletonDescription: String
+
+```
+This is his output:
+
+![](Assets/debug_description.png)
+
 
 ### 📚 Documentation
 Coming soon...😅

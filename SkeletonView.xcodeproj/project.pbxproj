@@ -73,6 +73,8 @@
 		F58A6E6C20A8C54100612494 /* RecoverableViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A6E6A20A8C54100612494 /* RecoverableViewState.swift */; };
 		F58A6E6E20A8C66300612494 /* Recoverable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A6E6D20A8C66300612494 /* Recoverable.swift */; };
 		F58A6E6F20A8C66300612494 /* Recoverable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A6E6D20A8C66300612494 /* Recoverable.swift */; };
+		F5A5E8B4211DCE7000FD20D0 /* Int+Whitespaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5E8B3211DCE7000FD20D0 /* Int+Whitespaces.swift */; };
+		F5A5E8B5211DCE7000FD20D0 /* Int+Whitespaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5E8B3211DCE7000FD20D0 /* Int+Whitespaces.swift */; };
 		F5D3FB0B209DCAA300003FCF /* SubviewsSkeletonables.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D3FB0A209DCAA300003FCF /* SubviewsSkeletonables.swift */; };
 		F5D3FB0C209DCAA300003FCF /* SubviewsSkeletonables.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D3FB0A209DCAA300003FCF /* SubviewsSkeletonables.swift */; };
 		F5F622411FAC6E31007C062A /* UIColor+Skeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F622401FAC6E31007C062A /* UIColor+Skeleton.swift */; };
@@ -169,6 +171,7 @@
 		F587FB85202CEC95002DB5FE /* UIView+UIApplicationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+UIApplicationDelegate.swift"; sourceTree = "<group>"; };
 		F58A6E6A20A8C54100612494 /* RecoverableViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverableViewState.swift; sourceTree = "<group>"; };
 		F58A6E6D20A8C66300612494 /* Recoverable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recoverable.swift; sourceTree = "<group>"; };
+		F5A5E8B3211DCE7000FD20D0 /* Int+Whitespaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Whitespaces.swift"; sourceTree = "<group>"; };
 		F5D3FB0A209DCAA300003FCF /* SubviewsSkeletonables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubviewsSkeletonables.swift; sourceTree = "<group>"; };
 		F5F622401FAC6E31007C062A /* UIColor+Skeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Skeleton.swift"; sourceTree = "<group>"; };
 		F5F622421FAC81FD007C062A /* CALayer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extensions.swift"; sourceTree = "<group>"; };
@@ -361,6 +364,7 @@
 				F5307E2D1FB0E5E400EE67C5 /* UIView+Frame.swift */,
 				F5F899CF1FAA6A4D002E8FDA /* UIView+IBInspectable.swift */,
 				F587FB85202CEC95002DB5FE /* UIView+UIApplicationDelegate.swift */,
+				F5A5E8B3211DCE7000FD20D0 /* Int+Whitespaces.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -633,6 +637,7 @@
 				F51ED28420973CC6008B2434 /* GenericCollectionView.swift in Sources */,
 				17DD0E0A207FB28900C56334 /* SkeletonCollectionViewProtocols.swift in Sources */,
 				17DD0E1C207FB32100C56334 /* AssociationPolicy.swift in Sources */,
+				F5A5E8B5211DCE7000FD20D0 /* Int+Whitespaces.swift in Sources */,
 				17DD0E1D207FB32100C56334 /* ContainsMultilineText.swift in Sources */,
 				17DD0E0F207FB28C00C56334 /* CALayer+Extensions.swift in Sources */,
 				17DD0E16207FB28F00C56334 /* SkeletonGradient.swift in Sources */,
@@ -680,6 +685,7 @@
 				F5307E3B1FB123C100EE67C5 /* ContainsMultilineText.swift in Sources */,
 				F5F899E91FAB9D2B002E8FDA /* SkeletonLayer.swift in Sources */,
 				F5307E2E1FB0E5E400EE67C5 /* UIView+Frame.swift in Sources */,
+				F5A5E8B4211DCE7000FD20D0 /* Int+Whitespaces.swift in Sources */,
 				F51DF871206E91B300D23301 /* SkeletonReusableCell.swift in Sources */,
 				F51DF879206E9F5500D23301 /* SkeletonCollectionDelegate.swift in Sources */,
 				F51DE1091FBF70A70037919A /* SkeletonAnimationBuilder.swift in Sources */,
