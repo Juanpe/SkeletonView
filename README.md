@@ -52,6 +52,7 @@ Enjoy it! 🙂
   * [Appearance](#-appearance)
   * [Custom animations](#-custom-animations)
   * [Hierarchy](#-hierarchy)
+  * [Debug](#-debug)
 * [Documentation](#-documentation)
 * [Next steps](#-next-steps)
 * [Contributing](#-contributing)
@@ -366,6 +367,31 @@ Because an image is worth a thousand words:
 |![](Assets/all_skeletonables.png) | ![](Assets/all_skeletonables_result.png)
 
 
+### 🔬 Debug
+
+**NEW** In order to facilitate the debug tasks when something is not working fine. `SkeletonView` has some new tools.
+
+First, `UIView` has available a new property with his skeleton info:
+```swift
+var skeletonDescription: String
+
+```
+The skeleton representation looks like this:
+
+![](Assets/debug_description.png)
+
+Besides, you can activate the new **debug mode**. You just add the environment variable `SKELETON_DEBUG` and activate it.
+
+![](Assets/debug_mode.png)
+
+Then, when the skeleton appears, you can see the view hierarchy in the Xcode console.
+
+<details>
+<summary>Open to see an output example </summary>
+<img src="Assets/hierarchy_output.png" />
+</details>
+
+
 
 ### 📚 Documentation
 Coming soon...😅
@@ -379,6 +405,7 @@ Coming soon...😅
 * [x] tvOS compatible
 * [x] Add recovery state
 * [x] Custom default appearance
+* [x] Debug mode
 * [ ] Custom collections compatible
 * [ ] Add animations when it shows/hides the skeletons
 * [ ] MacOS and WatchOS compatible

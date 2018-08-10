@@ -1,10 +1,4 @@
-//
-//  AppDelegate.swift
-//  SkeletonViewExampleUICollectionView
-//
-//  Created by Andrei Hogea on 14/02/2018.
 //  Copyright © 2018 SkeletonView. All rights reserved.
-//
 
 import UIKit
 
