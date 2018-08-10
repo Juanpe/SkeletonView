@@ -388,50 +388,7 @@ Then, when the skeleton appears, you can see the view hierarchy in the Xcode con
 
 <details>
 <summary>Open to see an output example </summary>
-<pre>
-⬇⬇ ☠️ Root view hierarchy with Skeletons ⬇⬇
-
-<UIView: 0x00007fccd4f074f0 | (2) subSkeletons>
-     <UITableView: 0x00007fccd5850000 | (3) subSkeletons | ☠️ >
-      <Cell: 0x00007fccd5015600 | (2) subSkeletons | ☠️ >
-       <UIImageView: 0x00007fccd4c2bae0 | ☠️ >
-       <UILabel: 0x00007fccd4c2bd10 | ☠️ >
-      <Cell: 0x00007fccd5891000 | (2) subSkeletons | ☠️ >
-       <UIImageView: 0x00007fccd4e23f00 | ☠️ >
-       <UILabel: 0x00007fccd4e24130 | ☠️ >
-      <Cell: 0x00007fccd5897000 | (2) subSkeletons | ☠️ >
-       <UIImageView: 0x00007fccd4e26190 | ☠️ >
-       <UILabel: 0x00007fccd4e263c0 | ☠️ >
-     <UIView: 0x00007fccd4f076e0 | (2) subSkeletons | ☠️ >
-      <UITextView: 0x00007fccd681e200 | ☠️ >
-       <_UITextContainerView: 0x00007fccd4e19170>
-        <UITextSelectionView: 0x00007fccd4e1e930>
-       <UIImageView: 0x00007fccd4e03ef0>
-       <UIImageView: 0x00007fccd4e0bd70>
-      <UIImageView: 0x00007fccd4c22f70 | ☠️ >
-     <UIView: 0x00007fccd4e1f1a0>
-      <UISegmentedControl: 0x00007fccd4e13090>
-       <UISegment: 0x00007fccd4c20b00>
-        <UISegmentLabel: 0x00007fccd4c22730>
-        <UIImageView: 0x00007fccd4c22a20>
-       <UISegment: 0x00007fccd4e13510>
-        <UISegmentLabel: 0x00007fccd4e13ad0>
-        <UIImageView: 0x00007fccd4f057e0>
-      <UISwitch: 0x00007fccd4c20300>
-       <UISwitchModernVisualElement: 0x00007fccd4c20870>
-        <UIView: 0x00007fccd4e12410>
-         <UIView: 0x00007fccd4e11e40>
-        <UIView: 0x00007fccd4e12220>
-         <UIView: 0x00007fccd4e12030>
-        <UIView: 0x00007fccd4e12ea0>
-         <UIImageView: 0x00007fccd4e12a40>
-         <UIImageView: 0x00007fccd4e12c70>
-        <UIImageView: 0x00007fccd4e12600>
-      <UILabel: 0x00007fccd4e20170>
-      <UILabel: 0x00007fccd4e20870>
-      <UIView: 0x00007fccd4e17880>
-      <UIButton: 0x00007fccd4c1fe40>
-</pre>
+<img src="Assets/hierarchy_output.png" />
 </details>
 
 
