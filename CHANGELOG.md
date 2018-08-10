@@ -1,6 +1,20 @@
 # Change Log
 All notable changes to this project will be documented in this file
 
+## [Debug (1.4)](https://github.com/Juanpe/SkeletonView/releases/tag/1.4)
+
+### New
+
+- Create `skeletonDescription` print a skeleton representation of the view.
+- Create `SKELETON_DEBUG` environment variable, in order to print the view hierarchy when the skeleton appears.
+
+### Improvements
+- Add two new methods to `SkeletonFlowDelegate` protocol. Now you can know when the skeleton did show and when it did hide.
+- `Recursive` protocol
+
+### Bug fixes
+- Solved issue [#86](https://github.com/Juanpe/SkeletonView/issues/86) (thanks @reececomo)
+
 ## [Custom defaults (1.3)](https://github.com/Juanpe/SkeletonView/releases/tag/1.3)
 
 ### New

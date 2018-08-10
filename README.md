@@ -369,29 +369,28 @@ Because an image is worth a thousand words:
 
 ### 🔬 Debug
 
-**NEW** In order to facilitate the debug tasks when something is not working fine. `SkeletonView` has a **debug mode**.
+**NEW** In order to facilitate the debug tasks when something is not working fine. `SkeletonView` has some new tools.
 
-To activate the debug mode, you need to create an Environment variable and activate it.
-
-![](Assets/debug_mode.png)
-
-Then, when skeleton is showed, `SkeletonView` will print the hierarchy.
-
-<details><summary>Open to see an output example </summary>
-<p>
-![](Assets/hierarchy_output.png)
-</p>
-</details>
-
-
-Besides, `UIViews` have available a new property with skeleton info:
+First, `UIView` has available a new property with his skeleton info:
 ```swift
 var skeletonDescription: String
 
 ```
-This is his output:
+The skeleton representation looks like this:
 
 ![](Assets/debug_description.png)
+
+Besides, you can activate the new **debug mode**. You just add the environment variable `SKELETON_DEBUG` and activate it.
+
+![](Assets/debug_mode.png)
+
+Then, when the skeleton appears, you can see the view hierarchy in the Xcode console.
+
+<details>
+<summary>Open to see an output example </summary>
+![](Assets/hierarchy_output.png)
+</details>
+
 
 
 ### 📚 Documentation
