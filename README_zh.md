@@ -31,7 +31,9 @@
     </a>
 </p>
 
-🌎  翻译: [ [原版的](https://github.com/Juanpe/SkeletonView) ]
+🌎  翻译: [ [原版的](https://github.com/Juanpe/SkeletonView) ] </br>
+[🇧🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_pt-br.md) [@brunomunizaf](https://twitter.com/brunomuniz_af)
+
 
 今天，几乎所有的应用程序都有异步流程，例如：Api请求、长时间运行的流程等。虽然流程正在运行，但通常开发人员会设置一个加载视图来向用户显示正在发生的事情。
 
