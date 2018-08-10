@@ -10,12 +10,12 @@ protocol SkeletonFlowDelegate {
 class SkeletonFlowHandler: SkeletonFlowDelegate {
     
     func willBeginShowingSkeletons(withRootView rootView: UIView) {
-        log("☠️ => Skeleton will begin showing using as root container: \(String(describing: rootView))")
+        log("☠️ will begin showing \(rootView.skeletonHierarchy())")
         rootView.addAppNotificationsObservers()
     }
     
     func willBeginHidingSkeletons(withRootView rootView: UIView) {
-        log("☠️ => Skeleton will begin hidding using as root container: \(String(describing: rootView))")
+        log("☠️ will begin hidding using as root container ")
         rootView.removeAppNoticationsObserver()
         rootView.flowDelegate = nil
     }
