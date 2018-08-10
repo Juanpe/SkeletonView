@@ -14,40 +14,36 @@ extension Dictionary {
     }
 }
 
-func log(_ message: String) {
+func printSkeletonHierarchy(in view: UIView) {
+    skeletonLog(view.skeletonHierarchy())
+}
+
+func skeletonLog(_ message: String) {
     if let _ = ProcessInfo.processInfo.environment[.debugMode] {
         print(message)
     }
 }
 
 extension UIView {
-    public func skeletonHierarchy(index: Int = 0, onlySkeleletons: Bool = true) -> String {
-        var description = index == 0 ? "\n\n ------------------ [☠️](Hierarchy) ------------------ \n " : ""
-        description += "\(index == 0 ? "\n" : "   ")<\(type(of: self)): \(Unmanaged.passUnretained(self).toOpaque())> "
-        if self.subviewsSkeletonables.count != 0 {
-            description += "with [\(self.subviewsSkeletonables.count)] subSkeletons:"
-        } else {
-            description = "    ☠️ - " + description.replacingOccurrences(of: " ", with: "")
+
+    public func skeletonDescription(short: Bool = false) -> String {
+        var description = "<\(type(of: self)): \(Unmanaged.passUnretained(self).toOpaque())"
+        let subSkeletons = subviewsSkeletonables
+        if !short, subSkeletons.count != 0 {
+            description += " | (\(subSkeletons.count)) subSkeletons"
         }
-        description += "\n"
-        (onlySkeleletons ? self.subviews : self.subviewsSkeletonables).forEach {
+        if isSkeletonable {
+            description += " | ☠️ "
+        }
+        return description + ">"
+    }
+
+    public func skeletonHierarchy(index: Int = 0) -> String {
+        var description = index == 0 ? "\n ⬇⬇ ☠️ Root view hierarchy with Skeletons ⬇⬇ \n" : ""
+        description += "\(index == 0 ? "\n" : "   ") \(skeletonDescription()) \n"
+        subviewsToSkeleton.forEach {
             description += String(repeating: " ", count: index)
             description += $0.skeletonHierarchy(index: index + 3)
-        }
-        return description
-    }
-    
-    public func allViewsHierarchy(index: Int = 0) -> String {
-        var description = "\(index == 0 ? "\n" : "   ")<\(type(of: self)): \(Unmanaged.passUnretained(self).toOpaque())> "
-        if self.subviewsSkeletonables.count != 0 {
-            description += "with [\(self.subviewsSkeletonables.count)] subSkeletons:"
-        } else {
-            description = "    \(self.isSkeletonable ? "☠️ - " : "")" + description.replacingOccurrences(of: " ", with: "")
-        }
-        description += "\n"
-        self.subviews.forEach {
-            description += String(repeating: " ", count: index)
-            description += $0.allViewsHierarchy(index: index + 3)
         }
         return description
     }

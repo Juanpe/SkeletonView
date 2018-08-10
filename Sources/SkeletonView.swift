@@ -22,22 +22,20 @@ public extension UIView {
     
     func hideSkeleton(reloadDataAfter reload: Bool = true) {
         flowDelegate?.willBeginHidingSkeletons(withRootView: self)
-        recursiveHideSkeleton(reloadDataAfter: reload)
+        recursiveHideSkeleton(reloadDataAfter: reload, root: self)
     }
     
     func startSkeletonAnimation(_ anim: SkeletonLayerAnimation? = nil) {
         skeletonIsAnimated = true
-        recursiveSearch(inArray: subviewsSkeletonables,
-                        leafBlock:  startSkeletonLayerAnimationBlock(anim)) {
-                            $0.startSkeletonAnimation(anim)
-                        }
+        subviewsSkeletonables.recursiveSearch(leafBlock: startSkeletonLayerAnimationBlock(anim)) { subview in
+            subview.startSkeletonAnimation(anim)
+        }
     }
 
     func stopSkeletonAnimation() {
         skeletonIsAnimated = false
-        recursiveSearch(inArray: subviewsSkeletonables,
-                        leafBlock: stopSkeletonLayerAnimationBlock) {
-                            $0.stopSkeletonAnimation()
+        subviewsSkeletonables.recursiveSearch(leafBlock: stopSkeletonLayerAnimationBlock) { subview in
+            subview.stopSkeletonAnimation()
         }
     }
 }
@@ -48,33 +46,39 @@ extension UIView {
         skeletonIsAnimated = animated
         flowDelegate = SkeletonFlowHandler()
         flowDelegate?.willBeginShowingSkeletons(withRootView: self)
-        recursiveShowSkeleton(withType: type, usingColors: colors, animated: animated, animation: animation)
+        recursiveShowSkeleton(withType: type, usingColors: colors, animated: animated, animation: animation, root: self)
     }
     
-    fileprivate func recursiveShowSkeleton(withType type: SkeletonType, usingColors colors: [UIColor], animated: Bool, animation: SkeletonLayerAnimation?) {
+    fileprivate func recursiveShowSkeleton(withType type: SkeletonType, usingColors colors: [UIColor], animated: Bool, animation: SkeletonLayerAnimation?, root: UIView? = nil) {
         addDummyDataSourceIfNeeded()
-        recursiveSearch(inArray: subviewsSkeletonables,
-                        leafBlock: {
-                            guard !isSkeletonActive else { return }
-                            isUserInteractionEnabled = false
-                            saveViewState()
-                            (self as? PrepareForSkeleton)?.prepareViewForSkeleton()
-                            addSkeletonLayer(withType: type, usingColors: colors, animated: animated, animation: animation)
-        }) {
-            $0.recursiveShowSkeleton(withType: type, usingColors: colors, animated: animated, animation: animation)
+
+        subviewsSkeletonables.recursiveSearch(leafBlock: {
+            guard !isSkeletonActive else { return }
+            isUserInteractionEnabled = false
+            saveViewState()
+            (self as? PrepareForSkeleton)?.prepareViewForSkeleton()
+            addSkeletonLayer(withType: type, usingColors: colors, animated: animated, animation: animation)
+        }) { subview in
+            subview.recursiveShowSkeleton(withType: type, usingColors: colors, animated: animated, animation: animation)
+        }
+
+        if let root = root {
+            flowDelegate?.didShowSkeletons(withRootView: root)
         }
     }
     
-    fileprivate func recursiveHideSkeleton(reloadDataAfter reload: Bool) {
+    fileprivate func recursiveHideSkeleton(reloadDataAfter reload: Bool, root: UIView? = nil) {
         removeDummyDataSourceIfNeeded()
         isUserInteractionEnabled = true
-        recursiveSearch(inArray: subviewsSkeletonables,
-                        leafBlock: {
-                            recoverViewState(forced: false)
-                            removeSkeletonLayer()
-                        }, recursiveBlock: {
-                            $0.recursiveHideSkeleton(reloadDataAfter: reload)
-                        })
+        subviewsSkeletonables.recursiveSearch(leafBlock: {
+            recoverViewState(forced: false)
+            removeSkeletonLayer()
+        }) { subview in
+            subview.recursiveHideSkeleton(reloadDataAfter: reload)
+        }
+        if let root = root {
+            flowDelegate?.didHideSkeletons(withRootView: root)
+        }
     }
     
     fileprivate func startSkeletonLayerAnimationBlock(_ anim: SkeletonLayerAnimation? = nil) -> VoidBlock {
