@@ -817,7 +817,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KWEMDK92F4;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "SkeletonViewExample copy-Info.plist";
+				INFOPLIST_FILE = "Configs/SkeletonViewExampleCollectionview-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.juanpecatalan.SkeletonViewExample;
@@ -844,7 +844,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KWEMDK92F4;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "SkeletonViewExample copy-Info.plist";
+				INFOPLIST_FILE = "Configs/SkeletonViewExampleCollectionview-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.juanpecatalan.SkeletonViewExample;
