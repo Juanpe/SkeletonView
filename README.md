@@ -43,6 +43,7 @@ Enjoy it! 🙂
 
 * [Features](#-features)
 * [Requirements](#-supported-os--sdk-versions)
+* [Guides](#-guides)
 * [Example Project](#-example)
 * [Installation](#-installation)
   * [Cocoapods](#using-cocoapods)
@@ -78,6 +79,12 @@ Enjoy it! 🙂
 * iOS 9.0+
 * tvOS 9.0+
 * Swift 4
+
+### 🎬 Guides
+
+| #1 - Getting started |
+| ------- |
+| [<img width="300" alt="screen shot 2017-04-07 at 1 10 00 am" src="Assets/thumb_getting_started.jpg">](https://youtu.be/75kgOhWsPNA)
 
 ### 🔮 Example
 
