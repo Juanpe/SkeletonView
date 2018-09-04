@@ -82,9 +82,7 @@ Enjoy it! 🙂
 
 ### 🎬 Guides
 
-| #1 - Getting started |
-| ------- |
-| [<img width="300" alt="screen shot 2017-04-07 at 1 10 00 am" src="Assets/thumb_getting_started.jpg">](https://youtu.be/75kgOhWsPNA)
+ [<img src="Assets/thumb_getting_started.png">](https://youtu.be/75kgOhWsPNA)
 
 ### 🔮 Example
 
