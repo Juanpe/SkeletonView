@@ -76,7 +76,7 @@ public class SkeletonAnimationBuilder {
             let animGroup = CAAnimationGroup()
             animGroup.animations = [startPointAnim, endPointAnim]
             animGroup.duration = duration
-            animGroup.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+            animGroup.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
             animGroup.repeatCount = .infinity
             
             return animGroup
