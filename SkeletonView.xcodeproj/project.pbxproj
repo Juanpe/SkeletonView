@@ -38,7 +38,6 @@
 		42ABD07A210B54E200BEEFF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42ABD072210B54E100BEEFF4 /* Assets.xcassets */; };
 		42ABD07B210B54E200BEEFF4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ABD073210B54E100BEEFF4 /* ViewController.swift */; };
 		42ABD07C210B54E200BEEFF4 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 42ABD074210B54E100BEEFF4 /* Base.lproj */; };
-		42ABD07E210B54E200BEEFF4 /* SkeletonViewExampleCollectionview-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42ABD076210B54E200BEEFF4 /* SkeletonViewExampleCollectionview-Info.plist */; };
 		42ABD07F210B54E200BEEFF4 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ABD077210B54E200BEEFF4 /* CollectionViewCell.swift */; };
 		8748240D20C6A88A00E92179 /* UIView+IBInspectable.swift in Headers */ = {isa = PBXBuildFile; fileRef = F5F899CF1FAA6A4D002E8FDA /* UIView+IBInspectable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		8748240E20C6A88E00E92179 /* ContainsMultilineText.swift in Headers */ = {isa = PBXBuildFile; fileRef = F5307E3A1FB123C100EE67C5 /* ContainsMultilineText.swift */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -524,7 +523,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0910;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = SkeletonView;
 				TargetAttributes = {
 					17DD0DFF207FB27400C56334 = {
@@ -543,6 +542,7 @@
 					F5F899F11FABA607002E8FDA = {
 						CreatedOnToolsVersion = 9.1;
 						DevelopmentTeam = KWEMDK92F4;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -580,7 +580,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42ABD07E210B54E200BEEFF4 /* SkeletonViewExampleCollectionview-Info.plist in Resources */,
 				42ABD07A210B54E200BEEFF4 /* Assets.xcassets in Resources */,
 				42ABD07C210B54E200BEEFF4 /* Base.lproj in Resources */,
 				42ABD079210B54E200BEEFF4 /* Main.storyboard in Resources */,
@@ -987,7 +986,7 @@
 				PRODUCT_NAME = SkeletonView;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -1011,7 +1010,7 @@
 				PRODUCT_NAME = SkeletonView;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -1035,7 +1034,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.juanpecatalan.SkeletonViewExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1060,7 +1059,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.juanpecatalan.SkeletonViewExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

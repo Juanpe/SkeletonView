@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableview: UITableView! {
         didSet {
-            tableview.rowHeight = UITableViewAutomaticDimension
+            tableview.rowHeight = UITableView.automaticDimension
             tableview.estimatedRowHeight = 120.0
         }
     }

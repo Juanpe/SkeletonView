@@ -46,14 +46,14 @@ extension UITableView: CollectionSkeleton {
         self.dataSource = dataSource.originalTableViewDataSource
         if reloadAfter { self.reloadData() }
     }
-
+    
     private func restoreRowHeight() {
         guard let dataSource = self.dataSource as? SkeletonCollectionDataSource else { return }
         rowHeight = dataSource.rowHeight
     }
     
     private func calculateRowHeight() -> CGFloat {
-        guard rowHeight == UITableViewAutomaticDimension else { return rowHeight }
+        guard rowHeight == UITableView.automaticDimension else { return rowHeight }
         rowHeight = estimatedRowHeight
         return estimatedRowHeight
     }
