@@ -53,7 +53,7 @@ extension UITableView: CollectionSkeleton {
     }
     
     private func calculateRowHeight() -> CGFloat {
-        guard rowHeight == UITableViewAutomaticDimension else { return rowHeight }
+        guard rowHeight == UITableView.automaticDimension else { return rowHeight }
         rowHeight = estimatedRowHeight
         return estimatedRowHeight
     }
