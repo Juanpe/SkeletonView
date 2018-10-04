@@ -7,7 +7,7 @@
     <a href="https://instagram.github.io/IGListKit/">
         <img src="https://img.shields.io/cocoapods/p/SkeletonView.svg" alt="Platforms">
     </a>
-    <img src="https://img.shields.io/badge/Swift-4.1-orange.svg" />
+    <img src="https://img.shields.io/badge/Swift-4.2-orange.svg" />
     <a href="https://cocoapods.org/pods/SkeletonView">
         <img src="https://img.shields.io/cocoapods/v/SkeletonView.svg" alt="CocoaPods" />
     </a>
@@ -75,7 +75,7 @@
 
 * iOS 9.0+
 * tvOS 9.0+
-* Swift 4
+* Swift 4.2
 
 ### 🔮 示例
 
