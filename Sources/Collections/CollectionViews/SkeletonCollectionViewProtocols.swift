@@ -13,6 +13,7 @@ public protocol SkeletonCollectionViewDataSource: UICollectionViewDataSource {
     func numSections(in collectionSkeletonView: UICollectionView) -> Int
     func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> ReusableCellIdentifier
+    func collectionSkeletonView(_ skeletonView: UICollectionView, supplementaryViewIdentifierOfKind: String, at indexPath: IndexPath) -> String
 }
 
 public extension SkeletonCollectionViewDataSource {
@@ -22,6 +23,12 @@ public extension SkeletonCollectionViewDataSource {
     }
     
     func numSections(in collectionSkeletonView: UICollectionView) -> Int { return 1 }
+    
+    func collectionSkeletonView(_ skeletonView: UICollectionView,
+                                supplementaryViewIdentifierOfKind: String,
+                                at indexPath: IndexPath) -> String {
+        return ""
+    }
 }
 
 public protocol SkeletonCollectionViewDelegate: UICollectionViewDelegate { }
