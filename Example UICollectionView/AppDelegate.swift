@@ -1,10 +1,4 @@
-//
-//  AppDelegate.swift
-//  SkeletonViewExample
-//
-//  Created by Juanpe Catalán on 02/11/2017.
-//  Copyright © 2017 SkeletonView. All rights reserved.
-//
+//  Copyright © 2018 SkeletonView. All rights reserved.
 
 import UIKit
 
@@ -14,7 +8,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
     }
