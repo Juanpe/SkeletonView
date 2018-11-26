@@ -47,7 +47,7 @@ class ViewController: UIViewController {
     }
 
     override func viewDidLayoutSubviews() {
-        view.updateGradientSkeleton()
+        refreshSkeleton()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -72,25 +72,24 @@ class ViewController: UIViewController {
     }
     
     func refreshSkeleton() {
-        self.view.hideSkeleton()
-        if type == .gradient { showGradientSkeleton() }
-        else { showSolidSkeleton() }
+        if type == .gradient { updateGradientSkeleton() }
+        else { updateSolidSkeleton() }
     }
     
-    func showSolidSkeleton() {
+    func updateSolidSkeleton() {
         if switchAnimated.isOn {
-            view.showAnimatedSkeleton(usingColor: colorSelectedView.backgroundColor!)
+            view.updateAnimatedSkeleton(usingColor: colorSelectedView.backgroundColor!)
         } else {
-            view.showSkeleton(usingColor: colorSelectedView.backgroundColor!)
+            view.updateSkeleton(usingColor: colorSelectedView.backgroundColor!)
         }
     }
     
-    func showGradientSkeleton() {
+    func updateGradientSkeleton() {
         let gradient = SkeletonGradient(baseColor: colorSelectedView.backgroundColor!)
         if switchAnimated.isOn {
-            view.showAnimatedGradientSkeleton(usingGradient: gradient)
+            view.updateAnimatedGradientSkeleton(usingGradient: gradient)
         } else {
-            view.showGradientSkeleton(usingGradient: gradient)
+            view.updateGradientSkeleton(usingGradient: gradient)
         }
     }
     
