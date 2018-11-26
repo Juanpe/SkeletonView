@@ -31,101 +31,95 @@
     </a>
 </p>
 
-🌎  Translations: </br>
-[🇨🇳](https://github.com/Juanpe/SkeletonView/blob/master/README_zh.md) by [@WhatsXie](https://twitter.com/WhatsXie) </br>
-[🇧🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_pt-br.md) by [@brunomunizaf](https://twitter.com/brunomuniz_af)
+🌎  Traduções: </br>
+[Original](https://github.com/Juanpe/SkeletonView) </br>
+[🇨🇳](https://github.com/Juanpe/SkeletonView/blob/master/README_zh.md) por [@WhatsXie](https://twitter.com/WhatsXie) </br>
 
-Today almost all apps have async processes, such as Api requests, long running processes, etc. And while the processes are working, usually developers place a loading view to show users that something is going on.
+Hoje, quase todos os apps têm processos assíncronos, como requisições de API, processos longos, etc. E enquanto os processos estão ocorrendo, normalmente os desenvolvedores usam uma view que mostra os usuarios que algo está ocorrendo.
 
-```SkeletonView``` has been conceived to address this need, an elegant way to show users that something is happening and also prepare them to which contents he is waiting.
+```SkeletonView``` foi criado para essa necessidade, um jeito elegante de mostrar aos usuários que algo está acontecendo e já prepará-los para qual conteúdo será carregado.
 
-Enjoy it! 🙂
+Aproveite! 🙂
 
 * [Features](#-features)
-* [Requirements](#-supported-os--sdk-versions)
-* [Guides](#-guides)
-* [Example Project](#-example)
-* [Installation](#-installation)
+* [Requerimentos](#-supported-os--sdk-versions)
+* [Projeto de exemplo](#-example)
+* [Instalação](#-installation)
   * [Cocoapods](#using-cocoapods)
   * [Carthage](#using-carthage)
-* [How to use](#-how-to-use)
-  * [Collections](#-collections)
-  * [Multiline text](#-multiline-text)
-  * [Custom colors](#-custom-colors)
-  * [Appearance](#-appearance)
-  * [Custom animations](#-custom-animations)
-  * [Hierarchy](#-hierarchy)
-  * [Debug](#-debug)
-* [Documentation](#-documentation)
-* [Next steps](#-next-steps)
-* [Contributing](#-contributing)
-* [Mentions](#-mentions)
-* [Author](#-author)
-* [License](#-license)
+* [Como usar](#-how-to-use)
+  * [Coleções](#-collections)
+  * [Texto em várias linhas](#-multiline-text)
+  * [Cores customizadas](#-custom-colors)
+  * [Aparência](#-appearance)
+  * [Animaçōes customizadas](#-custom-animations)
+  * [Hierarquia](#-hierarchy)
+* [Documentação](#-documentation)
+* [Próximos passos](#-next-steps)
+* [Contribuindo](#-contributing)
+* [Menções](#-mentions)
+* [Autor](#-author)
+* [Licença](#-license)
 
 
 ## 🌟 Features
 
-- [x] Easy to use
-- [x] All UIViews are skeletonables
-- [x] Fully customizable
+- [x] Fácil de usar
+- [x] Todas as UIViews são skeletonables
+- [x] Completamente customizável
 - [x] Universal (iPhone & iPad)
 - [x] Interface Builder friendly
-- [x] Simple Swift syntax
-- [x] Lightweight readable codebase
+- [x] Sintaxe simples em Swift
+- [x] Código leve e legível
 
-### 📋 Supported OS & SDK Versions
+### 📋 Versões do SDK e OS suportados
 
 * iOS 9.0+
 * tvOS 9.0+
 * Swift 4.2
 
-### 🎬 Guides
+### 🔮 Exemplo
 
- [<img src="Assets/thumb_getting_started.png">](https://youtu.be/75kgOhWsPNA)
+Para rodar o projeto de exemplo, clone o repositório e use o target `SkeletonViewExample`.
 
-### 🔮 Example
+## 📲 Instalação
 
-To run the example project, clone the repo and run `SkeletonViewExample` target.
+#### Usando [CocoaPods](https://cocoapods.org)
 
-## 📲 Installation
-
-#### Using [CocoaPods](https://cocoapods.org)
-
-Edit your `Podfile` and specify the dependency:
+Edite seu `Podfile` e especifíque a dependência:
 
 ```ruby
 pod "SkeletonView"
 ```
 
-#### Using [Carthage](https://github.com/carthage)
+#### Usando [Carthage](https://github.com/carthage)
 
-Edit your `Cartfile` and specify the dependency:
+Edite seu `Cartfile` e especifíque a dependência:
 
 ```bash
 github "Juanpe/SkeletonView"
 ```
 
-## 🐒 How to use
+## 🐒 Como usar
 
-Only **3** steps needed to use `SkeletonView`:
+Apenas **3** passos necessários para usar `SkeletonView`:
 
-**1.** Import SkeletonView in proper place.
+**1.** Importe SkeletonView no lugar desejado.
 ```swift
 import SkeletonView
 ```
 
-**2.** Now, set which views will be `skeletonables`. You achieve this in two ways:
+**2.** Agora, especifíque quais views serão `skeletonables`. Você consegue fazer isso de duas formas:
 
-**Using code:**
+**Usando código:**
 ```swift
 avatarImageView.isSkeletonable = true
 ```
-**Using IB/Storyboards:**
+**Usando IB/Storyboards:**
 
 ![](Assets/storyboard.png)
 
-**3.** Once you've set the views, you can show the **skeleton**. To do so, you have **4** choices:
+**3.** Uma vez que você setou as views, você pode mostrar o **skeleton**. Para fazê-lo, você tem **4** escolhas:
 
 ```swift
 (1) view.showSkeleton()                 // Solid
@@ -134,7 +128,7 @@ avatarImageView.isSkeletonable = true
 (4) view.showAnimatedGradientSkeleton() // Gradient animated
 ```
 
-**Preview**
+**Pré-visualização**
 
 <table>
 <tr>
@@ -167,16 +161,16 @@ avatarImageView.isSkeletonable = true
 </tr>
 </table>
 
-> **IMPORTANT!**
->>```SkeletonView``` is recursive, so if you want show the skeleton in all skeletonable views, you only need to call the show method in the main container view. For example, with UIViewControllers
+> **IMPORTANTE!**
+>>```SkeletonView``` é recursivo, então se você quer mostrar o esqueleto em todas as views skeletonables, você só precisa chamar o método na main container view. Por exemplo, com UIViewControllers
 
-### 🌿 Collections
+### 🌿 Coleções
 
- Now, ```SkeletonView``` is compatible with ```UITableView``` and ```UICollectionView```.
+```SkeletonView``` é compatível com ```UITableView``` e ```UICollectionView```.
 
 ###### UITableView
 
-If you want to show the skeleton in a ```UITableView```, you need to conform to ```SkeletonTableViewDataSource``` protocol.
+Se você quer mostrar o skeleton em uma ```UITableView```, você precisa conformar com o protocolo ```SkeletonTableViewDataSource```.
 
 ``` swift
 public protocol SkeletonTableViewDataSource: UITableViewDataSource {
@@ -185,9 +179,9 @@ public protocol SkeletonTableViewDataSource: UITableViewDataSource {
     func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier
 }
 ```
-As you can see, this protocol inherits from ```UITableViewDataSource```, so you can replace this protocol with the skeleton protocol.
+Como você pode ver, esse protocolo herda de ```UITableViewDataSource```, então você pode substituir esse protocolo com o protocolo do skeleton.
 
-This protocol has a default implementation:
+Esse protocolo tem uma implementação padrão:
 
 ``` swift
 func numSections(in collectionSkeletonView: UITableView) -> Int
@@ -200,24 +194,24 @@ func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection s
 // It calculates how many cells need to populate whole tableview
 ```
 
-There is only one method you need to implement to let Skeleton know the cell identifier. This method doesn't have default implementation:
+Esse é o único método que você precisa implementar para informar o skeleton sobre o cell identifier. Esse método não possui uma implementação padrão:
  ``` swift
  func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier
  ```
 
-**Example**
+**Exemplo**
  ``` swift
  func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
     return "CellIdentifier"
 }
  ```
 
-> **IMPORTANT!**
-> If you are using resizable cells (`tableView.rowHeight = UITableViewAutomaticDimension` ), it's mandatory define the `estimatedRowHeight`.
+> **IMPORTANTE!**
+> Se você está usando resizable cells (`tableView.rowHeight = UITableViewAutomaticDimension` ), é obrigatório definir a `estimatedRowHeight`.
 
 ###### UICollectionView
 
-For ```UICollectionView```, you need to conform to ```SkeletonCollectionViewDataSource``` protocol.
+Para ```UICollectionView```, você precisa conformar com o protocolo ```SkeletonCollectionViewDataSource```.
 
 ``` swift
 public protocol SkeletonCollectionViewDataSource: UICollectionViewDataSource {
@@ -227,19 +221,19 @@ public protocol SkeletonCollectionViewDataSource: UICollectionViewDataSource {
 }
 ```
 
-The rest of the process is the same as ```UITableView```
+O resto do processo é o mesmo da ```UITableView```
 
-### 📰 Multiline text
+### 📰 Texto de várias linhas
 
 
 ![](Assets/multilines2.png)
 
-When using elements with text, ```SkeletonView``` draws lines to simulate text.
-Besides, you can decide how many lines you want. If  ```numberOfLines``` is set to zero, it will calculate how many lines needed to populate the whole skeleton and it will be drawn. Instead, if you set it to one, two or any number greater than zero, it will only draw this number of lines.
+Quando você usar elementos com texto, ```SkeletonView``` desenha linhas para simular o texto.
+Além disso, você pode decidir quantas linhas você quer. Se ```numberOfLines``` está setado para zero (0), haverá um cálculo para saber quantas linhas são necessárias para preencher o skeleton inteiro e será desenhado. Caso contrário, se você setar para um (1) ou qualquer outro número maior que zero, só serão desenhadas aquele número de linhas.
 
-##### 🎛 Customize
+##### 🎛 Customização
 
-You can set some properties for multilines elements.
+Você pode setar algumas propriedades para elementos de várias linhas.
 
 
 | Property | Values | Default | Preview
@@ -249,44 +243,44 @@ You can set some properties for multilines elements.
 
 
 
-To modify the percent or radius **using code**, set the properties:
+Para modificar a percentagem ou o raio **usando código**, especifique as propriedades:
 ```swift
 descriptionTextView.lastLineFillPercent = 50
 descriptionTextView.linesCornerRadius = 5
 ```
 
-Or, if you prefer use **IB/Storyboard**:
+Ou, se você preferir use **IB/Storyboard**:
 
 ![](Assets/multiline_customize.png)
 
-### 🎨 Custom colors
+### 🎨 Cores customizadas
 
-You can decide which color the skeleton is tinted with. You only need to pass as a parameter the color or gradient you want.
+Você pode decidir que cor o skeleton esta pintado. Você só precisa parametrizar a cor e o gradiente que deseja.
 
-**Using solid colors**
+**Usando cores sólidas**
 ``` swift
 view.showSkeleton(usingColor: UIColor.gray) // Solid
 // or
 view.showSkeleton(usingColor: UIColor(red: 25.0, green: 30.0, blue: 255.0, alpha: 1.0))
 ```
-**Using gradients**
+**Usando gradientes**
 ``` swift
 let gradient = SkeletonGradient(baseColor: UIColor.midnightBlue)
 view.showGradientSkeleton(usingGradient: gradient) // Gradient
 ```
 
-Besides, ```SkeletonView``` features 20 flat colors 🤙🏼
+Além do mais, ```SkeletonView``` tem 20 cores flat 🤙🏼
 
 ```UIColor.turquoise, UIColor.greenSea, UIColor.sunFlower, UIColor.flatOrange  ...```
 
 ![](Assets/flatcolors.png)
-###### Image captured from website [https://flatuicolors.com](https://flatuicolors.com)
+###### Imagem capturada do site [https://flatuicolors.com](https://flatuicolors.com)
 
-### 🦋 Appearance
+### 🦋 Aparência
 
-**NEW** The skeletons have a default appearance. So, when you don't specify the color, gradient or multilines properties, `SkeletonView` uses the default values.
+**NOVIDADE** Os skeletons tem uma aparência padrão. Então, quando você não especifíca a cor, gradiente ou propriedades de várias linhas, `SkeletonView` usa os valores padrões.
 
-Default values:
+Valores padrões:
 - **tintColor**: UIColor
     - *default: .clouds*
 - **gradient**: SkeletonGradient
@@ -300,27 +294,27 @@ Default values:
 - **multilineCornerRadius**: Int
   - *default: 0*
 
-To get these default values you can use `SkeletonAppearance.default`. Using this property you can set the values as well:
+Para obter esses valores padrões você pode usar `SkeletonAppearance.default`. Usando essa propriedade você pode declarar os valores também:
 ```Swift
 SkeletonAppearance.default.multilineHeight = 20
 SkeletonAppearance.default.tintColor = .green
 ```
 
 
-### 🤓 Custom animations
+### 🤓 Animações customizadas
 
-```SkeletonView``` has two built-in animations, *pulse* for solid skeletons and *sliding* for gradients.
+```SkeletonView``` tem duas animações pré-definidas, *pulse* para skeletons solidos e *sliding* para gradientes.
 
-Besides, if you want to do your own skeleton animation, it's really easy.
+Além disso, se você quiser fazer suas próprias animações no skeleton, é muito fácil.
 
 
-Skeleton provides the `showAnimatedSkeleton` function which has a ```SkeletonLayerAnimation``` closure where you can define your custom animation.
+Skeleton disponibiliza a função `showAnimatedSkeleton` que tem o closure ```SkeletonLayerAnimation``` onde você pode definir sua animação customizada.
 
 ```swift
 public typealias SkeletonLayerAnimation = (CALayer) -> CAAnimation
 ```
 
-You can call the function like this:
+Você pode chamar esta função assim:
 
 ```swift
 view.showAnimatedSkeleton { (layer) -> CAAnimation in
@@ -331,9 +325,9 @@ view.showAnimatedSkeleton { (layer) -> CAAnimation in
 }
 ```
 
-It's available ```SkeletonAnimationBuilder```. It's a builder to make ```SkeletonLayerAnimation```.
+Está disponível ```SkeletonAnimationBuilder```. É um construtor para ```SkeletonLayerAnimation```.
 
-Today, you can create **sliding animations** for gradients, deciding the **direction** and setting the **duration** of the animation (default = 1.5s).
+Hoje, você pode criar **sliding animations** para gradientes, decidindo a **direction** e setando a **duration** da animaçāo (padrão = 1.5s).
 
 ```swift
 // func makeSlidingAnimation(withDirection direction: GradientDirection, duration: CFTimeInterval = 1.5) -> SkeletonLayerAnimation
@@ -343,7 +337,7 @@ view.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
 
 ```
 
-```GradientDirection``` is an enum, with this cases:
+```GradientDirection``` é um enum, com os seguintes cases:
 
 |  Direction | Preview
 |------- | -------
@@ -354,15 +348,15 @@ view.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
 | .topLeftBottomRight | ![](Assets/sliding_topLeft_to_bottomRight.gif)
 | .bottomRightTopLeft | ![](Assets/sliding_bottomRight_to_topLeft.gif)
 
-> **😉 TRICK!**
-Exist another way to create sliding animations, just using this shortcut:
+> **😉 TRUQUE!**
+Existe outra forma de criar sliding animations, apenas usando este atalho:
 >>```let animation = GradientDirection.leftToRight.slidingAnimation()```
 
-### 👨‍👧‍👦 Hierarchy
+### 👨‍👧‍👦 Hierarquia
 
-Since ```SkeletonView``` is recursive, and we want skeleton to be very efficient, we want to stop recursion as soon as possible. For this reason, you must set the container view as `Skeletonable`, because Skeleton will stop looking for `skeletonable` subviews as soon as a view is not Skeletonable, breaking then the recursion.
+Já que ```SkeletonView``` é recursiva, e queremos que o skeleton seja muito eficiente, queremos parar a recursão assim que possível. Por este motivo, você deve setar a container view como `Skeletonable`, porque o Skeleton vai parar de procurar por subviews `skeletonable` assim que a view não for mais skeletonable, quebrando a recursão.
 
-Because an image is worth a thousand words:
+Porque uma imagem vale mais que mil palavras:
 
 > ```ìsSkeletonable```= ☠️
 
@@ -374,60 +368,34 @@ Because an image is worth a thousand words:
 |![](Assets/all_skeletonables.png) | ![](Assets/all_skeletonables_result.png)
 
 
-### 🔬 Debug
 
-**NEW** In order to facilitate the debug tasks when something is not working fine. `SkeletonView` has some new tools.
+### 📚 Documentação
+Em breve...😅
 
-First, `UIView` has available a new property with his skeleton info:
-```swift
-var skeletonDescription: String
+## 📬 Próximos passos
 
-```
-The skeleton representation looks like this:
+* [x] Setar o percentual de preenchimento da última linha em elementos de várias linhas
+* [x] Adicionar mais animações de gradiente
+* [x] Suporte para resizable cells
+* [x] Compatível com CollectionView
+* [x] Compatível com tvOS
+* [x] Adicionar recovery state
+* [x] Aparência padrão customizável
+* [ ] Compatível com coleções customizáveis
+* [ ] Adicionar animações quando mostra/esconde os skeletons
+* [ ] Compatível com MacOS e WatchOS
 
-![](Assets/debug_description.png)
+## ❤️ Contribuindo
+Este é um projeto de código aberto, então sinta-se a vontade para contribuir. Como?
+- Abra uma [issue](https://github.com/Juanpe/SkeletonView/issues/new).
+- Envie feedback por [email](mailto://juanpecatalan.com).
+- Proponha seus próprios fixes, sugestões e abra um pull request com as alterações.
 
-Besides, you can activate the new **debug mode**. You just add the environment variable `SKELETON_DEBUG` and activate it.
+Ver [todos os contribuidores](https://github.com/Juanpe/SkeletonView/graphs/contributors)
 
-![](Assets/debug_mode.png)
+###### Projeto gerado com [SwiftPlate](https://github.com/JohnSundell/SwiftPlate)
 
-Then, when the skeleton appears, you can see the view hierarchy in the Xcode console.
-
-<details>
-<summary>Open to see an output example </summary>
-<img src="Assets/hierarchy_output.png" />
-</details>
-
-
-
-### 📚 Documentation
-Coming soon...😅
-
-## 📬 Next steps
-
-* [x] Set the filling percent of the last line in multiline elements
-* [x] Add more gradient animations
-* [x] Supported resizable cells
-* [x] CollectionView compatible
-* [x] tvOS compatible
-* [x] Add recovery state
-* [x] Custom default appearance
-* [x] Debug mode
-* [ ] Custom collections compatible
-* [ ] Add animations when it shows/hides the skeletons
-* [ ] MacOS and WatchOS compatible
-
-## ❤️ Contributing
-This is an open source project, so feel free to contribute. How?
-- Open an [issue](https://github.com/Juanpe/SkeletonView/issues/new).
-- Send feedback via [email](mailto://juanpecatalan.com).
-- Propose your own fixes, suggestions and open a pull request with the changes.
-
-See [all contributors](https://github.com/Juanpe/SkeletonView/graphs/contributors)
-
-###### Project generated with [SwiftPlate](https://github.com/JohnSundell/SwiftPlate)
-
-## 📢 Mentions
+## 📢 Menções
 
 - [iOS Dev Weekly #327](https://iosdevweekly.com/issues/327#start)
 - [Hacking with Swift Articles](https://www.hackingwithswift.com/articles/40/skeletonview-makes-loading-content-beautiful)
@@ -443,7 +411,7 @@ See [all contributors](https://github.com/Juanpe/SkeletonView/graphs/contributor
 
 
 
-## 👨🏻‍💻 Author
+## 👨🏻‍💻 Autor
 [1.1]: http://i.imgur.com/tXSoThF.png
 [1]: http://www.twitter.com/JuanpeCatalan
 
@@ -451,7 +419,7 @@ See [all contributors](https://github.com/Juanpe/SkeletonView/graphs/contributor
 
 <a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/CDou4xtIK"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy me a coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;"><span style="margin-left:5px"></span></a>
 
-## 👮🏻 License
+## 👮🏻 Licença
 
 ```
 MIT License

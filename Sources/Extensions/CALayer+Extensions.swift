@@ -10,18 +10,20 @@ import UIKit
 
 extension CALayer {
     @objc func tint(withColors colors: [UIColor]) {
-        recursiveSearch(inArray: skeletonSublayers,
-                        leafBlock: { backgroundColor = colors.first?.cgColor }) {
-                            $0.tint(withColors: colors)
+        skeletonSublayers.recursiveSearch(leafBlock: {
+            backgroundColor = colors.first?.cgColor
+        }) {
+            $0.tint(withColors: colors)
         }
     }
 }
 
 extension CAGradientLayer {
     override func tint(withColors colors: [UIColor]) {
-        recursiveSearch(inArray: skeletonSublayers,
-                        leafBlock: { self.colors = colors.map { $0.cgColor } }) {
-                            $0.tint(withColors: colors)
+        skeletonSublayers.recursiveSearch(leafBlock: {
+            self.colors = colors.map { $0.cgColor }
+        }) {
+            $0.tint(withColors: colors)
         }
     }
 }
@@ -51,7 +53,7 @@ extension CALayer {
     }
     
     private func calculateNumLines(maxLines: Int) -> Int {
-        let spaceRequitedForEachLine = SkeletonDefaultConfig.multilineHeight + SkeletonDefaultConfig.multilineSpacing
+        let spaceRequitedForEachLine = SkeletonAppearance.default.multilineHeight + SkeletonAppearance.default.multilineSpacing
         var numberOfSublayers = Int(round(CGFloat(bounds.height)/CGFloat(spaceRequitedForEachLine)))
         if maxLines != 0,  maxLines <= numberOfSublayers { numberOfSublayers = maxLines }
         return numberOfSublayers
@@ -66,7 +68,7 @@ public extension CALayer {
         pulseAnimation.fromValue = backgroundColor
         pulseAnimation.toValue = UIColor(cgColor: backgroundColor!).complementaryColor.cgColor
         pulseAnimation.duration = 1
-        pulseAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        pulseAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         pulseAnimation.autoreverses = true
         pulseAnimation.repeatCount = .infinity
         return pulseAnimation
@@ -84,23 +86,25 @@ public extension CALayer {
         let animGroup = CAAnimationGroup()
         animGroup.animations = [startPointAnim, endPointAnim]
         animGroup.duration = 1.5
-        animGroup.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+        animGroup.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
         animGroup.repeatCount = .infinity
         
         return animGroup
     }
     
     func playAnimation(_ anim: SkeletonLayerAnimation, key: String) {
-        recursiveSearch(inArray: skeletonSublayers,
-                        leafBlock: { add(anim(self), forKey: key) }) {
-                            $0.playAnimation(anim, key: key)
+        skeletonSublayers.recursiveSearch(leafBlock: {
+            add(anim(self), forKey: key)
+        }) {
+            $0.playAnimation(anim, key: key)
         }
     }
     
     func stopAnimation(forKey key: String) {
-        recursiveSearch(inArray: skeletonSublayers,
-                        leafBlock: { removeAnimation(forKey: key) }) {
-                            $0.stopAnimation(forKey: key)
+        skeletonSublayers.recursiveSearch(leafBlock: {
+            removeAnimation(forKey: key)
+        }) {
+            $0.stopAnimation(forKey: key)
         }
     }
 }
