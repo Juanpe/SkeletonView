@@ -1,45 +1,48 @@
-//
-//  SubviewsSkeletonables.swift
-//  SkeletonView
-//
-//  Created by Juanpe Catalán on 05/05/2018.
 //  Copyright © 2018 SkeletonView. All rights reserved.
-//
 
 import UIKit
 
 extension UIView {
     @objc var subviewsSkeletonables: [UIView] {
-        return subviews.filter { $0.isSkeletonable }
+        return subviewsToSkeleton.filter { $0.isSkeletonable }
+    }
+
+    @objc var subviewsToSkeleton: [UIView] {
+        return subviews
     }
 }
 
 extension UITableView {
-    override var subviewsSkeletonables: [UIView] {
-        return visibleCells.filter { $0.isSkeletonable }
+
+    override var subviewsToSkeleton: [UIView] {
+        return visibleCells
     }
 }
 
 extension UITableViewCell {
-    override var subviewsSkeletonables: [UIView] {
-        return contentView.subviews.filter { $0.isSkeletonable }
+
+    override var subviewsToSkeleton: [UIView] {
+        return contentView.subviews
     }
 }
 
 extension UICollectionView {
-    override var subviewsSkeletonables: [UIView] {
-        return subviews.filter { $0.isSkeletonable }
+
+    override var subviewsToSkeleton: [UIView] {
+        return subviews
     }
 }
 
 extension UICollectionViewCell {
-    override var subviewsSkeletonables: [UIView] {
-        return contentView.subviews.filter { $0.isSkeletonable }
+
+    override var subviewsToSkeleton: [UIView] {
+        return contentView.subviews
     }
 }
 
 extension UIStackView {
-    override var subviewsSkeletonables: [UIView] {
-        return arrangedSubviews.filter { $0.isSkeletonable }
+
+    override var subviewsToSkeleton: [UIView] {
+        return arrangedSubviews
     }
 }

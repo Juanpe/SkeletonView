@@ -59,11 +59,11 @@ extension UILabel: ContainsMultilineText {
         }
         
         var lastLineFillingPercent: Int {
-                get { return objc_getAssociatedObject(self, &AssociatedKeys.lastLineFillingPercent) as? Int ?? SkeletonDefaultConfig.multilineLastLineFillPercent }
+                get { return objc_getAssociatedObject(self, &AssociatedKeys.lastLineFillingPercent) as? Int ?? SkeletonAppearance.default.multilineLastLineFillPercent }
                 set { objc_setAssociatedObject(self, &AssociatedKeys.lastLineFillingPercent, newValue, AssociationPolicy.retain.objc) }
         }
         var multilineCornerRadius: Int {
-                get { return objc_getAssociatedObject(self, &AssociatedKeys.multilineCornerRadius) as? Int ?? SkeletonDefaultConfig.multilineCornerRadius }
+                get { return objc_getAssociatedObject(self, &AssociatedKeys.multilineCornerRadius) as? Int ?? SkeletonAppearance.default.multilineCornerRadius }
                 set { objc_setAssociatedObject(self, &AssociatedKeys.multilineCornerRadius, newValue, AssociationPolicy.retain.objc) }
         }
         
@@ -71,12 +71,12 @@ extension UILabel: ContainsMultilineText {
 extension UITextView: ContainsMultilineText {
         
         var lastLineFillingPercent: Int {
-                get { return objc_getAssociatedObject(self, &AssociatedKeys.lastLineFillingPercent) as? Int ?? SkeletonDefaultConfig.multilineLastLineFillPercent }
+                get { return objc_getAssociatedObject(self, &AssociatedKeys.lastLineFillingPercent) as? Int ?? SkeletonAppearance.default.multilineLastLineFillPercent }
                 set { objc_setAssociatedObject(self, &AssociatedKeys.lastLineFillingPercent, newValue, AssociationPolicy.retain.objc) }
         }
         
         var multilineCornerRadius: Int {
-                get { return objc_getAssociatedObject(self, &AssociatedKeys.multilineCornerRadius) as? Int ?? SkeletonDefaultConfig.multilineCornerRadius }
+                get { return objc_getAssociatedObject(self, &AssociatedKeys.multilineCornerRadius) as? Int ?? SkeletonAppearance.default.multilineCornerRadius }
                 set { objc_setAssociatedObject(self, &AssociatedKeys.multilineCornerRadius, newValue, AssociationPolicy.retain.objc) }
         }
 }

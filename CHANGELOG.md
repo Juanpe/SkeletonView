@@ -1,6 +1,59 @@
 # Change Log
 All notable changes to this project will be documented in this file
 
+## [Debug (1.4)](https://github.com/Juanpe/SkeletonView/releases/tag/1.4)
+
+### New
+
+- Create `skeletonDescription` print a skeleton representation of the view.
+- Create `SKELETON_DEBUG` environment variable, in order to print the view hierarchy when the skeleton appears.
+
+### Improvements
+- Add two new methods to `SkeletonFlowDelegate` protocol. Now you can know when the skeleton did show and when it did hide.
+- `Recursive` protocol
+
+### Bug fixes
+- Solved issue [#86](https://github.com/Juanpe/SkeletonView/issues/86) (thanks @reececomo)
+
+## [Custom defaults (1.3)](https://github.com/Juanpe/SkeletonView/releases/tag/1.3)
+
+### New
+
+- Default values customizables. Now you can set the default values of Skeleton appearance.(thanks @reececomo)
+  - issues: [[#50](https://github.com/Juanpe/SkeletonView/issues/50), [#83](https://github.com/Juanpe/SkeletonView/issues/83)]
+
+### Bug fixes
+- Solved issue [#41](https://github.com/Juanpe/SkeletonView/issues/41). Now, Skeleton works if UICollectionView cell's Nib is registered in code. (thanks @kjoneandrei)
+
+## [Typo (1.2.3)](https://github.com/Juanpe/SkeletonView/releases/tag/1.2.3)
+
+### Fixes
+
+- Fix typo in `SkeletonTableViewDataSource` protocol
+
+### Improvements
+
+- Now it takes in account the `UIStackView` to calculate the `SkeletonLayer` bounds (thanks @giantramen)
+
+## [New face (1.2.2)](https://github.com/Juanpe/SkeletonView/releases/tag/1.2.2)
+
+### New
+
+- Rebranding
+
+### Bug fixes
+- Solved issue [#23](https://github.com/Juanpe/SkeletonView/issues/23). Problem with UIStackView. (thanks @giantramen)
+
+## [State (1.2.1)](https://github.com/Juanpe/SkeletonView/releases/tag/1.2.1)
+
+### New
+
+- You can set the corner radius multiline elements (thanks @B4V4-G)
+- Save view state when skeleton appears and recovery when it is hidden (@juanpe)
+
+### Bug fixes
+- Solved issue [#51](https://github.com/Juanpe/SkeletonView/issues/51). Support inspectable properties when using Carthage. (thanks @eduardbosch)
+
 ## [On TV (1.2)](https://github.com/Juanpe/SkeletonView/releases/tag/1.2)
 
 ### New
