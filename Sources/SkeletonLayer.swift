@@ -15,16 +15,20 @@ class SkeletonLayerFactory {
     }
     
     func makeMultilineLayer(withType type: SkeletonType, for index: Int, width: CGFloat, multilineCornerRadius: Int) -> CALayer {
-        let spaceRequiredForEachLine = SkeletonAppearance.default.multilineHeight + SkeletonAppearance.default.multilineSpacing
         let layer = type.layer
         layer.anchorPoint = .zero
         layer.name = CALayer.skeletonSubLayersName
-        layer.frame = CGRect(x: 0.0, y: CGFloat(index) * spaceRequiredForEachLine, width: width, height: SkeletonAppearance.default.multilineHeight)
-        
+        updateLayer(for: index, width: width, layer: layer)
+
         layer.cornerRadius = CGFloat(multilineCornerRadius)
         layer.masksToBounds = true
 
         return layer
+    }
+
+    func updateLayer(for index: Int, width: CGFloat, layer: CALayer) {
+        let spaceRequiredForEachLine = SkeletonAppearance.default.multilineHeight + SkeletonAppearance.default.multilineSpacing
+        layer.frame = CGRect(x: 0.0, y: CGFloat(index) * spaceRequiredForEachLine, width: width, height: SkeletonAppearance.default.multilineHeight)
     }
 }
 
@@ -76,9 +80,10 @@ struct SkeletonLayer {
     }
     
     func update(usingColors colors: [UIColor]) {
-        if let bounds = self.holder?.bounds { 
+        if let bounds = self.holder?.maxBoundsEstimated { 
             self.maskLayer.bounds = bounds
         }
+        updateMultilinesIfNeeded()
         self.maskLayer.tint(withColors: colors)
     }
     
@@ -89,6 +94,11 @@ struct SkeletonLayer {
     func addMultilinesIfNeeded() {
         guard let multiLineView = holder as? ContainsMultilineText else { return }
         maskLayer.addMultilinesLayers(lines: multiLineView.numLines, type: type, lastLineFillPercent: multiLineView.lastLineFillingPercent, multilineCornerRadius: multiLineView.multilineCornerRadius)
+    }
+
+    func updateMultilinesIfNeeded() {
+        guard let multiLineView = holder as? ContainsMultilineText else { return }
+        maskLayer.updateMultilinesLayers(lastLineFillPercent: multiLineView.lastLineFillingPercent)
     }
 }
 
