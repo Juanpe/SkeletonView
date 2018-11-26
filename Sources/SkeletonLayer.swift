@@ -56,9 +56,10 @@ struct SkeletonLayer {
     }
     
     func update(usingColors colors: [UIColor]) {
-        if let bounds = self.holder?.bounds { 
+        if let bounds = self.holder?.maxBoundsEstimated { 
             self.maskLayer.bounds = bounds
         }
+        updateMultilinesIfNeeded()
         self.maskLayer.tint(withColors: colors)
     }
     
@@ -69,6 +70,11 @@ struct SkeletonLayer {
     func addMultilinesIfNeeded() {
         guard let multiLineView = holder as? ContainsMultilineText else { return }
         maskLayer.addMultilinesLayers(lines: multiLineView.numLines, type: type, lastLineFillPercent: multiLineView.lastLineFillingPercent, multilineCornerRadius: multiLineView.multilineCornerRadius)
+    }
+
+    func updateMultilinesIfNeeded() {
+        guard let multiLineView = holder as? ContainsMultilineText else { return }
+        maskLayer.updateMultilinesLayers(lastLineFillPercent: multiLineView.lastLineFillingPercent)
     }
 }
 
