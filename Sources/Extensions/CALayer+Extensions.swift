@@ -40,15 +40,23 @@ extension CALayer {
     
     func addMultilinesLayers(lines: Int, type: SkeletonType, lastLineFillPercent: Int, multilineCornerRadius: Int) {
         let numberOfSublayers = calculateNumLines(maxLines: lines)
-        for index in 0..<numberOfSublayers {
+
+        let layerBuilder = SkeletonMultilineLayerBuilder()
+            .setSkeletonType(type)
+            .setCornerRadius(multilineCornerRadius)
+
+        (0..<numberOfSublayers).forEach { index in
             var width = bounds.width
-            
-            if index == numberOfSublayers-1 && numberOfSublayers != 1 {
-                width = width * CGFloat(lastLineFillPercent)/100;
+            if index == numberOfSublayers - 1 && numberOfSublayers != 1 {
+                width = width * CGFloat(lastLineFillPercent) / 100;
             }
-            
-            let layer = SkeletonLayerFactory().makeMultilineLayer(withType: type, for: index, width: width, multilineCornerRadius: multilineCornerRadius)
-            addSublayer(layer)
+
+            if let layer = layerBuilder
+                .setIndex(index)
+                .setWidth(width)
+                .build() {
+                addSublayer(layer)
+            }
         }
     }
     
