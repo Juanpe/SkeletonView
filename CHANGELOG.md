@@ -1,7 +1,7 @@
 # Change Log
 All notable changes to this project will be documented in this file
 
-## [Update (1.4.1)](https://github.com/Juanpe/SkeletonView/releases/tag/1.4.1)
+## Next version
 
 ### New
 - Adding swift news to mentioned section (thanks @osterbergmarcus)
