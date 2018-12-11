@@ -1,9 +1,7 @@
 ![](Assets/header2.jpg)
 
 <p align="center">
-    <a href="https://travis-ci.org/Juanpe/SkeletonView">
-      <img src="https://app.bitrise.io/app/6d289a17e22c8323/status.svg?token=fI7gKC41XD9-aRXDScCKBw&branch=master">
-    </a>
+    [![Build Status](https://app.bitrise.io/app/6d289a17e22c8323/status.svg?token=fI7gKC41XD9-aRXDScCKBw)](https://app.bitrise.io/app/6d289a17e22c8323)
     <a href="https://travis-ci.org/Juanpe/SkeletonView">
       <img src="https://img.shields.io/travis/Juanpe/SkeletonView.svg">
     </a>
