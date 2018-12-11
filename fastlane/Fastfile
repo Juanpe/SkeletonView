@@ -7,4 +7,4 @@ lane :release_current do
    UI.user_error!("The tag #{version} already exists on the repo. To release a new version of the library bump the version on #{@podspec_name}")
    end
 end
- 
+  
