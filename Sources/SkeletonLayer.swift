@@ -8,26 +8,6 @@
 
 import UIKit
 
-class SkeletonLayerFactory {
-    
-    func makeSkeletonLayer(withType type: SkeletonType, usingColors colors: [UIColor], andHolder holder: UIView) -> SkeletonLayer {
-        return SkeletonLayer(withType: type, usingColors: colors, andSkeletonHolder: holder)
-    }
-    
-    func makeMultilineLayer(withType type: SkeletonType, for index: Int, width: CGFloat, multilineCornerRadius: Int) -> CALayer {
-        let spaceRequiredForEachLine = SkeletonAppearance.default.multilineHeight + SkeletonAppearance.default.multilineSpacing
-        let layer = type.layer
-        layer.anchorPoint = .zero
-        layer.name = CALayer.skeletonSubLayersName
-        layer.frame = CGRect(x: 0.0, y: CGFloat(index) * spaceRequiredForEachLine, width: width, height: SkeletonAppearance.default.multilineHeight)
-        
-        layer.cornerRadius = CGFloat(multilineCornerRadius)
-        layer.masksToBounds = true
-
-        return layer
-    }
-}
-
 public typealias SkeletonLayerAnimation = (CALayer) -> CAAnimation
 
 public enum SkeletonType {

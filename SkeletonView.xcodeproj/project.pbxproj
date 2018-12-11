@@ -41,6 +41,10 @@
 		42ABD07F210B54E200BEEFF4 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ABD077210B54E200BEEFF4 /* CollectionViewCell.swift */; };
 		8748240D20C6A88A00E92179 /* UIView+IBInspectable.swift in Headers */ = {isa = PBXBuildFile; fileRef = F5F899CF1FAA6A4D002E8FDA /* UIView+IBInspectable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		8748240E20C6A88E00E92179 /* ContainsMultilineText.swift in Headers */ = {isa = PBXBuildFile; fileRef = F5307E3A1FB123C100EE67C5 /* ContainsMultilineText.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		877EFA4521BEE9D80031FC00 /* SkeletonLayerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877EFA4421BEE9D80031FC00 /* SkeletonLayerBuilder.swift */; };
+		877EFA4621BEE9D80031FC00 /* SkeletonLayerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877EFA4421BEE9D80031FC00 /* SkeletonLayerBuilder.swift */; };
+		877EFA4821BEED760031FC00 /* SkeletonMultilineLayerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877EFA4721BEED760031FC00 /* SkeletonMultilineLayerBuilder.swift */; };
+		877EFA4921BEED760031FC00 /* SkeletonMultilineLayerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877EFA4721BEED760031FC00 /* SkeletonMultilineLayerBuilder.swift */; };
 		8785E3A1211C9C9800CC9DFD /* SkeletonDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8785E3A0211C9C9800CC9DFD /* SkeletonDebug.swift */; };
 		8785E3A2211C9CA500CC9DFD /* SkeletonDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8785E3A0211C9C9800CC9DFD /* SkeletonDebug.swift */; };
 		8785E3A3211C9CE800CC9DFD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DEA97D1FCDBD1F006C80EF /* Constants.swift */; };
@@ -148,6 +152,8 @@
 		42ABD076210B54E200BEEFF4 /* SkeletonViewExampleCollectionview-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SkeletonViewExampleCollectionview-Info.plist"; sourceTree = "<group>"; };
 		42ABD077210B54E200BEEFF4 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* SkeletonView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SkeletonView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		877EFA4421BEE9D80031FC00 /* SkeletonLayerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLayerBuilder.swift; sourceTree = "<group>"; };
+		877EFA4721BEED760031FC00 /* SkeletonMultilineLayerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonMultilineLayerBuilder.swift; sourceTree = "<group>"; };
 		8785E3A0211C9C9800CC9DFD /* SkeletonDebug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonDebug.swift; sourceTree = "<group>"; };
 		88DEA97D1FCDBD1F006C80EF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8933C7841EB5B820000D00A4 /* SkeletonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkeletonView.swift; sourceTree = "<group>"; };
@@ -270,6 +276,15 @@
 			path = Configs;
 			sourceTree = "<group>";
 		};
+		877EFA4321BEE9C40031FC00 /* Builders */ = {
+			isa = PBXGroup;
+			children = (
+				877EFA4421BEE9D80031FC00 /* SkeletonLayerBuilder.swift */,
+				877EFA4721BEED760031FC00 /* SkeletonMultilineLayerBuilder.swift */,
+			);
+			path = Builders;
+			sourceTree = "<group>";
+		};
 		8785E39E211C9C6D00CC9DFD /* Appearance */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +304,7 @@
 		8933C7811EB5B7E0000D00A4 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				877EFA4321BEE9C40031FC00 /* Builders */,
 				8785E39F211C9C7C00CC9DFD /* Debug */,
 				8785E39E211C9C6D00CC9DFD /* Appearance */,
 				F58A6E7020A8C87100612494 /* Recoverable */,
@@ -618,6 +634,7 @@
 				17DD0E0B207FB28900C56334 /* SkeletonTableViewProtocols.swift in Sources */,
 				17DD0E0D207FB28900C56334 /* UITableView+CollectionSkeleton.swift in Sources */,
 				17DD0E0E207FB28900C56334 /* UIView+CollectionSkeleton.swift in Sources */,
+				877EFA4921BEED760031FC00 /* SkeletonMultilineLayerBuilder.swift in Sources */,
 				F51ED28320973CBB008B2434 /* SkeletonCollectionDelegate.swift in Sources */,
 				F58A6E6F20A8C66300612494 /* Recoverable.swift in Sources */,
 				17DD0E18207FB28F00C56334 /* SkeletonView.swift in Sources */,
@@ -634,6 +651,7 @@
 				F51ED28420973CC6008B2434 /* GenericCollectionView.swift in Sources */,
 				17DD0E0A207FB28900C56334 /* SkeletonCollectionViewProtocols.swift in Sources */,
 				17DD0E1C207FB32100C56334 /* AssociationPolicy.swift in Sources */,
+				877EFA4621BEE9D80031FC00 /* SkeletonLayerBuilder.swift in Sources */,
 				F5A5E8B5211DCE7000FD20D0 /* Int+Whitespaces.swift in Sources */,
 				17DD0E1D207FB32100C56334 /* ContainsMultilineText.swift in Sources */,
 				17DD0E0F207FB28C00C56334 /* CALayer+Extensions.swift in Sources */,
@@ -666,6 +684,7 @@
 				F54CF5E52024CEB000330B0D /* UITableView+CollectionSkeleton.swift in Sources */,
 				F5307E321FB0F42F00EE67C5 /* RecursiveProtocol.swift in Sources */,
 				F5F622431FAC81FD007C062A /* CALayer+Extensions.swift in Sources */,
+				877EFA4821BEED760031FC00 /* SkeletonMultilineLayerBuilder.swift in Sources */,
 				F5F899ED1FAB9F04002E8FDA /* CollectionSkeletonProtocol.swift in Sources */,
 				F58A6E6E20A8C66300612494 /* Recoverable.swift in Sources */,
 				F5307E2C1FAF6BC900EE67C5 /* SkeletonGradient.swift in Sources */,
@@ -682,6 +701,7 @@
 				F5307E3B1FB123C100EE67C5 /* ContainsMultilineText.swift in Sources */,
 				F5F899E91FAB9D2B002E8FDA /* SkeletonLayer.swift in Sources */,
 				F5307E2E1FB0E5E400EE67C5 /* UIView+Frame.swift in Sources */,
+				877EFA4521BEE9D80031FC00 /* SkeletonLayerBuilder.swift in Sources */,
 				F5A5E8B4211DCE7000FD20D0 /* Int+Whitespaces.swift in Sources */,
 				F51DF871206E91B300D23301 /* SkeletonReusableCell.swift in Sources */,
 				F51DF879206E9F5500D23301 /* SkeletonCollectionDelegate.swift in Sources */,
