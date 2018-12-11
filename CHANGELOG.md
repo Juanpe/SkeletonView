@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file
 ## Next version
 
 ### New
-- Adding swift news to mentioned section (thanks @osterbergmarcus)
+- Adding swift news to mentioned section (thanks @osterbergmarcus).
 - Allow updating skeleton layers without recreating them (thanks @eduardbosch).
 
 ## [Debug (1.4)](https://github.com/Juanpe/SkeletonView/releases/tag/1.4)
