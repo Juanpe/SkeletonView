@@ -152,9 +152,16 @@ extension UIView {
 extension UIView {
     
     func addSkeletonLayer(withType type: SkeletonType, usingColors colors: [UIColor], gradientDirection direction: GradientDirection? = nil, animated: Bool, animation: SkeletonLayerAnimation? = nil) {
-        self.skeletonLayer = SkeletonLayerFactory().makeSkeletonLayer(withType: type, usingColors: colors, andHolder: self)
-        layer.insertSublayer(skeletonLayer!.contentLayer, at: UInt32.max)
-        if animated { skeletonLayer!.start(animation) }
+        guard let skeletonLayer = SkeletonLayerBuilder()
+            .setSkeletonType(type)
+            .addColors(colors)
+            .setHolder(self)
+            .build()
+            else { return }
+
+        self.skeletonLayer = skeletonLayer
+        layer.insertSublayer(skeletonLayer.contentLayer, at: UInt32.max)
+        if animated { skeletonLayer.start(animation) }
         status = .on
     }
     
