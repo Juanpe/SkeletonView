@@ -165,9 +165,10 @@ extension UIView {
     }
     
     func updateSkeletonLayer(usingColors colors: [UIColor], gradientDirection direction: GradientDirection? = nil, animated: Bool, animation: SkeletonLayerAnimation? = nil) {
-        guard skeletonLayer != nil else { return }
-        self.skeletonLayer!.update(usingColors: colors)
-        if animated { skeletonLayer!.start(animation) }else{skeletonLayer!.stopAnimation()}
+        guard let skeletonLayer = skeletonLayer else { return }
+        skeletonLayer.update(usingColors: colors)
+        if animated { skeletonLayer.start(animation) }
+        else { skeletonLayer.stopAnimation() }
         status = .on
     }
     
