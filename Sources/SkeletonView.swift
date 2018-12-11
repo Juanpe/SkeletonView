@@ -20,20 +20,20 @@ public extension UIView {
         showSkeleton(withType: .gradient, usingColors: gradient.colors, animated: true, animation: animation)
     }
 
-    func updateSkeleton(usingColor color: UIColor = SkeletonAppearance.default.tintColor) {
-        updateSkeleton(withType: .solid, usingColors: [color])
+    func showOrUpdateSkeleton(usingColor color: UIColor = SkeletonAppearance.default.tintColor) {
+        showOrUpdateSkeleton(withType: .solid, usingColors: [color])
     }
 
-    func updateGradientSkeleton(usingGradient gradient: SkeletonGradient = SkeletonAppearance.default.gradient) {
-        updateSkeleton(withType: .gradient, usingColors: gradient.colors)
+    func showOrUpdateGradientSkeleton(usingGradient gradient: SkeletonGradient = SkeletonAppearance.default.gradient) {
+        showOrUpdateSkeleton(withType: .gradient, usingColors: gradient.colors)
     }
 
-    func updateAnimatedSkeleton(usingColor color: UIColor = SkeletonAppearance.default.tintColor, animation: SkeletonLayerAnimation? = nil) {
-        updateSkeleton(withType: .solid, usingColors: [color], animated: true, animation: animation)
+    func showOrUpdateAnimatedSkeleton(usingColor color: UIColor = SkeletonAppearance.default.tintColor, animation: SkeletonLayerAnimation? = nil) {
+        showOrUpdateSkeleton(withType: .solid, usingColors: [color], animated: true, animation: animation)
     }
 
-    func updateAnimatedGradientSkeleton(usingGradient gradient: SkeletonGradient = SkeletonAppearance.default.gradient, animation: SkeletonLayerAnimation? = nil) {
-        updateSkeleton(withType: .gradient, usingColors: gradient.colors, animated: true, animation: animation)
+    func showOrUpdateAnimatedGradientSkeleton(usingGradient gradient: SkeletonGradient = SkeletonAppearance.default.gradient, animation: SkeletonLayerAnimation? = nil) {
+        showOrUpdateSkeleton(withType: .gradient, usingColors: gradient.colors, animated: true, animation: animation)
     }
     
     func hideSkeleton(reloadDataAfter reload: Bool = true) {
@@ -65,14 +65,14 @@ extension UIView {
         recursiveShowSkeleton(withType: type, usingColors: colors, animated: animated, animation: animation, root: self)
     }
     
-    func updateSkeleton(withType type: SkeletonType = .solid, usingColors colors: [UIColor], animated: Bool = false, animation: SkeletonLayerAnimation? = nil) {
+    func showOrUpdateSkeleton(withType type: SkeletonType = .solid, usingColors colors: [UIColor], animated: Bool = false, animation: SkeletonLayerAnimation? = nil) {
         skeletonIsAnimated = animated
         if flowDelegate == nil {
             flowDelegate = SkeletonFlowHandler()
             flowDelegate?.willBeginShowingSkeletons(withRootView: self)
         }
         flowDelegate?.willBeginUpdatingSkeletons(withRootView: self)
-        recursiveUpdateSkeleton(withType: type, usingColors: colors, animated: animated, animation: animation)
+        recursiveShowOrUpdateSkeleton(withType: type, usingColors: colors, animated: animated, animation: animation)
     }
 
     fileprivate func recursiveShowSkeleton(withType type: SkeletonType, usingColors colors: [UIColor], animated: Bool, animation: SkeletonLayerAnimation?, root: UIView? = nil) {
@@ -90,7 +90,7 @@ extension UIView {
         }
     }
 
-    fileprivate func recursiveUpdateSkeleton(withType type: SkeletonType, usingColors colors: [UIColor], animated: Bool, animation: SkeletonLayerAnimation?) {
+    fileprivate func recursiveShowOrUpdateSkeleton(withType type: SkeletonType, usingColors colors: [UIColor], animated: Bool, animation: SkeletonLayerAnimation?) {
         layoutIfNeeded()
 
         updateDummyDataSourceIfNeeded()
@@ -104,8 +104,8 @@ extension UIView {
             } else {
                 showSkeletonLeafBlock(withType: type, usingColors: colors, animated: animated, animation: animation)()
             }
-        }) { view in
-            view.recursiveUpdateSkeleton(withType: type, usingColors: colors, animated: animated, animation: animation)
+        }) { subview in
+            subview.recursiveShowOrUpdateSkeleton(withType: type, usingColors: colors, animated: animated, animation: animation)
         }
     }
 

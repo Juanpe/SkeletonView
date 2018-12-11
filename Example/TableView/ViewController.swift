@@ -72,24 +72,24 @@ class ViewController: UIViewController {
     }
     
     func refreshSkeleton() {
-        if type == .gradient { updateGradientSkeleton() }
-        else { updateSolidSkeleton() }
+        if type == .gradient { showOrUpdateGradientSkeleton() }
+        else { showOrUpdatepdateSolidSkeleton() }
     }
     
-    func updateSolidSkeleton() {
+    func showOrUpdatepdateSolidSkeleton() {
         if switchAnimated.isOn {
-            view.updateAnimatedSkeleton(usingColor: colorSelectedView.backgroundColor!)
+            view.showOrUpdateAnimatedSkeleton(usingColor: colorSelectedView.backgroundColor!)
         } else {
-            view.updateSkeleton(usingColor: colorSelectedView.backgroundColor!)
+            view.showOrUpdateSkeleton(usingColor: colorSelectedView.backgroundColor!)
         }
     }
     
-    func updateGradientSkeleton() {
+    func showOrUpdateGradientSkeleton() {
         let gradient = SkeletonGradient(baseColor: colorSelectedView.backgroundColor!)
         if switchAnimated.isOn {
-            view.updateAnimatedGradientSkeleton(usingGradient: gradient)
+            view.showOrUpdateAnimatedGradientSkeleton(usingGradient: gradient)
         } else {
-            view.updateGradientSkeleton(usingGradient: gradient)
+            view.showOrUpdateGradientSkeleton(usingGradient: gradient)
         }
     }
     
