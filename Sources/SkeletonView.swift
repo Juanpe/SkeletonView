@@ -174,10 +174,10 @@ extension UIView {
     
     func removeSkeletonLayer() {
         guard isSkeletonActive,
-            let layer = skeletonLayer else { return }
-        layer.stopAnimation()
-        layer.removeLayer()
-        skeletonLayer = nil
+            let skeletonLayer = skeletonLayer else { return }
+        skeletonLayer.stopAnimation()
+        skeletonLayer.removeLayer()
+        self.skeletonLayer = nil
         status = .off
     }
 }
