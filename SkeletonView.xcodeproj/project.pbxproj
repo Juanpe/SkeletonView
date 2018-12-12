@@ -232,25 +232,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		42ABD06F210B54BC00BEEFF4 /* Example UICollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				42ABD070210B54E100BEEFF4 /* AppDelegate.swift */,
-				42ABD072210B54E100BEEFF4 /* Assets.xcassets */,
-				42ABD074210B54E100BEEFF4 /* Base.lproj */,
-				42ABD077210B54E200BEEFF4 /* CollectionViewCell.swift */,
-				42ABD071210B54E100BEEFF4 /* Main.storyboard */,
-				42ABD073210B54E100BEEFF4 /* ViewController.swift */,
-			);
-			path = "Example UICollectionView";
-			sourceTree = "<group>";
-		};
 		52D6D9721BEFF229002C0205 = {
 			isa = PBXGroup;
 			children = (
 				3B83EE4520C41488005178A4 /* ContainsMultilineText.swift */,
 				3B83EE4620C41488005178A4 /* UIView+IBInspectable.swift */,
-				42ABD06F210B54BC00BEEFF4 /* Example UICollectionView */,
 				F5F899F31FABA607002E8FDA /* Example */,
 				8933C7811EB5B7E0000D00A4 /* Sources */,
 				52D6D99C1BEFF38C002C0205 /* Configs */,
@@ -277,6 +263,33 @@
 				DD7502721C68FC1B006590AF /* Frameworks */,
 			);
 			path = Configs;
+			sourceTree = "<group>";
+		};
+		872D5A5821C17D850037D763 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				42ABD070210B54E100BEEFF4 /* AppDelegate.swift */,
+				42ABD072210B54E100BEEFF4 /* Assets.xcassets */,
+				42ABD074210B54E100BEEFF4 /* Base.lproj */,
+				42ABD077210B54E200BEEFF4 /* CollectionViewCell.swift */,
+				42ABD071210B54E100BEEFF4 /* Main.storyboard */,
+				42ABD073210B54E100BEEFF4 /* ViewController.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		872D5A5921C17D980037D763 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				F5F899F41FABA607002E8FDA /* AppDelegate.swift */,
+				88DEA97D1FCDBD1F006C80EF /* Constants.swift */,
+				F5F899F61FABA607002E8FDA /* ViewController.swift */,
+				F5F622441FACA338007C062A /* Cell.swift */,
+				F5F899F81FABA607002E8FDA /* Main.storyboard */,
+				F5F899FB1FABA607002E8FDA /* Assets.xcassets */,
+				F5F899FD1FABA607002E8FDA /* LaunchScreen.storyboard */,
+			);
+			path = TableView;
 			sourceTree = "<group>";
 		};
 		877EFA4321BEE9C40031FC00 /* Builders */ = {
@@ -411,13 +424,8 @@
 		F5F899F31FABA607002E8FDA /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				F5F899F41FABA607002E8FDA /* AppDelegate.swift */,
-				88DEA97D1FCDBD1F006C80EF /* Constants.swift */,
-				F5F899F61FABA607002E8FDA /* ViewController.swift */,
-				F5F622441FACA338007C062A /* Cell.swift */,
-				F5F899F81FABA607002E8FDA /* Main.storyboard */,
-				F5F899FB1FABA607002E8FDA /* Assets.xcassets */,
-				F5F899FD1FABA607002E8FDA /* LaunchScreen.storyboard */,
+				872D5A5921C17D980037D763 /* TableView */,
+				872D5A5821C17D850037D763 /* CollectionView */,
 			);
 			path = Example;
 			sourceTree = "<group>";
