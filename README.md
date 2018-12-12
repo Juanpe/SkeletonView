@@ -45,11 +45,11 @@ Today almost all apps have async processes, such as Api requests, long running p
 Enjoy it! 🙂
 
 * [Features](#-features)
+* [Guides](#-guides)
 * [Installation](#-installation)
   * [Cocoapods](#using-cocoapods)
   * [Carthage](#using-carthage)
 * [How to use](#-how-to-use)
-  * [Guides](#-guides)
   * [Collections](#-collections)
   * [Multiline text](#-multiline-text)
   * [Custom colors](#-custom-colors)
@@ -75,6 +75,10 @@ Enjoy it! 🙂
 - [x] Interface Builder friendly
 - [x] Simple Swift syntax
 - [x] Lightweight readable codebase
+
+## 🎬 Guides
+
+ [<img src="Assets/thumb_getting_started.png">](https://youtu.be/75kgOhWsPNA)
 
 ## 📲 Installation
 
@@ -157,10 +161,6 @@ avatarImageView.isSkeletonable = true
 
 > **IMPORTANT!**
 >>```SkeletonView``` is recursive, so if you want show the skeleton in all skeletonable views, you only need to call the show method in the main container view. For example, with UIViewControllers
-
-### 🎬 Guides
-
- [<img src="Assets/thumb_getting_started.png">](https://youtu.be/75kgOhWsPNA)
 
 ### 🌿 Collections
 
