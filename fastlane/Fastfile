@@ -1,0 +1,13 @@
+default_platform(:ios)
+podspec_name = "SkeletonView.podspec"
+
+lane :release_current do
+   version = version_get_podspec(path: @podspec_name)
+   if git_tag_exists(tag: version)
+   UI.user_error!("The tag #{version} already exists on the repo. To release a new version of the library bump the version on #{@podspec_name}")
+   end
+   pod_lib_lint
+   add_git_tag(tag: "#{version}")
+   push_git_tags
+   pod_push
+end
