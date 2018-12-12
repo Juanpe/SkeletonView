@@ -22,13 +22,11 @@ enum AssociationPolicy: UInt {
     }
 }
 
-enum AssociatedKeys {
+enum ViewAssociatedKeys {
     static var skeletonable = "skeletonable"
     static var status = "status"
     static var skeletonLayer = "layer"
     static var flowDelegate = "flowDelegate"
     static var isSkeletonAnimated = "isSkeletonAnimated"
     static var viewState = "viewState"
-    static var lastLineFillingPercent = "lastLineFillingPercent"
-    static var multilineCornerRadius = "multilineCornerRadius"
 }
