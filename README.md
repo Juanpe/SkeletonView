@@ -45,13 +45,11 @@ Today almost all apps have async processes, such as Api requests, long running p
 Enjoy it! 🙂
 
 * [Features](#-features)
-* [Requirements](#-supported-os--sdk-versions)
-* [Guides](#-guides)
-* [Example Project](#-example)
 * [Installation](#-installation)
   * [Cocoapods](#using-cocoapods)
   * [Carthage](#using-carthage)
 * [How to use](#-how-to-use)
+  * [Guides](#-guides)
   * [Collections](#-collections)
   * [Multiline text](#-multiline-text)
   * [Custom colors](#-custom-colors)
@@ -60,6 +58,7 @@ Enjoy it! 🙂
   * [Hierarchy](#-hierarchy)
   * [Debug](#-debug)
 * [Documentation](#-documentation)
+* [Supported OS & SDK Versions](#-supported-os--sdk-versions)
 * [Next steps](#-next-steps)
 * [Contributing](#-contributing)
 * [Mentions](#-mentions)
@@ -76,20 +75,6 @@ Enjoy it! 🙂
 - [x] Interface Builder friendly
 - [x] Simple Swift syntax
 - [x] Lightweight readable codebase
-
-### 📋 Supported OS & SDK Versions
-
-* iOS 9.0+
-* tvOS 9.0+
-* Swift 4.2
-
-### 🎬 Guides
-
- [<img src="Assets/thumb_getting_started.png">](https://youtu.be/75kgOhWsPNA)
-
-### 🔮 Example
-
-To run the example project, clone the repo and run `SkeletonViewExample` target.
 
 ## 📲 Installation
 
@@ -172,6 +157,10 @@ avatarImageView.isSkeletonable = true
 
 > **IMPORTANT!**
 >>```SkeletonView``` is recursive, so if you want show the skeleton in all skeletonable views, you only need to call the show method in the main container view. For example, with UIViewControllers
+
+### 🎬 Guides
+
+ [<img src="Assets/thumb_getting_started.png">](https://youtu.be/75kgOhWsPNA)
 
 ### 🌿 Collections
 
@@ -405,6 +394,12 @@ Then, when the skeleton appears, you can see the view hierarchy in the Xcode con
 
 ### 📚 Documentation
 Coming soon...😅
+
+### 📋 Supported OS & SDK Versions
+
+* iOS 9.0+
+* tvOS 9.0+
+* Swift 4.2
 
 ## 📬 Next steps
 
