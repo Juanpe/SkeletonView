@@ -21,3 +21,14 @@ enum AssociationPolicy: UInt {
         return objc_AssociationPolicy(rawValue: rawValue)!
     }
 }
+
+enum AssociatedKeys {
+    static var skeletonable = "skeletonable"
+    static var status = "status"
+    static var skeletonLayer = "layer"
+    static var flowDelegate = "flowDelegate"
+    static var isSkeletonAnimated = "isSkeletonAnimated"
+    static var viewState = "viewState"
+    static var lastLineFillingPercent = "lastLineFillingPercent"
+    static var multilineCornerRadius = "multilineCornerRadius"
+}

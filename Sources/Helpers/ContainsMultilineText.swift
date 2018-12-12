@@ -8,12 +8,6 @@
 
 import UIKit
 
-private enum AssociatedKeys {
-        static var lastLineFillingPercent = "lastLineFillingPercent"
-        static var multilineCornerRadius = "multilineCornerRadius"
-        
-}
-
 protocol ContainsMultilineText {
         var numLines: Int { get }
         var lastLineFillingPercent: Int { get }
