@@ -1,10 +1,4 @@
-//
-//  AssociationPolicy.swift
-//  SkeletonView-iOS
-//
-//  Created by Juanpe Catalán on 02/11/2017.
 //  Copyright © 2017 SkeletonView. All rights reserved.
-//
 
 import Foundation
 
@@ -21,3 +15,32 @@ enum AssociationPolicy: UInt {
         return objc_AssociationPolicy(rawValue: rawValue)!
     }
 }
+
+protocol AssociatedObjects: class { }
+
+// transparent wrappers
+extension AssociatedObjects {
+
+    /// wrapper around `objc_getAssociatedObject`
+    func ao_get(pkey: UnsafeRawPointer) -> Any? {
+        return objc_getAssociatedObject(self, pkey)
+    }
+
+    /// wrapper around `objc_setAssociatedObject`
+    func ao_setOptional(_ value: Any?, pkey: UnsafeRawPointer, policy: AssociationPolicy = .retainNonatomic) {
+        guard let value = value else { return }
+        objc_setAssociatedObject(self, pkey, value, policy.objc)
+    }
+
+    /// wrapper around `objc_setAssociatedObject`
+    func ao_set(_ value: Any, pkey: UnsafeRawPointer, policy: AssociationPolicy = .retainNonatomic) {
+        objc_setAssociatedObject(self, pkey, value, policy.objc)
+    }
+
+    /// wrapper around 'objc_removeAssociatedObjects'
+    func ao_removeAll() {
+        objc_removeAssociatedObjects(self)
+    }
+}
+
+extension NSObject: AssociatedObjects { }

@@ -29,7 +29,6 @@
 		17DD0E1D207FB32100C56334 /* ContainsMultilineText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5307E3A1FB123C100EE67C5 /* ContainsMultilineText.swift */; };
 		17DD0E1E207FB32100C56334 /* PrepareForSkeletonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56B94451FAE20AF0095662F /* PrepareForSkeletonProtocol.swift */; };
 		17DD0E1F207FB32100C56334 /* RecursiveProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5307E311FB0F42F00EE67C5 /* RecursiveProtocol.swift */; };
-		3B83EE4720C41488005178A4 /* ContainsMultilineText.swift in Headers */ = {isa = PBXBuildFile; fileRef = 3B83EE4520C41488005178A4 /* ContainsMultilineText.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		3B83EE4820C41488005178A4 /* UIView+IBInspectable.swift in Headers */ = {isa = PBXBuildFile; fileRef = 3B83EE4620C41488005178A4 /* UIView+IBInspectable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		42ABD063210B548200BEEFF4 /* SkeletonView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* SkeletonView.framework */; };
 		42ABD069210B548200BEEFF4 /* SkeletonView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* SkeletonView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -39,6 +38,12 @@
 		42ABD07B210B54E200BEEFF4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ABD073210B54E100BEEFF4 /* ViewController.swift */; };
 		42ABD07C210B54E200BEEFF4 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 42ABD074210B54E100BEEFF4 /* Base.lproj */; };
 		42ABD07F210B54E200BEEFF4 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ABD077210B54E200BEEFF4 /* CollectionViewCell.swift */; };
+		872D5A5621C177E20037D763 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D5A5521C177E20037D763 /* UIView+Extension.swift */; };
+		872D5A5721C177E20037D763 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D5A5521C177E20037D763 /* UIView+Extension.swift */; };
+		872D5A5C21C24EDD0037D763 /* UILabel+Multiline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D5A5B21C24EDD0037D763 /* UILabel+Multiline.swift */; };
+		872D5A5D21C24EDD0037D763 /* UILabel+Multiline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D5A5B21C24EDD0037D763 /* UILabel+Multiline.swift */; };
+		872D5A5F21C24F8E0037D763 /* UITextView+Multiline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D5A5E21C24F8E0037D763 /* UITextView+Multiline.swift */; };
+		872D5A6021C24F8E0037D763 /* UITextView+Multiline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D5A5E21C24F8E0037D763 /* UITextView+Multiline.swift */; };
 		8748240D20C6A88A00E92179 /* UIView+IBInspectable.swift in Headers */ = {isa = PBXBuildFile; fileRef = F5F899CF1FAA6A4D002E8FDA /* UIView+IBInspectable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		8748240E20C6A88E00E92179 /* ContainsMultilineText.swift in Headers */ = {isa = PBXBuildFile; fileRef = F5307E3A1FB123C100EE67C5 /* ContainsMultilineText.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		877EFA4521BEE9D80031FC00 /* SkeletonLayerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877EFA4421BEE9D80031FC00 /* SkeletonLayerBuilder.swift */; };
@@ -141,7 +146,6 @@
 		17DD0E00207FB27400C56334 /* SkeletonView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SkeletonView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		17DD0E1A207FB2C200C56334 /* SkeletonView-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SkeletonView-tvOS.plist"; sourceTree = "<group>"; };
 		17DD0E1B207FB2C200C56334 /* SkeletonView-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SkeletonView-iOS.plist"; sourceTree = "<group>"; };
-		3B83EE4520C41488005178A4 /* ContainsMultilineText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContainsMultilineText.swift; path = Sources/Helpers/ContainsMultilineText.swift; sourceTree = "<group>"; };
 		3B83EE4620C41488005178A4 /* UIView+IBInspectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+IBInspectable.swift"; path = "Sources/Extensions/UIView+IBInspectable.swift"; sourceTree = "<group>"; };
 		42ABD06D210B548200BEEFF4 /* SkeletonViewExampleUICollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkeletonViewExampleUICollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42ABD070210B54E100BEEFF4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +156,9 @@
 		42ABD076210B54E200BEEFF4 /* SkeletonViewExampleCollectionview-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SkeletonViewExampleCollectionview-Info.plist"; sourceTree = "<group>"; };
 		42ABD077210B54E200BEEFF4 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* SkeletonView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SkeletonView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		872D5A5521C177E20037D763 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		872D5A5B21C24EDD0037D763 /* UILabel+Multiline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Multiline.swift"; sourceTree = "<group>"; };
+		872D5A5E21C24F8E0037D763 /* UITextView+Multiline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Multiline.swift"; sourceTree = "<group>"; };
 		877EFA4421BEE9D80031FC00 /* SkeletonLayerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLayerBuilder.swift; sourceTree = "<group>"; };
 		877EFA4721BEED760031FC00 /* SkeletonMultilineLayerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonMultilineLayerBuilder.swift; sourceTree = "<group>"; };
 		8785E3A0211C9C9800CC9DFD /* SkeletonDebug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonDebug.swift; sourceTree = "<group>"; };
@@ -229,25 +236,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		42ABD06F210B54BC00BEEFF4 /* Example UICollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				42ABD070210B54E100BEEFF4 /* AppDelegate.swift */,
-				42ABD072210B54E100BEEFF4 /* Assets.xcassets */,
-				42ABD074210B54E100BEEFF4 /* Base.lproj */,
-				42ABD077210B54E200BEEFF4 /* CollectionViewCell.swift */,
-				42ABD071210B54E100BEEFF4 /* Main.storyboard */,
-				42ABD073210B54E100BEEFF4 /* ViewController.swift */,
-			);
-			path = "Example UICollectionView";
-			sourceTree = "<group>";
-		};
 		52D6D9721BEFF229002C0205 = {
 			isa = PBXGroup;
 			children = (
-				3B83EE4520C41488005178A4 /* ContainsMultilineText.swift */,
 				3B83EE4620C41488005178A4 /* UIView+IBInspectable.swift */,
-				42ABD06F210B54BC00BEEFF4 /* Example UICollectionView */,
 				F5F899F31FABA607002E8FDA /* Example */,
 				8933C7811EB5B7E0000D00A4 /* Sources */,
 				52D6D99C1BEFF38C002C0205 /* Configs */,
@@ -274,6 +266,43 @@
 				DD7502721C68FC1B006590AF /* Frameworks */,
 			);
 			path = Configs;
+			sourceTree = "<group>";
+		};
+		872D5A5821C17D850037D763 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				42ABD070210B54E100BEEFF4 /* AppDelegate.swift */,
+				42ABD072210B54E100BEEFF4 /* Assets.xcassets */,
+				42ABD074210B54E100BEEFF4 /* Base.lproj */,
+				42ABD077210B54E200BEEFF4 /* CollectionViewCell.swift */,
+				42ABD071210B54E100BEEFF4 /* Main.storyboard */,
+				42ABD073210B54E100BEEFF4 /* ViewController.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		872D5A5921C17D980037D763 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				F5F899F41FABA607002E8FDA /* AppDelegate.swift */,
+				88DEA97D1FCDBD1F006C80EF /* Constants.swift */,
+				F5F899F61FABA607002E8FDA /* ViewController.swift */,
+				F5F622441FACA338007C062A /* Cell.swift */,
+				F5F899F81FABA607002E8FDA /* Main.storyboard */,
+				F5F899FB1FABA607002E8FDA /* Assets.xcassets */,
+				F5F899FD1FABA607002E8FDA /* LaunchScreen.storyboard */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		872D5A5A21C24E7C0037D763 /* Multilines */ = {
+			isa = PBXGroup;
+			children = (
+				F5307E3A1FB123C100EE67C5 /* ContainsMultilineText.swift */,
+				872D5A5B21C24EDD0037D763 /* UILabel+Multiline.swift */,
+				872D5A5E21C24F8E0037D763 /* UITextView+Multiline.swift */,
+			);
+			path = Multilines;
 			sourceTree = "<group>";
 		};
 		877EFA4321BEE9C40031FC00 /* Builders */ = {
@@ -304,6 +333,7 @@
 		8933C7811EB5B7E0000D00A4 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				872D5A5A21C24E7C0037D763 /* Multilines */,
 				877EFA4321BEE9C40031FC00 /* Builders */,
 				8785E39F211C9C7C00CC9DFD /* Debug */,
 				8785E39E211C9C6D00CC9DFD /* Appearance */,
@@ -378,6 +408,7 @@
 				F5F622401FAC6E31007C062A /* UIColor+Skeleton.swift */,
 				F5307E2D1FB0E5E400EE67C5 /* UIView+Frame.swift */,
 				F5F899CF1FAA6A4D002E8FDA /* UIView+IBInspectable.swift */,
+				872D5A5521C177E20037D763 /* UIView+Extension.swift */,
 				F587FB85202CEC95002DB5FE /* UIView+UIApplicationDelegate.swift */,
 				F5A5E8B3211DCE7000FD20D0 /* Int+Whitespaces.swift */,
 			);
@@ -388,7 +419,6 @@
 			isa = PBXGroup;
 			children = (
 				F5F899D11FAB9630002E8FDA /* AssociationPolicy.swift */,
-				F5307E3A1FB123C100EE67C5 /* ContainsMultilineText.swift */,
 				F56B94451FAE20AF0095662F /* PrepareForSkeletonProtocol.swift */,
 				F5307E311FB0F42F00EE67C5 /* RecursiveProtocol.swift */,
 			);
@@ -407,13 +437,8 @@
 		F5F899F31FABA607002E8FDA /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				F5F899F41FABA607002E8FDA /* AppDelegate.swift */,
-				88DEA97D1FCDBD1F006C80EF /* Constants.swift */,
-				F5F899F61FABA607002E8FDA /* ViewController.swift */,
-				F5F622441FACA338007C062A /* Cell.swift */,
-				F5F899F81FABA607002E8FDA /* Main.storyboard */,
-				F5F899FB1FABA607002E8FDA /* Assets.xcassets */,
-				F5F899FD1FABA607002E8FDA /* LaunchScreen.storyboard */,
+				872D5A5921C17D980037D763 /* TableView */,
+				872D5A5821C17D850037D763 /* CollectionView */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -450,7 +475,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B83EE4720C41488005178A4 /* ContainsMultilineText.swift in Headers */,
 				3B83EE4820C41488005178A4 /* UIView+IBInspectable.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -624,7 +648,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				872D5A5721C177E20037D763 /* UIView+Extension.swift in Sources */,
 				17DD0E1F207FB32100C56334 /* RecursiveProtocol.swift in Sources */,
+				872D5A5D21C24EDD0037D763 /* UILabel+Multiline.swift in Sources */,
 				17DD0E1E207FB32100C56334 /* PrepareForSkeletonProtocol.swift in Sources */,
 				F51ED28520973CC9008B2434 /* SkeletonReusableCell.swift in Sources */,
 				17DD0E17207FB28F00C56334 /* SkeletonLayer.swift in Sources */,
@@ -647,6 +673,7 @@
 				17DD0E14207FB28F00C56334 /* SkeletonAnimationBuilder.swift in Sources */,
 				17DD0E11207FB28C00C56334 /* UIView+Frame.swift in Sources */,
 				17DD0E15207FB28F00C56334 /* SkeletonAppearance.swift in Sources */,
+				872D5A6021C24F8E0037D763 /* UITextView+Multiline.swift in Sources */,
 				17DD0E10207FB28C00C56334 /* UIColor+Skeleton.swift in Sources */,
 				F51ED28420973CC6008B2434 /* GenericCollectionView.swift in Sources */,
 				17DD0E0A207FB28900C56334 /* SkeletonCollectionViewProtocols.swift in Sources */,
@@ -674,7 +701,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				872D5A5621C177E20037D763 /* UIView+Extension.swift in Sources */,
 				F5F899D01FAA6A4D002E8FDA /* UIView+IBInspectable.swift in Sources */,
+				872D5A5C21C24EDD0037D763 /* UILabel+Multiline.swift in Sources */,
 				F54CF5E42024CEB000330B0D /* UIView+CollectionSkeleton.swift in Sources */,
 				F5307E371FB1076E00EE67C5 /* SkeletonTableViewProtocols.swift in Sources */,
 				8933C7851EB5B820000D00A4 /* SkeletonView.swift in Sources */,
@@ -697,6 +726,7 @@
 				F54CF5E62024CEB000330B0D /* UICollectionView+CollectionSkeleton.swift in Sources */,
 				F56B94461FAE20AF0095662F /* PrepareForSkeletonProtocol.swift in Sources */,
 				F5307E391FB1078E00EE67C5 /* SkeletonCollectionViewProtocols.swift in Sources */,
+				872D5A5F21C24F8E0037D763 /* UITextView+Multiline.swift in Sources */,
 				F51DF873206E91FB00D23301 /* GenericCollectionView.swift in Sources */,
 				F5307E3B1FB123C100EE67C5 /* ContainsMultilineText.swift in Sources */,
 				F5F899E91FAB9D2B002E8FDA /* SkeletonLayer.swift in Sources */,

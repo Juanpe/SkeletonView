@@ -15,6 +15,7 @@ public enum SkeletonAppearance {
     public static var `default`: Appearance = SkeletonViewAppearance.shared
 }
 
+// codebeat:disable[TOO_MANY_IVARS]
 class SkeletonViewAppearance: Appearance {
 
     static var shared = SkeletonViewAppearance()
@@ -31,3 +32,4 @@ class SkeletonViewAppearance: Appearance {
 
     var multilineCornerRadius: Int = 0
 }
+// codebeat:enable[TOO_MANY_IVARS]
