@@ -34,7 +34,9 @@ extension UITableView: CollectionSkeleton {
         guard let originalDataSource = self.dataSource as? SkeletonTableViewDataSource,
             !(originalDataSource is SkeletonCollectionDataSource)
             else { return }
-        let dataSource = SkeletonCollectionDataSource(tableViewDataSource: originalDataSource, rowHeight: calculateRowHeight())
+        let rowHeight = calculateRowHeight()
+        let dataSource = SkeletonCollectionDataSource(tableViewDataSource: originalDataSource,
+                                                      rowHeight: rowHeight)
         self.skeletonDataSource = dataSource
         reloadData()
     }
