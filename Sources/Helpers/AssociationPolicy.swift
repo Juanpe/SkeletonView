@@ -1,11 +1,4 @@
-//
-//  AssociationPolicy.swift
-//  SkeletonView-iOS
-//
-//  Created by Juanpe Catalán on 02/11/2017.
 //  Copyright © 2017 SkeletonView. All rights reserved.
-//
-
 import Foundation
 
 //Partially copy/pasted from https://github.com/jameslintaylor/AssociatedObjects/blob/master/AssociatedObjects/AssociatedObjects.swift
@@ -22,6 +15,7 @@ enum AssociationPolicy: UInt {
     }
 }
 
+// codebeat:disable[TOO_MANY_IVARS]
 enum ViewAssociatedKeys {
     static var skeletonable = "skeletonable"
     static var status = "status"
@@ -30,3 +24,4 @@ enum ViewAssociatedKeys {
     static var isSkeletonAnimated = "isSkeletonAnimated"
     static var viewState = "viewState"
 }
+// codebeat:enable[TOO_MANY_IVARS]
