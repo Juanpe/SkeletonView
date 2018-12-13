@@ -1,4 +1,5 @@
 //  Copyright © 2017 SkeletonView. All rights reserved.
+
 import UIKit
 
 public extension UIView {
@@ -14,8 +15,8 @@ public extension UIView {
     }
 
     fileprivate var skeletonable: Bool! {
-        get { return objc_getAssociatedObject(self, &ViewAssociatedKeys.skeletonable) as? Bool ?? false }
-        set { objc_setAssociatedObject(self, &ViewAssociatedKeys.skeletonable, newValue, AssociationPolicy.retain.objc) }
+        get { return ao_get(pkey: &ViewAssociatedKeys.skeletonable) as? Bool ?? false }
+        set { ao_set(newValue, pkey: &ViewAssociatedKeys.skeletonable) }
     }
 }
 

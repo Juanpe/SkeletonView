@@ -17,8 +17,8 @@ protocol Recoverable {
 extension UIView: Recoverable {
 
     var viewState: RecoverableViewState? {
-        get { return objc_getAssociatedObject(self, &ViewAssociatedKeys.viewState) as? RecoverableViewState }
-        set { objc_setAssociatedObject(self, &ViewAssociatedKeys.viewState, newValue, AssociationPolicy.retain.objc) }
+        get { return ao_get(pkey: &ViewAssociatedKeys.viewState) as? RecoverableViewState }
+        set { ao_setOptional(newValue, pkey: &ViewAssociatedKeys.viewState) }
     }
     
     @objc func saveViewState() {

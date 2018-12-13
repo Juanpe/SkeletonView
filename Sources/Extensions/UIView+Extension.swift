@@ -2,6 +2,17 @@
 
 import UIKit
 
+// codebeat:disable[TOO_MANY_IVARS]
+enum ViewAssociatedKeys {
+    static var skeletonable = "skeletonable"
+    static var status = "status"
+    static var skeletonLayer = "layer"
+    static var flowDelegate = "flowDelegate"
+    static var isSkeletonAnimated = "isSkeletonAnimated"
+    static var viewState = "viewState"
+}
+// codebeat:enable[TOO_MANY_IVARS]
+
 extension UIView {
 
     enum Status {
@@ -10,22 +21,22 @@ extension UIView {
     }
 
     var flowDelegate: SkeletonFlowDelegate? {
-        get { return objc_getAssociatedObject(self, &ViewAssociatedKeys.flowDelegate) as? SkeletonFlowDelegate }
-        set { objc_setAssociatedObject(self, &ViewAssociatedKeys.flowDelegate, newValue, AssociationPolicy.retain.objc) }
+        get { return ao_get(pkey: &ViewAssociatedKeys.flowDelegate) as? SkeletonFlowDelegate }
+        set { ao_setOptional(newValue, pkey: &ViewAssociatedKeys.flowDelegate) }
     }
 
     var skeletonLayer: SkeletonLayer? {
-        get { return objc_getAssociatedObject(self, &ViewAssociatedKeys.skeletonLayer) as? SkeletonLayer }
-        set { objc_setAssociatedObject(self, &ViewAssociatedKeys.skeletonLayer, newValue, AssociationPolicy.retain.objc) }
+        get { return ao_get(pkey: &ViewAssociatedKeys.skeletonLayer) as? SkeletonLayer }
+        set { ao_setOptional(newValue, pkey: &ViewAssociatedKeys.skeletonLayer) }
     }
 
     var status: Status! {
-        get { return objc_getAssociatedObject(self, &ViewAssociatedKeys.status) as? Status ?? .off }
-        set { objc_setAssociatedObject(self, &ViewAssociatedKeys.status, newValue, AssociationPolicy.retain.objc) }
+        get { return ao_get(pkey: &ViewAssociatedKeys.status) as? Status ?? .off }
+        set { ao_set(newValue, pkey: &ViewAssociatedKeys.status) }
     }
 
     var skeletonIsAnimated: Bool! {
-        get { return objc_getAssociatedObject(self, &ViewAssociatedKeys.isSkeletonAnimated) as? Bool ?? false }
-        set { objc_setAssociatedObject(self, &ViewAssociatedKeys.isSkeletonAnimated, newValue, AssociationPolicy.retain.objc) }
+        get { return ao_get(pkey: &ViewAssociatedKeys.isSkeletonAnimated) as? Bool ?? false }
+        set { ao_set(newValue, pkey: &ViewAssociatedKeys.isSkeletonAnimated) }
     }
 }

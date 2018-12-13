@@ -1,4 +1,5 @@
 //  Copyright © 2017 SkeletonView. All rights reserved.
+
 import UIKit
 
 // codebeat:disable[TOO_MANY_IVARS]
