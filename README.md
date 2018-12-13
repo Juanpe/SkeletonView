@@ -4,18 +4,13 @@
     <a href="https://app.bitrise.io/app/6d289a17e22c8323">
       <img src="https://app.bitrise.io/app/6d289a17e22c8323/status.svg?token=fI7gKC41XD9-aRXDScCKBw&branch=master">
     </a>
-    <a href="https://travis-ci.org/Juanpe/SkeletonView">
-      <img src="https://img.shields.io/travis/Juanpe/SkeletonView.svg">
-    </a>
-    <a href="https://instagram.github.io/IGListKit/">
+    <a href="https://codebeat.co/projects/github-com-juanpe-skeletonview-master"><img alt="codebeat badge" src="https://codebeat.co/badges/f854fdfd-31e5-4689-ba04-075d83653e60" /></a>
+    <a href="https://github.com/Juanpe/SkeletonView">
         <img src="https://img.shields.io/cocoapods/p/SkeletonView.svg" alt="Platforms">
     </a>
     <img src="https://img.shields.io/badge/Swift-4.2-orange.svg" />
     <a href="https://cocoapods.org/pods/SkeletonView">
         <img src="https://img.shields.io/cocoapods/v/SkeletonView.svg" alt="CocoaPods" />
-    </a>
-    <a href="https://github.com/Carthage/Carthage">
-        <img src="https://img.shields.io/badge/carthage-compatible-4BC51D.svg?style=flat" alt="Carthage" />
     </a>
     <a href="https://cocoapods.org/pods/SkeletonView">
         <img src="https://img.shields.io/cocoapods/dt/SkeletonView.svg?style=flat" alt="CocoaPods downloads" />
@@ -28,9 +23,6 @@
     </a>
     <a href="https://twitter.com/intent/tweet?text=Wow%20This%20library%20is%20awesome:&url=https%3A%2F%2Fgithub.com%2FJuanpe%2FSkeletonView">
       <img src="https://img.shields.io/twitter/url/https/github.com/Juanpe/SkeletonView.svg?style=social" alt="License" />
-    </a>
-    <a href="https://twitter.com/JuanpeCatalan">
-      <img src="https://img.shields.io/twitter/follow/JuanpeCatalan.svg?style=social&label=Follow" alt="Twitter" />
     </a>
 </p>
 

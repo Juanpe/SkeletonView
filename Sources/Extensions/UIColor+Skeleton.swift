@@ -1,13 +1,8 @@
-//
-//  UIColor+Skeleton.swift
-//  SkeletonView-iOS
-//
-//  Created by Juanpe Catalán on 03/11/2017.
 //  Copyright © 2017 SkeletonView. All rights reserved.
-//
 
 import UIKit
 
+// codebeat:disable[TOO_MANY_IVARS]
 extension UIColor {
     
     convenience init(_ hex: UInt) {
@@ -20,9 +15,8 @@ extension UIColor {
     }
     
     func isLight() -> Bool {
-        // algorithm from: http://www.w3.org/WAI/ER/WD-AERT/#color-contrast
         guard let components = cgColor.components,
-              components.count >= 3 else { return false }
+            components.count >= 3 else { return false }
         let brightness = ((components[0] * 299) + (components[1] * 587) + (components[2] * 114)) / 1000
         return !(brightness < 0.5)
     }
@@ -72,4 +66,4 @@ public extension UIColor {
     static var silver       = UIColor(0xbdc3c7)
     static var asbestos     = UIColor(0x7f8c8d)
 }
-
+// codebeat:enable[TOO_MANY_IVARS]
