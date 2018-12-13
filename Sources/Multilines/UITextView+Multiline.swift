@@ -19,12 +19,18 @@ public extension UITextView {
 
 extension UITextView: ContainsMultilineText {
     var lastLineFillingPercent: Int {
-        get { return ao_get(pkey: &MultilineAssociatedKeys.lastLineFillingPercent) as? Int ?? SkeletonAppearance.default.multilineLastLineFillPercent }
+        get {
+            let defaultValue = SkeletonAppearance.default.multilineLastLineFillPercent
+            return ao_get(pkey: &MultilineAssociatedKeys.lastLineFillingPercent) as? Int ?? defaultValue
+        }
         set { ao_set(newValue, pkey: &MultilineAssociatedKeys.lastLineFillingPercent) }
     }
 
     var multilineCornerRadius: Int {
-        get { return ao_get(pkey: &MultilineAssociatedKeys.multilineCornerRadius) as? Int ?? SkeletonAppearance.default.multilineCornerRadius }
+        get {
+            let defaultValue = SkeletonAppearance.default.multilineCornerRadius
+            return ao_get(pkey: &MultilineAssociatedKeys.multilineCornerRadius) as? Int ?? defaultValue
+        }
         set { ao_set(newValue, pkey: &MultilineAssociatedKeys.multilineCornerRadius) }
     }
 }
