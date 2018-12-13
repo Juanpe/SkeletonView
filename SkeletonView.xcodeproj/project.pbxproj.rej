@@ -1,0 +1,28 @@
+diff a/SkeletonView.xcodeproj/project.pbxproj b/SkeletonView.xcodeproj/project.pbxproj	(rejected hunks)
+@@ -38,6 +38,7 @@
+ 		42ABD07B210B54E200BEEFF4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ABD073210B54E100BEEFF4 /* ViewController.swift */; };
+ 		42ABD07C210B54E200BEEFF4 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 42ABD074210B54E100BEEFF4 /* Base.lproj */; };
+ 		42ABD07F210B54E200BEEFF4 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ABD077210B54E200BEEFF4 /* CollectionViewCell.swift */; };
++		57CBCF345B9B3D8E67D37BB9 /* Pods_UsingRxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 096965A27284D212E25908EE /* Pods_UsingRxDataSources.framework */; };
+ 		872D5A5621C177E20037D763 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D5A5521C177E20037D763 /* UIView+Extension.swift */; };
+ 		872D5A5721C177E20037D763 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D5A5521C177E20037D763 /* UIView+Extension.swift */; };
+ 		872D5A5C21C24EDD0037D763 /* UILabel+Multiline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D5A5B21C24EDD0037D763 /* UILabel+Multiline.swift */; };
+@@ -156,6 +176,8 @@
+ 		42ABD076210B54E200BEEFF4 /* SkeletonViewExampleCollectionview-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SkeletonViewExampleCollectionview-Info.plist"; sourceTree = "<group>"; };
+ 		42ABD077210B54E200BEEFF4 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+ 		52D6D97C1BEFF229002C0205 /* SkeletonView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SkeletonView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
++		752C9C59754E06EA35BC8EEC /* Pods-UsingRxDataSources.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UsingRxDataSources.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UsingRxDataSources/Pods-UsingRxDataSources.debug.xcconfig"; sourceTree = "<group>"; };
++		759E7DC8BD8278BEBCD3CE45 /* Pods-UsingRxDataSources.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UsingRxDataSources.release.xcconfig"; path = "Pods/Target Support Files/Pods-UsingRxDataSources/Pods-UsingRxDataSources.release.xcconfig"; sourceTree = "<group>"; };
+ 		872D5A5521C177E20037D763 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+ 		872D5A5B21C24EDD0037D763 /* UILabel+Multiline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Multiline.swift"; sourceTree = "<group>"; };
+ 		872D5A5E21C24F8E0037D763 /* UITextView+Multiline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Multiline.swift"; sourceTree = "<group>"; };
+@@ -333,8 +394,8 @@
+ 		8933C7811EB5B7E0000D00A4 /* Sources */ = {
+ 			isa = PBXGroup;
+ 			children = (
+-				872D5A5A21C24E7C0037D763 /* Multilines */,
+ 				877EFA4321BEE9C40031FC00 /* Builders */,
++				872D5A5A21C24E7C0037D763 /* Multilines */,
+ 				8785E39F211C9C7C00CC9DFD /* Debug */,
+ 				8785E39E211C9C6D00CC9DFD /* Appearance */,
+ 				F58A6E7020A8C87100612494 /* Recoverable */,
