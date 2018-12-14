@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8709650B21C42A8B0087D16B"
-               BuildableName = "SkeletonView_Rx.framework"
+               BuildableName = "SkeletonViewRx.framework"
                BlueprintName = "SkeletonView-Rx"
                ReferencedContainer = "container:SkeletonView.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8709650B21C42A8B0087D16B"
-            BuildableName = "SkeletonView_Rx.framework"
+            BuildableName = "SkeletonViewRx.framework"
             BlueprintName = "SkeletonView-Rx"
             ReferencedContainer = "container:SkeletonView.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8709650B21C42A8B0087D16B"
-            BuildableName = "SkeletonView_Rx.framework"
+            BuildableName = "SkeletonViewRx.framework"
             BlueprintName = "SkeletonView-Rx"
             ReferencedContainer = "container:SkeletonView.xcodeproj">
          </BuildableReference>
