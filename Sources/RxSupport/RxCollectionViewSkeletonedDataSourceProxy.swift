@@ -1,16 +1,10 @@
-//
-//  RxCollectionViewSkeletonedDataSourceProxy.swift
-//  RxSkeleton
-//
-//  Created by Archer on 2018/11/30.
-//
+//  Copyright © 2018 SkeletonView. All rights reserved.
 
 #if os(iOS) || os(tvOS)
 
 import UIKit
 import RxSwift
 import RxCocoa
-import SkeletonView
 
 fileprivate let collectionViewSkeletonedDataSourceNotSet = CollectionViewSkeletonedDataSourceNotSet()
 

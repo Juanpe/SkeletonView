@@ -1,11 +1,5 @@
-//
-//  RxCollectionViewSkeletonedReloadDataSource.swift
-//  RxSkeleton
-//
-//  Created by Archer on 2018/11/30.
-//
+//  Copyright © 2018 SkeletonView. All rights reserved.
 
-import SkeletonView
 import RxDataSources
 
 public class RxCollectionViewSkeletonedReloadDataSource<S: SectionModelType>

@@ -1,11 +1,5 @@
-//
-//  RxCollectionViewSkeletonedAnimatedDataSource.swift
-//  RxSkeleton
-//
-//  Created by Archer on 2018/12/1.
-//
+//  Copyright © 2018 SkeletonView. All rights reserved.
 
-import SkeletonView
 import RxDataSources
 
 /*

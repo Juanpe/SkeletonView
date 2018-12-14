@@ -1,15 +1,10 @@
-//
-//  ObservableType+Ex.swift
-//  RxSkeleton
-//
-//  Created by Archer on 2018/11/30.
-//
+//  Copyright © 2018 SkeletonView. All rights reserved.
 
 import UIKit
 import RxSwift
 import RxCocoa
 
-extension ObservableType {
+public extension ObservableType {
     func subscribeProxyDataSource<DelegateProxy: DelegateProxyType>(ofObject object: DelegateProxy.ParentObject, dataSource: DelegateProxy.Delegate, retainDataSource: Bool, binding: @escaping (DelegateProxy, Event<E>) -> Void)
         -> Disposable
         where DelegateProxy.ParentObject: UIView {

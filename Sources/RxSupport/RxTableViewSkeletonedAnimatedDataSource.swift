@@ -1,27 +1,23 @@
-//
-//  RxTableViewSkeletonedReloadDataSource.swift
-//  RxSkeleton
-//
-//  Created by Archer on 2018/11/30.
-//
+//  Copyright © 2018 SkeletonView. All rights reserved.
 
-import SkeletonView
 import RxDataSources
 
-public class RxTableViewSkeletonedReloadDataSource<S: SectionModelType>
-    : RxTableViewSectionedReloadDataSource<S>
+public class RxTableViewSkeletonedAnimatedDataSource<S: AnimatableSectionModelType>
+    : RxTableViewSectionedAnimatedDataSource<S>
     , SkeletonTableViewDataSource {
     
-    public typealias NumberOfSections = (RxTableViewSkeletonedReloadDataSource<S>, UITableView) -> Int
-    public typealias NumberOfRowsInSection = (RxTableViewSkeletonedReloadDataSource<S>, UITableView, Int) -> Int
-    public typealias ReuseIdentifierForRowAtIndexPath = (RxTableViewSkeletonedReloadDataSource<S>, UITableView, IndexPath) -> String
+    public typealias NumberOfSections = (RxTableViewSkeletonedAnimatedDataSource<S>, UITableView) -> Int
+    public typealias NumberOfRowsInSection = (RxTableViewSkeletonedAnimatedDataSource<S>, UITableView, Int) -> Int
+    public typealias ReuseIdentifierForRowAtIndexPath = (RxTableViewSkeletonedAnimatedDataSource<S>, UITableView, IndexPath) -> String
     
     var numberOfSections: NumberOfSections
     var numberOfRowsInSection: NumberOfRowsInSection
     var reuseIdentifierForRowAtIndexPath: ReuseIdentifierForRowAtIndexPath
     
     #if os(iOS)
-    public init(configureCell: @escaping ConfigureCell,
+    public init(animationConfiguration: AnimationConfiguration = AnimationConfiguration(),
+                decideViewTransition: @escaping DecideViewTransition = { _, _, _ in .animated },
+                configureCell: @escaping ConfigureCell,
                 titleForHeaderInSection: @escaping  TitleForHeaderInSection = { _, _ in nil },
                 titleForFooterInSection: @escaping TitleForFooterInSection = { _, _ in nil },
                 canEditRowAtIndexPath: @escaping CanEditRowAtIndexPath = { _, _ in false },
@@ -34,7 +30,9 @@ public class RxTableViewSkeletonedReloadDataSource<S: SectionModelType>
         self.numberOfSections = numberOfSections
         self.numberOfRowsInSection = numberOfRowsInSection
         self.reuseIdentifierForRowAtIndexPath = reuseIdentifierForRowAtIndexPath
-        super.init(configureCell: configureCell,
+        super.init(animationConfiguration: animationConfiguration,
+                   decideViewTransition: decideViewTransition,
+                   configureCell: configureCell,
                    titleForHeaderInSection: titleForHeaderInSection,
                    titleForFooterInSection: titleForFooterInSection,
                    canEditRowAtIndexPath: canEditRowAtIndexPath,
@@ -44,7 +42,9 @@ public class RxTableViewSkeletonedReloadDataSource<S: SectionModelType>
         )
     }
     #else
-    public init(configureCell: @escaping ConfigureCell,
+    public init(animationConfiguration: AnimationConfiguration = AnimationConfiguration(),
+                decideViewTransition: @escaping DecideViewTransition = { _, _, _ in .animated },
+                configureCell: @escaping ConfigureCell,
                 titleForHeaderInSection: @escaping  TitleForHeaderInSection = { _, _ in nil },
                 titleForFooterInSection: @escaping TitleForFooterInSection = { _, _ in nil },
                 canEditRowAtIndexPath: @escaping CanEditRowAtIndexPath = { _, _ in false },
@@ -55,7 +55,9 @@ public class RxTableViewSkeletonedReloadDataSource<S: SectionModelType>
         self.numberOfSections = numberOfSections
         self.numberOfRowsInSection = numberOfRowsInSection
         self.reuseIdentifierForRowAtIndexPath = reuseIdentifierForRowAtIndexPath
-        super.init(configureCell: configureCell,
+        super.init(animationConfiguration: animationConfiguration,
+                   decideViewTransition: decideViewTransition,
+                   configureCell: configureCell,
                    titleForHeaderInSection: titleForHeaderInSection,
                    titleForFooterInSection: titleForFooterInSection,
                    canEditRowAtIndexPath: canEditRowAtIndexPath,

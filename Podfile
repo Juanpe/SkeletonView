@@ -1,10 +1,18 @@
-platform :ios, '9.0'
+platform :ios, '10.0'
+use_frameworks!
 
-target 'UsingRxDataSources' do
-  use_frameworks!
-
-    pod 'RxSwift'
-    pod 'RxCocoa'
-    pod 'RxDataSources'
-
+def thirdparty_pods
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'RxDataSources'
 end
+
+target 'SkeletonViewRxDatasources' do
+    thirdparty_pods
+end
+
+target 'SkeletonView-Rx' do
+  thirdparty_pods
+end
+
+

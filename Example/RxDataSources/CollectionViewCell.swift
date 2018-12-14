@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SkeletonView
+import SkeletonViewRx
 
 class CollectionViewCell: UICollectionViewCell {
     
