@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     }
     
     private func showSkeleton() {
-        // show skeleton and then make load data
+        // show skeleton and then load data
         collectionView.prepareSkeleton(completion: { done in
             self.view.showAnimatedGradientSkeleton()
             self.loadData()
