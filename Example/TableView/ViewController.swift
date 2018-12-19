@@ -77,18 +77,18 @@ class ViewController: UIViewController {
     
     func showOrUpdatepdateSolidSkeleton() {
         if switchAnimated.isOn {
-            view.showOrUpdateAnimatedSkeleton(usingColor: colorSelectedView.backgroundColor!)
+            view.updateAnimatedSkeleton(usingColor: colorSelectedView.backgroundColor!)
         } else {
-            view.showOrUpdateSkeleton(usingColor: colorSelectedView.backgroundColor!)
+            view.updateSkeleton(usingColor: colorSelectedView.backgroundColor!)
         }
     }
     
     func showOrUpdateGradientSkeleton() {
         let gradient = SkeletonGradient(baseColor: colorSelectedView.backgroundColor!)
         if switchAnimated.isOn {
-            view.showOrUpdateAnimatedGradientSkeleton(usingGradient: gradient)
+            view.updateAnimatedGradientSkeleton(usingGradient: gradient)
         } else {
-            view.showOrUpdateGradientSkeleton(usingGradient: gradient)
+            view.updateGradientSkeleton(usingGradient: gradient)
         }
     }
     
