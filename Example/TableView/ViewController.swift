@@ -43,7 +43,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableview.isSkeletonable = true
-        view.showAnimatedSkeleton()
     }
 
     override func viewDidLayoutSubviews() {
