@@ -7,6 +7,8 @@ protocol SkeletonFlowDelegate {
     func didShowSkeletons(withRootView rootView: UIView)
     func willBeginUpdatingSkeletons(withRootView rootView: UIView)
     func didUpdateSkeletons(withRootView rootView: UIView)
+    func willBeginLayingSkeletonsIfNeeded(withRootView: UIView)
+    func didLayoutSkeletonsIfNeeded(withRootView: UIView)
     func willBeginHidingSkeletons(withRootView rootView: UIView)
     func didHideSkeletons(withRootView rootView: UIView)
 }
@@ -25,6 +27,12 @@ class SkeletonFlowHandler: SkeletonFlowDelegate {
     }
 
     func didUpdateSkeletons(withRootView rootView: UIView) {
+    }
+
+    func willBeginLayingSkeletonsIfNeeded(withRootView: UIView) {
+    }
+
+    func didLayoutSkeletonsIfNeeded(withRootView: UIView) {
     }
 
     func willBeginHidingSkeletons(withRootView rootView: UIView) {

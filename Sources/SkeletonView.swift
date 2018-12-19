@@ -35,6 +35,12 @@ public extension UIView {
     func updateAnimatedGradientSkeleton(usingGradient gradient: SkeletonGradient = SkeletonAppearance.default.gradient, animation: SkeletonLayerAnimation? = nil) {
         updateSkeleton(withType: .gradient, usingColors: gradient.colors, animated: true, animation: animation)
     }
+
+    func layoutSkeletonIfNeeded() {
+        guard let flowDelegate = flowDelegate else { return }
+        flowDelegate.willBeginLayingSkeletonsIfNeeded(withRootView: self)
+        recursiveLayoutSkeletonIfNeeded(root: self)
+    }
     
     func hideSkeleton(reloadDataAfter reload: Bool = true) {
         flowDelegate?.willBeginHidingSkeletons(withRootView: self)
@@ -112,6 +118,31 @@ extension UIView {
         }
     }
 
+    fileprivate func recursiveLayoutSkeletonIfNeeded(root: UIView? = nil) {
+        layoutIfNeeded()
+
+        subviewsSkeletonables.recursiveSearch(leafBlock: {
+            guard isSkeletonActive else {
+                if let type = currentSkeletonConfig?.type,
+                   let colors = currentSkeletonConfig?.colors,
+                   let animated = currentSkeletonConfig?.animated {
+                    let animation = currentSkeletonConfig?.animation
+                    showSkeletonIfNotActive(withType: type, usingColors: colors, animated: animated, animation: animation)
+                }
+
+                return
+            }
+
+            layoutSkeletonLayerIfNeeded()
+        }) { subview in
+            subview.recursiveLayoutSkeletonIfNeeded()
+        }
+
+        if let root = root {
+            flowDelegate?.didLayoutSkeletonsIfNeeded(withRootView: root)
+        }
+    }
+
     fileprivate func showSkeletonIfNotActive(withType type: SkeletonType, usingColors colors: [UIColor], animated: Bool, animation: SkeletonLayerAnimation?) {
         guard !self.isSkeletonActive else { return }
         self.isUserInteractionEnabled = false
@@ -172,6 +203,11 @@ extension UIView {
         skeletonLayer.update(usingColors: colors)
         if animated { skeletonLayer.start(animation) }
         else { skeletonLayer.stopAnimation() }
+    }
+
+    func layoutSkeletonLayerIfNeeded() {
+        guard let skeletonLayer = skeletonLayer else { return }
+        skeletonLayer.layoutIfNeeded()
     }
     
     func removeSkeletonLayer() {

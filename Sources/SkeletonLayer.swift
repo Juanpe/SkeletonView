@@ -56,11 +56,15 @@ struct SkeletonLayer {
     }
     
     func update(usingColors colors: [UIColor]) {
-        if let bounds = self.holder?.maxBoundsEstimated { 
+        layoutIfNeeded()
+        self.maskLayer.tint(withColors: colors)
+    }
+
+    func layoutIfNeeded() {
+        if let bounds = self.holder?.maxBoundsEstimated {
             self.maskLayer.bounds = bounds
         }
         updateMultilinesIfNeeded()
-        self.maskLayer.tint(withColors: colors)
     }
     
     func removeLayer() {

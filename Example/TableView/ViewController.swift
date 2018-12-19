@@ -46,7 +46,7 @@ class ViewController: UIViewController {
     }
 
     override func viewDidLayoutSubviews() {
-        refreshSkeleton()
+        view.layoutSkeletonIfNeeded()
     }
     
     override func viewDidAppear(_ animated: Bool) {
