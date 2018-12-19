@@ -76,9 +76,9 @@ extension UIView {
         layoutIfNeeded()
 
         addDummyDataSourceIfNeeded()
-        subviewsSkeletonables.recursiveSearch(
-            leafBlock: showSkeletonLeafBlock(withType: type, usingColors:colors, animated: animated, animation: animation)
-        ) { subview in
+        subviewsSkeletonables.recursiveSearch(leafBlock: {
+            showSkeletonIfNotActive(withType: type, usingColors: colors, animated: animated, animation: animation)
+        }){ subview in
             subview.recursiveShowSkeleton(withType: type, usingColors: colors, animated: animated, animation: animation)
         }
 
@@ -101,7 +101,7 @@ extension UIView {
             if isSkeletonActive {
                 updateSkeletonLayer(usingColors: colors, animated: animated, animation: animation)
             } else {
-                showSkeletonLeafBlock(withType: type, usingColors: colors, animated: animated, animation: animation)()
+                showSkeletonIfNotActive(withType: type, usingColors:colors, animated: animated, animation: animation)
             }
         }) { subview in
             subview.recursiveUpdateSkeleton(withType: type, usingColors: colors, animated: animated, animation: animation)
@@ -112,14 +112,12 @@ extension UIView {
         }
     }
 
-    fileprivate func showSkeletonLeafBlock(withType type: SkeletonType, usingColors colors: [UIColor], animated: Bool, animation: SkeletonLayerAnimation?) -> VoidBlock {
-        return {
-            guard !self.isSkeletonActive else { return }
-            self.isUserInteractionEnabled = false
-            self.saveViewState()
-            (self as? PrepareForSkeleton)?.prepareViewForSkeleton()
-            self.addSkeletonLayer(withType: type, usingColors: colors, animated: animated, animation: animation)
-        }
+    fileprivate func showSkeletonIfNotActive(withType type: SkeletonType, usingColors colors: [UIColor], animated: Bool, animation: SkeletonLayerAnimation?) {
+        guard !self.isSkeletonActive else { return }
+        self.isUserInteractionEnabled = false
+        self.saveViewState()
+        (self as? PrepareForSkeleton)?.prepareViewForSkeleton()
+        self.addSkeletonLayer(withType: type, usingColors: colors, animated: animated, animation: animation)
     }
     
     fileprivate func recursiveHideSkeleton(reloadDataAfter reload: Bool, root: UIView? = nil) {
