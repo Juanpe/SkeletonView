@@ -21,7 +21,8 @@ public enum GradientDirection {
     public func slidingAnimation(duration: CFTimeInterval = 1.5) -> SkeletonLayerAnimation {
         return SkeletonAnimationBuilder().makeSlidingAnimation(withDirection: self, duration: duration)
     }
-    
+
+    // codebeat:disable[ABC]
     var startPoint: GradientAnimationPoint {
         switch self {
         case .leftRight:
@@ -55,6 +56,7 @@ public enum GradientDirection {
             return ( from: CGPoint(x:2, y:2), to: CGPoint(x:0, y:0))
         }
     }
+    // codebeat:enable[ABC]
 }
 
 public class SkeletonAnimationBuilder {
