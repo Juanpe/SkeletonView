@@ -4,7 +4,7 @@
 ### How To Use
 &emsp;&emsp;When working with RxDataSources on UITableView, you specify RxTableViewSectionedReloadDataSource or RxTableViewSectionedAnimatedDataSource and then do the configurations that RxDataSources requires(the same goes for UICollectionView).</br>
 &emsp;&emsp;It's really easy to use this code, basically everything is the same as you use RxDataSources.For extends ability to working with SkeletonView on UICollectionView, we provide `RxCollectionViewSkeletonedReloadDataSource` and `RxCollectionViewSkeletonedAnimatedDataSource` instead of RxDataSources provides(also same to UITableView).</br>
-&emsp;&emsp;These two classes are compatible with the previous ones but provide some additional configuration, the following codes shows that:
+&emsp;&emsp;These two classes are fully compatible with the previous ones but provide some additional configuration, the following codes shows that:
 ```
 private func collectionViewSkeletonedReloadDataSource() -> RxCollectionViewSkeletonedReloadDataSource<SectionModel<String, Int>>  {
     return RxCollectionViewSkeletonedReloadDataSource(configureCell: { (ds, cv, ip, item) in
@@ -42,8 +42,8 @@ private func loadData() {
 You can check demo project for more details.
 
 ### Requirements
-Xcode 9.0
-Swift 4.0
+Xcode 10.0
+Swift 4.2
 
 
 
