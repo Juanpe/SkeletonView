@@ -68,7 +68,7 @@ extension UIView {
     }
     
     fileprivate func recursiveHideSkeleton(reloadDataAfter reload: Bool, root: UIView? = nil) {
-        removeDummyDataSourceIfNeeded()
+        removeDummyDataSourceIfNeeded(reloadAfter: reload)
         isUserInteractionEnabled = true
         subviewsSkeletonables.recursiveSearch(leafBlock: {
             recoverViewState(forced: false)
