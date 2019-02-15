@@ -50,10 +50,11 @@ struct SkeletonLayer {
         self.holder = holder
         self.maskLayer = type.layer
         self.maskLayer.anchorPoint = .zero
+        self.maskLayer.tint(withColors: colors)
         DispatchQueue.global(qos: .userInitiated).async { [self] in
             DispatchQueue.main.async { [self] in
                 self.maskLayer.bounds = self.holder?.maxBoundsEstimated ?? CGRect()
-                self.maskLayer.tint(withColors: colors)
+                
             }
         }
     }
