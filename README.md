@@ -12,9 +12,6 @@
     <a href="https://cocoapods.org/pods/SkeletonView">
         <img src="https://img.shields.io/cocoapods/v/SkeletonView.svg" alt="CocoaPods" />
     </a>
-    <a href="https://cocoapods.org/pods/SkeletonView">
-        <img src="https://img.shields.io/cocoapods/dt/SkeletonView.svg?style=flat" alt="CocoaPods downloads" />
-    </a>
     <a href="https://twitter.com/JuanpeCatalan">
         <img src="https://img.shields.io/badge/contact-@JuanpeCatalan-blue.svg?style=flat" alt="Twitter: @JuanpeCatalan" />
     </a>
