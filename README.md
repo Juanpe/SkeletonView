@@ -200,7 +200,7 @@ There is only one method you need to implement to let Skeleton know the cell ide
 > **IMPORTANT!**
 > If you are using resizable cells (`tableView.rowHeight = UITableViewAutomaticDimension` ), it's mandatory define the `estimatedRowHeight`.
 
-** 👩🏼‍🏫 How specify which elements are skeletonables?**
+👩🏼‍🏫  **How specify which elements are skeletonables?**
 
 Here is an illustration that shows how you should specify which elements are skeletonables when you are using an `UITableView`:
 
