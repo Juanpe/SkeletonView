@@ -156,7 +156,7 @@ avatarImageView.isSkeletonable = true
 
  Now, ```SkeletonView``` is compatible with ```UITableView``` and ```UICollectionView```.
 
-###### UITableView
+#### UITableView
 
 If you want to show the skeleton in a ```UITableView```, you need to conform to ```SkeletonTableViewDataSource``` protocol.
 
@@ -197,7 +197,15 @@ There is only one method you need to implement to let Skeleton know the cell ide
 > **IMPORTANT!**
 > If you are using resizable cells (`tableView.rowHeight = UITableViewAutomaticDimension` ), it's mandatory define the `estimatedRowHeight`.
 
-###### UICollectionView
+👩🏼‍🏫  **How specify which elements are skeletonables?**
+
+Here is an illustration that shows how you should specify which elements are skeletonables when you are using an `UITableView`:
+
+![](Assets/tableview_scheme.png)
+
+As you can see, we have to make skeletonable the tableview, the cell and the UI elements, but we don't need to set as skeletonable the `contentView`
+
+####  UICollectionView
 
 For ```UICollectionView```, you need to conform to ```SkeletonCollectionViewDataSource``` protocol.
 
