@@ -39,6 +39,7 @@ Enjoy it! 🙂
 * [Installation](#-installation)
   * [Cocoapods](#using-cocoapods)
   * [Carthage](#using-carthage)
+  * [Accio](#using-accio)
 * [How to use](#-how-to-use)
   * [Collections](#-collections)
   * [Multiline text](#-multiline-text)
@@ -87,6 +88,27 @@ Edit your `Cartfile` and specify the dependency:
 ```bash
 github "Juanpe/SkeletonView"
 ```
+
+#### Using [Accio](https://github.com/JamitLabs/Accio)
+
+Add the following to your Package.swift:
+
+```swift
+.package(url: "https://github.com/Juanpe/SkeletonView.git", .upToNextMajor(from: "1.4.2")),
+```
+
+Next, add `SkeletonView` to your App targets dependencies like so:
+
+```swift
+.target(
+    name: "App",
+    dependencies: [
+        "SkeletonView",
+    ]
+),
+```
+
+Then run `accio update`.
 
 ## 🐒 How to use
 
