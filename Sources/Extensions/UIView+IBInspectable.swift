@@ -16,7 +16,7 @@ public extension UIView {
 
     fileprivate var skeletonable: Bool! {
         get { return ao_get(pkey: &ViewAssociatedKeys.skeletonable) as? Bool ?? false }
-        set { ao_set(newValue, pkey: &ViewAssociatedKeys.skeletonable) }
+        set { ao_set(newValue ?? false, pkey: &ViewAssociatedKeys.skeletonable) }
     }
 }
 
