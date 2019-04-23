@@ -8,7 +8,7 @@
     <a href="https://github.com/Juanpe/SkeletonView">
         <img src="https://img.shields.io/cocoapods/p/SkeletonView.svg" alt="Platforms">
     </a>
-    <img src="https://img.shields.io/badge/Swift-4.2-orange.svg" />
+    <img src="https://img.shields.io/badge/Swift-5-orange.svg" />
     <a href="https://cocoapods.org/pods/SkeletonView">
         <img src="https://img.shields.io/cocoapods/v/SkeletonView.svg" alt="CocoaPods" />
     </a>
