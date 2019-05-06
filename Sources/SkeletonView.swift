@@ -78,13 +78,6 @@ extension UIView {
         flowDelegate?.willBeginShowingSkeletons(withRootView: self)
         recursiveShowSkeleton(skeletonConfig: config, root: self)
     }
-    
-    func updateSkeleton(skeletonConfig config: SkeletonConfig) {
-        guard let flowDelegate = flowDelegate else { return }
-        skeletonIsAnimated = config.animated
-        flowDelegate.willBeginUpdatingSkeletons(withRootView: self)
-        recursiveUpdateSkeleton(skeletonConfig: config, root: self)
-    }
 
     fileprivate func recursiveShowSkeleton(skeletonConfig config: SkeletonConfig, root: UIView? = nil) {
         layoutIfNeeded()
@@ -101,6 +94,21 @@ extension UIView {
         if let root = root {
             flowDelegate?.didShowSkeletons(withRootView: root)
         }
+    }
+
+    fileprivate func showSkeletonIfNotActive(skeletonConfig config: SkeletonConfig) {
+        guard !self.isSkeletonActive else { return }
+        self.isUserInteractionEnabled = false
+        self.saveViewState()
+        (self as? PrepareForSkeleton)?.prepareViewForSkeleton()
+        self.addSkeletonLayer(skeletonConfig: config)
+    }
+
+    func updateSkeleton(skeletonConfig config: SkeletonConfig) {
+        guard let flowDelegate = flowDelegate else { return }
+        skeletonIsAnimated = config.animated
+        flowDelegate.willBeginUpdatingSkeletons(withRootView: self)
+        recursiveUpdateSkeleton(skeletonConfig: config, root: self)
     }
 
     fileprivate func recursiveUpdateSkeleton(skeletonConfig config: SkeletonConfig, root: UIView? = nil) {
@@ -134,17 +142,6 @@ extension UIView {
         layoutIfNeeded()
 
         subviewsSkeletonables.recursiveSearch(leafBlock: {
-            guard isSkeletonActive else {
-                if let type = currentSkeletonConfig?.type,
-                   let colors = currentSkeletonConfig?.colors,
-                   let animated = currentSkeletonConfig?.animated {
-                    let animation = currentSkeletonConfig?.animation
-                    showSkeletonIfNotActive(withType: type, usingColors: colors, animated: animated, animation: animation)
-                }
-
-                return
-            }
-
             layoutSkeletonLayerIfNeeded()
         }) { subview in
             subview.recursiveLayoutSkeletonIfNeeded()
@@ -155,14 +152,6 @@ extension UIView {
         }
     }
 
-    fileprivate func showSkeletonIfNotActive(skeletonConfig config: SkeletonConfig) {
-        guard !self.isSkeletonActive else { return }
-        self.isUserInteractionEnabled = false
-        self.saveViewState()
-        (self as? PrepareForSkeleton)?.prepareViewForSkeleton()
-        self.addSkeletonLayer(skeletonConfig: config)
-    }
-    
     fileprivate func recursiveHideSkeleton(reloadDataAfter reload: Bool, root: UIView? = nil) {
         removeDummyDataSourceIfNeeded(reloadAfter: reload)
         isUserInteractionEnabled = true
