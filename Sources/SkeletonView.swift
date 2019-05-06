@@ -20,6 +20,10 @@ public extension UIView {
         showSkeleton(withType: .gradient, usingColors: gradient.colors, animated: true, animation: animation)
     }
 
+    internal func showSkeleton(usingConfig config: SkeletonConfig) {
+        showSkeleton(withType: config.type, usingColors: config.colors, animated: config.animated, animation: config.animation)
+    }
+
     func updateSkeleton(usingColor color: UIColor = SkeletonAppearance.default.tintColor) {
         updateSkeleton(withType: .solid, usingColors: [color])
     }
@@ -81,6 +85,8 @@ extension UIView {
     fileprivate func recursiveShowSkeleton(withType type: SkeletonType, usingColors colors: [UIColor], animated: Bool, animation: SkeletonLayerAnimation?, root: UIView? = nil) {
         layoutIfNeeded()
 
+        currentSkeletonConfig = SkeletonConfig(type: type, colors: colors, gradientDirection: nil, animated: animated, animation: animation)
+
         addDummyDataSourceIfNeeded()
         subviewsSkeletonables.recursiveSearch(leafBlock: {
             showSkeletonIfNotActive(withType: type, usingColors: colors, animated: animated, animation: animation)
@@ -95,6 +101,8 @@ extension UIView {
 
     fileprivate func recursiveUpdateSkeleton(withType type: SkeletonType, usingColors colors: [UIColor], animated: Bool, animation: SkeletonLayerAnimation?, root: UIView? = nil) {
         layoutIfNeeded()
+
+        currentSkeletonConfig = SkeletonConfig(type: type, colors: colors, gradientDirection: nil, animated: animated, animation: animation)
 
         updateDummyDataSourceIfNeeded()
         subviewsSkeletonables.recursiveSearch(leafBlock: {
@@ -195,7 +203,6 @@ extension UIView {
         layer.insertSublayer(skeletonLayer.contentLayer, at: UInt32.max)
         if animated { skeletonLayer.start(animation) }
         status = .on
-        currentSkeletonConfig = SkeletonConfig(type: type, colors: colors, gradientDirection: direction, animated: animated, animation: animation)
     }
     
     func updateSkeletonLayer(usingColors colors: [UIColor], gradientDirection direction: GradientDirection? = nil, animated: Bool, animation: SkeletonLayerAnimation? = nil) {

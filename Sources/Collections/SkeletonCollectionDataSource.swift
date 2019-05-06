@@ -38,6 +38,7 @@ extension SkeletonCollectionDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = originalTableViewDataSource?.collectionSkeletonView(tableView, cellIdentifierForRowAt: indexPath) ?? ""
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        skeletonCellIfContainerSkeletonIsActive(container: tableView, cell: cell)
         return cell
     }
 }
@@ -56,6 +57,18 @@ extension SkeletonCollectionDataSource: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cellIdentifier = originalCollectionViewDataSource?.collectionSkeletonView(collectionView, cellIdentifierForItemAt: indexPath) ?? ""
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath)
+        skeletonCellIfContainerSkeletonIsActive(container: collectionView, cell: cell)
         return cell
+    }
+}
+
+extension SkeletonCollectionDataSource {
+    private func skeletonCellIfContainerSkeletonIsActive(container: UIView, cell: UIView) {
+        guard container.isSkeletonActive,
+              let skeletonConfig = container.currentSkeletonConfig else {
+            return
+        }
+
+        cell.showSkeleton(usingConfig: skeletonConfig)
     }
 }
