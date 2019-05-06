@@ -14,4 +14,18 @@ struct SkeletonConfig {
     let animated: Bool
     /// Used to execute a custom animation
     let animation: SkeletonLayerAnimation?
+
+    init(
+            type: SkeletonType,
+            colors: [UIColor],
+            gradientDirection: GradientDirection? = nil,
+            animated: Bool = false,
+            animation: SkeletonLayerAnimation? = nil
+    ) {
+        self.type = type
+        self.colors = colors
+        self.gradientDirection = gradientDirection
+        self.animated = animated
+        self.animation = animation
+    }
 }

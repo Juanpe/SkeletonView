@@ -69,6 +69,6 @@ extension SkeletonCollectionDataSource {
             return
         }
 
-        cell.showSkeleton(usingConfig: skeletonConfig)
+        cell.showSkeleton(skeletonConfig: skeletonConfig)
     }
 }
