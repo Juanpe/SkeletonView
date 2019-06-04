@@ -12,11 +12,14 @@
     <a href="https://cocoapods.org/pods/SkeletonView">
         <img src="https://img.shields.io/cocoapods/v/SkeletonView.svg" alt="CocoaPods" />
     </a>
+    <a href="https://github.com/Carthage/Carthage">
+        <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage" />
+    </a>
+    <a href="https://github.com/apple/swift-package-manager">
+        <img src="https://img.shields.io/badge/SPM-compatible-brightgreen.svg" alt="SPM" />
+    </a>
     <a href="https://twitter.com/JuanpeCatalan">
         <img src="https://img.shields.io/badge/contact-@JuanpeCatalan-blue.svg?style=flat" alt="Twitter: @JuanpeCatalan" />
-    </a>
-    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=MJ4Y2D9DEX6FL&lc=ES&item_name=SkeletonView&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted">
-        <img src="https://img.shields.io/badge/Donate-PayPal-green.svg" alt="Paypal" />
     </a>
     <br/>
     <a href="https://twitter.com/intent/tweet?text=Wow%20This%20library%20is%20awesome:&url=https%3A%2F%2Fgithub.com%2FJuanpe%2FSkeletonView">
@@ -80,13 +83,23 @@ Edit your `Podfile` and specify the dependency:
 pod "SkeletonView"
 ```
 
-#### Using [Carthage](https://github.com/carthage)
-
 Edit your `Cartfile` and specify the dependency:
 
 ```bash
 github "Juanpe/SkeletonView"
 ```
+
+#### Using [Swift Package Manager](https://github.com/apple/swift-package-manager)
+
+Once you have your Swift package set up, adding `SkeletonView` as a dependency is as easy as adding it to the `dependencies` value of your `Package.swift`.
+
+```swift
+  dependencies: [
+    .package(url: "https://github.com/Juanpe/SkeletonView.git", from: "1.6")
+  ]
+```
+
+
 
 ## 🐒 How to use
 
