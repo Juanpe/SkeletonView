@@ -42,6 +42,7 @@ Enjoy it! 🙂
 * [Installation](#-installation)
   * [Cocoapods](#using-cocoapods)
   * [Carthage](#using-carthage)
+  * [SPM](#using-swift-package-manager)
 * [How to use](#-how-to-use)
   * [Collections](#-collections)
   * [Multiline text](#-multiline-text)
@@ -82,6 +83,8 @@ Edit your `Podfile` and specify the dependency:
 ```ruby
 pod "SkeletonView"
 ```
+
+#### Using [Carthage](https://github.com/carthage)
 
 Edit your `Cartfile` and specify the dependency:
 
