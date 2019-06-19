@@ -168,6 +168,31 @@ avatarImageView.isSkeletonable = true
 > **IMPORTANT!**
 >>```SkeletonView``` is recursive, so if you want show the skeleton in all skeletonable views, you only need to call the show method in the main container view. For example, with UIViewControllers
 
+### Extra
+
+#### Skeleton views layout
+
+Sometimes skeleton layout may not fit your layout because the parent view bounds have changed. For example, rotating the device.
+
+You can relayout the skeleton views like so:
+
+```swift
+override func viewDidLayoutSubviews() {
+    view.layoutSkeletonIfNeeded()
+}
+```
+
+#### Update skeleton configuration
+
+You can change the skeleton configuration at any time like its colour, animation, etc. with the following methods:
+
+```swift
+(1) view.updateSkeleton()                 // Solid
+(2) view.updateGradientSkeleton()         // Gradient
+(3) view.updateAnimatedSkeleton()         // Solid animated
+(4) view.updateAnimatedGradientSkeleton() // Gradient animated
+```
+
 ### 🌿 Collections
 
  Now, ```SkeletonView``` is compatible with ```UITableView``` and ```UICollectionView```.
