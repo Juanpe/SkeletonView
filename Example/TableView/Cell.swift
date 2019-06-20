@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Cell: UITableViewCell {
+final class Cell: UITableViewCell {
     
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var label1: UILabel!

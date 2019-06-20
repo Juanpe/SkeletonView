@@ -9,7 +9,7 @@
 import UIKit
 import SkeletonView
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     
     @IBOutlet weak var tableview: UITableView! {
         didSet {

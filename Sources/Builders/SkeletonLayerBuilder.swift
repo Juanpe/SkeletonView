@@ -4,7 +4,7 @@ import UIKit
 
 /// Object that facilitates the creation of skeleton layers,
 /// based on the builder pattern
-class SkeletonLayerBuilder {
+final class SkeletonLayerBuilder {
 
     var skeletonType: SkeletonType?
     var colors: [UIColor] = []

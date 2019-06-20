@@ -59,7 +59,7 @@ public enum GradientDirection {
     // codebeat:enable[ABC]
 }
 
-public class SkeletonAnimationBuilder {
+public final class SkeletonAnimationBuilder {
     
     public init() {
     }

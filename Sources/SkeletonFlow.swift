@@ -9,7 +9,7 @@ protocol SkeletonFlowDelegate {
     func didHideSkeletons(withRootView rootView: UIView)
 }
 
-class SkeletonFlowHandler: SkeletonFlowDelegate {
+final class SkeletonFlowHandler: SkeletonFlowDelegate {
 
     func willBeginShowingSkeletons(withRootView rootView: UIView) {
         rootView.addAppNotificationsObservers()

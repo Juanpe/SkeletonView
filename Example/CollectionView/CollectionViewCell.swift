@@ -3,7 +3,7 @@
 import UIKit
 import SkeletonView
 
-class CollectionViewCell: UICollectionViewCell {
+final class CollectionViewCell: UICollectionViewCell {
     
     var label: UILabel!
     
