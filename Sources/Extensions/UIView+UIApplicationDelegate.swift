@@ -11,8 +11,14 @@ import UIKit
 extension UIView {
     
     func addAppNotificationsObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(appDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(appDidEnterBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(appDidBecomeActive),
+                                               name: UIApplication.didBecomeActiveNotification,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(appDidEnterBackground),
+                                               name: UIApplication.didEnterBackgroundNotification,
+                                               object: nil)
     }
     
     func removeAppNoticationsObserver() {
@@ -27,7 +33,8 @@ extension UIView {
     }
     
     @objc func appDidEnterBackground() {
-        UserDefaults.standard.set((isSkeletonActive && skeletonIsAnimated), forKey: UserDefaults.Key.needAnimatedSkeleton.rawValue)
+        UserDefaults.standard.set((isSkeletonActive && skeletonIsAnimated),
+                                  forKey: UserDefaults.Key.needAnimatedSkeleton.rawValue)
     }
 }
 

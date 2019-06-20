@@ -12,11 +12,13 @@ public extension UIView {
         showSkeleton(withType: .gradient, usingColors: gradient.colors)
     }
     
-    func showAnimatedSkeleton(usingColor color: UIColor = SkeletonAppearance.default.tintColor, animation: SkeletonLayerAnimation? = nil) {
+    func showAnimatedSkeleton(usingColor color: UIColor = SkeletonAppearance.default.tintColor,
+                              animation: SkeletonLayerAnimation? = nil) {
         showSkeleton(withType: .solid, usingColors: [color], animated: true, animation: animation)
     }
     
-    func showAnimatedGradientSkeleton(usingGradient gradient: SkeletonGradient = SkeletonAppearance.default.gradient, animation: SkeletonLayerAnimation? = nil) {
+    func showAnimatedGradientSkeleton(usingGradient gradient: SkeletonGradient = SkeletonAppearance.default.gradient,
+                                      animation: SkeletonLayerAnimation? = nil) {
         showSkeleton(withType: .gradient, usingColors: gradient.colors, animated: true, animation: animation)
     }
     
@@ -42,14 +44,20 @@ public extension UIView {
 
 extension UIView {
     
-    func showSkeleton(withType type: SkeletonType = .solid, usingColors colors: [UIColor], animated: Bool = false, animation: SkeletonLayerAnimation? = nil) {
+    func showSkeleton(withType type: SkeletonType = .solid,
+                      usingColors colors: [UIColor],
+                      animated: Bool = false,
+                      animation: SkeletonLayerAnimation? = nil) {
         skeletonIsAnimated = animated
         flowDelegate = SkeletonFlowHandler()
         flowDelegate?.willBeginShowingSkeletons(withRootView: self)
         recursiveShowSkeleton(withType: type, usingColors: colors, animated: animated, animation: animation, root: self)
     }
     
-    fileprivate func recursiveShowSkeleton(withType type: SkeletonType, usingColors colors: [UIColor], animated: Bool, animation: SkeletonLayerAnimation?, root: UIView? = nil) {
+    fileprivate func recursiveShowSkeleton(withType type: SkeletonType,
+                                           usingColors colors: [UIColor],
+                                           animated: Bool,
+                                           animation: SkeletonLayerAnimation?, root: UIView? = nil) {
         addDummyDataSourceIfNeeded()
 
         subviewsSkeletonables.recursiveSearch(leafBlock: {
@@ -98,7 +106,10 @@ extension UIView {
 
 extension UIView {
     
-    func addSkeletonLayer(withType type: SkeletonType, usingColors colors: [UIColor], gradientDirection direction: GradientDirection? = nil, animated: Bool, animation: SkeletonLayerAnimation? = nil) {
+    func addSkeletonLayer(withType type: SkeletonType,
+                          usingColors colors: [UIColor],
+                          gradientDirection direction: GradientDirection? = nil,
+                          animated: Bool, animation: SkeletonLayerAnimation? = nil) {
         guard let skeletonLayer = SkeletonLayerBuilder()
             .setSkeletonType(type)
             .addColors(colors)

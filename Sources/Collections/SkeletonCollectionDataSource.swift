@@ -16,7 +16,9 @@ final class SkeletonCollectionDataSource: NSObject {
     weak var originalCollectionViewDataSource: SkeletonCollectionViewDataSource?
     var rowHeight: CGFloat = 0.0
     
-    convenience init(tableViewDataSource: SkeletonTableViewDataSource? = nil, collectionViewDataSource: SkeletonCollectionViewDataSource? = nil, rowHeight: CGFloat = 0.0) {
+    convenience init(tableViewDataSource: SkeletonTableViewDataSource? = nil,
+                     collectionViewDataSource: SkeletonCollectionViewDataSource? = nil,
+                     rowHeight: CGFloat = 0.0) {
         self.init()
         self.originalTableViewDataSource = tableViewDataSource
         self.originalCollectionViewDataSource = collectionViewDataSource
