@@ -7,7 +7,7 @@ final class ViewController: UIViewController {
     
     // MARK: - Properties
     
-    @IBOutlet weak var collectionView: UICollectionView! {
+    @IBOutlet private weak var collectionView: UICollectionView! {
         didSet {
             collectionView.isSkeletonable = true
             collectionView.backgroundColor = .clear
@@ -21,14 +21,14 @@ final class ViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var avatarImage: UIImageView! {
+    @IBOutlet private weak var avatarImage: UIImageView! {
         didSet {
             avatarImage.layer.cornerRadius = avatarImage.frame.width/2
             avatarImage.layer.masksToBounds = true
         }
     }
     
-    @IBOutlet weak var colorSelectedView: UIView! {
+    @IBOutlet private weak var colorSelectedView: UIView! {
         didSet {
             colorSelectedView.layer.cornerRadius = 5
             colorSelectedView.layer.masksToBounds = true
@@ -36,10 +36,10 @@ final class ViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var switchAnimated: UISwitch!
-    @IBOutlet weak var skeletonTypeSelector: UISegmentedControl!
+    @IBOutlet private weak var switchAnimated: UISwitch!
+    @IBOutlet private weak var skeletonTypeSelector: UISegmentedControl!
     
-    var type: SkeletonType {
+    private var type: SkeletonType {
         return skeletonTypeSelector.selectedSegmentIndex == 0 ? .solid : .gradient
     }
     

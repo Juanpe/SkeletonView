@@ -10,6 +10,6 @@ import UIKit
 
 final class Cell: UITableViewCell {
     
-    @IBOutlet weak var avatar: UIImageView!
-    @IBOutlet weak var label1: UILabel!
+    @IBOutlet private weak var avatar: UIImageView!
+    @IBOutlet private weak var label1: UILabel!
 }
