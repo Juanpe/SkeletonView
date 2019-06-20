@@ -95,9 +95,11 @@ pod "SkeletonView"
 github "Juanpe/SkeletonView"
 ```
 
-#### Using [Swift Package Manager](https://github.com/apple/swift-package-manager)
+#### [Swift Package Manager](https://github.com/apple/swift-package-manager)로 사용하기
 
-Once you have your Swift package set up, adding `SkeletonView` as a dependency is as easy as adding it to the `dependencies` value of your `Package.swift`.
+
+당신의 프로젝트에 Swift package를 설정한다면, `SkeletonView` 를 `Package.swift` 파일에 있는 `dependencies`에 추가하시면 됩니다.
+
 
 ```swift
   dependencies: [
@@ -107,26 +109,26 @@ Once you have your Swift package set up, adding `SkeletonView` as a dependency i
 
 
 
-## 🐒 How to use
+## 🐒 어떻게 사용하나요?
 
-Only **3** steps needed to use `SkeletonView`:
+`SkeletonView` 를 이용하기 위해서는 딱 **3** 단계만 기억하세요:
 
-**1.** Import SkeletonView in proper place.
+**1.** 사용하고자 하는 파일에서 `SkeletonView` 를 `Import` 합니다.
 ```swift
 import SkeletonView
 ```
 
-**2.** Now, set which views will be `skeletonables`. You achieve this in two ways:
+**2.** 자, 그렇다면 UIView 속성에  `skeletonables` 를 이용하실 수 있습니다. 두가지 옵션이 있습니다
 
-**Using code:**
+**코드로 사용하는 방법:**
 ```swift
 avatarImageView.isSkeletonable = true
 ```
-**Using IB/Storyboards:**
+**인터페이스빌더 / 스토리보드를 이용하는 방법:**
 
 ![](Assets/storyboard.png)
 
-**3.** Once you've set the views, you can show the **skeleton**. To do so, you have **4** choices:
+**3.** 당신이 뷰를 세팅할때, **skeleton** 옵션을 사용 할 수 있습니다. 총 **4** 가지 옵션을 지원합니다:
 
 ```swift
 (1) view.showSkeleton()                 // Solid
@@ -135,7 +137,7 @@ avatarImageView.isSkeletonable = true
 (4) view.showAnimatedGradientSkeleton() // Gradient animated
 ```
 
-**Preview**
+**미리보기**
 
 <table>
 <tr>
