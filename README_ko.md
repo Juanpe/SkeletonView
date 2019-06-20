@@ -193,8 +193,7 @@ public protocol SkeletonTableViewDataSource: UITableViewDataSource {
 
 해당 프로토클은 보시다시피  ```UITableViewDataSource```를 상속받아 구현하였으므로, skeleton의 protocol과 대체 가능합니다. 
 
-This protocol has a default implementation:
-
+프로토콜의 기본 구현은 다음과 같습니다: 
 
 ``` swift
 func numSections(in collectionSkeletonView: UITableView) -> Int
@@ -204,10 +203,11 @@ func numSections(in collectionSkeletonView: UITableView) -> Int
 ``` swift
 func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int
 // Default:
-// It calculates how many cells need to populate whole tableview
+// 전체 테이블 뷰를 채우는데 필요한 셀 수를 계산합니다 
 ```
 
-There is only one method you need to implement to let Skeleton know the cell identifier. This method doesn't have default implementation:
+해당 메소드는 당신이 구현하여야할 cell identifier을 아는 경우에만 사용합니다, 해당 메소드는 기본으로 구현하지 않아도됩니다 : 
+
  ``` swift
  func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier
  ```
@@ -219,8 +219,9 @@ There is only one method you need to implement to let Skeleton know the cell ide
 }
  ```
 
-> **IMPORTANT!**
-> If you are using resizable cells (`tableView.rowHeight = UITableViewAutomaticDimension` ), it's mandatory define the `estimatedRowHeight`.
+> **중요!**
+> 만약 사이즈가 변하는 셀을 사용한다면 (`tableView.rowHeight = UITableViewAutomaticDimension` ),`estimatedRowHeight`를 무조건 정의해주세요.
+
 
 👩🏼‍🏫  **How specify which elements are skeletonables?**
 
@@ -424,7 +425,7 @@ Coming soon...😅
 * tvOS 9.0+
 * Swift 4.2
 
-## 📬 Next steps
+## 📬 예정된 기능들
 
 * [x] Set the filling percent of the last line in multiline elements
 * [x] Add more gradient animations
@@ -438,17 +439,17 @@ Coming soon...😅
 * [ ] Add animations when it shows/hides the skeletons
 * [ ] MacOS and WatchOS compatible
 
-## ❤️ Contributing
-This is an open source project, so feel free to contribute. How?
-- Open an [issue](https://github.com/Juanpe/SkeletonView/issues/new).
-- Send feedback via [email](mailto://juanpecatalan.com).
-- Propose your own fixes, suggestions and open a pull request with the changes.
+## ❤️ 기여하기
+이 프로젝트는 오픈소스 프로젝트 입니다, 마음편하게 기여해주시면 됩니다 어떻게 하냐구요?
+- 새로운 [이슈](https://github.com/Juanpe/SkeletonView/issues/new)를 등록합니다.
+- [email](mailto://juanpecatalan.com)을 보냅니다.
+- 당신의 수정을 제안합니다, pull request를 포함한 수정을 권장합니다.
 
-See [all contributors](https://github.com/Juanpe/SkeletonView/graphs/contributors)
+전체 [기여자목록](https://github.com/Juanpe/SkeletonView/graphs/contributors)
 
-###### Project generated with [SwiftPlate](https://github.com/JohnSundell/SwiftPlate)
+###### [SwiftPlate](https://github.com/JohnSundell/SwiftPlate)를 통해 프로젝트가 생성되었습니다
 
-## 📢 Mentions
+## 📢 소식들
 
 - [iOS Dev Weekly #327](https://iosdevweekly.com/issues/327#start)
 - [Hacking with Swift Articles](https://www.hackingwithswift.com/articles/40/skeletonview-makes-loading-content-beautiful)
@@ -465,7 +466,7 @@ See [all contributors](https://github.com/Juanpe/SkeletonView/graphs/contributor
 
 
 
-## 👨🏻‍💻 Author
+## 👨🏻‍💻 개발자
 [1.1]: http://i.imgur.com/tXSoThF.png
 [1]: http://www.twitter.com/JuanpeCatalan
 
@@ -473,7 +474,7 @@ See [all contributors](https://github.com/Juanpe/SkeletonView/graphs/contributor
 
 <a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/CDou4xtIK"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy me a coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;"><span style="margin-left:5px"></span></a>
 
-## 👮🏻 License
+## 👮🏻 라이센스
 
 ```
 MIT License
