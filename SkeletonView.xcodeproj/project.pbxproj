@@ -55,6 +55,7 @@
 		8785E3A3211C9CE800CC9DFD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DEA97D1FCDBD1F006C80EF /* Constants.swift */; };
 		88DEA97F1FCDBD78006C80EF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DEA97D1FCDBD1F006C80EF /* Constants.swift */; };
 		8933C7851EB5B820000D00A4 /* SkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7841EB5B820000D00A4 /* SkeletonView.swift */; };
+		ACFB725522BBDF04003D0BA3 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFB725422BBDF04003D0BA3 /* UserDefaults+Extensions.swift */; };
 		F51DE1091FBF70A70037919A /* SkeletonAnimationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51DE1081FBF70A70037919A /* SkeletonAnimationBuilder.swift */; };
 		F51DF871206E91B300D23301 /* SkeletonReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51DF870206E91B300D23301 /* SkeletonReusableCell.swift */; };
 		F51DF873206E91FB00D23301 /* GenericCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51DF872206E91FB00D23301 /* GenericCollectionView.swift */; };
@@ -164,6 +165,7 @@
 		8785E3A0211C9C9800CC9DFD /* SkeletonDebug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonDebug.swift; sourceTree = "<group>"; };
 		88DEA97D1FCDBD1F006C80EF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8933C7841EB5B820000D00A4 /* SkeletonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkeletonView.swift; sourceTree = "<group>"; };
+		ACFB725422BBDF04003D0BA3 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 		F51DE1081FBF70A70037919A /* SkeletonAnimationBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonAnimationBuilder.swift; sourceTree = "<group>"; };
 		F51DF870206E91B300D23301 /* SkeletonReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonReusableCell.swift; sourceTree = "<group>"; };
 		F51DF872206E91FB00D23301 /* GenericCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericCollectionView.swift; sourceTree = "<group>"; };
@@ -411,6 +413,7 @@
 				872D5A5521C177E20037D763 /* UIView+Extension.swift */,
 				F587FB85202CEC95002DB5FE /* UIView+UIApplicationDelegate.swift */,
 				F5A5E8B3211DCE7000FD20D0 /* Int+Whitespaces.swift */,
+				ACFB725422BBDF04003D0BA3 /* UserDefaults+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -711,6 +714,7 @@
 				F5307E301FB0EC9D00EE67C5 /* SkeletonAppearance.swift in Sources */,
 				F58A6E6B20A8C54100612494 /* RecoverableViewState.swift in Sources */,
 				F54CF5E52024CEB000330B0D /* UITableView+CollectionSkeleton.swift in Sources */,
+				ACFB725522BBDF04003D0BA3 /* UserDefaults+Extensions.swift in Sources */,
 				F5307E321FB0F42F00EE67C5 /* RecursiveProtocol.swift in Sources */,
 				F5F622431FAC81FD007C062A /* CALayer+Extensions.swift in Sources */,
 				877EFA4821BEED760031FC00 /* SkeletonMultilineLayerBuilder.swift in Sources */,
