@@ -29,7 +29,7 @@ extension UIView {
     public var skeletonDescription: String {
         var description = "<\(type(of: self)): \(Unmanaged.passUnretained(self).toOpaque())"
         let subSkeletons = subviewsSkeletonables
-        if subSkeletons.count != 0 {
+        if subSkeletons.isEmpty == false {
             description += " | (\(subSkeletons.count)) subSkeletons"
         }
         if isSkeletonable {
