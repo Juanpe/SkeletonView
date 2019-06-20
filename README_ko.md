@@ -170,16 +170,18 @@ avatarImageView.isSkeletonable = true
 </tr>
 </table>
 
-> **IMPORTANT!**
->>```SkeletonView``` is recursive, so if you want show the skeleton in all skeletonable views, you only need to call the show method in the main container view. For example, with UIViewControllers
+> **중요!**
+>>```SkeletonView``` 는 재귀적으로 되어있습니다, 만약 모든 뷰에 대해서 skeleton을 호출하고 싶다면, 메인 컨테이너 뷰에서 show `method`를 호출하여야 합니다. 예를 들자면 UIViewControllers가 있습니다. 
+
+
 
 ### 🌿 Collections
 
- Now, ```SkeletonView``` is compatible with ```UITableView``` and ```UICollectionView```.
+ 현재, ```SkeletonView``` 는  ```UITableView``` 와 ```UICollectionView```에서 호환됩니다.
 
 #### UITableView
 
-If you want to show the skeleton in a ```UITableView```, you need to conform to ```SkeletonTableViewDataSource``` protocol.
+만약 ```UITableView```에서 skeleton을 호출하고 싶다면, ```SkeletonTableViewDataSource``` protocol 을 구현하여야 합니다. 
 
 ``` swift
 public protocol SkeletonTableViewDataSource: UITableViewDataSource {
@@ -188,9 +190,11 @@ public protocol SkeletonTableViewDataSource: UITableViewDataSource {
     func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier
 }
 ```
-As you can see, this protocol inherits from ```UITableViewDataSource```, so you can replace this protocol with the skeleton protocol.
+
+해당 프로토클은 보시다시피  ```UITableViewDataSource```를 상속받아 구현하였으므로, skeleton의 protocol과 대체 가능합니다. 
 
 This protocol has a default implementation:
+
 
 ``` swift
 func numSections(in collectionSkeletonView: UITableView) -> Int
