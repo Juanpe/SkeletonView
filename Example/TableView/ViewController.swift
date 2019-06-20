@@ -11,6 +11,8 @@ import SkeletonView
 
 final class ViewController: UIViewController {
     
+    // MARK: - Properties
+    
     @IBOutlet weak var tableview: UITableView! {
         didSet {
             tableview.rowHeight = UITableView.automaticDimension
@@ -40,6 +42,8 @@ final class ViewController: UIViewController {
         return skeletonTypeSelector.selectedSegmentIndex == 0 ? .solid : .gradient
     }
     
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableview.isSkeletonable = true
@@ -49,23 +53,12 @@ final class ViewController: UIViewController {
         super.viewDidAppear(animated)
         view.showAnimatedSkeleton()
     }
+}
 
-    @IBAction func changeAnimated(_ sender: Any) {
-        if switchAnimated.isOn {
-            view.startSkeletonAnimation()
-        } else {
-            view.stopSkeletonAnimation()
-        }
-    }
-    
-    @IBAction func changeSkeletonType(_ sender: Any) {
-        refreshSkeleton()
-    }
-    
-    @IBAction func btnChangeColorTouchUpInside(_ sender: Any) {
-        showAlertPicker()
-    }
-    
+// MARK: - Private functions
+
+private extension ViewController {
+
     func refreshSkeleton() {
         self.view.hideSkeleton()
         if type == .gradient { showGradientSkeleton() }
@@ -90,30 +83,47 @@ final class ViewController: UIViewController {
     }
     
     func showAlertPicker() {
-       
         let alertView = UIAlertController(title: "Select color", message: "\n\n\n\n\n\n", preferredStyle: .alert)
-        
         let pickerView = UIPickerView(frame: CGRect(x: 0, y: 50, width: 260, height: 115))
         pickerView.dataSource = self
         pickerView.delegate = self
-        
         alertView.view.addSubview(pickerView)
-        
         let action = UIAlertAction(title: "OK", style: .default) { [unowned pickerView, unowned self] _ in
             let row = pickerView.selectedRow(inComponent: 0)
             self.colorSelectedView.backgroundColor = colors[row].0
             self.refreshSkeleton()
         }
         alertView.addAction(action)
-        
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alertView.addAction(cancelAction)
-        
         present(alertView, animated: false, completion: {
             pickerView.frame.size.width = alertView.view.frame.size.width
         })
     }
 }
+
+// MARK: - IBActions
+
+private extension ViewController {
+
+    @IBAction func changeAnimated(_ sender: Any) {
+        if switchAnimated.isOn {
+            view.startSkeletonAnimation()
+        } else {
+            view.stopSkeletonAnimation()
+        }
+    }
+
+    @IBAction func changeSkeletonType(_ sender: Any) {
+        refreshSkeleton()
+    }
+
+    @IBAction func btnChangeColorTouchUpInside(_ sender: Any) {
+        showAlertPicker()
+    }
+}
+
+// MARK: - UIPickerViewDelegate, UIPickerViewDataSource
 
 extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
@@ -129,6 +139,8 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         return colors[row].1
     }
 }
+
+// MARK: - SkeletonTableViewDataSource
 
 extension ViewController: SkeletonTableViewDataSource {
     
