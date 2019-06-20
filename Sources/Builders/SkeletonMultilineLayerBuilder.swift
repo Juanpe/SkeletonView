@@ -11,21 +11,25 @@ final class SkeletonMultilineLayerBuilder {
     var width: CGFloat?
     var cornerRadius: Int?
 
+    @discardableResult
     func setSkeletonType(_ type: SkeletonType) -> SkeletonMultilineLayerBuilder {
         self.skeletonType = type
         return self
     }
 
+    @discardableResult
     func setIndex(_ index: Int) -> SkeletonMultilineLayerBuilder {
         self.index = index
         return self
     }
 
+    @discardableResult
     func setWidth(_ width: CGFloat) -> SkeletonMultilineLayerBuilder {
         self.width = width
         return self
     }
 
+    @discardableResult
     func setCornerRadius(_ radius: Int) -> SkeletonMultilineLayerBuilder {
         self.cornerRadius = radius
         return self
