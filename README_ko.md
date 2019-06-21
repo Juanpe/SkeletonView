@@ -223,17 +223,17 @@ func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection s
 > 만약 사이즈가 변하는 셀을 사용한다면 (`tableView.rowHeight = UITableViewAutomaticDimension` ),`estimatedRowHeight`를 무조건 정의해주세요.
 
 
-👩🏼‍🏫  **How specify which elements are skeletonables?**
+👩🏼‍🏫  **어떻게 특정 요소에 skeleton 을 지정할까요?**
 
-Here is an illustration that shows how you should specify which elements are skeletonables when you are using an `UITableView`:
+아래의 그림은 `UITableView` 에서 특정한 요소에 skeleton 을 지정하는 방법을 보여주는 이미지 입니다:
 
 ![](Assets/tableview_scheme.png)
 
-As you can see, we have to make skeletonable the tableview, the cell and the UI elements, but we don't need to set as skeletonable the `contentView`
+위의 이미지에서 보이듯, 테이블 뷰와 셀에 들어가는 UI 요소들에는 적용을 해야하지만, `contentView`에 skeleton을 적용할 필요는 없습니다.
 
 ####  UICollectionView
 
-For ```UICollectionView```, you need to conform to ```SkeletonCollectionViewDataSource``` protocol.
+ ```UICollectionView``` 에 적용을 하기 위해서는, ```SkeletonCollectionViewDataSource``` protocol 을 구현할 필요가 있습니다.
 
 ``` swift
 public protocol SkeletonCollectionViewDataSource: UICollectionViewDataSource {
@@ -243,78 +243,78 @@ public protocol SkeletonCollectionViewDataSource: UICollectionViewDataSource {
 }
 ```
 
-The rest of the process is the same as ```UITableView```
+```UITableView``` 와 사용방법은 같습니다. 
 
 ### 📰 Multiline text
 
 
 ![](Assets/multilines2.png)
 
-When using elements with text, ```SkeletonView``` draws lines to simulate text.
-Besides, you can decide how many lines you want. If  ```numberOfLines``` is set to zero, it will calculate how many lines needed to populate the whole skeleton and it will be drawn. Instead, if you set it to one, two or any number greater than zero, it will only draw this number of lines.
+텍스트가 들어있는 요소를 사용한다면, ```SkeletonView``` 에서 텍스트의 라인을 그려줍니다.
+그리고, 원하는 라인 수를 설정할 수 있습니다. 만약   ```numberOfLines``` 을 0으로 설정한다면, 자동으로 필요한 라인수를 계산해서 그려줍니다. 대신 값이 설정되어있다면 설정된 수만큼의 라인이 그려집니다.
 
 ##### 🎛 Customize
 
-You can set some properties for multilines elements.
+당신은 멀티라인을 위해 몇가지 옵션을 설정할 수 있습니다.
 
 
-| Property | Values | Default | Preview
+| 속성 | 값 | 기본값 | 미리보기
 | ------- | ------- |------- | -------
-| **Filling percent** of the last line. | `0...100` | `70%` | ![](Assets/multiline_lastline.png)
-| **Corner radius** of lines. (**NEW**) | `0...10` | `0` | ![](Assets/multiline_corner.png)
+| 마지막 라인의 **퍼센트** 를 지정 할 수 있습니다. | `0...100` | `70%` | ![](Assets/multiline_lastline.png)
+| 라인의 **Corner radius** 를 지정할 수 있습니다. (**새로운기능**) | `0...10` | `0` | ![](Assets/multiline_corner.png)
 
 
 
-To modify the percent or radius **using code**, set the properties:
+라인의 radius를 지정하기 위해서는  **코드** 를 이용합니다, 아래 처럼 코드를 작성합니다:
 ```swift
 descriptionTextView.lastLineFillPercent = 50
 descriptionTextView.linesCornerRadius = 5
 ```
 
-Or, if you prefer use **IB/Storyboard**:
+혹은 **IB/Storyboard** 를 이용하실 수 있습니다:
 
 ![](Assets/multiline_customize.png)
 
 ### 🎨 Custom colors
 
-You can decide which color the skeleton is tinted with. You only need to pass as a parameter the color or gradient you want.
+당신은 skeleton의 색상을 지정 할 수 있습니다. 간단하게 원하는 색상을 파라미터로 넘겨주시면 됩니다. 
 
-**Using solid colors**
+**단색 이용방법**
 ``` swift
 view.showSkeleton(usingColor: UIColor.gray) // Solid
 // or
 view.showSkeleton(usingColor: UIColor(red: 25.0, green: 30.0, blue: 255.0, alpha: 1.0))
 ```
-**Using gradients**
+**그라디언트를 이용 방법**
 ``` swift
 let gradient = SkeletonGradient(baseColor: UIColor.midnightBlue)
 view.showGradientSkeleton(usingGradient: gradient) // Gradient
 ```
 
-Besides, ```SkeletonView``` features 20 flat colors 🤙🏼
+게다가, ```SkeletonView``` 에서는 20가지의 기본 컬러를 지원합니다 🤙🏼
 
 ```UIColor.turquoise, UIColor.greenSea, UIColor.sunFlower, UIColor.flatOrange  ...```
 
 ![](Assets/flatcolors.png)
-###### Image captured from website [https://flatuicolors.com](https://flatuicolors.com)
+###### 위 이미지는 [https://flatuicolors.com](https://flatuicolors.com) 사이트에서 발췌했습니다. 
 
 ### 🦋 Appearance
 
-**NEW** The skeletons have a default appearance. So, when you don't specify the color, gradient or multilines properties, `SkeletonView` uses the default values.
+**새로운 사항** skeleton 은  기본설정 값이 정해져 있습니다. 만약 커스텀 컬러를 사용할 필요가 없다면, `SkeletonView` 에 지정 되어있는 기본설정을 사용하시면 됩니다. 
 
-Default values:
+기본 설정값:
 - **tintColor**: UIColor
-    - *default: .clouds*
+    - *기본값: .clouds*
 - **gradient**: SkeletonGradient
-  - *default: SkeletonGradient(baseColor: .clouds)*
+  - *기본값: SkeletonGradient(baseColor: .clouds)*
 - **multilineHeight**: CGFloat
-  - *default: 15*
+  - *기본값: 15*
 - **multilineSpacing**: CGFloat
-  - *default: 10*
+  - *기본값: 10*
 - **multilineLastLineFillPercent**: Int
-  - *default: 70*
+  - *기본값: 70*
 - **multilineCornerRadius**: Int
-  - *default: 0*
+  - *기본값: 0*
 
 To get these default values you can use `SkeletonAppearance.default`. Using this property you can set the values as well:
 ```Swift
