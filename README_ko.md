@@ -392,25 +392,25 @@ Because an image is worth a thousand words:
 
 ### 🔬 디버그
 
-**NEW** In order to facilitate the debug tasks when something is not working fine. `SkeletonView` has some new tools.
+**새로운소식** 어떤것들이 잘 동작 하지 않을때를 위해 디버그 작업을 용이하게 하기 위해서  `SkeletonView` 에는 몇가지 새로운 것들이 있습니다.
 
-First, `UIView` has available a new property with his skeleton info:
+첫번쨰로, `UIView` 에서 skeleton 정보를 보기위해 다음과 같이 지원하고 있습니다:
 ```swift
 var skeletonDescription: String
 
 ```
-The skeleton representation looks like this:
+skeleton은 이렇게 생겼습니다:
 
 ![](Assets/debug_description.png)
 
-Besides, you can activate the new **debug mode**. You just add the environment variable `SKELETON_DEBUG` and activate it.
+그리고, 새로운 **디버그 모드**를 활성화 시킬 수 있습니다. 간단하게 `SKELETON_DEBUG` 이라는 환경 변수를 추가해 활성화 하면 됩니다.
 
 ![](Assets/debug_mode.png)
 
-Then, when the skeleton appears, you can see the view hierarchy in the Xcode console.
+그런 이후 skeleton이 나오면 Xcode 콘솔창에서 계층 구조를 볼 수 있습니다.
 
 <details>
-<summary>Open to see an output example </summary>
+<summary>예제를 확인해보세요. </summary>
 <img src="Assets/hierarchy_output.png" />
 </details>
 
@@ -427,17 +427,17 @@ Then, when the skeleton appears, you can see the view hierarchy in the Xcode con
 
 ## 📬 예정된 기능들
 
-* [x] Set the filling percent of the last line in multiline elements
-* [x] Add more gradient animations
-* [x] Supported resizable cells
-* [x] CollectionView compatible
-* [x] tvOS compatible
-* [x] Add recovery state
+* [x] 멀티라인 에서의 마지막 라인의 채우기 비율 설정
+* [x] 더많은 그라디언트 애니메이션
+* [x] resizable cells 지원 
+* [x] CollectionView 호환
+* [x] tvOS 호환
+* [x] recovery state 추가
 * [x] Custom default appearance
-* [x] Debug mode
-* [ ] Custom collections compatible
-* [ ] Add animations when it shows/hides the skeletons
-* [ ] MacOS and WatchOS compatible
+* [x] 디버그 모드
+* [ ] Custom collections 호환
+* [ ] skeletons 가 보이거나 가려질때 애니메이션 추가
+* [ ] MacOS 와 WatchOS 호환
 
 ## ❤️ 기여하기
 이 프로젝트는 오픈소스 프로젝트 입니다, 마음편하게 기여해주시면 됩니다 어떻게 하냐구요?
