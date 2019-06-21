@@ -316,7 +316,7 @@ view.showGradientSkeleton(usingGradient: gradient) // Gradient
 - **multilineCornerRadius**: Int
   - *기본값: 0*
 
-To get these default values you can use `SkeletonAppearance.default`. Using this property you can set the values as well:
+`SkeletonAppearance.default` 에는 사용 되어지는 기본 값들이 설정되어 있습니다 . 아래의 코드와 같이 사용할 수 있습니다:
 ```Swift
 SkeletonAppearance.default.multilineHeight = 20
 SkeletonAppearance.default.tintColor = .green
@@ -325,18 +325,18 @@ SkeletonAppearance.default.tintColor = .green
 
 ### 🤓 커스텀 애니메이션
 
-```SkeletonView``` has two built-in animations, *pulse* for solid skeletons and *sliding* for gradients.
+```SkeletonView``` 에는 두가지 애니메이션이 내장되어 있습니다, 단색 *바운스* 애니메이션과  그라디언트 *슬라이드* 애니메이션 입니다 .
 
-Besides, if you want to do your own skeleton animation, it's really easy.
+게다가, 직접 애니메이션을 추가하고 싶다면 정말 간단합니다.
 
 
-Skeleton provides the `showAnimatedSkeleton` function which has a ```SkeletonLayerAnimation``` closure where you can define your custom animation.
+Skeleton 에서는 `showAnimatedSkeleton` 함수를  ```SkeletonLayerAnimation```에 정의하여 맞춤형 애니메이션을 정의할 수 있도록 되어 있습니다.
 
 ```swift
 public typealias SkeletonLayerAnimation = (CALayer) -> CAAnimation
 ```
 
-You can call the function like this:
+함수는 이렇게 호출 가능합니다:
 
 ```swift
 view.showAnimatedSkeleton { (layer) -> CAAnimation in
