@@ -258,10 +258,10 @@ public protocol SkeletonCollectionViewDataSource: UICollectionViewDataSource {
 당신은 멀티라인을 위해 몇가지 옵션을 설정할 수 있습니다.
 
 
-| 속성 | 값 | 기본값 | 미리보기
-| ------- | ------- |------- | -------
-| 마지막 라인의 **퍼센트** 를 지정 할 수 있습니다. | `0...100` | `70%` | ![](Assets/multiline_lastline.png)
-| 라인의 **Corner radius** 를 지정할 수 있습니다. (**새로운기능**) | `0...10` | `0` | ![](Assets/multiline_corner.png)
+| 속성                                              | 값         | 기본값   | 미리보기                               |
+| ----------------------------------------------- | --------- | ----- | ---------------------------------- |
+| 마지막 라인의 **퍼센트** 를 지정 할 수 있습니다.                  | `0...100` | `70%` | ![](Assets/multiline_lastline.png) |
+| 라인의 **Corner radius** 를 지정할 수 있습니다. (**새로운기능**) | `0...10`  | `0`   | ![](Assets/multiline_corner.png)   |
 
 
 
@@ -285,7 +285,7 @@ view.showSkeleton(usingColor: UIColor.gray) // Solid
 // or
 view.showSkeleton(usingColor: UIColor(red: 25.0, green: 30.0, blue: 255.0, alpha: 1.0))
 ```
-**그라디언트를 이용 방법**
+**그라디언트 이용 방법**
 ``` swift
 let gradient = SkeletonGradient(baseColor: UIColor.midnightBlue)
 view.showGradientSkeleton(usingGradient: gradient) // Gradient
@@ -347,9 +347,9 @@ view.showAnimatedSkeleton { (layer) -> CAAnimation in
 }
 ```
 
-It's available ```SkeletonAnimationBuilder```. It's a builder to make ```SkeletonLayerAnimation```.
+```SkeletonAnimationBuilder```의 사용이 가능합니다. ```SkeletonLayerAnimation```을 만들기 위해 사용됩니다.
 
-Today, you can create **sliding animations** for gradients, deciding the **direction** and setting the **duration** of the animation (default = 1.5s).
+이제, 그라디언트를 위한 **슬라이딩 애니메이션** 을 만들 수 있습니다, 애니메이션을 위한  **방향** 과  **지속시간** 을 설정 할 수 있습니다.  (기본값 = 1.5초).
 
 ```swift
 // func makeSlidingAnimation(withDirection direction: GradientDirection, duration: CFTimeInterval = 1.5) -> SkeletonLayerAnimation
@@ -359,35 +359,35 @@ view.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
 
 ```
 
-```GradientDirection``` is an enum, with this cases:
+```GradientDirection``` 는 enum 으로 정의 되어있습니다., 아래의 케이스를 참조하세요:
 
-|  Direction | Preview
-|------- | -------
-| .leftRight | ![](Assets/sliding_left_to_right.gif)
-| .rightLeft | ![](Assets/sliding_right_to_left.gif)
-| .topBottom | ![](Assets/sliding_top_to_bottom.gif)
-| .bottomTop | ![](Assets/sliding_bottom_to_top.gif)
-| .topLeftBottomRight | ![](Assets/sliding_topLeft_to_bottomRight.gif)
-| .bottomRightTopLeft | ![](Assets/sliding_bottomRight_to_topLeft.gif)
+| 방향                  | 미리보기                                           |
+| ------------------- | ---------------------------------------------- |
+| .leftRight          | ![](Assets/sliding_left_to_right.gif)          |
+| .rightLeft          | ![](Assets/sliding_right_to_left.gif)          |
+| .topBottom          | ![](Assets/sliding_top_to_bottom.gif)          |
+| .bottomTop          | ![](Assets/sliding_bottom_to_top.gif)          |
+| .topLeftBottomRight | ![](Assets/sliding_topLeft_to_bottomRight.gif) |
+| .bottomRightTopLeft | ![](Assets/sliding_bottomRight_to_topLeft.gif) |
 
-> **😉 TRICK!**
-Exist another way to create sliding animations, just using this shortcut:
+> **😉 꿀팁!**
+슬라이딩 애니메이션을 만들기 위한 또다른 방법이 있습니다, 아래의 코드를 참조하세요:
 >>```let animation = GradientDirection.leftToRight.slidingAnimation()```
 
-### 👨‍👧‍👦 Hierarchy
+### 👨‍👧‍👦 계층 구조
 
-Since ```SkeletonView``` is recursive, and we want skeleton to be very efficient, we want to stop recursion as soon as possible. For this reason, you must set the container view as `Skeletonable`, because Skeleton will stop looking for `skeletonable` subviews as soon as a view is not Skeletonable, breaking then the recursion.
+```SkeletonView```는 재귀적입니다 , 그리고 우리는 skeleton이 효율적으로 작동하기를 원하기 때문에, 가능한 빨리 재귀작업을 중단하기를 원합니다. 이러한 이유때문에 반드시 컨테이너 뷰를  `Skeletonable` 로 설정해야 합니다,  `skeletonable` 되지 않는 뷰를 만나는 순간 재귀 작업을 중단하기 떄문입니다. 
 
-Because an image is worth a thousand words:
+아래의 이미지를 참고하세요 이미지는 한눈에 이해되실겁니다:
 
 > ```ìsSkeletonable```= ☠️
 
-| Configuration | Result
-|------- | -------
-|![](Assets/no_skeletonable.png) | ![](Assets/no_skeletonables_result.png)
-|![](Assets/container_no_skeletonable.png) | ![](Assets/no_skeletonables_result.png)
-|![](Assets/container_skeletonable.png) | ![](Assets/container_skeletonable_result.png)
-|![](Assets/all_skeletonables.png) | ![](Assets/all_skeletonables_result.png)
+| 설정값                             | 결과                                        |
+| ----------------------------------------- | --------------------------------------------- |
+| ![](Assets/no_skeletonable.png)           | ![](Assets/no_skeletonables_result.png)       |
+| ![](Assets/container_no_skeletonable.png) | ![](Assets/no_skeletonables_result.png)       |
+| ![](Assets/container_skeletonable.png)    | ![](Assets/container_skeletonable_result.png) |
+| ![](Assets/all_skeletonables.png)         | ![](Assets/all_skeletonables_result.png)      |
 
 
 ### 🔬 디버그
