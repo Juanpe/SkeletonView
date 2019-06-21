@@ -323,7 +323,7 @@ SkeletonAppearance.default.tintColor = .green
 ```
 
 
-### 🤓 Custom animations
+### 🤓 커스텀 애니메이션
 
 ```SkeletonView``` has two built-in animations, *pulse* for solid skeletons and *sliding* for gradients.
 
@@ -390,7 +390,7 @@ Because an image is worth a thousand words:
 |![](Assets/all_skeletonables.png) | ![](Assets/all_skeletonables_result.png)
 
 
-### 🔬 Debug
+### 🔬 디버그
 
 **NEW** In order to facilitate the debug tasks when something is not working fine. `SkeletonView` has some new tools.
 
@@ -416,10 +416,10 @@ Then, when the skeleton appears, you can see the view hierarchy in the Xcode con
 
 
 
-### 📚 Documentation
-Coming soon...😅
+### 📚 문서화
+조금만 기다려주세요...😅
 
-### 📋 Supported OS & SDK Versions
+### 📋 지원 가능한 OS & SDK 버전
 
 * iOS 9.0+
 * tvOS 9.0+
