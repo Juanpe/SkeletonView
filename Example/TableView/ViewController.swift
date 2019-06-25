@@ -44,6 +44,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         tableview.isSkeletonable = true
     }
+
+    override func viewDidLayoutSubviews() {
+        view.layoutSkeletonIfNeeded()
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -67,25 +71,24 @@ class ViewController: UIViewController {
     }
     
     func refreshSkeleton() {
-        self.view.hideSkeleton()
-        if type == .gradient { showGradientSkeleton() }
-        else { showSolidSkeleton() }
+        if type == .gradient { showOrUpdateGradientSkeleton() }
+        else { showOrUpdatepdateSolidSkeleton() }
     }
     
-    func showSolidSkeleton() {
+    func showOrUpdatepdateSolidSkeleton() {
         if switchAnimated.isOn {
-            view.showAnimatedSkeleton(usingColor: colorSelectedView.backgroundColor!)
+            view.updateAnimatedSkeleton(usingColor: colorSelectedView.backgroundColor!)
         } else {
-            view.showSkeleton(usingColor: colorSelectedView.backgroundColor!)
+            view.updateSkeleton(usingColor: colorSelectedView.backgroundColor!)
         }
     }
     
-    func showGradientSkeleton() {
+    func showOrUpdateGradientSkeleton() {
         let gradient = SkeletonGradient(baseColor: colorSelectedView.backgroundColor!)
         if switchAnimated.isOn {
-            view.showAnimatedGradientSkeleton(usingGradient: gradient)
+            view.updateAnimatedGradientSkeleton(usingGradient: gradient)
         } else {
-            view.showGradientSkeleton(usingGradient: gradient)
+            view.updateGradientSkeleton(usingGradient: gradient)
         }
     }
     
@@ -133,7 +136,7 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 extension ViewController: SkeletonTableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 9
+        return 0
     }
     
     func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {

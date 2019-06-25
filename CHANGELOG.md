@@ -4,7 +4,17 @@ All notable changes to this project will be documented in this file
 ## Next version
 
 ### New
-- Adding swift news to mentioned section (thanks @osterbergmarcus)
+- Adding swift news to mentioned section (thanks @osterbergmarcus).
+
+## [Layout update (1.7)](https://github.com/Juanpe/SkeletonView/releases/tag/1.7)
+
+### New
+
+- Allow updating skeleton layout to recalculate skeleton bounds: `layoutSkeletonIfNeeded`. See the examples to know how to use it. (thanks @eduardbosch)
+
+### Improvements
+
+- Allow updating skeleton layers without recreating them: `updateSkeleton`, `updateGradientSkeleton`, `updateAnimatedSkeleton`, `updateAnimatedGradientSkeleton`. (thanks @eduardbosch)
 
 ## [Debug (1.4)](https://github.com/Juanpe/SkeletonView/releases/tag/1.4)
 

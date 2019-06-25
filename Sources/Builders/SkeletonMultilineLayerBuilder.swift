@@ -38,11 +38,10 @@ class SkeletonMultilineLayerBuilder {
               let radius = cornerRadius
             else { return nil }
 
-        let spaceRequiredForEachLine = SkeletonAppearance.default.multilineHeight + SkeletonAppearance.default.multilineSpacing
         let layer = type.layer
         layer.anchorPoint = .zero
         layer.name = CALayer.skeletonSubLayersName
-        layer.frame = CGRect(x: 0.0, y: CGFloat(index) * spaceRequiredForEachLine, width: width, height: SkeletonAppearance.default.multilineHeight)
+        layer.updateLayerFrame(for: index, width: width)
 
         layer.cornerRadius = CGFloat(radius)
         layer.masksToBounds = true
