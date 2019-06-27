@@ -78,7 +78,7 @@ struct SkeletonLayer {
 
     func updateMultilinesIfNeeded() {
         guard let multiLineView = holder as? ContainsMultilineText else { return }
-        maskLayer.updateMultilinesLayers(lastLineFillPercent: multiLineView.lastLineFillingPercent)
+        maskLayer.updateMultilinesLayers(lines: multiLineView.numLines, lastLineFillPercent: multiLineView.lastLineFillingPercent)
     }
 }
 

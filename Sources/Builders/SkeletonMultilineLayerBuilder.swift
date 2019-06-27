@@ -10,6 +10,7 @@ class SkeletonMultilineLayerBuilder {
     var index: Int?
     var width: CGFloat?
     var cornerRadius: Int?
+    var eachLineHeight: CGFloat?
 
     func setSkeletonType(_ type: SkeletonType) -> SkeletonMultilineLayerBuilder {
         self.skeletonType = type
@@ -31,17 +32,23 @@ class SkeletonMultilineLayerBuilder {
         return self
     }
 
+    func setEachLineHeight(_ eachLineHeight: CGFloat) -> SkeletonMultilineLayerBuilder {
+        self.eachLineHeight = eachLineHeight
+        return self
+    }
+
     func build() -> CALayer? {
         guard let type = skeletonType,
               let index = index,
               let width = width,
-              let radius = cornerRadius
+              let radius = cornerRadius,
+              let eachLineHeight = eachLineHeight
             else { return nil }
 
         let layer = type.layer
         layer.anchorPoint = .zero
         layer.name = CALayer.skeletonSubLayersName
-        layer.updateLayerFrame(for: index, width: width)
+        layer.updateLayerFrame(for: index, width: width, height: eachLineHeight)
 
         layer.cornerRadius = CGFloat(radius)
         layer.masksToBounds = true
