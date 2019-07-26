@@ -4,17 +4,17 @@ import UIKit
 
 public extension UIView {
     
-    func showSkeleton(usingColor color: UIColor = SkeletonAppearance.default.tintColor) {
+    func showSkeleton(usingColor color: UIColor = SkeletonAppearance.default.tintColor, fadeInDuration:Double = 0, fadeOutDuration:Double = 0) {
         let config: SkeletonConfig = SkeletonConfig(type: .solid, colors: [color])
         showSkeleton(skeletonConfig: config)
     }
     
-    func showGradientSkeleton(usingGradient gradient: SkeletonGradient = SkeletonAppearance.default.gradient) {
+    func showGradientSkeleton(usingGradient gradient: SkeletonGradient = SkeletonAppearance.default.gradient, fadeInDuration:Double = 0, fadeOutDuration:Double = 0) {
         let config: SkeletonConfig = SkeletonConfig(type: .gradient, colors: gradient.colors)
         showSkeleton(skeletonConfig: config)
     }
     
-    func showAnimatedSkeleton(usingColor color: UIColor = SkeletonAppearance.default.tintColor, animation: SkeletonLayerAnimation? = nil) {
+    func showAnimatedSkeleton(usingColor color: UIColor = SkeletonAppearance.default.tintColor, animation: SkeletonLayerAnimation? = nil, fadeInDuration:Double = 0, fadeOutDuration:Double = 0) {
         let config: SkeletonConfig = SkeletonConfig(type: .solid, colors: [color], animated: true, animation: animation)
         showSkeleton(skeletonConfig: config)
     }
