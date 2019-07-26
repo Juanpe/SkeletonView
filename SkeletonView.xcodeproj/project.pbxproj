@@ -57,6 +57,7 @@
 		8785E3A3211C9CE800CC9DFD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DEA97D1FCDBD1F006C80EF /* Constants.swift */; };
 		88DEA97F1FCDBD78006C80EF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DEA97D1FCDBD1F006C80EF /* Constants.swift */; };
 		8933C7851EB5B820000D00A4 /* SkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7841EB5B820000D00A4 /* SkeletonView.swift */; };
+		E488222C22EB4DAA0061273C /* FadeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E488222B22EB4DAA0061273C /* FadeAnimation.swift */; };
 		F51DE1091FBF70A70037919A /* SkeletonAnimationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51DE1081FBF70A70037919A /* SkeletonAnimationBuilder.swift */; };
 		F51DF871206E91B300D23301 /* SkeletonReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51DF870206E91B300D23301 /* SkeletonReusableCell.swift */; };
 		F51DF873206E91FB00D23301 /* GenericCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51DF872206E91FB00D23301 /* GenericCollectionView.swift */; };
@@ -167,6 +168,7 @@
 		8785E3A0211C9C9800CC9DFD /* SkeletonDebug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonDebug.swift; sourceTree = "<group>"; };
 		88DEA97D1FCDBD1F006C80EF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8933C7841EB5B820000D00A4 /* SkeletonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkeletonView.swift; sourceTree = "<group>"; };
+		E488222B22EB4DAA0061273C /* FadeAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FadeAnimation.swift; path = "../../../../../Downloads/SkeletonView-feature-Allow_updating_skeleton_layers/Sources/Helpers/FadeAnimation.swift"; sourceTree = "<group>"; };
 		F51DE1081FBF70A70037919A /* SkeletonAnimationBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonAnimationBuilder.swift; sourceTree = "<group>"; };
 		F51DF870206E91B300D23301 /* SkeletonReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonReusableCell.swift; sourceTree = "<group>"; };
 		F51DF872206E91FB00D23301 /* GenericCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericCollectionView.swift; sourceTree = "<group>"; };
@@ -425,6 +427,7 @@
 				F5F899D11FAB9630002E8FDA /* AssociationPolicy.swift */,
 				F56B94451FAE20AF0095662F /* PrepareForSkeletonProtocol.swift */,
 				F5307E311FB0F42F00EE67C5 /* RecursiveProtocol.swift */,
+				E488222B22EB4DAA0061273C /* FadeAnimation.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -708,6 +711,7 @@
 			files = (
 				872D5A5621C177E20037D763 /* UIView+Extension.swift in Sources */,
 				F5F899D01FAA6A4D002E8FDA /* UIView+IBInspectable.swift in Sources */,
+				E488222C22EB4DAA0061273C /* FadeAnimation.swift in Sources */,
 				872D5A5C21C24EDD0037D763 /* UILabel+Multiline.swift in Sources */,
 				F54CF5E42024CEB000330B0D /* UIView+CollectionSkeleton.swift in Sources */,
 				F5307E371FB1076E00EE67C5 /* SkeletonTableViewProtocols.swift in Sources */,

@@ -15,6 +15,7 @@ struct RecoverableViewState {
     
     // UI text
     var text: String?
+    var textColor:UIColor?
     
     // UI image
     var image: UIImage?
