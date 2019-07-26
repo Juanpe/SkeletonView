@@ -19,8 +19,8 @@ public extension UIView {
         showSkeleton(skeletonConfig: config)
     }
     
-    func showAnimatedGradientSkeleton(usingGradient gradient: SkeletonGradient = SkeletonAppearance.default.gradient, animation: SkeletonLayerAnimation? = nil) {
-        let config: SkeletonConfig = SkeletonConfig(type: .gradient, colors: gradient.colors, animated: true, animation: animation)
+    func showAnimatedGradientSkeleton(usingGradient gradient: SkeletonGradient = SkeletonAppearance.default.gradient, animation: SkeletonLayerAnimation? = nil, fadeInDuration:Double = 0, fadeOutDuration:Double = 0) {
+        let config: SkeletonConfig = SkeletonConfig(type: .gradient, colors: gradient.colors, animated: true, animation: animation, fadeInDuration: fadeInDuration, fadeOutDuration: fadeOutDuration)
         showSkeleton(skeletonConfig: config)
     }
 
@@ -100,7 +100,7 @@ extension UIView {
         guard !self.isSkeletonActive else { return }
         self.isUserInteractionEnabled = false
         self.saveViewState()
-        (self as? PrepareForSkeleton)?.prepareViewForSkeleton()
+        (self as PrepareForSkeleton).prepareViewForSkeleton()
         self.addSkeletonLayer(skeletonConfig: config)
     }
 
@@ -195,6 +195,7 @@ extension UIView {
         self.skeletonLayer = skeletonLayer
         layer.insertSublayer(skeletonLayer.contentLayer, at: UInt32.max)
         if config.animated { skeletonLayer.start(config.animation) }
+        if config.fadeIn { skeletonLayer.fadeIn(duration: config.fadeInDuration) }
         status = .on
     }
     
@@ -213,11 +214,15 @@ extension UIView {
     func removeSkeletonLayer() {
         guard isSkeletonActive,
             let skeletonLayer = skeletonLayer else { return }
-        skeletonLayer.stopAnimation()
-        skeletonLayer.removeLayer()
-        self.skeletonLayer = nil
-        status = .off
-        currentSkeletonConfig = nil
+        let duration = currentSkeletonConfig?.fadeOutDuration ?? 0
+        skeletonLayer.fadeOut(currentSkeletonConfig?.fadeOut ?? false, duration: duration) {
+            skeletonLayer.stopAnimation()
+            skeletonLayer.removeLayer()
+            self.skeletonLayer = nil
+            self.status = .off
+            self.currentSkeletonConfig = nil
+        }
+        
     }
 }
 

@@ -12,22 +12,8 @@ protocol PrepareForSkeleton {
     func prepareViewForSkeleton() 
 }
 
-extension UILabel: PrepareForSkeleton {
+extension UIView: PrepareForSkeleton {
     func prepareViewForSkeleton() {
-        text = " "
-        resignFirstResponder()
-    }
-}
-
-extension UITextView: PrepareForSkeleton {
-    func prepareViewForSkeleton() {
-        text = " "
-        resignFirstResponder()
-    }
-}
-
-extension UIImageView: PrepareForSkeleton {
-    func prepareViewForSkeleton() {
-        image = nil
+        self.fadeOut()
     }
 }

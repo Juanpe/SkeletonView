@@ -53,6 +53,8 @@ struct SkeletonLayer {
         self.maskLayer.bounds = holder.maxBoundsEstimated
         addMultilinesIfNeeded()
         self.maskLayer.tint(withColors: colors)
+        
+        maskLayer.setValue(true, forUndefinedKey: "isSkeletonLayer")
     }
     
     func update(usingColors colors: [UIColor]) {
@@ -91,5 +93,14 @@ extension SkeletonLayer {
     
     func stopAnimation() {
         contentLayer.stopAnimation(forKey: "skeletonAnimation")
+    }
+}
+
+extension CALayer {
+    
+    var isSkeletonLayer:Bool {
+        get {
+            return value(forKey: "isSkeletonLayer") as? Bool == true
+        }
     }
 }
