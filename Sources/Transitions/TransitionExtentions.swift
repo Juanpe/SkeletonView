@@ -4,18 +4,17 @@ import UIKit
 
 
 extension UIView {
-    @objc func fadeIn() {
+    @objc func fadeIn(duration:TimeInterval) {
         guard let sublayers = self.layer.sublayers else {
             return
         }
         
-        let duration = currentSkeletonConfig?.fadeInDuration ?? 0
         
         for tempLayer in sublayers {
             if tempLayer.isSkeletonLayer {
                 return
             }
-            if let duration = currentSkeletonConfig?.fadeInDuration, duration != 0 {
+            if duration != 0 {
                 fadeLayer(layer: tempLayer, duration: duration, fadeIn: true)
             }
             else {
@@ -26,12 +25,10 @@ extension UIView {
         fadeBackgroundColor(duration: duration, fadeIn: true)
     }
     
-    @objc func fadeOut() {
+    @objc func fadeOut(duration:TimeInterval) {
         guard let sublayers = self.layer.sublayers else {
             return
         }
-        
-        let duration = currentSkeletonConfig?.fadeInDuration ?? 0
         
         for tempLayer in sublayers {
             if tempLayer.isSkeletonLayer {
@@ -66,8 +63,7 @@ extension UIView {
 }
 
 extension UILabel {
-    override func fadeIn() {
-        let duration = (currentSkeletonConfig?.fadeOutDuration ?? 0)
+    override func fadeIn(duration:TimeInterval) {
         if duration == 0 {
             self.textColor = self.viewState?.textColor
             return
@@ -75,40 +71,20 @@ extension UILabel {
         
         UIView.transition(with: self, duration: duration, options: .curveEaseInOut, animations: {
             self.textColor = self.viewState?.textColor
-        }) { (finished) in
-            
-        }
-        /*
-        let changeColorTransition = CATransition()
-        changeColorTransition.duration = duration
+        }, completion: nil)
         
-        
-        CATransaction.begin()
-        self.layer.add(changeColorTransition, forKey: nil)
-        CATransaction.setCompletionBlock {
-            self.textColor = self.viewState?.textColor
-        }
-        CATransaction.commit()
-        */
         fadeBackgroundColor(duration: duration, fadeIn: true)
     }
     
-    override func fadeOut() {
-        let duration = (currentSkeletonConfig?.fadeInDuration ?? 0)
+    override func fadeOut(duration:TimeInterval) {
         if duration == 0 {
             self.textColor = .clear
             return
         }
         
-        let changeColorTransition = CATransition()
-        changeColorTransition.duration = duration
-        
-        CATransaction.begin()
-        self.layer.add(changeColorTransition, forKey: nil)
-        CATransaction.setCompletionBlock {
+        UIView.transition(with: self, duration: duration, options: .curveEaseInOut, animations: {
             self.textColor = .clear
-        }
-        CATransaction.commit()
+        }, completion: nil)
         
         fadeBackgroundColor(duration: duration, fadeIn: false)
     }
@@ -116,8 +92,11 @@ extension UILabel {
 
 
 extension UIImageView {
-    override func fadeIn() {
-        let duration = (currentSkeletonConfig?.fadeOutDuration ?? 0)
+    override func fadeIn(duration:TimeInterval) {
+        if duration == 0 {
+            self.image = self.viewState?.image
+            return
+        }
         UIView.transition(with: self, duration: duration, options: .transitionCrossDissolve, animations: {
             self.image = self.viewState?.image
         }, completion: nil)
@@ -125,8 +104,11 @@ extension UIImageView {
         fadeBackgroundColor(duration: duration, fadeIn: true)
     }
     
-    override func fadeOut() {
-        let duration = (currentSkeletonConfig?.fadeOutDuration ?? 0)
+    override func fadeOut(duration:TimeInterval) {
+        if duration == 0 {
+            self.image = nil
+            return
+        }
         UIView.transition(with: self, duration: duration, options: .transitionCrossDissolve, animations: {
             self.image = nil
         }, completion: nil)
@@ -141,27 +123,22 @@ extension SkeletonLayer {
         animation.fromValue = 0
         animation.toValue = 1
         animation.duration = duration
-
+        
         contentLayer.opacity = 1
         contentLayer.add(animation, forKey: nil)
         
     }
     
-    func fadeOut(_ performFade:Bool, duration:Double = 0, completion: @escaping () ->()) {
-        if performFade {
-            let animation = CABasicAnimation(keyPath: "opacity")
-            animation.fromValue = 1
-            animation.toValue = 0
-            animation.duration = duration
-            
-            contentLayer.opacity = 0
-            contentLayer.add(animation, forKey: nil)
- 
-            DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
-                completion()
-            }
-        }
-        else {
+    func fadeOut(duration:Double = 0, completion: @escaping () ->()) {
+        let animation = CABasicAnimation(keyPath: "opacity")
+        animation.fromValue = 1
+        animation.toValue = 0
+        animation.duration = duration
+        
+        contentLayer.opacity = 0
+        contentLayer.add(animation, forKey: nil)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
             completion()
         }
         
