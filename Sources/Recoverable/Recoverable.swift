@@ -52,9 +52,7 @@ extension UIView: Recoverable {
         return false
     }
     
-    @objc func recover() {
-        
-    }
+    @objc fileprivate func recover() {}
 }
 
 extension UILabel {
@@ -98,8 +96,5 @@ extension UIImageView {
     override func recoverViewState(forced: Bool) {
         super.recoverViewState(forced: forced)
         image = image == nil || forced ? viewState?.image : image
-    }
-    override func recover() {
-        
     }
 }

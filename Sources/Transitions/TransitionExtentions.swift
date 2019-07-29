@@ -5,27 +5,23 @@ import UIKit
 
 internal extension UIView {
     @objc func fadeIn(duration:TimeInterval) {
-        guard let sublayers = self.layer.sublayers else {
-            return
-        }
-        
-        for tempLayer in sublayers {
-            handleLayer(layer: tempLayer, fadeIn: true, duration: duration)
-        }
-        
-        fadeBackgroundColor(duration: duration, fadeIn: true)
+        fade(duration: duration, fadeIn: true)
     }
     
     @objc func fadeOut(duration:TimeInterval) {
+        fade(duration: duration, fadeIn: false)
+    }
+    
+    fileprivate func fade(duration:TimeInterval, fadeIn: Bool) {
         guard let sublayers = self.layer.sublayers else {
             return
         }
         
         for tempLayer in sublayers {
-            handleLayer(layer: tempLayer, fadeIn: false, duration: duration)
+            handleLayer(layer: tempLayer, fadeIn: fadeIn, duration: duration)
         }
         
-        fadeBackgroundColor(duration: duration, fadeIn: false)
+        fadeBackgroundColor(duration: duration, fadeIn: fadeIn)
     }
     
     fileprivate func handleLayer(layer:CALayer, fadeIn:Bool, duration:TimeInterval) {

@@ -222,16 +222,18 @@ extension UIView {
     func removeSkeletonLayer() {
         guard isSkeletonActive,
             let skeletonLayer = skeletonLayer else { return }
+        guard let transitionType = currentSkeletonConfig?.transition else {
+            removeSkeletonLayerFinalize()
+            return
+        }
         
         //Handle transition
-        if let transitionType = currentSkeletonConfig?.transition {
-            switch transitionType {
-            case .none:
-                removeSkeletonLayerFinalize()
-            case .fade(duration: let duration):
-                skeletonLayer.fadeOut(duration: duration) {
-                    self.removeSkeletonLayerFinalize()
-                }
+        switch transitionType {
+        case .none:
+            removeSkeletonLayerFinalize()
+        case .fade(duration: let duration):
+            skeletonLayer.fadeOut(duration: duration) {
+                self.removeSkeletonLayerFinalize()
             }
         }
     }
