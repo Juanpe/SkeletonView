@@ -3,7 +3,7 @@
 import UIKit
 
 
-extension UIView {
+internal extension UIView {
     @objc func fadeIn(duration:TimeInterval) {
         guard let sublayers = self.layer.sublayers else {
             return
@@ -28,7 +28,7 @@ extension UIView {
         fadeBackgroundColor(duration: duration, fadeIn: false)
     }
     
-    func handleLayer(layer:CALayer, fadeIn:Bool, duration:TimeInterval) {
+    fileprivate func handleLayer(layer:CALayer, fadeIn:Bool, duration:TimeInterval) {
         if layer.isSkeletonLayer {
             return
         }
@@ -40,7 +40,7 @@ extension UIView {
         }
     }
     
-    func fadeLayer(layer:CALayer, duration:Double, fadeIn:Bool) {
+    fileprivate func fadeLayer(layer:CALayer, duration:Double, fadeIn:Bool) {
         let animation = CABasicAnimation(keyPath: "opacity")
         animation.fromValue = fadeIn ? 0 : 1
         animation.toValue = fadeIn ? 1 : 0
@@ -50,14 +50,14 @@ extension UIView {
         layer.add(animation, forKey: nil)
     }
     
-    func fadeBackgroundColor(duration:Double, fadeIn:Bool) {
+    fileprivate func fadeBackgroundColor(duration:Double, fadeIn:Bool) {
         UIView.transition(with: self, duration: duration, options: .transitionCrossDissolve, animations: {
             self.backgroundColor = fadeIn ? self.viewState?.backgroundColor : .clear
         }, completion: nil)
     }
 }
 
-extension UILabel {
+internal extension UILabel {
     override func fadeIn(duration:TimeInterval) {
         if duration == 0 {
             self.textColor = self.viewState?.textColor
@@ -86,7 +86,7 @@ extension UILabel {
 }
 
 
-extension UIImageView {
+internal extension UIImageView {
     override func fadeIn(duration:TimeInterval) {
         if duration == 0 {
             self.image = self.viewState?.image
@@ -112,7 +112,7 @@ extension UIImageView {
     }
 }
 
-extension SkeletonLayer {
+internal extension SkeletonLayer {
     func fadeIn(duration:Double) {
         let animation = CABasicAnimation(keyPath: "opacity")
         animation.fromValue = 0
@@ -121,7 +121,6 @@ extension SkeletonLayer {
         
         contentLayer.opacity = 1
         contentLayer.add(animation, forKey: nil)
-        
     }
     
     func fadeOut(duration:Double = 0, completion: @escaping () ->()) {
@@ -136,7 +135,6 @@ extension SkeletonLayer {
         DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
             completion()
         }
-        
     }
 }
 
