@@ -4,23 +4,23 @@ import UIKit
 
 public extension UIView {
     
-    func showSkeleton(usingColor color: UIColor = SkeletonAppearance.default.tintColor, fadeInDuration:Double = 0, fadeOutDuration:Double = 0) {
-        let config: SkeletonConfig = SkeletonConfig(type: .solid, colors: [color])
+    func showSkeleton(usingColor color: UIColor = SkeletonAppearance.default.tintColor, transition:SkeletonTransitionStyle = .none) {
+        let config: SkeletonConfig = SkeletonConfig(type: .solid, colors: [color], transition: transition)
         showSkeleton(skeletonConfig: config)
     }
     
-    func showGradientSkeleton(usingGradient gradient: SkeletonGradient = SkeletonAppearance.default.gradient, fadeInDuration:Double = 0, fadeOutDuration:Double = 0) {
-        let config: SkeletonConfig = SkeletonConfig(type: .gradient, colors: gradient.colors)
+    func showGradientSkeleton(usingGradient gradient: SkeletonGradient = SkeletonAppearance.default.gradient, transition:SkeletonTransitionStyle = .none) {
+        let config: SkeletonConfig = SkeletonConfig(type: .gradient, colors: gradient.colors, transition: transition)
         showSkeleton(skeletonConfig: config)
     }
     
-    func showAnimatedSkeleton(usingColor color: UIColor = SkeletonAppearance.default.tintColor, animation: SkeletonLayerAnimation? = nil, fadeInDuration:Double = 0, fadeOutDuration:Double = 0) {
-        let config: SkeletonConfig = SkeletonConfig(type: .solid, colors: [color], animated: true, animation: animation)
+    func showAnimatedSkeleton(usingColor color: UIColor = SkeletonAppearance.default.tintColor, animation: SkeletonLayerAnimation? = nil, transition:SkeletonTransitionStyle = .none) {
+        let config: SkeletonConfig = SkeletonConfig(type: .solid, colors: [color], animated: true, animation: animation, transition: transition)
         showSkeleton(skeletonConfig: config)
     }
     
-    func showAnimatedGradientSkeleton(usingGradient gradient: SkeletonGradient = SkeletonAppearance.default.gradient, animation: SkeletonLayerAnimation? = nil, fadeInDuration:Double = 0, fadeOutDuration:Double = 0) {
-        let config: SkeletonConfig = SkeletonConfig(type: .gradient, colors: gradient.colors, animated: true, animation: animation, fadeInDuration: fadeInDuration, fadeOutDuration: fadeOutDuration)
+    func showAnimatedGradientSkeleton(usingGradient gradient: SkeletonGradient = SkeletonAppearance.default.gradient, animation: SkeletonLayerAnimation? = nil, transition:SkeletonTransitionStyle = .none) {
+        let config: SkeletonConfig = SkeletonConfig(type: .gradient, colors: gradient.colors, animated: true, animation: animation, transition: transition)
         showSkeleton(skeletonConfig: config)
     }
 
@@ -195,7 +195,15 @@ extension UIView {
         self.skeletonLayer = skeletonLayer
         layer.insertSublayer(skeletonLayer.contentLayer, at: UInt32.max)
         if config.animated { skeletonLayer.start(config.animation) }
-        if config.fadeIn { skeletonLayer.fadeIn(duration: config.fadeInDuration) }
+        
+        //handle transition
+        switch config.transition {
+        case .none:
+            break
+        case .fade(let duration):
+            skeletonLayer.fadeIn(duration: duration)
+        }
+        
         status = .on
     }
     
@@ -214,15 +222,28 @@ extension UIView {
     func removeSkeletonLayer() {
         guard isSkeletonActive,
             let skeletonLayer = skeletonLayer else { return }
-        let duration = currentSkeletonConfig?.fadeOutDuration ?? 0
-        skeletonLayer.fadeOut(currentSkeletonConfig?.fadeOut ?? false, duration: duration) {
-            skeletonLayer.stopAnimation()
-            skeletonLayer.removeLayer()
-            self.skeletonLayer = nil
-            self.status = .off
-            self.currentSkeletonConfig = nil
-        }
         
+        //Handle transition
+        if let transitionType = currentSkeletonConfig?.transition {
+            switch transitionType {
+            case .none:
+                removeSkeletonLayerFinalize()
+            case .fade(duration: let duration):
+                skeletonLayer.fadeOut(duration: duration) {
+                    self.removeSkeletonLayerFinalize()
+                }
+            }
+        }
+    }
+    
+    func removeSkeletonLayerFinalize() {
+        guard isSkeletonActive,
+            let skeletonLayer = skeletonLayer else { return }
+        skeletonLayer.stopAnimation()
+        skeletonLayer.removeLayer()
+        self.skeletonLayer = nil
+        self.status = .off
+        self.currentSkeletonConfig = nil
     }
 }
 

@@ -31,11 +31,29 @@ extension UIView: Recoverable {
         layer.cornerRadius = safeViewState.cornerRadius
         layer.masksToBounds = safeViewState.clipToBounds
         
-        fadeIn()
+        _ = startTransitionIfAvailable()
         
         if safeViewState.backgroundColor != backgroundColor || forced {
             backgroundColor = safeViewState.backgroundColor
         }
+    }
+    
+    fileprivate func startTransitionIfAvailable() -> Bool {
+        if let transitionType = currentSkeletonConfig?.transition {
+            switch transitionType {
+            case .none:
+                recover()
+                return false
+            case .fade(duration: let duration):
+                fadeIn(duration: duration)
+            }
+            return true
+        }
+        return false
+    }
+    
+    @objc func recover() {
+        
     }
 }
 
@@ -49,6 +67,10 @@ extension UILabel {
         super.recoverViewState(forced: forced)
         text = text == " " || forced ? viewState?.text : text
     }
+    
+    override func recover() {
+        textColor = viewState?.textColor
+    }
 }
 
 extension UITextView {
@@ -61,6 +83,10 @@ extension UITextView {
         super.recoverViewState(forced: forced)
         text = text == " " || forced ? viewState?.text : text
     }
+    
+    override func recover() {
+        textColor = viewState?.textColor
+    }
 }
 
 extension UIImageView {
@@ -72,5 +98,8 @@ extension UIImageView {
     override func recoverViewState(forced: Bool) {
         super.recoverViewState(forced: forced)
         image = image == nil || forced ? viewState?.image : image
+    }
+    override func recover() {
+        
     }
 }
