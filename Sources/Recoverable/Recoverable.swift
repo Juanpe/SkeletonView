@@ -31,6 +31,8 @@ extension UIView: Recoverable {
         layer.cornerRadius = safeViewState.cornerRadius
         layer.masksToBounds = safeViewState.clipToBounds
         
+        fadeIn()
+        
         if safeViewState.backgroundColor != backgroundColor || forced {
             backgroundColor = safeViewState.backgroundColor
         }
