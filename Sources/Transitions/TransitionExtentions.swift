@@ -9,17 +9,8 @@ extension UIView {
             return
         }
         
-        
         for tempLayer in sublayers {
-            if tempLayer.isSkeletonLayer {
-                return
-            }
-            if duration != 0 {
-                fadeLayer(layer: tempLayer, duration: duration, fadeIn: true)
-            }
-            else {
-                tempLayer.opacity = 1
-            }
+            handleLayer(layer: tempLayer, fadeIn: true, duration: duration)
         }
         
         fadeBackgroundColor(duration: duration, fadeIn: true)
@@ -31,18 +22,22 @@ extension UIView {
         }
         
         for tempLayer in sublayers {
-            if tempLayer.isSkeletonLayer {
-                return
-            }
-            if duration != 0 {
-                fadeLayer(layer: tempLayer, duration: duration, fadeIn: false)
-            }
-            else {
-                tempLayer.opacity = 0
-            }
+            handleLayer(layer: tempLayer, fadeIn: false, duration: duration)
         }
         
         fadeBackgroundColor(duration: duration, fadeIn: false)
+    }
+    
+    func handleLayer(layer:CALayer, fadeIn:Bool, duration:TimeInterval) {
+        if layer.isSkeletonLayer {
+            return
+        }
+        if duration != 0 {
+            fadeLayer(layer: layer, duration: duration, fadeIn: fadeIn)
+        }
+        else {
+            layer.opacity = fadeIn ? 1 : 2
+        }
     }
     
     func fadeLayer(layer:CALayer, duration:Double, fadeIn:Bool) {
