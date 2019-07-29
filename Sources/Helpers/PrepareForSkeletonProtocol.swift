@@ -21,7 +21,6 @@ extension UIView: PrepareForSkeleton {
             switch transitionType {
             case .none:
                 return false
-                break
             case .fade(duration: let duration):
                 fadeOut(duration: duration)
             }
@@ -31,7 +30,7 @@ extension UIView: PrepareForSkeleton {
     }
 }
 
-extension UILabel: PrepareForSkeleton {
+extension UILabel {
     override func prepareViewForSkeleton() {
         if startTransitionIfAvailable() == false {
             textColor = .clear
@@ -40,7 +39,7 @@ extension UILabel: PrepareForSkeleton {
     }
 }
 
-extension UITextView: PrepareForSkeleton {
+extension UITextView {
     override func prepareViewForSkeleton() {
         if startTransitionIfAvailable() == false {
             textColor = .clear
@@ -49,7 +48,7 @@ extension UITextView: PrepareForSkeleton {
     }
 }
 
-extension UIImageView: PrepareForSkeleton {
+extension UIImageView {
     override func prepareViewForSkeleton() {
         if startTransitionIfAvailable() == false {
             image = nil
