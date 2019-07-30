@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RecoverableViewState {
+struct RecoverableViewState {
     var backgroundColor: UIColor?
     var cornerRadius: CGFloat
     var clipToBounds: Bool
@@ -20,28 +20,25 @@ class RecoverableViewState {
     }
 }
 
-class RecoverableTextViewState: RecoverableViewState {
+struct RecoverableTextViewState {
     var text: String?
     var textColor:UIColor?
     
     init(view: UILabel) {
-        super.init(view: view)
         self.textColor = view.textColor
         self.text = view.text
     }
     
     init(view: UITextView) {
-        super.init(view: view)
         self.textColor = view.textColor
         self.text = view.text
     }
 }
 
-class RecoverableImageViewState: RecoverableViewState {
+struct RecoverableImageViewState {
     var image: UIImage?
     
     init(view: UIImageView) {
-        super.init(view: view)
         self.image = view.image
     }
 }
