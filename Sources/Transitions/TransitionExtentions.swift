@@ -56,12 +56,12 @@ internal extension UIView {
 internal extension UILabel {
     override func fadeIn(duration:TimeInterval) {
         if duration == 0 {
-            self.textColor = self.viewState?.textColor
+            self.textColor = (self.viewState as? RecoverableTextViewState)?.textColor
             return
         }
         
         UIView.transition(with: self, duration: duration, options: .curveEaseInOut, animations: {
-            self.textColor = self.viewState?.textColor
+            self.textColor = (self.viewState as? RecoverableTextViewState)?.textColor
         }, completion: nil)
         
         fadeBackgroundColor(duration: duration, fadeIn: true)
@@ -85,11 +85,11 @@ internal extension UILabel {
 internal extension UIImageView {
     override func fadeIn(duration:TimeInterval) {
         if duration == 0 {
-            self.image = self.viewState?.image
+            self.image = (self.viewState as? RecoverableImageViewState)?.image
             return
         }
         UIView.transition(with: self, duration: duration, options: .transitionCrossDissolve, animations: {
-            self.image = self.viewState?.image
+            self.image = (self.viewState as? RecoverableImageViewState)?.image
         }, completion: nil)
         
         fadeBackgroundColor(duration: duration, fadeIn: true)

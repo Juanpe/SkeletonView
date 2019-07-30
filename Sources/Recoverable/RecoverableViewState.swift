@@ -8,31 +8,40 @@
 
 import UIKit
 
-struct RecoverableViewState {
+class RecoverableViewState {
     var backgroundColor: UIColor?
     var cornerRadius: CGFloat
     var clipToBounds: Bool
     
-    // UI text
-    var text: String?
-    var textColor:UIColor?
-    
-    // UI image
-    var image: UIImage?
-}
-
-extension RecoverableViewState {
     init(view: UIView) {
         self.backgroundColor = view.backgroundColor
         self.clipToBounds = view.layer.masksToBounds
         self.cornerRadius = view.layer.cornerRadius
-        
-        if let view  = view as? UILabel {
-            self.textColor = view.textColor
-            self.text = view.text
-        }
-        else if let view  = view as? UIImageView {
-            self.image = view.image
-        }
+    }
+}
+
+class RecoverableTextViewState: RecoverableViewState {
+    var text: String?
+    var textColor:UIColor?
+    
+    init(view: UILabel) {
+        super.init(view: view)
+        self.textColor = view.textColor
+        self.text = view.text
+    }
+    
+    init(view: UITextView) {
+        super.init(view: view)
+        self.textColor = view.textColor
+        self.text = view.text
+    }
+}
+
+class RecoverableImageViewState: RecoverableViewState {
+    var image: UIImage?
+    
+    init(view: UIImageView) {
+        super.init(view: view)
+        self.image = view.image
     }
 }
