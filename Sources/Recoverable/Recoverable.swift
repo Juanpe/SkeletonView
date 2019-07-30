@@ -31,68 +31,34 @@ extension UIView: Recoverable {
         layer.cornerRadius = safeViewState.cornerRadius
         layer.masksToBounds = safeViewState.clipToBounds
         
-        _ = startTransitionIfAvailable()
+        startTransitionIfAvailable()
         
         if safeViewState.backgroundColor != backgroundColor || forced {
             backgroundColor = safeViewState.backgroundColor
         }
     }
     
-    fileprivate func startTransitionIfAvailable() -> Bool {
+    fileprivate func startTransitionIfAvailable() {
         if let transitionType = currentSkeletonConfig?.transition {
             switch transitionType {
             case .none:
                 recover()
-                return false
             case .fade(duration: let duration):
                 fadeIn(duration: duration)
             }
-            return true
         }
-        return false
     }
     
     @objc fileprivate func recover() {}
 }
 
 extension UILabel {
-    override func saveViewState() {
-        super.saveViewState()
-        viewState?.text = text
-    }
-    
-    override func recoverViewState(forced: Bool) {
-        super.recoverViewState(forced: forced)
-        text = text == " " || forced ? viewState?.text : text
-    }
-    
-    override func recover() {
-        textColor = viewState?.textColor
-    }
-}
-
-extension UITextView {
-    override func saveViewState() {
-        super.saveViewState()
-        viewState?.text = text
-    }
-    
-    override func recoverViewState(forced: Bool) {
-        super.recoverViewState(forced: forced)
-        text = text == " " || forced ? viewState?.text : text
-    }
-    
     override func recover() {
         textColor = viewState?.textColor
     }
 }
 
 extension UIImageView {
-    override func saveViewState() {
-        super.saveViewState()
-        viewState?.image = image
-    }
-    
     override func recoverViewState(forced: Bool) {
         super.recoverViewState(forced: forced)
         image = image == nil || forced ? viewState?.image : image

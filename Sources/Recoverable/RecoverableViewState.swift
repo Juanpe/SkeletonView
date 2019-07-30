@@ -26,5 +26,13 @@ extension RecoverableViewState {
         self.backgroundColor = view.backgroundColor
         self.clipToBounds = view.layer.masksToBounds
         self.cornerRadius = view.layer.cornerRadius
+        
+        if let view  = view as? UILabel {
+            self.textColor = view.textColor
+            self.text = view.text
+        }
+        else if let view  = view as? UIImageView {
+            self.image = view.image
+        }
     }
 }
