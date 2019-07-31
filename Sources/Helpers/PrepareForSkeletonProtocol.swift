@@ -20,6 +20,7 @@ extension UIView: PrepareForSkeleton {
         if let transitionType = currentSkeletonConfig?.transition {
             switch transitionType {
             case .none:
+                backgroundColor = .clear
                 return false
             case .fade(duration: let duration):
                 fadeOut(duration: duration)
@@ -34,6 +35,7 @@ extension UILabel {
     override func prepareViewForSkeleton() {
         if startTransitionIfAvailable() == false {
             textColor = .clear
+            backgroundColor = .clear
             resignFirstResponder()
         }
     }
@@ -43,6 +45,7 @@ extension UITextView {
     override func prepareViewForSkeleton() {
         if startTransitionIfAvailable() == false {
             textColor = .clear
+            backgroundColor = .clear
             resignFirstResponder()
         }
     }
@@ -51,6 +54,7 @@ extension UITextView {
 extension UIImageView {
     override func prepareViewForSkeleton() {
         if startTransitionIfAvailable() == false {
+            backgroundColor = .clear
             image = nil
         }
     }
