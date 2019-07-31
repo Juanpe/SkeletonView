@@ -4,15 +4,15 @@ import UIKit
 
 
 internal extension UIView {
-    @objc func fadeIn(duration:TimeInterval) {
+    func fadeIn(duration:TimeInterval) {
         fade(duration: duration, fadeIn: true)
     }
     
-    @objc func fadeOut(duration:TimeInterval) {
+    func fadeOut(duration:TimeInterval) {
         fade(duration: duration, fadeIn: false)
     }
     
-    fileprivate func fade(duration:TimeInterval, fadeIn: Bool) {
+    @objc fileprivate func fade(duration:TimeInterval, fadeIn: Bool) {
         guard let sublayers = self.layer.sublayers else {
             return
         }
@@ -54,57 +54,46 @@ internal extension UIView {
 }
 
 internal extension UILabel {
-    override func fadeIn(duration:TimeInterval) {
+    override func fade(duration: TimeInterval, fadeIn: Bool) {
         if duration == 0 {
-            textColor = labelState?.textColor
+            textColor = fadeIn ? labelState?.textColor : .clear
             return
         }
         
         UIView.transition(with: self, duration: duration, options: .curveEaseInOut, animations: {
-            self.textColor = self.labelState?.textColor
+            self.textColor = fadeIn ? self.labelState?.textColor : .clear
         }, completion: nil)
         
-        fadeBackgroundColor(duration: duration, fadeIn: true)
-    }
-    
-    override func fadeOut(duration:TimeInterval) {
-        if duration == 0 {
-            textColor = .clear
-            return
-        }
-        
-        UIView.transition(with: self, duration: duration, options: .curveEaseInOut, animations: {
-            self.textColor = .clear
-        }, completion: nil)
-        
-        fadeBackgroundColor(duration: duration, fadeIn: false)
+        fadeBackgroundColor(duration: duration, fadeIn: fadeIn)
     }
 }
 
+internal extension UITextView {
+    override func fade(duration: TimeInterval, fadeIn: Bool) {
+        if duration == 0 {
+            textColor = fadeIn ? textState?.textColor : .clear
+            return
+        }
+        
+        UIView.transition(with: self, duration: duration, options: .curveEaseInOut, animations: {
+            self.textColor = fadeIn ? self.textState?.textColor : .clear
+        }, completion: nil)
+        
+        fadeBackgroundColor(duration: duration, fadeIn: fadeIn)
+    }
+}
 
 internal extension UIImageView {
-    override func fadeIn(duration:TimeInterval) {
+    override func fade(duration: TimeInterval, fadeIn: Bool) {
         if duration == 0 {
-            image = self.imageState?.image
+            image = fadeIn ? self.imageState?.image : nil
             return
         }
         UIView.transition(with: self, duration: duration, options: .transitionCrossDissolve, animations: {
-            self.image = self.imageState?.image
+            self.image = fadeIn ? self.imageState?.image : nil
         }, completion: nil)
         
-        fadeBackgroundColor(duration: duration, fadeIn: true)
-    }
-    
-    override func fadeOut(duration:TimeInterval) {
-        if duration == 0 {
-            image = nil
-            return
-        }
-        UIView.transition(with: self, duration: duration, options: .transitionCrossDissolve, animations: {
-            self.image = nil
-        }, completion: nil)
-        
-        fadeBackgroundColor(duration: duration, fadeIn: false)
+        fadeBackgroundColor(duration: duration, fadeIn: fadeIn)
     }
 }
 

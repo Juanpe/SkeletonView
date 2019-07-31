@@ -10,6 +10,8 @@ enum ViewAssociatedKeys {
     static var flowDelegate = "flowDelegate"
     static var isSkeletonAnimated = "isSkeletonAnimated"
     static var viewState = "viewState"
+    static var labelViewState = "labelViewState"
+    static var imageViewState = "imageViewState"
     static var currentSkeletonConfig = "currentSkeletonConfig"
 }
 // codebeat:enable[TOO_MANY_IVARS]
