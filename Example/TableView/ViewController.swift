@@ -35,6 +35,9 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var switchAnimated: UISwitch!
     @IBOutlet weak var skeletonTypeSelector: UISegmentedControl!
+    @IBOutlet weak var showOrHideSkeletonButton: UIButton!
+    @IBOutlet weak var fadeDurationLabel: UILabel!
+    @IBOutlet weak var fadeDurationStepper: UIStepper!
     
     var type: SkeletonType {
         return skeletonTypeSelector.selectedSegmentIndex == 0 ? .solid : .gradient
@@ -68,6 +71,20 @@ class ViewController: UIViewController {
     
     @IBAction func btnChangeColorTouchUpInside(_ sender: Any) {
         showAlertPicker()
+    }
+    
+    @IBAction func showOrHideSkeleton(_ sender: Any) {
+        view.isSkeletonActive ? showSkeleton() : hideSkeleton()
+    }
+    @IBAction func fadeDurationStepperAction(_ sender: Any) {
+    }
+    
+    func showSkeleton() {
+        view.showSkeleton()
+    }
+    
+    func hideSkeleton() {
+        view.hideSkeleton()
     }
     
     func refreshSkeleton() {

@@ -55,11 +55,6 @@ internal extension UIView {
 
 internal extension UILabel {
     override func fade(duration: TimeInterval, fadeIn: Bool) {
-        if duration == 0 {
-            textColor = fadeIn ? labelState?.textColor : .clear
-            return
-        }
-        
         UIView.transition(with: self, duration: duration, options: .curveEaseInOut, animations: {
             self.textColor = fadeIn ? self.labelState?.textColor : .clear
         }, completion: nil)
@@ -70,11 +65,6 @@ internal extension UILabel {
 
 internal extension UITextView {
     override func fade(duration: TimeInterval, fadeIn: Bool) {
-        if duration == 0 {
-            textColor = fadeIn ? textState?.textColor : .clear
-            return
-        }
-        
         UIView.transition(with: self, duration: duration, options: .curveEaseInOut, animations: {
             self.textColor = fadeIn ? self.textState?.textColor : .clear
         }, completion: nil)
@@ -85,10 +75,6 @@ internal extension UITextView {
 
 internal extension UIImageView {
     override func fade(duration: TimeInterval, fadeIn: Bool) {
-        if duration == 0 {
-            image = fadeIn ? self.imageState?.image : nil
-            return
-        }
         UIView.transition(with: self, duration: duration, options: .transitionCrossDissolve, animations: {
             self.image = fadeIn ? self.imageState?.image : nil
         }, completion: nil)

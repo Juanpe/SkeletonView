@@ -15,7 +15,7 @@ struct SkeletonConfig {
     /// Used to execute a custom animation
     let animation: SkeletonLayerAnimation?
     //  Transition type
-    let transition:SkeletonTransitionStyle
+    var transition:SkeletonTransitionStyle
     
     
     init(
@@ -32,5 +32,14 @@ struct SkeletonConfig {
         self.animated = animated
         self.animation = animation
         self.transition = transition
+        
+        switch transition {
+        case .fade(duration: let duration):
+            if duration <= 0 {
+                self.transition = .none
+            }
+        default:
+            self.transition = transition
+        }
     }
 }

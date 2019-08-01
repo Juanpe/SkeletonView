@@ -6,17 +6,35 @@ import SkeletonView
 class CollectionViewCell: UICollectionViewCell {
     
     var label: UILabel!
+    var imageView: UIImageView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         isSkeletonable = true
-        createLabel()
+        //createLabel()
+        createImageView()
         
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func createImageView() {
+        imageView = UIImageView(image: UIImage(named: "bone"))
+        imageView.isSkeletonable = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        addSubview(imageView)
+        NSLayoutConstraint.activate([
+            imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            imageView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            imageView.heightAnchor.constraint(equalTo: heightAnchor),
+            imageView.widthAnchor.constraint(equalTo: widthAnchor)
+            ])
+        
+        
     }
     
     private func createLabel() {
