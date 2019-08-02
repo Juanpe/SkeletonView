@@ -12,7 +12,7 @@ class CollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         
         isSkeletonable = true
-        //createLabel()
+        createLabel()
         createImageView()
         
     }
@@ -22,16 +22,16 @@ class CollectionViewCell: UICollectionViewCell {
     }
     
     private func createImageView() {
-        imageView = UIImageView(image: UIImage(named: "bone"))
+        imageView = UIImageView(image: UIImage(named: "picture"))
         imageView.isSkeletonable = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         addSubview(imageView)
         NSLayoutConstraint.activate([
             imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            imageView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            imageView.heightAnchor.constraint(equalTo: heightAnchor),
-            imageView.widthAnchor.constraint(equalTo: widthAnchor)
+            imageView.topAnchor.constraint(equalTo: topAnchor),
+            imageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.75),
+            imageView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.75)
             ])
         
         
@@ -40,13 +40,15 @@ class CollectionViewCell: UICollectionViewCell {
     private func createLabel() {
         label = UILabel()
         label.isSkeletonable = true
+        label.text = "Lorem ipsum"
+        label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         addSubview(label)
         NSLayoutConstraint.activate([
             label.centerXAnchor.constraint(equalTo: centerXAnchor),
-            label.centerYAnchor.constraint(equalTo: centerYAnchor),
-            label.heightAnchor.constraint(equalToConstant: frame.height / 2),
-            label.widthAnchor.constraint(equalToConstant: frame.width / 2)
+            label.bottomAnchor.constraint(equalTo: bottomAnchor),
+            label.heightAnchor.constraint(equalToConstant: 40),
+            label.widthAnchor.constraint(equalToConstant: frame.width)
             ])
     }
     

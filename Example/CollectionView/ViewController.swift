@@ -82,7 +82,7 @@ class ViewController: UIViewController {
     }
     
     func hideSkeleton() {
-        view.hideSkeleton()
+        view.hideSkeleton(transition: .fade(duration:fadeDurationStepper.value))
     }
     
     func refreshSkeleton() {

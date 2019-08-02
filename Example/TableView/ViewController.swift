@@ -74,17 +74,36 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showOrHideSkeleton(_ sender: Any) {
-        view.isSkeletonActive ? showSkeleton() : hideSkeleton()
+        showOrHideSkeletonButton.setTitle((view.isSkeletonActive ? "Show skeleton" : "Hide skeleton"), for: .normal)
+        view.isSkeletonActive ? hideSkeleton() : showSkeleton()
     }
+    
     @IBAction func fadeDurationStepperAction(_ sender: Any) {
+        fadeDurationLabel.text = "Fade duration: \(fadeDurationStepper.value) sec"
     }
     
     func showSkeleton() {
-        view.showSkeleton()
+        if type == .gradient {
+            let gradient = SkeletonGradient(baseColor: colorSelectedView.backgroundColor!)
+            if switchAnimated.isOn {
+                view.showAnimatedGradientSkeleton(usingGradient: gradient, transition: .fade(duration: fadeDurationStepper.value))
+            }
+            else {
+                view.showGradientSkeleton(usingGradient: gradient, transition: .fade(duration: fadeDurationStepper.value))
+            }
+        }
+        else {
+            if switchAnimated.isOn {
+                view.showAnimatedSkeleton(transition: .fade(duration: fadeDurationStepper.value))
+            }
+            else {
+                view.showSkeleton(transition: .fade(duration: fadeDurationStepper.value))
+            }
+        }
     }
     
     func hideSkeleton() {
-        view.hideSkeleton()
+        view.hideSkeleton(transition: .fade(duration:fadeDurationStepper.value))
     }
     
     func refreshSkeleton() {
@@ -153,7 +172,7 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 extension ViewController: SkeletonTableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 10
     }
     
     func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {

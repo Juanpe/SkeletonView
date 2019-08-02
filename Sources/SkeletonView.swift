@@ -50,7 +50,11 @@ public extension UIView {
         recursiveLayoutSkeletonIfNeeded(root: self)
     }
     
-    func hideSkeleton(reloadDataAfter reload: Bool = true) {
+    func hideSkeleton(reloadDataAfter reload: Bool = true, transition:SkeletonTransitionStyle? = nil) {
+        if transition != nil && currentSkeletonConfig != nil {
+            currentSkeletonConfig?.transition = transition!
+            updateSkeleton(skeletonConfig: currentSkeletonConfig!)
+        }
         flowDelegate?.willBeginHidingSkeletons(withRootView: self)
         recursiveHideSkeleton(reloadDataAfter: reload, root: self)
     }

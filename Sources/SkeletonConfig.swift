@@ -3,7 +3,8 @@
 import UIKit
 
 /// Used to store all config needed to activate the skeleton layer.
-struct SkeletonConfig {
+struct SkeletonConfig: Hashable {
+    
     /// Type of skeleton layer
     let type: SkeletonType
     /// Colors used in skeleton layer
@@ -15,7 +16,25 @@ struct SkeletonConfig {
     /// Used to execute a custom animation
     let animation: SkeletonLayerAnimation?
     //  Transition type
-    var transition:SkeletonTransitionStyle
+    fileprivate var _transition:SkeletonTransitionStyle = .none
+    var transition:SkeletonTransitionStyle {
+        get {
+            return _transition
+        }
+        set {
+            switch newValue {
+            case .fade(duration: let duration):
+                if duration <= 0 {
+                    _transition = .none
+                }
+                else {
+                    _transition = newValue
+                }
+            default:
+                _transition = newValue
+            }
+        }
+    }
     
     
     init(
@@ -32,14 +51,14 @@ struct SkeletonConfig {
         self.animated = animated
         self.animation = animation
         self.transition = transition
+    }
+    
+    //Make equatable
+    static func == (lhs: SkeletonConfig, rhs: SkeletonConfig) -> Bool {
+        return lhs.type == rhs.type && lhs.colors == rhs.colors && lhs.gradientDirection == rhs.gradientDirection && lhs.animated == rhs.animated
+    }
+    
+    func hash(into hasher: inout Hasher) {
         
-        switch transition {
-        case .fade(duration: let duration):
-            if duration <= 0 {
-                self.transition = .none
-            }
-        default:
-            self.transition = transition
-        }
     }
 }
