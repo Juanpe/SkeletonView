@@ -17,12 +17,6 @@ extension UIView: PrepareForSkeleton {
         _ = startTransitionIfAvailable()
     }
     fileprivate func startTransitionIfAvailable() -> Bool {
-        
-        if self is UICollectionViewCell {
-            print("CollectionViewCell")
-        }
-        
-        
         if let transitionType = currentSkeletonConfig?.transition {
             switch transitionType {
             case .none:
