@@ -23,7 +23,7 @@ struct SkeletonConfig: Hashable {
         }
         set {
             switch newValue {
-            case .fade(duration: let duration):
+            case .fade(let duration):
                 if duration <= 0 {
                     _transition = .none
                 }

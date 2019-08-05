@@ -2,29 +2,19 @@
 
 import UIKit
 
-
-internal extension UIView {
+extension UIView {
     func fadeIn(duration:TimeInterval) {
-        fade(duration: duration, fadeIn: true)
+        fade(duration: duration, fadeIn: true) { }
     }
     
-    func fadeOut(duration:TimeInterval) {
-        fade(duration: duration, fadeIn: false)
-    }
-    
-    @objc fileprivate func fade(duration:TimeInterval, fadeIn: Bool) {
-        guard let sublayers = self.layer.sublayers else {
-            return
-        }
+    func fadeOut(duration:TimeInterval, _ completion: fadeOptionalVoidBlock? = nil){
+        (self as FadeProtocol).fade(duration: duration, fadeIn: false, { () -> () in
+            completion?()
+        })
         
-        for tempLayer in sublayers {
-            handleLayer(layer: tempLayer, fadeIn: fadeIn, duration: duration)
-        }
-        
-        fadeBackgroundColor(duration: duration, fadeIn: fadeIn)
     }
     
-    fileprivate func handleLayer(layer:CALayer, fadeIn:Bool, duration:TimeInterval) {
+    func handleLayer(layer:CALayer, fadeIn:Bool, duration:TimeInterval) {
         if layer.isSkeletonLayer {
             return
         }
@@ -36,7 +26,7 @@ internal extension UIView {
         }
     }
     
-    fileprivate func fadeLayer(layer:CALayer, duration:Double, fadeIn:Bool) {
+    func fadeLayer(layer:CALayer, duration:Double, fadeIn:Bool) {
         let animation = CABasicAnimation(keyPath: "opacity")
         animation.fromValue = fadeIn ? 0 : 1
         animation.toValue = fadeIn ? 1 : 0
@@ -46,44 +36,15 @@ internal extension UIView {
         layer.add(animation, forKey: nil)
     }
     
-    fileprivate func fadeBackgroundColor(duration:Double, fadeIn:Bool) {
+    func fadeBackgroundColor(duration:Double, fadeIn:Bool) {
         UIView.transition(with: self, duration: duration, options: .transitionCrossDissolve, animations: {
             self.backgroundColor = fadeIn ? self.viewState?.backgroundColor : .clear
         }, completion: nil)
     }
 }
 
-internal extension UILabel {
-    override func fade(duration: TimeInterval, fadeIn: Bool) {
-        UIView.transition(with: self, duration: duration, options: .curveEaseInOut, animations: {
-            self.textColor = fadeIn ? self.labelState?.textColor : .clear
-        }, completion: nil)
-        
-        fadeBackgroundColor(duration: duration, fadeIn: fadeIn)
-    }
-}
 
-internal extension UITextView {
-    override func fade(duration: TimeInterval, fadeIn: Bool) {
-        UIView.transition(with: self, duration: duration, options: .curveEaseInOut, animations: {
-            self.textColor = fadeIn ? self.textState?.textColor : .clear
-        }, completion: nil)
-        
-        fadeBackgroundColor(duration: duration, fadeIn: fadeIn)
-    }
-}
-
-internal extension UIImageView {
-    override func fade(duration: TimeInterval, fadeIn: Bool) {
-        UIView.transition(with: self, duration: duration, options: .transitionCrossDissolve, animations: {
-            self.image = fadeIn ? self.imageState?.image : nil
-        }, completion: nil)
-        
-        fadeBackgroundColor(duration: duration, fadeIn: fadeIn)
-    }
-}
-
-internal extension SkeletonLayer {
+extension SkeletonLayer {
     func fadeIn(duration:Double) {
         let animation = CABasicAnimation(keyPath: "opacity")
         animation.fromValue = 0

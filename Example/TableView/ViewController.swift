@@ -86,24 +86,24 @@ class ViewController: UIViewController {
         if type == .gradient {
             let gradient = SkeletonGradient(baseColor: colorSelectedView.backgroundColor!)
             if switchAnimated.isOn {
-                view.showAnimatedGradientSkeleton(usingGradient: gradient, transition: .fade(duration: fadeDurationStepper.value))
+                view.showAnimatedGradientSkeleton(usingGradient: gradient, transition: .fade(fadeDurationStepper.value))
             }
             else {
-                view.showGradientSkeleton(usingGradient: gradient, transition: .fade(duration: fadeDurationStepper.value))
+                view.showGradientSkeleton(usingGradient: gradient, transition: .fade(fadeDurationStepper.value))
             }
         }
         else {
             if switchAnimated.isOn {
-                view.showAnimatedSkeleton(transition: .fade(duration: fadeDurationStepper.value))
+                view.showAnimatedSkeleton(transition: .fade(fadeDurationStepper.value))
             }
             else {
-                view.showSkeleton(transition: .fade(duration: fadeDurationStepper.value))
+                view.showSkeleton(transition: .fade(fadeDurationStepper.value))
             }
         }
     }
     
     func hideSkeleton() {
-        view.hideSkeleton(transition: .fade(duration:fadeDurationStepper.value))
+        view.hideSkeleton(transition: .fade(fadeDurationStepper.value))
     }
     
     func refreshSkeleton() {

@@ -5,5 +5,5 @@ import UIKit
 
 public enum SkeletonTransitionStyle {
     case none
-    case fade(duration: TimeInterval)
+    case fade(_ duration: TimeInterval)
 }

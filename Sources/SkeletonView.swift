@@ -50,7 +50,7 @@ public extension UIView {
         recursiveLayoutSkeletonIfNeeded(root: self)
     }
     
-    func hideSkeleton(reloadDataAfter reload: Bool = true, transition:SkeletonTransitionStyle? = nil) {
+    func hideSkeleton(reloadDataAfter reload: Bool = true, transition:SkeletonTransitionStyle? = .none) {
         if transition != nil && currentSkeletonConfig != nil {
             currentSkeletonConfig?.transition = transition!
             updateSkeleton(skeletonConfig: currentSkeletonConfig!)
@@ -104,7 +104,7 @@ extension UIView {
         guard !self.isSkeletonActive else { return }
         self.isUserInteractionEnabled = false
         self.saveViewState()
-        (self as PrepareForSkeleton).prepareViewForSkeleton()
+        self.prepareViewForSkeleton()
         self.addSkeletonLayer(skeletonConfig: config)
     }
 
@@ -235,7 +235,9 @@ extension UIView {
         switch transitionType {
         case .none:
             removeSkeletonLayerFinalize()
-        case .fade(duration: let duration):
+            recover()
+        case .fade(let duration):
+            fadeIn(duration: duration)
             skeletonLayer.fadeOut(duration: duration) {
                 self.removeSkeletonLayerFinalize()
             }
@@ -250,6 +252,20 @@ extension UIView {
         self.skeletonLayer = nil
         self.status = .off
         self.currentSkeletonConfig = nil
+    }
+    
+    @objc fileprivate func recover() {}
+}
+
+extension UILabel {
+    override func recover() {
+        textColor = labelState?.textColor
+    }
+}
+
+extension UITextView {
+    override func recover() {
+        textColor = textState?.textColor
     }
 }
 

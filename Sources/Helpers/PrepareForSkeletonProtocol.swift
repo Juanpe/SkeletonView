@@ -8,54 +8,60 @@
 
 import UIKit
 
-protocol PrepareForSkeleton {
-    func prepareViewForSkeleton() 
-}
+fileprivate typealias TransitionCompletionBlock = (_ performedTransition:Bool) -> Void
 
-extension UIView: PrepareForSkeleton {
+extension UIView {
     @objc func prepareViewForSkeleton() {
-        _ = startTransitionIfAvailable()
+        startTransition { (_) in }
     }
-    fileprivate func startTransitionIfAvailable() -> Bool {
-        if let transitionType = currentSkeletonConfig?.transition {
-            switch transitionType {
-            case .none:
-                backgroundColor = .clear
-                return false
-            case .fade(duration: let duration):
-                fadeOut(duration: duration)
-            }
-            return true
+    
+    fileprivate func startTransition(_ completion: TransitionCompletionBlock? = nil) {
+        guard let transitionType = currentSkeletonConfig?.transition else {
+            backgroundColor = .clear
+            completion?(false)
+            return
         }
-        return false
+        
+        switch transitionType {
+        case .none:
+            backgroundColor = .clear
+            completion?(false)
+        case .fade(let duration):
+            fadeOut(duration: duration) { () -> () in
+                completion?(true)
+            }
+        }
     }
 }
 
 extension UILabel {
     override func prepareViewForSkeleton() {
-        if startTransitionIfAvailable() == false {
-            textColor = .clear
-            backgroundColor = .clear
-            resignFirstResponder()
+        startTransition { (performedTransition) in
+            if !performedTransition {
+                self.textColor = .clear
+            }
+            self.resignFirstResponder()
         }
     }
 }
 
 extension UITextView {
     override func prepareViewForSkeleton() {
-        if startTransitionIfAvailable() == false {
-            textColor = .clear
-            backgroundColor = .clear
-            resignFirstResponder()
+        startTransition { (performedTransition) in
+            if !performedTransition {
+                self.textColor = .clear
+            }
+            self.resignFirstResponder()
         }
     }
 }
 
 extension UIImageView {
     override func prepareViewForSkeleton() {
-        if startTransitionIfAvailable() == false {
-            backgroundColor = .clear
-            image = nil
+        startTransition { (performedTransition) in
+            if !performedTransition {
+                self.image = nil
+            }
         }
     }
 }

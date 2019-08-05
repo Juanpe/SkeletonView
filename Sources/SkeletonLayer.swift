@@ -54,7 +54,7 @@ struct SkeletonLayer {
         addMultilinesIfNeeded()
         self.maskLayer.tint(withColors: colors)
         
-        maskLayer.setValue(true, forUndefinedKey: "isSkeletonLayer")
+        maskLayer.name = "isSkeletonLayer"
     }
     
     func update(usingColors colors: [UIColor]) {
@@ -97,10 +97,9 @@ extension SkeletonLayer {
 }
 
 extension CALayer {
-    
     var isSkeletonLayer:Bool {
         get {
-            return value(forKey: "isSkeletonLayer") as? Bool == true
+            return name == "isSkeletonLayer"
         }
     }
 }
