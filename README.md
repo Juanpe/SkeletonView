@@ -393,12 +393,13 @@ Exist another way to create sliding animations, just using this shortcut:
 
 ### 🏄 Transitions
 
-```SkeletonView``` has build-in transition to *show* or *hide* the skeletons.
+```SkeletonView``` has build-in transitions to **show** or **hide** the skeletons in a *smoother* way 🤙
 
-To use the transition, simply add the ```transition``` parameter to your ```showSkeleton()``` function with the transition time, like this:
+To use the transition, simply add the ```transition``` parameter to your ```showSkeleton()``` or ```hideSkeleton``` function with the transition time, like this:
 
 ```swift
-view.showSkeleton(transition: .fade(1))       //Fade transition with 1 secound fade time
+view.showSkeleton(transition: .fade(1))     //Show skeleton fade transition with 1 secound fade time
+view.hideSkeleton(transition: .fade(1))     //Hide skeleton fade transition with 1 secound fade time
 
 ```
 
