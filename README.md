@@ -390,6 +390,25 @@ view.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
 Exist another way to create sliding animations, just using this shortcut:
 >>```let animation = GradientDirection.leftToRight.slidingAnimation()```
 
+
+### 🏄 Transitions
+
+```SkeletonView``` has build-in transition to *show* or *hide* the skeletons.
+
+To use the transition, simply add the ```transition``` parameter to your ```showSkeleton()``` function with the transition time, like this:
+
+```swift
+view.showSkeleton(transition: .fade(1))       //Fade transition with 1 secound fade time
+
+```
+
+**Preview**
+
+|  No transition | fade at 1 secound
+|------- | -------
+| ![](Assets/skeleton_transition_nofade.gif) | ![](Assets/skeleton_transition_fade.gif)
+
+
 ### 👨‍👧‍👦 Hierarchy
 
 Since ```SkeletonView``` is recursive, and we want skeleton to be very efficient, we want to stop recursion as soon as possible. For this reason, you must set the container view as `Skeletonable`, because Skeleton will stop looking for `skeletonable` subviews as soon as a view is not Skeletonable, breaking then the recursion.
@@ -451,8 +470,8 @@ Coming soon...😅
 * [x] Add recovery state
 * [x] Custom default appearance
 * [x] Debug mode
+* [x] Add animations when it shows/hides the skeletons
 * [ ] Custom collections compatible
-* [ ] Add animations when it shows/hides the skeletons
 * [ ] MacOS and WatchOS compatible
 
 ## ❤️ Contributing
