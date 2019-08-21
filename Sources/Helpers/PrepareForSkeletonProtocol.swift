@@ -8,26 +8,60 @@
 
 import UIKit
 
-protocol PrepareForSkeleton {
-    func prepareViewForSkeleton() 
-}
+fileprivate typealias TransitionCompletionBlock = (_ performedTransition:Bool) -> Void
 
-extension UILabel: PrepareForSkeleton {
-    func prepareViewForSkeleton() {
-        text = " "
-        resignFirstResponder()
+extension UIView {
+    @objc func prepareViewForSkeleton() {
+        startTransition { (_) in }
+    }
+    
+    fileprivate func startTransition(_ completion: TransitionCompletionBlock? = nil) {
+        guard let transitionType = currentSkeletonConfig?.transition else {
+            backgroundColor = .clear
+            completion?(false)
+            return
+        }
+        
+        switch transitionType {
+        case .none:
+            backgroundColor = .clear
+            completion?(false)
+        case .fade(let duration):
+            fadeOut(duration: duration) { () -> () in
+                completion?(true)
+            }
+        }
     }
 }
 
-extension UITextView: PrepareForSkeleton {
-    func prepareViewForSkeleton() {
-        text = " "
-        resignFirstResponder()
+extension UILabel {
+    override func prepareViewForSkeleton() {
+        startTransition { (performedTransition) in
+            if !performedTransition {
+                self.textColor = .clear
+            }
+            self.resignFirstResponder()
+        }
     }
 }
 
-extension UIImageView: PrepareForSkeleton {
-    func prepareViewForSkeleton() {
-        image = nil
+extension UITextView {
+    override func prepareViewForSkeleton() {
+        startTransition { (performedTransition) in
+            if !performedTransition {
+                self.textColor = .clear
+            }
+            self.resignFirstResponder()
+        }
+    }
+}
+
+extension UIImageView {
+    override func prepareViewForSkeleton() {
+        startTransition { (performedTransition) in
+            if !performedTransition {
+                self.image = nil
+            }
+        }
     }
 }

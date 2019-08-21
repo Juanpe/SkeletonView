@@ -36,6 +36,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var switchAnimated: UISwitch!
     @IBOutlet weak var skeletonTypeSelector: UISegmentedControl!
+    @IBOutlet weak var showOrHideSkeletonButton: UIButton!
+    @IBOutlet weak var fadeDurationLabel: UILabel!
+    @IBOutlet weak var fadeDurationStepper: UIStepper!
     
     var type: SkeletonType {
         return skeletonTypeSelector.selectedSegmentIndex == 0 ? .solid : .gradient
@@ -65,6 +68,23 @@ class ViewController: UIViewController {
         showAlertPicker()
     }
     
+    @IBAction func showOrHideSkeleton(_ sender: Any) {
+        showOrHideSkeletonButton.setTitle((view.isSkeletonActive ? "Show skeleton" : "Hide skeleton"), for: .normal)
+        view.isSkeletonActive ? hideSkeleton() : showSkeleton()
+    }
+    
+    @IBAction func fadeDurationStepperAction(_ sender: Any) {
+        fadeDurationLabel.text = "Fade duration: \(fadeDurationStepper.value) sec"
+    }
+    
+    func showSkeleton() {
+        refreshSkeleton()
+    }
+    
+    func hideSkeleton() {
+        view.hideSkeleton(transition: .fade(fadeDurationStepper.value))
+    }
+    
     func refreshSkeleton() {
         self.view.hideSkeleton()
         if type == .gradient { showGradientSkeleton() }
@@ -73,18 +93,18 @@ class ViewController: UIViewController {
     
     func showSolidSkeleton() {
         if switchAnimated.isOn {
-            view.showAnimatedSkeleton(usingColor: colorSelectedView.backgroundColor!)
+            view.showAnimatedSkeleton(usingColor: colorSelectedView.backgroundColor!, transition: .fade(fadeDurationStepper.value))
         } else {
-            view.showSkeleton(usingColor: colorSelectedView.backgroundColor!)
+            view.showSkeleton(usingColor: colorSelectedView.backgroundColor!, transition: .fade(fadeDurationStepper.value))
         }
     }
     
     func showGradientSkeleton() {
         let gradient = SkeletonGradient(baseColor: colorSelectedView.backgroundColor!)
         if switchAnimated.isOn {
-            view.showAnimatedGradientSkeleton(usingGradient: gradient)
+            view.showAnimatedGradientSkeleton(usingGradient: gradient, transition: .fade(fadeDurationStepper.value))
         } else {
-            view.showGradientSkeleton(usingGradient: gradient)
+            view.showGradientSkeleton(usingGradient: gradient, transition: .fade(fadeDurationStepper.value))
         }
     }
     
@@ -162,7 +182,7 @@ extension ViewController: SkeletonCollectionViewDataSource {
     // MARK: - UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
