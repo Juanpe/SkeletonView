@@ -1,5 +1,6 @@
 {
   "SWIFT": {
-    "TOO_MANY_FUNCTIONS": [50, 100, 150, 200]
+    "TOO_MANY_FUNCTIONS": [50, 100, 150, 200],
+    "TOTAL_LOC": [200, 400, 500, 600]
   }
 }
