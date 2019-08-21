@@ -53,6 +53,20 @@ struct SkeletonLayer {
         self.maskLayer.bounds = holder.maxBoundsEstimated
         addMultilinesIfNeeded()
         self.maskLayer.tint(withColors: colors)
+        
+        maskLayer.name = "isSkeletonLayer"
+    }
+    
+    func update(usingColors colors: [UIColor]) {
+        layoutIfNeeded()
+        self.maskLayer.tint(withColors: colors)
+    }
+
+    func layoutIfNeeded() {
+        if let bounds = self.holder?.maxBoundsEstimated {
+            self.maskLayer.bounds = bounds
+        }
+        updateMultilinesIfNeeded()
     }
     
     func removeLayer() {
@@ -62,6 +76,11 @@ struct SkeletonLayer {
     func addMultilinesIfNeeded() {
         guard let multiLineView = holder as? ContainsMultilineText else { return }
         maskLayer.addMultilinesLayers(lines: multiLineView.numLines, type: type, lastLineFillPercent: multiLineView.lastLineFillingPercent, multilineCornerRadius: multiLineView.multilineCornerRadius)
+    }
+
+    func updateMultilinesIfNeeded() {
+        guard let multiLineView = holder as? ContainsMultilineText else { return }
+        maskLayer.updateMultilinesLayers(lastLineFillPercent: multiLineView.lastLineFillingPercent)
     }
 }
 
@@ -74,5 +93,13 @@ extension SkeletonLayer {
     
     func stopAnimation() {
         contentLayer.stopAnimation(forKey: "skeletonAnimation")
+    }
+}
+
+extension CALayer {
+    var isSkeletonLayer:Bool {
+        get {
+            return name == "isSkeletonLayer"
+        }
     }
 }

@@ -29,7 +29,8 @@
 
 🌎  Translations: </br>
 [🇨🇳](https://github.com/Juanpe/SkeletonView/blob/master/README_zh.md) by [@WhatsXie](https://twitter.com/WhatsXie) </br>
-[🇧🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_pt-br.md) by [@brunomunizaf](https://twitter.com/brunomuniz_af)
+[🇧🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_pt-br.md) by [@brunomunizaf](https://twitter.com/brunomuniz_af) </br>
+[🇰🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_ko.md) by [@techinpark](https://twitter.com/techinpark)
 
 Today almost all apps have async processes, such as Api requests, long running processes, etc. And while the processes are working, usually developers place a loading view to show users that something is going on.
 
@@ -98,7 +99,7 @@ Once you have your Swift package set up, adding `SkeletonView` as a dependency i
 
 ```swift
   dependencies: [
-    .package(url: "https://github.com/Juanpe/SkeletonView.git", from: "1.6")
+    .package(url: "https://github.com/Juanpe/SkeletonView.git", from: "1.7")
   ]
 ```
 
@@ -167,6 +168,31 @@ avatarImageView.isSkeletonable = true
 
 > **IMPORTANT!**
 >>```SkeletonView``` is recursive, so if you want show the skeleton in all skeletonable views, you only need to call the show method in the main container view. For example, with UIViewControllers
+
+### Extra
+
+#### Skeleton views layout
+
+Sometimes skeleton layout may not fit your layout because the parent view bounds have changed. For example, rotating the device.
+
+You can relayout the skeleton views like so:
+
+```swift
+override func viewDidLayoutSubviews() {
+    view.layoutSkeletonIfNeeded()
+}
+```
+
+#### Update skeleton configuration
+
+You can change the skeleton configuration at any time like its colour, animation, etc. with the following methods:
+
+```swift
+(1) view.updateSkeleton()                 // Solid
+(2) view.updateGradientSkeleton()         // Gradient
+(3) view.updateAnimatedSkeleton()         // Solid animated
+(4) view.updateAnimatedGradientSkeleton() // Gradient animated
+```
 
 ### 🌿 Collections
 
