@@ -1,0 +1,5 @@
+{
+  "SWIFT": {
+    "TOO_MANY_FUNCTIONS": [50, 100, 150, 200]
+  }
+}
