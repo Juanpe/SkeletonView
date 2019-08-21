@@ -398,14 +398,14 @@ Exist another way to create sliding animations, just using this shortcut:
 To use the transition, simply add the ```transition``` parameter to your ```showSkeleton()``` or ```hideSkeleton()``` function with the transition time, like this:
 
 ```swift
-view.showSkeleton(transition: .fade(1))     //Show skeleton fade transition with 1 secound fade time
-view.hideSkeleton(transition: .fade(1))     //Hide skeleton fade transition with 1 secound fade time
+view.showSkeleton(transition: .fade(1))     //Show skeleton fade transition with 1 second fade time
+view.hideSkeleton(transition: .fade(1))     //Hide skeleton fade transition with 1 second fade time
 
 ```
 
 **Preview**
 
-|  No transition | fade at 1 secound
+|  No transition | fade at 1 second
 |------- | -------
 | ![](Assets/skeleton_transition_nofade.gif) | ![](Assets/skeleton_transition_fade.gif)
 
