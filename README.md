@@ -99,7 +99,7 @@ Once you have your Swift package set up, adding `SkeletonView` as a dependency i
 
 ```swift
   dependencies: [
-    .package(url: "https://github.com/Juanpe/SkeletonView.git", from: "1.7")
+    .package(url: "https://github.com/Juanpe/SkeletonView.git", from: "1.7.0")
   ]
 ```
 
