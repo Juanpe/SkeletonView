@@ -50,6 +50,8 @@ Enjoy it! 🙂
   * [Custom colors](#-custom-colors)
   * [Appearance](#-appearance)
   * [Custom animations](#-custom-animations)
+  * [Transitions animations](#-custom-animations)
+  * [Transitions](#-transitions)
   * [Hierarchy](#-hierarchy)
   * [Debug](#-debug)
 * [Documentation](#-documentation)
@@ -390,6 +392,27 @@ view.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
 Exist another way to create sliding animations, just using this shortcut:
 >>```let animation = GradientDirection.leftToRight.slidingAnimation()```
 
+
+
+### 🏄 Transitions
+
+```SkeletonView``` has build-in transitions to **show** or **hide** the skeletons in a *smoother* way 🤙
+
+To use the transition, simply add the ```transition``` parameter to your ```showSkeleton()``` or ```hideSkeleton()``` function with the transition time, like this:
+
+```swift
+view.showSkeleton(transition: .fade(1))     //Show skeleton fade transition with 1 second fade time
+view.hideSkeleton(transition: .fade(1))     //Hide skeleton fade transition with 1 second fade time
+
+```
+
+**Preview**
+
+|  No transition | fade at 1 second
+|------- | -------
+| ![](Assets/skeleton_transition_nofade.gif) | ![](Assets/skeleton_transition_fade.gif)
+
+
 ### 👨‍👧‍👦 Hierarchy
 
 Since ```SkeletonView``` is recursive, and we want skeleton to be very efficient, we want to stop recursion as soon as possible. For this reason, you must set the container view as `Skeletonable`, because Skeleton will stop looking for `skeletonable` subviews as soon as a view is not Skeletonable, breaking then the recursion.
@@ -451,8 +474,8 @@ Coming soon...😅
 * [x] Add recovery state
 * [x] Custom default appearance
 * [x] Debug mode
+* [x] Add animations when it shows/hides the skeletons
 * [ ] Custom collections compatible
-* [ ] Add animations when it shows/hides the skeletons
 * [ ] MacOS and WatchOS compatible
 
 ## ❤️ Contributing
