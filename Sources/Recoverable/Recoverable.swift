@@ -26,11 +26,13 @@ extension UIView: Recoverable {
     @objc func recoverViewState(forced: Bool) {
         guard let safeViewState = viewState else { return }
         
-        layer.cornerRadius = safeViewState.cornerRadius
-        layer.masksToBounds = safeViewState.clipToBounds
-        
-        if safeViewState.backgroundColor != backgroundColor || forced {
-            backgroundColor = safeViewState.backgroundColor
+        startTransition { [weak self] in
+            self?.layer.cornerRadius = safeViewState.cornerRadius
+            self?.layer.masksToBounds = safeViewState.clipToBounds
+            
+            if safeViewState.backgroundColor != self?.backgroundColor || forced {
+                self?.backgroundColor = safeViewState.backgroundColor
+            }
         }
     }
 }
@@ -45,6 +47,14 @@ extension UILabel{
         super.saveViewState()
         labelState = RecoverableTextViewState(view: self)
     }
+    
+    override func recoverViewState(forced: Bool) {
+        super.recoverViewState(forced: forced)
+        startTransition { [weak self] in
+            self?.textColor = self?.labelState?.textColor
+            self?.text = self?.labelState?.text
+        }
+    }
 }
 
 extension UITextView{
@@ -56,6 +66,14 @@ extension UITextView{
     override func saveViewState() {
         super.saveViewState()
         textState = RecoverableTextViewState(view: self)
+    }
+    
+    override func recoverViewState(forced: Bool) {
+        super.recoverViewState(forced: forced)
+        startTransition { [weak self] in
+            self?.textColor = self?.textState?.textColor
+            self?.text = self?.textState?.text
+        }
     }
 }
 
@@ -72,6 +90,8 @@ extension UIImageView {
     
     override func recoverViewState(forced: Bool) {
         super.recoverViewState(forced: forced)
-        image = image == nil || forced ? imageState?.image : image
+        startTransition { [weak self] in
+            self?.image = self?.image == nil || forced ? self?.imageState?.image : self?.image
+        }
     }
 }

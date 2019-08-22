@@ -5,7 +5,6 @@ import UIKit
 /// Object that facilitates the creation of skeleton layers,
 /// based on the builder pattern
 class SkeletonLayerBuilder {
-
     var skeletonType: SkeletonType?
     var colors: [UIColor] = []
     var holder: UIView?

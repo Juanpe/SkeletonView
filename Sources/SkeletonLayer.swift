@@ -34,7 +34,6 @@ public enum SkeletonType {
 }
 
 struct SkeletonLayer {
-    
     private var maskLayer: CALayer
     private weak var holder: UIView?
     
@@ -53,24 +52,39 @@ struct SkeletonLayer {
         self.maskLayer.bounds = holder.maxBoundsEstimated
         addMultilinesIfNeeded()
         self.maskLayer.tint(withColors: colors)
-        
-        maskLayer.name = "isSkeletonLayer"
     }
     
     func update(usingColors colors: [UIColor]) {
         layoutIfNeeded()
-        self.maskLayer.tint(withColors: colors)
+        maskLayer.tint(withColors: colors)
     }
 
     func layoutIfNeeded() {
-        if let bounds = self.holder?.maxBoundsEstimated {
-            self.maskLayer.bounds = bounds
+        if let bounds = holder?.maxBoundsEstimated {
+            maskLayer.bounds = bounds
         }
         updateMultilinesIfNeeded()
     }
     
-    func removeLayer() {
-        maskLayer.removeFromSuperlayer()
+    func removeLayer(transition: SkeletonTransitionStyle, completion: (() -> Void)? = nil) {
+        switch transition {
+        case .none:
+            maskLayer.removeFromSuperlayer()
+        case .fade(let duration):
+            CATransaction.begin()
+            let animation = CABasicAnimation(keyPath: "opacity")
+            animation.fromValue = 1
+            animation.toValue = 0
+            animation.duration = duration
+            maskLayer.opacity = 0
+            CATransaction.setCompletionBlock {
+                self.maskLayer.removeFromSuperlayer()
+                completion?()
+            }
+
+            maskLayer.add(animation, forKey: nil)
+            CATransaction.commit()
+        }
     }
     
     func addMultilinesIfNeeded() {
@@ -85,7 +99,6 @@ struct SkeletonLayer {
 }
 
 extension SkeletonLayer {
-
     func start(_ anim: SkeletonLayerAnimation? = nil) {
         let animation = anim ?? type.layerAnimation
         contentLayer.playAnimation(animation, key: "skeletonAnimation")
@@ -93,13 +106,5 @@ extension SkeletonLayer {
     
     func stopAnimation() {
         contentLayer.stopAnimation(forKey: "skeletonAnimation")
-    }
-}
-
-extension CALayer {
-    var isSkeletonLayer:Bool {
-        get {
-            return name == "isSkeletonLayer"
-        }
     }
 }

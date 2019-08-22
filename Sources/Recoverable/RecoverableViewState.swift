@@ -22,7 +22,7 @@ struct RecoverableViewState {
 
 struct RecoverableTextViewState {
     var text: String?
-    var textColor:UIColor?
+    var textColor: UIColor?
     
     init(view: UILabel) {
         self.textColor = view.textColor

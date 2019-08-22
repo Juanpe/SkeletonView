@@ -2,8 +2,7 @@
 
 import UIKit
 
-
-public enum SkeletonTransitionStyle {
+public enum SkeletonTransitionStyle: Equatable {
     case none
-    case fade(_ duration: TimeInterval)
+    case fade(TimeInterval)
 }
