@@ -28,11 +28,11 @@ class SkeletonCollectionDataSource: NSObject {
 extension SkeletonCollectionDataSource: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return originalTableViewDataSource?.numSections(in:tableView) ?? 0
+        return originalTableViewDataSource?.numSections(in: tableView) ?? 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return originalTableViewDataSource?.collectionSkeletonView(tableView, numberOfRowsInSection:section) ?? 0
+        return originalTableViewDataSource?.collectionSkeletonView(tableView, numberOfRowsInSection: section) ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

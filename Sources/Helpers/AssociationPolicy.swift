@@ -20,7 +20,6 @@ protocol AssociatedObjects: class { }
 
 // transparent wrappers
 extension AssociatedObjects {
-
     /// wrapper around `objc_getAssociatedObject`
     func ao_get(pkey: UnsafeRawPointer) -> Any? {
         return objc_getAssociatedObject(self, pkey)

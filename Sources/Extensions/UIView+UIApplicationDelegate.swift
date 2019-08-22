@@ -9,7 +9,6 @@
 import UIKit
 
 extension UIView {
-    
     enum Constants {
         static let becomeActiveNotification = UIApplication.didBecomeActiveNotification
         static let enterForegroundNotification = UIApplication.didEnterBackgroundNotification

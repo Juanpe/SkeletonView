@@ -3,7 +3,6 @@
 import Foundation
 
 extension Int {
-    
     var whitespace: String {
         return whitespaces
     }

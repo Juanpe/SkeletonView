@@ -10,7 +10,6 @@ import UIKit
 import SkeletonView
 
 class ViewController: UIViewController {
-    
     @IBOutlet weak var tableview: UITableView! {
         didSet {
             tableview.rowHeight = UITableView.automaticDimension
@@ -36,8 +35,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var switchAnimated: UISwitch!
     @IBOutlet weak var skeletonTypeSelector: UISegmentedControl!
     @IBOutlet weak var showOrHideSkeletonButton: UIButton!
-    @IBOutlet weak var fadeDurationLabel: UILabel!
-    @IBOutlet weak var fadeDurationStepper: UIStepper!
+    @IBOutlet weak var transitionDurationLabel: UILabel!
+    @IBOutlet weak var transitionDurationStepper: UIStepper!
     
     var type: SkeletonType {
         return skeletonTypeSelector.selectedSegmentIndex == 0 ? .solid : .gradient
@@ -78,32 +77,32 @@ class ViewController: UIViewController {
         view.isSkeletonActive ? hideSkeleton() : showSkeleton()
     }
     
-    @IBAction func fadeDurationStepperAction(_ sender: Any) {
-        fadeDurationLabel.text = "Fade duration: \(fadeDurationStepper.value) sec"
+    @IBAction func transitionDurationStepperAction(_ sender: Any) {
+        transitionDurationLabel.text = "Transition duration: \(transitionDurationStepper.value) sec"
     }
     
     func showSkeleton() {
         if type == .gradient {
             let gradient = SkeletonGradient(baseColor: colorSelectedView.backgroundColor!)
             if switchAnimated.isOn {
-                view.showAnimatedGradientSkeleton(usingGradient: gradient, transition: .fade(fadeDurationStepper.value))
+                view.showAnimatedGradientSkeleton(usingGradient: gradient, transition: .crossDissolve(transitionDurationStepper.value))
             }
             else {
-                view.showGradientSkeleton(usingGradient: gradient, transition: .fade(fadeDurationStepper.value))
+                view.showGradientSkeleton(usingGradient: gradient, transition: .crossDissolve(transitionDurationStepper.value))
             }
         }
         else {
             if switchAnimated.isOn {
-                view.showAnimatedSkeleton(transition: .fade(fadeDurationStepper.value))
+                view.showAnimatedSkeleton(transition: .crossDissolve(transitionDurationStepper.value))
             }
             else {
-                view.showSkeleton(transition: .fade(fadeDurationStepper.value))
+                view.showSkeleton(transition: .crossDissolve(transitionDurationStepper.value))
             }
         }
     }
     
     func hideSkeleton() {
-        view.hideSkeleton(transition: .fade(fadeDurationStepper.value))
+        view.hideSkeleton(transition: .crossDissolve(transitionDurationStepper.value))
     }
     
     func refreshSkeleton() {
@@ -129,7 +128,6 @@ class ViewController: UIViewController {
     }
     
     func showAlertPicker() {
-       
         let alertView = UIAlertController(title: "Select color", message: "\n\n\n\n\n\n", preferredStyle: .alert)
         
         let pickerView = UIPickerView(frame: CGRect(x: 0, y: 50, width: 260, height: 115))
@@ -155,7 +153,6 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -170,7 +167,6 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 }
 
 extension ViewController: SkeletonTableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }

@@ -31,7 +31,6 @@ extension CAGradientLayer {
 
 // MARK: Skeleton sublayers
 extension CALayer {
-    
     static let skeletonSubLayersName = "SkeletonSubLayersName"
 
     var skeletonSublayers: [CALayer] {
@@ -93,7 +92,6 @@ extension CALayer {
 
 // MARK: Animations
 public extension CALayer {
-
     var pulse: CAAnimation {
         let pulseAnimation = CABasicAnimation(keyPath: #keyPath(CALayer.backgroundColor))
         pulseAnimation.fromValue = backgroundColor
@@ -138,4 +136,19 @@ public extension CALayer {
             $0.stopAnimation(forKey: key)
         }
     }
+}
+
+extension CALayer {
+	func setOpacity(from: Int, to: Int, duration: TimeInterval, completion: (() -> Void)?) {
+		CATransaction.begin()
+		let animation = CABasicAnimation(keyPath: #keyPath(CALayer.opacity))
+		animation.fromValue = from
+		animation.toValue = to
+		animation.duration = duration
+		animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+//		layer.contentLayer.opacity = 1
+		CATransaction.setCompletionBlock(completion)
+		add(animation, forKey: "setOpacityAnimation")
+		CATransaction.commit()
+	}
 }

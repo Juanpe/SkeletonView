@@ -3,7 +3,6 @@
 import UIKit
 
 public extension UIView {
-    
     @IBInspectable
     var isSkeletonable: Bool {
         get { return skeletonable }

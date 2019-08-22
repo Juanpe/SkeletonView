@@ -197,7 +197,7 @@
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="5" stepValue="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="l4N-LL-ZrJ">
                                         <rect key="frame" x="263" y="123" width="94" height="29"/>
                                         <connections>
-                                            <action selector="fadeDurationStepperAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="gy5-TC-fZd"/>
+                                            <action selector="transitionDurationStepperAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="jPN-df-fNs"/>
                                         </connections>
                                     </stepper>
                                 </subviews>
@@ -248,12 +248,12 @@
                     <connections>
                         <outlet property="avatarImage" destination="nMj-pU-5wJ" id="9fa-Z7-vYi"/>
                         <outlet property="colorSelectedView" destination="iGp-rp-t1d" id="0Zm-9d-jRU"/>
-                        <outlet property="fadeDurationLabel" destination="mrw-PM-jJJ" id="Ddp-kT-iX9"/>
-                        <outlet property="fadeDurationStepper" destination="l4N-LL-ZrJ" id="Vk6-eL-CGC"/>
                         <outlet property="showOrHideSkeletonButton" destination="Tdu-YQ-saq" id="gkm-mB-zYD"/>
                         <outlet property="skeletonTypeSelector" destination="xOL-Sq-r4i" id="yTr-8L-I4Y"/>
                         <outlet property="switchAnimated" destination="vz0-qg-GcZ" id="d2R-8x-lRb"/>
                         <outlet property="tableview" destination="UCB-SP-lQk" id="XV0-KX-lAN"/>
+                        <outlet property="transitionDurationLabel" destination="mrw-PM-jJJ" id="BVK-Kl-5Q3"/>
+                        <outlet property="transitionDurationStepper" destination="l4N-LL-ZrJ" id="OJr-Ul-7XR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -10,7 +10,6 @@ import UIKit
 
 // MARK: Frame
 extension UIView {
-    
     var maxBoundsEstimated: CGRect {
         if let parentStackView = (superview as? UIStackView) {
             var origin: CGPoint = .zero
