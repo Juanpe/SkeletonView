@@ -25,7 +25,6 @@ func skeletonLog(_ message: String) {
 }
 
 extension UIView {
-
     public var skeletonDescription: String {
         var description = "<\(type(of: self)): \(Unmanaged.passUnretained(self).toOpaque())"
         let subSkeletons = subviewsSkeletonables

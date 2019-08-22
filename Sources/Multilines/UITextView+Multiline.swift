@@ -3,7 +3,6 @@
 import UIKit
 
 public extension UITextView {
-
     @IBInspectable
     var lastLineFillPercent: Int {
         get { return lastLineFillingPercent }

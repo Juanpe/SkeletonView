@@ -17,7 +17,6 @@ public protocol SkeletonCollectionViewDataSource: UICollectionViewDataSource {
 }
 
 public extension SkeletonCollectionViewDataSource {
-    
     func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return skeletonView.estimatedNumberOfRows
     }

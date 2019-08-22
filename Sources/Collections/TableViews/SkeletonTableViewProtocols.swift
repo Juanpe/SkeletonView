@@ -15,7 +15,6 @@ public protocol SkeletonTableViewDataSource: UITableViewDataSource {
 }
 
 public extension SkeletonTableViewDataSource {
-    
     func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return skeletonView.estimatedNumberOfRows
     }
@@ -30,5 +29,4 @@ public extension SkeletonTableViewDataSource {
     }
 }
 
-public protocol SkeletonTableViewDelegate: UITableViewDelegate {
-}
+public protocol SkeletonTableViewDelegate: UITableViewDelegate { }

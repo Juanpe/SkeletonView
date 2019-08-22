@@ -9,8 +9,7 @@
 import UIKit
 
 public struct SkeletonGradient {
-    
-    private var gradientColors: [UIColor]
+    private let gradientColors: [UIColor]
     
     public var colors: [UIColor] {
         return gradientColors

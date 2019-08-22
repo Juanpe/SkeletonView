@@ -9,7 +9,6 @@
 import UIKit
 
 extension UITableView: CollectionSkeleton {
-    
     var estimatedNumberOfRows: Int {
         return Int(ceil(frame.height/rowHeight))
     }
