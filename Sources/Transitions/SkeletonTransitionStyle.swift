@@ -4,5 +4,5 @@ import UIKit
 
 public enum SkeletonTransitionStyle: Equatable {
     case none
-    case fade(TimeInterval)
+    case crossDissolve(TimeInterval)
 }

@@ -70,20 +70,11 @@ struct SkeletonLayer {
         switch transition {
         case .none:
             maskLayer.removeFromSuperlayer()
-        case .fade(let duration):
-            CATransaction.begin()
-            let animation = CABasicAnimation(keyPath: "opacity")
-            animation.fromValue = 1
-            animation.toValue = 0
-            animation.duration = duration
-            maskLayer.opacity = 0
-            CATransaction.setCompletionBlock {
-                self.maskLayer.removeFromSuperlayer()
-                completion?()
-            }
-
-            maskLayer.add(animation, forKey: nil)
-            CATransaction.commit()
+        case .crossDissolve(let duration):
+			maskLayer.setOpacity(from: 1, to: 0, duration: duration) {
+				self.maskLayer.removeFromSuperlayer()
+				completion?()
+			}
         }
     }
     

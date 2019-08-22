@@ -8,35 +8,26 @@ extension CALayer {
         switch transition {
         case .none:
             break
-        case .fade(let duration):
-            CATransaction.begin()
-            let animation = CABasicAnimation(keyPath: "opacity")
-            animation.fromValue = 0
-            animation.toValue = 1
-            animation.duration = duration
-            layer.contentLayer.opacity = 1
-            CATransaction.setCompletionBlock(completion)
-            
-            layer.contentLayer.add(animation, forKey: nil)
-            CATransaction.commit()
+        case .crossDissolve(let duration):
+			layer.contentLayer.setOpacity(from: 0, to: 1, duration: duration, completion: completion)
         }
     }
 }
 
 extension UIView {
-    func startTransition(prepareBlock: @escaping () -> Void) {
+    func startTransition(transitionBlock: @escaping () -> Void) {
         guard let transitionStyle = currentSkeletonConfig?.transition,
             transitionStyle != .none
             else {
-                prepareBlock()
+                transitionBlock()
                 return
         }
         
-        if case let .fade(duration) = transitionStyle {
+        if case let .crossDissolve(duration) = transitionStyle {
             UIView.transition(with: self,
                               duration: duration,
                               options: .transitionCrossDissolve,
-                              animations: prepareBlock,
+                              animations: transitionBlock,
                               completion: nil)
         }
     }

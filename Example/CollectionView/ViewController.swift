@@ -4,7 +4,6 @@ import UIKit
 import SkeletonView
 
 class ViewController: UIViewController {
-    
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             collectionView.isSkeletonable = true
@@ -37,8 +36,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var switchAnimated: UISwitch!
     @IBOutlet weak var skeletonTypeSelector: UISegmentedControl!
     @IBOutlet weak var showOrHideSkeletonButton: UIButton!
-    @IBOutlet weak var fadeDurationLabel: UILabel!
-    @IBOutlet weak var fadeDurationStepper: UIStepper!
+    @IBOutlet weak var transitionDurationLabel: UILabel!
+    @IBOutlet weak var transitionDurationStepper: UIStepper!
     
     var type: SkeletonType {
         return skeletonTypeSelector.selectedSegmentIndex == 0 ? .solid : .gradient
@@ -73,8 +72,8 @@ class ViewController: UIViewController {
         view.isSkeletonActive ? hideSkeleton() : showSkeleton()
     }
     
-    @IBAction func fadeDurationStepperAction(_ sender: Any) {
-        fadeDurationLabel.text = "Fade duration: \(fadeDurationStepper.value) sec"
+    @IBAction func transitionDurationStepperAction(_ sender: Any) {
+        transitionDurationLabel.text = "transition duration: \(transitionDurationStepper.value) sec"
     }
     
     func showSkeleton() {
@@ -82,7 +81,7 @@ class ViewController: UIViewController {
     }
     
     func hideSkeleton() {
-        view.hideSkeleton(transition: .fade(fadeDurationStepper.value))
+        view.hideSkeleton(transition: .crossDisolve(transitionDurationStepper.value))
     }
     
     func refreshSkeleton() {
@@ -93,23 +92,22 @@ class ViewController: UIViewController {
     
     func showSolidSkeleton() {
         if switchAnimated.isOn {
-            view.showAnimatedSkeleton(usingColor: colorSelectedView.backgroundColor!, transition: .fade(fadeDurationStepper.value))
+            view.showAnimatedSkeleton(usingColor: colorSelectedView.backgroundColor!, transition: .crossDissolve(transitionDurationStepper.value))
         } else {
-            view.showSkeleton(usingColor: colorSelectedView.backgroundColor!, transition: .fade(fadeDurationStepper.value))
+            view.showSkeleton(usingColor: colorSelectedView.backgroundColor!, transition: .crossDissolve(transitionDurationStepper.value))
         }
     }
     
     func showGradientSkeleton() {
         let gradient = SkeletonGradient(baseColor: colorSelectedView.backgroundColor!)
         if switchAnimated.isOn {
-            view.showAnimatedGradientSkeleton(usingGradient: gradient, transition: .fade(fadeDurationStepper.value))
+            view.showAnimatedGradientSkeleton(usingGradient: gradient, transition: .crossDissolve(transitionDurationStepper.value))
         } else {
-            view.showGradientSkeleton(usingGradient: gradient, transition: .fade(fadeDurationStepper.value))
+            view.showGradientSkeleton(usingGradient: gradient, transition: .crossDissolve(transitionDurationStepper.value))
         }
     }
     
     func showAlertPicker() {
-        
         let alertView = UIAlertController(title: "Select color", message: "\n\n\n\n\n\n", preferredStyle: .alert)
         
         let pickerView = UIPickerView(frame: CGRect(x: 0, y: 50, width: 260, height: 115))
@@ -137,7 +135,6 @@ class ViewController: UIViewController {
  // MARK: - UIPickerViewDelegate, UIPickerViewDataSource
 
  extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -154,7 +151,6 @@ class ViewController: UIViewController {
 // MARK: - UICollectionViewDelegateFlowLayout
 
 extension ViewController: UICollectionViewDelegateFlowLayout {
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width/3 - 10, height: view.frame.width/3 - 10)
     }

@@ -17,7 +17,6 @@ enum ViewAssociatedKeys {
 // codebeat:enable[TOO_MANY_IVARS]
 
 extension UIView {
-
     enum Status {
         case on
         case off

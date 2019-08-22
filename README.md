@@ -50,7 +50,6 @@ Enjoy it! 🙂
   * [Custom colors](#-custom-colors)
   * [Appearance](#-appearance)
   * [Custom animations](#-custom-animations)
-  * [Transitions animations](#-custom-animations)
   * [Transitions](#-transitions)
   * [Hierarchy](#-hierarchy)
   * [Debug](#-debug)
@@ -401,16 +400,31 @@ Exist another way to create sliding animations, just using this shortcut:
 To use the transition, simply add the ```transition``` parameter to your ```showSkeleton()``` or ```hideSkeleton()``` function with the transition time, like this:
 
 ```swift
-view.showSkeleton(transition: .fade(1))     //Show skeleton fade transition with 1 second fade time
-view.hideSkeleton(transition: .fade(1))     //Hide skeleton fade transition with 1 second fade time
+view.showSkeleton(transition: .crossDissolve(0.25))     //Show skeleton cross dissolve transition with 0.25 seconds fade time
+view.hideSkeleton(transition: .crossDissolve(0.25))     //Hide skeleton cross dissolve transition with 0.25 seconds fade time
 
 ```
 
 **Preview**
 
-|  No transition | fade at 1 second
-|------- | -------
-| ![](Assets/skeleton_transition_nofade.gif) | ![](Assets/skeleton_transition_fade.gif)
+<table>
+<tr>
+<td width="50%">
+<center>None</center>
+</td>
+<td width="50%">
+<center>Cross dissolve</center>
+</td>
+</tr>
+<tr>
+<td width="50%">
+<img src="Assets/skeleton_transition_nofade.gif"></img>
+</td>
+<td width="50%">
+<img src="Assets/skeleton_transition_fade.gif"></img>
+</td>
+</tr>
+</table>
 
 
 ### 👨‍👧‍👦 Hierarchy
@@ -462,7 +476,7 @@ Coming soon...😅
 
 * iOS 9.0+
 * tvOS 9.0+
-* Swift 4.2
+* Swift 5
 
 ## 📬 Next steps
 

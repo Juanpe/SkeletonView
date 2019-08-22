@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="qda-qV-vJk">
             <objects>
-                <viewController id="irH-dz-xqL" customClass="ViewController" customModule="SkeletonViewExampleUICollectionView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="irH-dz-xqL" customClass="ViewController" customModule="SkeletonViewExampleUICollectionView" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fso-nq-n6t">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -138,7 +138,7 @@
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="5" stepValue="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="3mz-9M-e7Q">
                                         <rect key="frame" x="263" y="126" width="94" height="29"/>
                                         <connections>
-                                            <action selector="fadeDurationStepperAction:" destination="irH-dz-xqL" eventType="valueChanged" id="UsL-sG-2Nl"/>
+                                            <action selector="transitionDurationStepperAction:" destination="irH-dz-xqL" eventType="valueChanged" id="Ll0-Pr-d0V"/>
                                         </connections>
                                     </stepper>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fade Duration: 0 sec" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gN-Jz-44y">
@@ -193,11 +193,11 @@
                         <outlet property="avatarImage" destination="Ql9-Jy-aWM" id="VoL-by-ygR"/>
                         <outlet property="collectionView" destination="HKL-L0-T2w" id="HSe-j0-S5d"/>
                         <outlet property="colorSelectedView" destination="HBJ-nh-56V" id="Iiq-iY-Glj"/>
-                        <outlet property="fadeDurationLabel" destination="5gN-Jz-44y" id="YwB-4J-586"/>
-                        <outlet property="fadeDurationStepper" destination="3mz-9M-e7Q" id="yyN-4Y-bcW"/>
                         <outlet property="showOrHideSkeletonButton" destination="nPs-17-vfs" id="vw4-fW-QoD"/>
                         <outlet property="skeletonTypeSelector" destination="fMR-vj-7de" id="CgX-3A-weo"/>
                         <outlet property="switchAnimated" destination="KBe-RM-BG8" id="emU-g9-NHT"/>
+                        <outlet property="transitionDurationLabel" destination="5gN-Jz-44y" id="69y-iR-mbi"/>
+                        <outlet property="transitionDurationStepper" destination="3mz-9M-e7Q" id="tzK-W7-A4D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PkM-Y0-M5i" userLabel="First Responder" sceneMemberID="firstResponder"/>
