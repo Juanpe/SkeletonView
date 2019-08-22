@@ -9,7 +9,6 @@
 import UIKit
 
 class SkeletonCollectionDelegate: NSObject {
-    
     weak var originalTableViewDelegate: SkeletonTableViewDelegate?
     weak var originalCollectionViewDelegate: SkeletonCollectionViewDelegate?
     

@@ -31,7 +31,6 @@
 		17DD0E1F207FB32100C56334 /* RecursiveProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5307E311FB0F42F00EE67C5 /* RecursiveProtocol.swift */; };
 		1E6C67A2230E76CC0019D87B /* SkeletonTransitionStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE587C22EEE65200333067 /* SkeletonTransitionStyle.swift */; };
 		1E6C67A3230E76CE0019D87B /* UIView+Transitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE587B22EEE63100333067 /* UIView+Transitions.swift */; };
-		3B83EE4820C41488005178A4 /* UIView+IBInspectable.swift in Headers */ = {isa = PBXBuildFile; fileRef = 3B83EE4620C41488005178A4 /* UIView+IBInspectable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		42ABD063210B548200BEEFF4 /* SkeletonView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* SkeletonView.framework */; };
 		42ABD069210B548200BEEFF4 /* SkeletonView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* SkeletonView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		42ABD078210B54E200BEEFF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ABD070210B54E100BEEFF4 /* AppDelegate.swift */; };
@@ -48,7 +47,6 @@
 		872D5A5D21C24EDD0037D763 /* UILabel+Multiline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D5A5B21C24EDD0037D763 /* UILabel+Multiline.swift */; };
 		872D5A5F21C24F8E0037D763 /* UITextView+Multiline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D5A5E21C24F8E0037D763 /* UITextView+Multiline.swift */; };
 		872D5A6021C24F8E0037D763 /* UITextView+Multiline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D5A5E21C24F8E0037D763 /* UITextView+Multiline.swift */; };
-		8748240D20C6A88A00E92179 /* UIView+IBInspectable.swift in Headers */ = {isa = PBXBuildFile; fileRef = F5F899CF1FAA6A4D002E8FDA /* UIView+IBInspectable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		8748240E20C6A88E00E92179 /* ContainsMultilineText.swift in Headers */ = {isa = PBXBuildFile; fileRef = F5307E3A1FB123C100EE67C5 /* ContainsMultilineText.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		877EFA4521BEE9D80031FC00 /* SkeletonLayerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877EFA4421BEE9D80031FC00 /* SkeletonLayerBuilder.swift */; };
 		877EFA4621BEE9D80031FC00 /* SkeletonLayerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877EFA4421BEE9D80031FC00 /* SkeletonLayerBuilder.swift */; };
@@ -152,7 +150,6 @@
 		17DD0E00207FB27400C56334 /* SkeletonView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SkeletonView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		17DD0E1A207FB2C200C56334 /* SkeletonView-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SkeletonView-tvOS.plist"; sourceTree = "<group>"; };
 		17DD0E1B207FB2C200C56334 /* SkeletonView-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SkeletonView-iOS.plist"; sourceTree = "<group>"; };
-		3B83EE4620C41488005178A4 /* UIView+IBInspectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+IBInspectable.swift"; path = "Sources/Extensions/UIView+IBInspectable.swift"; sourceTree = "<group>"; };
 		42ABD06D210B548200BEEFF4 /* SkeletonViewExampleUICollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkeletonViewExampleUICollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42ABD070210B54E100BEEFF4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42ABD071210B54E100BEEFF4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -197,7 +194,7 @@
 		F5F622401FAC6E31007C062A /* UIColor+Skeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Skeleton.swift"; sourceTree = "<group>"; };
 		F5F622421FAC81FD007C062A /* CALayer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extensions.swift"; sourceTree = "<group>"; };
 		F5F622441FACA338007C062A /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
-		F5F899CF1FAA6A4D002E8FDA /* UIView+IBInspectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+IBInspectable.swift"; sourceTree = "<group>"; };
+		F5F899CF1FAA6A4D002E8FDA /* UIView+IBInspectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+IBInspectable.swift"; path = "/Users/jpcatalan/repos/SkeletonView/Sources/Extensions/UIView+IBInspectable.swift"; sourceTree = "<absolute>"; };
 		F5F899D11FAB9630002E8FDA /* AssociationPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssociationPolicy.swift; sourceTree = "<group>"; };
 		F5F899E81FAB9D2B002E8FDA /* SkeletonLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLayer.swift; sourceTree = "<group>"; };
 		F5F899EA1FAB9DA3002E8FDA /* SkeletonCollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonCollectionDataSource.swift; sourceTree = "<group>"; };
@@ -248,7 +245,6 @@
 		52D6D9721BEFF229002C0205 = {
 			isa = PBXGroup;
 			children = (
-				3B83EE4620C41488005178A4 /* UIView+IBInspectable.swift */,
 				F5F899F31FABA607002E8FDA /* Example */,
 				8933C7811EB5B7E0000D00A4 /* Sources */,
 				52D6D99C1BEFF38C002C0205 /* Configs */,
@@ -486,7 +482,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8748240D20C6A88A00E92179 /* UIView+IBInspectable.swift in Headers */,
 				8748240E20C6A88E00E92179 /* ContainsMultilineText.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -495,7 +490,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B83EE4820C41488005178A4 /* UIView+IBInspectable.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

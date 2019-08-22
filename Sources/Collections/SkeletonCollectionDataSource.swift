@@ -11,7 +11,6 @@ import UIKit
 public typealias ReusableCellIdentifier = String
 
 class SkeletonCollectionDataSource: NSObject {
-    
     weak var originalTableViewDataSource: SkeletonTableViewDataSource?
     weak var originalCollectionViewDataSource: SkeletonCollectionViewDataSource?
     var rowHeight: CGFloat = 0.0
@@ -26,7 +25,6 @@ class SkeletonCollectionDataSource: NSObject {
 
 // MARK: - UITableViewDataSource
 extension SkeletonCollectionDataSource: UITableViewDataSource {
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return originalTableViewDataSource?.numSections(in: tableView) ?? 0
     }
@@ -45,7 +43,6 @@ extension SkeletonCollectionDataSource: UITableViewDataSource {
 
 // MARK: - UICollectionViewDataSource
 extension SkeletonCollectionDataSource: UICollectionViewDataSource {
-    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return originalCollectionViewDataSource?.numSections(in: collectionView) ?? 0
     }

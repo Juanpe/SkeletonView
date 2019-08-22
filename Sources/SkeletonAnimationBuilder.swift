@@ -60,9 +60,7 @@ public enum GradientDirection {
 }
 
 public class SkeletonAnimationBuilder {
-    
-    public init() {
-    }
+    public init() { }
     
     public func makeSlidingAnimation(withDirection direction: GradientDirection, duration: CFTimeInterval = 1.5) -> SkeletonLayerAnimation {
         return { layer in

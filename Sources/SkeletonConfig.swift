@@ -37,9 +37,4 @@ struct SkeletonConfig {
         self.animation = animation
         self.transition = transition
     }
-    
-    //Make equatable
-    static func == (lhs: SkeletonConfig, rhs: SkeletonConfig) -> Bool {
-        return lhs.type == rhs.type && lhs.colors == rhs.colors && lhs.gradientDirection == rhs.gradientDirection && lhs.animated == rhs.animated
-    }
 }

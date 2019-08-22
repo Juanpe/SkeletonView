@@ -26,15 +26,15 @@ class SkeletonLayerBuilder {
     func setHolder(_ holder: UIView) -> SkeletonLayerBuilder {
         self.holder = holder
         return self
-    }
-
-    func build() -> SkeletonLayer? {
-        guard let type = skeletonType,
-              let holder = holder
-            else { return nil }
-
-        return SkeletonLayer(withType: type,
-                             usingColors: colors,
-                             andSkeletonHolder: holder)
-    }
+	}
+	
+	func build() -> SkeletonLayer? {
+		guard let type = skeletonType,
+			let holder = holder
+			else { return nil }
+		
+		return SkeletonLayer(type: type,
+							 colors: colors,
+							 skeletonHolder: holder)
+	}
 }

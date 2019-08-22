@@ -17,7 +17,6 @@ public enum SkeletonAppearance {
 
 // codebeat:disable[TOO_MANY_IVARS]
 class SkeletonViewAppearance: Appearance {
-
     static var shared = SkeletonViewAppearance()
 
     var tintColor: UIColor = .clouds

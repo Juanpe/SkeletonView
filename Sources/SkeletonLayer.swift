@@ -45,7 +45,7 @@ struct SkeletonLayer {
         return maskLayer
     }
     
-    init(withType type: SkeletonType, usingColors colors: [UIColor], andSkeletonHolder holder: UIView) {
+    init(type: SkeletonType, colors: [UIColor], skeletonHolder holder: UIView) {
         self.holder = holder
         self.maskLayer = type.layer
         self.maskLayer.anchorPoint = .zero
