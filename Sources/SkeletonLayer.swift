@@ -70,6 +70,7 @@ struct SkeletonLayer {
         switch transition {
         case .none:
             maskLayer.removeFromSuperlayer()
+            completion?()
         case .crossDissolve(let duration):
 			maskLayer.setOpacity(from: 1, to: 0, duration: duration) {
 				self.maskLayer.removeFromSuperlayer()

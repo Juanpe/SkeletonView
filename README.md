@@ -516,6 +516,7 @@ See [all contributors](https://github.com/Juanpe/SkeletonView/graphs/contributor
 - [CocoaControls](https://www.cocoacontrols.com/controls/skeletonview)
 - [Awesome iOS Newsletter #74](https://ios.libhunt.com/newsletter/74)
 - [Swift News #36](https://www.youtube.com/watch?v=mAGpsQiy6so)
+- [Best iOS articles, new tools & more](https://medium.com/flawless-app-stories/best-ios-articles-new-tools-more-fcbe673e10d)
 
 
 
