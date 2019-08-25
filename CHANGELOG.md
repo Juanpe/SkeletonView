@@ -3,8 +3,22 @@ All notable changes to this project will be documented in this file
 
 ## Next version
 
+### Improvements
+- Fix completion call in .none transition style while hide skeletons. (thanks @aadudyrev)
+
+## [Transitions (1.8)](https://github.com/Juanpe/SkeletonView/releases/tag/1.8)
+
 ### New
+
 - Adding swift news to mentioned section (thanks @osterbergmarcus).
+- Create `SkeletonTransitionStyle`. Now, you can animate transition when you show or hide skeletons. (thanks @pontusjacobsson)
+
+### Improvements
+- Refactor some methods.
+
+### Bug fixes
+- Solved issues.
+ [#175](https://github.com/Juanpe/SkeletonView/issues/175) Swift Package Manager version format
 
 ## [Layout update (1.7)](https://github.com/Juanpe/SkeletonView/releases/tag/1.7)
 
