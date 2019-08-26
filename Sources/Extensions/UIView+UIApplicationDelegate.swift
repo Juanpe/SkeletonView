@@ -32,6 +32,6 @@ extension UIView {
     }
     
     @objc func appDidEnterBackground() {
-        UserDefaults.standard.set((isSkeletonActive && skeletonIsAnimated), forKey: Constants.needAnimatedSkeletonKey)
+        UserDefaults.standard.set((isSkeletonActive && isSkeletonAnimated), forKey: Constants.needAnimatedSkeletonKey)
     }
 }
