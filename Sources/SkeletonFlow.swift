@@ -3,43 +3,43 @@
 import UIKit
 
 protocol SkeletonFlowDelegate {
-    func willBeginShowingSkeletons(withRootView rootView: UIView)
-    func didShowSkeletons(withRootView rootView: UIView)
-    func willBeginUpdatingSkeletons(withRootView rootView: UIView)
-    func didUpdateSkeletons(withRootView rootView: UIView)
-    func willBeginLayingSkeletonsIfNeeded(withRootView: UIView)
-    func didLayoutSkeletonsIfNeeded(withRootView: UIView)
-    func willBeginHidingSkeletons(withRootView rootView: UIView)
-    func didHideSkeletons(withRootView rootView: UIView)
+    func willBeginShowingSkeletons(rootView: UIView)
+    func didShowSkeletons(rootView: UIView)
+    func willBeginUpdatingSkeletons(rootView: UIView)
+    func didUpdateSkeletons(rootView: UIView)
+    func willBeginLayingSkeletonsIfNeeded(rootView: UIView)
+    func didLayoutSkeletonsIfNeeded(rootView: UIView)
+    func willBeginHidingSkeletons(rootView: UIView)
+    func didHideSkeletons(rootView: UIView)
 }
 
 class SkeletonFlowHandler: SkeletonFlowDelegate {
 
-    func willBeginShowingSkeletons(withRootView rootView: UIView) {
+    func willBeginShowingSkeletons(rootView: UIView) {
         rootView.addAppNotificationsObservers()
     }
 
-    func didShowSkeletons(withRootView rootView: UIView) {
+    func didShowSkeletons(rootView: UIView) {
         printSkeletonHierarchy(in: rootView)
     }
     
-    func willBeginUpdatingSkeletons(withRootView rootView: UIView) {
+    func willBeginUpdatingSkeletons(rootView: UIView) {
     }
 
-    func didUpdateSkeletons(withRootView rootView: UIView) {
+    func didUpdateSkeletons(rootView: UIView) {
     }
 
-    func willBeginLayingSkeletonsIfNeeded(withRootView: UIView) {
+    func willBeginLayingSkeletonsIfNeeded(rootView: UIView) {
     }
 
-    func didLayoutSkeletonsIfNeeded(withRootView: UIView) {
+    func didLayoutSkeletonsIfNeeded(rootView: UIView) {
     }
 
-    func willBeginHidingSkeletons(withRootView rootView: UIView) {
+    func willBeginHidingSkeletons(rootView: UIView) {
         rootView.removeAppNoticationsObserver()
     }
 
-    func didHideSkeletons(withRootView rootView: UIView) {
+    func didHideSkeletons(rootView: UIView) {
         rootView.flowDelegate = nil
     }
 }
