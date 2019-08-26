@@ -13,7 +13,7 @@ public extension UIView {
         return status == .on || (subviewsSkeletonables.first(where: { $0.isSkeletonActive }) != nil)
     }
 
-    fileprivate var skeletonable: Bool! {
+    private var skeletonable: Bool! {
         get { return ao_get(pkey: &ViewAssociatedKeys.skeletonable) as? Bool ?? false }
         set { ao_set(newValue ?? false, pkey: &ViewAssociatedKeys.skeletonable) }
     }

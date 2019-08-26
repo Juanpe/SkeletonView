@@ -91,9 +91,9 @@ struct SkeletonLayer {
 }
 
 extension SkeletonLayer {
-    func start(_ anim: SkeletonLayerAnimation? = nil) {
+    func start(_ anim: SkeletonLayerAnimation? = nil, completion: (() -> Void)? = nil) {
         let animation = anim ?? type.layerAnimation
-        contentLayer.playAnimation(animation, key: "skeletonAnimation")
+        contentLayer.playAnimation(animation, key: "skeletonAnimation", completion: completion)
     }
     
     func stopAnimation() {

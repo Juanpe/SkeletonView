@@ -46,10 +46,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         tableview.isSkeletonable = true
     }
-
-    override func viewDidLayoutSubviews() {
-        view.layoutSkeletonIfNeeded()
-    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

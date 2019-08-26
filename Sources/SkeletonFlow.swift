@@ -14,7 +14,6 @@ protocol SkeletonFlowDelegate {
 }
 
 class SkeletonFlowHandler: SkeletonFlowDelegate {
-
     func willBeginShowingSkeletons(rootView: UIView) {
         rootView.addAppNotificationsObservers()
     }

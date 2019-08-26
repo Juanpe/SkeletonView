@@ -42,7 +42,7 @@ extension UIView {
         set { ao_set(newValue ?? .off, pkey: &ViewAssociatedKeys.status) }
     }
 
-    var skeletonIsAnimated: Bool! {
+    var isSkeletonAnimated: Bool! {
         get { return ao_get(pkey: &ViewAssociatedKeys.isSkeletonAnimated) as? Bool ?? false }
         set { ao_set(newValue ?? false, pkey: &ViewAssociatedKeys.isSkeletonAnimated) }
     }
