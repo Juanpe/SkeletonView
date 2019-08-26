@@ -174,7 +174,7 @@ avatarImageView.isSkeletonable = true
 
 #### Skeleton views layout
 
-Sometimes skeleton layout may not fit your layout because the parent view bounds have changed. For example, rotating the device.
+Sometimes skeleton layout may not fit your layout because the parent view bounds have changed. ~For example, rotating the device.~ 
 
 You can relayout the skeleton views like so:
 
@@ -183,6 +183,8 @@ override func viewDidLayoutSubviews() {
     view.layoutSkeletonIfNeeded()
 }
 ```
+
+⚠️⚠️ You shouldn't call this method. From *version 1.8.1* you don't need to call this method, the library does automatically. So, you can use this method *ONLY* in the cases when you need to update the layout of the skeleton manually. 
 
 #### Update skeleton configuration
 
