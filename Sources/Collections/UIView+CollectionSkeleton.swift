@@ -11,6 +11,7 @@ import UIKit
 extension UIView {
     func addDummyDataSourceIfNeeded() {
         guard let collection = self as? CollectionSkeleton else { return }
+        status = .on
         collection.addDummyDataSource()
         collection.disableUserInteraction()
     }
@@ -22,6 +23,7 @@ extension UIView {
     
     func removeDummyDataSourceIfNeeded(reloadAfter reload: Bool = true) {
         guard let collection = self as? CollectionSkeleton else { return }
+        status = .off
         collection.removeDummyDataSource(reloadAfter: reload)
         collection.enableUserInteraction()
     }

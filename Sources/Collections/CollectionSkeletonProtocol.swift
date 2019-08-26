@@ -29,6 +29,6 @@ extension CollectionSkeleton where Self: UIScrollView {
     var estimatedNumberOfRows: Int { return 0 }
     func addDummyDataSource() {}
     func removeDummyDataSource(reloadAfter: Bool) {}
-    func disableUserInteraction() { isScrollEnabled = false }
-    func enableUserInteraction() { isScrollEnabled = true }
+    func disableUserInteraction() { isUserInteractionEnabled = false; isScrollEnabled = false }
+    func enableUserInteraction() { isUserInteractionEnabled = true; isScrollEnabled = true }
 }

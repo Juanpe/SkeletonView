@@ -7,6 +7,7 @@ extension CALayer {
         insertSublayer(layer.contentLayer, at: idx)
         switch transition {
         case .none:
+            completion?()
             break
         case .crossDissolve(let duration):
 			layer.contentLayer.setOpacity(from: 0, to: 1, duration: duration, completion: completion)
