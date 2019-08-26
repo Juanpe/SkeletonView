@@ -45,11 +45,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableview.isSkeletonable = true
+        view.showAnimatedSkeleton()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        view.showAnimatedSkeleton()
     }
 
     @IBAction func changeAnimated(_ sender: Any) {
