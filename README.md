@@ -174,7 +174,7 @@ avatarImageView.isSkeletonable = true
 
 #### Skeleton views layout
 
-Sometimes skeleton layout may not fit your layout because the parent view bounds have changed. ~For example, rotating the device.~ 
+Sometimes skeleton layout may not fit your layout because the parent view bounds have changed. ~For example, rotating the device.~
 
 You can relayout the skeleton views like so:
 
@@ -184,7 +184,7 @@ override func viewDidLayoutSubviews() {
 }
 ```
 
-⚠️⚠️ You shouldn't call this method. From *version 1.8.1* you don't need to call this method, the library does automatically. So, you can use this method *ONLY* in the cases when you need to update the layout of the skeleton manually. 
+⚠️⚠️ You shouldn't call this method. From *version 1.8.1* you don't need to call this method, the library does automatically. So, you can use this method *ONLY* in the cases when you need to update the layout of the skeleton manually.
 
 #### Update skeleton configuration
 
@@ -435,14 +435,21 @@ Since ```SkeletonView``` is recursive, and we want skeleton to be very efficient
 
 Because an image is worth a thousand words:
 
+In this example we have a `UIViewController` with a `ContainerView` and a `UITableView`. When the view is ready, we show the skeleton using this method:
+```
+view.showSkeleton()
+```
+
 > ```ìsSkeletonable```= ☠️
 
 | Configuration | Result
 |------- | -------
-|![](Assets/no_skeletonable.png) | ![](Assets/no_skeletonables_result.png)
-|![](Assets/container_no_skeletonable.png) | ![](Assets/no_skeletonables_result.png)
-|![](Assets/container_skeletonable.png) | ![](Assets/container_skeletonable_result.png)
-|![](Assets/all_skeletonables.png) | ![](Assets/all_skeletonables_result.png)
+|<img src="Assets/no_skeletonable.jpg" width="350"/> | <img src="Assets/no_skeletonables_result.png" width="350"/>
+|<img src="Assets/container_no_skeletonable.jpg" width="350"/> | <img src="Assets/no_skeletonables_result.png" width="350"/>
+|<img src="Assets/container_skeletonable.jpg" width="350"/> | <img src="Assets/container_skeletonable_result.png" width="350"/>
+|<img src="Assets/all_skeletonables.jpg" width="350"/>| <img src="Assets/all_skeletonables_result.png" width="350"/>
+|<img src="Assets/tableview_no_skeletonable.jpg" width="350"/> | <img src="Assets/tableview_no_skeletonable_result.png" height="350"/>
+|<img src="Assets/tableview_skeletonable.jpg" width="350"/> | <img src="Assets/tableview_skeletonable_result.png" height="350"/>
 
 
 ### 🔬 Debug
