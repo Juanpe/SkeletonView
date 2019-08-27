@@ -94,6 +94,7 @@ public extension UIView {
 
 extension UIView {
     @objc func skeletonLayoutSubviews() {
+        guard isSkeletonActive else { return }
         layoutSkeletonIfNeeded()
     }
     
@@ -206,11 +207,14 @@ extension UIView {
     }
     
     private func swizzleLayoutSubviews() {
-        DispatchQueue.once(token: "UIView.SkeletonView.swizzle") {
-            swizzle(selector: #selector(UIView.layoutSubviews),
-                    with: #selector(UIView.skeletonLayoutSubviews),
-                    inClass: UIView.self,
-                    usingClass: UIView.self)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+            DispatchQueue.once(token: "UIView.SkeletonView.swizzle") {
+                swizzle(selector: #selector(UIView.layoutSubviews),
+                        with: #selector(UIView.skeletonLayoutSubviews),
+                        inClass: UIView.self,
+                        usingClass: UIView.self)
+                self.layoutSkeletonIfNeeded()
+            }
         }
     }
 }
