@@ -18,18 +18,18 @@ extension UIView: Recoverable {
         get { return ao_get(pkey: &ViewAssociatedKeys.viewState) as? RecoverableViewState }
         set { ao_setOptional(newValue, pkey: &ViewAssociatedKeys.viewState) }
     }
-    
+
     @objc func saveViewState() {
         viewState = RecoverableViewState(view: self)
     }
-    
+
     @objc func recoverViewState(forced: Bool) {
         guard let safeViewState = viewState else { return }
-        
+
         startTransition { [weak self] in
             self?.layer.cornerRadius = safeViewState.cornerRadius
             self?.layer.masksToBounds = safeViewState.clipToBounds
-            
+
             if safeViewState.backgroundColor != self?.backgroundColor || forced {
                 self?.backgroundColor = safeViewState.backgroundColor
             }
@@ -37,42 +37,42 @@ extension UIView: Recoverable {
     }
 }
 
-extension UILabel{
+extension UILabel {
     var labelState: RecoverableTextViewState? {
         get { return ao_get(pkey: &ViewAssociatedKeys.labelViewState) as? RecoverableTextViewState }
         set { ao_setOptional(newValue, pkey: &ViewAssociatedKeys.labelViewState) }
     }
-    
+
     override func saveViewState() {
         super.saveViewState()
         labelState = RecoverableTextViewState(view: self)
     }
-    
+
     override func recoverViewState(forced: Bool) {
         super.recoverViewState(forced: forced)
         startTransition { [weak self] in
             self?.textColor = self?.labelState?.textColor
-            self?.text = self?.labelState?.text
+            self?.attributedText = self?.labelState?.attributedText
         }
     }
 }
 
-extension UITextView{
+extension UITextView {
     var textState: RecoverableTextViewState? {
         get { return ao_get(pkey: &ViewAssociatedKeys.labelViewState) as? RecoverableTextViewState }
         set { ao_setOptional(newValue, pkey: &ViewAssociatedKeys.labelViewState) }
     }
-    
+
     override func saveViewState() {
         super.saveViewState()
         textState = RecoverableTextViewState(view: self)
     }
-    
+
     override func recoverViewState(forced: Bool) {
         super.recoverViewState(forced: forced)
         startTransition { [weak self] in
             self?.textColor = self?.textState?.textColor
-            self?.text = self?.textState?.text
+            self?.attributedText = self?.textState?.attributedText
         }
     }
 }
@@ -82,12 +82,12 @@ extension UIImageView {
         get { return ao_get(pkey: &ViewAssociatedKeys.imageViewState) as? RecoverableImageViewState }
         set { ao_setOptional(newValue, pkey: &ViewAssociatedKeys.imageViewState) }
     }
-    
+
     override func saveViewState() {
         super.saveViewState()
         imageState = RecoverableImageViewState(view: self)
     }
-    
+
     override func recoverViewState(forced: Bool) {
         super.recoverViewState(forced: forced)
         startTransition { [weak self] in

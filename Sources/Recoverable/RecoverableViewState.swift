@@ -12,7 +12,7 @@ struct RecoverableViewState {
     var backgroundColor: UIColor?
     var cornerRadius: CGFloat
     var clipToBounds: Bool
-    
+
     init(view: UIView) {
         self.backgroundColor = view.backgroundColor
         self.clipToBounds = view.layer.masksToBounds
@@ -21,23 +21,23 @@ struct RecoverableViewState {
 }
 
 struct RecoverableTextViewState {
-    var text: String?
+    var attributedText: NSAttributedString?
     var textColor: UIColor?
-    
+
     init(view: UILabel) {
         self.textColor = view.textColor
-        self.text = view.text
+        self.attributedText = view.attributedText
     }
-    
+
     init(view: UITextView) {
         self.textColor = view.textColor
-        self.text = view.text
+        self.attributedText = view.attributedText
     }
 }
 
 struct RecoverableImageViewState {
     var image: UIImage?
-    
+
     init(view: UIImageView) {
         self.image = view.image
     }
