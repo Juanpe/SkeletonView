@@ -78,14 +78,22 @@ struct SkeletonLayer {
 			}
         }
     }
-    
+
+    /// Returns a multiLineViewHolder only if the current holder implements the `ContainsMultilineText` protocol,
+    /// and actually displays multiple lines of text.
+    private var multiLineViewHolder: ContainsMultilineText? {
+        guard let multiLineView = holder as? ContainsMultilineText,
+            multiLineView.numLines != 1 else { return nil }
+        return multiLineView
+    }
+
     func addMultilinesIfNeeded() {
-        guard let multiLineView = holder as? ContainsMultilineText else { return }
+        guard let multiLineView = multiLineViewHolder else { return }
         maskLayer.addMultilinesLayers(lines: multiLineView.numLines, type: type, lastLineFillPercent: multiLineView.lastLineFillingPercent, multilineCornerRadius: multiLineView.multilineCornerRadius)
     }
 
     func updateMultilinesIfNeeded() {
-        guard let multiLineView = holder as? ContainsMultilineText else { return }
+        guard let multiLineView = multiLineViewHolder else { return }
         maskLayer.updateMultilinesLayers(lastLineFillPercent: multiLineView.lastLineFillingPercent)
     }
 }
