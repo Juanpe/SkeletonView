@@ -78,6 +78,7 @@ public class SkeletonAnimationBuilder {
             animGroup.duration = duration
             animGroup.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
             animGroup.repeatCount = .infinity
+            animGroup.isRemovedOnCompletion = false
             
             return animGroup
         }
