@@ -81,7 +81,7 @@ class ViewController: UIViewController {
     }
     
     func hideSkeleton() {
-        view.hideSkeleton(transition: .crossDisolve(transitionDurationStepper.value))
+        view.hideSkeleton(transition: .crossDissolve(transitionDurationStepper.value))
     }
     
     func refreshSkeleton() {
