@@ -13,7 +13,7 @@ public typealias SkeletonLayerAnimation = (CALayer) -> CAAnimation
 public enum SkeletonType {
     case solid
     case gradient
-    
+
     var layer: CALayer {
         switch self {
         case .solid:
@@ -22,7 +22,7 @@ public enum SkeletonType {
             return CAGradientLayer()
         }
     }
-    
+
     var layerAnimation: SkeletonLayerAnimation {
         switch self {
         case .solid:
@@ -36,15 +36,15 @@ public enum SkeletonType {
 struct SkeletonLayer {
     private var maskLayer: CALayer
     private weak var holder: UIView?
-    
+
     var type: SkeletonType {
         return maskLayer is CAGradientLayer ? .gradient : .solid
     }
-    
+
     var contentLayer: CALayer {
         return maskLayer
     }
-    
+
     init(type: SkeletonType, colors: [UIColor], skeletonHolder holder: UIView) {
         self.holder = holder
         self.maskLayer = type.layer
@@ -53,7 +53,7 @@ struct SkeletonLayer {
         addMultilinesIfNeeded()
         self.maskLayer.tint(withColors: colors)
     }
-    
+
     func update(usingColors colors: [UIColor]) {
         layoutIfNeeded()
         maskLayer.tint(withColors: colors)
@@ -65,7 +65,7 @@ struct SkeletonLayer {
         }
         updateMultilinesIfNeeded()
     }
-    
+
     func removeLayer(transition: SkeletonTransitionStyle, completion: (() -> Void)? = nil) {
         switch transition {
         case .none:
@@ -89,12 +89,12 @@ struct SkeletonLayer {
 
     func addMultilinesIfNeeded() {
         guard let multiLineView = multiLineViewHolder else { return }
-        maskLayer.addMultilinesLayers(lines: multiLineView.numLines, type: type, lastLineFillPercent: multiLineView.lastLineFillingPercent, multilineCornerRadius: multiLineView.multilineCornerRadius)
+        maskLayer.addMultilinesLayers(lines: multiLineView.numLines, type: type, lastLineFillPercent: multiLineView.lastLineFillingPercent, multilineCornerRadius: multiLineView.multilineCornerRadius, multilineSpacing: multiLineView.multilineSpacing, paddingInsets: multiLineView.paddingInsets)
     }
 
     func updateMultilinesIfNeeded() {
         guard let multiLineView = multiLineViewHolder else { return }
-        maskLayer.updateMultilinesLayers(lastLineFillPercent: multiLineView.lastLineFillingPercent)
+        maskLayer.updateMultilinesLayers(lastLineFillPercent: multiLineView.lastLineFillingPercent, multilineSpacing: multiLineView.multilineSpacing, paddingInsets: multiLineView.paddingInsets)
     }
 }
 
@@ -103,7 +103,7 @@ extension SkeletonLayer {
         let animation = anim ?? type.layerAnimation
         contentLayer.playAnimation(animation, key: "skeletonAnimation", completion: completion)
     }
-    
+
     func stopAnimation() {
         contentLayer.stopAnimation(forKey: "skeletonAnimation")
     }
