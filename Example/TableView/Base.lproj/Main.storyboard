@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Va7-1y-Tel">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SkeletonViewExample" customModuleProvider="target" sceneMemberID="viewController">
@@ -67,7 +67,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UCB-SP-lQk">
-                                <rect key="frame" x="0.0" y="263" width="375" height="244"/>
+                                <rect key="frame" x="0.0" y="263" width="375" height="195"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" red="0.1061807256" green="0.84678786989999999" blue="0.031482450150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
@@ -133,7 +133,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XgY-1a-UGc">
-                                <rect key="frame" x="0.0" y="507" width="375" height="160"/>
+                                <rect key="frame" x="0.0" y="458" width="375" height="160"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xOL-Sq-r4i">
                                         <rect key="frame" x="20" y="23" width="135" height="29"/>
@@ -244,6 +244,7 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="NO"/>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="wQY-ap-3n3"/>
                     <navigationItem key="navigationItem" id="BEI-dU-kr2"/>
                     <connections>
                         <outlet property="avatarImage" destination="nMj-pU-5wJ" id="9fa-Z7-vYi"/>
@@ -258,7 +259,41 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2582" y="-400"/>
+            <point key="canvasLocation" x="-2682" y="340"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="Cfc-AT-AS1">
+            <objects>
+                <viewController id="dv8-ph-Ehg" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jwx-gI-Qod">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Ao1-hk-zrH"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="iKp-9S-aib"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M03-a6-GOC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1644" y="340"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="U6k-MC-AHH">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Va7-1y-Tel" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HSI-2O-RyO">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="dL3-9L-KNU"/>
+                        <segue destination="dv8-ph-Ehg" kind="relationship" relationship="viewControllers" id="8QB-uV-gaF"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="huq-Fh-0sW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2172" y="-555"/>
         </scene>
     </scenes>
     <resources>
