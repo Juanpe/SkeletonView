@@ -45,11 +45,7 @@ extension CALayer {
             .setCornerRadius(multilineCornerRadius)
 
         (0..<numberOfSublayers).forEach { index in
-            var width = getLineWidth(index: index, numberOfSublayers: numberOfSublayers, lastLineFillPercent: lastLineFillPercent)
-            if index == numberOfSublayers - 1 && numberOfSublayers != 1 {
-                width = width * CGFloat(lastLineFillPercent) / 100;
-            }
-
+			let width = calculatedWidthForLine(at: index, totalLines: numberOfSublayers, lastLineFillPercent: lastLineFillPercent)
             if let layer = layerBuilder
                 .setIndex(index)
                 .setWidth(width)
@@ -63,17 +59,16 @@ extension CALayer {
         let currentSkeletonSublayers = skeletonSublayers
         let numberOfSublayers = currentSkeletonSublayers.count
         for (index, layer) in currentSkeletonSublayers.enumerated() {
-            let width = getLineWidth(index: index, numberOfSublayers: numberOfSublayers, lastLineFillPercent: lastLineFillPercent)
+			let width = calculatedWidthForLine(at: index, totalLines: numberOfSublayers, lastLineFillPercent: lastLineFillPercent)
             layer.updateLayerFrame(for: index, width: width)
         }
     }
 
-    private func getLineWidth(index: Int, numberOfSublayers: Int, lastLineFillPercent: Int) -> CGFloat {
+	private func calculatedWidthForLine(at index: Int, totalLines: Int, lastLineFillPercent: Int) -> CGFloat {
         var width = bounds.width
-        if index == numberOfSublayers - 1 && numberOfSublayers != 1 {
-            width = width * CGFloat(lastLineFillPercent) / 100;
+        if index == totalLines - 1 && totalLines != 1 {
+            width = width * CGFloat(lastLineFillPercent) / 100
         }
-
         return width
     }
 
@@ -83,8 +78,8 @@ extension CALayer {
     }
 
     private func calculateNumLines(maxLines: Int) -> Int {
-        let spaceRequitedForEachLine = SkeletonAppearance.default.multilineHeight + SkeletonAppearance.default.multilineSpacing
-        var numberOfSublayers = Int(round(CGFloat(bounds.height)/CGFloat(spaceRequitedForEachLine)))
+        let requiredSpaceForEachLine = SkeletonAppearance.default.multilineHeight + SkeletonAppearance.default.multilineSpacing
+        var numberOfSublayers = Int(round(CGFloat(bounds.height)/CGFloat(requiredSpaceForEachLine)))
         if maxLines != 0,  maxLines <= numberOfSublayers { numberOfSublayers = maxLines }
         return numberOfSublayers
     }
