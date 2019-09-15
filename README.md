@@ -344,6 +344,12 @@ SkeletonAppearance.default.multilineHeight = 20
 SkeletonAppearance.default.tintColor = .green
 ```
 
+You can also specifiy these line appearance properties on a per-label basis:
+- **lastLineFillPercent**: Int
+- **linesCornerRadius**: Int
+- **skeletonLineSpacing**: CGFloat
+- **skeletonPaddingInsets**: UIEdgeInsets
+
 
 ### 🤓 Custom animations
 
