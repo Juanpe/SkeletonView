@@ -36,18 +36,21 @@ extension CALayer {
     var skeletonSublayers: [CALayer] {
         return sublayers?.filter { $0.name == CALayer.skeletonSubLayersName } ?? [CALayer]()
     }
-
+    
+    // If preferences have been set for single lines, render these with custom preferences
+    func addSingleLineLayers(type: SkeletonType, lastLineFillPercent: Int, multilineCornerRadius: Int) {
+        addMultilinesLayers(lines: 1, type: type, lastLineFillPercent: lastLineFillPercent, multilineCornerRadius: multilineCornerRadius, multilineSpacing: 0, paddingInsets: .zero)
+    }
+    
     func addMultilinesLayers(lines: Int, type: SkeletonType, lastLineFillPercent: Int, multilineCornerRadius: Int, multilineSpacing: CGFloat, paddingInsets: UIEdgeInsets) {
         let numberOfSublayers = calculateNumLines(maxLines: lines, multilineSpacing: multilineSpacing, paddingInsets: paddingInsets)
 
         let layerBuilder = SkeletonMultilineLayerBuilder()
             .setSkeletonType(type)
             .setCornerRadius(multilineCornerRadius)
-            .setMultilineSpacing(multilineSpacing)
-            .setPadding(paddingInsets)
 
         (0..<numberOfSublayers).forEach { index in
-			let width = calculatedWidthForLine(at: index, totalLines: numberOfSublayers, lastLineFillPercent: lastLineFillPercent, paddingInsets: paddingInsets)
+            let width = calculatedWidthForLine(at: index, totalLines: numberOfSublayers, lastLineFillPercent: lastLineFillPercent, paddingInsets: paddingInsets)
             if let layer = layerBuilder
                 .setIndex(index)
                 .setWidth(width)
@@ -100,26 +103,26 @@ public extension CALayer {
         pulseAnimation.isRemovedOnCompletion = false
         return pulseAnimation
     }
-
+    
     var sliding: CAAnimation {
         let startPointAnim = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.startPoint))
         startPointAnim.fromValue = CGPoint(x: -1, y: 0.5)
         startPointAnim.toValue = CGPoint(x:1, y: 0.5)
-
+        
         let endPointAnim = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.endPoint))
         endPointAnim.fromValue = CGPoint(x: 0, y: 0.5)
         endPointAnim.toValue = CGPoint(x:2, y: 0.5)
-
+        
         let animGroup = CAAnimationGroup()
         animGroup.animations = [startPointAnim, endPointAnim]
         animGroup.duration = 1.5
         animGroup.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
         animGroup.repeatCount = .infinity
         animGroup.isRemovedOnCompletion = false
-
+        
         return animGroup
     }
-
+    
     func playAnimation(_ anim: SkeletonLayerAnimation, key: String, completion: (() -> Void)? = nil) {
         skeletonSublayers.recursiveSearch(leafBlock: {
             DispatchQueue.main.async { CATransaction.begin() }
@@ -130,7 +133,7 @@ public extension CALayer {
             $0.playAnimation(anim, key: key, completion: completion)
         }
     }
-
+    
     func stopAnimation(forKey key: String) {
         skeletonSublayers.recursiveSearch(leafBlock: {
             removeAnimation(forKey: key)
@@ -141,15 +144,15 @@ public extension CALayer {
 }
 
 extension CALayer {
-	func setOpacity(from: Int, to: Int, duration: TimeInterval, completion: (() -> Void)?) {
+    func setOpacity(from: Int, to: Int, duration: TimeInterval, completion: (() -> Void)?) {
         DispatchQueue.main.async { CATransaction.begin() }
-		let animation = CABasicAnimation(keyPath: #keyPath(CALayer.opacity))
-		animation.fromValue = from
-		animation.toValue = to
-		animation.duration = duration
-		animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        let animation = CABasicAnimation(keyPath: #keyPath(CALayer.opacity))
+        animation.fromValue = from
+        animation.toValue = to
+        animation.duration = duration
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         DispatchQueue.main.async { CATransaction.setCompletionBlock(completion) }
-		add(animation, forKey: "setOpacityAnimation")
+        add(animation, forKey: "setOpacityAnimation")
         DispatchQueue.main.async { CATransaction.commit() }
-	}
+    }
 }
