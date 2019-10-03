@@ -38,8 +38,8 @@ extension CALayer {
     }
     
     /// If preferences have been set for single lines, render these with custom preferences
-    func addSingleLineLayers(type: SkeletonType, lastLineFillPercent: Int, multilineCornerRadius: Int) {
-        addMultilinesLayers(lines: 1, type: type, lastLineFillPercent: lastLineFillPercent, multilineCornerRadius: multilineCornerRadius, multilineSpacing: 0, paddingInsets: .zero)
+    func addSingleLineLayers(type: SkeletonType, singlelineFillPercent: Int, singlelineCornerRadius: Int, spacing: CGFloat) {
+        addMultilinesLayers(lines: 1, type: type, lastLineFillPercent: singlelineFillPercent, multilineCornerRadius: singlelineCornerRadius, multilineSpacing: spacing, paddingInsets: .zero)
     }
     
     func addMultilinesLayers(lines: Int, type: SkeletonType, lastLineFillPercent: Int, multilineCornerRadius: Int, multilineSpacing: CGFloat, paddingInsets: UIEdgeInsets) {
