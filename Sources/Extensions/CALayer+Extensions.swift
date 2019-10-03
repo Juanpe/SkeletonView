@@ -37,7 +37,7 @@ extension CALayer {
         return sublayers?.filter { $0.name == CALayer.skeletonSubLayersName } ?? [CALayer]()
     }
     
-    // If preferences have been set for single lines, render these with custom preferences
+    /// If preferences have been set for single lines, render these with custom preferences
     func addSingleLineLayers(type: SkeletonType, lastLineFillPercent: Int, multilineCornerRadius: Int) {
         addMultilinesLayers(lines: 1, type: type, lastLineFillPercent: lastLineFillPercent, multilineCornerRadius: multilineCornerRadius, multilineSpacing: 0, paddingInsets: .zero)
     }

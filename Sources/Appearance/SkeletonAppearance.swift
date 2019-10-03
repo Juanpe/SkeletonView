@@ -33,7 +33,7 @@ class SkeletonViewAppearance: Appearance {
 
     var multilineCornerRadius: Int = 0
     
-    var singlelineFillPercent: Int = 70
+    var singlelineFillPercent: Int = 100
     
     var singlelineCornerRadius: Int = 0
 }

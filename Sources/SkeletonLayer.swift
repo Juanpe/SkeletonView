@@ -87,11 +87,12 @@ struct SkeletonLayer {
         return multiLineView
     }
 
+    /// If there is more than one line, or custom preferences have been set for a single line, draw custom layers
     func addLines() {
         if let multiLineView = multiLineViewHolder {
             maskLayer.addMultilinesLayers(lines: multiLineView.numLines, type: type, lastLineFillPercent: multiLineView.lastLineFillingPercent, multilineCornerRadius: multiLineView.multilineCornerRadius, multilineSpacing: multiLineView.multilineSpacing, paddingInsets: multiLineView.paddingInsets)
         } else if let singleLineView = holder as? ContainsSinglelineText,
-        singleLineView.singlelineFillingPercent != 100 || singleLineView.singlelineCornerRadius != 100  {
+        singleLineView.singlelineFillingPercent != SkeletonAppearance.default.singlelineFillPercent  || singleLineView.singlelineCornerRadius != SkeletonAppearance.default.singlelineCornerRadius {
             maskLayer.addSingleLineLayers(type: type, lastLineFillPercent: singleLineView.singlelineFillingPercent, multilineCornerRadius: singleLineView.singlelineCornerRadius)
         }
     }
