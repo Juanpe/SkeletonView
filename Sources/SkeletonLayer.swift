@@ -63,7 +63,7 @@ struct SkeletonLayer {
         if let bounds = holder?.maxBoundsEstimated {
             maskLayer.bounds = bounds
         }
-        updateMultilinesIfNeeded()
+        updateLinesIfNeeded()
     }
     
     func removeLayer(transition: SkeletonTransitionStyle, completion: (() -> Void)? = nil) {
@@ -97,9 +97,12 @@ struct SkeletonLayer {
         }
     }
 
-    func updateMultilinesIfNeeded() {
-        guard let multiLineView = multiLineViewHolder else { return }
-        maskLayer.updateMultilinesLayers(lastLineFillPercent: multiLineView.lastLineFillingPercent, multilineSpacing: multiLineView.multilineSpacing, paddingInsets: multiLineView.paddingInsets)
+    func updateLinesIfNeeded() {
+        if let multiLineView = multiLineViewHolder {
+            maskLayer.updateMultilinesLayers(lastLineFillPercent: multiLineView.lastLineFillingPercent, multilineSpacing: multiLineView.multilineSpacing, paddingInsets: multiLineView.paddingInsets)
+        } else if let singleLineView = holder as? ContainsSinglelineText {
+            maskLayer.updateMultilinesLayers(lastLineFillPercent: singleLineView.singlelineFillingPercent, multilineSpacing: SkeletonAppearance.default.multilineSpacing, paddingInsets:.zero)
+        }
     }
 }
 
