@@ -91,8 +91,7 @@ struct SkeletonLayer {
     func addLines() {
         if let multiLineView = multiLineViewHolder {
             maskLayer.addMultilinesLayers(lines: multiLineView.numLines, type: type, lastLineFillPercent: multiLineView.lastLineFillingPercent, multilineCornerRadius: multiLineView.multilineCornerRadius, multilineSpacing: multiLineView.multilineSpacing, paddingInsets: multiLineView.paddingInsets)
-        } else if let singleLineView = holder as? ContainsSinglelineText,
-        singleLineView.singlelineFillingPercent != SkeletonAppearance.default.singlelineFillPercent  || singleLineView.singlelineCornerRadius != SkeletonAppearance.default.singlelineCornerRadius {
+        } else if let singleLineView = holder as? ContainsSinglelineText, SkeletonAppearance.default.renderSingleLineAsCustom == true {
             maskLayer.addSingleLineLayers(type: type, singlelineFillPercent: singleLineView.singlelineFillingPercent, singlelineCornerRadius: singleLineView.singlelineCornerRadius, spacing: SkeletonAppearance.default.multilineSpacing)
         }
     }
