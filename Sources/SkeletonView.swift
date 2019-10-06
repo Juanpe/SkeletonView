@@ -173,7 +173,6 @@ extension UIView {
 
     private func recursiveHideSkeleton(reloadDataAfter reload: Bool, transition: SkeletonTransitionStyle, root: UIView? = nil) {
         guard isSkeletonActive else { return }
-        removeDummyDataSourceIfNeeded(reloadAfter: reload)
         currentSkeletonConfig?.transition = transition
         isUserInteractionEnabled = true
         subviewsSkeletonables.recursiveSearch(leafBlock: {
@@ -182,6 +181,8 @@ extension UIView {
         }) { subview in
             subview.recursiveHideSkeleton(reloadDataAfter: reload, transition: transition)
         }
+
+        removeDummyDataSourceIfNeeded(reloadAfter: reload)
 
         if let root = root {
             flowDelegate?.didHideSkeletons(rootView: root)
