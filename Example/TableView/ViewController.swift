@@ -42,9 +42,16 @@ class ViewController: UIViewController {
         return skeletonTypeSelector.selectedSegmentIndex == 0 ? .solid : .gradient
     }
     
+    private var didShowInitialSkeleton = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableview.isSkeletonable = true
+    }
+    
+    override func viewDidLayoutSubviews() {
+        if didShowInitialSkeleton { return }
+        didShowInitialSkeleton = true
         view.showAnimatedSkeleton()
     }
     
