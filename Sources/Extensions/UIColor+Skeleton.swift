@@ -21,7 +21,13 @@ extension UIColor {
     }
     
     public var complementaryColor: UIColor {
-        return isLight() ? darker : lighter
+        if #available(iOS 13, *) {
+            return UIColor { traitCollection in
+                return self.isLight() ? self.darker : self.lighter
+            }
+        } else {
+            return isLight() ? darker : lighter
+        }
     }
     
     public var lighter: UIColor {
@@ -58,11 +64,25 @@ public extension UIColor {
     static var carrot       = UIColor(0xe67e22)
     static var alizarin     = UIColor(0xe74c3c)
     static var clouds       = UIColor(0xecf0f1)
+    static var darkClouds   = UIColor(0x1c2325)
     static var concrete     = UIColor(0x95a5a6)
     static var flatOrange   = UIColor(0xf39c12)
     static var pumpkin      = UIColor(0xd35400)
     static var pomegranate  = UIColor(0xc0392b)
     static var silver       = UIColor(0xbdc3c7)
     static var asbestos     = UIColor(0x7f8c8d)
+
+    static var skeletonDefault: UIColor {
+        if #available(iOS 13, *) {
+            return UIColor { traitCollection in
+                switch traitCollection.userInterfaceStyle {
+                case .dark: return .darkClouds
+                default: return .clouds
+                }
+            }
+        } else {
+            return .clouds
+        }
+    }
 }
 // codebeat:enable[TOO_MANY_IVARS]

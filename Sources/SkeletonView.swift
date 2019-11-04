@@ -97,6 +97,11 @@ extension UIView {
         guard isSkeletonActive else { return }
         layoutSkeletonIfNeeded()
     }
+
+    @objc func skeletonTraitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        guard isSkeletonActive, let config = currentSkeletonConfig else { return }
+        updateSkeleton(skeletonConfig: config)
+    }
     
     func showSkeleton(skeletonConfig config: SkeletonConfig) {
         isSkeletonAnimated = config.animated
@@ -109,6 +114,7 @@ extension UIView {
         guard !isSkeletonActive else { return }
         currentSkeletonConfig = config
         swizzleLayoutSubviews()
+        swizzleTraitCollectionDidChange()
         addDummyDataSourceIfNeeded()
         subviewsSkeletonables.recursiveSearch(leafBlock: {
             showSkeletonIfNotActive(skeletonConfig: config)
@@ -209,12 +215,23 @@ extension UIView {
     
     private func swizzleLayoutSubviews() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
-            DispatchQueue.once(token: "UIView.SkeletonView.swizzle") {
+            DispatchQueue.once(token: "UIView.SkeletonView.swizzleLayoutSubviews") {
                 swizzle(selector: #selector(UIView.layoutSubviews),
                         with: #selector(UIView.skeletonLayoutSubviews),
                         inClass: UIView.self,
                         usingClass: UIView.self)
                 self.layoutSkeletonIfNeeded()
+            }
+        }
+    }
+
+    private func swizzleTraitCollectionDidChange() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+            DispatchQueue.once(token: "UIView.SkeletonView.swizzleTraitCollectionDidChange") {
+                swizzle(selector: #selector(UIView.traitCollectionDidChange(_:)),
+                        with: #selector(UIView.skeletonTraitCollectionDidChange(_:)),
+                        inClass: UIView.self,
+                        usingClass: UIView.self)
             }
         }
     }

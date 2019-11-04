@@ -326,9 +326,9 @@ Besides, ```SkeletonView``` features 20 flat colors 🤙🏼
 
 Default values:
 - **tintColor**: UIColor
-    - *default: .clouds*
+    - *default: `.skeletonDefault` (same as `.clouds` but adaptive to dark mode)*
 - **gradient**: SkeletonGradient
-  - *default: SkeletonGradient(baseColor: .clouds)*
+  - *default: `SkeletonGradient(baseColor: .skeletonDefault)`*
 - **multilineHeight**: CGFloat
   - *default: 15*
 - **multilineSpacing**: CGFloat
