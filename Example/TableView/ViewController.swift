@@ -14,6 +14,8 @@ class ViewController: UIViewController {
         didSet {
             tableview.rowHeight = UITableView.automaticDimension
             tableview.estimatedRowHeight = 120.0
+            tableview.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "HeaderIdentifier")
+            tableview.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "FooterIdentifier")
         }
     }
     
@@ -178,3 +180,24 @@ extension ViewController: SkeletonTableViewDataSource {
     }
 }
 
+extension ViewController: SkeletonTableViewDelegate {
+    func collectionSkeletonView(_ skeletonView: UITableView, identifierForHeaderInSection section: Int) -> ReusableHeaderFooterIdentifier? {
+        return "HeaderIdentifier"
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderIdentifier")!
+        header.textLabel?.text = "header => \(section)"
+        return header
+    }
+
+    func collectionSkeletonView(_ skeletonView: UITableView, identifierForFooterInSection section: Int) -> ReusableHeaderFooterIdentifier? {
+        return "FooterIdentifier"
+    }
+
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footer = tableView.dequeueReusableHeaderFooterView(withIdentifier: "FooterIdentifier")!
+        footer.textLabel?.text = "footer => \(section)"
+        return footer
+    }
+}
