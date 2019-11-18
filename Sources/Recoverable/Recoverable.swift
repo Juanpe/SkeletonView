@@ -53,6 +53,7 @@ extension UILabel{
         startTransition { [weak self] in
             self?.textColor = self?.labelState?.textColor
             self?.text = self?.labelState?.text
+            self?.isUserInteractionEnabled = self?.labelState?.isUserInteractionsEnabled ?? false
         }
     }
 }
@@ -73,6 +74,7 @@ extension UITextView{
         startTransition { [weak self] in
             self?.textColor = self?.textState?.textColor
             self?.text = self?.textState?.text
+            self?.isUserInteractionEnabled = self?.textState?.isUserInteractionsEnabled ?? false
         }
     }
 }
