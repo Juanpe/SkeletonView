@@ -24,6 +24,12 @@ extension UITableViewCell {
     }
 }
 
+extension UITableViewHeaderFooterView {
+    override var subviewsToSkeleton: [UIView] {
+        return contentView.subviews
+    }
+}
+
 extension UICollectionView {
     override var subviewsToSkeleton: [UIView] {
         return subviews
