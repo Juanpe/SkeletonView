@@ -58,7 +58,7 @@ GEM
     dotenv (2.7.4)
     emoji_regex (1.0.1)
     escape (0.0.4)
-    excon (0.65.0)
+    excon (0.71.0)
     faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
     faraday-cookie_jar (0.0.6)
