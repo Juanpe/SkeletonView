@@ -29,6 +29,7 @@ extension UIView: Recoverable {
         startTransition { [weak self] in
             self?.layer.cornerRadius = safeViewState.cornerRadius
             self?.layer.masksToBounds = safeViewState.clipToBounds
+            self?.layer.borderWidth = safeViewState.borderWidth
             
             if safeViewState.backgroundColor != self?.backgroundColor || forced {
                 self?.backgroundColor = safeViewState.backgroundColor

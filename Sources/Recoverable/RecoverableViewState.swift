@@ -12,11 +12,13 @@ struct RecoverableViewState {
     var backgroundColor: UIColor?
     var cornerRadius: CGFloat
     var clipToBounds: Bool
+    var borderWidth: CGFloat
     
     init(view: UIView) {
         self.backgroundColor = view.backgroundColor
         self.clipToBounds = view.layer.masksToBounds
         self.cornerRadius = view.layer.cornerRadius
+        self.borderWidth = view.layer.borderWidth
     }
 }
 
