@@ -35,9 +35,11 @@ extension UITableView: CollectionSkeleton {
         guard let originalDataSource = self.dataSource as? SkeletonTableViewDataSource,
             !(originalDataSource is SkeletonCollectionDataSource)
             else { return }
-        let rowHeight = calculateRowHeight()
+        let calculatedRowHeight = calculateRowHeight()
         let dataSource = SkeletonCollectionDataSource(tableViewDataSource: originalDataSource,
-                                                      rowHeight: rowHeight)
+                                                      rowHeight: rowHeight,
+                                                      originalRowHeight: self.rowHeight)
+        rowHeight = calculatedRowHeight
         self.skeletonDataSource = dataSource
 
         if let originalDelegate = self.delegate as? SkeletonTableViewDelegate,
@@ -74,12 +76,11 @@ extension UITableView: CollectionSkeleton {
 
     private func restoreRowHeight() {
         guard let dataSource = self.dataSource as? SkeletonCollectionDataSource else { return }
-        rowHeight = dataSource.rowHeight
+        rowHeight = dataSource.originalRowHeight
     }
     
     private func calculateRowHeight() -> CGFloat {
         guard rowHeight == UITableView.automaticDimension else { return rowHeight }
-        rowHeight = estimatedRowHeight
         return estimatedRowHeight
     }
 }
