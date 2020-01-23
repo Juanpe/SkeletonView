@@ -45,7 +45,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.isSkeletonable = true
         collectionView.prepareSkeleton(completion: { done in
             self.view.showAnimatedSkeleton()
         })
