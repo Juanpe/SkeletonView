@@ -26,6 +26,10 @@ public extension UILabel {
 }
 
 extension UILabel: ContainsMultilineText {
+	var multilineTextFont: UIFont? {
+		return font
+	}
+	
     var numLines: Int {
         return numberOfLines
     }
