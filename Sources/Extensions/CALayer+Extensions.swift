@@ -28,6 +28,16 @@ extension CAGradientLayer {
     }
 }
 
+struct SkeletonMultilinesLayerConfig {
+	var lines: Int
+	var lineHeight: CGFloat? = nil
+	var type: SkeletonType
+	var lastLineFillPercent: Int
+	var multilineCornerRadius: Int
+	var multilineSpacing: CGFloat
+	var paddingInsets: UIEdgeInsets
+}
+
 
 // MARK: Skeleton sublayers
 extension CALayer {
@@ -37,17 +47,17 @@ extension CALayer {
         return sublayers?.filter { $0.name == CALayer.skeletonSubLayersName } ?? [CALayer]()
     }
     
-	func addMultilinesLayers(lines: Int, lineHeight: CGFloat? = nil, type: SkeletonType, lastLineFillPercent: Int, multilineCornerRadius: Int, multilineSpacing: CGFloat, paddingInsets: UIEdgeInsets) {
-		let numberOfSublayers = calculateNumLines(maxLines: lines, lineHeight: lineHeight, multilineSpacing: multilineSpacing, paddingInsets: paddingInsets)
+	func addMultilinesLayers(for config: SkeletonMultilinesLayerConfig) {
+		let numberOfSublayers = calculateNumLines(for: config)
 
         let layerBuilder = SkeletonMultilineLayerBuilder()
-            .setSkeletonType(type)
-            .setCornerRadius(multilineCornerRadius)
-            .setMultilineSpacing(multilineSpacing)
-            .setPadding(paddingInsets)
+			.setSkeletonType(config.type)
+			.setCornerRadius(config.multilineCornerRadius)
+			.setMultilineSpacing(config.multilineSpacing)
+			.setPadding(config.paddingInsets)
 
         (0..<numberOfSublayers).forEach { index in
-			let width = calculatedWidthForLine(at: index, totalLines: numberOfSublayers, lastLineFillPercent: lastLineFillPercent, paddingInsets: paddingInsets)
+			let width = calculatedWidthForLine(at: index, totalLines: numberOfSublayers, lastLineFillPercent: config.lastLineFillPercent, paddingInsets: config.paddingInsets)
             if let layer = layerBuilder
                 .setIndex(index)
                 .setWidth(width)
@@ -79,12 +89,11 @@ extension CALayer {
         frame = CGRect(x: paddingInsets.left, y: CGFloat(index) * spaceRequiredForEachLine + paddingInsets.top, width: width, height: SkeletonAppearance.default.multilineHeight)
     }
 
-	private func calculateNumLines(maxLines: Int, lineHeight: CGFloat? = nil,
-								   multilineSpacing: CGFloat, paddingInsets: UIEdgeInsets) -> Int {
-        let requiredSpaceForEachLine = lineHeight ?? (SkeletonAppearance.default.multilineHeight
-			+ multilineSpacing)
-        var numberOfSublayers = Int(round(CGFloat(bounds.height - paddingInsets.top - paddingInsets.bottom)/CGFloat(requiredSpaceForEachLine)))
-        if maxLines != 0,  maxLines <= numberOfSublayers { numberOfSublayers = maxLines }
+	private func calculateNumLines(for config: SkeletonMultilinesLayerConfig) -> Int {
+		let requiredSpaceForEachLine = config.lineHeight ?? (SkeletonAppearance.default.multilineHeight
+			+ config.multilineSpacing)
+		var numberOfSublayers = Int(round(CGFloat(bounds.height - config.paddingInsets.top - config.paddingInsets.bottom)/CGFloat(requiredSpaceForEachLine)))
+		if config.lines != 0,  config.lines <= numberOfSublayers { numberOfSublayers = config.lines }
         return numberOfSublayers
     }
 }
