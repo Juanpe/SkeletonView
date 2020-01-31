@@ -188,6 +188,9 @@
                             <constraint firstItem="HKL-L0-T2w" firstAttribute="leading" secondItem="2Gq-Y8-1TU" secondAttribute="leading" id="iIq-cx-paX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2Gq-Y8-1TU"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
                         <outlet property="avatarImage" destination="Ql9-Jy-aWM" id="VoL-by-ygR"/>
