@@ -41,6 +41,10 @@ extension SkeletonCollectionDelegate: UITableViewDelegate {
 
         return nil
     }
+
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.hideSkeleton()
+    }
 }
 
 // MARK: - UICollectionViewDelegate
