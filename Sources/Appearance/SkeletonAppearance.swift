@@ -19,9 +19,9 @@ public enum SkeletonAppearance {
 class SkeletonViewAppearance: Appearance {
     static var shared = SkeletonViewAppearance()
 
-    var tintColor: UIColor = .skeletonDefault
+    var tintColor: UIColor = .clouds
 
-    var gradient: SkeletonGradient = SkeletonGradient(baseColor: .skeletonDefault)
+    var gradient: SkeletonGradient = SkeletonGradient(baseColor: .clouds)
 
     var multilineHeight: CGFloat = 15
 
