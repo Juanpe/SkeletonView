@@ -47,6 +47,11 @@ extension CALayer {
         return sublayers?.filter { $0.name == CALayer.skeletonSubLayersName } ?? [CALayer]()
     }
     
+    /// If preferences have been set for single lines, render these with custom preferences
+    func addSingleLineLayers(type: SkeletonType, singlelineFillPercent: Int, singlelineCornerRadius: Int, spacing: CGFloat) {
+        addMultilinesLayers(lines: 1, type: type, lastLineFillPercent: singlelineFillPercent, multilineCornerRadius: singlelineCornerRadius, multilineSpacing: spacing, paddingInsets: .zero)
+    }
+    
 	func addMultilinesLayers(for config: SkeletonMultilinesLayerConfig) {
 		let numberOfSublayers = calculateNumLines(for: config)
 
@@ -111,26 +116,26 @@ public extension CALayer {
         pulseAnimation.isRemovedOnCompletion = false
         return pulseAnimation
     }
-
+    
     var sliding: CAAnimation {
         let startPointAnim = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.startPoint))
         startPointAnim.fromValue = CGPoint(x: -1, y: 0.5)
         startPointAnim.toValue = CGPoint(x:1, y: 0.5)
-
+        
         let endPointAnim = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.endPoint))
         endPointAnim.fromValue = CGPoint(x: 0, y: 0.5)
         endPointAnim.toValue = CGPoint(x:2, y: 0.5)
-
+        
         let animGroup = CAAnimationGroup()
         animGroup.animations = [startPointAnim, endPointAnim]
         animGroup.duration = 1.5
         animGroup.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
         animGroup.repeatCount = .infinity
         animGroup.isRemovedOnCompletion = false
-
+        
         return animGroup
     }
-
+    
     func playAnimation(_ anim: SkeletonLayerAnimation, key: String, completion: (() -> Void)? = nil) {
         skeletonSublayers.recursiveSearch(leafBlock: {
             DispatchQueue.main.async { CATransaction.begin() }
@@ -141,7 +146,7 @@ public extension CALayer {
             $0.playAnimation(anim, key: key, completion: completion)
         }
     }
-
+    
     func stopAnimation(forKey key: String) {
         skeletonSublayers.recursiveSearch(leafBlock: {
             removeAnimation(forKey: key)
@@ -152,15 +157,15 @@ public extension CALayer {
 }
 
 extension CALayer {
-	func setOpacity(from: Int, to: Int, duration: TimeInterval, completion: (() -> Void)?) {
+    func setOpacity(from: Int, to: Int, duration: TimeInterval, completion: (() -> Void)?) {
         DispatchQueue.main.async { CATransaction.begin() }
-		let animation = CABasicAnimation(keyPath: #keyPath(CALayer.opacity))
-		animation.fromValue = from
-		animation.toValue = to
-		animation.duration = duration
-		animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        let animation = CABasicAnimation(keyPath: #keyPath(CALayer.opacity))
+        animation.fromValue = from
+        animation.toValue = to
+        animation.duration = duration
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         DispatchQueue.main.async { CATransaction.setCompletionBlock(completion) }
-		add(animation, forKey: "setOpacityAnimation")
+        add(animation, forKey: "setOpacityAnimation")
         DispatchQueue.main.async { CATransaction.commit() }
-	}
+    }
 }

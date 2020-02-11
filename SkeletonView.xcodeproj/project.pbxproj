@@ -38,6 +38,9 @@
 		42ABD07B210B54E200BEEFF4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ABD073210B54E100BEEFF4 /* ViewController.swift */; };
 		42ABD07C210B54E200BEEFF4 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 42ABD074210B54E100BEEFF4 /* Base.lproj */; };
 		42ABD07F210B54E200BEEFF4 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ABD077210B54E200BEEFF4 /* CollectionViewCell.swift */; };
+		7454EBFE2346A61A0018C8E5 /* ContainsSinglelineText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7454EBFD2346A61A0018C8E5 /* ContainsSinglelineText.swift */; };
+		7454EC002346A62F0018C8E5 /* UILabel+Singleline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7454EBFF2346A62F0018C8E5 /* UILabel+Singleline.swift */; };
+		7454EC022346A6430018C8E5 /* UITextView+Singleline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7454EC012346A6430018C8E5 /* UITextView+Singleline.swift */; };
 		870F4E4321CAC07300B9233B /* SkeletonConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870F4E4221CAC07300B9233B /* SkeletonConfig.swift */; };
 		870F4E4421CAC07300B9233B /* SkeletonConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870F4E4221CAC07300B9233B /* SkeletonConfig.swift */; };
 		872D5A5621C177E20037D763 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D5A5521C177E20037D763 /* UIView+Extension.swift */; };
@@ -161,6 +164,9 @@
 		42ABD076210B54E200BEEFF4 /* SkeletonViewExampleCollectionview-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SkeletonViewExampleCollectionview-Info.plist"; sourceTree = "<group>"; };
 		42ABD077210B54E200BEEFF4 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* SkeletonView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SkeletonView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7454EBFD2346A61A0018C8E5 /* ContainsSinglelineText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainsSinglelineText.swift; sourceTree = "<group>"; };
+		7454EBFF2346A62F0018C8E5 /* UILabel+Singleline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Singleline.swift"; sourceTree = "<group>"; };
+		7454EC012346A6430018C8E5 /* UITextView+Singleline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Singleline.swift"; sourceTree = "<group>"; };
 		870F4E4221CAC07300B9233B /* SkeletonConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonConfig.swift; sourceTree = "<group>"; };
 		872D5A5521C177E20037D763 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		872D5A5B21C24EDD0037D763 /* UILabel+Multiline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Multiline.swift"; sourceTree = "<group>"; };
@@ -276,6 +282,16 @@
 			path = Configs;
 			sourceTree = "<group>";
 		};
+		7454EBFC2346A5F90018C8E5 /* SingleLine */ = {
+			isa = PBXGroup;
+			children = (
+				7454EBFD2346A61A0018C8E5 /* ContainsSinglelineText.swift */,
+				7454EBFF2346A62F0018C8E5 /* UILabel+Singleline.swift */,
+				7454EC012346A6430018C8E5 /* UITextView+Singleline.swift */,
+			);
+			path = SingleLine;
+			sourceTree = "<group>";
+		};
 		872D5A5821C17D850037D763 /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -342,6 +358,7 @@
 			isa = PBXGroup;
 			children = (
 				E4CE587A22EEE62300333067 /* Transitions */,
+				7454EBFC2346A5F90018C8E5 /* SingleLine */,
 				872D5A5A21C24E7C0037D763 /* Multilines */,
 				877EFA4321BEE9C40031FC00 /* Builders */,
 				8785E39F211C9C7C00CC9DFD /* Debug */,
@@ -735,7 +752,9 @@
 				F54CF5E52024CEB000330B0D /* UITableView+CollectionSkeleton.swift in Sources */,
 				F5307E321FB0F42F00EE67C5 /* RecursiveProtocol.swift in Sources */,
 				F5F622431FAC81FD007C062A /* CALayer+Extensions.swift in Sources */,
+				7454EC002346A62F0018C8E5 /* UILabel+Singleline.swift in Sources */,
 				877EFA4821BEED760031FC00 /* SkeletonMultilineLayerBuilder.swift in Sources */,
+				7454EBFE2346A61A0018C8E5 /* ContainsSinglelineText.swift in Sources */,
 				E4CE587D22EEE65200333067 /* SkeletonTransitionStyle.swift in Sources */,
 				F5F899ED1FAB9F04002E8FDA /* CollectionSkeletonProtocol.swift in Sources */,
 				F58A6E6E20A8C66300612494 /* Recoverable.swift in Sources */,
@@ -744,6 +763,7 @@
 				F5F899EB1FAB9DA3002E8FDA /* SkeletonCollectionDataSource.swift in Sources */,
 				F5F622411FAC6E31007C062A /* UIColor+Skeleton.swift in Sources */,
 				F5804772230ECD0000066D02 /* UIView+IBInspectable.swift in Sources */,
+				7454EC022346A6430018C8E5 /* UITextView+Singleline.swift in Sources */,
 				F587FB84202CBFC8002DB5FE /* SkeletonFlow.swift in Sources */,
 				F570ABF42314629700390248 /* Swizzling.swift in Sources */,
 				F5D3FB0B209DCAA300003FCF /* SubviewsSkeletonables.swift in Sources */,
