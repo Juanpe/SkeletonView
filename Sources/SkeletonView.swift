@@ -97,6 +97,11 @@ extension UIView {
         guard isSkeletonActive else { return }
         layoutSkeletonIfNeeded()
     }
+
+    @objc func skeletonTraitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        guard isSkeletonActive, let config = currentSkeletonConfig else { return }
+        updateSkeleton(skeletonConfig: config)
+    }
     
     func showSkeleton(skeletonConfig config: SkeletonConfig) {
         isSkeletonAnimated = config.animated
@@ -109,6 +114,7 @@ extension UIView {
         guard !isSkeletonActive && isSkeletonable else { return }
         currentSkeletonConfig = config
         swizzleLayoutSubviews()
+        swizzleTraitCollectionDidChange()
         addDummyDataSourceIfNeeded()
         subviewsSkeletonables.recursiveSearch(leafBlock: {
             showSkeletonIfNotActive(skeletonConfig: config)
@@ -123,8 +129,8 @@ extension UIView {
 
     private func showSkeletonIfNotActive(skeletonConfig config: SkeletonConfig) {
         guard !isSkeletonActive else { return }
-        isUserInteractionEnabled = false
         saveViewState()
+        isUserInteractionEnabled = false
         prepareViewForSkeleton()
         addSkeletonLayer(skeletonConfig: config)
     }
@@ -173,16 +179,16 @@ extension UIView {
 
     private func recursiveHideSkeleton(reloadDataAfter reload: Bool, transition: SkeletonTransitionStyle, root: UIView? = nil) {
         guard isSkeletonActive else { return }
-        removeDummyDataSourceIfNeeded(reloadAfter: reload)
         currentSkeletonConfig?.transition = transition
         isUserInteractionEnabled = true
+        removeDummyDataSourceIfNeeded(reloadAfter: reload)
         subviewsSkeletonables.recursiveSearch(leafBlock: {
             recoverViewState(forced: false)
             removeSkeletonLayer()
         }) { subview in
             subview.recursiveHideSkeleton(reloadDataAfter: reload, transition: transition)
         }
-
+        
         if let root = root {
             flowDelegate?.didHideSkeletons(rootView: root)
         }
@@ -208,12 +214,23 @@ extension UIView {
     
     private func swizzleLayoutSubviews() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
-            DispatchQueue.once(token: "UIView.SkeletonView.swizzle") {
+            DispatchQueue.once(token: "UIView.SkeletonView.swizzleLayoutSubviews") {
                 swizzle(selector: #selector(UIView.layoutSubviews),
                         with: #selector(UIView.skeletonLayoutSubviews),
                         inClass: UIView.self,
                         usingClass: UIView.self)
                 self.layoutSkeletonIfNeeded()
+            }
+        }
+    }
+
+    private func swizzleTraitCollectionDidChange() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+            DispatchQueue.once(token: "UIView.SkeletonView.swizzleTraitCollectionDidChange") {
+                swizzle(selector: #selector(UIView.traitCollectionDidChange(_:)),
+                        with: #selector(UIView.skeletonTraitCollectionDidChange(_:)),
+                        inClass: UIView.self,
+                        usingClass: UIView.self)
             }
         }
     }

@@ -213,6 +213,8 @@ public protocol SkeletonTableViewDataSource: UITableViewDataSource {
     func numSections(in collectionSkeletonView: UITableView) -> Int
     func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int
     func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier
+    func collectionSkeletonView(_ skeletonView: UITableView, identifierForHeaderInSection section: Int) -> ReusableHeaderFooterIdentifier?
+    func collectionSkeletonView(_ skeletonView: UITableView, identifierForFooterInSection section: Int) -> ReusableHeaderFooterIdentifier?
 }
 ```
 As you can see, this protocol inherits from ```UITableViewDataSource```, so you can replace this protocol with the skeleton protocol.
@@ -228,6 +230,16 @@ func numSections(in collectionSkeletonView: UITableView) -> Int
 func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int
 // Default:
 // It calculates how many cells need to populate whole tableview
+```
+
+``` swift
+func collectionSkeletonView(_ skeletonView: UITableView, identifierForHeaderInSection section: Int) -> ReusableHeaderFooterIdentifier?
+// Default: nil
+```
+
+``` swift
+func collectionSkeletonView(_ skeletonView: UITableView, identifierForFooterInSection section: Int) -> ReusableHeaderFooterIdentifier?
+// Default: nil
 ```
 
 There is only one method you need to implement to let Skeleton know the cell identifier. This method doesn't have default implementation:
@@ -326,9 +338,9 @@ Besides, ```SkeletonView``` features 20 flat colors 🤙🏼
 
 Default values:
 - **tintColor**: UIColor
-    - *default: .clouds*
+    - *default: `.skeletonDefault` (same as `.clouds` but adaptive to dark mode)*
 - **gradient**: SkeletonGradient
-  - *default: SkeletonGradient(baseColor: .clouds)*
+  - *default: `SkeletonGradient(baseColor: .skeletonDefault)`*
 - **multilineHeight**: CGFloat
   - *default: 15*
 - **multilineSpacing**: CGFloat
@@ -343,6 +355,12 @@ To get these default values you can use `SkeletonAppearance.default`. Using this
 SkeletonAppearance.default.multilineHeight = 20
 SkeletonAppearance.default.tintColor = .green
 ```
+
+You can also specifiy these line appearance properties on a per-label basis:
+- **lastLineFillPercent**: Int
+- **linesCornerRadius**: Int
+- **skeletonLineSpacing**: CGFloat
+- **skeletonPaddingInsets**: UIEdgeInsets
 
 
 ### 🤓 Custom animations
