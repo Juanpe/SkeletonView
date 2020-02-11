@@ -29,6 +29,10 @@ public extension UITextView {
 }
 
 extension UITextView: ContainsMultilineText {
+	var multilineTextFont: UIFont? {
+		return font
+	}
+	
     var lastLineFillingPercent: Int {
         get {
             let defaultValue = SkeletonAppearance.default.multilineLastLineFillPercent
