@@ -3,8 +3,30 @@ All notable changes to this project will be documented in this file
 
 ## Next version
 
+### New
+
+- Support for iOS 13 dark mode. (thanks @Wilsonator5000)
+
+## [1.8.2](https://github.com/Juanpe/SkeletonView/releases/tag/1.8.2)
+
+### New
+- Add ability to customize line spacing per label. (thanks @gshahbazian) 
+
+## [LayoutSkeleton (1.8.1)](https://github.com/Juanpe/SkeletonView/releases/tag/1.8.1)
+
 ### Improvements
 - Fix completion call in .none transition style while hide skeletons. (thanks @aadudyrev)
+
+### New
+- Swizzle `layoutSubviews` method. 
+
+### Improvements
+- Fix completion call in .none transition style while hiding skeletons. (thanks @aadudyrev)
+- Swift format.
+
+### Bug fixes
+- Update layout subviews when the original method is called.
+   - Issues: [#88, #149]
 
 ## [Transitions (1.8)](https://github.com/Juanpe/SkeletonView/releases/tag/1.8)
 

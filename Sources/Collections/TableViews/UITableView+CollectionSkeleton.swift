@@ -8,6 +8,8 @@
 
 import UIKit
 
+public typealias ReusableHeaderFooterIdentifier = String
+
 extension UITableView: CollectionSkeleton {
     var estimatedNumberOfRows: Int {
         return Int(ceil(frame.height/rowHeight))
@@ -37,6 +39,14 @@ extension UITableView: CollectionSkeleton {
         let dataSource = SkeletonCollectionDataSource(tableViewDataSource: originalDataSource,
                                                       rowHeight: rowHeight)
         self.skeletonDataSource = dataSource
+
+        if let originalDelegate = self.delegate as? SkeletonTableViewDelegate,
+            !(originalDelegate is SkeletonCollectionDelegate)
+        {
+            let delegate = SkeletonCollectionDelegate(tableViewDelegate: originalDelegate)
+            self.skeletonDelegate = delegate
+        }
+
         reloadData()
     }
     
@@ -53,6 +63,12 @@ extension UITableView: CollectionSkeleton {
         restoreRowHeight()
         self.skeletonDataSource = nil
         self.dataSource = dataSource.originalTableViewDataSource
+
+        if let delegate = self.delegate as? SkeletonCollectionDelegate {
+            self.skeletonDelegate = nil
+            self.delegate = delegate.originalTableViewDelegate
+        }
+
         if reloadAfter { self.reloadData() }
     }
 
