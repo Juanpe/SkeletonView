@@ -108,6 +108,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="oiE-tt-nc2" firstAttribute="leading" secondItem="7IN-F3-Mr6" secondAttribute="leadingMargin" id="1be-ak-AH1"/>
+                                                <constraint firstAttribute="bottom" secondItem="oiE-tt-nc2" secondAttribute="bottom" constant="20" id="CKt-oA-eBI"/>
                                                 <constraint firstItem="oiE-tt-nc2" firstAttribute="top" secondItem="7IN-F3-Mr6" secondAttribute="topMargin" constant="7" id="EKn-ST-LDX"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="VhU-1t-AaI" secondAttribute="trailing" constant="5" id="I7C-Bq-mfK"/>
                                                 <constraint firstItem="VhU-1t-AaI" firstAttribute="leading" secondItem="oiE-tt-nc2" secondAttribute="trailing" constant="21" id="Ojr-Kz-1k6"/>
