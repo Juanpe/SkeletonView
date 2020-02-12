@@ -13,7 +13,7 @@ public typealias SkeletonLayerAnimation = (CALayer) -> CAAnimation
 public enum SkeletonType {
     case solid
     case gradient
-
+    
     var layer: CALayer {
         switch self {
         case .solid:
@@ -22,7 +22,7 @@ public enum SkeletonType {
             return CAGradientLayer()
         }
     }
-
+    
     var layerAnimation: SkeletonLayerAnimation {
         switch self {
         case .solid:
@@ -36,24 +36,24 @@ public enum SkeletonType {
 struct SkeletonLayer {
     private var maskLayer: CALayer
     private weak var holder: UIView?
-
+    
     var type: SkeletonType {
         return maskLayer is CAGradientLayer ? .gradient : .solid
     }
-
+    
     var contentLayer: CALayer {
         return maskLayer
     }
-
+    
     init(type: SkeletonType, colors: [UIColor], skeletonHolder holder: UIView) {
         self.holder = holder
         self.maskLayer = type.layer
         self.maskLayer.anchorPoint = .zero
         self.maskLayer.bounds = holder.maxBoundsEstimated
-        addMultilinesIfNeeded()
+        addTextLinesIfNeeded()
         self.maskLayer.tint(withColors: colors)
     }
-
+    
     func update(usingColors colors: [UIColor]) {
         layoutIfNeeded()
         maskLayer.tint(withColors: colors)
@@ -63,38 +63,56 @@ struct SkeletonLayer {
         if let bounds = holder?.maxBoundsEstimated {
             maskLayer.bounds = bounds
         }
-        updateMultilinesIfNeeded()
+        updateLinesIfNeeded()
     }
-
+    
     func removeLayer(transition: SkeletonTransitionStyle, completion: (() -> Void)? = nil) {
         switch transition {
         case .none:
             maskLayer.removeFromSuperlayer()
             completion?()
         case .crossDissolve(let duration):
-			maskLayer.setOpacity(from: 1, to: 0, duration: duration) {
-				self.maskLayer.removeFromSuperlayer()
-				completion?()
-			}
+            maskLayer.setOpacity(from: 1, to: 0, duration: duration) {
+                self.maskLayer.removeFromSuperlayer()
+                completion?()
+            }
         }
     }
 
-    /// Returns a multiLineViewHolder only if the current holder implements the `ContainsMultilineText` protocol,
-    /// and actually displays multiple lines of text.
-    private var multiLineViewHolder: ContainsMultilineText? {
-        guard let multiLineView = holder as? ContainsMultilineText,
-            multiLineView.numLines != 1 else { return nil }
-        return multiLineView
-    }
+    /// If there is more than one line, or custom preferences have been set for a single line, draw custom layers
+    func addTextLinesIfNeeded() {
+        guard let textView = holderAsTextView else { return }
+        
+        let config = SkeletonMultilinesLayerConfig(lines: textView.numLines,
+                                                   lineHeight: textView.multilineTextFont?.lineHeight,
+                                                   type: type,
+                                                   lastLineFillPercent: textView.lastLineFillingPercent,
+                                                   multilineCornerRadius: textView.multilineCornerRadius,
+                                                   multilineSpacing: textView.multilineSpacing,
+                                                   paddingInsets: textView.paddingInsets)
 
-    func addMultilinesIfNeeded() {
-        guard let multiLineView = multiLineViewHolder else { return }
-        maskLayer.addMultilinesLayers(lines: multiLineView.numLines, type: type, lastLineFillPercent: multiLineView.lastLineFillingPercent, multilineCornerRadius: multiLineView.multilineCornerRadius, multilineSpacing: multiLineView.multilineSpacing, paddingInsets: multiLineView.paddingInsets)
+        maskLayer.addMultilinesLayers(for: config)
     }
-
-    func updateMultilinesIfNeeded() {
-        guard let multiLineView = multiLineViewHolder else { return }
-        maskLayer.updateMultilinesLayers(lastLineFillPercent: multiLineView.lastLineFillingPercent, multilineSpacing: multiLineView.multilineSpacing, paddingInsets: multiLineView.paddingInsets)
+    
+    func updateLinesIfNeeded() {
+        guard let textView = holderAsTextView else { return }
+        let config = SkeletonMultilinesLayerConfig(lines: textView.numLines,
+                                                   lineHeight: textView.multilineTextFont?.lineHeight,
+                                                   type: type,
+                                                   lastLineFillPercent: textView.lastLineFillingPercent,
+                                                   multilineCornerRadius: textView.multilineCornerRadius,
+                                                   multilineSpacing: textView.multilineSpacing,
+                                                   paddingInsets: textView.paddingInsets)
+        
+        maskLayer.updateMultilinesLayers(for: config)
+    }
+    
+    var holderAsTextView: ContainsMultilineText? {
+        guard let textView = holder as? ContainsMultilineText,
+            (textView.numLines == 0 || textView.numLines > 1 || textView.numLines == 1 && !SkeletonAppearance.default.renderSingleLineAsView) else {
+                return nil
+        }
+        return textView
     }
 }
 

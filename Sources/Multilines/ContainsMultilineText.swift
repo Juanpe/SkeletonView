@@ -10,6 +10,7 @@ enum MultilineAssociatedKeys {
 }
 
 protocol ContainsMultilineText {
+	var multilineTextFont: UIFont? { get }
     var numLines: Int { get }
     var lastLineFillingPercent: Int { get }
     var multilineCornerRadius: Int { get }

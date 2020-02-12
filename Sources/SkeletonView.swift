@@ -94,6 +94,7 @@ public extension UIView {
 
 extension UIView {
     @objc func skeletonLayoutSubviews() {
+        skeletonLayoutSubviews()
         guard isSkeletonActive else { return }
         layoutSkeletonIfNeeded()
     }
@@ -111,7 +112,7 @@ extension UIView {
     }
 
     private func recursiveShowSkeleton(skeletonConfig config: SkeletonConfig, root: UIView? = nil) {
-        guard !isSkeletonActive else { return }
+        guard !isSkeletonActive && isSkeletonable else { return }
         currentSkeletonConfig = config
         swizzleLayoutSubviews()
         swizzleTraitCollectionDidChange()
@@ -129,8 +130,8 @@ extension UIView {
 
     private func showSkeletonIfNotActive(skeletonConfig config: SkeletonConfig) {
         guard !isSkeletonActive else { return }
-        isUserInteractionEnabled = false
         saveViewState()
+        isUserInteractionEnabled = false
         prepareViewForSkeleton()
         addSkeletonLayer(skeletonConfig: config)
     }
@@ -181,15 +182,14 @@ extension UIView {
         guard isSkeletonActive else { return }
         currentSkeletonConfig?.transition = transition
         isUserInteractionEnabled = true
+        removeDummyDataSourceIfNeeded(reloadAfter: reload)
         subviewsSkeletonables.recursiveSearch(leafBlock: {
             recoverViewState(forced: false)
             removeSkeletonLayer()
         }) { subview in
             subview.recursiveHideSkeleton(reloadDataAfter: reload, transition: transition)
         }
-
-        removeDummyDataSourceIfNeeded(reloadAfter: reload)
-
+        
         if let root = root {
             flowDelegate?.didHideSkeletons(rootView: root)
         }

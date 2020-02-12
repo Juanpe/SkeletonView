@@ -1,0 +1,13 @@
+name: Greetings
+
+on: [pull_request]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        pr-message: 'Hi 👋! Thank you for raising your pull request. \n Please make sure you have followed our contributing guidelines. We will review it as soon as possible.'
+      
