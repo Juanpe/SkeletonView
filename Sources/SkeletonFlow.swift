@@ -2,8 +2,6 @@
 
 import UIKit
 
-import UIKit
-
 protocol SkeletonFlowDelegate {
     func willBeginShowingSkeletons(rootView: UIView)
     func didShowSkeletons(rootView: UIView)
