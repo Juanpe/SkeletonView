@@ -14,12 +14,14 @@ class SkeletonCollectionDataSource: NSObject {
     weak var originalTableViewDataSource: SkeletonTableViewDataSource?
     weak var originalCollectionViewDataSource: SkeletonCollectionViewDataSource?
     var rowHeight: CGFloat = 0.0
+    var originalRowHeight: CGFloat = 0.0
     
-    convenience init(tableViewDataSource: SkeletonTableViewDataSource? = nil, collectionViewDataSource: SkeletonCollectionViewDataSource? = nil, rowHeight: CGFloat = 0.0) {
+    convenience init(tableViewDataSource: SkeletonTableViewDataSource? = nil, collectionViewDataSource: SkeletonCollectionViewDataSource? = nil, rowHeight: CGFloat = 0.0, originalRowHeight: CGFloat = 0.0) {
         self.init()
         self.originalTableViewDataSource = tableViewDataSource
         self.originalCollectionViewDataSource = collectionViewDataSource
         self.rowHeight = rowHeight
+        self.originalRowHeight = originalRowHeight
     }
 }
 
