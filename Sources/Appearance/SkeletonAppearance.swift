@@ -9,9 +9,7 @@ public protocol Appearance {
     var multilineSpacing: CGFloat { get set }
     var multilineLastLineFillPercent: Int { get set }
     var multilineCornerRadius: Int { get set }
-    var renderSingleLineAsCustom: Bool { get set }
-    var singlelineFillPercent: Int { get set }
-    var singlelineCornerRadius: Int { get set }
+    var renderSingleLineAsView: Bool { get set }
 }
 
 public enum SkeletonAppearance {
@@ -34,10 +32,6 @@ class SkeletonViewAppearance: Appearance {
 
     var multilineCornerRadius: Int = 0
     
-    var renderSingleLineAsCustom: Bool = false
-    
-    var singlelineFillPercent: Int = 100
-    
-    var singlelineCornerRadius: Int = 0
+    var renderSingleLineAsView: Bool = false
 }
 // codebeat:enable[TOO_MANY_IVARS]

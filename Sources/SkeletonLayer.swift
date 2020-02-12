@@ -50,7 +50,7 @@ struct SkeletonLayer {
         self.maskLayer = type.layer
         self.maskLayer.anchorPoint = .zero
         self.maskLayer.bounds = holder.maxBoundsEstimated
-        addLines()
+        addTextLinesIfNeeded()
         self.maskLayer.tint(withColors: colors)
     }
     
@@ -79,36 +79,40 @@ struct SkeletonLayer {
         }
     }
 
-    /// Returns a multiLineViewHolder only if the current holder implements the `ContainsMultilineText` protocol,
-    /// and actually displays multiple lines of text.
-    private var multiLineViewHolder: ContainsMultilineText? {
-        guard let multiLineView = holder as? ContainsMultilineText,
-            multiLineView.numLines != 1 else { return nil }
-        return multiLineView
-    }
-
     /// If there is more than one line, or custom preferences have been set for a single line, draw custom layers
-    func addLines() {
-      let config = SkeletonMultilinesLayerConfig(lines: multiLineView.numLines,
-												   lineHeight: multiLineView.multilineTextFont?.lineHeight,
-												   type: type, lastLineFillPercent: multiLineView.lastLineFillingPercent,
-												   multilineCornerRadius: multiLineView.multilineCornerRadius,
-												   multilineSpacing: multiLineView.multilineSpacing,
-												   paddingInsets: multiLineView.paddingInsets)
+    func addTextLinesIfNeeded() {
+        guard let textView = holderAsTextView else { return }
+        
+        let config = SkeletonMultilinesLayerConfig(lines: textView.numLines,
+                                                   lineHeight: textView.multilineTextFont?.lineHeight,
+                                                   type: type,
+                                                   lastLineFillPercent: textView.lastLineFillingPercent,
+                                                   multilineCornerRadius: textView.multilineCornerRadius,
+                                                   multilineSpacing: textView.multilineSpacing,
+                                                   paddingInsets: textView.paddingInsets)
 
-        if let multiLineView = multiLineViewHolder {
-          		maskLayer.addMultilinesLayers(for: config)
-        } else if let singleLineView = holder as? ContainsSinglelineText, SkeletonAppearance.default.renderSingleLineAsCustom == true {
-            maskLayer.addSingleLineLayers(type: type, singlelineFillPercent: singleLineView.singlelineFillingPercent, singlelineCornerRadius: singleLineView.singlelineCornerRadius, spacing: SkeletonAppearance.default.multilineSpacing)
-        }
+        maskLayer.addMultilinesLayers(for: config)
     }
-
+    
     func updateLinesIfNeeded() {
-        if let multiLineView = multiLineViewHolder {
-            maskLayer.updateMultilinesLayers(lastLineFillPercent: multiLineView.lastLineFillingPercent, multilineSpacing: multiLineView.multilineSpacing, paddingInsets: multiLineView.paddingInsets)
-        } else if let singleLineView = holder as? ContainsSinglelineText {
-            maskLayer.updateMultilinesLayers(lastLineFillPercent: singleLineView.singlelineFillingPercent, multilineSpacing: SkeletonAppearance.default.multilineSpacing, paddingInsets:.zero)
+        guard let textView = holderAsTextView else { return }
+        let config = SkeletonMultilinesLayerConfig(lines: textView.numLines,
+                                                   lineHeight: textView.multilineTextFont?.lineHeight,
+                                                   type: type,
+                                                   lastLineFillPercent: textView.lastLineFillingPercent,
+                                                   multilineCornerRadius: textView.multilineCornerRadius,
+                                                   multilineSpacing: textView.multilineSpacing,
+                                                   paddingInsets: textView.paddingInsets)
+        
+        maskLayer.updateMultilinesLayers(for: config)
+    }
+    
+    var holderAsTextView: ContainsMultilineText? {
+        guard let textView = holder as? ContainsMultilineText,
+            (textView.numLines == 0 || textView.numLines > 1 || textView.numLines == 1 && !SkeletonAppearance.default.renderSingleLineAsView) else {
+                return nil
         }
+        return textView
     }
 }
 

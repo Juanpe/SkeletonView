@@ -47,20 +47,20 @@ extension CALayer {
         return sublayers?.filter { $0.name == CALayer.skeletonSubLayersName } ?? [CALayer]()
     }
     
-    /// If preferences have been set for single lines, render these with custom preferences
-    func addSingleLineLayers(type: SkeletonType, singlelineFillPercent: Int, singlelineCornerRadius: Int, spacing: CGFloat) {
-        addMultilinesLayers(lines: 1, type: type, lastLineFillPercent: singlelineFillPercent, multilineCornerRadius: singlelineCornerRadius, multilineSpacing: spacing, paddingInsets: .zero)
-    }
-    
 	func addMultilinesLayers(for config: SkeletonMultilinesLayerConfig) {
-		let numberOfSublayers = calculateNumLines(for: config)
+        let numberOfSublayers = config.lines == 1 ? 1 : calculateNumLines(for: config)
+        var height = config.lineHeight ?? SkeletonAppearance.default.multilineHeight
+        if numberOfSublayers == 1 {
+            height = bounds.height
+        }
 
         let layerBuilder = SkeletonMultilineLayerBuilder()
 			.setSkeletonType(config.type)
 			.setCornerRadius(config.multilineCornerRadius)
 			.setMultilineSpacing(config.multilineSpacing)
-			.setPadding(config.paddingInsets)
-
+            .setPadding(config.paddingInsets)
+            .setHeight(height)
+    
         (0..<numberOfSublayers).forEach { index in
 			let width = calculatedWidthForLine(at: index, totalLines: numberOfSublayers, lastLineFillPercent: config.lastLineFillPercent, paddingInsets: config.paddingInsets)
             if let layer = layerBuilder
@@ -72,12 +72,20 @@ extension CALayer {
         }
     }
 
-    func updateMultilinesLayers(lastLineFillPercent: Int, multilineSpacing: CGFloat, paddingInsets: UIEdgeInsets) {
+    func updateMultilinesLayers(for config: SkeletonMultilinesLayerConfig) {
         let currentSkeletonSublayers = skeletonSublayers
         let numberOfSublayers = currentSkeletonSublayers.count
+        let lastLineFillPercent = config.lastLineFillPercent
+        let paddingInsets = config.paddingInsets
+        let multilineSpacing = config.multilineSpacing
+        var height = config.lineHeight ?? SkeletonAppearance.default.multilineHeight
+        if numberOfSublayers == 1 {
+            height = bounds.height
+        }
+        
         for (index, layer) in currentSkeletonSublayers.enumerated() {
             let width = calculatedWidthForLine(at: index, totalLines: numberOfSublayers, lastLineFillPercent: lastLineFillPercent, paddingInsets: paddingInsets)
-            layer.updateLayerFrame(for: index, width: width, multilineSpacing: multilineSpacing, paddingInsets: paddingInsets)
+            layer.updateLayerFrame(for: index, size: CGSize(width: width, height: height), multilineSpacing: multilineSpacing, paddingInsets: paddingInsets)
         }
     }
 
@@ -89,14 +97,13 @@ extension CALayer {
         return width
     }
 
-    func updateLayerFrame(for index: Int, width: CGFloat, multilineSpacing: CGFloat, paddingInsets: UIEdgeInsets) {
+    func updateLayerFrame(for index: Int, size: CGSize, multilineSpacing: CGFloat, paddingInsets: UIEdgeInsets) {
         let spaceRequiredForEachLine = SkeletonAppearance.default.multilineHeight + multilineSpacing
-        frame = CGRect(x: paddingInsets.left, y: CGFloat(index) * spaceRequiredForEachLine + paddingInsets.top, width: width, height: SkeletonAppearance.default.multilineHeight)
+        frame = CGRect(x: paddingInsets.left, y: CGFloat(index) * spaceRequiredForEachLine + paddingInsets.top, width: size.width, height: size.height)
     }
 
 	private func calculateNumLines(for config: SkeletonMultilinesLayerConfig) -> Int {
-		let requiredSpaceForEachLine = config.lineHeight ?? (SkeletonAppearance.default.multilineHeight
-			+ config.multilineSpacing)
+		let requiredSpaceForEachLine = (config.lineHeight ?? SkeletonAppearance.default.multilineHeight) + config.multilineSpacing
 		var numberOfSublayers = Int(round(CGFloat(bounds.height - config.paddingInsets.top - config.paddingInsets.bottom)/CGFloat(requiredSpaceForEachLine)))
 		if config.lines != 0,  config.lines <= numberOfSublayers { numberOfSublayers = config.lines }
         return numberOfSublayers
