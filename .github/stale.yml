@@ -8,3 +8,4 @@ markComment: >
   recent activity. It will be closed if no further activity occurs. Thank you
   for your contributions.
 closeComment: false
+only: issues
