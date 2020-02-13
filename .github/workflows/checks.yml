@@ -7,19 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-ruby@v1
-        with:
-          ruby-version: '2.x'
-      - name: Install Bundler 2.0.2
-        run: gem install bundler --version 2.0.2
-      - name: Install Bundler dependencies
-        run: bundle install
-      - name: Install danger-auto_label
-        run: gem install danger-auto_label
-      - uses: MeilCli/danger-action@v2
-        with:
-          plugins_file: 'Gemfile'
-          danger_file: 'Dangerfile'
-          danger_id: 'danger-pr'
+      - name: Execute danger
+        uses: danger/swift@2.0.3
         env:
-          DANGER_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
