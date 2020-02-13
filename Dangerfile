@@ -63,9 +63,12 @@ failure 'Please rebase to get rid of the merge commits in this PR' if git.commit
 
 # Check if PR is mergeable
 merge_conflict_label = 'merge conflicts'
+has_merge_conflicts_label = github.pr_labels.include? merge_conflict_label
 
 if github.pr_json['mergeable']
-  auto_label.remove(merge_conflict_label)
+    if has_merge_conflicts_label
+        auto_label.remove(merge_conflict_label)
+    end
 else
   auto_label.set(github.pr_json['number'], merge_conflict_label, 'f73878')
 end
