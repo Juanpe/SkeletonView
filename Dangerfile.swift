@@ -13,7 +13,7 @@ if isNotTrivial && noChangelogEntry && sourceChanges {
     warn("Any changes to library code should be reflected in the Changelog.")
 }
 
- Make it more obvious that a PR is a work in progress and shouldn't be merged yet
+ // Make it more obvious that a PR is a work in progress and shouldn't be merged yet
 if danger.github.pullRequest.title.contains("WIP") {
     warn("PR is classed as Work in Progress")
 }
