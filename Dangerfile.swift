@@ -15,8 +15,12 @@ SwiftLint.lint(.modifiedAndCreatedFiles(directory: "Sources"), inline: true)
 
 // Warn when there is a big PR
 if danger.git.linesOfCode > 1 {
-    markdown(" * [##{pr_number}](#{pr_url}): #{github.pr_title} - [@#{github.pr_author}](https://github.com/#{github.pr_author})")
-    warn("Big PR, try to keep changes smaller if you can")
+    
+    warn("""
+Big PR, try to keep changes smaller if you can
+Here's an example of a CHANGELOG.md entry (place it immediately under the `* Your contribution here!` line):
+* [##{pr_number}](#{pr_url}): #{github.pr_title} - [@#{github.pr_author}](https://github.com/#{github.pr_author})
+""")
 }
 
 // Pull out the edited files and find ones that come from a sub-folder
