@@ -18,6 +18,7 @@ struct SkeletonConfig {
     
     /// Used to execute a custom animation
     let animation: SkeletonLayerAnimation?
+    let test:String!
     
     ///  Transition style
     var transition: SkeletonTransitionStyle
