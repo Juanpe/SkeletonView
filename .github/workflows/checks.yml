@@ -14,6 +14,8 @@ jobs:
         run: gem install bundler --version 2.0.2
       - name: Install Bundler dependencies
         run: bundle install
+      - name: Install danger-auto_label
+        run: gem install danger-auto_label
       - uses: MeilCli/danger-action@v2
         with:
           plugins_file: 'Gemfile'
