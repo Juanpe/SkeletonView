@@ -20,7 +20,6 @@ class SkeletonViewAppearance: Appearance {
     static var shared = SkeletonViewAppearance()
 
     var tintColor: UIColor = .clouds
-
     var gradient: SkeletonGradient = SkeletonGradient(baseColor: .clouds)
 
     var multilineHeight: CGFloat = 15
