@@ -19,7 +19,7 @@ deleted_swift_library_files = !git.deleted_files.grep(/Sources.*\.swift/).empty?
 
 # Warn when there is a big PR
 warn('Big PR') if git.lines_of_code > 500
-
+ 
 # Warn when Danger changes
 warn('Dangerfile changes') if has_danger_changes
 
@@ -33,17 +33,17 @@ failure 'Added or removed library files require the Xcode project to be updated.
 # ------------------------------------------------------------------------------
 # Have you updated CHANGELOG.md?
 # ------------------------------------------------------------------------------
-if !has_changelog_changes && has_library_changes
-  markdown <<-MARKDOWN
-  Here's an example of a CHANGELOG.md entry (place it immediately under the `* Your contribution here!` line):
-  ```markdown
-  * [##{pr_number}](#{pr_url}): #{github.pr_title} - [@#{github.pr_author}](https://github.com/#{github.pr_author})
-  ```
-  MARKDOWN
-  warn('Please update CHANGELOG.md with a description of your changes. '\
-       'If this PR is not a user-facing change (e.g. just refactoring), '\
-       'you can disregard this.', sticky: false)
-end
+# if !has_changelog_changes && has_library_changes
+#   markdown <<-MARKDOWN
+#   Here's an example of a CHANGELOG.md entry (place it immediately under the `* Your contribution here!` line):
+#   ```markdown
+#   * [##{pr_number}](#{pr_url}): #{github.pr_title} - [@#{github.pr_author}](https://github.com/#{github.pr_author})
+#   ```
+#   MARKDOWN
+#   warn('Please update CHANGELOG.md with a description of your changes. '\
+#        'If this PR is not a user-facing change (e.g. just refactoring), '\
+#        'you can disregard this.', sticky: false)
+# end
 
 ## Messages
 
@@ -62,12 +62,15 @@ failure 'Please rebase to get rid of the merge commits in this PR' if git.commit
 ## Adds labels
 
 # Check if PR is mergeable
-merge_conflict_label = 'Merge Conflicts'
+merge_conflict_label = 'merge conflicts'
+has_merge_conflicts_label = github.pr_labels.include? merge_conflict_label
 
 if github.pr_json['mergeable']
-  auto_label.remove(merge_conflict_label)
+    if has_merge_conflicts_label
+        auto_label.remove(merge_conflict_label)
+    end
 else
-  auto_label.set(github.pr_json['number'], merge_conflict_label, 'e0f76f')
+  auto_label.set(github.pr_json['number'], merge_conflict_label, 'f73878')
 end
 
 
