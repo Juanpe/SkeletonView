@@ -1,4 +1,4 @@
-daysUntilStale: 60
+daysUntilStale: 20
 daysUntilClose: 7
 onlyLabels:
   - awaiting user input
@@ -8,4 +8,3 @@ markComment: >
   recent activity. It will be closed if no further activity occurs. Thank you
   for your contributions.
 closeComment: false
-only: issues
