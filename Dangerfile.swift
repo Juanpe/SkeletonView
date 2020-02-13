@@ -1,35 +1,44 @@
 import Danger
 
-extension Git {
-    var linesOfCode: Int {
-        createdFiles.count + modifiedFiles.count - deletedFiles.count
-    }
+let danger = Danger()
+let github = danger.github
+
+// Changelog entries are required for changes to library files.
+let allSourceFiles = danger.git.modifiedFiles + danger.git.createdFiles
+let noChangelogEntry = !allSourceFiles.contains("CHANGELOG.md")
+let sourceChanges = allSourceFiles.contains { $0.hasPrefix("Sources") }
+let isNotTrivial = !danger.github.pullRequest.title.contains("#trivial")
+
+if isNotTrivial && noChangelogEntry && sourceChanges {
+    warn("Any changes to library code should be reflected in the Changelog.")
 }
 
-let danger = Danger()
-//let pullRequest = danger.github.pullRequest
+ Make it more obvious that a PR is a work in progress and shouldn't be merged yet
+if danger.github.pullRequest.title.contains("WIP") {
+    warn("PR is classed as Work in Progress")
+}
 
-SwiftLint.lint(.modifiedAndCreatedFiles(directory: "Sources"), inline: true)
+// Warn, asking to update all README files if only English README are updated
+let enReameModified = danger.git.modifiedFiles.contains { $0.contains("README.md") }
+let zhReameModified = danger.git.modifiedFiles.contains { $0.contains("README_zh.md") }
+let koReameModified = danger.git.modifiedFiles.contains { $0.contains("README_ko.md") }
+let ptBrReameModified = danger.git.modifiedFiles.contains { $0.contains("README_pt-br.md") }
+let otherLanguagesReadmeHaveBeenModified = zhReameModified && koReameModified && ptBrReameModified
 
-// Warnings
+if (enReameModified && !otherLanguagesReadmeHaveBeenModified) {
+    warn("Consider **also** updating the README for other languages.")
+}
 
 // Warn when there is a big PR
-if danger.git.linesOfCode > 1 {
-    
-    warn("""
-Big PR, try to keep changes smaller if you can
-Here's an example of a CHANGELOG.md entry (place it immediately under the `* Your contribution here!` line):
-* [##{pr_number}](#{pr_url}): #{github.pr_title} - [@#{github.pr_author}](https://github.com/#{github.pr_author})
-""")
+if (danger.github.pullRequest.additions ?? 0) > 500 {
+    warn("Big PR, try to keep changes smaller if you can")
 }
 
-// Pull out the edited files and find ones that come from a sub-folder
-// where our app lives
-let editedFiles = danger.git.modifiedFiles + danger.git.createdFiles
-let editedAppFiles = editedFiles.filter { $0.contains("/Sources") }
-
-// Request for a CHANGELOG entry with each app change
-if editedAppFiles.count > 0 {
-    fail("Please add a CHANGELOG entry for these changes.")
-    markdown("")
+// Added (or removed) library files need to be added (or removed) from the
+// Xcode project to avoid breaking things.
+let addedSwiftLibraryFiles = danger.git.createdFiles.contains { $0.fileType == .swift && $0.hasPrefix("Sources") }
+let deletedSwiftLibraryFiles = danger.git.deletedFiles.contains { $0.fileType == .swift && $0.hasPrefix("Sources") }
+let modifiedXcodeProject = danger.git.modifiedFiles.contains { $0.contains(".xcodeproj") }
+if (addedSwiftLibraryFiles || deletedSwiftLibraryFiles) && !modifiedXcodeProject {
+    fail("Added or removed files require the Xcode project to be updated.")
 }
