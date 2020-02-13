@@ -13,6 +13,6 @@ SwiftLint.lint(.modifiedAndCreatedFiles(directory: "Sources"), inline: true)
 // Warnings
 
 // Warn when there is a big PR
-if danger.git.linesOfCode > 20 {
+if danger.git.linesOfCode > 1 {
     warn("Big PR, try to keep changes smaller if you can")
 }
