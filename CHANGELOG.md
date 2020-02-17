@@ -1,9 +1,9 @@
 # Change Log
 All notable changes to this project will be documented in this file
 
-## Next version
+## Master
 
-### New
+## [1.8.3](https://github.com/Juanpe/SkeletonView/releases/tag/1.8.3)
 
 - Support for iOS 13 dark mode. (thanks @Wilsonator5000)
 
