@@ -13,16 +13,16 @@ All notable changes to this project will be documented in this file
 #### 🩹 Bug fixes
 
 
-### [1.8.3](https://github.com/Juanpe/SkeletonView/releases/tag/1.8.3)
+### 📦[1.8.3](https://github.com/Juanpe/SkeletonView/releases/tag/1.8.3)
 
 - Support for iOS 13 dark mode. (thanks @Wilsonator5000)
 
-### [1.8.2](https://github.com/Juanpe/SkeletonView/releases/tag/1.8.2)
+### 📦[1.8.2](https://github.com/Juanpe/SkeletonView/releases/tag/1.8.2)
 
 #### 🙌 New
 - Add ability to customize line spacing per label. (thanks @gshahbazian) 
 
-### [LayoutSkeleton (1.8.1)](https://github.com/Juanpe/SkeletonView/releases/tag/1.8.1)
+### 📦[LayoutSkeleton (1.8.1)](https://github.com/Juanpe/SkeletonView/releases/tag/1.8.1)
 
 #### 🔬Improvements
 - Fix completion call in .none transition style while hide skeletons. (thanks @aadudyrev)
@@ -38,7 +38,7 @@ All notable changes to this project will be documented in this file
 - Update layout subviews when the original method is called.
    - Issues: [#88, #149]
 
-### [Transitions (1.8)](https://github.com/Juanpe/SkeletonView/releases/tag/1.8)
+### 📦[Transitions (1.8)](https://github.com/Juanpe/SkeletonView/releases/tag/1.8)
 
 #### 🙌 New
 
@@ -52,7 +52,7 @@ All notable changes to this project will be documented in this file
 - Solved issues.
  [#175](https://github.com/Juanpe/SkeletonView/issues/175) Swift Package Manager version format
 
-### [Layout update (1.7)](https://github.com/Juanpe/SkeletonView/releases/tag/1.7)
+### 📦[Layout update (1.7)](https://github.com/Juanpe/SkeletonView/releases/tag/1.7)
 
 #### 🙌 New
 
@@ -62,7 +62,7 @@ All notable changes to this project will be documented in this file
 
 - Allow updating skeleton layers without recreating them: `updateSkeleton`, `updateGradientSkeleton`, `updateAnimatedSkeleton`, `updateAnimatedGradientSkeleton`. (thanks @eduardbosch)
 
-### [Debug (1.4)](https://github.com/Juanpe/SkeletonView/releases/tag/1.4)
+### 📦[Debug (1.4)](https://github.com/Juanpe/SkeletonView/releases/tag/1.4)
 
 #### 🙌 New
 
@@ -76,7 +76,7 @@ All notable changes to this project will be documented in this file
 #### 🩹 Bug fixes
 - Solved issue [#86](https://github.com/Juanpe/SkeletonView/issues/86) (thanks @reececomo)
 
-### [Custom defaults (1.3)](https://github.com/Juanpe/SkeletonView/releases/tag/1.3)
+### 📦[Custom defaults (1.3)](https://github.com/Juanpe/SkeletonView/releases/tag/1.3)
 
 #### 🙌 New
 
@@ -86,7 +86,7 @@ All notable changes to this project will be documented in this file
 #### 🩹 Bug fixes
 - Solved issue [#41](https://github.com/Juanpe/SkeletonView/issues/41). Now, Skeleton works if UICollectionView cell's Nib is registered in code. (thanks @kjoneandrei)
 
-### [Typo (1.2.3)](https://github.com/Juanpe/SkeletonView/releases/tag/1.2.3)
+### 📦[Typo (1.2.3)](https://github.com/Juanpe/SkeletonView/releases/tag/1.2.3)
 
 ####  Fixes
 
@@ -96,7 +96,7 @@ All notable changes to this project will be documented in this file
 
 - Now it takes in account the `UIStackView` to calculate the `SkeletonLayer` bounds (thanks @giantramen)
 
-### [New face (1.2.2)](https://github.com/Juanpe/SkeletonView/releases/tag/1.2.2)
+### 📦[New face (1.2.2)](https://github.com/Juanpe/SkeletonView/releases/tag/1.2.2)
 
 #### 🙌 New
 
@@ -105,7 +105,7 @@ All notable changes to this project will be documented in this file
 #### 🩹 Bug fixes
 - Solved issue [#23](https://github.com/Juanpe/SkeletonView/issues/23). Problem with UIStackView. (thanks @giantramen)
 
-### [State (1.2.1)](https://github.com/Juanpe/SkeletonView/releases/tag/1.2.1)
+### 📦[State (1.2.1)](https://github.com/Juanpe/SkeletonView/releases/tag/1.2.1)
 
 #### 🙌 New
 
@@ -115,7 +115,7 @@ All notable changes to this project will be documented in this file
 #### 🩹 Bug fixes
 - Solved issue [#51](https://github.com/Juanpe/SkeletonView/issues/51). Support inspectable properties when using Carthage. (thanks @eduardbosch)
 
-### [On TV (1.2)](https://github.com/Juanpe/SkeletonView/releases/tag/1.2)
+### 📦[On TV (1.2)](https://github.com/Juanpe/SkeletonView/releases/tag/1.2)
 
 #### 🙌 New
 - Now ```SkeletonView``` is **tvOS** compatible! 🎉.  (thanks @mihai8804858)
@@ -124,12 +124,12 @@ All notable changes to this project will be documented in this file
 - Solved issue [#46](https://github.com/Juanpe/SkeletonView/issues/46). It crashes the application when tap on it, didSelect called and crash.
 
 
-### [Hotfix (1.1.1)](https://github.com/Juanpe/SkeletonView/releases/tag/1.1.1)
+### 📦[Hotfix (1.1.1)](https://github.com/Juanpe/SkeletonView/releases/tag/1.1.1)
 
 #### 🩹 Bug fixes
 - Now yes, solved issue [#39](https://github.com/Juanpe/SkeletonView/issues/39)
 
-### [Needed (1.1)](https://github.com/Juanpe/SkeletonView/releases/tag/1.1)
+### 📦[Needed (1.1)](https://github.com/Juanpe/SkeletonView/releases/tag/1.1)
 
 #### 🙌 New
 - Now ```SkeletonView```supports **UICollectionViews**! 🎉.  (thanks @Renatdz)
@@ -138,7 +138,7 @@ All notable changes to this project will be documented in this file
 - Solved issue [#39](https://github.com/Juanpe/SkeletonView/issues/39). Gradient animation did not work when app becomes active.
 
 
-### [Resizable (1.0.5)](https://github.com/Juanpe/SkeletonView/releases/tag/1.0.5)
+### 📦[Resizable (1.0.5)](https://github.com/Juanpe/SkeletonView/releases/tag/1.0.5)
 
 #### 🙌 New
 - Now you can use table views with resizable cells.
@@ -149,7 +149,7 @@ All notable changes to this project will be documented in this file
  [#30](https://github.com/Juanpe/SkeletonView/issues/30),
  [#34](https://github.com/Juanpe/SkeletonView/issues/34).
 
-### [Filled or not (1.0.4)](https://github.com/Juanpe/SkeletonView/releases/tag/1.0.4)
+### 📦[Filled or not (1.0.4)](https://github.com/Juanpe/SkeletonView/releases/tag/1.0.4)
 
 #### 🙌 New
 - You can set the filling percent of the last line in multiline elements (thanks @jontelang!)
@@ -157,22 +157,22 @@ All notable changes to this project will be documented in this file
 #### 🩹 Bug fixes
 - Solved issue [#14](https://github.com/Juanpe/SkeletonView/issues/14). You could edit text views with skeleton active.
 
-### [In all directions (1.0.3)](https://github.com/Juanpe/SkeletonView/releases/tag/1.0.3)
+### 📦[In all directions (1.0.3)](https://github.com/Juanpe/SkeletonView/releases/tag/1.0.3)
 
 #### 🙌 New
 - Create ```SkeletonAnimationBuilder```, to facilitate the creation of layer animations.
 ```GradientDirection``` enum.
 
-### [Retro (1.0.2)](https://github.com/Juanpe/SkeletonView/releases/tag/1.0.2)
+### 📦[Retro (1.0.2)](https://github.com/Juanpe/SkeletonView/releases/tag/1.0.2)
 
 #### 🙌 New
 - Change some private keywords, to be Swift 3 compatible
 
-### [Early bird bug (1.0.1)](https://github.com/Juanpe/SkeletonView/releases/tag/1.0.2)
+### 📦[Early bird bug (1.0.1)](https://github.com/Juanpe/SkeletonView/releases/tag/1.0.2)
 
 #### 🩹 Bug fixes
 - It was not removing the skeleton layer
 
-### [Starter (1.0)](https://github.com/Juanpe/SkeletonView/releases/tag/1.0)
+### 📦[Starter (1.0)](https://github.com/Juanpe/SkeletonView/releases/tag/1.0)
 
 - First release
