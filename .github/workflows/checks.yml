@@ -9,7 +9,5 @@ jobs:
       - uses: actions/checkout@v2
       - name: Execute danger
         uses: danger/swift@2.0.3
-        with:
-             args: --failOnErrors --no-publish-check
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
