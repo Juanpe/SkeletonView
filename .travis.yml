@@ -1,7 +1,0 @@
-language: objective-c
-osx_image: xcode10.2
-script:
-  - xcodebuild -project SkeletonView.xcodeproj -target SkeletonView-iOS -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 7,OS=12'
-  - xcodebuild -project SkeletonView.xcodeproj -target SkeletonView-tvOS -sdk appletvsimulator -destination 'platform=tvOS Simulator,name=Apple TV,OS=12'
-  - xcodebuild -project SkeletonView.xcodeproj -target SkeletonViewExample -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 7,OS=12'
-after_success:

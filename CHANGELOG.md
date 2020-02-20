@@ -3,9 +3,16 @@ All notable changes to this project will be documented in this file
 
 ## Next version
 
-* [**#261**](https://github.com/Juanpe/SkeletonView/pull/261): Fixes removing skeleton layers from table header footer sections - [@darkside999](https://github.com/darkside999)
+#### New
 
-### New
+#### Improvements
+* [**242**](https://github.com/Juanpe/SkeletonView/pull/242): Offscreen table view layout issue fixed - [@Cacodemon](https://github.com/Cacodemon)
+* [**261**](https://github.com/Juanpe/SkeletonView/pull/261): Fixes removing skeleton layers from table header footer sections - [@darkside999](https://github.com/darkside999)
+
+#### Bug fixes
+
+
+## [1.8.3](https://github.com/Juanpe/SkeletonView/releases/tag/1.8.3)
 
 - Support for iOS 13 dark mode. (thanks @Wilsonator5000)
 
