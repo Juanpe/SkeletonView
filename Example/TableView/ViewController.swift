@@ -47,6 +47,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableview.isSkeletonable = true
+        transitionDurationStepper.value = 0.25
         view.showAnimatedSkeleton()
     }
     

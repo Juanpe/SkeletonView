@@ -28,7 +28,7 @@ struct SkeletonConfig {
         gradientDirection: GradientDirection? = nil,
         animated: Bool = false,
         animation: SkeletonLayerAnimation? = nil,
-        transition: SkeletonTransitionStyle = .none
+        transition: SkeletonTransitionStyle = .crossDissolve(0.25)
         ) {
         self.type = type
         self.colors = colors
