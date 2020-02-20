@@ -14,7 +14,7 @@ extension UIView {
 
 extension UITableView {
     override var subviewsToSkeleton: [UIView] {
-        return visibleCells
+        return visibleCells + visibleSectionHeaders + visibleSectionFooters
     }
 }
 
