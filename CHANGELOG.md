@@ -3,6 +3,8 @@ All notable changes to this project will be documented in this file
 
 ## Next version
 
+* [**#261**](https://github.com/Juanpe/SkeletonView/pull/261): Fixes removing skeleton layers from table header footer sections - [@darkside999](https://github.com/darkside999)
+
 ### New
 
 - Support for iOS 13 dark mode. (thanks @Wilsonator5000)
