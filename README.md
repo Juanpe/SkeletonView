@@ -428,6 +428,8 @@ view.hideSkeleton(transition: .crossDissolve(0.25))     //Hide skeleton cross di
 
 ```
 
+The default value is  `crossDissolve(0.25)`
+
 **Preview**
 
 <table>
