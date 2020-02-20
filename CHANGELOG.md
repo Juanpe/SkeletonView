@@ -11,6 +11,8 @@ All notable changes to this project will be documented in this file
 * [**263**](https://github.com/Juanpe/SkeletonView/pull/263): Feature/set cross dissolve transitions as default - [@Juanpe](https://github.com/Juanpe)
 
 #### 🩹 Bug fixes
+* [**260**](https://github.com/Juanpe/SkeletonView/issues/260): Don't hide skeleton layers on TableViewHeaderFooterView
+
 
 
 ### 📦 [1.8.3](https://github.com/Juanpe/SkeletonView/releases/tag/1.8.3)
