@@ -30,6 +30,8 @@
 		17DD0E1F207FB32100C56334 /* RecursiveProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5307E311FB0F42F00EE67C5 /* RecursiveProtocol.swift */; };
 		1E6C67A2230E76CC0019D87B /* SkeletonTransitionStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE587C22EEE65200333067 /* SkeletonTransitionStyle.swift */; };
 		1E6C67A3230E76CE0019D87B /* UIView+Transitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE587B22EEE63100333067 /* UIView+Transitions.swift */; };
+		1EE42E1F23FF25CC00BF665A /* ProcessInfo+XCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE42E1E23FF25CC00BF665A /* ProcessInfo+XCTest.swift */; };
+		1EE42E2023FF25CC00BF665A /* ProcessInfo+XCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE42E1E23FF25CC00BF665A /* ProcessInfo+XCTest.swift */; };
 		42ABD063210B548200BEEFF4 /* SkeletonView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* SkeletonView.framework */; };
 		42ABD069210B548200BEEFF4 /* SkeletonView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* SkeletonView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		42ABD078210B54E200BEEFF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ABD070210B54E100BEEFF4 /* AppDelegate.swift */; };
@@ -156,6 +158,7 @@
 		17DD0E00207FB27400C56334 /* SkeletonView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SkeletonView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		17DD0E1A207FB2C200C56334 /* SkeletonView-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SkeletonView-tvOS.plist"; sourceTree = "<group>"; };
 		17DD0E1B207FB2C200C56334 /* SkeletonView-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SkeletonView-iOS.plist"; sourceTree = "<group>"; };
+		1EE42E1E23FF25CC00BF665A /* ProcessInfo+XCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProcessInfo+XCTest.swift"; sourceTree = "<group>"; };
 		42ABD06D210B548200BEEFF4 /* SkeletonViewExampleUICollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkeletonViewExampleUICollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42ABD070210B54E100BEEFF4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42ABD071210B54E100BEEFF4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -438,6 +441,7 @@
 				F5804771230ECD0000066D02 /* UIView+IBInspectable.swift */,
 				F587FB85202CEC95002DB5FE /* UIView+UIApplicationDelegate.swift */,
 				5600784323FD293D00669AD6 /* UITableView+VisibleSections.swift */,
+				1EE42E1E23FF25CC00BF665A /* ProcessInfo+XCTest.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -691,6 +695,7 @@
 				F51ED28320973CBB008B2434 /* SkeletonCollectionDelegate.swift in Sources */,
 				F58A6E6F20A8C66300612494 /* Recoverable.swift in Sources */,
 				17DD0E18207FB28F00C56334 /* SkeletonView.swift in Sources */,
+				1EE42E2023FF25CC00BF665A /* ProcessInfo+XCTest.swift in Sources */,
 				17DD0E19207FB28F00C56334 /* SkeletonFlow.swift in Sources */,
 				17DD0E09207FB28900C56334 /* SkeletonCollectionDataSource.swift in Sources */,
 				17DD0E0C207FB28900C56334 /* UICollectionView+CollectionSkeleton.swift in Sources */,
@@ -750,6 +755,7 @@
 				F5F899ED1FAB9F04002E8FDA /* CollectionSkeletonProtocol.swift in Sources */,
 				F58A6E6E20A8C66300612494 /* Recoverable.swift in Sources */,
 				F5307E2C1FAF6BC900EE67C5 /* SkeletonGradient.swift in Sources */,
+				1EE42E1F23FF25CC00BF665A /* ProcessInfo+XCTest.swift in Sources */,
 				F587FB86202CEC95002DB5FE /* UIView+UIApplicationDelegate.swift in Sources */,
 				F5F899EB1FAB9DA3002E8FDA /* SkeletonCollectionDataSource.swift in Sources */,
 				F5F622411FAC6E31007C062A /* UIColor+Skeleton.swift in Sources */,
