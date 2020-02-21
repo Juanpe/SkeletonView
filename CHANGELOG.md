@@ -10,7 +10,8 @@ All notable changes to this project will be documented in this file
 * [**261**](https://github.com/Juanpe/SkeletonView/pull/261): Fixes removing skeleton layers from table header footer sections - [@darkside999](https://github.com/darkside999)
 * [**263**](https://github.com/Juanpe/SkeletonView/pull/263): Feature/set cross dissolve transitions as default - [@Juanpe](https://github.com/Juanpe)
 * [**264**](https://github.com/Juanpe/SkeletonView/pull/264): not replace original datasource is running XCTests - [@Juanpe](https://github.com/Juanpe)
-* 
+* [**265**](https://github.com/Juanpe/SkeletonView/pull/265): call original traitCollectionDidChange method - [@Juanpe](https://github.com/Juanpe)
+  
 #### 🩹 Bug fixes
 * [**260**](https://github.com/Juanpe/SkeletonView/issues/260): Don't hide skeleton layers on TableViewHeaderFooterView
 * [**257**](https://github.com/Juanpe/SkeletonView/issues/257): Unit test problem when using SkeletonView
