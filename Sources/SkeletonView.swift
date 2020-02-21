@@ -100,6 +100,7 @@ extension UIView {
     }
 
     @objc func skeletonTraitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        skeletonTraitCollectionDidChange(previousTraitCollection)
         guard isSkeletonActive, let config = currentSkeletonConfig else { return }
         updateSkeleton(skeletonConfig: config)
     }
