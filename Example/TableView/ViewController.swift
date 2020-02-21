@@ -13,9 +13,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableview: UITableView! {
         didSet {
             tableview.rowHeight = UITableView.automaticDimension
+            tableview.sectionHeaderHeight = UITableView.automaticDimension
+            tableview.sectionFooterHeight = UITableView.automaticDimension
             tableview.estimatedRowHeight = 120.0
-            tableview.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "HeaderIdentifier")
-            tableview.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "FooterIdentifier")
+            tableview.estimatedSectionFooterHeight = 20.0
+            tableview.estimatedSectionHeaderHeight = 20.0
+            tableview.register(HeaderFooterSection.self, forHeaderFooterViewReuseIdentifier: "HeaderIdentifier")
+            tableview.register(HeaderFooterSection.self, forHeaderFooterViewReuseIdentifier: "FooterIdentifier")
         }
     }
     
@@ -47,6 +51,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableview.isSkeletonable = true
+        transitionDurationStepper.value = 0.25
         view.showAnimatedSkeleton()
     }
     
@@ -186,8 +191,9 @@ extension ViewController: SkeletonTableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderIdentifier")!
-        header.textLabel?.text = "header => \(section)"
+        let header = tableView
+            .dequeueReusableHeaderFooterView(withIdentifier: "HeaderIdentifier") as! HeaderFooterSection
+        header.titleLabel.text = "header => \(section)"
         return header
     }
 
@@ -196,8 +202,9 @@ extension ViewController: SkeletonTableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let footer = tableView.dequeueReusableHeaderFooterView(withIdentifier: "FooterIdentifier")!
-        footer.textLabel?.text = "footer => \(section)"
+        let footer = tableView
+            .dequeueReusableHeaderFooterView(withIdentifier: "FooterIdentifier") as! HeaderFooterSection
+        footer.titleLabel.text = "footer => \(section)"
         return footer
     }
 }

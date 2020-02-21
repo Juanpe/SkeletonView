@@ -30,6 +30,8 @@
 		17DD0E1F207FB32100C56334 /* RecursiveProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5307E311FB0F42F00EE67C5 /* RecursiveProtocol.swift */; };
 		1E6C67A2230E76CC0019D87B /* SkeletonTransitionStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE587C22EEE65200333067 /* SkeletonTransitionStyle.swift */; };
 		1E6C67A3230E76CE0019D87B /* UIView+Transitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE587B22EEE63100333067 /* UIView+Transitions.swift */; };
+		1EE42E1F23FF25CC00BF665A /* ProcessInfo+XCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE42E1E23FF25CC00BF665A /* ProcessInfo+XCTest.swift */; };
+		1EE42E2023FF25CC00BF665A /* ProcessInfo+XCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE42E1E23FF25CC00BF665A /* ProcessInfo+XCTest.swift */; };
 		42ABD063210B548200BEEFF4 /* SkeletonView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* SkeletonView.framework */; };
 		42ABD069210B548200BEEFF4 /* SkeletonView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* SkeletonView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		42ABD078210B54E200BEEFF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ABD070210B54E100BEEFF4 /* AppDelegate.swift */; };
@@ -38,6 +40,10 @@
 		42ABD07B210B54E200BEEFF4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ABD073210B54E100BEEFF4 /* ViewController.swift */; };
 		42ABD07C210B54E200BEEFF4 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 42ABD074210B54E100BEEFF4 /* Base.lproj */; };
 		42ABD07F210B54E200BEEFF4 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ABD077210B54E200BEEFF4 /* CollectionViewCell.swift */; };
+		5600784423FD293D00669AD6 /* UITableView+VisibleSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5600784323FD293D00669AD6 /* UITableView+VisibleSections.swift */; };
+		5600784523FD293D00669AD6 /* UITableView+VisibleSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5600784323FD293D00669AD6 /* UITableView+VisibleSections.swift */; };
+		5600784923FD33AD00669AD6 /* HeaderFooterSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5600784623FD2BC300669AD6 /* HeaderFooterSection.swift */; };
+		5600784A23FD33AE00669AD6 /* HeaderFooterSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5600784623FD2BC300669AD6 /* HeaderFooterSection.swift */; };
 		870F4E4321CAC07300B9233B /* SkeletonConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870F4E4221CAC07300B9233B /* SkeletonConfig.swift */; };
 		870F4E4421CAC07300B9233B /* SkeletonConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870F4E4221CAC07300B9233B /* SkeletonConfig.swift */; };
 		872D5A5621C177E20037D763 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D5A5521C177E20037D763 /* UIView+Extension.swift */; };
@@ -152,6 +158,7 @@
 		17DD0E00207FB27400C56334 /* SkeletonView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SkeletonView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		17DD0E1A207FB2C200C56334 /* SkeletonView-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SkeletonView-tvOS.plist"; sourceTree = "<group>"; };
 		17DD0E1B207FB2C200C56334 /* SkeletonView-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SkeletonView-iOS.plist"; sourceTree = "<group>"; };
+		1EE42E1E23FF25CC00BF665A /* ProcessInfo+XCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProcessInfo+XCTest.swift"; sourceTree = "<group>"; };
 		42ABD06D210B548200BEEFF4 /* SkeletonViewExampleUICollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkeletonViewExampleUICollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42ABD070210B54E100BEEFF4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42ABD071210B54E100BEEFF4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -161,6 +168,8 @@
 		42ABD076210B54E200BEEFF4 /* SkeletonViewExampleCollectionview-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SkeletonViewExampleCollectionview-Info.plist"; sourceTree = "<group>"; };
 		42ABD077210B54E200BEEFF4 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* SkeletonView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SkeletonView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5600784323FD293D00669AD6 /* UITableView+VisibleSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+VisibleSections.swift"; sourceTree = "<group>"; };
+		5600784623FD2BC300669AD6 /* HeaderFooterSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderFooterSection.swift; sourceTree = "<group>"; };
 		870F4E4221CAC07300B9233B /* SkeletonConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonConfig.swift; sourceTree = "<group>"; };
 		872D5A5521C177E20037D763 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		872D5A5B21C24EDD0037D763 /* UILabel+Multiline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Multiline.swift"; sourceTree = "<group>"; };
@@ -295,6 +304,7 @@
 				F5F899F41FABA607002E8FDA /* AppDelegate.swift */,
 				88DEA97D1FCDBD1F006C80EF /* Constants.swift */,
 				F5F899F61FABA607002E8FDA /* ViewController.swift */,
+				5600784623FD2BC300669AD6 /* HeaderFooterSection.swift */,
 				F5F622441FACA338007C062A /* Cell.swift */,
 				F5F899F81FABA607002E8FDA /* Main.storyboard */,
 				F5F899FB1FABA607002E8FDA /* Assets.xcassets */,
@@ -430,6 +440,8 @@
 				F5307E2D1FB0E5E400EE67C5 /* UIView+Frame.swift */,
 				F5804771230ECD0000066D02 /* UIView+IBInspectable.swift */,
 				F587FB85202CEC95002DB5FE /* UIView+UIApplicationDelegate.swift */,
+				5600784323FD293D00669AD6 /* UITableView+VisibleSections.swift */,
+				1EE42E1E23FF25CC00BF665A /* ProcessInfo+XCTest.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -683,6 +695,7 @@
 				F51ED28320973CBB008B2434 /* SkeletonCollectionDelegate.swift in Sources */,
 				F58A6E6F20A8C66300612494 /* Recoverable.swift in Sources */,
 				17DD0E18207FB28F00C56334 /* SkeletonView.swift in Sources */,
+				1EE42E2023FF25CC00BF665A /* ProcessInfo+XCTest.swift in Sources */,
 				17DD0E19207FB28F00C56334 /* SkeletonFlow.swift in Sources */,
 				17DD0E09207FB28900C56334 /* SkeletonCollectionDataSource.swift in Sources */,
 				17DD0E0C207FB28900C56334 /* UICollectionView+CollectionSkeleton.swift in Sources */,
@@ -692,6 +705,7 @@
 				F5D3FB0C209DCAA300003FCF /* SubviewsSkeletonables.swift in Sources */,
 				17DD0E14207FB28F00C56334 /* SkeletonAnimationBuilder.swift in Sources */,
 				17DD0E11207FB28C00C56334 /* UIView+Frame.swift in Sources */,
+				5600784523FD293D00669AD6 /* UITableView+VisibleSections.swift in Sources */,
 				17DD0E15207FB28F00C56334 /* SkeletonAppearance.swift in Sources */,
 				872D5A6021C24F8E0037D763 /* UITextView+Multiline.swift in Sources */,
 				17DD0E10207FB28C00C56334 /* UIColor+Skeleton.swift in Sources */,
@@ -713,6 +727,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42ABD07B210B54E200BEEFF4 /* ViewController.swift in Sources */,
+				5600784A23FD33AE00669AD6 /* HeaderFooterSection.swift in Sources */,
 				42ABD078210B54E200BEEFF4 /* AppDelegate.swift in Sources */,
 				42ABD07F210B54E200BEEFF4 /* CollectionViewCell.swift in Sources */,
 				8785E3A3211C9CE800CC9DFD /* Constants.swift in Sources */,
@@ -740,6 +755,7 @@
 				F5F899ED1FAB9F04002E8FDA /* CollectionSkeletonProtocol.swift in Sources */,
 				F58A6E6E20A8C66300612494 /* Recoverable.swift in Sources */,
 				F5307E2C1FAF6BC900EE67C5 /* SkeletonGradient.swift in Sources */,
+				1EE42E1F23FF25CC00BF665A /* ProcessInfo+XCTest.swift in Sources */,
 				F587FB86202CEC95002DB5FE /* UIView+UIApplicationDelegate.swift in Sources */,
 				F5F899EB1FAB9DA3002E8FDA /* SkeletonCollectionDataSource.swift in Sources */,
 				F5F622411FAC6E31007C062A /* UIColor+Skeleton.swift in Sources */,
@@ -749,6 +765,7 @@
 				F5D3FB0B209DCAA300003FCF /* SubviewsSkeletonables.swift in Sources */,
 				F5F899D21FAB9630002E8FDA /* AssociationPolicy.swift in Sources */,
 				F54CF5E62024CEB000330B0D /* UICollectionView+CollectionSkeleton.swift in Sources */,
+				5600784423FD293D00669AD6 /* UITableView+VisibleSections.swift in Sources */,
 				F56B94461FAE20AF0095662F /* PrepareForSkeletonProtocol.swift in Sources */,
 				F5307E391FB1078E00EE67C5 /* SkeletonCollectionViewProtocols.swift in Sources */,
 				872D5A5F21C24F8E0037D763 /* UITextView+Multiline.swift in Sources */,
@@ -770,6 +787,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5F899F71FABA607002E8FDA /* ViewController.swift in Sources */,
+				5600784923FD33AD00669AD6 /* HeaderFooterSection.swift in Sources */,
 				F5F899F51FABA607002E8FDA /* AppDelegate.swift in Sources */,
 				F5F622451FACA338007C062A /* Cell.swift in Sources */,
 				88DEA97F1FCDBD78006C80EF /* Constants.swift in Sources */,
@@ -1100,7 +1118,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1109,6 +1127,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.juanpecatalan.SkeletonViewExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1125,7 +1144,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1134,6 +1153,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.juanpecatalan.SkeletonViewExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
