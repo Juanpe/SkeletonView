@@ -14,8 +14,6 @@ extension UIView {
         if let parentStackView = (superview as? UIStackView) {
             var origin: CGPoint = .zero
             switch parentStackView.alignment {
-            case .center:
-                origin.x = maxWidthEstimated / 2
             case .trailing:
                 origin.x = maxWidthEstimated
             default:
