@@ -101,7 +101,7 @@ extension UIView {
 
     @objc func skeletonTraitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         skeletonTraitCollectionDidChange(previousTraitCollection)
-        guard isSkeletonActive, let config = currentSkeletonConfig else { return }
+        guard isSkeletonable, isSkeletonActive, let config = currentSkeletonConfig else { return }
         updateSkeleton(skeletonConfig: config)
     }
     
@@ -113,7 +113,7 @@ extension UIView {
     }
 
     private func recursiveShowSkeleton(skeletonConfig config: SkeletonConfig, root: UIView? = nil) {
-        guard !isSkeletonActive && isSkeletonable else { return }
+        guard isSkeletonable && !isSkeletonActive else { return }
         currentSkeletonConfig = config
         swizzleLayoutSubviews()
         swizzleTraitCollectionDidChange()
