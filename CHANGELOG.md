@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file
   
 #### 🩹 Bug fixes
 * [**259**](https://github.com/Juanpe/SkeletonView/issues/259): Prevent isSkeletonActive to be called when isSkeletonable is false
+* [**#274**](https://github.com/Juanpe/SkeletonView/pull/274): Fix: hiding skeleton when header and footer views of section would not hide it
 
 ### 📦 [1.8.6](https://github.com/Juanpe/SkeletonView/releases/tag/1.8.6)
 
