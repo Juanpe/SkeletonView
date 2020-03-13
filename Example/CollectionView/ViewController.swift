@@ -45,6 +45,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        transitionDurationStepper.value = 0.25
         collectionView.prepareSkeleton(completion: { done in
             self.view.showAnimatedSkeleton()
         })

@@ -190,13 +190,13 @@
                                             <action selector="showOrHideSkeleton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ma1-WX-Dzy"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fade Duration: 0 sec" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrw-PM-jJJ">
-                                        <rect key="frame" x="113.66666666666667" y="130" width="141.33333333333331" height="18"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fade Duration: 0.25 sec" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrw-PM-jJJ">
+                                        <rect key="frame" x="92.333333333333329" y="130" width="162.66666666666669" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="5" stepValue="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="l4N-LL-ZrJ">
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.25" maximumValue="5" stepValue="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="l4N-LL-ZrJ">
                                         <rect key="frame" x="263" y="123" width="94" height="32"/>
                                         <connections>
                                             <action selector="transitionDurationStepperAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="jPN-df-fNs"/>
