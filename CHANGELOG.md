@@ -6,13 +6,13 @@ All notable changes to this project will be documented in this file
 #### 🙌 New
 
 #### 🔬Improvements
-  
+* [**271**](https://github.com/Juanpe/SkeletonView/pull/271): Add corner radius for skeletonView as IBInspectable (CGFloat) default is 0.0 - [@paulanatoleclaudot-betclic](https://github.com/paulanatoleclaudot-betclic)
+
 #### 🩹 Bug fixes
 
 ### 📦 [1.8.6](https://github.com/Juanpe/SkeletonView/releases/tag/1.8.6)
 
 #### 🔬Improvements
-* [**271**](https://github.com/Juanpe/SkeletonView/pull/271): Add corner radius for skeletonView as IBInspectable (CGFloat) default is 0.0 - [@paulanatoleclaudot-betclic](https://github.com/paulanatoleclaudot-betclic)
 * [**242**](https://github.com/Juanpe/SkeletonView/pull/242): Offscreen table view layout issue fixed - [@Cacodemon](https://github.com/Cacodemon)
 * [**261**](https://github.com/Juanpe/SkeletonView/pull/261): Fixes removing skeleton layers from table header footer sections - [@darkside999](https://github.com/darkside999)
 * [**263**](https://github.com/Juanpe/SkeletonView/pull/263): Feature/set cross dissolve transitions as default - [@Juanpe](https://github.com/Juanpe)
