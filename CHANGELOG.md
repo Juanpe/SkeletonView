@@ -6,7 +6,8 @@ All notable changes to this project will be documented in this file
 #### 🙌 New
 
 #### 🔬Improvements
-  
+* [**271**](https://github.com/Juanpe/SkeletonView/pull/271): Add corner radius for skeletonView as IBInspectable (CGFloat) default is 0.0 - [@paulanatoleclaudot-betclic](https://github.com/paulanatoleclaudot-betclic)
+
 #### 🩹 Bug fixes
 * [**259**](https://github.com/Juanpe/SkeletonView/issues/259): Prevent isSkeletonActive to be called when isSkeletonable is false - [@wsalim1610](https://github.com/wsalim1610)
 * [**274**](https://github.com/Juanpe/SkeletonView/pull/274): Fix: hiding skeleton when header and footer views of section would not hide it - [@darkside999](https://github.com/darkside999)
@@ -20,7 +21,7 @@ All notable changes to this project will be documented in this file
 * [**263**](https://github.com/Juanpe/SkeletonView/pull/263): Feature/set cross dissolve transitions as default - [@Juanpe](https://github.com/Juanpe)
 * [**264**](https://github.com/Juanpe/SkeletonView/pull/264): not replace original datasource is running XCTests - [@Juanpe](https://github.com/Juanpe)
 * [**265**](https://github.com/Juanpe/SkeletonView/pull/265): call original traitCollectionDidChange method - [@Juanpe](https://github.com/Juanpe)
-  
+
 #### 🩹 Bug fixes
 * [**260**](https://github.com/Juanpe/SkeletonView/issues/260): Don't hide skeleton layers on TableViewHeaderFooterView
 * [**257**](https://github.com/Juanpe/SkeletonView/issues/257): Unit test problem when using SkeletonView
@@ -33,7 +34,7 @@ All notable changes to this project will be documented in this file
 ### 📦 [1.8.2](https://github.com/Juanpe/SkeletonView/releases/tag/1.8.2)
 
 #### 🙌 New
-- Add ability to customize line spacing per label. (thanks @gshahbazian) 
+- Add ability to customize line spacing per label. (thanks @gshahbazian)
 
 ### 📦 [LayoutSkeleton (1.8.1)](https://github.com/Juanpe/SkeletonView/releases/tag/1.8.1)
 
@@ -41,7 +42,7 @@ All notable changes to this project will be documented in this file
 - Fix completion call in .none transition style while hide skeletons. (thanks @aadudyrev)
 
 #### 🙌 New
-- Swizzle `layoutSubviews` method. 
+- Swizzle `layoutSubviews` method.
 
 #### 🔬Improvements
 - Fix completion call in .none transition style while hiding skeletons. (thanks @aadudyrev)

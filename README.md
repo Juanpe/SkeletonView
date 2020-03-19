@@ -349,6 +349,8 @@ Default values:
   - *default: 70*
 - **multilineCornerRadius**: Int
   - *default: 0*
+- **skeletonCornerRadius**: CGFloat (IBInspectable)  (Make your skeleton view with corner)
+  - *default: 0*
 
 To get these default values you can use `SkeletonAppearance.default`. Using this property you can set the values as well:
 ```Swift
