@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file
 #### 🙌 New
 
 #### 🔬Improvements
+
+#### 🩹 Bug fixes
+
+### 📦 [1.8.7](https://github.com/Juanpe/SkeletonView/releases/tag/1.8.7)
+
+#### 🔬Improvements
 * [**271**](https://github.com/Juanpe/SkeletonView/pull/271): Add corner radius for skeletonView as IBInspectable (CGFloat) default is 0.0 - [@paulanatoleclaudot-betclic](https://github.com/paulanatoleclaudot-betclic)
 
 #### 🩹 Bug fixes
