@@ -50,6 +50,7 @@ struct SkeletonLayer {
         self.maskLayer = type.layer
         self.maskLayer.anchorPoint = .zero
         self.maskLayer.bounds = holder.maxBoundsEstimated
+        self.maskLayer.cornerRadius = CGFloat(holder.skeletonCornerRadius)
         addTextLinesIfNeeded()
         self.maskLayer.tint(withColors: colors)
     }
