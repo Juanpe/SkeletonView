@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file
 #### 🔬Improvements
 
 #### 🩹 Bug fixes
+* [**271**](https://github.com/Juanpe/SkeletonView/pull/271): Fix issue when WKWebView calls skeletonLayoutSubviews not on the main thread - [@paulanatoleclaudot-betclic](https://github.com/paulanatoleclaudot-betclic)
 
 ### 📦 [1.8.7](https://github.com/Juanpe/SkeletonView/releases/tag/1.8.7)
 
