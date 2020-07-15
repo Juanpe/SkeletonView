@@ -45,9 +45,9 @@ Profitez-en! 🙂
 * [Caractéristiques](#-caractéristiques)
 * [Guides](#-guides)
 * [Installation](#-installation)
-  * [Cocoapods] (#utilisation-de-cocoapods)
+  * [Cocoapods](#utilisation-de-cocoapods)
   * [Carthage](#utilisation-de-carthage)
-  * [SPM](#using-swift-package-manager)
+  * [SPM](#utilisation-du-gestionnaire-de-paquets-Swift)
 * [Comment utiliser](#comment-utiliser)
   * [Collections](#-collections)
   * [Texte Multiligne](#-multiline-texte)
@@ -58,7 +58,7 @@ Profitez-en! 🙂
   * [Hiérarchie](#-hiérarchie)
   * [Debug](#-debug)
 * [Documentation](#-documentation)
-* [Versions OS & SDK supportées] (#-supportedos--sdk-versions)
+* [Versions OS & SDK supportées](#-supportedos--sdk-versions)
 * [Prochaines étapes](#prochaines-étapes)
 * [Contribuant](#-contribuant)
 * [Mentions](#-mentions)
@@ -89,7 +89,7 @@ Editez votre "podfile" et spécifiez la dépendance:
 pod "SkeletonView"
 ```
 
-#### Utilisation de [Carthage] (https://github.com/carthage)
+#### Utilisation de [Carthage](https://github.com/carthage)
 
 Modifiez votre "Cartfile" et spécifiez la dépendance:
 
@@ -97,7 +97,7 @@ Modifiez votre "Cartfile" et spécifiez la dépendance:
 github "Juanpe/SkeletonView"
 ```
 
-#### Utilisation du [gestionnaire de paquets Swift] (https://github.com/apple/swift-package-manager)
+#### Utilisation du [gestionnaire de paquets Swift](https://github.com/apple/swift-package-manager)
 
 Une fois que vous avez configuré votre paquet Swift, ajouter `SkeletonView` comme dépendance est aussi facile que de l'ajouter à la valeur des `dépendances` de votre `Package.swift`.
 
