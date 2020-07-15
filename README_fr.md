@@ -59,7 +59,7 @@ Profitez-en! 🙂
   * [Débugger](#-débugger)
 * [Documentation](#-documentation)
 * [Versions OS & SDK supportées](#-versions-os-et-sdk-supportées)
-* [Prochaines étapes](#prochaines-étapes)
+* [Prochaines étapes](#-prochaines-étapes)
 * [Contribuer](#-contribuer)
 * [Mentions](#-mentions)
 * [Auteur](#-auteur)
@@ -492,7 +492,7 @@ Bientôt disponible...😅
 * tvOS 9.0+
 * Swift 5
 
-## 📬  Prochaines étapes
+## 📬 Prochaines étapes
 
 * [x] Fixer le pourcentage de remplissage de la dernière ligne dans les éléments multilignes
 * [x] Ajout d'autres animations en dégradé
