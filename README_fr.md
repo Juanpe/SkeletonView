@@ -58,8 +58,8 @@ Profitez-en! 🙂
   * [Hiérarchie](#-hiérarchie)
   * [Débugger](#-débugger)
 * [Documentation](#-documentation)
-* [Versions OS & SDK supportées](#-supportedos--sdk-versions)
-* [Prochaines étapes](#prochaines-étapes)
+* [Versions OS & SDK supportées](#-versions-os-et-sdk-supportées)
+* [Prochaines étapes](#-prochaines-étapes)
 * [Contribuer](#-contribuer)
 * [Mentions](#-mentions)
 * [Auteur](#-auteur)
@@ -508,13 +508,13 @@ Bientôt disponible...😅
 
 ## ❤️  Contribuer
 Il s'agit d'un projet open source, alors n'hésitez pas à y contribuer. Comment ?
-- Ouvrez un [numéro] (https://github.com/Juanpe/SkeletonView/issues/new).
+- Ouvrez un [numéro](https://github.com/Juanpe/SkeletonView/issues/new).
 - Envoyez vos commentaires via [email](mailto://juanpecatalan.com).
 - Proposez vos propres correctifs, suggestions et ouvrez une `pull request` avec les changements.
 
 Voir [tous les contributeurs](https://github.com/Juanpe/SkeletonView/graphs/contributors)
 
-###### Projet généré avec [SwiftPlate] (https://github.com/JohnSundell/SwiftPlate)
+###### Projet généré avec [SwiftPlate](https://github.com/JohnSundell/SwiftPlate)
 
 ## 📢 Mentions
 
