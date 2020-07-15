@@ -51,7 +51,7 @@ Profitez-en! 🙂
 * [Comment utiliser](#-mode-d'emploi)
   * [Collections](#-collections)
   * [Texte Multiligne](#-texte-multiligne)
-  * [Couleurs personnalisées](#couleurs-personnalisées)
+  * [Couleurs personnalisées](#-couleurs-personnalisées)
   * [Présentation](#-présentation)
   * [Animations personnalisées](#-animations-personnalisées)
   * [Transitions](#-transitions)
@@ -506,7 +506,7 @@ Bientôt disponible...😅
 * [ ] Compatible avec les collections personnalisées
 * [ ] Compatible avec MacOS et WatchOS
 
-## ❤️  Contribuer
+## ❤️ Contribuer
 Il s'agit d'un projet open source, alors n'hésitez pas à y contribuer. Comment ?
 - Ouvrez un [numéro](https://github.com/Juanpe/SkeletonView/issues/new).
 - Envoyez vos commentaires via [email](mailto://juanpecatalan.com).
