@@ -45,7 +45,7 @@ Profitez-en! 🙂
 * [Caractéristiques](#-caractéristiques)
 * [Guides](#-guides)
 * [Installation](#-installation)
-  * [Cocoapods] (#using-cocoapods)
+  * [Cocoapods] (#utilisation-de-cocoapods)
   * [Carthage](#utilisation de Carthage)
   * [SPM](#using-swift-package-manager)
 * [Comment utiliser](#-comment utiliser)
@@ -404,9 +404,167 @@ view.showAnimatedGradientSkeleton(usingGradient : gradient, animation : animatio
 Il existe une autre façon de créer des animations de glissement, en utilisant simplement ce raccourci :
 >>```let animation = GradientDirection.leftToRight.slidingAnimation()```
 
+### 🏄 Transitions
 
+`SkeletonView` a des transitions intégrées pour **montrer** ou **cacher** les squelettes d'une manière *lisse* 🤙
 
+Pour utiliser la transition, il suffit d'ajouter le paramètre "transition" à votre fonction `showSkeleton()` ou `hideSkeleton()` avec le temps de transition, comme ceci :
 
+```swift
+view.showSkeleton(transition : .crossDissolve(0.25))     //Montrer la transition de dissolution croisée du squelette avec un temps de fondu de 0,25 seconde
+view.hideSkeleton(transition : .crossDissolve(0.25))     //Cachez la transition de dissolution croisée du squelette avec un temps de fondu de 0,25 seconde
+```
+
+La valeur par défaut est `crossDissolve(0.25)`.
+
+**Preview**
+
+<table>
+<tr>
+<td width="50%">
+<center>None</center>
+</td>
+<td width="50%">
+<center>Cross dissolve</center>
+</td>
+</tr>
+<tr>
+<td width="50%">
+<img src="Assets/skeleton_transition_nofade.gif"></img>
+</td>
+<td width="50%">
+<img src="Assets/skeleton_transition_fade.gif"></img>
+</td>
+</tr>
+</table>
+
+### 👨👧👦 Hiérarchie
+
+Puisque `SkeletonView` est récursif, et que nous voulons que le squelette soit très efficace, nous voulons arrêter la récursivité dès que possible. Pour cette raison, vous devez définir la vue du conteneur comme `Skeletonable`, parce que Skeleton arrêtera de chercher des sous-vues `squelettisables` dès qu'une vue n'est pas `Skeletonable`, cassant alors la récursivité.
+
+Parce qu'une image vaut mille mots :
+
+Dans cet exemple, nous avons un `UIViewController` avec une `ContainerView` et une `UITableView`. Lorsque la vue est prête, nous montrons le squelette en utilisant cette méthode :
+```
+view.showSkeleton()
+```
+
+> ```isSkeletonable```= ☠️
+
+| Configuration | Résultat|
+|:-------:|:-------:|
+|<img src="Assets/no_skeletonable.jpg" width="350"/> | <img src="Assets/no_skeletonables_result.png" width="350"/>|
+|<img src="Assets/container_no_skeletonable.jpg" width="350"/> | <img src="Assets/no_skeletonables_result.png" width="350"/>|
+|<img src="Assets/container_skeletonable.jpg" width="350"/> | <img src="Assets/container_skeletonable_result.png" width="350"/>|
+|<img src="Assets/all_skeletonables.jpg" width="350"/>| <img src="Assets/all_skeletonables_result.png" width="350"/>|
+|<img src="Assets/tableview_no_skeletonable.jpg" width="350"/> | <img src="Assets/tableview_no_skeletonable_result.png" height="350"/>|
+|<img src="Assets/tableview_skeletonable.jpg" width="350"/> | <img src="Assets/tableview_skeletonable_result.png" height="350"/>|
+
+### 🔬 Débugger
+
+**NOUVEAU** Afin de faciliter les tâches de debuggage lorsque quelque chose ne fonctionne pas bien. `SkeletonView` a de nouveaux outils.
+
+Tout d'abord, `UIView` a une nouvelle propriété disponible avec son squelette d'information :
+```swift
+var skeletonDescription : String
+```
+La représentation du squelette ressemble à ceci :
+
+![](Assets/debug_description.png)
+
+En outre, vous pouvez activer le nouveau mode **debug**. Il suffit d'ajouter la variable d'environnement `SKELETON_DEBUG` et de l'activer.
+
+![](Assets/debug_mode.png)
+
+Ensuite, lorsque le squelette apparaît, vous pouvez voir la hiérarchie des vues dans la console Xcode.
+
+<details>
+<summary>Ouvrez pour voir un exemple de sortie</summary>
+<img src="Assets/hierarchy_output.png" />
+</details>
+
+### 📚 Documentation
+Bientôt disponible...😅
+
+### 📋 Versions OS et SDK supportées
+
+* iOS 9.0+
+* tvOS 9.0+
+* Swift 5
+
+## 📬  Prochaines étapes
+
+* [x] Fixer le pourcentage de remplissage de la dernière ligne dans les éléments multilignes
+* [x] Ajout d'autres animations en dégradé
+* [x] Cellules redimensionnables prises en charge
+* [x] Compatible avec CollectionView
+* [x] Compatible avec tvOS
+* [x] Ajouter l'état de recouvrement
+* [x] Apparence personnalisée par défaut
+* [x] Mode de debuggage
+* [x] Ajouter des animations lorsqu'il montre/cache les squelettes
+* [ ] Compatible avec les collections personnalisées
+* [ ] Compatible avec MacOS et WatchOS
+
+## ❤️  Contribuer
+Il s'agit d'un projet open source, alors n'hésitez pas à y contribuer. Comment ?
+- Ouvrez un [numéro] (https://github.com/Juanpe/SkeletonView/issues/new).
+- Envoyez vos commentaires via [email](mailto://juanpecatalan.com).
+- Proposez vos propres correctifs, suggestions et ouvrez une `pull request` avec les changements.
+
+Voir [tous les contributeurs](https://github.com/Juanpe/SkeletonView/graphs/contributors)
+
+###### Projet généré avec [SwiftPlate] (https://github.com/JohnSundell/SwiftPlate)
+
+## 📢 Mentions
+
+- [iOS Dev Weekly #327](https://iosdevweekly.com/issues/327#start)
+- [Hacking with Swift Articles] (https://www.hackingwithswift.com/articles/40/skeletonview-makes-loading-content-beautiful)
+- [Top 10 articles Swift de novembre] (https://medium.mybridge.co/swift-top-10-articles-for-the-past-month-v-nov-2017-dfed7861cd65)
+- [30 bibliothèques incroyables pour iOS Swift (v2018)](https://medium.mybridge.co/30-amazing-ios-swift-libraries-for-the-past-year-v-2018-7cf15027eee9)
+- [AppCoda Weekly #44](http://digest.appcoda.com/issues/appcoda-weekly-issue-44-81899)
+- [iOS Cookies Newsletter #103](https://us11.campaign-archive.com/?u=cd1f3ed33c6527331d82107ba&id=48131a516d)
+- [Bulletin d'information sur les développements Swift #113](https://andybargh.com/swiftdevelopments-113/)
+- [iOS Goodies #204](http://ios-goodies.com/post/167557280951/week-204)
+- [Swift Weekly #96](http://digest.swiftweekly.com/issues/swift-weekly-issue-96-81759)
+- [CocoaControls](https://www.cocoacontrols.com/controls/skeletonview)
+- [Bulletin d'information Génial iOS #74](https://ios.libhunt.com/newsletter/74)
+- [Swift News #36](https://www.youtube.com/watch?v=mAGpsQiy6so)
+- [Meilleurs articles sur iOS, nouveaux outils et plus](https://medium.com/flawless-app-stories/best-ios-articles-new-tools-more-fcbe673e10d)
+
+## 👨🏻 Auteur
+[1.1] : http://i.imgur.com/tXSoThF.png
+[1] : http://www.twitter.com/JuanpeCatalan
+
+* Juanpe Catalán [![alt text][1.1]][1]
+
+<a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/CDou4xtIK"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy me a coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;"><span style="margin-left:5px"></span></a>
+
+## 👮🏻 Licence
+
+```
+MIT License
+
+Copyright (c) 2017 Juanpe Catalán
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
 
 
 
