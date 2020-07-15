@@ -59,7 +59,7 @@ Profitez-en! 🙂
   * [Débugger](#-débugger)
 * [Documentation](#-documentation)
 * [Versions OS & SDK supportées](#-versions-os-et-sdk-supportées)
-* [Prochaines étapes](#-prochaines-étapes)
+* [Prochaines étapes](#prochaines-étapes)
 * [Contribuer](#-contribuer)
 * [Mentions](#-mentions)
 * [Auteur](#-auteur)
