@@ -48,21 +48,21 @@ Profitez-en! 🙂
   * [Cocoapods](#utilisation-de-cocoapods)
   * [Carthage](#utilisation-de-carthage)
   * [SPM](#utilisation-du-gestionnaire-de-paquets-Swift)
-* [Comment utiliser](#comment-utiliser)
+* [Comment utiliser](#-mode-d'emploi)
   * [Collections](#-collections)
-  * [Texte Multiligne](#-multiline-texte)
-  * [Couleurs personnalisées] (#couleurs-personnalisées)
-  * [Apparition](#apparition)
-  * [Animations personnalisées](#-custom-animations)
+  * [Texte Multiligne](#-texte-multiligne)
+  * [Couleurs personnalisées](#couleurs-personnalisées)
+  * [Présentation](#-présentation)
+  * [Animations personnalisées](#-animations-personnalisées)
   * [Transitions](#-transitions)
   * [Hiérarchie](#-hiérarchie)
-  * [Debug](#-debug)
+  * [Débugger](#-débugger)
 * [Documentation](#-documentation)
 * [Versions OS & SDK supportées](#-supportedos--sdk-versions)
 * [Prochaines étapes](#prochaines-étapes)
-* [Contribuant](#-contribuant)
+* [Contribuer](#-contribuer)
 * [Mentions](#-mentions)
-* [Auteur](#-autor)
+* [Auteur](#-auteur)
 * [Licence](#-licence)
 
 ## 🌟 Caractéristiques
@@ -532,9 +532,9 @@ Voir [tous les contributeurs](https://github.com/Juanpe/SkeletonView/graphs/cont
 - [Swift News #36](https://www.youtube.com/watch?v=mAGpsQiy6so)
 - [Meilleurs articles sur iOS, nouveaux outils et plus](https://medium.com/flawless-app-stories/best-ios-articles-new-tools-more-fcbe673e10d)
 
-## 👨🏻 Auteur
-[1.1] : http://i.imgur.com/tXSoThF.png
-[1] : http://www.twitter.com/JuanpeCatalan
+## 👨🏻‍💻 Auteur
+[1.1]: http://i.imgur.com/tXSoThF.png
+[1]: http://www.twitter.com/JuanpeCatalan
 
 * Juanpe Catalán [![alt text][1.1]][1]
 
