@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file
 #### 🔬Improvements
 
 #### 🩹 Bug fixes
+- Prevent incorrect skeletonLayer to be added when updating skeleton
 
 ### 📦 [1.8.7](https://github.com/Juanpe/SkeletonView/releases/tag/1.8.7)
 
