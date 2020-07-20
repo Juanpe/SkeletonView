@@ -148,7 +148,8 @@ extension UIView {
         currentSkeletonConfig = config
         updateDummyDataSourceIfNeeded()
         subviewsSkeletonables.recursiveSearch(leafBlock: {
-            if skeletonLayer?.type != config.type {
+            if let skeletonLayer = skeletonLayer,
+                skeletonLayer.type != config.type {
                 removeSkeletonLayer()
                 addSkeletonLayer(skeletonConfig: config)
             } else {
