@@ -31,7 +31,11 @@ class HeaderFooterSection: UITableViewHeaderFooterView {
         ])
         
         backgroundView = UIView()
-        backgroundView?.backgroundColor = .white
+        if #available(iOS 13.0, *) {
+            backgroundView?.backgroundColor = .systemBackground
+        } else {
+            backgroundView?.backgroundColor = .white
+        }
     }
     
     required init?(coder: NSCoder) {
