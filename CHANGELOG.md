@@ -4,9 +4,10 @@ All notable changes to this project will be documented in this file
 ### Next version
 
 #### 🙌 New
-* [**304**](https://github.com/Juanpe/SkeletonView/pull/304): French README 🇫🇷 - [@OmarJalil ](https://github.com/OmarJalil )
+* [**304**](https://github.com/Juanpe/SkeletonView/pull/304): French README 🇫🇷 - [@OmarJalil](https://github.com/OmarJalil)
 
 #### 🔬Improvements
+* [**311**](https://github.com/Juanpe/SkeletonView/pull/311): Bump json from 2.2.0 to 2.3.1 - [@dependabot](https://github.com/dependabot)
 
 #### 🩹 Bug fixes
 * [**286**](https://github.com/Juanpe/SkeletonView/pull/286): Fix issue when WKWebView calls skeletonLayoutSubviews not on the main thread - [@paulanatoleclaudot-betclic](https://github.com/paulanatoleclaudot-betclic)
