@@ -4,10 +4,15 @@ All notable changes to this project will be documented in this file
 ### Next version
 
 #### 🙌 New
+* [**304**](https://github.com/Juanpe/SkeletonView/pull/304): French README 🇫🇷 - [@OmarJalil](https://github.com/OmarJalil)
 
 #### 🔬Improvements
+* [**311**](https://github.com/Juanpe/SkeletonView/pull/311): Bump json from 2.2.0 to 2.3.1 - [@dependabot](https://github.com/dependabot)
 
 #### 🩹 Bug fixes
+* [**286**](https://github.com/Juanpe/SkeletonView/pull/286): Fix issue when WKWebView calls skeletonLayoutSubviews not on the main thread - [@paulanatoleclaudot-betclic](https://github.com/paulanatoleclaudot-betclic)
+* [**292**](https://github.com/Juanpe/SkeletonView/pull/292): Fix IBInspectable support when using Carthage - [@marisalaneous](https://github.com/marisalaneous)
+* [**308**](https://github.com/Juanpe/SkeletonView/pull/308): Fix example backgroundColor in DarkMode - [@toshi0383](https://github.com/toshi0383)
 
 ### 📦 [1.8.7](https://github.com/Juanpe/SkeletonView/releases/tag/1.8.7)
 

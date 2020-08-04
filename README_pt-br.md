@@ -1,27 +1,23 @@
 ![](Assets/header2.jpg)
 
 <p align="center">
-    <a href="https://app.bitrise.io/app/6d289a17e22c8323">
-      <img src="https://app.bitrise.io/app/6d289a17e22c8323/status.svg?token=fI7gKC41XD9-aRXDScCKBw&branch=master">
+    <a href="https://github.com/Juanpe/SkeletonView/workflows/build">
+      <img src="https://github.com/Juanpe/SkeletonView/workflows/build/badge.svg">
     </a>
     <a href="https://codebeat.co/projects/github-com-juanpe-skeletonview-master"><img alt="codebeat badge" src="https://codebeat.co/badges/f854fdfd-31e5-4689-ba04-075d83653e60" /></a>
-    <a href="https://github.com/Juanpe/SkeletonView">
-        <img src="https://img.shields.io/cocoapods/p/SkeletonView.svg" alt="Platforms">
-    </a>
     <img src="https://img.shields.io/badge/Swift-5-orange.svg" />
-    <a href="https://cocoapods.org/pods/SkeletonView">
-        <img src="https://img.shields.io/cocoapods/v/SkeletonView.svg" alt="CocoaPods" />
-    </a>
-    <a href="https://cocoapods.org/pods/SkeletonView">
-        <img src="https://img.shields.io/cocoapods/dt/SkeletonView.svg?style=flat" alt="CocoaPods downloads" />
-    </a>
+    <img src="http://img.shields.io/badge/dependency%20manager-swiftpm%2Bcocoapods%2Bcarthage-green" />
+    <img src="https://img.shields.io/badge/platforms-ios%2Btvos-green" />
+    <a href="https://badge.bow-swift.io/recipe?name=SkeletonView&description=An%20elegant%20way%20to%20show%20users%20that%20something%20is%20happening%20and%20also%20prepare%20them%20to%20which%20contents%20he%20is%20waiting&url=https://github.com/juanpe/skeletonview&owner=Juanpe&avatar=https://avatars0.githubusercontent.com/u/1409041?v=4&tag=1.8.7"><img src="https://raw.githubusercontent.com/bow-swift/bow-art/master/badges/nef-playgrounds-badge.svg" alt="SkeletonView Playground" style="height:20px"></a>   
+    <br/>
     <a href="https://twitter.com/JuanpeCatalan">
         <img src="https://img.shields.io/badge/contact-@JuanpeCatalan-blue.svg?style=flat" alt="Twitter: @JuanpeCatalan" />
     </a>
-    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=MJ4Y2D9DEX6FL&lc=ES&item_name=SkeletonView&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted">
-        <img src="https://img.shields.io/badge/Donate-PayPal-green.svg" alt="Paypal" />
+    <a href="https://gitter.im/SkeletonView/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge">
+        <img src="https://badges.gitter.im/SkeletonView/community.svg?style=flat" />
     </a>
-    <br/>
+    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=MJ4Y2D9DEX6FL&lc=ES&item_name=SkeletonView&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted">
+        <img src="https://img.shields.io/badge/Donate-PayPal-green.svg" alt="PayPal" />
     <a href="https://twitter.com/intent/tweet?text=Wow%20This%20library%20is%20awesome:&url=https%3A%2F%2Fgithub.com%2FJuanpe%2FSkeletonView">
       <img src="https://img.shields.io/twitter/url/https/github.com/Juanpe/SkeletonView.svg?style=social" alt="License" />
     </a>
@@ -29,7 +25,10 @@
 
 🌎  Traduções: </br>
 [Original](https://github.com/Juanpe/SkeletonView) </br>
-[🇨🇳](https://github.com/Juanpe/SkeletonView/blob/master/README_zh.md) por [@WhatsXie](https://twitter.com/WhatsXie) </br>
+[🇨🇳](https://github.com/Juanpe/SkeletonView/blob/master/README_zh.md)  [@WhatsXie](https://twitter.com/WhatsXie) </br>
+[🇧🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_pt-br.md)  [@brunomunizaf](https://twitter.com/brunomuniz_af) </br>
+[🇰🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_ko.md)  [@techinpark](https://twitter.com/techinpark) </br>
+[🇫🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_fr.md)  [@OmarJalil](https://github.com/OmarJalil)
 
 Hoje, quase todos os apps têm processos assíncronos, como requisições de API, processos longos, etc. E enquanto os processos estão ocorrendo, normalmente os desenvolvedores usam uma view que mostra os usuarios que algo está ocorrendo.
 
