@@ -1,42 +1,39 @@
 ![](Assets/header2.jpg)
 
 <p align="center">
-    <a href="https://app.bitrise.io/app/6d289a17e22c8323">
-      <img src="https://app.bitrise.io/app/6d289a17e22c8323/status.svg?token=fI7gKC41XD9-aRXDScCKBw&branch=master">
+    <a href="https://github.com/Juanpe/SkeletonView/workflows/build">
+      <img src="https://github.com/Juanpe/SkeletonView/workflows/build/badge.svg">
     </a>
     <a href="https://codebeat.co/projects/github-com-juanpe-skeletonview-master"><img alt="codebeat badge" src="https://codebeat.co/badges/f854fdfd-31e5-4689-ba04-075d83653e60" /></a>
-    <a href="https://github.com/Juanpe/SkeletonView">
-        <img src="https://img.shields.io/cocoapods/p/SkeletonView.svg" alt="Platforms">
-    </a>
     <img src="https://img.shields.io/badge/Swift-5-orange.svg" />
-    <a href="https://cocoapods.org/pods/SkeletonView">
-        <img src="https://img.shields.io/cocoapods/v/SkeletonView.svg" alt="CocoaPods" />
-    </a>
-    <a href="https://github.com/Carthage/Carthage">
-        <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage" />
-    </a>
-    <a href="https://github.com/apple/swift-package-manager">
-        <img src="https://img.shields.io/badge/SPM-compatible-brightgreen.svg" alt="SPM" />
-    </a>
+    <img src="http://img.shields.io/badge/dependency%20manager-swiftpm%2Bcocoapods%2Bcarthage-green" />
+    <img src="https://img.shields.io/badge/platforms-ios%2Btvos-green" />
+    <a href="https://badge.bow-swift.io/recipe?name=SkeletonView&description=An%20elegant%20way%20to%20show%20users%20that%20something%20is%20happening%20and%20also%20prepare%20them%20to%20which%20contents%20he%20is%20waiting&url=https://github.com/juanpe/skeletonview&owner=Juanpe&avatar=https://avatars0.githubusercontent.com/u/1409041?v=4&tag=1.8.7"><img src="https://raw.githubusercontent.com/bow-swift/bow-art/master/badges/nef-playgrounds-badge.svg" alt="SkeletonView Playground" style="height:20px"></a>   
+    <br/>
     <a href="https://twitter.com/JuanpeCatalan">
         <img src="https://img.shields.io/badge/contact-@JuanpeCatalan-blue.svg?style=flat" alt="Twitter: @JuanpeCatalan" />
     </a>
-    <br/>
+    <a href="https://gitter.im/SkeletonView/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge">
+        <img src="https://badges.gitter.im/SkeletonView/community.svg?style=flat" />
+    </a>
+    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=MJ4Y2D9DEX6FL&lc=ES&item_name=SkeletonView&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted">
+        <img src="https://img.shields.io/badge/Donate-PayPal-green.svg" alt="PayPal" />
     <a href="https://twitter.com/intent/tweet?text=Wow%20This%20library%20is%20awesome:&url=https%3A%2F%2Fgithub.com%2FJuanpe%2FSkeletonView">
       <img src="https://img.shields.io/twitter/url/https/github.com/Juanpe/SkeletonView.svg?style=social" alt="License" />
     </a>
 </p>
 
 🌎  번역에 도움을 주신분들: </br>
-[🇨🇳](https://github.com/Juanpe/SkeletonView/blob/master/README_zh.md) by [@WhatsXie](https://twitter.com/WhatsXie) </br>
-[🇧🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_pt-br.md) by [@brunomunizaf](https://twitter.com/brunomuniz_af) </br>
-[🇰🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_ko.md) by [@techinpark](https://twitter.com/techinpark)
+[Original](https://github.com/Juanpe/SkeletonView) </br>
+[🇨🇳](https://github.com/Juanpe/SkeletonView/blob/master/README_zh.md)  [@WhatsXie](https://twitter.com/WhatsXie) </br>
+[🇧🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_pt-br.md)  [@brunomunizaf](https://twitter.com/brunomuniz_af) </br>
+[🇰🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_ko.md)  [@techinpark](https://twitter.com/techinpark) </br>
+[🇫🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_fr.md)  [@OmarJalil](https://github.com/OmarJalil)
 
+오늘날 거의 대부분의 앱들은 비동기 방식의 API 호출을 사용하는 프로세스를 가지고 있습니다.
+프로세스가 작동하는동안 개발자들은 작업이 실행되고 있다는것을 사용자들에게 보여주기 위해서 로딩 뷰를 배치합니다.
 
-오늘날 거의 대부분의 앱들은 비동기 방식의 API 호출을 사용하는 프로세스를 가지고 있습니다. 
-프로세스가 작동하는동안 개발자들은 작업이 실행되고 있다는것을 사용자들에게 보여주기 위해서 로딩 뷰를 배치합니다. 
-
-```SkeletonView```는 이러한 필요에 의해 고안되었고, 사용자들에게 무엇인가 로딩이 되고 있다는것을 보여주면서 기다리는 콘텐츠에 대해서도 미리 준비할 수 있게 해주는 우아하게 표현할수 있는 방법입니다 
+```SkeletonView```는 이러한 필요에 의해 고안되었고, 사용자들에게 무엇인가 로딩이 되고 있다는것을 보여주면서 기다리는 콘텐츠에 대해서도 미리 준비할 수 있게 해주는 우아하게 표현할수 있는 방법입니다
 
 맘껏 누리세요 🙂
 
@@ -65,9 +62,9 @@
 
 ## 🌟 기능
 
-- [x] 사용이 쉽습니다 
-- [x] 모든 `UIView`에서 사용가능합니다 
-- [x] 전체 커스터마이징이 가능합니다 
+- [x] 사용이 쉽습니다
+- [x] 모든 `UIView`에서 사용가능합니다
+- [x] 전체 커스터마이징이 가능합니다
 - [x] 공통으로 이용가능합니다 (iPhone & iPad)
 - [x] `Interface Builder` 에서 사용 가능합니다.
 - [x] 간단한 스위프트 문법
@@ -171,7 +168,7 @@ avatarImageView.isSkeletonable = true
 </table>
 
 > **중요!**
->>```SkeletonView``` 는 재귀적으로 되어있습니다, 만약 모든 뷰에 대해서 skeleton을 호출하고 싶다면, 메인 컨테이너 뷰에서 show `method`를 호출하여야 합니다. 예를 들자면 UIViewControllers가 있습니다. 
+>>```SkeletonView``` 는 재귀적으로 되어있습니다, 만약 모든 뷰에 대해서 skeleton을 호출하고 싶다면, 메인 컨테이너 뷰에서 show `method`를 호출하여야 합니다. 예를 들자면 UIViewControllers가 있습니다.
 
 
 
@@ -181,7 +178,7 @@ avatarImageView.isSkeletonable = true
 
 #### UITableView
 
-만약 ```UITableView```에서 skeleton을 호출하고 싶다면, ```SkeletonTableViewDataSource``` protocol 을 구현하여야 합니다. 
+만약 ```UITableView```에서 skeleton을 호출하고 싶다면, ```SkeletonTableViewDataSource``` protocol 을 구현하여야 합니다.
 
 ``` swift
 public protocol SkeletonTableViewDataSource: UITableViewDataSource {
@@ -191,9 +188,9 @@ public protocol SkeletonTableViewDataSource: UITableViewDataSource {
 }
 ```
 
-해당 프로토클은 보시다시피  ```UITableViewDataSource```를 상속받아 구현하였으므로, skeleton의 protocol과 대체 가능합니다. 
+해당 프로토클은 보시다시피  ```UITableViewDataSource```를 상속받아 구현하였으므로, skeleton의 protocol과 대체 가능합니다.
 
-프로토콜의 기본 구현은 다음과 같습니다: 
+프로토콜의 기본 구현은 다음과 같습니다:
 
 ``` swift
 func numSections(in collectionSkeletonView: UITableView) -> Int
@@ -203,10 +200,10 @@ func numSections(in collectionSkeletonView: UITableView) -> Int
 ``` swift
 func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int
 // Default:
-// 전체 테이블 뷰를 채우는데 필요한 셀 수를 계산합니다 
+// 전체 테이블 뷰를 채우는데 필요한 셀 수를 계산합니다
 ```
 
-해당 메소드는 당신이 구현하여야할 cell identifier을 아는 경우에만 사용합니다, 해당 메소드는 기본으로 구현하지 않아도됩니다 : 
+해당 메소드는 당신이 구현하여야할 cell identifier을 아는 경우에만 사용합니다, 해당 메소드는 기본으로 구현하지 않아도됩니다 :
 
  ``` swift
  func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier
@@ -243,7 +240,7 @@ public protocol SkeletonCollectionViewDataSource: UICollectionViewDataSource {
 }
 ```
 
-```UITableView``` 와 사용방법은 같습니다. 
+```UITableView``` 와 사용방법은 같습니다.
 
 ### 📰 Multiline text
 
@@ -277,7 +274,7 @@ descriptionTextView.linesCornerRadius = 5
 
 ### 🎨 Custom colors
 
-당신은 skeleton의 색상을 지정 할 수 있습니다. 간단하게 원하는 색상을 파라미터로 넘겨주시면 됩니다. 
+당신은 skeleton의 색상을 지정 할 수 있습니다. 간단하게 원하는 색상을 파라미터로 넘겨주시면 됩니다.
 
 **단색 이용방법**
 ``` swift
@@ -296,11 +293,11 @@ view.showGradientSkeleton(usingGradient: gradient) // Gradient
 ```UIColor.turquoise, UIColor.greenSea, UIColor.sunFlower, UIColor.flatOrange  ...```
 
 ![](Assets/flatcolors.png)
-###### 위 이미지는 [https://flatuicolors.com](https://flatuicolors.com) 사이트에서 발췌했습니다. 
+###### 위 이미지는 [https://flatuicolors.com](https://flatuicolors.com) 사이트에서 발췌했습니다.
 
 ### 🦋 Appearance
 
-**새로운 사항** skeleton 은  기본설정 값이 정해져 있습니다. 만약 커스텀 컬러를 사용할 필요가 없다면, `SkeletonView` 에 지정 되어있는 기본설정을 사용하시면 됩니다. 
+**새로운 사항** skeleton 은  기본설정 값이 정해져 있습니다. 만약 커스텀 컬러를 사용할 필요가 없다면, `SkeletonView` 에 지정 되어있는 기본설정을 사용하시면 됩니다.
 
 기본 설정값:
 - **tintColor**: UIColor
@@ -376,7 +373,7 @@ view.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
 
 ### 👨‍👧‍👦 계층 구조
 
-```SkeletonView```는 재귀적입니다 , 그리고 우리는 skeleton이 효율적으로 작동하기를 원하기 때문에, 가능한 빨리 재귀작업을 중단하기를 원합니다. 이러한 이유때문에 반드시 컨테이너 뷰를  `Skeletonable` 로 설정해야 합니다,  `skeletonable` 되지 않는 뷰를 만나는 순간 재귀 작업을 중단하기 떄문입니다. 
+```SkeletonView```는 재귀적입니다 , 그리고 우리는 skeleton이 효율적으로 작동하기를 원하기 때문에, 가능한 빨리 재귀작업을 중단하기를 원합니다. 이러한 이유때문에 반드시 컨테이너 뷰를  `Skeletonable` 로 설정해야 합니다,  `skeletonable` 되지 않는 뷰를 만나는 순간 재귀 작업을 중단하기 떄문입니다.
 
 아래의 이미지를 참고하세요 이미지는 한눈에 이해되실겁니다:
 
@@ -429,7 +426,7 @@ skeleton은 이렇게 생겼습니다:
 
 * [x] 멀티라인 에서의 마지막 라인의 채우기 비율 설정
 * [x] 더많은 그라디언트 애니메이션
-* [x] resizable cells 지원 
+* [x] resizable cells 지원
 * [x] CollectionView 호환
 * [x] tvOS 호환
 * [x] recovery state 추가
