@@ -18,6 +18,8 @@
     </a>
 </p>
 
+<br/>
+<br/>
 
 **🌎 README is available in other languages: [🇨🇳](https://github.com/Juanpe/SkeletonView/blob/master/README_zh.md) [🇧🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_pt-br.md) [🇰🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_ko.md) [🇫🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_fr.md)**
 
