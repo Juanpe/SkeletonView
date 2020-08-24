@@ -1,6 +1,5 @@
 ![](Assets/header2.jpg)
 
-
 <p align="center">
     <a href="https://github.com/Juanpe/SkeletonView/workflows/build">
       <img src="https://github.com/Juanpe/SkeletonView/workflows/build/badge.svg">
@@ -47,7 +46,7 @@ Enjoy it! 🙂
 * [Documentation](#-documentation)
 * [Supported OS & SDK Versions](#-supported-os--sdk-versions)
 * [Next steps](#-next-steps)
-* [Contributing](#-contributing)
+* [Contributing](#%EF%B8%8F-contributing)
 * [Mentions](#-mentions)
 * [Author](#-author)
 * [License](#-license)
@@ -65,7 +64,9 @@ Enjoy it! 🙂
 
 ## 🎬 Guides
 
- [<img src="Assets/thumb_getting_started.png">](https://youtu.be/75kgOhWsPNA)
+| [![](https://img.youtube.com/vi/75kgOhWsPNA/maxresdefault.jpg)](https://youtu.be/75kgOhWsPNA)|[![](https://img.youtube.com/vi/MVCiM_VdxVA/maxresdefault.jpg)](https://youtu.be/MVCiM_VdxVA)|[![](https://img.youtube.com/vi/Qq3Evspeea8/maxresdefault.jpg)](https://youtu.be/Qq3Evspeea8)|[![](https://img.youtube.com/vi/ZOoPtBwDRT0/maxresdefault.jpg)](https://youtu.be/ZOoPtBwDRT0)
+|:---:  | :---: |:---:  | :---: 
+|[**SkeletonView Guides - Getting started**](https://youtu.be/75kgOhWsPNA)|[**How to Create Loading View with Skeleton View in Swift 5.2**](https://youtu.be/MVCiM_VdxVA) <br/> by iKh4ever Studio|[**Create Skeleton Loading View in App (Swift 5) - Xcode 11, 2020**](https://youtu.be/Qq3Evspeea8) <br/> by iOS Academy| [**Add An Elegant Loading Animation in Swift***](https://youtu.be/ZOoPtBwDRT0) <br/> by Gary Tokman
 
 ## 📲 Installation
 
@@ -190,7 +191,7 @@ You can change the skeleton configuration at any time like its colour, animation
 
 ### 🌿 Collections
 
- Now, ```SkeletonView``` is compatible with ```UITableView``` and ```UICollectionView```.
+```SkeletonView``` is compatible with ```UITableView``` and ```UICollectionView```.
 
 #### UITableView
 
