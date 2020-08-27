@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file
 * [**286**](https://github.com/Juanpe/SkeletonView/pull/286): Fix issue when WKWebView calls skeletonLayoutSubviews not on the main thread - [@paulanatoleclaudot-betclic](https://github.com/paulanatoleclaudot-betclic)
 * [**292**](https://github.com/Juanpe/SkeletonView/pull/292): Fix IBInspectable support when using Carthage - [@marisalaneous](https://github.com/marisalaneous)
 * [**308**](https://github.com/Juanpe/SkeletonView/pull/308): Fix example backgroundColor in DarkMode - [@toshi0383](https://github.com/toshi0383)
+* Prevent incorrect skeletonLayer to be added when updating skeleton
 
 ### 📦 [1.8.7](https://github.com/Juanpe/SkeletonView/releases/tag/1.8.7)
 
