@@ -101,7 +101,7 @@ extension CALayer {
 
     func updateLayerFrame(for index: Int, size: CGSize, multilineSpacing: CGFloat, paddingInsets: UIEdgeInsets) {
         let spaceRequiredForEachLine = SkeletonAppearance.default.multilineHeight + multilineSpacing
-        frame = CGRect(x: paddingInsets.left, y: CGFloat(index) * spaceRequiredForEachLine + paddingInsets.top, width: size.width, height: size.height)
+        frame = CGRect(x: paddingInsets.left, y: CGFloat(index) * spaceRequiredForEachLine + paddingInsets.top, width: size.width, height: size.height - paddingInsets.bottom - paddingInsets.top)
     }
 
 	private func calculateNumLines(for config: SkeletonMultilinesLayerConfig) -> Int {
