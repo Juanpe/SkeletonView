@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file
 
 ### Next version
 
+#### 🩹 Bug fixes
+* [**320**](https://github.com/Juanpe/SkeletonView/pull/320): Fix Single line customisation - [@Juanpe](https://github.com/juanpe)
+
 ### 📦 [1.8.8](https://github.com/Juanpe/SkeletonView/releases/tag/1.8.8)
 
 #### 🙌 New
