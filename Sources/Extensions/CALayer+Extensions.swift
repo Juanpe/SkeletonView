@@ -50,7 +50,8 @@ extension CALayer {
 	func addMultilinesLayers(for config: SkeletonMultilinesLayerConfig) {
         let numberOfSublayers = config.lines == 1 ? 1 : calculateNumLines(for: config)
         var height = config.lineHeight ?? SkeletonAppearance.default.multilineHeight
-        if numberOfSublayers == 1 {
+        
+        if numberOfSublayers == 1 && SkeletonAppearance.default.renderSingleLineAsView {
             height = bounds.height
         }
 
@@ -79,7 +80,8 @@ extension CALayer {
         let paddingInsets = config.paddingInsets
         let multilineSpacing = config.multilineSpacing
         var height = config.lineHeight ?? SkeletonAppearance.default.multilineHeight
-        if numberOfSublayers == 1 {
+        
+        if numberOfSublayers == 1 && SkeletonAppearance.default.renderSingleLineAsView {
             height = bounds.height
         }
         
