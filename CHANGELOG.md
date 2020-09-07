@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file
 
 #### 🩹 Bug fixes
 * [**320**](https://github.com/Juanpe/SkeletonView/pull/320): Fix Single line customisation - [@Juanpe](https://github.com/juanpe)
+* [**319**](https://github.com/Juanpe/SkeletonView/pull/319): Fix to consider the top and bottom edge insets when updating the skeleton layer height - [@xpereta](https://github.com/xpereta)
 
 ## 📦 [1.8.8](https://github.com/Juanpe/SkeletonView/releases/tag/1.8.8)
 
@@ -19,7 +20,6 @@ All notable changes to this project will be documented in this file
 * [**292**](https://github.com/Juanpe/SkeletonView/pull/292): Fix IBInspectable support when using Carthage - [@marisalaneous](https://github.com/marisalaneous)
 * [**308**](https://github.com/Juanpe/SkeletonView/pull/308): Fix example backgroundColor in DarkMode - [@toshi0383](https://github.com/toshi0383)
 * [**307**](https://github.com/Juanpe/SkeletonView/pull/307): Prevent incorrect skeletonLayer to be added when updating skeleton - [@wsalim1610](https://github.com/wsalim1610)
-* [**319**](https://github.com/Juanpe/SkeletonView/pull/319): Fix to consider the top and bottom edge insets when updating the skeleton layer height - [@xpereta](https://github.com/xpereta)
 
 ## 📦 [1.8.7](https://github.com/Juanpe/SkeletonView/releases/tag/1.8.7)
 
