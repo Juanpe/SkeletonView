@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file
 
 ### Next version
 
+
+## 📦 [1.9](https://github.com/Juanpe/SkeletonView/releases/tag/1.9)
+
 #### 🩹 Bug fixes
 * [**319**](https://github.com/Juanpe/SkeletonView/pull/319): Fix to consider the top and bottom edge insets when updating the skeleton layer height - [@xpereta](https://github.com/xpereta)
 * [**320**](https://github.com/Juanpe/SkeletonView/pull/320): Fix Single line customisation - [@Juanpe](https://github.com/juanpe)
