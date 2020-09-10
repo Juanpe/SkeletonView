@@ -11,7 +11,7 @@ import UIKit
 extension UICollectionView: CollectionSkeleton {
     var estimatedNumberOfRows: Int {
         guard let flowlayout = collectionViewLayout as? UICollectionViewFlowLayout else { return 0 }
-        return Int(ceil(frame.height/flowlayout.itemSize.height))
+        return Int(ceil(frame.height / flowlayout.itemSize.height))
     }
     
     var skeletonDataSource: SkeletonCollectionDataSource? {
@@ -70,7 +70,7 @@ public extension UICollectionView {
         self.skeletonDataSource = dataSource
         performBatchUpdates({
             self.reloadData()
-        }) { (done) in
+        }) { done in
             completion(done)
             
         }
