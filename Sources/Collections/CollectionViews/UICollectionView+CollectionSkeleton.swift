@@ -25,6 +25,7 @@ extension UICollectionView: CollectionSkeleton {
     }
     
     var skeletonDelegate: SkeletonCollectionDelegate? {
+        
         get { return ao_get(pkey: &CollectionAssociatedKeys.dummyDelegate) as? SkeletonCollectionDelegate }
         set {
             ao_setOptional(newValue, pkey: &CollectionAssociatedKeys.dummyDelegate)
