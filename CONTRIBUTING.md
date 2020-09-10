@@ -20,8 +20,8 @@ There are many ways you can contribute! :heart:
    maintainers before spending too much time writing the code. In some cases, `💡 Enhancement`s may
    not align well with the project objectives at the time.
 
-### Tests :mag:, Documentation :books:, Miscellaneous :sparkles:
--  If you want to make the documentation clearer, you have an alternative implementation of something that may have advantages over the way its currently
+### Miscellaneous :sparkles:
+-  If you have an alternative implementation of something that may have advantages over the way its currently
    done, or you have any other change, we would be happy to hear about it!
   -  If its a trivial change, go ahead and [send a Pull Request](#creating_a_pull_request) with the changes you have in mind.
   -  If not, [open an Issue](https://github.com/Juanpe/SkeletonView/issues/new) to discuss the idea first.
