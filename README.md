@@ -28,28 +28,35 @@ Today almost all apps have async processes, such as API requests, long running p
 
 Enjoy it! 🙂
 
-* [Features](#-features)
-* [Guides](#-guides)
-* [Installation](#-installation)
-  * [Cocoapods](#using-cocoapods)
-  * [Carthage](#using-carthage)
-  * [SPM](#using-swift-package-manager)
-* [How to use](#-how-to-use)
-  * [Collections](#-collections)
-  * [Multiline text](#-multiline-text)
-  * [Custom colors](#-custom-colors)
-  * [Appearance](#-appearance)
-  * [Custom animations](#-custom-animations)
-  * [Transitions](#-transitions)
-  * [Hierarchy](#-hierarchy)
-  * [Debug](#-debug)
-* [Documentation](#-documentation)
-* [Supported OS & SDK Versions](#-supported-os--sdk-versions)
-* [Next steps](#-next-steps)
-* [Contributing](#%EF%B8%8F-contributing)
-* [Mentions](#-mentions)
-* [Author](#-author)
-* [License](#-license)
+- [🌟 Features](#-features)
+- [🎬 Guides](#-guides)
+- [📲 Installation](#-installation)
+    - [Using CocoaPods](#using-cocoapods)
+    - [Using Carthage](#using-carthage)
+    - [Using Swift Package Manager](#using-swift-package-manager)
+- [🐒 How to use](#-how-to-use)
+  - [Extra](#extra)
+    - [Skeleton views layout](#skeleton-views-layout)
+    - [Update skeleton configuration](#update-skeleton-configuration)
+  - [🌿 Collections](#-collections)
+    - [UITableView](#uitableview)
+    - [UICollectionView](#uicollectionview)
+  - [📰 Multiline text](#-multiline-text)
+      - [🎛 Customize](#-customize)
+  - [🎨 Custom colors](#-custom-colors)
+        - [Image captured from website https://flatuicolors.com](#image-captured-from-website-httpsflatuicolorscom)
+  - [🦋 Appearance](#-appearance)
+  - [🤓 Custom animations](#-custom-animations)
+  - [🏄 Transitions](#-transitions)
+  - [👨‍👧‍👦 Hierarchy](#-hierarchy)
+  - [🔬 Debug](#-debug)
+  - [📚 Documentation](#-documentation)
+  - [📋 Supported OS & SDK Versions](#-supported-os--sdk-versions)
+- [📬 Next steps](#-next-steps)
+- [❤️ Contributing](#️-contributing)
+- [📢 Mentions](#-mentions)
+- [👨🏻‍💻 Author](#-author)
+- [👮🏻 License](#-license)
 
 
 ## 🌟 Features
@@ -523,7 +530,7 @@ This is an open source project, so feel free to contribute. How?
 
 See [all contributors](https://github.com/Juanpe/SkeletonView/graphs/contributors)
 
-###### Project generated with [SwiftPlate](https://github.com/JohnSundell/SwiftPlate)
+For more information, please read the [contributing guidelines](https://github.com/Juanpe/SkeletonView/blob/develop/CONTRIBUTING.md).
 
 ## 📢 Mentions
 
