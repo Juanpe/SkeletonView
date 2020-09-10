@@ -45,3 +45,13 @@ struct RecoverableImageViewState {
         self.image = view.image
     }
 }
+
+struct RecoverableButtonViewState {
+    var title: String?
+    var isUserInteractionsEnabled: Bool
+    
+    init(view: UIButton) {
+        self.title = view.titleLabel?.text
+        self.isUserInteractionsEnabled = view.isUserInteractionEnabled
+    }
+}

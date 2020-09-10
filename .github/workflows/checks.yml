@@ -6,8 +6,10 @@ jobs:
   danger:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
       - name: Execute danger
-        uses: danger/swift@2.0.3
+        uses: danger/swift@3.3.0
+        with:
+            args: --failOnErrors --no-publish-check
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
