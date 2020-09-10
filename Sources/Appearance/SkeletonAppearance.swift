@@ -22,7 +22,7 @@ class SkeletonViewAppearance: Appearance {
 
     var tintColor: UIColor = .skeletonDefault
 
-    var gradient: SkeletonGradient = SkeletonGradient(baseColor: .skeletonDefault)
+    var gradient = SkeletonGradient(baseColor: .skeletonDefault)
 
     var multilineHeight: CGFloat = 15
 

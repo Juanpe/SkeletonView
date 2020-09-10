@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 public protocol SkeletonCollectionViewDataSource: UICollectionViewDataSource {
     func numSections(in collectionSkeletonView: UICollectionView) -> Int
     func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int
@@ -31,4 +30,3 @@ public extension SkeletonCollectionViewDataSource {
 }
 
 public protocol SkeletonCollectionViewDelegate: UICollectionViewDelegate { }
-

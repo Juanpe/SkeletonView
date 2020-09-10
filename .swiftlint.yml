@@ -1,0 +1,60 @@
+included:
+  - Sources
+disabled_rules:
+  - trailing_whitespace
+  - line_length
+  - type_body_length
+  - identifier_name
+  - multiple_closures_with_trailing_closure
+  - class_delegate_protocol
+opt_in_rules:
+  - closure_spacing
+  - closure_end_indentation
+  - closure_body_length
+  - collection_alignment
+  - contains_over_filter_is_empty
+  - contains_over_filter_count
+  - contains_over_first_not_nil
+  - contains_over_range_nil_comparison
+  - convenience_type
+  - discouraged_object_literal
+  - discouraged_optional_boolean
+  - empty_count
+  - empty_string
+  - fallthrough
+  - file_name_no_space
+  - first_where
+  - flatmap_over_map_reduce
+  - force_unwrapping
+  - function_default_parameter_at_end
+  - implicitly_unwrapped_optional
+  - joined_default_parameter
+  - last_where
+  - literal_expression_end_indentation
+  - multiline_function_chains
+  - operator_usage_whitespace
+  - private_action
+  - private_outlet
+  - redundant_optional_initialization
+  - redundant_set_access_control
+  - redundant_type_annotation
+  - sorted_first_last
+  - switch_case_on_newline
+  - unneeded_parentheses_in_closure_argument
+  - unowned_variable_capture
+  - unused_declaration
+  - unused_import
+  - vertical_whitespace_opening_braces
+  - discouraged_optional_collection
+  - enum_case_associated_values_counts
+  - legacy_multiple
+  - legacy_random
+force_cast: error 
+force_unwrapping: error
+indentation: 2
+file_length:
+ - 2500
+ - 3000
+large_tuple:
+ - 5
+ - 6

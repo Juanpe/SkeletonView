@@ -22,7 +22,7 @@ extension UIColor {
     
     public var complementaryColor: UIColor {
         if #available(iOS 13, tvOS 13, *) {
-            return UIColor { traitCollection in
+            return UIColor { _ in
                 return self.isLight() ? self.darker : self.lighter
             }
         } else {
@@ -50,6 +50,7 @@ extension UIColor {
 }
 
 public extension UIColor {
+    // swiftlint:disable operator_usage_whitespace
     static var greenSea     = UIColor(0x16a085)
     static var turquoise    = UIColor(0x1abc9c)
     static var emerald      = UIColor(0x2ecc71)
@@ -71,13 +72,16 @@ public extension UIColor {
     static var pomegranate  = UIColor(0xc0392b)
     static var silver       = UIColor(0xbdc3c7)
     static var asbestos     = UIColor(0x7f8c8d)
-
+    // swiftlint:enable operator_usage_whitespace
+    
     static var skeletonDefault: UIColor {
         if #available(iOS 13, tvOS 13, *) {
             return UIColor { traitCollection in
                 switch traitCollection.userInterfaceStyle {
-                case .dark: return .darkClouds
-                default: return .clouds
+                case .dark:
+                    return .darkClouds
+                default:
+                    return .clouds
                 }
             }
         } else {

@@ -121,7 +121,7 @@ extension UIView {
         addDummyDataSourceIfNeeded()
         subviewsSkeletonables.recursiveSearch(leafBlock: {
             showSkeletonIfNotActive(skeletonConfig: config)
-        }){ subview in
+        }) { subview in
             subview.recursiveShowSkeleton(skeletonConfig: config)
         }
 

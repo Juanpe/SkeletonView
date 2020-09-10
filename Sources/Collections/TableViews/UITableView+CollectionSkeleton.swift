@@ -12,7 +12,7 @@ public typealias ReusableHeaderFooterIdentifier = String
 
 extension UITableView: CollectionSkeleton {
     var estimatedNumberOfRows: Int {
-        return Int(ceil(frame.height/rowHeight))
+        return Int(ceil(frame.height / rowHeight))
     }
     
     var skeletonDataSource: SkeletonCollectionDataSource? {
@@ -43,8 +43,7 @@ extension UITableView: CollectionSkeleton {
         self.skeletonDataSource = dataSource
 
         if let originalDelegate = self.delegate as? SkeletonTableViewDelegate,
-            !(originalDelegate is SkeletonCollectionDelegate)
-        {
+            !(originalDelegate is SkeletonCollectionDelegate) {
             let delegate = SkeletonCollectionDelegate(tableViewDelegate: originalDelegate)
             self.skeletonDelegate = delegate
         }

@@ -21,7 +21,6 @@ public extension UITextView {
         set { multilineSpacing = min(newValue, 10) }
     }
 
-    @IBInspectable
     var skeletonPaddingInsets: UIEdgeInsets {
         get { return paddingInsets }
         set { paddingInsets = newValue }

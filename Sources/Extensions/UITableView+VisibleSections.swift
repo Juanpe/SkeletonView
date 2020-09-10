@@ -13,15 +13,13 @@ extension UITableView {
                 headerRect = rectForHeader(inSection: $1)
             }
             
-            if headerRect != nil {
-                let visiblePartOfTableView: CGRect = CGRect(
-                    x: contentOffset.x,
-                    y: contentOffset.y,
-                    width: bounds.size.width,
-                    height: bounds.size.height
-                )
+            if let headerRect = headerRect {
+                let visiblePartOfTableView = CGRect(x: contentOffset.x,
+                                                    y: contentOffset.y,
+                                                    width: bounds.size.width,
+                                                    height: bounds.size.height)
                 
-                if (visiblePartOfTableView.intersects(headerRect!)) {
+                if visiblePartOfTableView.intersects(headerRect) {
                     return $0 + [$1]
                 }
             }
