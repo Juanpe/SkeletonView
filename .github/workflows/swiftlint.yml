@@ -8,8 +8,5 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-    - name: Lint Action
-      uses: wearerequired/lint-action@v1.6.0
-      with:
-        github_token: ${{ secrets.github_token }}
-        swiftlint: true
+      - name: GitHub Action for SwiftLint
+        uses: norio-nomura/action-swiftlint@3.1.0
