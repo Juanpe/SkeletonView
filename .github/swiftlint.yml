@@ -1,0 +1,14 @@
+name: SwiftLint
+
+on:
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - name: GitHub Action for SwiftLint
+      uses: norio-nomura/action-swiftlint@3.1.0
+      env:
+        DIFF_BASE: ${{ github.base_ref }}
