@@ -8,8 +8,8 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-    - name: Run linters
-      uses: wearerequired/lint-action@v1
+    - name: Lint Action
+      uses: wearerequired/lint-action@v1.6.0
       with:
         github_token: ${{ secrets.github_token }}
         swiftlint: true
