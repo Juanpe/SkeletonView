@@ -15,10 +15,12 @@ extension UICollectionView: CollectionSkeleton {
     }
     
     var skeletonDataSource: SkeletonCollectionDataSource? {
+        
         get { return ao_get(pkey: &CollectionAssociatedKeys.dummyDataSource) as? SkeletonCollectionDataSource }
         set {
             ao_setOptional(newValue, pkey: &CollectionAssociatedKeys.dummyDataSource)
             self.dataSource = newValue
+            
         }
     }
     
