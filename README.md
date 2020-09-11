@@ -153,6 +153,7 @@ avatarImageView.isSkeletonable = true
 
   
 
+
 ### 🌿 Collections
 
 ```SkeletonView``` is compatible with ```UITableView``` and ```UICollectionView```.
@@ -216,6 +217,7 @@ public protocol SkeletonTableViewDelegate: UITableViewDelegate {
 > ```
 
   
+
 **UICollectionView**
 
 For `UICollectionView`, you need to conform to `SkeletonCollectionViewDataSource` protocol.
@@ -372,6 +374,7 @@ view.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
 > ```
 
   
+
 ### 🏄 Transitions
 
 **SkeletonView** has built-in transitions to **show** or **hide** the skeletons in a *smoother* way 🤙
@@ -411,6 +414,7 @@ The default value is  `crossDissolve(0.25)`
 ## ✨ Miscellaneous 
 
   
+
 **Hierarchy**
 
 Since ```SkeletonView``` is recursive, and we want skeleton to be very efficient, we want to stop recursion as soon as possible. For this reason, you must set the container view as `Skeletonable`, because Skeleton will stop looking for `skeletonable` subviews as soon as a view is not Skeletonable, breaking then the recursion.
@@ -434,6 +438,7 @@ view.showSkeleton()
 |<img src="Assets/tableview_skeletonable.jpg" width="350"/> | <img src="Assets/tableview_skeletonable_result.png" height="350"/>|
 
   
+
 **Hierarchy in collections**
 
 Here is an illustration that shows how you should specify which elements are skeletonables when you are using an `UITableView`:
@@ -443,6 +448,7 @@ Here is an illustration that shows how you should specify which elements are ske
 As you can see, we have to make skeletonable the tableview, the cell and the UI elements, but we don't need to set as skeletonable the `contentView`
 
   
+
 **Skeleton views layout**
 
 Sometimes skeleton layout may not fit your layout because the parent view bounds have changed. ~For example, rotating the device.~
@@ -461,6 +467,7 @@ override func viewDidLayoutSubviews() {
 
 
   
+
 **Update skeleton**
 
 You can change the skeleton configuration at any time like its colour, animation, etc. with the following methods:
@@ -473,7 +480,6 @@ You can change the skeleton configuration at any time like its colour, animation
 ```
 
 
-  
 **Debug**
 
 To facilitate the debug tasks when something is not working fine. **`SkeletonView`** has some new tools.
