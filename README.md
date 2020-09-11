@@ -59,7 +59,7 @@ Enjoy it! 🙂
 
 | [![](https://img.youtube.com/vi/75kgOhWsPNA/maxresdefault.jpg)](https://youtu.be/75kgOhWsPNA)|[![](https://img.youtube.com/vi/MVCiM_VdxVA/maxresdefault.jpg)](https://youtu.be/MVCiM_VdxVA)|[![](https://img.youtube.com/vi/Qq3Evspeea8/maxresdefault.jpg)](https://youtu.be/Qq3Evspeea8)|[![](https://img.youtube.com/vi/ZOoPtBwDRT0/maxresdefault.jpg)](https://youtu.be/ZOoPtBwDRT0)
 |:---:  | :---: |:---:  | :---: 
-|[**SkeletonView Guides - Getting started**](https://youtu.be/75kgOhWsPNA)|[**How to Create Loading View with Skeleton View in Swift 5.2**](https://youtu.be/MVCiM_VdxVA) <br/> by iKh4ever Studio|[**Create Skeleton Loading View in App (Swift 5) - Xcode 11, 2020**](https://youtu.be/Qq3Evspeea8) <br/> by iOS Academy| [**Add An Elegant Loading Animation in Swift***](https://youtu.be/ZOoPtBwDRT0) <br/> by Gary Tokman
+|[**SkeletonView Guides - Getting started**](https://youtu.be/75kgOhWsPNA)|[**How to Create Loading View with Skeleton View in Swift 5.2**](https://youtu.be/MVCiM_VdxVA)    by iKh4ever Studio|[**Create Skeleton Loading View in App (Swift 5) - Xcode 11, 2020**](https://youtu.be/Qq3Evspeea8)    by iOS Academy| [**Add An Elegant Loading Animation in Swift***](https://youtu.be/ZOoPtBwDRT0)    by Gary Tokman
 
 
 ## 📲 Installation
@@ -151,7 +151,7 @@ avatarImageView.isSkeletonable = true
 >
 > `SkeletonView` is recursive, so if you want show the skeleton in all skeletonable views, you only need to call the show method in the main container view. For example, with `UIViewControllers`.
 
-<br/>
+  
 
 ### 🌿 Collections
 
@@ -215,7 +215,7 @@ public protocol SkeletonTableViewDelegate: UITableViewDelegate {
 > self.addSubview(titleLabel) ❌
 > ```
 
-<br/>
+  
 **UICollectionView**
 
 For `UICollectionView`, you need to conform to `SkeletonCollectionViewDataSource` protocol.
@@ -371,7 +371,7 @@ view.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
 > let animation = GradientDirection.leftToRight.slidingAnimation()
 > ```
 
-<br/>
+  
 ### 🏄 Transitions
 
 **SkeletonView** has built-in transitions to **show** or **hide** the skeletons in a *smoother* way 🤙
@@ -410,7 +410,7 @@ The default value is  `crossDissolve(0.25)`
 
 ## ✨ Miscellaneous 
 
-<br/>
+  
 **Hierarchy**
 
 Since ```SkeletonView``` is recursive, and we want skeleton to be very efficient, we want to stop recursion as soon as possible. For this reason, you must set the container view as `Skeletonable`, because Skeleton will stop looking for `skeletonable` subviews as soon as a view is not Skeletonable, breaking then the recursion.
@@ -433,7 +433,7 @@ view.showSkeleton()
 |<img src="Assets/tableview_no_skeletonable.jpg" width="350"/> | <img src="Assets/tableview_no_skeletonable_result.png" height="350"/>|
 |<img src="Assets/tableview_skeletonable.jpg" width="350"/> | <img src="Assets/tableview_skeletonable_result.png" height="350"/>|
 
-<br/>
+  
 **Hierarchy in collections**
 
 Here is an illustration that shows how you should specify which elements are skeletonables when you are using an `UITableView`:
@@ -442,7 +442,7 @@ Here is an illustration that shows how you should specify which elements are ske
 
 As you can see, we have to make skeletonable the tableview, the cell and the UI elements, but we don't need to set as skeletonable the `contentView`
 
-<br/>
+  
 **Skeleton views layout**
 
 Sometimes skeleton layout may not fit your layout because the parent view bounds have changed. ~For example, rotating the device.~
@@ -460,7 +460,7 @@ override func viewDidLayoutSubviews() {
 > You shouldn't call this method. From **version 1.8.1** you don't need to call this method, the library does automatically. So, you can use this method **ONLY** in the cases when you need to update the layout of the skeleton manually.
 
 
-<br/>
+  
 **Update skeleton**
 
 You can change the skeleton configuration at any time like its colour, animation, etc. with the following methods:
@@ -473,7 +473,7 @@ You can change the skeleton configuration at any time like its colour, animation
 ```
 
 
-<br/>
+  
 **Debug**
 
 To facilitate the debug tasks when something is not working fine. **`SkeletonView`** has some new tools.
@@ -498,8 +498,7 @@ Then, when the skeleton appears, you can see the view hierarchy in the Xcode con
 <img src="Assets/hierarchy_output.png" />
 </details>
 
-
-<br/>
+  
 **Supported OS & SDK Versions**
 
 * iOS 9.0+
