@@ -34,7 +34,7 @@ Enjoy it! 🙂
 - [📲 Installation](#-installation)
 - [🐒 Usage](#-usage)
   - [🌿 Collections](#-collections)
-  - [📰 Texts](#-texts)
+  - [🔠 Texts](#-texts)
   - [🦋 Appearance](#-appearance)
   - [🎨 Custom colors](#-custom-colors)
   - [ 🏃‍♀️ Animations](#%EF%B8%8F-animations)
@@ -232,7 +232,7 @@ public protocol SkeletonCollectionViewDataSource: UICollectionViewDataSource {
 The rest of the process is the same as ```UITableView```
 
 
-### 📰 Texts
+### 🔠 Texts
 
 ![](Assets/multilines2.png)
 
