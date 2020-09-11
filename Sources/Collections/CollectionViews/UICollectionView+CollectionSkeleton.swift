@@ -20,7 +20,6 @@ extension UICollectionView: CollectionSkeleton {
         set {
             ao_setOptional(newValue, pkey: &CollectionAssociatedKeys.dummyDataSource)
             self.dataSource = newValue
-            
         }
     }
     
