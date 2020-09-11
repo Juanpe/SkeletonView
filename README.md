@@ -315,8 +315,8 @@ Besides, **SkeletonView** features 20 flat colors 🤙🏼
 
 ```UIColor.turquoise, UIColor.greenSea, UIColor.sunFlower, UIColor.flatOrange  ...```
 
-<img src="Assets/flatcolors.png" width="700px" />
-*Image captured from website [https://flatuicolors.com](https://flatuicolors.com)*
+![](Assets/flatcolors.png)
+###### Image captured from website [https://flatuicolors.com](https://flatuicolors.com)
 
 
 ### 🏃‍♀️ Animations
