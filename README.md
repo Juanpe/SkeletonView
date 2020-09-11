@@ -35,7 +35,7 @@ Enjoy it! 🙂
   - [📰 Texts](#-texts)
   - [🦋 Appearance](#-appearance)
   - [🎨 Custom colors](#-custom-colors)
-  - [ 🏃‍♀️ Animations](#-animations)
+  - [ 🏃‍♀️ Animations](#%EF%B8%8F-animations)
   - [🏄 Transitions](#-transitions)
 - [✨ Miscellaneous](#-miscellaneous)
 - [❤️ Contributing](#️-contributing)
@@ -87,12 +87,12 @@ dependencies: [
 
 Only **3** steps needed to use `SkeletonView`:
 
-**1.** Import SkeletonView in proper place.
+1️⃣ Import SkeletonView in proper place.
 ```swift
 import SkeletonView
 ```
 
-**2.** Now, set which views will be `skeletonables`. You achieve this in two ways:
+2️⃣ Now, set which views will be `skeletonables`. You achieve this in two ways:
 
 **Using code:**
 ```swift
@@ -102,7 +102,7 @@ avatarImageView.isSkeletonable = true
 
 ![](Assets/storyboard.png)
 
-**3.** Once you've set the views, you can show the **skeleton**. To do so, you have **4** choices:
+3️⃣ Once you've set the views, you can show the **skeleton**. To do so, you have **4** choices:
 
 ```swift
 (1) view.showSkeleton()                 // Solid
