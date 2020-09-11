@@ -278,7 +278,7 @@ Default values:
   - *default: 0*
 
 To get these default values you can use `SkeletonAppearance.default`. Using this property you can set the values as well:
-```Swift
+```swift
 SkeletonAppearance.default.multilineHeight = 20
 SkeletonAppearance.default.tintColor = .green
 ```
@@ -295,7 +295,7 @@ You can also specifiy these line appearance properties on a per-label basis:
 You can decide which color the skeleton is tinted with. You only need to pass as a parameter the color or gradient you want.
 
 **Using solid colors**
-``` swift
+```swift
 view.showSkeleton(usingColor: UIColor.gray) // Solid
 // or
 view.showSkeleton(usingColor: UIColor(red: 25.0, green: 30.0, blue: 255.0, alpha: 1.0))
@@ -306,17 +306,17 @@ let gradient = SkeletonGradient(baseColor: UIColor.midnightBlue)
 view.showGradientSkeleton(usingGradient: gradient) // Gradient
 ```
 
-Besides, ```SkeletonView``` features 20 flat colors 🤙🏼
+Besides, **SkeletonView** features 20 flat colors 🤙🏼
 
 ```UIColor.turquoise, UIColor.greenSea, UIColor.sunFlower, UIColor.flatOrange  ...```
 
-<img src="Assets/flatcolors.png" width="700px">
+<img src="Assets/flatcolors.png" width="700px" />
 ###### Image captured from website [https://flatuicolors.com](https://flatuicolors.com)
 
 
 ### 🏃‍♀️ Animations
 
-```SkeletonView``` has two built-in animations, *pulse* for solid skeletons and *sliding* for gradients.
+**SkeletonView** has two built-in animations, *pulse* for solid skeletons and *sliding* for gradients.
 
 Besides, if you want to do your own skeleton animation, it's really easy.
 
@@ -364,12 +364,14 @@ view.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
 > **😉 TRICK!**
 >
 > Exist another way to create sliding animations, just using this shortcut:
-> `let animation = GradientDirection.leftToRight.slidingAnimation()`
+> ```swift
+> let animation = GradientDirection.leftToRight.slidingAnimation()
+> ```
 
 
 ### 🏄 Transitions
 
-**SkeletonView** has build-in transitions to **show** or **hide** the skeletons in a *smoother* way 🤙
+**SkeletonView** has built-in transitions to **show** or **hide** the skeletons in a *smoother* way 🤙
 
 To use the transition, simply add the ```transition``` parameter to your ```showSkeleton()``` or ```hideSkeleton()``` function with the transition time, like this:
 
@@ -417,7 +419,7 @@ In this example we have a `UIViewController` with a `ContainerView` and a `UITab
 view.showSkeleton()
 ```
 
-> ```ìsSkeletonable```= ☠️
+> ```isSkeletonable```= ☠️
 
 | Configuration | Result|
 |:-------:|:-------:|
@@ -455,6 +457,7 @@ override func viewDidLayoutSubviews() {
 > You shouldn't call this method. From **version 1.8.1** you don't need to call this method, the library does automatically. So, you can use this method **ONLY** in the cases when you need to update the layout of the skeleton manually.
 
 
+
 **Update skeleton**
 
 You can change the skeleton configuration at any time like its colour, animation, etc. with the following methods:
@@ -465,6 +468,7 @@ You can change the skeleton configuration at any time like its colour, animation
 (3) view.updateAnimatedSkeleton()         // Solid animated
 (4) view.updateAnimatedGradientSkeleton() // Gradient animated
 ```
+
 
 
 **Debug**
@@ -490,6 +494,7 @@ Then, when the skeleton appears, you can see the view hierarchy in the Xcode con
 <summary>Open to see an output example </summary>
 <img src="Assets/hierarchy_output.png" />
 </details>
+
 
 
 **Supported OS & SDK Versions**
