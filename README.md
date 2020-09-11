@@ -12,8 +12,10 @@
 
 <p align="center">
     <a href="#-features">Features</a>
+  • <a href="#-guides">Guides</a>
   • <a href="#-installation">Installation</a>
   • <a href="#-usage">Usage</a>
+  • <a href="#-miscellaneous">Miscellaneous</a>
   • <a href="#️-contributing">Contributing</a>
 </p>
 
@@ -149,6 +151,7 @@ avatarImageView.isSkeletonable = true
 >
 > `SkeletonView` is recursive, so if you want show the skeleton in all skeletonable views, you only need to call the show method in the main container view. For example, with `UIViewControllers`.
 
+<br/>
 
 ### 🌿 Collections
 
@@ -212,7 +215,7 @@ public protocol SkeletonTableViewDelegate: UITableViewDelegate {
 > self.addSubview(titleLabel) ❌
 > ```
 
-
+<br/>
 **UICollectionView**
 
 For `UICollectionView`, you need to conform to `SkeletonCollectionViewDataSource` protocol.
@@ -311,7 +314,7 @@ Besides, **SkeletonView** features 20 flat colors 🤙🏼
 ```UIColor.turquoise, UIColor.greenSea, UIColor.sunFlower, UIColor.flatOrange  ...```
 
 <img src="Assets/flatcolors.png" width="700px" />
-###### Image captured from website [https://flatuicolors.com](https://flatuicolors.com)
+*Image captured from website [https://flatuicolors.com](https://flatuicolors.com)*
 
 
 ### 🏃‍♀️ Animations
@@ -368,7 +371,7 @@ view.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
 > let animation = GradientDirection.leftToRight.slidingAnimation()
 > ```
 
-
+<br/>
 ### 🏄 Transitions
 
 **SkeletonView** has built-in transitions to **show** or **hide** the skeletons in a *smoother* way 🤙
@@ -407,7 +410,7 @@ The default value is  `crossDissolve(0.25)`
 
 ## ✨ Miscellaneous 
 
-
+<br/>
 **Hierarchy**
 
 Since ```SkeletonView``` is recursive, and we want skeleton to be very efficient, we want to stop recursion as soon as possible. For this reason, you must set the container view as `Skeletonable`, because Skeleton will stop looking for `skeletonable` subviews as soon as a view is not Skeletonable, breaking then the recursion.
@@ -430,7 +433,7 @@ view.showSkeleton()
 |<img src="Assets/tableview_no_skeletonable.jpg" width="350"/> | <img src="Assets/tableview_no_skeletonable_result.png" height="350"/>|
 |<img src="Assets/tableview_skeletonable.jpg" width="350"/> | <img src="Assets/tableview_skeletonable_result.png" height="350"/>|
 
-
+<br/>
 **Hierarchy in collections**
 
 Here is an illustration that shows how you should specify which elements are skeletonables when you are using an `UITableView`:
@@ -439,7 +442,7 @@ Here is an illustration that shows how you should specify which elements are ske
 
 As you can see, we have to make skeletonable the tableview, the cell and the UI elements, but we don't need to set as skeletonable the `contentView`
 
-
+<br/>
 **Skeleton views layout**
 
 Sometimes skeleton layout may not fit your layout because the parent view bounds have changed. ~For example, rotating the device.~
@@ -457,7 +460,7 @@ override func viewDidLayoutSubviews() {
 > You shouldn't call this method. From **version 1.8.1** you don't need to call this method, the library does automatically. So, you can use this method **ONLY** in the cases when you need to update the layout of the skeleton manually.
 
 
-
+<br/>
 **Update skeleton**
 
 You can change the skeleton configuration at any time like its colour, animation, etc. with the following methods:
@@ -470,7 +473,7 @@ You can change the skeleton configuration at any time like its colour, animation
 ```
 
 
-
+<br/>
 **Debug**
 
 To facilitate the debug tasks when something is not working fine. **`SkeletonView`** has some new tools.
@@ -496,7 +499,7 @@ Then, when the skeleton appears, you can see the view hierarchy in the Xcode con
 </details>
 
 
-
+<br/>
 **Supported OS & SDK Versions**
 
 * iOS 9.0+
