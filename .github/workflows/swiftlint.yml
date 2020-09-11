@@ -13,9 +13,5 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Install SwiftLint 0.38.2
-        env:
-          HOMEBREW_NO_AUTO_UPDATE: 1 
-        run: brew install https://raw.github.com/Homebrew/homebrew-core/203436f8567a3b6455264a1d896da5b1df1e50e6/Formula/swiftlint.rb
       - name: Run SwiftLint
         run: swiftlint lint --reporter github-actions-logging
