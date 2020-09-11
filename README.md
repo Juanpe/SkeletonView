@@ -21,10 +21,12 @@
 
 Today almost all apps have async processes, such as API requests, long running processes, etc. While the processes are working, usually developers place a loading view to show users that something is going on.
 
-```SkeletonView``` has been conceived to address this need, an elegant way to show users that something is happening and also prepare them for which contents are waiting.
+**SkeletonView** has been conceived to address this need, an elegant way to show users that something is happening and also prepare them for which contents are waiting.
 
 Enjoy it! 🙂
 
+
+## 🗂 Table of contents
 - [🌟 Features](#-features)
 - [🎬 Guides](#-guides)
 - [📲 Installation](#-installation)
@@ -33,10 +35,11 @@ Enjoy it! 🙂
   - [📰 Texts](#-texts)
   - [🦋 Appearance](#-appearance)
   - [🎨 Custom colors](#-custom-colors)
-  - [ 🏃‍♀️Animations](#-animations)
+  - [ 🏃‍♀️ Animations](#-animations)
   - [🏄 Transitions](#-transitions)
 - [✨ Miscellaneous](#-miscellaneous)
 - [❤️ Contributing](#️-contributing)
+
 
 
 ## 🌟 Features
@@ -49,11 +52,13 @@ Enjoy it! 🙂
 * Simple Swift syntax
 * Lightweight readable codebase
 
+
 ## 🎬 Guides
 
 | [![](https://img.youtube.com/vi/75kgOhWsPNA/maxresdefault.jpg)](https://youtu.be/75kgOhWsPNA)|[![](https://img.youtube.com/vi/MVCiM_VdxVA/maxresdefault.jpg)](https://youtu.be/MVCiM_VdxVA)|[![](https://img.youtube.com/vi/Qq3Evspeea8/maxresdefault.jpg)](https://youtu.be/Qq3Evspeea8)|[![](https://img.youtube.com/vi/ZOoPtBwDRT0/maxresdefault.jpg)](https://youtu.be/ZOoPtBwDRT0)
 |:---:  | :---: |:---:  | :---: 
 |[**SkeletonView Guides - Getting started**](https://youtu.be/75kgOhWsPNA)|[**How to Create Loading View with Skeleton View in Swift 5.2**](https://youtu.be/MVCiM_VdxVA) <br/> by iKh4ever Studio|[**Create Skeleton Loading View in App (Swift 5) - Xcode 11, 2020**](https://youtu.be/Qq3Evspeea8) <br/> by iOS Academy| [**Add An Elegant Loading Animation in Swift***](https://youtu.be/ZOoPtBwDRT0) <br/> by Gary Tokman
+
 
 ## 📲 Installation
 
@@ -76,6 +81,7 @@ dependencies: [
   .package(url: "https://github.com/Juanpe/SkeletonView.git", from: "1.7.0")
 ]
 ```
+
 
 ## 🐒 Usage
 
@@ -138,12 +144,16 @@ avatarImageView.isSkeletonable = true
 </tr>
 </table>
 
+
 > 📣 **IMPORTANT!** 
+>
 > `SkeletonView` is recursive, so if you want show the skeleton in all skeletonable views, you only need to call the show method in the main container view. For example, with `UIViewControllers`.
+
 
 ### 🌿 Collections
 
 ```SkeletonView``` is compatible with ```UITableView``` and ```UICollectionView```.
+
 
 **UITableView**
 
@@ -202,6 +212,7 @@ public protocol SkeletonTableViewDelegate: UITableViewDelegate {
 > self.addSubview(titleLabel) ❌
 > ```
 
+
 **UICollectionView**
 
 For `UICollectionView`, you need to conform to `SkeletonCollectionViewDataSource` protocol.
@@ -216,6 +227,7 @@ public protocol SkeletonCollectionViewDataSource: UICollectionViewDataSource {
 ```
 
 The rest of the process is the same as ```UITableView```
+
 
 ### 📰 Texts
 
@@ -243,6 +255,7 @@ descriptionTextView.linesCornerRadius = 5
 Or, if you prefer use **IB/Storyboard**:
 
 ![](Assets/multiline_customize.png)
+
 
 ### 🦋 Appearance
 
@@ -276,6 +289,7 @@ You can also specifiy these line appearance properties on a per-label basis:
 - **skeletonLineSpacing**: CGFloat
 - **skeletonPaddingInsets**: UIEdgeInsets
 
+
 ### 🎨 Custom colors
 
 You can decide which color the skeleton is tinted with. You only need to pass as a parameter the color or gradient you want.
@@ -299,7 +313,8 @@ Besides, ```SkeletonView``` features 20 flat colors 🤙🏼
 <img src="Assets/flatcolors.png" width="700px">
 ###### Image captured from website [https://flatuicolors.com](https://flatuicolors.com)
 
-### 🏃‍♀️Animations
+
+### 🏃‍♀️ Animations
 
 ```SkeletonView``` has two built-in animations, *pulse* for solid skeletons and *sliding* for gradients.
 
@@ -347,13 +362,14 @@ view.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
 | .bottomRightTopLeft | ![](Assets/sliding_bottomRight_to_topLeft.gif)
 
 > **😉 TRICK!**
-Exist another way to create sliding animations, just using this shortcut:
->>```let animation = GradientDirection.leftToRight.slidingAnimation()```
+>
+> Exist another way to create sliding animations, just using this shortcut:
+> `let animation = GradientDirection.leftToRight.slidingAnimation()`
 
 
 ### 🏄 Transitions
 
-```SkeletonView``` has build-in transitions to **show** or **hide** the skeletons in a *smoother* way 🤙
+**SkeletonView** has build-in transitions to **show** or **hide** the skeletons in a *smoother* way 🤙
 
 To use the transition, simply add the ```transition``` parameter to your ```showSkeleton()``` or ```hideSkeleton()``` function with the transition time, like this:
 
@@ -386,7 +402,9 @@ The default value is  `crossDissolve(0.25)`
 </tr>
 </table>
 
+
 ## ✨ Miscellaneous 
+
 
 **Hierarchy**
 
@@ -410,6 +428,7 @@ view.showSkeleton()
 |<img src="Assets/tableview_no_skeletonable.jpg" width="350"/> | <img src="Assets/tableview_no_skeletonable_result.png" height="350"/>|
 |<img src="Assets/tableview_skeletonable.jpg" width="350"/> | <img src="Assets/tableview_skeletonable_result.png" height="350"/>|
 
+
 **Hierarchy in collections**
 
 Here is an illustration that shows how you should specify which elements are skeletonables when you are using an `UITableView`:
@@ -417,6 +436,7 @@ Here is an illustration that shows how you should specify which elements are ske
 <img src="Assets/tableview_scheme.png" width="700px">
 
 As you can see, we have to make skeletonable the tableview, the cell and the UI elements, but we don't need to set as skeletonable the `contentView`
+
 
 **Skeleton views layout**
 
@@ -430,7 +450,10 @@ override func viewDidLayoutSubviews() {
 }
 ```
 
-⚠️ **IMPORTANT!** You shouldn't call this method. From *version 1.8.1* you don't need to call this method, the library does automatically. So, you can use this method *ONLY* in the cases when you need to update the layout of the skeleton manually.
+> 📣 **IMPORTANT!** 
+> 
+> You shouldn't call this method. From **version 1.8.1** you don't need to call this method, the library does automatically. So, you can use this method **ONLY** in the cases when you need to update the layout of the skeleton manually.
+
 
 **Update skeleton**
 
@@ -442,6 +465,7 @@ You can change the skeleton configuration at any time like its colour, animation
 (3) view.updateAnimatedSkeleton()         // Solid animated
 (4) view.updateAnimatedGradientSkeleton() // Gradient animated
 ```
+
 
 **Debug**
 
@@ -467,11 +491,13 @@ Then, when the skeleton appears, you can see the view hierarchy in the Xcode con
 <img src="Assets/hierarchy_output.png" />
 </details>
 
+
 **Supported OS & SDK Versions**
 
 * iOS 9.0+
 * tvOS 9.0+
 * Swift 5
+
 
 ## ❤️ Contributing
 This is an open source project, so feel free to contribute. How?
@@ -482,6 +508,7 @@ This is an open source project, so feel free to contribute. How?
 See [all contributors](https://github.com/Juanpe/SkeletonView/graphs/contributors)
 
 For more information, please read the [contributing guidelines](https://github.com/Juanpe/SkeletonView/blob/develop/CONTRIBUTING.md).
+
 
 ## 📢 Mentions
 
@@ -506,6 +533,7 @@ For more information, please read the [contributing guidelines](https://github.c
 [Juanpe Catalán](http://www.twitter.com/JuanpeCatalan)
 
 <a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/CDou4xtIK"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy me a coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;"><span style="margin-left:5px"></span></a>
+
 
 ## 👮🏻 License
 
