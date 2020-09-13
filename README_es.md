@@ -13,8 +13,8 @@
 <p align="center">
     <a href="#-destacado">Destacado</a>
   • <a href="#-instalación">Instalación</a>
-  • <a href="#-como-funciona">¿Cómo funciona?</a>
-  • <a href="#-miscelanea">Miscelánea</a>
+  • <a href="#-cómo-funciona">¿Cómo funciona?</a>
+  • <a href="#-miscelánea">Miscelánea</a>
   • <a href="#️-contribuir">Contribuir</a>
 </p>
 
@@ -36,9 +36,9 @@ Enjoy it! 🙂
   - [🔠 Textos](#-textos)
   - [🦋 Apariencia](#-apariencia)
   - [🎨 Colores](#-colors)
-  - [🏃‍♀️ Animaciones](#️-animations)
+  - [🏃‍♀️ Animaciones](#️-animaciones)
   - [🏄 Transiciones](#-transiciones)
-- [✨ Miscelánea](#-miscelanea)
+- [✨ Miscelánea](#-miscelánea)
 - [❤️ Contribuir](#️-contribuir)
 - [📢 Menciones](#-menciones)
 - [👨🏻‍💻 Autor](#-autor)
@@ -275,7 +275,7 @@ SkeletonAppearance.default.tintColor = .green
 ```
 
 
-### 🎨 Colores personalizables
+### 🎨 Colores
 
 Puedes decidir de qué color se tinta tu skeleton. Solo tienes que indicarlo pasándolo como parámetro:
 
