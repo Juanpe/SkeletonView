@@ -12,13 +12,13 @@
 
 <p align="center">
     <a href="#-destacado">Destacado</a>
-  • <a href="#-instalacion">Instalación</a>
-  • <a href="#-¿como-funciona?">¿Cómo funciona?</a>
+  • <a href="#-instalación">Instalación</a>
+  • <a href="#-como-funciona">¿Cómo funciona?</a>
   • <a href="#-miscelanea">Miscelánea</a>
   • <a href="#️-contribuir">Contribuir</a>
 </p>
 
-**🌎 README está disponible enestos idiomas: [🇬🇧](https://github.com/Juanpe/SkeletonView/blob/master/README.md) . [🇨🇳](https://github.com/Juanpe/SkeletonView/blob/master/README_zh.md) . [🇧🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_pt-br.md) . [🇰🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_ko.md) . [🇫🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_fr.md)**
+**🌎 README está disponible en estos idiomas: [🇬🇧](https://github.com/Juanpe/SkeletonView/blob/master/README.md) . [🇨🇳](https://github.com/Juanpe/SkeletonView/blob/master/README_zh.md) . [🇧🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_pt-br.md) . [🇰🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_ko.md) . [🇫🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_fr.md)**
 
 Hoy en día, La mayoría de las apps tiene procesos asíncronos, como peticiones a una API, procesos que tardan mucho tiempo, etc. Mientras estos procesos se están ejecutando, se suele mostrar un aburrido spinner indicando que algo está pasando.
 
@@ -31,7 +31,7 @@ Enjoy it! 🙂
 - [🌟 Destacado](#-destacado)
 - [🎬 Videotutoriales](#-videotutoriales)
 - [📲 Instalación](#-instalación)
-- [🐒 ¿Cómo funciona?](#-¿cómo-funciona?)
+- [🐒 ¿Cómo funciona?](#-cómo-funciona)
   - [🌿 Colecciones](#-colecciones)
   - [🔠 Textos](#-textos)
   - [🦋 Apariencia](#-apariencia)
@@ -153,7 +153,7 @@ avatarImageView.isSkeletonable = true
 
   
 ## 
-### 🌿 Collections
+### 🌿 Colecciones
 
 `SkeletonView` es compatible con `UITableView` and `UICollectionView`.
 
