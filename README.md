@@ -28,7 +28,7 @@ Today almost all apps have async processes, such as API requests, long running p
 Enjoy it! 🙂
 
 
-## 🗂 Table of contents
+---
 - [🌟 Features](#-features)
 - [🎬 Guides](#-guides)
 - [📲 Installation](#-installation)
@@ -355,7 +355,7 @@ view.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
 
 ```
 
-```GradientDirection``` is an enum, with this cases:
+```GradientDirection``` is an enum, with theses cases:
 
 |  Direction | Preview
 |------- | -------
