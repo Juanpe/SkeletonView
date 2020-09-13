@@ -2,7 +2,7 @@
 
 import UIKit
 
-protocol SkeletonFlowDelegate {
+protocol SkeletonFlowDelegate: AnyObject {
     func willBeginShowingSkeletons(rootView: UIView)
     func didShowSkeletons(rootView: UIView)
     func willBeginUpdatingSkeletons(rootView: UIView)

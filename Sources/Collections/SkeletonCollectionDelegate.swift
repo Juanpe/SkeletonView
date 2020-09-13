@@ -23,7 +23,6 @@ extension SkeletonCollectionDelegate: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if let viewIdentifier = originalTableViewDelegate?.collectionSkeletonView(tableView, identifierForHeaderInSection: section),
             let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: viewIdentifier) {
-
             skeletonViewIfContainerSkeletonIsActive(container: tableView, view: header)
             return header
         }
@@ -34,7 +33,6 @@ extension SkeletonCollectionDelegate: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         if let viewIdentifier = originalTableViewDelegate?.collectionSkeletonView(tableView, identifierForFooterInSection: section),
             let footer = tableView.dequeueReusableHeaderFooterView(withIdentifier: viewIdentifier) {
-
             skeletonViewIfContainerSkeletonIsActive(container: tableView, view: footer)
             return footer
         }

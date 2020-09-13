@@ -12,6 +12,7 @@ enum AssociationPolicy: UInt {
     case retainNonatomic = 1
     
     var objc: objc_AssociationPolicy {
+        // swiftlint:disable:next force_unwrapping
         return objc_AssociationPolicy(rawValue: rawValue)!
     }
 }

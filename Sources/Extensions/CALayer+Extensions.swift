@@ -30,14 +30,13 @@ extension CAGradientLayer {
 
 struct SkeletonMultilinesLayerConfig {
 	var lines: Int
-	var lineHeight: CGFloat? = nil
+	var lineHeight: CGFloat?
 	var type: SkeletonType
 	var lastLineFillPercent: Int
 	var multilineCornerRadius: Int
 	var multilineSpacing: CGFloat
 	var paddingInsets: UIEdgeInsets
 }
-
 
 // MARK: Skeleton sublayers
 extension CALayer {
@@ -106,8 +105,8 @@ extension CALayer {
 
 	private func calculateNumLines(for config: SkeletonMultilinesLayerConfig) -> Int {
 		let requiredSpaceForEachLine = (config.lineHeight ?? SkeletonAppearance.default.multilineHeight) + config.multilineSpacing
-		var numberOfSublayers = Int(round(CGFloat(bounds.height - config.paddingInsets.top - config.paddingInsets.bottom)/CGFloat(requiredSpaceForEachLine)))
-		if config.lines != 0,  config.lines <= numberOfSublayers { numberOfSublayers = config.lines }
+		var numberOfSublayers = Int(round(CGFloat(bounds.height - config.paddingInsets.top - config.paddingInsets.bottom) / CGFloat(requiredSpaceForEachLine)))
+		if config.lines != 0, config.lines <= numberOfSublayers { numberOfSublayers = config.lines }
         return numberOfSublayers
     }
 }
@@ -117,6 +116,7 @@ public extension CALayer {
     var pulse: CAAnimation {
         let pulseAnimation = CABasicAnimation(keyPath: #keyPath(CALayer.backgroundColor))
         pulseAnimation.fromValue = backgroundColor
+        //swiftlint:disable:next force_unwrapping
         pulseAnimation.toValue = UIColor(cgColor: backgroundColor!).complementaryColor.cgColor
         pulseAnimation.duration = 1
         pulseAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
@@ -129,11 +129,11 @@ public extension CALayer {
     var sliding: CAAnimation {
         let startPointAnim = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.startPoint))
         startPointAnim.fromValue = CGPoint(x: -1, y: 0.5)
-        startPointAnim.toValue = CGPoint(x:1, y: 0.5)
+        startPointAnim.toValue = CGPoint(x: 1, y: 0.5)
         
         let endPointAnim = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.endPoint))
         endPointAnim.fromValue = CGPoint(x: 0, y: 0.5)
-        endPointAnim.toValue = CGPoint(x:2, y: 0.5)
+        endPointAnim.toValue = CGPoint(x: 2, y: 0.5)
         
         let animGroup = CAAnimationGroup()
         animGroup.animations = [startPointAnim, endPointAnim]

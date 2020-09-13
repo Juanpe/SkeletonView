@@ -8,17 +8,19 @@ public extension UILabel {
         get { return lastLineFillingPercent }
         set { lastLineFillingPercent = min(newValue, 100) }
     }
+    
     @IBInspectable
     var linesCornerRadius: Int {
         get { return multilineCornerRadius }
         set { multilineCornerRadius = min(newValue, 10) }
     }
+    
     @IBInspectable
     var skeletonLineSpacing: CGFloat {
         get { return multilineSpacing }
         set { multilineSpacing = min(newValue, 10) }
     }
-    @IBInspectable
+    
     var skeletonPaddingInsets: UIEdgeInsets {
         get { return paddingInsets }
         set { paddingInsets = newValue }
