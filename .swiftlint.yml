@@ -8,6 +8,8 @@ disabled_rules:
   - multiple_closures_with_trailing_closure
   - class_delegate_protocol
 opt_in_rules:
+  - multiline_arguments
+  - multiline_parameters
   - closure_spacing
   - closure_end_indentation
   - closure_body_length
