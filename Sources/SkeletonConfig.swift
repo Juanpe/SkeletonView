@@ -22,14 +22,12 @@ struct SkeletonConfig {
     ///  Transition style
     var transition: SkeletonTransitionStyle
     
-    init(
-        type: SkeletonType,
-        colors: [UIColor],
-        gradientDirection: GradientDirection? = nil,
-        animated: Bool = false,
-        animation: SkeletonLayerAnimation? = nil,
-        transition: SkeletonTransitionStyle = .crossDissolve(0.25)
-        ) {
+    init(type: SkeletonType,
+         colors: [UIColor],
+         gradientDirection: GradientDirection? = nil,
+         animated: Bool = false,
+         animation: SkeletonLayerAnimation? = nil,
+         transition: SkeletonTransitionStyle = .crossDissolve(0.25)) {
         self.type = type
         self.colors = colors
         self.gradientDirection = gradientDirection
