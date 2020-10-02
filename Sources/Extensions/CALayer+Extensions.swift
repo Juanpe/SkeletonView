@@ -36,6 +36,15 @@ struct SkeletonMultilinesLayerConfig {
 	var multilineCornerRadius: Int
 	var multilineSpacing: CGFloat
 	var paddingInsets: UIEdgeInsets
+    var isRTL: Bool
+    
+    /// Returns padding insets taking into account if the RTL is activated
+    var calculatedPaddingInsets: UIEdgeInsets {
+        UIEdgeInsets(top: paddingInsets.top,
+                     left: paddingInsets.right,
+                     bottom: paddingInsets.bottom,
+                     right: paddingInsets.left)
+    }
 }
 
 // MARK: Skeleton sublayers
@@ -60,6 +69,7 @@ extension CALayer {
 			.setMultilineSpacing(config.multilineSpacing)
             .setPadding(config.paddingInsets)
             .setHeight(height)
+            .setIsRTL(config.isRTL)
     
         (0..<numberOfSublayers).forEach { index in
 			let width = calculatedWidthForLine(at: index, totalLines: numberOfSublayers, lastLineFillPercent: config.lastLineFillPercent, paddingInsets: config.paddingInsets)
@@ -76,7 +86,7 @@ extension CALayer {
         let currentSkeletonSublayers = skeletonSublayers
         let numberOfSublayers = currentSkeletonSublayers.count
         let lastLineFillPercent = config.lastLineFillPercent
-        let paddingInsets = config.paddingInsets
+        let paddingInsets = config.calculatedPaddingInsets
         let multilineSpacing = config.multilineSpacing
         var height = config.lineHeight ?? SkeletonAppearance.default.multilineHeight
         
@@ -86,7 +96,11 @@ extension CALayer {
         
         for (index, layer) in currentSkeletonSublayers.enumerated() {
             let width = calculatedWidthForLine(at: index, totalLines: numberOfSublayers, lastLineFillPercent: lastLineFillPercent, paddingInsets: paddingInsets)
-            layer.updateLayerFrame(for: index, size: CGSize(width: width, height: height), multilineSpacing: multilineSpacing, paddingInsets: paddingInsets)
+            layer.updateLayerFrame(for: index,
+                                   size: CGSize(width: width, height: height),
+                                   multilineSpacing: multilineSpacing,
+                                   paddingInsets: paddingInsets,
+                                   isRTL: config.isRTL)
         }
     }
 
@@ -98,9 +112,14 @@ extension CALayer {
         return width
     }
 
-    func updateLayerFrame(for index: Int, size: CGSize, multilineSpacing: CGFloat, paddingInsets: UIEdgeInsets) {
+    func updateLayerFrame(for index: Int, size: CGSize, multilineSpacing: CGFloat, paddingInsets: UIEdgeInsets, isRTL: Bool) {
         let spaceRequiredForEachLine = SkeletonAppearance.default.multilineHeight + multilineSpacing
-        frame = CGRect(x: paddingInsets.left, y: CGFloat(index) * spaceRequiredForEachLine + paddingInsets.top, width: size.width, height: size.height - paddingInsets.bottom - paddingInsets.top)
+        let newFrame = CGRect(x: paddingInsets.left,
+                              y: CGFloat(index) * spaceRequiredForEachLine + paddingInsets.top,
+                              width: size.width,
+                              height: size.height - paddingInsets.bottom - paddingInsets.top)
+        
+        frame = flipRectForRTLIfNeeded(newFrame, isRTL: isRTL)
     }
 
 	private func calculateNumLines(for config: SkeletonMultilinesLayerConfig) -> Int {
@@ -108,6 +127,14 @@ extension CALayer {
 		var numberOfSublayers = Int(round(CGFloat(bounds.height - config.paddingInsets.top - config.paddingInsets.bottom) / CGFloat(requiredSpaceForEachLine)))
 		if config.lines != 0, config.lines <= numberOfSublayers { numberOfSublayers = config.lines }
         return numberOfSublayers
+    }
+    
+    private func flipRectForRTLIfNeeded(_ rect: CGRect, isRTL: Bool) -> CGRect {
+        var newRect = rect
+        if isRTL {
+            newRect.origin.x = (superlayer?.bounds.width ?? 0) - rect.origin.x - rect.width
+        }
+        return newRect
     }
 }
 
@@ -126,24 +153,24 @@ public extension CALayer {
         return pulseAnimation
     }
     
-    var sliding: CAAnimation {
-        let startPointAnim = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.startPoint))
-        startPointAnim.fromValue = CGPoint(x: -1, y: 0.5)
-        startPointAnim.toValue = CGPoint(x: 1, y: 0.5)
-        
-        let endPointAnim = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.endPoint))
-        endPointAnim.fromValue = CGPoint(x: 0, y: 0.5)
-        endPointAnim.toValue = CGPoint(x: 2, y: 0.5)
-        
-        let animGroup = CAAnimationGroup()
-        animGroup.animations = [startPointAnim, endPointAnim]
-        animGroup.duration = 1.5
-        animGroup.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
-        animGroup.repeatCount = .infinity
-        animGroup.isRemovedOnCompletion = false
-        
-        return animGroup
-    }
+//    var sliding: CAAnimation {
+//        let startPointAnim = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.startPoint))
+//        startPointAnim.fromValue = CGPoint(x: -1, y: 0.5)
+//        startPointAnim.toValue = CGPoint(x: 1, y: 0.5)
+//
+//        let endPointAnim = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.endPoint))
+//        endPointAnim.fromValue = CGPoint(x: 0, y: 0.5)
+//        endPointAnim.toValue = CGPoint(x: 2, y: 0.5)
+//
+//        let animGroup = CAAnimationGroup()
+//        animGroup.animations = [startPointAnim, endPointAnim]
+//        animGroup.duration = 1.5
+//        animGroup.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
+//        animGroup.repeatCount = .infinity
+//        animGroup.isRemovedOnCompletion = false
+//
+//        return animGroup
+//    }
     
     func playAnimation(_ anim: SkeletonLayerAnimation, key: String, completion: (() -> Void)? = nil) {
         skeletonSublayers.recursiveSearch(leafBlock: {
