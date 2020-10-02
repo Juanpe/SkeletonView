@@ -12,29 +12,25 @@ struct RecoverableViewState {
     var backgroundColor: UIColor?
     var cornerRadius: CGFloat
     var clipToBounds: Bool
+    var isUserInteractionsEnabled: Bool
     
     init(view: UIView) {
         self.backgroundColor = view.backgroundColor
         self.clipToBounds = view.layer.masksToBounds
         self.cornerRadius = view.layer.cornerRadius
+        self.isUserInteractionsEnabled = view.isUserInteractionEnabled
     }
 }
 
 struct RecoverableTextViewState {
-    var text: String?
     var textColor: UIColor?
-    var isUserInteractionsEnabled: Bool
     
     init(view: UILabel) {
         self.textColor = view.textColor
-        self.text = view.text
-        self.isUserInteractionsEnabled = view.isUserInteractionEnabled
     }
     
     init(view: UITextView) {
         self.textColor = view.textColor
-        self.text = view.text
-        self.isUserInteractionsEnabled = view.isUserInteractionEnabled
     }
 }
 
@@ -48,10 +44,8 @@ struct RecoverableImageViewState {
 
 struct RecoverableButtonViewState {
     var title: String?
-    var isUserInteractionsEnabled: Bool
     
     init(view: UIButton) {
         self.title = view.titleLabel?.text
-        self.isUserInteractionsEnabled = view.isUserInteractionEnabled
     }
 }

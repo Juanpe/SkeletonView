@@ -7,11 +7,23 @@ disabled_rules:
   - identifier_name
   - multiple_closures_with_trailing_closure
   - class_delegate_protocol
+  - force_unwrapping
+  - force_try
+  - force_cast
+  - function_parameter_count
+  - discouraged_optional_collection
+  - shorthand_operator
+  - reduce_boolean
+  - weak_delegate
+  - nesting
+  - closure_end_indentation 
+  - function_default_parameter_at_end
+  - unowned_variable_capture
+  - legacy_constructor
 opt_in_rules:
   - multiline_arguments
   - multiline_parameters
   - closure_spacing
-  - closure_end_indentation
   - closure_body_length
   - collection_alignment
   - contains_over_filter_is_empty
@@ -27,8 +39,6 @@ opt_in_rules:
   - file_name_no_space
   - first_where
   - flatmap_over_map_reduce
-  - force_unwrapping
-  - function_default_parameter_at_end
   - implicitly_unwrapped_optional
   - joined_default_parameter
   - last_where
@@ -43,7 +53,6 @@ opt_in_rules:
   - sorted_first_last
   - switch_case_on_newline
   - unneeded_parentheses_in_closure_argument
-  - unowned_variable_capture
   - unused_declaration
   - unused_import
   - vertical_whitespace_opening_braces
@@ -51,8 +60,6 @@ opt_in_rules:
   - enum_case_associated_values_counts
   - legacy_multiple
   - legacy_random
-force_cast: error 
-force_unwrapping: error
 indentation: 2
 file_length:
  - 2500
