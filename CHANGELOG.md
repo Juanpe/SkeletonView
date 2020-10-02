@@ -3,6 +3,8 @@ All notable changes to this project will be documented in this file
 
 ### Next version
 
+## 📦 [1.10.0](https://github.com/Juanpe/SkeletonView/releases/tag/1.10.0)
+
 #### 🙌 New
 * [**327**](https://github.com/Juanpe/SkeletonView/pull/327): Add SwiftLint - [@Juanpe](https://github.com/Juanpe)
 * [**329**](https://github.com/Juanpe/SkeletonView/pull/329): Spanish README 🇪🇸 - [@Juanpe](https://github.com/Juanpe)
