@@ -23,12 +23,12 @@ public enum SkeletonType {
         }
     }
     
-    var layerAnimation: SkeletonLayerAnimation {
+    func defaultLayerAnimation(isRTL: Bool) -> SkeletonLayerAnimation {
         switch self {
         case .solid:
             return { $0.pulse }
         case .gradient:
-            return { $0.sliding }
+            return { SkeletonAnimationBuilder().makeSlidingAnimation(withDirection: isRTL ? .rightLeft : .leftRight) }()
         }
     }
 }
@@ -90,7 +90,8 @@ struct SkeletonLayer {
                                                    lastLineFillPercent: textView.lastLineFillingPercent,
                                                    multilineCornerRadius: textView.multilineCornerRadius,
                                                    multilineSpacing: textView.multilineSpacing,
-                                                   paddingInsets: textView.paddingInsets)
+                                                   paddingInsets: textView.paddingInsets,
+                                                   isRTL: holder?.isRTL ?? false)
 
         maskLayer.addMultilinesLayers(for: config)
     }
@@ -103,7 +104,8 @@ struct SkeletonLayer {
                                                    lastLineFillPercent: textView.lastLineFillingPercent,
                                                    multilineCornerRadius: textView.multilineCornerRadius,
                                                    multilineSpacing: textView.multilineSpacing,
-                                                   paddingInsets: textView.paddingInsets)
+                                                   paddingInsets: textView.paddingInsets,
+                                                   isRTL: holder?.isRTL ?? false)
         
         maskLayer.updateMultilinesLayers(for: config)
     }
@@ -119,7 +121,7 @@ struct SkeletonLayer {
 
 extension SkeletonLayer {
     func start(_ anim: SkeletonLayerAnimation? = nil, completion: (() -> Void)? = nil) {
-        let animation = anim ?? type.layerAnimation
+        let animation = anim ?? type.defaultLayerAnimation(isRTL: holder?.isRTL ?? false)
         contentLayer.playAnimation(animation, key: "skeletonAnimation", completion: completion)
     }
 

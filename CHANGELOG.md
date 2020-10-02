@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file
 
 #### 🩹 Bug fixes
 * [**336**](https://github.com/Juanpe/SkeletonView/pull/336): Not replace text when the skeleton disappears. Solved issues: [#296](https://github.com/Juanpe/SkeletonView/issues/296), [#330](https://github.com/Juanpe/SkeletonView/issues/330) - [@Juanpe](https://github.com/Juanpe)
+* [**337**](https://github.com/Juanpe/SkeletonView/pull/337): RTL support. Solved issues: [#143](https://github.com/Juanpe/SkeletonView/issues/143) - [@Juanpe](https://github.com/Juanpe)
 
 ## 📦 [1.9](https://github.com/Juanpe/SkeletonView/releases/tag/1.9)
 

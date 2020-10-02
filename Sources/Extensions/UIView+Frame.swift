@@ -50,4 +50,12 @@ extension UIView {
     var nonContentSizeLayoutConstraints: [NSLayoutConstraint] {
         return constraints.filter({ "\(type(of: $0))" != "NSContentSizeLayoutConstraint" })
     }
+    
+    var isRTL: Bool {
+        if #available(iOS 10.0, *), #available(tvOS 10.0, *) {
+            return effectiveUserInterfaceLayoutDirection == .rightToLeft
+        } else {
+            return false
+        }
+    }
 }

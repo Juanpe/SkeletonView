@@ -9,25 +9,30 @@ class SkeletonLayerBuilder {
     var colors: [UIColor] = []
     var holder: UIView?
 
+    @discardableResult
     func setSkeletonType(_ type: SkeletonType) -> SkeletonLayerBuilder {
         self.skeletonType = type
         return self
     }
 
+    @discardableResult
     func addColor(_ color: UIColor) -> SkeletonLayerBuilder {
         return addColors([color])
     }
 
+    @discardableResult
     func addColors(_ colors: [UIColor]) -> SkeletonLayerBuilder {
         self.colors.append(contentsOf: colors)
         return self
     }
 
+    @discardableResult
     func setHolder(_ holder: UIView) -> SkeletonLayerBuilder {
         self.holder = holder
         return self
 	}
 	
+    @discardableResult
 	func build() -> SkeletonLayer? {
 		guard let type = skeletonType,
 			let holder = holder
