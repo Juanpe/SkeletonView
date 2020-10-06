@@ -8,6 +8,12 @@ public extension UIView {
         get { return skeletonable }
         set { skeletonable = newValue }
     }
+    
+    @IBInspectable
+    var isHiddenWhenSkeletonIsActive: Bool {
+        get { return hiddenWhenSkeletonIsActive }
+        set { hiddenWhenSkeletonIsActive = newValue }
+    }
 
     @IBInspectable
     var skeletonCornerRadius: Float {
@@ -22,6 +28,11 @@ public extension UIView {
     private var skeletonable: Bool {
         get { return ao_get(pkey: &ViewAssociatedKeys.skeletonable) as? Bool ?? false }
         set { ao_set(newValue, pkey: &ViewAssociatedKeys.skeletonable) }
+    }
+    
+    private var hiddenWhenSkeletonIsActive: Bool {
+        get { return ao_get(pkey: &ViewAssociatedKeys.hiddenWhenSkeletonIsActive) as? Bool ?? false }
+        set { ao_set(newValue, pkey: &ViewAssociatedKeys.hiddenWhenSkeletonIsActive) }
     }
 
     private var skeletonableCornerRadius: Float {

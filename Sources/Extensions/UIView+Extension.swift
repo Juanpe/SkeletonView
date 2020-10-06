@@ -5,6 +5,7 @@ import UIKit
 // codebeat:disable[TOO_MANY_IVARS]
 enum ViewAssociatedKeys {
     static var skeletonable = "skeletonable"
+    static var hiddenWhenSkeletonIsActive = "hiddenWhenSkeletonIsActive"
     static var status = "status"
     static var skeletonLayer = "layer"
     static var flowDelegate = "flowDelegate"
