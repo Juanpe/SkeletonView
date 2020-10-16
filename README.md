@@ -479,6 +479,13 @@ You can change the skeleton configuration at any time like its colour, animation
 (4) view.updateAnimatedGradientSkeleton() // Gradient animated
 ```
 
+**Hiding views when the animation starts**
+
+Sometimes you wanna hide some view when the animation starts, so there is a quick property that you can use to make this happen:
+
+```swift
+view.isHiddenWhenSkeletonIsActive = true  // This works only when isSkeletonable = true
+```
 
 **Debug**
 
