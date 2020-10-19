@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file
 ### Next version
 
 #### 🙌 New
-* [**339**](https://github.com/Juanpe/SkeletonView/pull/339): Add `hiddenWhenSkeletonIsActive` propert - [@mohn93](https://github.com/mohn93)
+* [**339**](https://github.com/Juanpe/SkeletonView/pull/339): Add `hiddenWhenSkeletonIsActive` property - [@mohn93](https://github.com/mohn93)
 
 ## 📦 [1.10.0](https://github.com/Juanpe/SkeletonView/releases/tag/1.10.0)
 
