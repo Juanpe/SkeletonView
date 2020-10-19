@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file
 
 #### 🙌 New
 * [**339**](https://github.com/Juanpe/SkeletonView/pull/339): Add `hiddenWhenSkeletonIsActive` property - [@mohn93](https://github.com/mohn93)
+* [**341**](https://github.com/Juanpe/SkeletonView/pull/341): Support autoreverses in gradient animations - [@Juanpe](https://github.com/Juanpe)
 
 ## 📦 [1.10.0](https://github.com/Juanpe/SkeletonView/releases/tag/1.10.0)
 
