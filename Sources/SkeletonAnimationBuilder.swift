@@ -18,8 +18,8 @@ public enum GradientDirection {
     case topLeftBottomRight
     case bottomRightTopLeft
     
-    public func slidingAnimation(duration: CFTimeInterval = 1.5) -> SkeletonLayerAnimation {
-        return SkeletonAnimationBuilder().makeSlidingAnimation(withDirection: self, duration: duration)
+    public func slidingAnimation(duration: CFTimeInterval = 1.5, autoreverses: Bool = false) -> SkeletonLayerAnimation {
+        return SkeletonAnimationBuilder().makeSlidingAnimation(withDirection: self, duration: duration, autoreverses: autoreverses)
     }
 
     // codebeat:disable[ABC]
@@ -62,7 +62,7 @@ public enum GradientDirection {
 public class SkeletonAnimationBuilder {
     public init() { }
     
-    public func makeSlidingAnimation(withDirection direction: GradientDirection, duration: CFTimeInterval = 1.5) -> SkeletonLayerAnimation {
+    public func makeSlidingAnimation(withDirection direction: GradientDirection, duration: CFTimeInterval = 1.5, autoreverses: Bool = false) -> SkeletonLayerAnimation {
         return { layer in
             let startPointAnim = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.startPoint))
             startPointAnim.fromValue = direction.startPoint.from
@@ -77,6 +77,7 @@ public class SkeletonAnimationBuilder {
             animGroup.duration = duration
             animGroup.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
             animGroup.repeatCount = .infinity
+            animGroup.autoreverses = autoreverses
             animGroup.isRemovedOnCompletion = false
             
             return animGroup
