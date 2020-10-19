@@ -114,6 +114,9 @@ extension UIView {
     }
 
     private func recursiveShowSkeleton(skeletonConfig config: SkeletonConfig, root: UIView? = nil) {
+        if isHiddenWhenSkeletonIsActive {
+            isHidden = true
+        }
         guard isSkeletonable && !isSkeletonActive else { return }
         currentSkeletonConfig = config
         swizzleLayoutSubviews()
@@ -183,6 +186,9 @@ extension UIView {
 
     private func recursiveHideSkeleton(reloadDataAfter reload: Bool, transition: SkeletonTransitionStyle, root: UIView? = nil) {
         guard isSkeletonActive else { return }
+        if isHiddenWhenSkeletonIsActive {
+            isHidden = false
+        }
         currentSkeletonConfig?.transition = transition
         isUserInteractionEnabled = true
         removeDummyDataSourceIfNeeded(reloadAfter: reload)
