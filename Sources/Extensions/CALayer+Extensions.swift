@@ -125,7 +125,13 @@ extension CALayer {
 	private func calculateNumLines(for config: SkeletonMultilinesLayerConfig) -> Int {
 		let requiredSpaceForEachLine = (config.lineHeight ?? SkeletonAppearance.default.multilineHeight) + config.multilineSpacing
 		var numberOfSublayers = Int(round(CGFloat(bounds.height - config.paddingInsets.top - config.paddingInsets.bottom) / CGFloat(requiredSpaceForEachLine)))
-		if config.lines != 0, config.lines <= numberOfSublayers { numberOfSublayers = config.lines }
+        
+        if config.lines != 0, config.lines <= numberOfSublayers {
+            numberOfSublayers = config.lines
+        } else {
+            return 1
+        }
+        
         return numberOfSublayers
     }
     
