@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Va7-1y-Tel">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Va7-1y-Tel">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,7 +26,7 @@
                                             <constraint firstAttribute="height" constant="78" id="gF5-G1-lKI"/>
                                         </constraints>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
-                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <userDefinedRuntimeAttributes>
@@ -49,31 +50,38 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifX-3x-oCb">
-                                        <rect key="frame" x="165" y="44.666666666666671" width="125" height="44"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJW-A4-Fb8">
+                                        <rect key="frame" x="166" y="27" width="166" height="12"/>
+                                        <color key="backgroundColor" red="0.92156862750000001" green="0.16862745100000001" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="125" id="MuV-52-GiO"/>
-                                            <constraint firstAttribute="height" constant="44" id="vIU-os-12z"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="80" id="XAA-g8-NVH"/>
                                         </constraints>
-                                        <state key="normal" title="Button">
-                                            <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="skeletonLineSpacing">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                    </button>
+                                    </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="ifX-3x-oCb" firstAttribute="centerY" secondItem="nMj-pU-5wJ" secondAttribute="centerY" id="8sl-4R-4in"/>
+                                    <constraint firstItem="CJW-A4-Fb8" firstAttribute="leading" secondItem="nMj-pU-5wJ" secondAttribute="trailing" constant="28" id="Drg-cD-6E8"/>
                                     <constraint firstItem="e9V-mk-xH0" firstAttribute="leading" secondItem="F9K-jU-100" secondAttribute="leading" constant="45" id="HvQ-HY-zYU"/>
                                     <constraint firstItem="e9V-mk-xH0" firstAttribute="centerX" secondItem="F9K-jU-100" secondAttribute="centerX" constant="1" id="KcB-tG-NXa"/>
-                                    <constraint firstItem="ifX-3x-oCb" firstAttribute="leading" secondItem="nMj-pU-5wJ" secondAttribute="trailing" constant="27" id="LQC-s6-w43"/>
                                     <constraint firstAttribute="height" constant="243" id="MIj-xq-gr1"/>
                                     <constraint firstItem="nMj-pU-5wJ" firstAttribute="leading" secondItem="F9K-jU-100" secondAttribute="leading" constant="45" id="TK6-Ws-2xY"/>
                                     <constraint firstItem="e9V-mk-xH0" firstAttribute="top" secondItem="F9K-jU-100" secondAttribute="top" constant="142" id="Wcx-nZ-1lR"/>
                                     <constraint firstAttribute="trailing" secondItem="e9V-mk-xH0" secondAttribute="trailing" constant="43" id="XbU-Og-rht"/>
+                                    <constraint firstItem="CJW-A4-Fb8" firstAttribute="top" secondItem="F9K-jU-100" secondAttribute="top" constant="27" id="ceh-gB-7Et"/>
                                     <constraint firstItem="nMj-pU-5wJ" firstAttribute="top" secondItem="F9K-jU-100" secondAttribute="top" constant="20" id="hQL-cr-MaN"/>
+                                    <constraint firstAttribute="trailing" secondItem="CJW-A4-Fb8" secondAttribute="trailing" constant="43" id="nfT-a5-z36"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
@@ -91,7 +99,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="oiE-tt-nc2">
-                                                    <rect key="frame" x="15" y="18" width="82" height="82"/>
+                                                    <rect key="frame" x="16" y="18" width="82" height="82"/>
                                                     <color key="backgroundColor" red="0.56078431370000004" green="0.59607843140000005" blue="0.7843137255" alpha="0.90709546230000004" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="82" id="4j0-PU-CmN"/>
@@ -101,10 +109,11 @@
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VhU-1t-AaI" userLabel="Label">
-                                                    <rect key="frame" x="118" y="29" width="237" height="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VhU-1t-AaI" userLabel="Label">
+                                                    <rect key="frame" x="119" y="29" width="235" height="20"/>
+                                                    <color key="backgroundColor" red="0.92156862750000001" green="0.16862745100000001" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="71" id="HRL-cI-ieC"/>
+                                                        <constraint firstAttribute="height" constant="20" id="HRL-cI-ieC"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
@@ -198,7 +207,7 @@
                                             <action selector="btnChangeColorTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cB8-Ik-LIJ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tdu-YQ-saq">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tdu-YQ-saq">
                                         <rect key="frame" x="263" y="69" width="94" height="30"/>
                                         <state key="normal" title="Hide skeleton"/>
                                         <connections>
@@ -218,7 +227,7 @@
                                         </connections>
                                     </stepper>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="l4N-LL-ZrJ" firstAttribute="leading" secondItem="mrw-PM-jJJ" secondAttribute="trailing" constant="8" id="5iU-dO-qVc"/>
                                     <constraint firstItem="mrw-PM-jJJ" firstAttribute="centerY" secondItem="l4N-LL-ZrJ" secondAttribute="centerY" id="9OM-mx-4Jo"/>
@@ -243,7 +252,8 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="F9K-jU-100" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="1es-nY-bd3"/>
                             <constraint firstItem="F9K-jU-100" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="A3E-iv-1qp"/>
@@ -256,7 +266,6 @@
                             <constraint firstItem="UCB-SP-lQk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="o6z-Dj-ppC"/>
                             <constraint firstItem="XgY-1a-UGc" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="vnZ-9k-MfI"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                         </userDefinedRuntimeAttributes>
@@ -285,8 +294,8 @@
                     <view key="view" contentMode="scaleToFill" id="Jwx-gI-Qod">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Ao1-hk-zrH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="iKp-9S-aib"/>
                 </viewController>
@@ -316,5 +325,11 @@
     </scenes>
     <resources>
         <image name="avatar" width="215" height="211"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

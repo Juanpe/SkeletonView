@@ -28,6 +28,8 @@
 		17DD0E1D207FB32100C56334 /* ContainsMultilineText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5307E3A1FB123C100EE67C5 /* ContainsMultilineText.swift */; };
 		17DD0E1E207FB32100C56334 /* PrepareForSkeletonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56B94451FAE20AF0095662F /* PrepareForSkeletonProtocol.swift */; };
 		17DD0E1F207FB32100C56334 /* RecursiveProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5307E311FB0F42F00EE67C5 /* RecursiveProtocol.swift */; };
+		1E291F3E2540655D0018D602 /* UIView+Autolayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E291F3D2540655D0018D602 /* UIView+Autolayout.swift */; };
+		1E291F3F2540655D0018D602 /* UIView+Autolayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E291F3D2540655D0018D602 /* UIView+Autolayout.swift */; };
 		1E6C67A2230E76CC0019D87B /* SkeletonTransitionStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE587C22EEE65200333067 /* SkeletonTransitionStyle.swift */; };
 		1E6C67A3230E76CE0019D87B /* UIView+Transitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE587B22EEE63100333067 /* UIView+Transitions.swift */; };
 		1EE42E1F23FF25CC00BF665A /* ProcessInfo+XCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE42E1E23FF25CC00BF665A /* ProcessInfo+XCTest.swift */; };
@@ -161,6 +163,7 @@
 		17DD0E00207FB27400C56334 /* SkeletonView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SkeletonView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		17DD0E1A207FB2C200C56334 /* SkeletonView-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SkeletonView-tvOS.plist"; sourceTree = "<group>"; };
 		17DD0E1B207FB2C200C56334 /* SkeletonView-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SkeletonView-iOS.plist"; sourceTree = "<group>"; };
+		1E291F3D2540655D0018D602 /* UIView+Autolayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Autolayout.swift"; sourceTree = "<group>"; };
 		1EE42E1E23FF25CC00BF665A /* ProcessInfo+XCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProcessInfo+XCTest.swift"; sourceTree = "<group>"; };
 		42ABD06D210B548200BEEFF4 /* SkeletonViewExampleUICollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkeletonViewExampleUICollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42ABD070210B54E100BEEFF4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -443,6 +446,7 @@
 				F5307E2D1FB0E5E400EE67C5 /* UIView+Frame.swift */,
 				F5804771230ECD0000066D02 /* UIView+IBInspectable.swift */,
 				F587FB85202CEC95002DB5FE /* UIView+UIApplicationDelegate.swift */,
+				1E291F3D2540655D0018D602 /* UIView+Autolayout.swift */,
 				5600784323FD293D00669AD6 /* UITableView+VisibleSections.swift */,
 				1EE42E1E23FF25CC00BF665A /* ProcessInfo+XCTest.swift */,
 			);
@@ -726,6 +730,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				872D5A5721C177E20037D763 /* UIView+Extension.swift in Sources */,
+				1E291F3F2540655D0018D602 /* UIView+Autolayout.swift in Sources */,
 				17DD0E1F207FB32100C56334 /* RecursiveProtocol.swift in Sources */,
 				872D5A5D21C24EDD0037D763 /* UILabel+Multiline.swift in Sources */,
 				17DD0E1E207FB32100C56334 /* PrepareForSkeletonProtocol.swift in Sources */,
@@ -786,6 +791,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4CE588B22EEF70D00333067 /* UIView+Transitions.swift in Sources */,
+				1E291F3E2540655D0018D602 /* UIView+Autolayout.swift in Sources */,
 				872D5A5621C177E20037D763 /* UIView+Extension.swift in Sources */,
 				872D5A5C21C24EDD0037D763 /* UILabel+Multiline.swift in Sources */,
 				F54CF5E42024CEB000330B0D /* UIView+CollectionSkeleton.swift in Sources */,

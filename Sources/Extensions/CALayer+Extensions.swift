@@ -30,7 +30,7 @@ extension CAGradientLayer {
 
 struct SkeletonMultilinesLayerConfig {
 	var lines: Int
-	var lineHeight: CGFloat?
+	var lineHeight: CGFloat
 	var type: SkeletonType
 	var lastLineFillPercent: Int
 	var multilineCornerRadius: Int
@@ -56,8 +56,8 @@ extension CALayer {
     }
     
 	func addMultilinesLayers(for config: SkeletonMultilinesLayerConfig) {
-        let numberOfSublayers = config.lines == 1 ? 1 : calculateNumLines(for: config)
-        var height = config.lineHeight ?? SkeletonAppearance.default.multilineHeight
+        let numberOfSublayers = config.lines > 0 ? config.lines : calculateNumLines(for: config)
+        var height = config.lineHeight
         
         if numberOfSublayers == 1 && SkeletonAppearance.default.renderSingleLineAsView {
             height = bounds.height
@@ -88,7 +88,7 @@ extension CALayer {
         let lastLineFillPercent = config.lastLineFillPercent
         let paddingInsets = config.calculatedPaddingInsets
         let multilineSpacing = config.multilineSpacing
-        var height = config.lineHeight ?? SkeletonAppearance.default.multilineHeight
+        var height = config.lineHeight
         
         if numberOfSublayers == 1 && SkeletonAppearance.default.renderSingleLineAsView {
             height = bounds.height
@@ -113,26 +113,29 @@ extension CALayer {
     }
 
     func updateLayerFrame(for index: Int, size: CGSize, multilineSpacing: CGFloat, paddingInsets: UIEdgeInsets, isRTL: Bool) {
-        let spaceRequiredForEachLine = SkeletonAppearance.default.multilineHeight + multilineSpacing
+        let spaceRequiredForEachLine = size.height + multilineSpacing
         let newFrame = CGRect(x: paddingInsets.left,
                               y: CGFloat(index) * spaceRequiredForEachLine + paddingInsets.top,
                               width: size.width,
-                              height: size.height - paddingInsets.bottom - paddingInsets.top)
+                              height: size.height)
         
         frame = flipRectForRTLIfNeeded(newFrame, isRTL: isRTL)
     }
-
-	private func calculateNumLines(for config: SkeletonMultilinesLayerConfig) -> Int {
-		let requiredSpaceForEachLine = (config.lineHeight ?? SkeletonAppearance.default.multilineHeight) + config.multilineSpacing
-		var numberOfSublayers = Int(round(CGFloat(bounds.height - config.paddingInsets.top - config.paddingInsets.bottom) / CGFloat(requiredSpaceForEachLine)))
+    
+    private func calculateNumLines(for config: SkeletonMultilinesLayerConfig) -> Int {
+        let definedNumberOfLines = config.lines
+        let requiredSpaceForEachLine = config.lineHeight + config.multilineSpacing
+        let calculatedNumberOfLines = Int(round(CGFloat(bounds.height - config.paddingInsets.top - config.paddingInsets.bottom) / CGFloat(requiredSpaceForEachLine)))
         
-        if config.lines != 0, config.lines <= numberOfSublayers {
-            numberOfSublayers = config.lines
-        } else {
+        guard calculatedNumberOfLines > 0 else {
             return 1
         }
         
-        return numberOfSublayers
+        if definedNumberOfLines > 0, definedNumberOfLines <= calculatedNumberOfLines {
+            return definedNumberOfLines
+        }
+        
+        return calculatedNumberOfLines
     }
     
     private func flipRectForRTLIfNeeded(_ rect: CGRect, isRTL: Bool) -> CGRect {

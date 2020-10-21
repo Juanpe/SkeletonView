@@ -55,4 +55,9 @@ extension UILabel: ContainsMultilineText {
         get { return ao_get(pkey: &MultilineAssociatedKeys.paddingInsets) as? UIEdgeInsets ?? .zero }
         set { ao_set(newValue, pkey: &MultilineAssociatedKeys.paddingInsets) }
     }
+    
+    var backupHeightConstraints: [NSLayoutConstraint] {
+        get { return ao_get(pkey: &MultilineAssociatedKeys.backupHeightConstraints) as? [NSLayoutConstraint] ?? [] }
+        set { ao_set(newValue, pkey: &MultilineAssociatedKeys.backupHeightConstraints) }
+    }
 }
