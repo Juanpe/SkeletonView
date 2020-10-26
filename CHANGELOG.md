@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file
 ### Next version
 
 #### 🙌 New
+* [**340**](https://github.com/Juanpe/SkeletonView/pull/340): Fixed incorrect padding, and incorrect multiline layer frame calculation - [@yzhao198](https://github.com/yzhao198)
 * [**339**](https://github.com/Juanpe/SkeletonView/pull/339): Add `hiddenWhenSkeletonIsActive` property - [@mohn93](https://github.com/mohn93)
 * [**341**](https://github.com/Juanpe/SkeletonView/pull/341): Support autoreverses in gradient animations - [@Juanpe](https://github.com/Juanpe)
 
