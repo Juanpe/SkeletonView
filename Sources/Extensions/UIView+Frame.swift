@@ -10,32 +10,38 @@ import UIKit
 
 // MARK: Frame
 extension UIView {
-    var maxBoundsEstimated: CGRect {
+    var definedMaxBounds: CGRect {
         if let parentStackView = (superview as? UIStackView) {
             var origin: CGPoint = .zero
             switch parentStackView.alignment {
             case .trailing:
-                origin.x = maxWidthEstimated
+                origin.x = definedMaxWidth
             default:
                 break
             }
-            return CGRect(origin: origin, size: maxSizeEstimated)
+            return CGRect(origin: origin, size: definedMaxSize)
         }
-        return CGRect(origin: .zero, size: maxSizeEstimated)
+        return CGRect(origin: .zero, size: definedMaxSize)
     }
     
-    var maxSizeEstimated: CGSize {
-        return CGSize(width: maxWidthEstimated, height: maxHeightEstimated)
+    var definedMaxSize: CGSize {
+        CGSize(width: definedMaxWidth, height: definedMaxHeight)
     }
     
-    var maxWidthEstimated: CGFloat {
-        let constraintsWidth = nonContentSizeLayoutConstraints.filter({ $0.firstAttribute == NSLayoutConstraint.Attribute.width })
-        return max(between: frame.size.width, andContantsOf: constraintsWidth)
+    var definedMaxWidth: CGFloat {
+        max(between: frame.size.width, andContantsOf: widthConstraints)
     }
     
-    var maxHeightEstimated: CGFloat {
-        let constraintsHeight = nonContentSizeLayoutConstraints.filter({ $0.firstAttribute == NSLayoutConstraint.Attribute.height })
-        return max(between: frame.size.height, andContantsOf: constraintsHeight)
+    var definedMaxHeight: CGFloat {
+        max(between: frame.size.height, andContantsOf: heightConstraints)
+    }
+    
+    var isRTL: Bool {
+        if #available(iOS 10.0, *), #available(tvOS 10.0, *) {
+            return effectiveUserInterfaceLayoutDirection == .rightToLeft
+        } else {
+            return false
+        }
     }
     
     private func max(between value: CGFloat, andContantsOf constraints: [NSLayoutConstraint]) -> CGFloat {
@@ -45,17 +51,5 @@ extension UIView {
             return tempMax
         })
         return max
-    }
-    
-    var nonContentSizeLayoutConstraints: [NSLayoutConstraint] {
-        return constraints.filter({ "\(type(of: $0))" != "NSContentSizeLayoutConstraint" })
-    }
-    
-    var isRTL: Bool {
-        if #available(iOS 10.0, *), #available(tvOS 10.0, *) {
-            return effectiveUserInterfaceLayoutDirection == .rightToLeft
-        } else {
-            return false
-        }
     }
 }
