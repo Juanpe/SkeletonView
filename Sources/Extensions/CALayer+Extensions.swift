@@ -41,9 +41,9 @@ struct SkeletonMultilinesLayerConfig {
     /// Returns padding insets taking into account if the RTL is activated
     var calculatedPaddingInsets: UIEdgeInsets {
         UIEdgeInsets(top: paddingInsets.top,
-                     left: paddingInsets.right,
+                     left: isRTL ? paddingInsets.right : paddingInsets.left,
                      bottom: paddingInsets.bottom,
-                     right: paddingInsets.left)
+                     right: isRTL ? paddingInsets.left : paddingInsets.right)
     }
 }
 
