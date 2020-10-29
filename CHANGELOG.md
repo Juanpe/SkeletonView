@@ -4,13 +4,22 @@ All notable changes to this project will be documented in this file
 ### Next version
 
 #### 🙌 New
+
+#### 🔬Improvements
+
+#### 🩹 Bug fixes
+
+
+## 📦 [1.11.0](https://github.com/Juanpe/SkeletonView/releases/tag/1.11.0)
+
+#### 🙌 New
 * [**339**](https://github.com/Juanpe/SkeletonView/pull/339): Add `hiddenWhenSkeletonIsActive` property - [@mohn93](https://github.com/mohn93)
 * [**341**](https://github.com/Juanpe/SkeletonView/pull/341): Support autoreverses in gradient animations - [@Juanpe](https://github.com/Juanpe)
 * [**344**](https://github.com/Juanpe/SkeletonView/pull/344): Resize labels based on number of lines - [@Juanpe](https://github.com/Juanpe)
 
 #### 🩹 Bug fixes
 * [**340**](https://github.com/Juanpe/SkeletonView/pull/340): Fixed incorrect padding, and incorrect multiline layer frame calculation - [@yzhao198](https://github.com/yzhao198)
-* 
+
 ## 📦 [1.10.0](https://github.com/Juanpe/SkeletonView/releases/tag/1.10.0)
 
 #### 🙌 New
