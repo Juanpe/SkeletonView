@@ -65,6 +65,17 @@ extension UITextView {
     }
 }
 
+extension UITextField {
+    override func prepareViewForSkeleton() {
+        backgroundColor = .clear
+        resignFirstResponder()
+        startTransition { [weak self] in
+            self?.textColor = .clear
+            self?.placeholder = nil
+        }
+    }
+}
+
 extension UIImageView {
     override func prepareViewForSkeleton() {
         backgroundColor = .clear
