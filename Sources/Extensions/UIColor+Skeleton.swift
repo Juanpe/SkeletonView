@@ -31,11 +31,11 @@ extension UIColor {
     }
     
     public var lighter: UIColor {
-        return adjust(by: 1.35)
+        adjust(by: 1.35)
     }
     
     public var darker: UIColor {
-        return adjust(by: 0.94)
+        adjust(by: 0.94)
     }
     
     func adjust(by percent: CGFloat) -> UIColor {
@@ -45,7 +45,7 @@ extension UIColor {
     }
     
     func makeGradient() -> [UIColor] {
-        return [self, self.complementaryColor, self]
+        [self, self.complementaryColor, self]
     }
 }
 

@@ -4,46 +4,46 @@ import UIKit
 
 extension UIView {
     @objc var subviewsSkeletonables: [UIView] {
-        return subviewsToSkeleton.filter { $0.isSkeletonable }
+        subviewsToSkeleton.filter { $0.isSkeletonable }
     }
 
     @objc var subviewsToSkeleton: [UIView] {
-        return subviews
+        subviews
     }
 }
 
 extension UITableView {
     override var subviewsToSkeleton: [UIView] {
-        return visibleCells + visibleSectionHeaders + visibleSectionFooters
+        visibleCells + visibleSectionHeaders + visibleSectionFooters
     }
 }
 
 extension UITableViewCell {
     override var subviewsToSkeleton: [UIView] {
-        return contentView.subviews
+        contentView.subviews
     }
 }
 
 extension UITableViewHeaderFooterView {
     override var subviewsToSkeleton: [UIView] {
-        return contentView.subviews
+        contentView.subviews
     }
 }
 
 extension UICollectionView {
     override var subviewsToSkeleton: [UIView] {
-        return subviews
+        subviews
     }
 }
 
 extension UICollectionViewCell {
     override var subviewsToSkeleton: [UIView] {
-        return contentView.subviews
+        contentView.subviews
     }
 }
 
 extension UIStackView {
     override var subviewsToSkeleton: [UIView] {
-        return arrangedSubviews
+        arrangedSubviews
     }
 }
