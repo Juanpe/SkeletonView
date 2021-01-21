@@ -28,10 +28,10 @@ public extension UILabel {
 }
 
 extension UILabel: ContainsMultilineText {
-	var multilineTextFont: UIFont? {
-		return font
-	}
-	
+    var constraintHeight: CGFloat? {
+        backupHeightConstraints.first?.constant
+    }
+
     var numLines: Int {
         return numberOfLines
     }

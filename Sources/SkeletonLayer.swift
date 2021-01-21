@@ -83,7 +83,7 @@ struct SkeletonLayer {
     /// If there is more than one line, or custom preferences have been set for a single line, draw custom layers
     func addTextLinesIfNeeded() {
         guard let textView = holderAsTextView else { return }
-        let lineHeight = textView.multilineTextFont?.lineHeight ?? SkeletonAppearance.default.multilineHeight
+        let lineHeight = textView.constraintHeight ?? SkeletonAppearance.default.multilineHeight
         let config = SkeletonMultilinesLayerConfig(lines: textView.numLines,
                                                    lineHeight: lineHeight,
                                                    type: type,
@@ -98,7 +98,7 @@ struct SkeletonLayer {
     
     func updateLinesIfNeeded() {
         guard let textView = holderAsTextView else { return }
-        let lineHeight = textView.multilineTextFont?.lineHeight ?? SkeletonAppearance.default.multilineHeight
+        let lineHeight = textView.constraintHeight ?? SkeletonAppearance.default.multilineHeight
         let config = SkeletonMultilinesLayerConfig(lines: textView.numLines,
                                                    lineHeight: lineHeight,
                                                    type: type,

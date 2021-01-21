@@ -28,8 +28,8 @@ public extension UITextView {
 }
 
 extension UITextView: ContainsMultilineText {
-	var multilineTextFont: UIFont? {
-        font
+    var constraintHeight: CGFloat? {
+        heightConstraints.first?.constant
     }
     
     var numLines: Int {
