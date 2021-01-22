@@ -19,7 +19,7 @@ extension UIView {
 
 extension UILabel {
     var desiredHeightBasedOnNumberOfLines: CGFloat {
-        let lineHeight = multilineTextFont?.lineHeight ?? SkeletonAppearance.default.multilineHeight
+        let lineHeight = constraintHeight ?? SkeletonAppearance.default.multilineHeight
         let spaceNeededForEachLine = lineHeight * CGFloat(numberOfLines)
         let spaceNeededForSpaces = skeletonLineSpacing * CGFloat(numberOfLines - 1)
         let padding = paddingInsets.top + paddingInsets.bottom
