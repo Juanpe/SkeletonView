@@ -37,11 +37,11 @@ extension UIView {
     }
     
     var isRTL: Bool {
-      if #available(iOS 10.0, *), #available(tvOS 10.0, *) {
-          return effectiveUserInterfaceLayoutDirection == .rightToLeft
-      } else {
-          return false
-      }
+        if #available(iOS 10.0, *), #available(tvOS 10.0, *) {
+            return effectiveUserInterfaceLayoutDirection == .rightToLeft
+        } else {
+            return false
+        }
     }
     
     private func max(between value: CGFloat, andContantsOf constraints: [NSLayoutConstraint]) -> CGFloat {
