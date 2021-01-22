@@ -21,23 +21,11 @@ class SkeletonCollectionDelegate: NSObject {
 // MARK: - UITableViewDelegate
 extension SkeletonCollectionDelegate: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if let viewIdentifier = originalTableViewDelegate?.collectionSkeletonView(tableView, identifierForHeaderInSection: section),
-            let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: viewIdentifier) {
-            skeletonViewIfContainerSkeletonIsActive(container: tableView, view: header)
-            return header
-        }
-
-        return nil
+        headerOrFooterView(tableView, for: originalTableViewDelegate?.collectionSkeletonView(tableView, identifierForHeaderInSection: section))
     }
 
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        if let viewIdentifier = originalTableViewDelegate?.collectionSkeletonView(tableView, identifierForFooterInSection: section),
-            let footer = tableView.dequeueReusableHeaderFooterView(withIdentifier: viewIdentifier) {
-            skeletonViewIfContainerSkeletonIsActive(container: tableView, view: footer)
-            return footer
-        }
-
-        return nil
+        headerOrFooterView(tableView, for: originalTableViewDelegate?.collectionSkeletonView(tableView, identifierForHeaderInSection: section))
     }
 
     func tableView(_ tableView: UITableView, didEndDisplayingHeaderView view: UIView, forSection section: Int) {
@@ -54,6 +42,12 @@ extension SkeletonCollectionDelegate: UITableViewDelegate {
         cell.hideSkeleton()
         originalTableViewDelegate?.tableView?(tableView, didEndDisplaying: cell, forRowAt: indexPath)
     }
+
+    private func headerOrFooterView(_ tableView: UITableView, for viewIdentifier: String? ) -> UIView? {
+      guard let viewIdentifier = viewIdentifier, let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: viewIdentifier) else { return nil }
+      skeletonViewIfContainerSkeletonIsActive(container: tableView, view: header)
+      return header
+  }
 }
 
 // MARK: - UICollectionViewDelegate
