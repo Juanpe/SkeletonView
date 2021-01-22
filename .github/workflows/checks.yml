@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Execute danger
-        uses: danger/swift@3.5.0
+        uses: danger/swift@3.3.0
         with:
             args: --failOnErrors --no-publish-check
         env:
