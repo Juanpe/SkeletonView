@@ -12,4 +12,4 @@ jobs:
         with:
             args: --failOnErrors --no-publish-check
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.SKELETONVIEW_CI }}
