@@ -1,8 +1,8 @@
 ![](Assets/header2.jpg)
 
 <p align="center">
-    <a href="https://github.com/Juanpe/SkeletonView/workflows/build">
-      <img src="https://github.com/Juanpe/SkeletonView/workflows/build/badge.svg">
+    <a href="https://github.com/Juanpe/SkeletonView/workflows/CI">
+      <img src="https://github.com/Juanpe/SkeletonView/workflows/CI/badge.svg">
     </a>
     <a href="https://codebeat.co/projects/github-com-juanpe-skeletonview-master"><img alt="codebeat badge" src="https://codebeat.co/badges/f854fdfd-31e5-4689-ba04-075d83653e60" /></a>
     <img src="https://img.shields.io/badge/Swift-5-orange.svg" />
@@ -37,28 +37,36 @@ Aujourd'hui, presque toutes les applications ont des processus asynchrones, tels
 
 Profitez-en! 🙂
 
-* [Caractéristiques](#-caractéristiques)
-* [Guides](#-guides)
-* [Installation](#-installation)
-  * [Cocoapods](#utilisation-de-cocoapods)
-  * [Carthage](#utilisation-de-carthage)
-  * [SPM](#utilisation-du-gestionnaire-de-paquets-Swift)
-* [Comment utiliser](#-mode-d'emploi)
-  * [Collections](#-collections)
-  * [Texte Multiligne](#-texte-multiligne)
-  * [Couleurs personnalisées](#-couleurs-personnalisées)
-  * [Présentation](#-présentation)
-  * [Animations personnalisées](#-animations-personnalisées)
-  * [Transitions](#-transitions)
-  * [Hiérarchie](#-hiérarchie)
-  * [Débugger](#-débugger)
-* [Documentation](#-documentation)
-* [Versions OS & SDK supportées](#-versions-os-et-sdk-supportées)
-* [Prochaines étapes](#-prochaines-étapes)
-* [Contribuer](#-contribuer)
-* [Mentions](#-mentions)
-* [Auteur](#-auteur)
-* [Licence](#-licence)
+- [🌟 Caractéristiques](#-caractéristiques)
+- [🎬 Guides](#-guides)
+- [📲 Installation](#-installation)
+    - [Utilisation de CocoaPods](#utilisation-de-cocoapods)
+    - [Utilisation de Carthage](#utilisation-de-carthage)
+    - [Utilisation du gestionnaire de paquets Swift](#utilisation-du-gestionnaire-de-paquets-swift)
+- [🐒 Mode d'emploi](#-mode-demploi)
+  - [Extra](#extra)
+    - [Mise en page des vues squelettes](#mise-en-page-des-vues-squelettes)
+    - [Mise à jour de la configuration du squelette](#mise-à-jour-de-la-configuration-du-squelette)
+  - [🌿 Collections](#-collections)
+    - [UITableView](#uitableview)
+    - [UICollectionView](#uicollectionview)
+  - [📰 Texte multiligne](#-texte-multiligne)
+      - [🎛 Personnaliser](#-personnaliser)
+  - [🎨 Couleurs personnalisées](#-couleurs-personnalisées)
+        - [Image tirée du site web https://flatuicolors.com](#image-tirée-du-site-web-httpsflatuicolorscom)
+  - [🦋 Présentation](#-présentation)
+  - [🤓 Animations personnalisées](#-animations-personnalisées)
+  - [🏄 Transitions](#-transitions)
+  - [👨👧👦 Hiérarchie](#-hiérarchie)
+  - [🔬 Débugger](#-débugger)
+  - [📚 Documentation](#-documentation)
+  - [📋 Versions OS et SDK supportées](#-versions-os-et-sdk-supportées)
+- [📬 Prochaines étapes](#-prochaines-étapes)
+- [❤️ Contribuer](#️-contribuer)
+        - [Projet généré avec SwiftPlate](#projet-généré-avec-swiftplate)
+- [📢 Mentions](#-mentions)
+- [👨🏻‍💻 Auteur](#-auteur)
+- [👮🏻 Licence](#-licence)
 
 ## 🌟 Caractéristiques
 

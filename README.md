@@ -1,8 +1,8 @@
 ![](Assets/header2.jpg)
 
 <p align="center">
-    <a href="https://github.com/Juanpe/SkeletonView/workflows/build">
-      <img src="https://github.com/Juanpe/SkeletonView/workflows/build/badge.svg">
+    <a href="https://github.com/Juanpe/SkeletonView/workflows/CI">
+      <img src="https://github.com/Juanpe/SkeletonView/workflows/CI/badge.svg">
     </a>
     <a href="https://codebeat.co/projects/github-com-juanpe-skeletonview-master"><img alt="codebeat badge" src="https://codebeat.co/badges/f854fdfd-31e5-4689-ba04-075d83653e60" /></a>
     <img src="http://img.shields.io/badge/dependency%20manager-swiftpm%2Bcocoapods%2Bcarthage-green" />
@@ -29,6 +29,7 @@ Enjoy it! 🙂
 
 
 ## 
+- [](#)
 - [🌟 Features](#-features)
 - [🎬 Guides](#-guides)
 - [📲 Installation](#-installation)
@@ -37,10 +38,14 @@ Enjoy it! 🙂
   - [🔠 Texts](#-texts)
   - [🦋 Appearance](#-appearance)
   - [🎨 Custom colors](#-custom-colors)
-  - [ 🏃‍♀️ Animations](#%EF%B8%8F-animations)
+        - [Image captured from website https://flatuicolors.com](#image-captured-from-website-httpsflatuicolorscom)
+  - [🏃‍♀️ Animations](#️-animations)
   - [🏄 Transitions](#-transitions)
 - [✨ Miscellaneous](#-miscellaneous)
 - [❤️ Contributing](#️-contributing)
+- [📢 Mentions](#-mentions)
+- [👨🏻‍💻 Author](#-author)
+- [👮🏻 License](#-license)
 
 
 

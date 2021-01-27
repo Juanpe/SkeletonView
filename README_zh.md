@@ -1,8 +1,8 @@
 ![](Assets/header2.jpg)
 
 <p align="center">
-    <a href="https://github.com/Juanpe/SkeletonView/workflows/build">
-      <img src="https://github.com/Juanpe/SkeletonView/workflows/build/badge.svg">
+    <a href="https://github.com/Juanpe/SkeletonView/workflows/CI">
+      <img src="https://github.com/Juanpe/SkeletonView/workflows/CI/badge.svg">
     </a>
     <a href="https://codebeat.co/projects/github-com-juanpe-skeletonview-master"><img alt="codebeat badge" src="https://codebeat.co/badges/f854fdfd-31e5-4689-ba04-075d83653e60" /></a>
     <img src="https://img.shields.io/badge/Swift-5-orange.svg" />
@@ -36,24 +36,29 @@
 
 好好享受! 🙂
 
-* [特征](#-特征)
-* [版本要求](#-版本要求)
-* [示例项目](#-示例)
-* [安装](#-安装)
-  * [Cocoapods](#使用-cocoapods)
-  * [Carthage](#使用-carthage)
-* [如何使用](#-如何使用)
-  * [集合](#-集合)
-  * [多行文字](#-多行文字)
-  * [自定义颜色](#-自定义颜色)
-  * [自定义动画](#-自定义动画)
-  * [等级制度](#-等级制度)
-* [文档](#-文档)
-* [下一步](#-下一步)
-* [特约](#-特约)
-* [提及](#-提及)
-* [作者](#-作者)
-* [许可证](#-许可证)
+- [🌟 特征](#-特征)
+  - [📋 版本要求](#-版本要求)
+  - [🔮 示例](#-示例)
+- [📲 安装](#-安装)
+    - [使用 CocoaPods](#使用-cocoapods)
+    - [使用 Carthage](#使用-carthage)
+- [🐒 如何使用](#-如何使用)
+  - [🌿 集合](#-集合)
+        - [UITableView](#uitableview)
+        - [UICollectionView](#uicollectionview)
+  - [📰 多行文字](#-多行文字)
+      - [🎛 定制](#-定制)
+  - [🎨 自定义颜色](#-自定义颜色)
+        - [从网站 https://flatuicolors.com捕获的图像](#从网站-httpsflatuicolorscom捕获的图像)
+  - [🤓 自定义动画](#-自定义动画)
+  - [👨‍👧‍👦 等级制度](#-等级制度)
+  - [📚 文档](#-文档)
+- [📬 下一步](#-下一步)
+- [❤️ 特约](#️-特约)
+        - [使用 SwiftPlate 生成的项目](#使用-swiftplate-生成的项目)
+- [📢 提及](#-提及)
+- [👨🏻‍💻 作者](#-作者)
+- [👮🏻 许可证](#-许可证)
 
 
 ## 🌟 特征

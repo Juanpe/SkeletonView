@@ -1,8 +1,8 @@
 ![](Assets/header2.jpg)
 
 <p align="center">
-    <a href="https://github.com/Juanpe/SkeletonView/workflows/build">
-      <img src="https://github.com/Juanpe/SkeletonView/workflows/build/badge.svg">
+    <a href="https://github.com/Juanpe/SkeletonView/workflows/CI">
+      <img src="https://github.com/Juanpe/SkeletonView/workflows/CI/badge.svg">
     </a>
     <a href="https://codebeat.co/projects/github-com-juanpe-skeletonview-master"><img alt="codebeat badge" src="https://codebeat.co/badges/f854fdfd-31e5-4689-ba04-075d83653e60" /></a>
     <img src="https://img.shields.io/badge/Swift-5-orange.svg" />
@@ -36,25 +36,30 @@ Hoje, quase todos os apps têm processos assíncronos, como requisições de API
 
 Aproveite! 🙂
 
-* [Features](#-features)
-* [Requerimentos](#-supported-os--sdk-versions)
-* [Projeto de exemplo](#-example)
-* [Instalação](#-installation)
-  * [Cocoapods](#using-cocoapods)
-  * [Carthage](#using-carthage)
-* [Como usar](#-how-to-use)
-  * [Coleções](#-collections)
-  * [Texto em várias linhas](#-multiline-text)
-  * [Cores customizadas](#-custom-colors)
-  * [Aparência](#-appearance)
-  * [Animaçōes customizadas](#-custom-animations)
-  * [Hierarquia](#-hierarchy)
-* [Documentação](#-documentation)
-* [Próximos passos](#-next-steps)
-* [Contribuindo](#-contributing)
-* [Menções](#-mentions)
-* [Autor](#-author)
-* [Licença](#-license)
+- [🌟 Features](#-features)
+  - [📋 Versões do SDK e OS suportados](#-versões-do-sdk-e-os-suportados)
+  - [🔮 Exemplo](#-exemplo)
+- [📲 Instalação](#-instalação)
+    - [Usando CocoaPods](#usando-cocoapods)
+    - [Usando Carthage](#usando-carthage)
+- [🐒 Como usar](#-como-usar)
+  - [🌿 Coleções](#-coleções)
+        - [UITableView](#uitableview)
+        - [UICollectionView](#uicollectionview)
+  - [📰 Texto de várias linhas](#-texto-de-várias-linhas)
+      - [🎛 Customização](#-customização)
+  - [🎨 Cores customizadas](#-cores-customizadas)
+        - [Imagem capturada do site https://flatuicolors.com](#imagem-capturada-do-site-httpsflatuicolorscom)
+  - [🦋 Aparência](#-aparência)
+  - [🤓 Animações customizadas](#-animações-customizadas)
+  - [👨‍👧‍👦 Hierarquia](#-hierarquia)
+  - [📚 Documentação](#-documentação)
+- [📬 Próximos passos](#-próximos-passos)
+- [❤️ Contribuindo](#️-contribuindo)
+        - [Projeto gerado com SwiftPlate](#projeto-gerado-com-swiftplate)
+- [📢 Menções](#-menções)
+- [👨🏻‍💻 Autor](#-autor)
+- [👮🏻 Licença](#-licença)
 
 
 ## 🌟 Features

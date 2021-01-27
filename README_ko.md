@@ -1,8 +1,8 @@
 ![](Assets/header2.jpg)
 
 <p align="center">
-    <a href="https://github.com/Juanpe/SkeletonView/workflows/build">
-      <img src="https://github.com/Juanpe/SkeletonView/workflows/build/badge.svg">
+    <a href="https://github.com/Juanpe/SkeletonView/workflows/CI">
+      <img src="https://github.com/Juanpe/SkeletonView/workflows/CI/badge.svg">
     </a>
     <a href="https://codebeat.co/projects/github-com-juanpe-skeletonview-master"><img alt="codebeat badge" src="https://codebeat.co/badges/f854fdfd-31e5-4689-ba04-075d83653e60" /></a>
     <img src="https://img.shields.io/badge/Swift-5-orange.svg" />
