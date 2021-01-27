@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [develop]
+  pull_request:
+    branches: [develop]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        build-config:    
+          - { target: 'SkeletonView-iOS', destination: 'platform=iOS Simulator,name=iPhone 8', sdk: 'iphonesimulator' }
+          - { target: 'SkeletonView-tvOS', destination: 'platform=tvOS Simulator,name=Apple TV', sdk: 'appletvsimulator' }
+          - { target: 'SkeletonViewExample', destination: 'platform=iOS Simulator,name=iPhone 8', sdk: 'iphonesimulator' }
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build
+        run: xcodebuild clean -target '${{ matrix.build-config['target'] }}' -sdk '${{ matrix.build-config['sdk'] }}' -destination '${{ matrix.build-config['destination'] }}'
+  
+  lint:
+    needs: build
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2 
+      - name: Run SwiftLint
+        run: swiftlint lint --reporter github-actions-logging
+
+  danger: 
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Danger
+        uses: danger/swift@3.7.1
+        with:
+            args: --failOnErrors --no-publish-check
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
