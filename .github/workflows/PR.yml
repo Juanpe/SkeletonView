@@ -1,0 +1,24 @@
+name: PR Validations
+
+on:
+  pull_request:
+    branches: [develop]
+
+jobs:
+  lint:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2 
+      - name: Run SwiftLint
+        run: swiftlint lint --reporter github-actions-logging
+
+  danger: 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Danger
+        uses: danger/swift@3.7.1
+        with:
+            args: --failOnErrors --no-publish-check
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
