@@ -7,7 +7,7 @@ struct SkeletonConfig {
     /// Type of skeleton layer
     let type: SkeletonType
     
-    /// Colors used in skeleton layer
+    /// Colors used in skeleton layers
     let colors: [UIColor]
     
     /// If type is gradient, which gradient direction
