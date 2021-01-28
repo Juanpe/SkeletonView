@@ -25,6 +25,6 @@ jobs:
       - name: Danger
         uses: danger/swift@3.7.1
         with:
-            args: --failOnErrors --no-publish-check "--dangerfile artsy/peril-settings/org/allPRs.ts"
+            args: --failOnErrors --no-publish-check --dangerfile "artsy/peril-settings/org/allPRs.ts"
         env:
           DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
