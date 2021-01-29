@@ -2,7 +2,7 @@
 
 import UIKit
 
-/// A protocol to conform to handle SkeletonView lifecycle
+/// A protocol to conform to handle SkeletonView lifecycle.
 protocol SkeletonFlowDelegate: AnyObject {
     func willBeginShowingSkeletons(rootView: UIView)
     func didShowSkeletons(rootView: UIView)
