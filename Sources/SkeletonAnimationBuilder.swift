@@ -3,7 +3,7 @@
 //  SkeletonView-iOS
 //
 //  Created by Juanpe Catalán on 17/11/2017.
-//  Copyright © 2017 SkeletonView. All rights reserved.
+//  Copyright © 2018 SkeletonView. All rights reserved.
 //
 
 import UIKit
