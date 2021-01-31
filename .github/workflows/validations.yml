@@ -4,6 +4,8 @@ on:
   pull_request:
     branches: [develop]
     types: [opened, reopened, edited, synchronize]
+  pull_request_target:
+    types: [opened, reopened, edited, synchronize]
 #  workflow_dispatch:
 #    inputs:
 #      commit hash:
