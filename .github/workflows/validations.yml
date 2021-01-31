@@ -1,7 +1,7 @@
 name: Validations
 
 on:
-  pull_request:
+  pull_request_target:
     types: [opened, reopened, edited, synchronize]
 #  workflow_dispatch:
 #    inputs:
@@ -25,7 +25,7 @@ jobs:
       - name: Danger
         uses: docker://frmeloni/danger-swift-with-swiftlint:1.3.1
         with:
-            args: --failOnErrors --verbose
+            args: --verbose
         env:
           GITHUB_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
           DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
@@ -35,7 +35,7 @@ jobs:
     steps:
       - uses: actions/github-script@0.3.0
         with:
-          github-token: ${{secrets.DANGER_GITHUB_API_TOKEN}}
+          github-token: ${{ env.DANGER_GITHUB_API_TOKEN }}
           script: |
             const { issue: { number: issue_number }, repo: { owner, repo }  } = context;
             github.issues.createComment({ issue_number, owner, repo, body: 'Hello world ! 👋' });
