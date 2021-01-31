@@ -25,46 +25,14 @@ jobs:
         with:
             args: --verbose
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
-  danger_target: 
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Danger
-        uses: docker://frmeloni/danger-swift-with-swiftlint:1.3.1
-        with:
-            args: --verbose
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
-          
-  danger_target_2: 
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Danger
-        uses: docker://frmeloni/danger-swift-with-swiftlint:1.3.1
-        with:
-            args: --verbose
-        env:
           GITHUB_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
-  
+
   comment:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/github-script@0.3.0
         with:
-          github-token: ${{ secrets.SECRET_TOKEN }}
-          script: |
-            const { issue: { number: issue_number }, repo: { owner, repo }  } = context;
-            github.issues.createComment({ issue_number, owner, repo, body: 'Hello world ! 👋' });
-  comment2:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/github-script@0.3.0
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
           script: |
             const { issue: { number: issue_number }, repo: { owner, repo }  } = context;
             github.issues.createComment({ issue_number, owner, repo, body: 'Hello world ! 👋' });
