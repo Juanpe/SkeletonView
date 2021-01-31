@@ -1,3 +1,12 @@
+---
+name: "\U0001F41B Bug report"
+about: Report a bug or unexpected behavior while using SkeletonView
+title: ''
+labels: bug
+assignees: ''
+
+---
+
 ### Description
 
 Describe your issue here.
