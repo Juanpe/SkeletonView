@@ -3,6 +3,7 @@
 import UIKit
 
 extension UIView {
+    // Comment
     @objc var subviewsSkeletonables: [UIView] {
         subviewsToSkeleton.filter { $0.isSkeletonable }
     }
