@@ -1,6 +1,10 @@
 name: Validations
 
-on: [pull_request_target]
+on: 
+  pull_request_target:
+    branches: [develop]
+    types: [opened, reoneped, edited, synchronized]
+
 #  workflow_dispatch:
 #    inputs:
 #      commit hash:
@@ -23,18 +27,8 @@ jobs:
       - name: Danger
         uses: docker://frmeloni/danger-swift-with-swiftlint:1.3.1
         with:
-            args: --verbose
+            args: --failOnErrors --verbose
         env:
-          GITHUB_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
-
-  comment:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/github-script@0.3.0
-        with:
-          github-token: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
-          script: |
-            const { issue: { number: issue_number }, repo: { owner, repo }  } = context;
-            github.issues.createComment({ issue_number, owner, repo, body: 'Hello world ! 👋' });
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
           
