@@ -27,7 +27,6 @@ Hoy en día, La mayoría de las apps tiene procesos asíncronos, como peticiones
 Enjoy it! 🙂
 
 ## 
-- [](#)
 - [🌟 Destacado](#-destacado)
 - [🎬 Videotutoriales](#-videotutoriales)
 - [📲 Instalación](#-instalación)

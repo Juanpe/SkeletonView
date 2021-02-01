@@ -5,9 +5,12 @@ All notable changes to this project will be documented in this file
 
 #### 🙌 New
 
-#### 🔬Improvements
-
+#### 🔬 Improvements
+* [**369**](https://github.com/Juanpe/SkeletonView/pull/369): remove useless corner radius constraint - [@Juanpe](https://github.com/Juanpe)
+* [**357**](https://github.com/Juanpe/SkeletonView/pull/357): Removed duplicate code in SkeletonCollectionDelegate. - [@keshavamurthy1](https://github.com/keshavamurthy1)
+  
 #### 🩹 Bug fixes
+* [**359**](https://github.com/Juanpe/SkeletonView/pull/359): SkeletonView respecting Font's height, rather than the `UIView` actual height. - [@keshavamurthy1](https://github.com/keshavamurthy1)
 
 
 ## 📦 [1.11.0](https://github.com/Juanpe/SkeletonView/releases/tag/1.11.0)
