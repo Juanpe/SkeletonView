@@ -22,10 +22,21 @@ jobs:
         needs: pod_lib_lint
         steps:
             - run: ./scripts/update_pod_version.sh ${{ github.event.inputs.release_version }}
-   
+    
+    commit_changes:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout repo
+          uses: actions/checkout@v2
+
+        - name: Commit changes
+          uses: EndBug/add-and-commit@v7
+          with:
+            message: 'Bump version ${{ github.event.inputs.release_version }}'
+    
     create_release:
         runs-on: ubuntu-latest
-        needs: bump_pod_version
+        needs: commit_changes
         steps:
             - uses: actions/checkout@v2
             - uses: release-drafter/release-drafter@v5
