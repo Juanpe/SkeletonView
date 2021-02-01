@@ -1,0 +1,13 @@
+name: Release
+on: [workflow_dispatch]
+    
+jobs:
+  pod-lib-lint:
+    runs-on: macOS-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Validate Pod
+      env:
+        COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
+      run: |
+        pod lib lint SkeletonView.podspec
