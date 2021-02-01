@@ -2,7 +2,7 @@ name: Release
 on: 
   workflow_dispatch:
     inputs:
-      commit hash:
+      release_version:
         description: "Version"
         required: true
         default: ""
@@ -21,7 +21,7 @@ jobs:
         runs-on: ubuntu-latest
         needs: pod_lib_lint
         steps:
-            - run: ./scripts/update-pod-version.sh
+            - run: ./scripts/update_pod_version.sh ${{ github.event.inputs.release_version }}
    
     create_release:
         runs-on: ubuntu-latest
