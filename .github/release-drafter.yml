@@ -1,0 +1,38 @@
+name-template: '📦 $RESOLVED_VERSION'
+tag-template: '$RESOLVED_VERSION'
+category-template: '#### $TITLE'
+template: |
+  $CHANGES
+categories:
+  - title: '🚨 Breaking'
+    label: 'breaking'
+  - title: '🔬Improvements'
+    label: '💡 enhancement'
+  - title: '🙌 New'
+    label: 'feature'
+  - title: '🩹 Bug fixes'
+    label: '🐞 bug'
+  - title: '⚙️ Maintenance'
+    label: '⚙️ maintenance'
+  - title: '📚 Documentation'
+    label: '📚 docs'
+  - title: '💾 Dependency Updates'
+    label: 'dependencies'
+
+version-resolver:
+  major:
+    labels:
+      - 'breaking'
+      - 'feature'
+  minor:
+    labels:
+      - '💡 enhancement'
+  patch:
+    labels:
+      - '🐞 bug'
+      - '⚙️ maintenance'
+      - '📚 docs'
+      - 'dependencies'
+
+exclude-labels:
+  - 'skip-changelog'
