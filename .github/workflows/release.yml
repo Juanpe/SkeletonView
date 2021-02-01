@@ -24,6 +24,7 @@ jobs:
             - run: ./scripts/update_pod_version.sh ${{ github.event.inputs.release_version }}
     
     commit_changes:
+      needs: bump_pod_version
       runs-on: ubuntu-latest
       steps:
         - name: Checkout repo
