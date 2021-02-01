@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SkeletonView"
-  s.version      = "1.11.0"
+  s.version      = "1.12.0"
   s.summary      = "An elegant way to show users that something is happening and also prepare them to which contents he is waiting"
   s.description  = <<-DESC
   Today almost all apps have async processes, as API requests, long runing processes, etc. And while the processes are working, usually developers place a loading view to show users that something is going on.
