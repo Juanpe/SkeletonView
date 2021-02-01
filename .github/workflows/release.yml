@@ -21,7 +21,9 @@ jobs:
         runs-on: ubuntu-latest
         needs: pod_lib_lint
         steps:
-            - run: ./../../scripts/update_pod_version.sh ${{ github.event.inputs.release_version }}
+          - uses: actions/checkout@v2
+          - run: |
+              "${GITHUB_WORKSPACE}/scripts/update_pod_version.sh ${{ github.event.inputs.release_version }}"
     
     commit_changes:
       needs: bump_pod_version
