@@ -28,8 +28,7 @@ Today almost all apps have async processes, such as API requests, long running p
 Enjoy it! 🙂
 
 
-## 
-- [](#)
+##
 - [🌟 Features](#-features)
 - [🎬 Guides](#-guides)
 - [📲 Installation](#-installation)
