@@ -1,6 +1,7 @@
 name-template: '📦 $RESOLVED_VERSION'
 tag-template: '$RESOLVED_VERSION'
 category-template: '#### $TITLE'
+change-template: '- **#$NUMBER**: $TITLE - @$AUTHOR'
 template: |
   $CHANGES
 categories:
