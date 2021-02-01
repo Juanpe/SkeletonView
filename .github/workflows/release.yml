@@ -21,9 +21,15 @@ jobs:
         runs-on: ubuntu-latest
         needs: pod_lib_lint
         steps:
-            - run: ./scripts/update_pod_version.sh ${{ github.event.inputs.release_version }}
+          - uses: actions/checkout@v2
+          - name: Bump version
+            working-directory: scripts
+            run: |
+              chmod +x ./update_pod_version.sh
+              ./update_pod_version.sh ${{ github.event.inputs.release_version }}
     
     commit_changes:
+      needs: bump_pod_version
       runs-on: ubuntu-latest
       steps:
         - name: Checkout repo
@@ -44,3 +50,13 @@ jobs:
                 publish: true
               env:
                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                 
+    pod_trunk_repo: 
+        runs-on: macOS-latest
+        needs: create_release
+        steps:
+          - uses: actions/checkout@v1
+          - name: Publish Pod
+            env:
+              COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
+            run: pod trunk push SkeletonView.podspec
