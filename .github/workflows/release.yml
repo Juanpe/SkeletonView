@@ -25,9 +25,11 @@ jobs:
           uses: actions/checkout@v2
 
         - name: Commit changes
-          uses: EndBug/add-and-commit@v7
-          with:
-            message: 'Bump version ${{ github.event.inputs.release_version }}'
+          run: |
+              git config --global user.name 'Juanpe Catalán'
+              git config --global user.email 'juanpecm@gmail.com'
+              git commit -am 'Bump version ${{ github.event.inputs.release_version }}'
+              git push
     
     create_release:
         runs-on: ubuntu-latest
