@@ -39,20 +39,10 @@ jobs:
                 publish: true
               env:
                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    
-    pod_lib_lint:
-        runs-on: macOS-latest
-        needs: create_release
-        steps:
-            - uses: actions/checkout@v2
-            - name: Validate Pod
-              env:
-                COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
-              run: pod lib lint SkeletonView.podspec --allow-warnings --verbose
                  
     pod_trunk_repo: 
         runs-on: macOS-latest
-        needs: pod_lib_lint
+        needs: create_release
         steps:
           - uses: actions/checkout@v1
           - name: Publish Pod
