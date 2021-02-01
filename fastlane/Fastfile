@@ -1,6 +1,10 @@
 default_platform(:ios)
 podspec_name = "SkeletonView.podspec"
 
+lane :bump_version do |options|
+   version_bump_podspec(path: @podspec_name, version_number: options[:next_version])
+end
+
 lane :release_current do
    version = version_get_podspec(path: @podspec_name)
    if git_tag_exists(tag: version)
