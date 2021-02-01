@@ -8,18 +8,8 @@ on:
         default: ""
         
 jobs:
-    pod_lib_lint:
-        runs-on: macOS-latest
-        steps:
-            - uses: actions/checkout@v2
-            - name: Validate Pod
-              env:
-                COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
-              run: pod lib lint SkeletonView.podspec --allow-warnings
-    
     bump_pod_version:
         runs-on: ubuntu-latest
-        needs: pod_lib_lint
         steps:
           - uses: actions/checkout@v2
           - name: setup fastlane
@@ -49,13 +39,23 @@ jobs:
                 publish: true
               env:
                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
+    pod_lib_lint:
+        runs-on: macOS-latest
+        needs: create_release
+        steps:
+            - uses: actions/checkout@v2
+            - name: Validate Pod
+              env:
+                COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
+              run: pod lib lint SkeletonView.podspec --allow-warnings --verbose
                  
     pod_trunk_repo: 
         runs-on: macOS-latest
-        needs: create_release
+        needs: pod_lib_lint
         steps:
           - uses: actions/checkout@v1
           - name: Publish Pod
             env:
               COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
-            run: pod trunk push SkeletonView.podspec
+            run: pod trunk push SkeletonView.podspec --allow-warnings --verbose
