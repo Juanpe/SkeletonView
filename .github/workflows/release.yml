@@ -22,7 +22,9 @@ jobs:
         needs: pod_lib_lint
         steps:
           - uses: actions/checkout@v2
-          - name: Bump version
+          - name: setup fastlane
+            run: bundle install
+          - name: bump version
             run: fastlane run version_bump_podspec parameter1:"SkeletonView.podspec" parameter2:"${{ github.event.inputs.release_version }}"
     
     commit_changes:
