@@ -44,3 +44,13 @@ jobs:
                 publish: true
               env:
                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                 
+    pod_trunk_repo: 
+        runs-on: macOS-latest
+        needs: create_release
+        steps:
+          - uses: actions/checkout@v1
+          - name: Publish Pod
+            env:
+              COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
+            run: pod trunk push SkeletonView.podspec
