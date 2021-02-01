@@ -22,6 +22,8 @@ jobs:
         needs: pod_lib_lint
         steps:
           - uses: actions/checkout@v2
+          - name: install bundler
+            run: gem install bundler
           - name: setup fastlane
             run: bundle install
           - name: bump version
