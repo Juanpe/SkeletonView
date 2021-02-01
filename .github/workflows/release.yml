@@ -23,10 +23,7 @@ jobs:
         steps:
           - uses: actions/checkout@v2
           - name: Bump version
-            working-directory: scripts
-            run: |
-              chmod +x ./update_pod_version.sh
-              ./update_pod_version.sh ${{ github.event.inputs.release_version }}
+            run: fastlane run version_bump_podspec parameter1:"SkeletonView.podspec" parameter2:"${{ github.event.inputs.release_version }}"
     
     commit_changes:
       needs: bump_pod_version
