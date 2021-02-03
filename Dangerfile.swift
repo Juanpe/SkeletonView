@@ -3,16 +3,6 @@ import Danger
 let danger = Danger()
 let github = danger.github
 
-// Changelog entries are required for changes to library files.
-let allSourceFiles = danger.git.modifiedFiles + danger.git.createdFiles
-let noChangelogEntry = !allSourceFiles.contains("CHANGELOG.md")
-let sourceChanges = allSourceFiles.contains { $0.hasPrefix("Sources") }
-let isNotTrivial = !danger.github.pullRequest.title.contains("#trivial")
-
-if isNotTrivial && noChangelogEntry && sourceChanges {
-    fail("Any changes to library code should be reflected in the Changelog.")
-}
-
  // Make it more obvious that a PR is a work in progress and shouldn't be merged yet
 if danger.github.pullRequest.title.contains("WIP") {
     warn("PR is classed as Work in Progress")
