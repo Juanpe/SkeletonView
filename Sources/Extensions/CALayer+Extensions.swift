@@ -152,7 +152,8 @@ public extension CALayer {
     var pulse: CAAnimation {
         let pulseAnimation = CABasicAnimation(keyPath: #keyPath(CALayer.backgroundColor))
         pulseAnimation.fromValue = backgroundColor
-        //swiftlint:disable:next force_unwrapping
+        
+        // swiftlint:disable:next force_unwrapping
         pulseAnimation.toValue = UIColor(cgColor: backgroundColor!).complementaryColor.cgColor
         pulseAnimation.duration = 1
         pulseAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)

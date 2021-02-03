@@ -63,7 +63,7 @@ public class SkeletonAnimationBuilder {
     public init() { }
     
     public func makeSlidingAnimation(withDirection direction: GradientDirection, duration: CFTimeInterval = 1.5, autoreverses: Bool = false) -> SkeletonLayerAnimation {
-        return { layer in
+        return { _ in
             let startPointAnim = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.startPoint))
             startPointAnim.fromValue = direction.startPoint.from
             startPointAnim.toValue = direction.startPoint.to
