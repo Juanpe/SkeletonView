@@ -125,14 +125,25 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="placeholder" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dha-bH-Ipf">
+                                                    <rect key="frame" x="119" y="57" width="235" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="dha-bH-Ipf" firstAttribute="top" secondItem="VhU-1t-AaI" secondAttribute="bottom" constant="8" symbolic="YES" id="1Ek-1L-ZVs"/>
                                                 <constraint firstItem="oiE-tt-nc2" firstAttribute="leading" secondItem="7IN-F3-Mr6" secondAttribute="leadingMargin" id="1be-ak-AH1"/>
                                                 <constraint firstAttribute="bottom" secondItem="oiE-tt-nc2" secondAttribute="bottom" constant="20" id="CKt-oA-eBI"/>
                                                 <constraint firstItem="oiE-tt-nc2" firstAttribute="top" secondItem="7IN-F3-Mr6" secondAttribute="topMargin" constant="7" id="EKn-ST-LDX"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="VhU-1t-AaI" secondAttribute="trailing" constant="5" id="I7C-Bq-mfK"/>
                                                 <constraint firstItem="VhU-1t-AaI" firstAttribute="leading" secondItem="oiE-tt-nc2" secondAttribute="trailing" constant="21" id="Ojr-Kz-1k6"/>
                                                 <constraint firstItem="VhU-1t-AaI" firstAttribute="top" secondItem="7IN-F3-Mr6" secondAttribute="topMargin" constant="18" id="ZW6-JY-S4c"/>
+                                                <constraint firstItem="dha-bH-Ipf" firstAttribute="trailing" secondItem="VhU-1t-AaI" secondAttribute="trailing" id="baX-Nw-8sB"/>
+                                                <constraint firstItem="dha-bH-Ipf" firstAttribute="leading" secondItem="VhU-1t-AaI" secondAttribute="leading" id="kzA-mV-IDt"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>

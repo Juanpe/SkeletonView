@@ -34,6 +34,16 @@ struct RecoverableTextViewState {
     }
 }
 
+struct RecoverableTextFieldState {
+    var textColor: UIColor?
+    var placeholder: String?
+
+    init(view: UITextField) {
+        self.textColor = view.textColor
+        self.placeholder = view.placeholder
+    }
+}
+
 struct RecoverableImageViewState {
     var image: UIImage?
     
