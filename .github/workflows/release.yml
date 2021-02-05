@@ -25,7 +25,7 @@ jobs:
         - name: commit changes
           uses: stefanzweifel/git-auto-commit-action@v4
           with:
-            branch: 'develop'
+            branch: 'main'
             commit_message: 'Bump version ${{ github.event.inputs.release_version }}'
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

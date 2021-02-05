@@ -19,7 +19,7 @@
   • <a href="#️-contributing">Contributing</a>
 </p>
 
-**🌎 README is available in other languages:  [🇪🇸](https://github.com/Juanpe/SkeletonView/blob/develop/README_es.md) . [🇨🇳](https://github.com/Juanpe/SkeletonView/blob/master/README_zh.md) . [🇧🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_pt-br.md) . [🇰🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_ko.md) . [🇫🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_fr.md)**
+**🌎 README is available in other languages:  [🇪🇸](https://github.com/Juanpe/SkeletonView/blob/main/README_es.md) . [🇨🇳](https://github.com/Juanpe/SkeletonView/blob/master/README_zh.md) . [🇧🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_pt-br.md) . [🇰🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_ko.md) . [🇫🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_fr.md)**
 
 Today almost all apps have async processes, such as API requests, long running processes, etc. While the processes are working, usually developers place a loading view to show users that something is going on.
 
@@ -531,7 +531,7 @@ This is an open source project, so feel free to contribute. How?
 
 See [all contributors](https://github.com/Juanpe/SkeletonView/graphs/contributors)
 
-For more information, please read the [contributing guidelines](https://github.com/Juanpe/SkeletonView/blob/develop/CONTRIBUTING.md).
+For more information, please read the [contributing guidelines](https://github.com/Juanpe/SkeletonView/blob/main/CONTRIBUTING.md).
 
 
 ## 📢 Mentions

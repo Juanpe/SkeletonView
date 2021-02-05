@@ -27,6 +27,7 @@ Hoy en día, La mayoría de las apps tiene procesos asíncronos, como peticiones
 Enjoy it! 🙂
 
 ## 
+- [](#)
 - [🌟 Destacado](#-destacado)
 - [🎬 Videotutoriales](#-videotutoriales)
 - [📲 Instalación](#-instalación)
@@ -476,7 +477,7 @@ Esto es un proyecto open source, siéntete libre de contribuir. ¿Cómo?
 
 Échale un vistazo a [los que ya han contribuído](https://github.com/Juanpe/SkeletonView/graphs/contributors)
 
-Para más información, por favor, lee la [guía de contribución](https://github.com/Juanpe/SkeletonView/blob/develop/CONTRIBUTING.md).
+Para más información, por favor, lee la [guía de contribución](https://github.com/Juanpe/SkeletonView/blob/main/CONTRIBUTING.md).
 
 
 ## 📢 Menciones

@@ -1,7 +1,7 @@
 # Contributors Guide
 
 Interested in contributing? Awesome! Before you do though, please read our
-[Code of Conduct](https://github.com/Juanpe/SkeletonView/blob/develop/CODE_OF_CONDUCT.md). We take it very seriously, and expect that you will as
+[Code of Conduct](https://github.com/Juanpe/SkeletonView/blob/main/CODE_OF_CONDUCT.md). We take it very seriously, and expect that you will as
 well.
 
 There are many ways you can contribute! :heart:
@@ -45,7 +45,7 @@ If the contribution doesn't meet the above criteria, you may fail our automated 
 3.  :herb: Create a new branch and check it out.
 4.  :crystal_ball: Make your changes and commit them locally.
 5.  :arrow_heading_up: Push your new branch to your fork. (e.g. `git push username fix-issue-300`).
-6.  :inbox_tray: Open a Pull Request on github.com from your new branch on your fork to `develop` in this
+6.  :inbox_tray: Open a Pull Request on github.com from your new branch on your fork to `main` in this
     repository.
 
 ## Developer's Certificate of Origin 1.1
