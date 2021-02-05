@@ -23,7 +23,7 @@ jobs:
       steps:
         - uses: actions/checkout@v2
         - name: commit changes
-        - uses: stefanzweifel/git-auto-commit-action@v4
+          uses: stefanzweifel/git-auto-commit-action@v4
           with:
             branch: 'develop'
             commit_message: 'Bump version ${{ github.event.inputs.release_version }}'
@@ -36,7 +36,7 @@ jobs:
         steps:
             - uses: actions/checkout@v2
             - name: publish release
-            - uses: release-drafter/release-drafter@v5
+              uses: release-drafter/release-drafter@v5
               with: 
                 publish: true
               env:
@@ -46,7 +46,7 @@ jobs:
         runs-on: macOS-latest
         needs: create_release
         steps:
-          - uses: actions/checkout@v1
+          - uses: actions/checkout@v2
           - name: publish pod
             env:
               COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}

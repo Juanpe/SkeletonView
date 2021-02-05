@@ -86,6 +86,33 @@ extension UITextView {
     }
 }
 
+extension UITextField {
+    var textState: RecoverableTextFieldState? {
+        get { return ao_get(pkey: &ViewAssociatedKeys.labelViewState) as? RecoverableTextFieldState }
+        set { ao_setOptional(newValue, pkey: &ViewAssociatedKeys.labelViewState) }
+    }
+
+    override func saveViewState() {
+        super.saveViewState()
+        textState = RecoverableTextFieldState(view: self)
+    }
+
+    override func recoverViewState(forced: Bool) {
+        super.recoverViewState(forced: forced)
+        startTransition { [weak self] in
+            guard let storedLabelState = self?.textState else { return }
+
+            if self?.textColor == .clear || forced {
+                self?.textColor = storedLabelState.textColor
+            }
+
+            if self?.placeholder == nil || forced {
+                self?.placeholder = storedLabelState.placeholder
+            }
+        }
+    }
+}
+
 extension UIImageView {
     var imageState: RecoverableImageViewState? {
         get { return ao_get(pkey: &ViewAssociatedKeys.imageViewState) as? RecoverableImageViewState }
