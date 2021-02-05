@@ -136,7 +136,7 @@ extension UIView {
     private func showSkeletonIfNotActive(skeletonConfig config: SkeletonConfig) {
         guard !isSkeletonActive else { return }
         saveViewState()
-        isUserInteractionEnabled = false
+
         prepareViewForSkeleton()
         addSkeletonLayer(skeletonConfig: config)
     }
@@ -190,7 +190,6 @@ extension UIView {
             isHidden = false
         }
         currentSkeletonConfig?.transition = transition
-        isUserInteractionEnabled = true
         removeDummyDataSourceIfNeeded(reloadAfter: reload)
         subviewsSkeletonables.recursiveSearch(leafBlock: {
             recoverViewState(forced: false)
