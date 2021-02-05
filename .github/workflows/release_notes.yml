@@ -3,7 +3,7 @@ name: Release Notes
 on:
   push:
     branches:
-      - develop
+      - main
 
 jobs:
   update_release_notes:

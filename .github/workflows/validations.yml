@@ -2,7 +2,7 @@ name: Validations
 
 on: 
   pull_request_target:
-    branches: [develop]
+    branches: [main]
     types: [opened, reoneped, edited, synchronized]
 
 #  workflow_dispatch:
