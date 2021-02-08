@@ -10,9 +10,9 @@ import UIKit
 
 extension UIView {
     @objc func prepareViewForSkeleton() {
+        isUserInteractionEnabled = false
         startTransition { [weak self] in
             self?.backgroundColor = .clear
-            self?.isUserInteractionEnabled = false
         }
     }
 }
@@ -49,6 +49,7 @@ extension UILabel {
     
     override func prepareViewForSkeleton() {
         backgroundColor = .clear
+        isUserInteractionEnabled = false
         resignFirstResponder()
         startTransition { [weak self] in
             self?.updateHeightConstraintsIfNeeded()
@@ -60,6 +61,7 @@ extension UILabel {
 extension UITextView {
     override func prepareViewForSkeleton() {
         backgroundColor = .clear
+        isUserInteractionEnabled = false
         resignFirstResponder()
         startTransition { [weak self] in
             self?.textColor = .clear
@@ -82,6 +84,7 @@ extension UITextField {
 extension UIImageView {
     override func prepareViewForSkeleton() {
         backgroundColor = .clear
+        isUserInteractionEnabled = false
         startTransition { [weak self] in
             self?.image = nil
         }
@@ -91,6 +94,7 @@ extension UIImageView {
 extension UIButton {
     override func prepareViewForSkeleton() {
         backgroundColor = .clear
+        isUserInteractionEnabled = false
         startTransition { [weak self] in
             self?.setTitle(nil, for: .normal)
         }
