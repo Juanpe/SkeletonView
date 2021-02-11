@@ -1,4 +1,4 @@
-![](Assets/header2.jpg)
+![](https://github.com/Juanpe/SkeletonView/blob/main/Assets/header2.jpg)
 
 <p align="center">
     <a href="https://github.com/Juanpe/SkeletonView/actions?query=workflow%3ACI">
@@ -26,10 +26,10 @@
 
 🌎 Traductions : </br>
 [Original](https://github.com/Juanpe/SkeletonView) </br>
-[🇨🇳](https://github.com/Juanpe/SkeletonView/blob/master/README_zh.md)  [@WhatsXie](https://twitter.com/WhatsXie) </br>
-[🇧🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_pt-br.md)  [@brunomunizaf](https://twitter.com/brunomuniz_af) </br>
-[🇰🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_ko.md)  [@techinpark](https://twitter.com/techinpark) </br>
-[🇫🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_fr.md)  [@OmarJalil](https://github.com/OmarJalil)
+[🇨🇳](https://github.com/Juanpe/SkeletonView/blob/main/README_zh.md)  [@WhatsXie](https://twitter.com/WhatsXie) </br>
+[🇧🇷](https://github.com/Juanpe/SkeletonView/blob/main/README_pt-br.md)  [@brunomunizaf](https://twitter.com/brunomuniz_af) </br>
+[🇰🇷](https://github.com/Juanpe/SkeletonView/blob/main/README_ko.md)  [@techinpark](https://twitter.com/techinpark) </br>
+[🇫🇷](https://github.com/Juanpe/SkeletonView/blob/main/README_fr.md)  [@OmarJalil](https://github.com/OmarJalil)
 
 Aujourd'hui, presque toutes les applications ont des processus asynchrones, tels que les requêtes Api, les processus de longue durée, etc. Et pendant que les processus fonctionnent, les développeurs affichent généralement une vue de chargement pour montrer aux utilisateurs que quelque chose se passe.
 
@@ -80,7 +80,7 @@ Profitez-en! 🙂
 
 ## 🎬 Guides
 
- [<img src="Assets/thumb_getting_started.png">](https://youtu.be/75kgOhWsPNA)
+ [<img src="https://github.com/Juanpe/SkeletonView/blob/main/Assets/thumb_getting_started.png">](https://youtu.be/75kgOhWsPNA)
 
 ## 📲 Installation
 
@@ -127,7 +127,7 @@ avatarImageView.isSkeletonable = true
 ```
 **Utilisation des IB/Storyboards:**
 
-![](Assets/storyboard.png)
+![](https://github.com/Juanpe/SkeletonView/blob/main/Assets/storyboard.png)
 
 **Une fois que vous avez défini les vues, vous pouvez montrer le **squelette**. Pour le faire, vous avez quatre choix :
 
@@ -157,16 +157,16 @@ avatarImageView.isSkeletonable = true
 </tr>
 <tr>
 <td width="25%">
-<img src="Assets/solid.png"></img>
+<img src="https://github.com/Juanpe/SkeletonView/blob/main/Assets/solid.png"></img>
 </td>
 <td width="25%">
-<img src="Assets/gradient.png"></img>
+<img src="https://github.com/Juanpe/SkeletonView/blob/main/Assets/gradient.png"></img>
 </td>
 <td width="25%">
-<img src="Assets/solid_animated.gif"></img>
+<img src="https://github.com/Juanpe/SkeletonView/blob/main/Assets/solid_animated.gif"></img>
 </td>
 <td width="25%">
-<img src="Assets/gradient_animated.gif"></img>
+<img src="https://github.com/Juanpe/SkeletonView/blob/main/Assets/gradient_animated.gif"></img>
 </td>
 </tr>
 </table>
@@ -263,7 +263,7 @@ Il n'y a qu'une seule méthode à mettre en œuvre pour faire connaître au Sque
 
 Voici une illustration qui montre comment vous devez spécifier quels éléments sont squelettisables lorsque vous utilisez une `UITableView` :
 
-![](Assets/tableview_scheme.png)
+![](https://github.com/Juanpe/SkeletonView/blob/main/Assets/tableview_scheme.png)
 
 Comme vous pouvez le voir, nous devons faire `skeletonable` la tableview, la cellule et les éléments de l'interface visuelle, mais nous n'avons pas besoin de faire `skeletonable` le `contentView`.
 
@@ -283,7 +283,7 @@ Le reste du processus ressemble à une `UITableView`.
 
 ### 📰 Texte multiligne
 
-![](Assets/multilines2.png)
+![](https://github.com/Juanpe/SkeletonView/blob/main/Assets/multilines2.png)
 
 Lorsqu'on utilise des éléments avec du texte, `SkeletonView` dessine des lignes pour simuler le texte.
 En outre, vous pouvez décider combien de lignes vous voulez. Si `numberOfLines` est réglé à zéro, il calculera le combien de lignes sont nécessaires pour remplir tout le squelette et il sera dessiné. Au contraire, si vous le réglez sur un, deux ou tout autre nombre supérieur à zéro, il ne dessinera que ce nombre de lignes.
@@ -294,8 +294,8 @@ Vous pouvez définir certaines propriétés pour les éléments multilignes.
 
 | Propriété | Valeurs | Par défaut | Aperçu
 | ------- | ------- |------- | -------
-| **Pourcentage de remplissage** de la dernière ligne. | `0...100` | `70%` | ![](Assets/multiline_lastline.png)
-| **Corner radius** des lignes. (**NEW**) | `0...10` | `0` | ![](Assets/multiline_corner.png)
+| **Pourcentage de remplissage** de la dernière ligne. | `0...100` | `70%` | ![](https://github.com/Juanpe/SkeletonView/blob/main/Assets/multiline_lastline.png)
+| **Corner radius** des lignes. (**NEW**) | `0...10` | `0` | ![](https://github.com/Juanpe/SkeletonView/blob/main/Assets/multiline_corner.png)
 
 
 Pour modifier le pourcentage ou le rayon **à l'aide du code**, définissez les propriétés :
@@ -306,7 +306,7 @@ descriptionTextView.linesCornerRadius = 5
 
 Ou, si vous préférez, utilisez l'**IB/Storyboard** :
 
-![](Assets/multiline_customize.png)
+![](https://github.com/Juanpe/SkeletonView/blob/main/Assets/multiline_customize.png)
 
 ### 🎨 Couleurs personnalisées
 
@@ -328,7 +328,7 @@ En outre, `SkeletonView` dispose de 20 couleurs unies 🤙🏼
 
 `UIColor.turquoise, UIColor.greenSea, UIColor.sunFlower, UIColor.flatOrange ...`
 
-![](Assets/flatcolors.png)
+![](https://github.com/Juanpe/SkeletonView/blob/main/Assets/flatcolors.png)
 ###### Image tirée du site web [https://flatuicolors.com](https://flatuicolors.com)
 
 ### 🦋 Présentation
@@ -396,12 +396,12 @@ view.showAnimatedGradientSkeleton(usingGradient : gradient, animation : animatio
 
 | Direction | Aperçu
 |------- | -------
-| .leftRight | ![](Assets/sliding_left_to_right.gif)
-| .rightLeft | ![](Assets/sliding_right_to_left.gif)
-| .topBottom | ![](Assets/sliding_top_to_bottom.gif)
-| .bottomTop | ![](Assets/sliding_bottom_to_top.gif)
-| .topLeftBottomRight | ![](Assets/sliding_topLeft_to_bottomRight.gif)
-| .bottomRightTopLeft | ![](Assets/sliding_bottomRight_to_topLeft.gif)
+| .leftRight | ![](https://github.com/Juanpe/SkeletonView/blob/main/Assets/sliding_left_to_right.gif)
+| .rightLeft | ![](https://github.com/Juanpe/SkeletonView/blob/main/Assets/sliding_right_to_left.gif)
+| .topBottom | ![](https://github.com/Juanpe/SkeletonView/blob/main/Assets/sliding_top_to_bottom.gif)
+| .bottomTop | ![](https://github.com/Juanpe/SkeletonView/blob/main/Assets/sliding_bottom_to_top.gif)
+| .topLeftBottomRight | ![](https://github.com/Juanpe/SkeletonView/blob/main/Assets/sliding_topLeft_to_bottomRight.gif)
+| .bottomRightTopLeft | ![](https://github.com/Juanpe/SkeletonView/blob/main/Assets/sliding_bottomRight_to_topLeft.gif)
 
 > **😉 TRICK!**
 Il existe une autre façon de créer des animations de glissement, en utilisant simplement ce raccourci :
@@ -433,10 +433,10 @@ La valeur par défaut est `crossDissolve(0.25)`.
 </tr>
 <tr>
 <td width="50%">
-<img src="Assets/skeleton_transition_nofade.gif"></img>
+<img src="https://github.com/Juanpe/SkeletonView/blob/main/Assets/skeleton_transition_nofade.gif"></img>
 </td>
 <td width="50%">
-<img src="Assets/skeleton_transition_fade.gif"></img>
+<img src="https://github.com/Juanpe/SkeletonView/blob/main/Assets/skeleton_transition_fade.gif"></img>
 </td>
 </tr>
 </table>
@@ -456,12 +456,12 @@ view.showSkeleton()
 
 | Configuration | Résultat|
 |:-------:|:-------:|
-|<img src="Assets/no_skeletonable.jpg" width="350"/> | <img src="Assets/no_skeletonables_result.png" width="350"/>|
-|<img src="Assets/container_no_skeletonable.jpg" width="350"/> | <img src="Assets/no_skeletonables_result.png" width="350"/>|
-|<img src="Assets/container_skeletonable.jpg" width="350"/> | <img src="Assets/container_skeletonable_result.png" width="350"/>|
-|<img src="Assets/all_skeletonables.jpg" width="350"/>| <img src="Assets/all_skeletonables_result.png" width="350"/>|
-|<img src="Assets/tableview_no_skeletonable.jpg" width="350"/> | <img src="Assets/tableview_no_skeletonable_result.png" height="350"/>|
-|<img src="Assets/tableview_skeletonable.jpg" width="350"/> | <img src="Assets/tableview_skeletonable_result.png" height="350"/>|
+|<img src="https://github.com/Juanpe/SkeletonView/blob/main/Assets/no_skeletonable.jpg" width="350"/> | <img src="https://github.com/Juanpe/SkeletonView/blob/main/Assets/no_skeletonables_result.png" width="350"/>|
+|<img src="https://github.com/Juanpe/SkeletonView/blob/main/Assets/container_no_skeletonable.jpg" width="350"/> | <img src="https://github.com/Juanpe/SkeletonView/blob/main/Assets/no_skeletonables_result.png" width="350"/>|
+|<img src="https://github.com/Juanpe/SkeletonView/blob/main/Assets/container_skeletonable.jpg" width="350"/> | <img src="https://github.com/Juanpe/SkeletonView/blob/main/Assets/container_skeletonable_result.png" width="350"/>|
+|<img src="https://github.com/Juanpe/SkeletonView/blob/main/Assets/all_skeletonables.jpg" width="350"/>| <img src="https://github.com/Juanpe/SkeletonView/blob/main/Assets/all_skeletonables_result.png" width="350"/>|
+|<img src="https://github.com/Juanpe/SkeletonView/blob/main/Assets/tableview_no_skeletonable.jpg" width="350"/> | <img src="https://github.com/Juanpe/SkeletonView/blob/main/Assets/tableview_no_skeletonable_result.png" height="350"/>|
+|<img src="https://github.com/Juanpe/SkeletonView/blob/main/Assets/tableview_skeletonable.jpg" width="350"/> | <img src="https://github.com/Juanpe/SkeletonView/blob/main/Assets/tableview_skeletonable_result.png" height="350"/>|
 
 ### 🔬 Débugger
 
@@ -473,17 +473,17 @@ var skeletonDescription : String
 ```
 La représentation du squelette ressemble à ceci :
 
-![](Assets/debug_description.png)
+![](https://github.com/Juanpe/SkeletonView/blob/main/Assets/debug_description.png)
 
 En outre, vous pouvez activer le nouveau mode **debug**. Il suffit d'ajouter la variable d'environnement `SKELETON_DEBUG` et de l'activer.
 
-![](Assets/debug_mode.png)
+![](https://github.com/Juanpe/SkeletonView/blob/main/Assets/debug_mode.png)
 
 Ensuite, lorsque le squelette apparaît, vous pouvez voir la hiérarchie des vues dans la console Xcode.
 
 <details>
 <summary>Ouvrez pour voir un exemple de sortie</summary>
-<img src="Assets/hierarchy_output.png" />
+<img src="https://github.com/Juanpe/SkeletonView/blob/main/Assets/hierarchy_output.png" />
 </details>
 
 ### 📚 Documentation
@@ -541,7 +541,7 @@ Voir [tous les contributeurs](https://github.com/Juanpe/SkeletonView/graphs/cont
 
 * Juanpe Catalán [![alt text][1.1]][1]
 
-<a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/CDou4xtIK"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy me a coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;"><span style="margin-left:5px"></span></a>
+<a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/CDou4xtIK"><img src="https://www.buymeacoffee.com/https://github.com/Juanpe/SkeletonView/blob/main/Assets/img/custom_images/orange_img.png" alt="Buy me a coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;"><span style="margin-left:5px"></span></a>
 
 ## 👮🏻 Licence
 

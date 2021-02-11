@@ -4,10 +4,10 @@
     <a href="https://github.com/Juanpe/SkeletonView/actions?query=workflow%3ACI">
       <img src="https://github.com/Juanpe/SkeletonView/workflows/CI/badge.svg">
     </a>
-    <a href="https://codebeat.co/projects/github-com-juanpe-skeletonview-master"><img alt="codebeat badge" src="https://codebeat.co/badges/f854fdfd-31e5-4689-ba04-075d83653e60" /></a>
+    <a href="https://codebeat.co/projects/github-com-juanpe-skeletonview-main"><img alt="codebeat badge" src="https://codebeat.co/badges/f854fdfd-31e5-4689-ba04-075d83653e60" /></a>
     <img src="http://img.shields.io/badge/dependency%20manager-swiftpm%2Bcocoapods%2Bcarthage-green" />
     <img src="https://img.shields.io/badge/platforms-ios%2Btvos-green" />
-    <a href="https://badge.bow-swift.io/recipe?name=SkeletonView&description=An%20elegant%20way%20to%20show%20users%20that%20something%20is%20happening%20and%20also%20prepare%20them%20to%20which%20contents%20he%20is%20waiting&url=https://github.com/juanpe/skeletonview&owner=Juanpe&avatar=https://avatars0.githubusercontent.com/u/1409041?v=4&tag=1.8.7"><img src="https://raw.githubusercontent.com/bow-swift/bow-art/master/badges/nef-playgrounds-badge.svg" alt="SkeletonView Playground" style="height:20px"></a>   
+    <a href="https://badge.bow-swift.io/recipe?name=SkeletonView&description=An%20elegant%20way%20to%20show%20users%20that%20something%20is%20happening%20and%20also%20prepare%20them%20to%20which%20contents%20he%20is%20waiting&url=https://github.com/juanpe/skeletonview&owner=Juanpe&avatar=https://avatars0.githubusercontent.com/u/1409041?v=4&tag=1.8.7"><img src="https://raw.githubusercontent.com/bow-swift/bow-art/main/badges/nef-playgrounds-badge.svg" alt="SkeletonView Playground" style="height:20px"></a>   
 </p>
 
 <p align="center">
@@ -19,7 +19,7 @@
   • <a href="#️-contributing">Contributing</a>
 </p>
 
-**🌎 README is available in other languages:  [🇪🇸](https://github.com/Juanpe/SkeletonView/blob/main/README_es.md) . [🇨🇳](https://github.com/Juanpe/SkeletonView/blob/master/README_zh.md) . [🇧🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_pt-br.md) . [🇰🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_ko.md) . [🇫🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_fr.md)**
+**🌎 README is available in other languages:  [🇪🇸](https://github.com/Juanpe/SkeletonView/blob/main/README_es.md) . [🇨🇳](https://github.com/Juanpe/SkeletonView/blob/main/README_zh.md) . [🇧🇷](https://github.com/Juanpe/SkeletonView/blob/main/README_pt-br.md) . [🇰🇷](https://github.com/Juanpe/SkeletonView/blob/main/README_ko.md) . [🇫🇷](https://github.com/Juanpe/SkeletonView/blob/main/README_fr.md)**
 
 Today almost all apps have async processes, such as API requests, long running processes, etc. While the processes are working, usually developers place a loading view to show users that something is going on.
 
