@@ -34,5 +34,5 @@ jobs:
           COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
         run: |
           set -eo pipefail
-          pod lib lint SkeletonView.podspec --allow-warnings
-          pod trunk push SkeletonView.podspec --allow-warnings           
+          pod lib lint --allow-warnings
+          pod trunk push --allow-warnings           
