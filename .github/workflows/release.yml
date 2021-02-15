@@ -7,10 +7,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
           
-      - name: setup fastlane
+      - name: Setup fastlane
         run: brew install fastlane
             
-      - name: publish release
+      - name: Publish release
         id: publish_release
         uses: release-drafter/release-drafter@v5
         with: 
@@ -18,10 +18,10 @@ jobs:
         env:
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: update podspec file
+      - name: Update podspec 
         run: fastlane bump_version next_version:${{ steps.publish_release.outputs.tag_name }}
 
-      - name: commit changes
+      - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           branch: 'main'
@@ -29,7 +29,10 @@ jobs:
         env:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}      
 
-      - name: push pod
+      - name: Deploy to Cocoapods
         env:
           COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
-        run: pod trunk push SkeletonView.podspec --allow-warnings --verbose
+        run: |
+          set -eo pipefail
+          pod lib lint SkeletonView.podspec --allow-warnings
+          pod trunk push SkeletonView.podspec --allow-warnings           
