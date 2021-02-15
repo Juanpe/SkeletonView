@@ -2,13 +2,12 @@ name: Pod lint
 on: [workflow_dispatch]
         
 jobs:
-  release_version:
+  pod_lib_lint:
     runs-on: macOS-latest
     steps:
       - uses: actions/checkout@v2
    
-      - name: Pod lib lint
-        env:
+      - env:
           COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
         run: |
           set -eo pipefail
