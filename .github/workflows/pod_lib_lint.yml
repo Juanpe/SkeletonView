@@ -1,0 +1,14 @@
+name: Pod lint
+on: [workflow_dispatch]
+        
+jobs:
+  pod_lib_lint:
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v2
+   
+      - env:
+          COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
+        run: |
+          set -eo pipefail
+          pod lib lint --allow-warnings         

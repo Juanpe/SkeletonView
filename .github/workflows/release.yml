@@ -1,47 +1,38 @@
 name: Release
-on: 
-  workflow_dispatch:
-    inputs:
-      release_version:
-        description: "Release version"
-        required: true
-        default: ""
+on: [workflow_dispatch]
         
 jobs:
-    bump_pod_version:
-        runs-on: ubuntu-latest
-        steps:
-          - uses: actions/checkout@v2
-          - name: setup fastlane
-            run: brew install fastlane
-          - name: bump version
-            run: fastlane bump_version next_version:${{ github.event.inputs.release_version }}
-          - name: commit changes
-            uses: stefanzweifel/git-auto-commit-action@v4
-            with:
-              branch: 'main'
-              commit_message: 'Bump version ${{ github.event.inputs.release_version }}'
-            env:
-             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
-    
-    create_release:
-        runs-on: ubuntu-latest
-        needs: bump_pod_version
-        steps:
-            - uses: actions/checkout@v2
-            - name: publish release
-              uses: release-drafter/release-drafter@v5
-              with: 
-                publish: true
-              env:
-                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                 
-    pod_trunk_push: 
-        runs-on: macOS-latest
-        needs: create_release
-        steps:
-          - uses: actions/checkout@v2
-          - name: publish pod
-            env:
-              COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
-            run: pod trunk push SkeletonView.podspec --allow-warnings --verbose
+  release_version:
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v2
+          
+      - name: Setup fastlane
+        run: brew install fastlane
+            
+      - name: Publish release
+        id: publish_release
+        uses: release-drafter/release-drafter@v5
+        with: 
+          publish: true
+        env:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update podspec 
+        run: fastlane bump_version next_version:${{ steps.publish_release.outputs.tag_name }}
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          branch: 'main'
+          commit_message: 'Bump version ${{ steps.publish_release.outputs.tag_name }}'
+        env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}      
+
+      - name: Deploy to Cocoapods
+        env:
+          COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
+        run: |
+          set -eo pipefail
+          pod lib lint --allow-warnings
+          pod trunk push --allow-warnings           
