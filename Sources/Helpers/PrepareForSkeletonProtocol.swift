@@ -28,7 +28,12 @@ extension UILabel {
     }
     
     func updateHeightConstraintsIfNeeded() {
-        guard numberOfLines > 1 else { return }
+        guard numberOfLines > 1 || numberOfLines == 0 else { return }
+        
+        // Workaround to simulate content when the label is contained in a `UIStackView`.
+        if isSuperviewAStackView, bounds.height == 0 {
+            text = "This is a placeholder text to simulate content because it's contained in a stack view in order to prevent that the content size will be zero."
+        }
         
         let desiredHeight = desiredHeightBasedOnNumberOfLines
         if desiredHeight > definedMaxHeight {

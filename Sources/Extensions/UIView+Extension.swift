@@ -49,4 +49,8 @@ extension UIView {
         get { return ao_get(pkey: &ViewAssociatedKeys.isSkeletonAnimated) as? Bool ?? false }
         set { ao_set(newValue, pkey: &ViewAssociatedKeys.isSkeletonAnimated) }
     }
+    
+    var isSuperviewAStackView: Bool {
+        superview is UIStackView
+    }
 }
