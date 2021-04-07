@@ -190,6 +190,8 @@ extension UIView {
             isHidden = false
         }
         currentSkeletonConfig?.transition = transition
+        unSwizzleLayoutSubviews()
+        unSwizzleTraitCollectionDidChange()
         removeDummyDataSourceIfNeeded(reloadAfter: reload)
         subviewsSkeletonables.recursiveSearch(leafBlock: {
             recoverViewState(forced: false)
@@ -233,11 +235,33 @@ extension UIView {
         }
     }
 
+    private func unSwizzleLayoutSubviews() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+            DispatchQueue.removeOnce(token: "UIView.SkeletonView.swizzleLayoutSubviews") {
+                swizzle(selector: #selector(UIView.skeletonLayoutSubviews),
+                        with: #selector(UIView.layoutSubviews),
+                        inClass: UIView.self,
+                        usingClass: UIView.self)
+            }
+        }
+    }
+
     private func swizzleTraitCollectionDidChange() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
             DispatchQueue.once(token: "UIView.SkeletonView.swizzleTraitCollectionDidChange") {
                 swizzle(selector: #selector(UIView.traitCollectionDidChange(_:)),
                         with: #selector(UIView.skeletonTraitCollectionDidChange(_:)),
+                        inClass: UIView.self,
+                        usingClass: UIView.self)
+            }
+        }
+    }
+
+    private func unSwizzleTraitCollectionDidChange() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+            DispatchQueue.removeOnce(token: "UIView.SkeletonView.swizzleTraitCollectionDidChange") {
+                swizzle(selector: #selector(UIView.skeletonTraitCollectionDidChange(_:)),
+                        with: #selector(UIView.traitCollectionDidChange(_:)),
                         inClass: UIView.self,
                         usingClass: UIView.self)
             }
