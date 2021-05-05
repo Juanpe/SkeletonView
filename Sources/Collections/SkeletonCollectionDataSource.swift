@@ -36,8 +36,12 @@ extension SkeletonCollectionDataSource: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = originalTableViewDataSource?.collectionSkeletonView(tableView, cellIdentifierForRowAt: indexPath) ?? ""
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        guard let cell = originalTableViewDataSource?.collectionSkeletonView(tableView, cellForRowAt: indexPath) else {
+            let cellIdentifier = originalTableViewDataSource?.collectionSkeletonView(tableView, cellIdentifierForRowAt: indexPath) ?? ""
+            let cellFromId = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+            skeletonViewIfContainerSkeletonIsActive(container: tableView, view: cellFromId)
+            return cellFromId
+        }
         skeletonViewIfContainerSkeletonIsActive(container: tableView, view: cell)
         return cell
     }
