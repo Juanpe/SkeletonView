@@ -32,7 +32,8 @@ extension UILabel {
         
         // Workaround to simulate content when the label is contained in a `UIStackView`.
         if isSuperviewAStackView, bounds.height == 0 {
-            text = "This is a placeholder text to simulate content because it's contained in a stack view in order to prevent that the content size will be zero."
+            // This is a placeholder text to simulate content because it's contained in a stack view in order to prevent that the content size will be zero.
+            text = " "
         }
         
         let desiredHeight = desiredHeightBasedOnNumberOfLines
