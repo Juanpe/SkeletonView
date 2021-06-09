@@ -11,6 +11,8 @@ import UIKit
 public typealias ReusableCellIdentifier = String
 
 class SkeletonCollectionDataSource: NSObject {
+    static let automaticNumberOfRows = -1
+
     weak var originalTableViewDataSource: SkeletonTableViewDataSource?
     weak var originalCollectionViewDataSource: SkeletonCollectionViewDataSource?
     var rowHeight: CGFloat = 0.0
@@ -32,7 +34,17 @@ extension SkeletonCollectionDataSource: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        originalTableViewDataSource?.collectionSkeletonView(tableView, numberOfRowsInSection: section) ?? 0
+        guard let originalTableViewDataSource = originalTableViewDataSource else {
+            return 0
+        }
+
+        let numberOfRows = originalTableViewDataSource.collectionSkeletonView(tableView, numberOfRowsInSection: section)
+
+        if numberOfRows == Self.automaticNumberOfRows {
+            return tableView.estimatedNumberOfRows
+        } else {
+            return numberOfRows
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -50,7 +62,17 @@ extension SkeletonCollectionDataSource: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        originalCollectionViewDataSource?.collectionSkeletonView(collectionView, numberOfItemsInSection: section) ?? 0
+        guard let originalCollectionViewDataSource = originalCollectionViewDataSource else {
+            return 0
+        }
+
+        let numberOfItems = originalCollectionViewDataSource.collectionSkeletonView(collectionView, numberOfItemsInSection: section)
+
+        if numberOfItems == Self.automaticNumberOfRows {
+            return collectionView.estimatedNumberOfRows
+        } else {
+            return numberOfItems
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
