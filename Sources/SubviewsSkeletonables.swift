@@ -18,7 +18,7 @@ extension UITableView {
 		// Some developer trying to call `view.showAnimatedSkeleton()`
 		// when the request or data is loading which sometimes happens before the ViewDidAppear
 		guard window != nil else { return [] }
-		return visibleCells + visibleSectionHeaders + visibleSectionFooters
+        return subviews
     }
 }
 
