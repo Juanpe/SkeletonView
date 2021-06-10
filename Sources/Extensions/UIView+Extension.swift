@@ -16,7 +16,7 @@ enum ViewAssociatedKeys {
     static var buttonViewState = "buttonViewState"
     static var currentSkeletonConfig = "currentSkeletonConfig"
     static var skeletonCornerRadius = "skeletonCornerRadius"
-    static var disableWhenSkeletonIsActive = "disableWhenSkeletonIsActive"
+    static var disabledWhenSkeletonIsActive = "disabledWhenSkeletonIsActive"
 }
 // codebeat:enable[TOO_MANY_IVARS]
 
