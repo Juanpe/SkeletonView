@@ -14,6 +14,12 @@ public extension UIView {
         get { return hiddenWhenSkeletonIsActive }
         set { hiddenWhenSkeletonIsActive = newValue }
     }
+    
+    @IBInspectable
+    var isDisableWhenSkeletonIsActive: Bool {
+        get { return disableWhenSkeletonIsActive }
+        set { disableWhenSkeletonIsActive = newValue }
+    }
 
     @IBInspectable
     var skeletonCornerRadius: Float {
@@ -33,6 +39,11 @@ public extension UIView {
     private var hiddenWhenSkeletonIsActive: Bool {
         get { return ao_get(pkey: &ViewAssociatedKeys.hiddenWhenSkeletonIsActive) as? Bool ?? false }
         set { ao_set(newValue, pkey: &ViewAssociatedKeys.hiddenWhenSkeletonIsActive) }
+    }
+    
+    private var disableWhenSkeletonIsActive: Bool {
+        get { return ao_get(pkey: &ViewAssociatedKeys.disableWhenSkeletonIsActive) as? Bool ?? true }
+        set { ao_set(newValue, pkey: &ViewAssociatedKeys.disableWhenSkeletonIsActive) }
     }
 
     private var skeletonableCornerRadius: Float {
