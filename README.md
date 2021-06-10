@@ -498,7 +498,7 @@ view.isHiddenWhenSkeletonIsActive = true  // This works only when isSkeletonable
 **Don't modify user interaction when the skeleton is active**
 
 
-By default, user interaction is disabled for skeletonized items, but if you don't want to modify the user interaction indicator when skeleton is active, you can use the `isUserInteractionDisabledWhenSkeletonIsActive` property:
+By default, the user interaction is disabled for skeletonized items, but if you don't want to modify the user interaction indicator when skeleton is active, you can use the `isUserInteractionDisabledWhenSkeletonIsActive` property:
 
 ```swift
 view.isUserInteractionDisabledWhenSkeletonIsActive = false  // The view will be active when the skeleton will be active.
