@@ -16,9 +16,9 @@ public extension UIView {
     }
     
     @IBInspectable
-    var isDisableWhenSkeletonIsActive: Bool {
-        get { return disableWhenSkeletonIsActive }
-        set { disableWhenSkeletonIsActive = newValue }
+    var isUserInteractionDisabledWhenSkeletonIsActive: Bool {
+        get { return disabledWhenSkeletonIsActive }
+        set { disabledWhenSkeletonIsActive = newValue }
     }
 
     @IBInspectable
@@ -41,9 +41,9 @@ public extension UIView {
         set { ao_set(newValue, pkey: &ViewAssociatedKeys.hiddenWhenSkeletonIsActive) }
     }
     
-    private var disableWhenSkeletonIsActive: Bool {
-        get { return ao_get(pkey: &ViewAssociatedKeys.disableWhenSkeletonIsActive) as? Bool ?? true }
-        set { ao_set(newValue, pkey: &ViewAssociatedKeys.disableWhenSkeletonIsActive) }
+    private var disabledWhenSkeletonIsActive: Bool {
+        get { return ao_get(pkey: &ViewAssociatedKeys.disabledWhenSkeletonIsActive) as? Bool ?? true }
+        set { ao_set(newValue, pkey: &ViewAssociatedKeys.disabledWhenSkeletonIsActive) }
     }
 
     private var skeletonableCornerRadius: Float {

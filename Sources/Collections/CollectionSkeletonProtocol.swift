@@ -31,14 +31,14 @@ extension CollectionSkeleton where Self: UIScrollView {
     func removeDummyDataSource(reloadAfter: Bool) {}
 
     func disableUserInteraction() {
-        if isDisableWhenSkeletonIsActive {
+        if isUserInteractionDisabledWhenSkeletonIsActive {
             isUserInteractionEnabled = false
             isScrollEnabled = false
         }
     }
     
     func enableUserInteraction() {
-        if isDisableWhenSkeletonIsActive {
+        if isUserInteractionDisabledWhenSkeletonIsActive {
             isUserInteractionEnabled = true
             isScrollEnabled = true
         }

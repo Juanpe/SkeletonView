@@ -10,7 +10,7 @@ import UIKit
 
 extension UIView {
     @objc func prepareViewForSkeleton() {
-        if isDisableWhenSkeletonIsActive {
+        if isUserInteractionDisabledWhenSkeletonIsActive {
             isUserInteractionEnabled = false
         }
         
@@ -59,7 +59,7 @@ extension UILabel {
     override func prepareViewForSkeleton() {
         backgroundColor = .clear
         
-        if isDisableWhenSkeletonIsActive {
+        if isUserInteractionDisabledWhenSkeletonIsActive {
             isUserInteractionEnabled = false
         }
         
@@ -75,7 +75,7 @@ extension UITextView {
     override func prepareViewForSkeleton() {
         backgroundColor = .clear
         
-        if isDisableWhenSkeletonIsActive {
+        if isUserInteractionDisabledWhenSkeletonIsActive {
             isUserInteractionEnabled = false
         }
         
@@ -102,7 +102,7 @@ extension UIImageView {
     override func prepareViewForSkeleton() {
         backgroundColor = .clear
         
-        if isDisableWhenSkeletonIsActive {
+        if isUserInteractionDisabledWhenSkeletonIsActive {
             isUserInteractionEnabled = false
         }
         
@@ -116,7 +116,7 @@ extension UIButton {
     override func prepareViewForSkeleton() {
         backgroundColor = .clear
         
-        if isDisableWhenSkeletonIsActive {
+        if isUserInteractionDisabledWhenSkeletonIsActive {
             isUserInteractionEnabled = false
         }
         
