@@ -495,6 +495,15 @@ Sometimes you wanna hide some view when the animation starts, so there is a quic
 view.isHiddenWhenSkeletonIsActive = true  // This works only when isSkeletonable = true
 ```
 
+**Don't modify user interaction when the skeleton is active**
+
+
+By default, user interaction is disabled for skeletonized items, but if you don't want to modify the user interaction indicator when skeleton is active, you can use the `isDisableWhenSkeletonIsActive` property:
+
+```swift
+view.isDisableWhenSkeletonIsActive = false  // The view will be active when the skeleton will be active.
+```
+
 **Debug**
 
 To facilitate the debug tasks when something is not working fine. **`SkeletonView`** has some new tools.
