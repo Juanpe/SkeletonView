@@ -9,6 +9,8 @@
 import UIKit
  
 extension UICollectionView: CollectionSkeleton {
+    public static let automaticNumberOfSkeletonItems = -1
+
     var estimatedNumberOfRows: Int {
         guard let flowlayout = collectionViewLayout as? UICollectionViewFlowLayout else { return 0 }
         switch flowlayout.scrollDirection {

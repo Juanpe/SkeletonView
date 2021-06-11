@@ -11,8 +11,6 @@ import UIKit
 public typealias ReusableCellIdentifier = String
 
 class SkeletonCollectionDataSource: NSObject {
-    static let automaticNumberOfRows = -1
-
     weak var originalTableViewDataSource: SkeletonTableViewDataSource?
     weak var originalCollectionViewDataSource: SkeletonCollectionViewDataSource?
     var rowHeight: CGFloat = 0.0
@@ -40,7 +38,7 @@ extension SkeletonCollectionDataSource: UITableViewDataSource {
 
         let numberOfRows = originalTableViewDataSource.collectionSkeletonView(tableView, numberOfRowsInSection: section)
 
-        if numberOfRows == Self.automaticNumberOfRows {
+        if numberOfRows == UITableView.automaticNumberOfSkeletonRows {
             return tableView.estimatedNumberOfRows
         } else {
             return numberOfRows
@@ -68,7 +66,7 @@ extension SkeletonCollectionDataSource: UICollectionViewDataSource {
 
         let numberOfItems = originalCollectionViewDataSource.collectionSkeletonView(collectionView, numberOfItemsInSection: section)
 
-        if numberOfItems == Self.automaticNumberOfRows {
+        if numberOfItems == UICollectionView.automaticNumberOfSkeletonItems {
             return collectionView.estimatedNumberOfRows
         } else {
             return numberOfItems
