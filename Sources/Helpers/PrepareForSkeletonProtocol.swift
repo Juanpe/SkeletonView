@@ -48,10 +48,9 @@ extension UILabel {
     }
     
     func restoreBackupHeightConstraintsIfNeeded() {
+        NSLayoutConstraint.deactivate(skeletonHeightConstraints)
+        
         guard !backupHeightConstraints.isEmpty else { return }
-        heightConstraints.forEach {
-            removeConstraint($0)
-        }
         NSLayoutConstraint.activate(backupHeightConstraints)
         backupHeightConstraints.removeAll()
     }
