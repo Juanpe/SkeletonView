@@ -59,7 +59,7 @@ extension UILabel {
         startTransition { [weak self] in
             guard let storedLabelState = self?.labelState else { return }
             
-            self?.restoreBackupHeightConstraints()
+            self?.restoreBackupHeightConstraintsIfNeeded()
             
             if self?.textColor == .clear || forced {
                 self?.textColor = storedLabelState.textColor
