@@ -191,7 +191,7 @@ func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection s
 
 > 📣 **IMPORTANT!** 
 >
-> If you return `SkeletonCollectionDataSource.automaticNumberOfRows` in the above method, it acts like the default behavior (i.e. it calculates how many cells needed to populate the whole tableview).
+> If you return `UITableView.automaticNumberOfSkeletonRows` in the above method, it acts like the default behavior (i.e. it calculates how many cells needed to populate the whole tableview).
 
 There is only one method you need to implement to let Skeleton know the cell identifier. This method doesn't have default implementation:
  ``` swift
