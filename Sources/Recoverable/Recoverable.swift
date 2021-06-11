@@ -57,12 +57,16 @@ extension UILabel {
     override func recoverViewState(forced: Bool) {
         super.recoverViewState(forced: forced)
         startTransition { [weak self] in
-            guard let storedLabelState = self?.labelState else { return }
+            guard let self = self,
+                  let storedLabelState = self.labelState else {
+                return
+            }
             
-            self?.restoreBackupHeightConstraints()
+            NSLayoutConstraint.deactivate(self.skeletonHeightConstraints)
+            self.restoreBackupHeightConstraintsIfNeeded()
             
-            if self?.textColor == .clear || forced {
-                self?.textColor = storedLabelState.textColor
+            if self.textColor == .clear || forced {
+                self.textColor = storedLabelState.textColor
             }
         }
     }
