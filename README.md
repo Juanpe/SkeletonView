@@ -506,7 +506,7 @@ view.isUserInteractionDisabledWhenSkeletonIsActive = false  // The view will be 
 
 **Delayed show skeleton**
 
-You can delay the showIf the views are updated quickly you canAn optional delay applied to the transition, like the transition duration.
+You can delay the presentation of the skeleton if the views update quickly.
 
 ```swift
 func showSkeleton(usingColor: UIColor,
