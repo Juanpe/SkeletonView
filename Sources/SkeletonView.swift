@@ -277,14 +277,22 @@ extension UIView {
             .setHolder(self)
             .build()
             else { return }
-
+        
         self.skeletonLayer = skeletonLayer
-        layer.insertSublayer(skeletonLayer,
-                             at: UInt32.max,
-                             transition: config.transition) { [weak self] in
-                                if config.animated {
-                                    self?.startSkeletonAnimation(config.animation)
-                                }
+        layer.insertSkeletonLayer(
+            skeletonLayer,
+            atIndex: UInt32.max,
+            transition: config.transition
+        ) { [weak self] in
+            guard let self = self else { return }
+            
+            /// Workaround to fix the problem when inserting a sublayer and
+            /// the content offset is modified by the system.
+            (self as? UITextView)?.setContentOffset(.zero, animated: false)
+            
+            if config.animated {
+                self.startSkeletonAnimation(config.animation)
+            }
         }
         status = .on
     }

@@ -83,9 +83,8 @@ struct SkeletonLayer {
     /// If there is more than one line, or custom preferences have been set for a single line, draw custom layers
     func addTextLinesIfNeeded() {
         guard let textView = holderAsTextView else { return }
-        let lineHeight = textView.constraintHeight ?? SkeletonAppearance.default.multilineHeight
-        let config = SkeletonMultilinesLayerConfig(lines: textView.numLines,
-                                                   lineHeight: lineHeight,
+        let config = SkeletonMultilinesLayerConfig(lines: textView.numberOfLines,
+                                                   lineHeight: textView.lineHeight,
                                                    type: type,
                                                    lastLineFillPercent: textView.lastLineFillingPercent,
                                                    multilineCornerRadius: textView.multilineCornerRadius,
@@ -98,9 +97,8 @@ struct SkeletonLayer {
     
     func updateLinesIfNeeded() {
         guard let textView = holderAsTextView else { return }
-        let lineHeight = textView.constraintHeight ?? SkeletonAppearance.default.multilineHeight
-        let config = SkeletonMultilinesLayerConfig(lines: textView.numLines,
-                                                   lineHeight: lineHeight,
+        let config = SkeletonMultilinesLayerConfig(lines: textView.numberOfLines,
+                                                   lineHeight: textView.lineHeight,
                                                    type: type,
                                                    lastLineFillPercent: textView.lastLineFillingPercent,
                                                    multilineCornerRadius: textView.multilineCornerRadius,
@@ -113,7 +111,7 @@ struct SkeletonLayer {
     
     var holderAsTextView: ContainsMultilineText? {
         guard let textView = holder as? ContainsMultilineText,
-            (textView.numLines == -1 || textView.numLines == 0 || textView.numLines > 1 || textView.numLines == 1 && !SkeletonAppearance.default.renderSingleLineAsView) else {
+            (textView.numberOfLines == -1 || textView.numberOfLines == 0 || textView.numberOfLines > 1 || textView.numberOfLines == 1 && !SkeletonAppearance.default.renderSingleLineAsView) else {
                 return nil
         }
         return textView

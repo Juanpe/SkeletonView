@@ -27,15 +27,11 @@ public extension UILabel {
     }
 }
 
-extension UILabel: ContainsMultilineText {
-    var constraintHeight: CGFloat? {
-        backupHeightConstraints.first?.constant
+extension UILabel: ContainsMultilineText {    
+    var lineHeight: CGFloat {
+        backupHeightConstraints.first?.constant ?? SkeletonAppearance.default.multilineHeight
     }
-
-    var numLines: Int {
-        return numberOfLines
-    }
-
+    
     var lastLineFillingPercent: Int {
         get { return ao_get(pkey: &MultilineAssociatedKeys.lastLineFillingPercent) as? Int ?? SkeletonAppearance.default.multilineLastLineFillPercent }
         set { ao_set(newValue, pkey: &MultilineAssociatedKeys.lastLineFillingPercent) }
