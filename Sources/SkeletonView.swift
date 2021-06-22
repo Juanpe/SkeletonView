@@ -9,8 +9,27 @@ public extension UIView {
     ///   - color: The color of the skeleton. Defaults to `SkeletonAppearance.default.tintColor`.
     ///   - transition: The style of the transition when the skeleton appears. Defaults to `.crossDissolve(0.25)`.
     func showSkeleton(usingColor color: UIColor = SkeletonAppearance.default.tintColor, transition: SkeletonTransitionStyle = .crossDissolve(0.25)) {
+        delayedShowSkeletonWorkItem?.cancel()
         let config = SkeletonConfig(type: .solid, colors: [color], transition: transition)
         showSkeleton(skeletonConfig: config)
+    }
+    
+    /// Shows the skeleton using the view that calls this method as root view.
+    ///
+    /// - Parameters:
+    ///   - color: The color of the skeleton. Defaults to `SkeletonAppearance.default.tintColor`.
+    ///   - animated: If the skeleton is animated or not. Defaults to `true`.
+    ///   - delay: The amount of time (measured in seconds) to wait before show the skeleton.
+    ///   - transition: The style of the transition when the skeleton appears. Defaults to `.crossDissolve(0.25)`.
+    func showSkeleton(usingColor color: UIColor = SkeletonAppearance.default.tintColor, animated: Bool = true, delay: TimeInterval, transition: SkeletonTransitionStyle = .crossDissolve(0.25)) {
+        delayedShowSkeletonWorkItem?.cancel()
+        
+        delayedShowSkeletonWorkItem = DispatchWorkItem { [weak self] in
+            let config = SkeletonConfig(type: .solid, colors: [color], animated: animated, transition: transition)
+            self?.showSkeleton(skeletonConfig: config)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: delayedShowSkeletonWorkItem!)
     }
     
     /// Shows the gradient skeleton without animation using the view that calls this method as root view.
@@ -19,8 +38,32 @@ public extension UIView {
     ///   - gradient: The gradient of the skeleton. Defaults to `SkeletonAppearance.default.gradient`.
     ///   - transition: The style of the transition when the skeleton appears. Defaults to `.crossDissolve(0.25)`.
     func showGradientSkeleton(usingGradient gradient: SkeletonGradient = SkeletonAppearance.default.gradient, transition: SkeletonTransitionStyle = .crossDissolve(0.25)) {
+        delayedShowSkeletonWorkItem?.cancel()
         let config = SkeletonConfig(type: .gradient, colors: gradient.colors, transition: transition)
         showSkeleton(skeletonConfig: config)
+    }
+    
+    /// Shows the gradient skeleton using the view that calls this method as root view.
+    ///
+    /// - Parameters:
+    ///   - gradient: The gradient of the skeleton. Defaults to `SkeletonAppearance.default.gradient`.
+    ///   - animated: If the skeleton is animated or not. Defaults to `true`.
+    ///   - delay: The amount of time (measured in seconds) to wait before show the skeleton.
+    ///   - transition: The style of the transition when the skeleton appears. Defaults to `.crossDissolve(0.25)`.
+    func showGradientSkeleton(
+        usingGradient gradient: SkeletonGradient = SkeletonAppearance.default.gradient,
+        animated: Bool = true,
+        delay: TimeInterval,
+        transition: SkeletonTransitionStyle = .crossDissolve(0.25)
+    ) {
+        delayedShowSkeletonWorkItem?.cancel()
+        
+        delayedShowSkeletonWorkItem = DispatchWorkItem { [weak self] in
+            let config = SkeletonConfig(type: .gradient, colors: gradient.colors, animated: animated, transition: transition)
+            self?.showSkeleton(skeletonConfig: config)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: delayedShowSkeletonWorkItem!)
     }
     
     /// Shows the animated skeleton using the view that calls this method as root view.
@@ -32,6 +75,7 @@ public extension UIView {
     ///   - animation: The animation of the skeleton. Defaults to `nil`.
     ///   - transition: The style of the transition when the skeleton appears. Defaults to `.crossDissolve(0.25)`.
     func showAnimatedSkeleton(usingColor color: UIColor = SkeletonAppearance.default.tintColor, animation: SkeletonLayerAnimation? = nil, transition: SkeletonTransitionStyle = .crossDissolve(0.25)) {
+        delayedShowSkeletonWorkItem?.cancel()
         let config = SkeletonConfig(type: .solid, colors: [color], animated: true, animation: animation, transition: transition)
         showSkeleton(skeletonConfig: config)
     }
@@ -45,6 +89,7 @@ public extension UIView {
     ///   - animation: The animation of the skeleton. Defaults to `nil`.
     ///   - transition: The style of the transition when the skeleton appears. Defaults to `.crossDissolve(0.25)`.
     func showAnimatedGradientSkeleton(usingGradient gradient: SkeletonGradient = SkeletonAppearance.default.gradient, animation: SkeletonLayerAnimation? = nil, transition: SkeletonTransitionStyle = .crossDissolve(0.25)) {
+        delayedShowSkeletonWorkItem?.cancel()
         let config = SkeletonConfig(type: .gradient, colors: gradient.colors, animated: true, animation: animation, transition: transition)
         showSkeleton(skeletonConfig: config)
     }
@@ -75,6 +120,7 @@ public extension UIView {
     }
     
     func hideSkeleton(reloadDataAfter reload: Bool = true, transition: SkeletonTransitionStyle = .crossDissolve(0.25)) {
+        delayedShowSkeletonWorkItem?.cancel()
         flowDelegate?.willBeginHidingSkeletons(rootView: self)
         recursiveHideSkeleton(reloadDataAfter: reload, transition: transition, root: self)
     }

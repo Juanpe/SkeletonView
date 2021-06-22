@@ -504,6 +504,24 @@ By default, the user interaction is disabled for skeletonized items, but if you 
 view.isUserInteractionDisabledWhenSkeletonIsActive = false  // The view will be active when the skeleton will be active.
 ```
 
+**Delayed show skeleton**
+
+You can delay the showIf the views are updated quickly you canAn optional delay applied to the transition, like the transition duration.
+
+```swift
+func showSkeleton(usingColor: UIColor,
+                  animated: Bool,
+                  delay: TimeInterval,
+                  transition: SkeletonTransitionStyle)
+```
+
+```swift
+func showGradientSkeleton(usingGradient: SkeletonGradient,
+                          animated: Bool,
+                          delay: TimeInterval,
+                          transition: SkeletonTransitionStyle)
+```
+
 **Debug**
 
 To facilitate the debug tasks when something is not working fine. **`SkeletonView`** has some new tools.
