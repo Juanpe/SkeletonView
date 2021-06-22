@@ -3,13 +3,13 @@
 import UIKit
 
 extension CALayer {
-    func insertSublayer(_ layer: SkeletonLayer, at idx: UInt32, transition: SkeletonTransitionStyle, completion: (() -> Void)? = nil) {
-        insertSublayer(layer.contentLayer, at: idx)
+    func insertSkeletonLayer(_ sublayer: SkeletonLayer, atIndex index: UInt32, transition: SkeletonTransitionStyle, completion: (() -> Void)? = nil) {
+        insertSublayer(sublayer.contentLayer, at: index)
         switch transition {
         case .none:
             completion?()
         case .crossDissolve(let duration):
-			layer.contentLayer.setOpacity(from: 0, to: 1, duration: duration, completion: completion)
+            sublayer.contentLayer.setOpacity(from: 0, to: 1, duration: duration, completion: completion)
         }
     }
 }

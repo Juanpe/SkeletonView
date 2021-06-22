@@ -28,11 +28,19 @@ public extension UITextView {
 }
 
 extension UITextView: ContainsMultilineText {
-    var constraintHeight: CGFloat? {
-        heightConstraints.first?.constant
+    var lineHeight: CGFloat {
+        if let fontLineHeight = font?.lineHeight {
+            if let heightConstraints = heightConstraints.first?.constant {
+                return (fontLineHeight > heightConstraints) ? heightConstraints : fontLineHeight
+            }
+            
+            return fontLineHeight
+        }
+        
+        return SkeletonAppearance.default.multilineHeight
     }
     
-    var numLines: Int {
+    var numberOfLines: Int {
         -1
     }
 	
