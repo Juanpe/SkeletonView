@@ -196,7 +196,7 @@ There is only one method you need to implement to let Skeleton know the cell ide
 }
  ```
  
- By default, the library dequeue the cell for the indexPath, but you can do it as well if you want to do some changes before the skeleton appears:
+ By default, the library dequeues the cells from each indexPath, but you can also do this if you want to make some changes before the skeleton appears:
  ``` swift
  func collectionSkeletonView(_ skeletonView: UITableView, skeletonCellForRowAt indexPath: IndexPath) -> UITableViewCell? {
      let cell = skeletonView.dequeueReusableCell(withIdentifier: "CellIdentifier", for: indexPath) as? Cell
