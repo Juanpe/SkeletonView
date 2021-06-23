@@ -206,7 +206,7 @@ There is only one method you need to implement to let Skeleton know the cell ide
  }
  ```
  
- If you preffer to leave dequeu part to the library you can configure the cell using this method:
+If you prefer to leave the deque part to the library you can configure the cell using this method:
  ``` swift
  func collectionSkeletonView(_ skeletonView: UITableView, prepareCellForSkeleton cell: UITableViewCell, at indexPath: IndexPath) {
      let cell = cell as? Cell
