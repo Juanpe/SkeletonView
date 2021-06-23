@@ -185,13 +185,9 @@ extension ViewController: SkeletonTableViewDataSource {
     }
     
     func collectionSkeletonView(_ skeletonView: UITableView, skeletonCellForRowAt indexPath: IndexPath) -> UITableViewCell? {
-        if indexPath.row == 0 {
-            return nil
-        } else {
-            let cell = skeletonView.dequeueReusableCell(withIdentifier: "CellIdentifier", for: indexPath) as? Cell
-            cell?.textField.isHidden = true
-            return cell
-        }
+        let cell = skeletonView.dequeueReusableCell(withIdentifier: "CellIdentifier", for: indexPath) as? Cell
+        cell?.textField.isHidden = indexPath.row == 0
+        return cell
     }
 }
 

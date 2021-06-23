@@ -176,13 +176,9 @@ extension ViewController: SkeletonCollectionViewDataSource {
     }
     
     func collectionSkeletonView(_ skeletonView: UICollectionView, skeletonCellForItemAt indexPath: IndexPath) -> UICollectionViewCell? {
-        if indexPath.row == 0 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as? CollectionViewCell
-            cell?.isSkeletonable = false
-            return cell
-        } else {
-            return nil
-        }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as? CollectionViewCell
+        cell?.isSkeletonable = indexPath.row != 0
+        return cell
     }
     
     // MARK: - UICollectionViewDataSource
