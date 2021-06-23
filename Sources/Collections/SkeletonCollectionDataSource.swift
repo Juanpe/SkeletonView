@@ -52,12 +52,13 @@ extension SkeletonCollectionDataSource: UITableViewDataSource {
 
             originalTableViewDataSource?.collectionSkeletonViewConfigureCell(fakeCell)
             skeletonViewIfContainerSkeletonIsActive(container: tableView, view: fakeCell)
-            
+
             return fakeCell
         }
 
         originalTableViewDataSource?.collectionSkeletonViewConfigureCell(cell)
         skeletonViewIfContainerSkeletonIsActive(container: tableView, view: cell)
+
         return cell
     }
 }
