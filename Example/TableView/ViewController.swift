@@ -183,6 +183,16 @@ extension ViewController: SkeletonTableViewDataSource {
         cell.label1.text = "cell -> \(indexPath.row)"
         return cell
     }
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, skeletonCellForRowAt indexPath: IndexPath) -> UITableViewCell? {
+        if indexPath.row == 0 {
+            return nil
+        } else {
+            let cell = skeletonView.dequeueReusableCell(withIdentifier: "CellIdentifier", for: indexPath) as? Cell
+            cell?.textField.isHidden = true
+            return cell
+        }
+    }
 }
 
 extension ViewController: SkeletonTableViewDelegate {
