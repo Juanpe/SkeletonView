@@ -12,6 +12,7 @@ public protocol SkeletonTableViewDataSource: UITableViewDataSource {
     func numSections(in collectionSkeletonView: UITableView) -> Int
     func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int
     func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier
+    func collectionSkeletonView(_ skeletonView: UITableView, skeletonCellForRowAt indexPath: IndexPath) -> UITableViewCell?
 }
 
 public extension SkeletonTableViewDataSource {
@@ -26,6 +27,10 @@ public extension SkeletonTableViewDataSource {
     @available(*, deprecated, renamed: "collectionSkeletonView(_:cellIdentifierForRowAt:)")
     func collectionSkeletonView(_ skeletonView: UITableView, cellIdenfierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
         return collectionSkeletonView(skeletonView, cellIdentifierForRowAt: indexPath)
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, skeletonCellForRowAt indexPath: IndexPath) -> UITableViewCell? {
+        nil
     }
 }
 

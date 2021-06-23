@@ -46,8 +46,15 @@ extension SkeletonCollectionDataSource: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = originalTableViewDataSource?.collectionSkeletonView(tableView, cellIdentifierForRowAt: indexPath) ?? ""
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        guard let cell = originalTableViewDataSource?.collectionSkeletonView(tableView, skeletonCellForRowAt: indexPath) else {
+            let cellIdentifier = originalTableViewDataSource?.collectionSkeletonView(tableView, cellIdentifierForRowAt: indexPath) ?? ""
+            let fakeCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+            
+            skeletonViewIfContainerSkeletonIsActive(container: tableView, view: fakeCell)
+            
+            return fakeCell
+        }
+        
         skeletonViewIfContainerSkeletonIsActive(container: tableView, view: cell)
         return cell
     }
@@ -74,8 +81,15 @@ extension SkeletonCollectionDataSource: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cellIdentifier = originalCollectionViewDataSource?.collectionSkeletonView(collectionView, cellIdentifierForItemAt: indexPath) ?? ""
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath)
+        guard let cell = originalCollectionViewDataSource?.collectionSkeletonView(collectionView, skeletonCellForItemAt: indexPath) else {
+            let cellIdentifier = originalCollectionViewDataSource?.collectionSkeletonView(collectionView, cellIdentifierForItemAt: indexPath) ?? ""
+            let fakeCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath)
+            
+            skeletonViewIfContainerSkeletonIsActive(container: collectionView, view: fakeCell)
+            
+            return fakeCell
+        }
+            
         skeletonViewIfContainerSkeletonIsActive(container: collectionView, view: cell)
         return cell
     }

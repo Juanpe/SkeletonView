@@ -169,19 +169,15 @@ If you want to show the skeleton in a ```UITableView```, you need to conform to 
 
 ``` swift
 public protocol SkeletonTableViewDataSource: UITableViewDataSource {
-    func numSections(in collectionSkeletonView: UITableView) -> Int
+    func numSections(in collectionSkeletonView: UITableView) -> Int // Default: 1
     func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int
     func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier
+    func collectionSkeletonView(_ skeletonView: UITableView, skeletonCellForRowAt indexPath: IndexPath) -> UITableViewCell? // Default: nil
 }
 ```
 As you can see, this protocol inherits from ```UITableViewDataSource```, so you can replace this protocol with the skeleton protocol.
 
-This protocol has a default implementation:
-
-``` swift
-func numSections(in collectionSkeletonView: UITableView) -> Int
-// Default: 1
-```
+This protocol has a default implementation for some methods. For example, the number of rows for each section is calculated in runtime:
 
 ``` swift
 func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int
@@ -195,14 +191,18 @@ func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection s
 
 There is only one method you need to implement to let Skeleton know the cell identifier. This method doesn't have default implementation:
  ``` swift
- func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier
- ```
-
-**Example**
- ``` swift
  func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
     return "CellIdentifier"
 }
+ ```
+ 
+ By default, the library dequeues the cells from each indexPath, but you can also do this if you want to make some changes before the skeleton appears:
+ ``` swift
+ func collectionSkeletonView(_ skeletonView: UITableView, skeletonCellForRowAt indexPath: IndexPath) -> UITableViewCell? {
+     let cell = skeletonView.dequeueReusableCell(withIdentifier: "CellIdentifier", for: indexPath) as? Cell
+     cell?.textField.isHidden = indexPath.row == 0
+     return cell
+ }
  ```
  
 Besides, you can skeletonize both the headers and footers. You need to conform to `SkeletonTableViewDelegate` protocol.
@@ -232,10 +232,11 @@ For `UICollectionView`, you need to conform to `SkeletonCollectionViewDataSource
 
 ``` swift
 public protocol SkeletonCollectionViewDataSource: UICollectionViewDataSource {
-    func numSections(in collectionSkeletonView: UICollectionView) -> Int // default: 1
+    func numSections(in collectionSkeletonView: UICollectionView) -> Int  // default: 1
     func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> ReusableCellIdentifier
     func collectionSkeletonView(_ skeletonView: UICollectionView, supplementaryViewIdentifierOfKind: String, at indexPath: IndexPath) -> ReusableCellIdentifier? // default: nil
+    func collectionSkeletonView(_ skeletonView: UICollectionView, skeletonCellForItemAt indexPath: IndexPath) -> UICollectionViewCell?  // default: nil
 }
 ```
 
