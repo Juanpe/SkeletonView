@@ -189,6 +189,11 @@ extension ViewController: SkeletonTableViewDataSource {
         cell?.textField.isHidden = indexPath.row == 0
         return cell
     }
+
+    func collectionSkeletonView(_ skeletonView: UITableView, prepareCellForSkeleton cell: UITableViewCell, at indexPath: IndexPath) {
+        let cell = cell as? Cell
+        cell?.textField.isHidden = indexPath.row == 0
+    }
 }
 
 extension ViewController: SkeletonTableViewDelegate {

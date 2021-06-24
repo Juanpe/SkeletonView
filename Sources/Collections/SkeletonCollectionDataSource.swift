@@ -49,12 +49,14 @@ extension SkeletonCollectionDataSource: UITableViewDataSource {
         guard let cell = originalTableViewDataSource?.collectionSkeletonView(tableView, skeletonCellForRowAt: indexPath) else {
             let cellIdentifier = originalTableViewDataSource?.collectionSkeletonView(tableView, cellIdentifierForRowAt: indexPath) ?? ""
             let fakeCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-            
+
+            originalTableViewDataSource?.collectionSkeletonView(tableView, prepareCellForSkeleton: fakeCell, at: indexPath)
             skeletonViewIfContainerSkeletonIsActive(container: tableView, view: fakeCell)
             
             return fakeCell
         }
-        
+
+        originalTableViewDataSource?.collectionSkeletonView(tableView, prepareCellForSkeleton: cell, at: indexPath)
         skeletonViewIfContainerSkeletonIsActive(container: tableView, view: cell)
         return cell
     }
@@ -84,12 +86,14 @@ extension SkeletonCollectionDataSource: UICollectionViewDataSource {
         guard let cell = originalCollectionViewDataSource?.collectionSkeletonView(collectionView, skeletonCellForItemAt: indexPath) else {
             let cellIdentifier = originalCollectionViewDataSource?.collectionSkeletonView(collectionView, cellIdentifierForItemAt: indexPath) ?? ""
             let fakeCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath)
-            
+
+            originalCollectionViewDataSource?.collectionSkeletonView(collectionView, prepareCellForSkeleton: fakeCell, at: indexPath)
             skeletonViewIfContainerSkeletonIsActive(container: collectionView, view: fakeCell)
             
             return fakeCell
         }
-            
+
+        originalCollectionViewDataSource?.collectionSkeletonView(collectionView, prepareCellForSkeleton: cell, at: indexPath)
         skeletonViewIfContainerSkeletonIsActive(container: collectionView, view: cell)
         return cell
     }
