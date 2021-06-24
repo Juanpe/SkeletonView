@@ -565,9 +565,12 @@ Then, when the skeleton appears, you can see the view hierarchy in the Xcode con
 * tvOS 9.0+
 * Swift 5
 
+## :sweat_smile: Need help
+If you need help about how to use **SkeletonView**, use [Stack Overflow](https://stackoverflow.com/questions/tagged/skeletonview) and tag `skeletonview`.
 
 ## ❤️ Contributing
 This is an open source project, so feel free to contribute. How?
+
 - Open an [issue](https://github.com/Juanpe/SkeletonView/issues/new).
 - Send feedback via [email](mailto://juanpecatalan.com).
 - Propose your own fixes, suggestions and open a pull request with the changes.
