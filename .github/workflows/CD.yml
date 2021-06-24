@@ -1,0 +1,64 @@
+name: CD
+
+on:
+  pull_request:
+    branches: [main]
+    types: [closed]
+        
+jobs:
+  release_version:
+    if: github.event.pull_request.milestone == null && github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+          
+      - name: Setup fastlane
+        run: brew install fastlane
+            
+      - name: Publish release
+        id: publish_release
+        uses: release-drafter/release-drafter@v5
+        with: 
+          publish: true
+        env:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update podspec 
+        run: fastlane bump_version next_version:${{ steps.publish_release.outputs.tag_name }}
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          branch: 'main'
+          commit_message: 'Bump version ${{ steps.publish_release.outputs.tag_name }}'
+        env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}      
+
+      - name: Deploy to Cocoapods
+        env:
+          COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
+        run: |
+          set -eo pipefail
+          pod lib lint --allow-warnings
+          pod trunk push --allow-warnings    
+
+      - name: Communicate on PR released
+        uses: unsplash/comment-on-pr@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          msg: |
+            Congratulations! 🎉 This was released as part of [SkeletonView ${{ steps.publish_release.outputs.tag_name }}](${{ steps.publish_release.outputs.html_url }}) 🚀  
+
+      - name: Tweet the release
+        uses: ethomson/send-tweet-action@v1
+        with:
+          consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
+          consumer-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
+          access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          access-token-secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+          status: |
+            🎉 New release ${{ steps.publish_release.outputs.tag_name }} is out 🚀
+
+            Check out all the changes here: 
+            ${{ steps.publish_release.outputs.html_url }} 
