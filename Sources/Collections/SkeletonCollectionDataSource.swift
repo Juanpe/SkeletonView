@@ -107,7 +107,7 @@ extension SkeletonCollectionDataSource: UICollectionViewDataSource {
             return view
         }
         
-        return UICollectionReusableView()
+        return originalCollectionViewDataSource?.collectionView?(collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath) ?? UICollectionReusableView()
     }
     
 }
