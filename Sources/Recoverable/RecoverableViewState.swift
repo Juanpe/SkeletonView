@@ -59,3 +59,11 @@ struct RecoverableButtonViewState {
         self.title = view.titleLabel?.text
     }
 }
+
+struct RecoverableTableViewHeaderFooterViewState {
+    var backgroundViewColor: UIColor?
+    
+    init(view: UITableViewHeaderFooterView) {
+        self.backgroundViewColor = view.backgroundView?.backgroundColor
+    }
+}
