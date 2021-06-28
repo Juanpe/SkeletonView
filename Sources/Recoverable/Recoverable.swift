@@ -161,3 +161,22 @@ extension UIButton {
         }
     }
 }
+
+extension UITableViewHeaderFooterView {
+    var headerFooterState: RecoverableTableViewHeaderFooterViewState? {
+        get { return ao_get(pkey: &ViewAssociatedKeys.headerFooterViewState) as? RecoverableTableViewHeaderFooterViewState }
+        set { ao_setOptional(newValue, pkey: &ViewAssociatedKeys.headerFooterViewState) }
+    }
+    
+    override func saveViewState() {
+        super.saveViewState()
+        headerFooterState = RecoverableTableViewHeaderFooterViewState(view: self)
+    }
+    
+    override func recoverViewState(forced: Bool) {
+        super.recoverViewState(forced: forced)
+        startTransition { [weak self] in
+            self?.backgroundView?.backgroundColor = self?.headerFooterState?.backgroundViewColor
+        }
+    }
+}
