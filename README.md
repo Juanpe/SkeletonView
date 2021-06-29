@@ -45,7 +45,7 @@ Enjoy it! 🙂
 - [✨ Miscellaneous](#-miscellaneous)
 - [❤️ Contributing](#️-contributing)
 - [📢 Mentions](#-mentions)
-- [🏆 Sponsors](#️-sponsors)
+- [🏆 Sponsors](#-sponsors)
 - [👨🏻‍💻 Author](#-author)
 - [👮🏻 License](#-license)
 
