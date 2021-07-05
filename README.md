@@ -39,7 +39,6 @@ Enjoy it! 🙂
   - [🔠 Texts](#-texts)
   - [🦋 Appearance](#-appearance)
   - [🎨 Custom colors](#-custom-colors)
-        - [Image captured from website https://flatuicolors.com](#image-captured-from-website-httpsflatuicolorscom)
   - [🏃‍♀️ Animations](#️-animations)
   - [🏄 Transitions](#-transitions)
 - [✨ Miscellaneous](#-miscellaneous)
