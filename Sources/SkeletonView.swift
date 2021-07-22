@@ -363,9 +363,9 @@ extension UIView {
             let skeletonLayer = skeletonLayer,
             let transitionStyle = currentSkeletonConfig?.transition else { return }
         skeletonLayer.stopAnimation()
+        status = .off
         skeletonLayer.removeLayer(transition: transitionStyle) {
             self.skeletonLayer = nil
-            self.status = .off
             self.currentSkeletonConfig = nil
         }
     }
