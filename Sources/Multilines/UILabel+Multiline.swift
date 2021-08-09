@@ -29,7 +29,13 @@ public extension UILabel {
 
 extension UILabel: ContainsMultilineText {    
     var lineHeight: CGFloat {
-        backupHeightConstraints.first?.constant ?? SkeletonAppearance.default.multilineHeight
+        if let fontLineHeight = font?.lineHeight {
+            if let heightConstraints = backupHeightConstraints.first?.constant {
+                return (fontLineHeight > heightConstraints) ? heightConstraints : fontLineHeight
+            }
+            return fontLineHeight
+        }
+        return SkeletonAppearance.default.multilineHeight
     }
     
     var lastLineFillingPercent: Int {
