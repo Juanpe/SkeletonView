@@ -36,6 +36,7 @@ struct SkeletonMultilinesLayerConfig {
 	var multilineCornerRadius: Int
 	var multilineSpacing: CGFloat
 	var paddingInsets: UIEdgeInsets
+    var alignment: NSTextAlignment
     var isRTL: Bool
     
     /// Returns padding insets taking into account if the RTL is activated
@@ -69,6 +70,7 @@ extension CALayer {
 			.setMultilineSpacing(config.multilineSpacing)
             .setPadding(config.paddingInsets)
             .setHeight(height)
+            .setAlignment(config.alignment)
             .setIsRTL(config.isRTL)
     
         (0..<numberOfSublayers).forEach { index in
@@ -97,10 +99,13 @@ extension CALayer {
         for (index, layer) in currentSkeletonSublayers.enumerated() {
             let width = calculatedWidthForLine(at: index, totalLines: numberOfSublayers, lastLineFillPercent: lastLineFillPercent, paddingInsets: paddingInsets)
             layer.updateLayerFrame(for: index,
+                                   totalLines: numberOfSublayers,
                                    size: CGSize(width: width, height: height),
                                    multilineSpacing: multilineSpacing,
                                    paddingInsets: paddingInsets,
-                                   isRTL: config.isRTL)
+                                   alignment: config.alignment,
+                                   isRTL: config.isRTL
+            )
         }
     }
 
@@ -112,14 +117,19 @@ extension CALayer {
         return width
     }
 
-    func updateLayerFrame(for index: Int, size: CGSize, multilineSpacing: CGFloat, paddingInsets: UIEdgeInsets, isRTL: Bool) {
+    func updateLayerFrame(for index: Int, totalLines: Int, size: CGSize, multilineSpacing: CGFloat, paddingInsets: UIEdgeInsets, alignment: NSTextAlignment, isRTL: Bool) {
         let spaceRequiredForEachLine = size.height + multilineSpacing
         let newFrame = CGRect(x: paddingInsets.left,
                               y: CGFloat(index) * spaceRequiredForEachLine + paddingInsets.top,
                               width: size.width,
                               height: size.height)
-        
+
         frame = flipRectForRTLIfNeeded(newFrame, isRTL: isRTL)
+
+        // Align last line according to layer text alignment if not RTL
+        if !isRTL && index == totalLines - 1 && totalLines != 1 {
+            frame = alignLastLineRect(newFrame, alignment: alignment)
+        }
     }
     
     private func calculateNumLines(for config: SkeletonMultilinesLayerConfig) -> Int {
@@ -140,6 +150,20 @@ extension CALayer {
         }
         
         return calculatedNumberOfLines
+    }
+
+    private func alignLastLineRect(_ rect: CGRect, alignment: NSTextAlignment) -> CGRect {
+        var newRect = rect
+
+        switch alignment {
+        case .center:
+            newRect.origin.x = rect.origin.x + ((superlayer?.bounds.width ?? 0) - rect.width) / 2
+        case .right:
+            newRect.origin.x = (superlayer?.bounds.width ?? 0) - rect.origin.x - rect.width
+        default:
+            break
+        }
+        return newRect
     }
     
     private func flipRectForRTLIfNeeded(_ rect: CGRect, isRTL: Bool) -> CGRect {

@@ -12,6 +12,7 @@ class SkeletonMultilineLayerBuilder {
     var cornerRadius: Int?
     var multilineSpacing: CGFloat = SkeletonAppearance.default.multilineSpacing
     var paddingInsets: UIEdgeInsets = .zero
+    var alignment: NSTextAlignment = .left
     var isRTL: Bool = false
 
     @discardableResult
@@ -55,6 +56,12 @@ class SkeletonMultilineLayerBuilder {
         self.paddingInsets = insets
         return self
     }
+
+    @discardableResult
+    func setAlignment(_ alignment: NSTextAlignment) -> SkeletonMultilineLayerBuilder {
+        self.alignment = alignment
+        return self
+    }
     
     @discardableResult
     func setIsRTL(_ isRTL: Bool) -> SkeletonMultilineLayerBuilder {
@@ -74,9 +81,11 @@ class SkeletonMultilineLayerBuilder {
         layer.anchorPoint = .zero
         layer.name = CALayer.skeletonSubLayersName
         layer.updateLayerFrame(for: index,
+                               totalLines: layer.skeletonSublayers.count,
                                size: CGSize(width: width, height: height),
                                multilineSpacing: multilineSpacing,
                                paddingInsets: paddingInsets,
+                               alignment: alignment,
                                isRTL: isRTL)
 
         layer.cornerRadius = CGFloat(radius)
