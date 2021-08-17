@@ -124,11 +124,10 @@ extension CALayer {
                               width: size.width,
                               height: size.height)
 
-        frame = flipRectForRTLIfNeeded(newFrame, isRTL: isRTL)
-
-        // Align last line according to layer text alignment if not RTL
-        if !isRTL && index == totalLines - 1 && totalLines != 1 {
-            frame = alignLastLineRect(newFrame, alignment: alignment)
+        if index == totalLines - 1 && totalLines != 1 {
+            frame = alignLayerFrame(newFrame, alignment: alignment, isRTL: isRTL)
+        } else {
+            frame = newFrame
         }
     }
     
@@ -152,25 +151,21 @@ extension CALayer {
         return calculatedNumberOfLines
     }
 
-    private func alignLastLineRect(_ rect: CGRect, alignment: NSTextAlignment) -> CGRect {
+    private func alignLayerFrame(_ rect: CGRect, alignment: NSTextAlignment, isRTL: Bool) -> CGRect {
         var newRect = rect
 
         switch alignment {
+        case .natural where isRTL,
+             .right:
+            newRect.origin.x = (superlayer?.bounds.width ?? 0) - rect.origin.x - rect.width
         case .center:
             newRect.origin.x = rect.origin.x + ((superlayer?.bounds.width ?? 0) - rect.width) / 2
-        case .right:
-            newRect.origin.x = (superlayer?.bounds.width ?? 0) - rect.origin.x - rect.width
-        default:
+        case .natural, .left, .justified:
+            break
+        @unknown default:
             break
         }
-        return newRect
-    }
-    
-    private func flipRectForRTLIfNeeded(_ rect: CGRect, isRTL: Bool) -> CGRect {
-        var newRect = rect
-        if isRTL {
-            newRect.origin.x = (superlayer?.bounds.width ?? 0) - rect.origin.x - rect.width
-        }
+
         return newRect
     }
 }

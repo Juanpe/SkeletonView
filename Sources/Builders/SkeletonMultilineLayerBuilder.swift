@@ -12,7 +12,7 @@ class SkeletonMultilineLayerBuilder {
     var cornerRadius: Int?
     var multilineSpacing: CGFloat = SkeletonAppearance.default.multilineSpacing
     var paddingInsets: UIEdgeInsets = .zero
-    var alignment: NSTextAlignment = .left
+    var alignment: NSTextAlignment = .natural
     var isRTL: Bool = false
 
     @discardableResult
