@@ -34,7 +34,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "SkeletonView::SkeletonViewTests"
                BuildableName = "SkeletonViewTests.xctest"
-               BlueprintName = "SkeletonViewTests"
+               BlueprintName = "SkeletonView iOS Tests"
                ReferencedContainer = "container:SkeletonView.xcodeproj">
             </BuildableReference>
          </TestableReference>
