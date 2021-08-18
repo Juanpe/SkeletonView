@@ -20,7 +20,6 @@
 		F556F57026CD1F3900A80B83 /* SkeletonTableViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* SkeletonTableViewProtocols.swift */; };
 		F556F57126CD1F3900A80B83 /* UITableView+CollectionSkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* UITableView+CollectionSkeleton.swift */; };
 		F556F57226CD1F3900A80B83 /* UIView+CollectionSkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* UIView+CollectionSkeleton.swift */; };
-		F556F57326CD1F3900A80B83 /* SkeletonDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* SkeletonDebug.swift */; };
 		F556F57426CD1F3900A80B83 /* CALayer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* CALayer+Extensions.swift */; };
 		F556F57526CD1F3900A80B83 /* Int+Whitespaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* Int+Whitespaces.swift */; };
 		F556F57626CD1F3900A80B83 /* ProcessInfo+XCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* ProcessInfo+XCTest.swift */; };
@@ -49,6 +48,10 @@
 		F556F58D26CD1F3900A80B83 /* SubviewsSkeletonables.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_58 /* SubviewsSkeletonables.swift */; };
 		F556F58E26CD1F3900A80B83 /* SkeletonTransitionStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_60 /* SkeletonTransitionStyle.swift */; };
 		F556F58F26CD1F3900A80B83 /* UIView+Transitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_61 /* UIView+Transitions.swift */; };
+		F556F64D26CD2CF800A80B83 /* SkeletonDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F64C26CD2CF700A80B83 /* SkeletonDebug.swift */; };
+		F556F64E26CD2D3D00A80B83 /* SkeletonDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F64C26CD2CF700A80B83 /* SkeletonDebug.swift */; };
+		F556F65026CD2DFD00A80B83 /* PublicSkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F64F26CD2DFD00A80B83 /* PublicSkeletonView.swift */; };
+		F556F65126CD2DFD00A80B83 /* PublicSkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F64F26CD2DFD00A80B83 /* PublicSkeletonView.swift */; };
 		OBJ_100 /* CALayer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* CALayer+Extensions.swift */; };
 		OBJ_101 /* Int+Whitespaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* Int+Whitespaces.swift */; };
 		OBJ_102 /* ProcessInfo+XCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* ProcessInfo+XCTest.swift */; };
@@ -92,7 +95,6 @@
 		OBJ_96 /* SkeletonTableViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* SkeletonTableViewProtocols.swift */; };
 		OBJ_97 /* UITableView+CollectionSkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* UITableView+CollectionSkeleton.swift */; };
 		OBJ_98 /* UIView+CollectionSkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* UIView+CollectionSkeleton.swift */; };
-		OBJ_99 /* SkeletonDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* SkeletonDebug.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +135,8 @@
 		F556F56226CD1D8500A80B83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F556F56326CD1D8B00A80B83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F556F59426CD1F3900A80B83 /* SkeletonView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SkeletonView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F556F64C26CD2CF700A80B83 /* SkeletonDebug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonDebug.swift; sourceTree = "<group>"; };
+		F556F64F26CD2DFD00A80B83 /* PublicSkeletonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicSkeletonView.swift; sourceTree = "<group>"; };
 		OBJ_11 /* SkeletonLayerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLayerBuilder.swift; sourceTree = "<group>"; };
 		OBJ_12 /* SkeletonMultilineLayerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonMultilineLayerBuilder.swift; sourceTree = "<group>"; };
 		OBJ_14 /* CollectionSkeletonProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionSkeletonProtocol.swift; sourceTree = "<group>"; };
@@ -145,7 +149,6 @@
 		OBJ_24 /* SkeletonTableViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonTableViewProtocols.swift; sourceTree = "<group>"; };
 		OBJ_25 /* UITableView+CollectionSkeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+CollectionSkeleton.swift"; sourceTree = "<group>"; };
 		OBJ_26 /* UIView+CollectionSkeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CollectionSkeleton.swift"; sourceTree = "<group>"; };
-		OBJ_28 /* SkeletonDebug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonDebug.swift; sourceTree = "<group>"; };
 		OBJ_30 /* CALayer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extensions.swift"; sourceTree = "<group>"; };
 		OBJ_31 /* Int+Whitespaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Whitespaces.swift"; sourceTree = "<group>"; };
 		OBJ_32 /* ProcessInfo+XCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProcessInfo+XCTest.swift"; sourceTree = "<group>"; };
@@ -286,6 +289,30 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F556F64A26CD2CD100A80B83 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				F556F64F26CD2DFD00A80B83 /* PublicSkeletonView.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		F556F64B26CD2CD600A80B83 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				F556F65226CD2E0A00A80B83 /* Debug */,
+			);
+			path = Internal;
+			sourceTree = "<group>";
+		};
+		F556F65226CD2E0A00A80B83 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				F556F64C26CD2CF700A80B83 /* SkeletonDebug.swift */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
 		OBJ_10 /* Builders */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,14 +361,6 @@
 				OBJ_25 /* UITableView+CollectionSkeleton.swift */,
 			);
 			path = TableViews;
-			sourceTree = "<group>";
-		};
-		OBJ_27 /* Debug */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_28 /* SkeletonDebug.swift */,
-			);
-			path = Debug;
 			sourceTree = "<group>";
 		};
 		OBJ_29 /* Extensions */ = {
@@ -434,11 +453,12 @@
 		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				F556F64B26CD2CD600A80B83 /* Internal */,
+				F556F64A26CD2CD100A80B83 /* API */,
 				F556F55F26CD1D4400A80B83 /* Supporting Files */,
 				OBJ_8 /* Appearance */,
 				OBJ_10 /* Builders */,
 				OBJ_13 /* Collections */,
-				OBJ_27 /* Debug */,
 				OBJ_29 /* Extensions */,
 				OBJ_40 /* Helpers */,
 				OBJ_45 /* Multilines */,
@@ -551,6 +571,7 @@
 			files = (
 				F556F56626CD1F3900A80B83 /* SkeletonAppearance.swift in Sources */,
 				F556F56726CD1F3900A80B83 /* SkeletonLayerBuilder.swift in Sources */,
+				F556F65126CD2DFD00A80B83 /* PublicSkeletonView.swift in Sources */,
 				F556F56826CD1F3900A80B83 /* SkeletonMultilineLayerBuilder.swift in Sources */,
 				F556F56926CD1F3900A80B83 /* CollectionSkeletonProtocol.swift in Sources */,
 				F556F56A26CD1F3900A80B83 /* SkeletonCollectionViewProtocols.swift in Sources */,
@@ -562,7 +583,6 @@
 				F556F57026CD1F3900A80B83 /* SkeletonTableViewProtocols.swift in Sources */,
 				F556F57126CD1F3900A80B83 /* UITableView+CollectionSkeleton.swift in Sources */,
 				F556F57226CD1F3900A80B83 /* UIView+CollectionSkeleton.swift in Sources */,
-				F556F57326CD1F3900A80B83 /* SkeletonDebug.swift in Sources */,
 				F556F57426CD1F3900A80B83 /* CALayer+Extensions.swift in Sources */,
 				F556F57526CD1F3900A80B83 /* Int+Whitespaces.swift in Sources */,
 				F556F57626CD1F3900A80B83 /* ProcessInfo+XCTest.swift in Sources */,
@@ -590,6 +610,7 @@
 				F556F58C26CD1F3900A80B83 /* SkeletonView.swift in Sources */,
 				F556F58D26CD1F3900A80B83 /* SubviewsSkeletonables.swift in Sources */,
 				F556F58E26CD1F3900A80B83 /* SkeletonTransitionStyle.swift in Sources */,
+				F556F64E26CD2D3D00A80B83 /* SkeletonDebug.swift in Sources */,
 				F556F58F26CD1F3900A80B83 /* UIView+Transitions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -608,6 +629,7 @@
 			files = (
 				OBJ_86 /* SkeletonAppearance.swift in Sources */,
 				OBJ_87 /* SkeletonLayerBuilder.swift in Sources */,
+				F556F65026CD2DFD00A80B83 /* PublicSkeletonView.swift in Sources */,
 				OBJ_88 /* SkeletonMultilineLayerBuilder.swift in Sources */,
 				OBJ_89 /* CollectionSkeletonProtocol.swift in Sources */,
 				OBJ_90 /* SkeletonCollectionViewProtocols.swift in Sources */,
@@ -619,7 +641,6 @@
 				OBJ_96 /* SkeletonTableViewProtocols.swift in Sources */,
 				OBJ_97 /* UITableView+CollectionSkeleton.swift in Sources */,
 				OBJ_98 /* UIView+CollectionSkeleton.swift in Sources */,
-				OBJ_99 /* SkeletonDebug.swift in Sources */,
 				OBJ_100 /* CALayer+Extensions.swift in Sources */,
 				OBJ_101 /* Int+Whitespaces.swift in Sources */,
 				OBJ_102 /* ProcessInfo+XCTest.swift in Sources */,
@@ -647,6 +668,7 @@
 				OBJ_124 /* SkeletonView.swift in Sources */,
 				OBJ_125 /* SubviewsSkeletonables.swift in Sources */,
 				OBJ_126 /* SkeletonTransitionStyle.swift in Sources */,
+				F556F64D26CD2CF800A80B83 /* SkeletonDebug.swift in Sources */,
 				OBJ_127 /* UIView+Transitions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
