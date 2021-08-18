@@ -7,8 +7,19 @@
 //
 //      https://opensource.org/licenses/MIT
 //
-//  PublicSkeletonView.swift
+//  Int+Extensions.swift
 //
-//  Created by Juanpe Catalán on 18/8/21.
 
 import Foundation
+
+extension Int {
+    
+    var whitespace: String {
+        whitespaces
+    }
+    
+    var whitespaces: String {
+        String(repeating: " ", count: self)
+    }
+    
+}

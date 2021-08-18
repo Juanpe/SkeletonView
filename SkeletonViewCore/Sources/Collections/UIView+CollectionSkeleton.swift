@@ -12,7 +12,7 @@ extension UIView {
     func addDummyDataSourceIfNeeded() {
         guard let collection = self as? CollectionSkeleton,
             !ProcessInfo.isRunningXCTest else { return }
-        status = .on
+        _status = .on
         collection.addDummyDataSource()
         collection.disableUserInteraction()
     }
@@ -26,7 +26,7 @@ extension UIView {
     func removeDummyDataSourceIfNeeded(reloadAfter reload: Bool = true) {
         guard let collection = self as? CollectionSkeleton,
             !ProcessInfo.isRunningXCTest else { return }
-        status = .off
+        _status = .off
         collection.removeDummyDataSource(reloadAfter: reload)
         collection.enableUserInteraction()
     }

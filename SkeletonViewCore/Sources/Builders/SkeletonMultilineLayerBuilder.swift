@@ -79,7 +79,7 @@ class SkeletonMultilineLayerBuilder {
 
         let layer = type.layer
         layer.anchorPoint = .zero
-        layer.name = CALayer.skeletonSubLayersName
+        layer.name = CALayer.Constants.skeletonSubLayersName
         layer.updateLayerFrame(for: index,
                                totalLines: layer.skeletonSublayers.count,
                                size: CGSize(width: width, height: height),

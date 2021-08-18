@@ -16,7 +16,7 @@ extension CALayer {
 
 extension UIView {
     func startTransition(transitionBlock: @escaping () -> Void) {
-        guard let transitionStyle = currentSkeletonConfig?.transition,
+        guard let transitionStyle = _currentSkeletonConfig?.transition,
             transitionStyle != .none
             else {
                 transitionBlock()
