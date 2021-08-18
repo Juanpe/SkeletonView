@@ -18,7 +18,7 @@
   • <a href="#️-contribuir">Contribuir</a>
 </p>
 
-**🌎 README está disponible en estos idiomas: [🇬🇧](../README.md) . [🇨🇳](README_zh.md) . [🇧🇷](README_pt-br.md) . [🇰🇷](README_ko.md) . [🇫🇷](/README_fr.md)**
+**🌎 README está disponible en estos idiomas: [🇬🇧](../README.md) . [🇨🇳](README_zh.md) . [🇧🇷](README_pt-br.md) . [🇰🇷](README_ko.md) . [🇫🇷](README_fr.md)**
 
 Hoy en día, La mayoría de las apps tiene procesos asíncronos, como peticiones a una API, procesos que tardan mucho tiempo, etc. Mientras estos procesos se están ejecutando, se suele mostrar un aburrido spinner indicando que algo está pasando.
 
