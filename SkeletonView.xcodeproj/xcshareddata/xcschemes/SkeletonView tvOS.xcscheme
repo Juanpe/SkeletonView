@@ -28,8 +28,8 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F556F65E26CD3E9E00A80B83"
-               BuildableName = "SkeletonViewTests.xctest"
+               BlueprintIdentifier = "F556F67026CD458500A80B83"
+               BuildableName = "SkeletonView tvOS Tests.xctest"
                BlueprintName = "SkeletonView tvOS Tests"
                ReferencedContainer = "container:SkeletonView.xcodeproj">
             </BuildableReference>
@@ -42,6 +42,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F556F67026CD458500A80B83"
+               BuildableName = "SkeletonView tvOS Tests.xctest"
+               BlueprintName = "SkeletonView tvOS Tests"
+               ReferencedContainer = "container:SkeletonView.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
