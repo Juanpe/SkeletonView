@@ -1,4 +1,4 @@
-![](Assets/header2.jpg)
+![](../Assets/header2.jpg)
 
 <p align="center">
     <a href="https://github.com/Juanpe/SkeletonView/actions?query=workflow%3ACI">
@@ -23,12 +23,7 @@
     </a>
 </p>
 
-🌎  翻译: [ [原版的](https://github.com/Juanpe/SkeletonView) ] </br>
-[Original](https://github.com/Juanpe/SkeletonView) </br>
-[🇨🇳](https://github.com/Juanpe/SkeletonView/blob/master/README_zh.md)  [@WhatsXie](https://twitter.com/WhatsXie) </br>
-[🇧🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_pt-br.md)  [@brunomunizaf](https://twitter.com/brunomuniz_af) </br>
-[🇰🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_ko.md)  [@techinpark](https://twitter.com/techinpark) </br>
-[🇫🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_fr.md)  [@OmarJalil](https://github.com/OmarJalil)
+**🌎 翻译: [🇬🇧](../README.md) . [🇨🇳](README_zh.md) . [🇧🇷](README_pt-br.md) . [🇰🇷](README_ko.md) . [🇫🇷](README_fr.md)**
 
 今天，几乎所有的应用程序都有异步流程，例如：Api请求、长时间运行的流程等。虽然流程正在运行，但通常开发人员会设置一个加载视图来向用户显示正在发生的事情。
 
@@ -116,7 +111,7 @@ avatarImageView.isSkeletonable = true
 ```
 **使用 IB/Storyboards：**
 
-![](Assets/storyboard.png)
+![](../Assets/storyboard.png)
 
 **3.** 设置视图后，可以显示 **skeleton**. 并且您有 **4** 种效果可供选择:
 
@@ -146,16 +141,16 @@ avatarImageView.isSkeletonable = true
 </tr>
 <tr>
 <td width="25%">
-<img src="Assets/solid.png"></img>
+<img src="../Assets/solid.png"></img>
 </td>
 <td width="25%">
-<img src="Assets/gradient.png"></img>
+<img src="../Assets/gradient.png"></img>
 </td>
 <td width="25%">
-<img src="Assets/solid_animated.gif"></img>
+<img src="../Assets/solid_animated.gif"></img>
 </td>
 <td width="25%">
-<img src="Assets/gradient_animated.gif"></img>
+<img src="../Assets/gradient_animated.gif"></img>
 </td>
 </tr>
 </table>
@@ -226,7 +221,7 @@ public protocol SkeletonCollectionViewDataSource: UICollectionViewDataSource {
 ### 📰 多行文字
 
 
-![](Assets/multilines2.png)
+![](../Assets/multilines2.png)
 
 使用带有文本的元素时， ```SkeletonView``` 绘制线条以模拟文本。此外，您可以决定您想要多少行。如果 ```numberOfLines``` 设置为零，它将计算填充整个骨架所需的行数，并将绘制它。相反，如果将其设置为一，二或任何大于零的数字，它将只绘制此行数。
 
@@ -237,8 +232,8 @@ public protocol SkeletonCollectionViewDataSource: UICollectionViewDataSource {
 
 | 属性 | 值范围 | 默认 | 延时
 | ------- | ------- |------- | -------
-| **Filling percent** 最后一行的长度百分比 | `0...100` | `70%` | ![](Assets/multiline_lastline.png)
-| **Corner radius** 条目圆角半径. (**新**) | `0...10` | `0` | ![](Assets/multiline_corner.png)
+| **Filling percent** 最后一行的长度百分比 | `0...100` | `70%` | ![](../Assets/multiline_lastline.png)
+| **Corner radius** 条目圆角半径. (**新**) | `0...10` | `0` | ![](../Assets/multiline_corner.png)
 
 
 
@@ -251,7 +246,7 @@ descriptionTextView.linesCornerRadius = 5
 
 或者，如果您更喜欢使用 **IB/Storyboard**:
 
-![](Assets/multiline_customize.png)
+![](../Assets/multiline_customize.png)
 
 ### 🎨 自定义颜色
 
@@ -273,7 +268,7 @@ view.showGradientSkeleton(usingGradient: gradient) // 梯度效果
 
 ```UIColor.turquoise, UIColor.greenSea, UIColor.sunFlower, UIColor.flatOrange  ...```
 
-![](Assets/flatcolors.png)
+![](../Assets/flatcolors.png)
 ###### 从网站 [https://flatuicolors.com](https://flatuicolors.com)捕获的图像
 
 ### 🤓 自定义动画
@@ -316,12 +311,12 @@ view.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
 
 |  方向 | 效果
 |------- | -------
-| .leftRight | ![](Assets/sliding_left_to_right.gif)
-| .rightLeft | ![](Assets/sliding_right_to_left.gif)
-| .topBottom | ![](Assets/sliding_top_to_bottom.gif)
-| .bottomTop | ![](Assets/sliding_bottom_to_top.gif)
-| .topLeftBottomRight | ![](Assets/sliding_topLeft_to_bottomRight.gif)
-| .bottomRightTopLeft | ![](Assets/sliding_bottomRight_to_topLeft.gif)
+| .leftRight | ![](../Assets/sliding_left_to_right.gif)
+| .rightLeft | ![](../Assets/sliding_right_to_left.gif)
+| .topBottom | ![](../Assets/sliding_top_to_bottom.gif)
+| .bottomTop | ![](../Assets/sliding_bottom_to_top.gif)
+| .topLeftBottomRight | ![](../Assets/sliding_topLeft_to_bottomRight.gif)
+| .bottomRightTopLeft | ![](../Assets/sliding_bottomRight_to_topLeft.gif)
 
 > **😉 技巧!**
 存在另一种创建滑动动画的方法，只需使用此快捷方式：
@@ -337,10 +332,10 @@ view.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
 
 | 分组 | 结果
 |------- | -------
-|![](Assets/no_skeletonable.png) | ![](Assets/no_skeletonables_result.png)
-|![](Assets/container_no_skeletonable.png) | ![](Assets/no_skeletonables_result.png)
-|![](Assets/container_skeletonable.png) | ![](Assets/container_skeletonable_result.png)
-|![](Assets/all_skeletonables.png) | ![](Assets/all_skeletonables_result.png)
+|![](../Assets/no_skeletonable.png) | ![](../Assets/no_skeletonables_result.png)
+|![](../Assets/container_no_skeletonable.png) | ![](../Assets/no_skeletonables_result.png)
+|![](../Assets/container_skeletonable.png) | ![](../Assets/container_skeletonable_result.png)
+|![](../Assets/all_skeletonables.png) | ![](../Assets/all_skeletonables_result.png)
 
 
 
