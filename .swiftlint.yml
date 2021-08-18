@@ -1,5 +1,5 @@
 included:
-  - Sources
+  - SkeletonViewCore/Sources
 disabled_rules:
   - trailing_whitespace
   - line_length
@@ -21,6 +21,7 @@ disabled_rules:
   - unowned_variable_capture
   - legacy_constructor
   - redundant_type_annotation
+  - vertical_whitespace_opening_braces
 opt_in_rules:
   - multiline_arguments
   - multiline_parameters
@@ -55,12 +56,16 @@ opt_in_rules:
   - unneeded_parentheses_in_closure_argument
   - unused_declaration
   - unused_import
-  - vertical_whitespace_opening_braces
   - discouraged_optional_collection
-  - enum_case_associated_values_counts
+  - enum_case_associated_values_count
   - legacy_multiple
   - legacy_random
 indentation: 2
+type_name:
+    min_length: 2
+    max_length:
+        warning: 50
+        error: 60
 file_length:
  - 2500
  - 3000

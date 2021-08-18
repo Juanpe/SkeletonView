@@ -52,6 +52,9 @@
 		F556F64E26CD2D3D00A80B83 /* SkeletonDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F64C26CD2CF700A80B83 /* SkeletonDebug.swift */; };
 		F556F65026CD2DFD00A80B83 /* PublicSkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F64F26CD2DFD00A80B83 /* PublicSkeletonView.swift */; };
 		F556F65126CD2DFD00A80B83 /* PublicSkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F64F26CD2DFD00A80B83 /* PublicSkeletonView.swift */; };
+		F556F65D26CD3E3600A80B83 /* SkeletonDebugTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F65C26CD3E3600A80B83 /* SkeletonDebugTests.swift */; };
+		F556F66226CD3E9E00A80B83 /* SkeletonDebugTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F65C26CD3E3600A80B83 /* SkeletonDebugTests.swift */; };
+		F556F66526CD3E9E00A80B83 /* SkeletonView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SkeletonView::SkeletonView::Product" /* SkeletonView.framework */; };
 		OBJ_100 /* CALayer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* CALayer+Extensions.swift */; };
 		OBJ_101 /* Int+Whitespaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* Int+Whitespaces.swift */; };
 		OBJ_102 /* ProcessInfo+XCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* ProcessInfo+XCTest.swift */; };
@@ -80,7 +83,6 @@
 		OBJ_125 /* SubviewsSkeletonables.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_58 /* SubviewsSkeletonables.swift */; };
 		OBJ_126 /* SkeletonTransitionStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_60 /* SkeletonTransitionStyle.swift */; };
 		OBJ_127 /* UIView+Transitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_61 /* UIView+Transitions.swift */; };
-		OBJ_145 /* DummyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_63 /* DummyTests.swift */; };
 		OBJ_147 /* SkeletonView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SkeletonView::SkeletonView::Product" /* SkeletonView.framework */; };
 		OBJ_86 /* SkeletonAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* SkeletonAppearance.swift */; };
 		OBJ_87 /* SkeletonLayerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* SkeletonLayerBuilder.swift */; };
@@ -99,6 +101,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		F556F50C26CD1B1500A80B83 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "SkeletonView::SkeletonView";
+			remoteInfo = SkeletonView;
+		};
+		F556F66026CD3E9E00A80B83 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
@@ -137,6 +146,8 @@
 		F556F59426CD1F3900A80B83 /* SkeletonView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SkeletonView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F556F64C26CD2CF700A80B83 /* SkeletonDebug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonDebug.swift; sourceTree = "<group>"; };
 		F556F64F26CD2DFD00A80B83 /* PublicSkeletonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicSkeletonView.swift; sourceTree = "<group>"; };
+		F556F65C26CD3E3600A80B83 /* SkeletonDebugTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonDebugTests.swift; sourceTree = "<group>"; };
+		F556F66926CD3E9E00A80B83 /* SkeletonViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkeletonViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_11 /* SkeletonLayerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLayerBuilder.swift; sourceTree = "<group>"; };
 		OBJ_12 /* SkeletonMultilineLayerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonMultilineLayerBuilder.swift; sourceTree = "<group>"; };
 		OBJ_14 /* CollectionSkeletonProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionSkeletonProtocol.swift; sourceTree = "<group>"; };
@@ -178,7 +189,6 @@
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		OBJ_60 /* SkeletonTransitionStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonTransitionStyle.swift; sourceTree = "<group>"; };
 		OBJ_61 /* UIView+Transitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Transitions.swift"; sourceTree = "<group>"; };
-		OBJ_63 /* DummyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyTests.swift; sourceTree = "<group>"; };
 		OBJ_9 /* SkeletonAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonAppearance.swift; sourceTree = "<group>"; };
 		"SkeletonView::SkeletonView::Product" /* SkeletonView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SkeletonView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"SkeletonView::SkeletonViewTests::Product" /* SkeletonViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = SkeletonViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,6 +199,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F556F66426CD3E9E00A80B83 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				F556F66526CD3E9E00A80B83 /* SkeletonView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +331,14 @@
 			path = Debug;
 			sourceTree = "<group>";
 		};
+		F556F65B26CD3E1400A80B83 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				F556F65C26CD3E3600A80B83 /* SkeletonDebugTests.swift */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
 		OBJ_10 /* Builders */ = {
 			isa = PBXGroup;
 			children = (
@@ -433,8 +459,8 @@
 		OBJ_62 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				F556F65B26CD3E1400A80B83 /* Debug */,
 				F556F56026CD1D5300A80B83 /* Supporting Files */,
-				OBJ_63 /* DummyTests.swift */,
 			);
 			name = Tests;
 			path = SkeletonViewCore/Tests;
@@ -446,6 +472,7 @@
 				"SkeletonView::SkeletonView::Product" /* SkeletonView.framework */,
 				"SkeletonView::SkeletonViewTests::Product" /* SkeletonViewTests.xctest */,
 				F556F59426CD1F3900A80B83 /* SkeletonView.framework */,
+				F556F66926CD3E9E00A80B83 /* SkeletonViewTests.xctest */,
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -491,6 +518,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F556F59126CD1F3900A80B83 /* Build configuration list for PBXNativeTarget "SkeletonView tvOS" */;
 			buildPhases = (
+				F556F65626CD312100A80B83 /* Swiftlint */,
 				F556F56526CD1F3900A80B83 /* Sources */,
 				F556F59026CD1F3900A80B83 /* Frameworks */,
 			);
@@ -503,10 +531,28 @@
 			productReference = F556F59426CD1F3900A80B83 /* SkeletonView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		F556F65E26CD3E9E00A80B83 /* SkeletonView tvOS Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F556F66626CD3E9E00A80B83 /* Build configuration list for PBXNativeTarget "SkeletonView tvOS Tests" */;
+			buildPhases = (
+				F556F66126CD3E9E00A80B83 /* Sources */,
+				F556F66426CD3E9E00A80B83 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F556F65F26CD3E9E00A80B83 /* PBXTargetDependency */,
+			);
+			name = "SkeletonView tvOS Tests";
+			productName = SkeletonViewTests;
+			productReference = F556F66926CD3E9E00A80B83 /* SkeletonViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		"SkeletonView::SkeletonView" /* SkeletonView iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = OBJ_82 /* Build configuration list for PBXNativeTarget "SkeletonView iOS" */;
 			buildPhases = (
+				F556F65526CD311200A80B83 /* Swiftlint */,
 				OBJ_85 /* Sources */,
 				OBJ_128 /* Frameworks */,
 			);
@@ -519,9 +565,9 @@
 			productReference = "SkeletonView::SkeletonView::Product" /* SkeletonView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		"SkeletonView::SkeletonViewTests" /* SkeletonViewTests */ = {
+		"SkeletonView::SkeletonViewTests" /* SkeletonView iOS Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_141 /* Build configuration list for PBXNativeTarget "SkeletonViewTests" */;
+			buildConfigurationList = OBJ_141 /* Build configuration list for PBXNativeTarget "SkeletonView iOS Tests" */;
 			buildPhases = (
 				OBJ_144 /* Sources */,
 				OBJ_146 /* Frameworks */,
@@ -531,7 +577,7 @@
 			dependencies = (
 				OBJ_148 /* PBXTargetDependency */,
 			);
-			name = SkeletonViewTests;
+			name = "SkeletonView iOS Tests";
 			productName = SkeletonViewTests;
 			productReference = "SkeletonView::SkeletonViewTests::Product" /* SkeletonViewTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -558,11 +604,51 @@
 			projectRoot = "";
 			targets = (
 				"SkeletonView::SkeletonView" /* SkeletonView iOS */,
-				"SkeletonView::SkeletonViewTests" /* SkeletonViewTests */,
+				"SkeletonView::SkeletonViewTests" /* SkeletonView iOS Tests */,
 				F556F56426CD1F3900A80B83 /* SkeletonView tvOS */,
+				F556F65E26CD3E9E00A80B83 /* SkeletonView tvOS Tests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F556F65526CD311200A80B83 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nexport PATH\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		F556F65626CD312100A80B83 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nexport PATH\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F556F56526CD1F3900A80B83 /* Sources */ = {
@@ -615,11 +701,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F556F66126CD3E9E00A80B83 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				F556F66226CD3E9E00A80B83 /* SkeletonDebugTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		OBJ_144 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_145 /* DummyTests.swift in Sources */,
+				F556F65D26CD3E3600A80B83 /* SkeletonDebugTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -676,6 +770,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		F556F65F26CD3E9E00A80B83 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "SkeletonView::SkeletonView" /* SkeletonView iOS */;
+			targetProxy = F556F66026CD3E9E00A80B83 /* PBXContainerItemProxy */;
+		};
 		OBJ_148 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "SkeletonView::SkeletonView" /* SkeletonView iOS */;
@@ -748,6 +847,64 @@
 			};
 			name = Release;
 		};
+		F556F66726CD3E9E00A80B83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "SkeletonViewCore/Tests/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SUPPORTED_PLATFORMS = "appletvsimulator appletvos";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = SkeletonViewTests;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Debug;
+		};
+		F556F66826CD3E9E00A80B83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "SkeletonViewCore/Tests/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SUPPORTED_PLATFORMS = "appletvsimulator appletvos";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = SkeletonViewTests;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Release;
+		};
 		OBJ_142 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -766,8 +923,11 @@
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TARGET_NAME = SkeletonViewTests;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				WATCHOS_DEPLOYMENT_TARGET = 7.0;
@@ -792,8 +952,11 @@
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TARGET_NAME = SkeletonViewTests;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				WATCHOS_DEPLOYMENT_TARGET = 7.0;
@@ -931,7 +1094,16 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_141 /* Build configuration list for PBXNativeTarget "SkeletonViewTests" */ = {
+		F556F66626CD3E9E00A80B83 /* Build configuration list for PBXNativeTarget "SkeletonView tvOS Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F556F66726CD3E9E00A80B83 /* Debug */,
+				F556F66826CD3E9E00A80B83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_141 /* Build configuration list for PBXNativeTarget "SkeletonView iOS Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				OBJ_142 /* Debug */,
