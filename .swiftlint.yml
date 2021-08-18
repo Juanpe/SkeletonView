@@ -20,6 +20,7 @@ disabled_rules:
   - function_default_parameter_at_end
   - unowned_variable_capture
   - legacy_constructor
+  - redundant_type_annotation
 opt_in_rules:
   - multiline_arguments
   - multiline_parameters
@@ -49,7 +50,6 @@ opt_in_rules:
   - private_outlet
   - redundant_optional_initialization
   - redundant_set_access_control
-  - redundant_type_annotation
   - sorted_first_last
   - switch_case_on_newline
   - unneeded_parentheses_in_closure_argument
