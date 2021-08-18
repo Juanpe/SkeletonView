@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1020"
+   LastUpgradeVersion = "9999"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "52D6D97B1BEFF229002C0205"
+               BlueprintIdentifier = "F556F56426CD1F3900A80B83"
                BuildableName = "SkeletonView.framework"
-               BlueprintName = "SkeletonView-iOS"
+               BlueprintName = "SkeletonView tvOS"
                ReferencedContainer = "container:SkeletonView.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,18 +28,17 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "SkeletonView::SkeletonViewTests"
+               BuildableName = "SkeletonViewTests.xctest"
+               BlueprintName = "SkeletonViewTests"
+               ReferencedContainer = "container:SkeletonView.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "52D6D97B1BEFF229002C0205"
-            BuildableName = "SkeletonView.framework"
-            BlueprintName = "SkeletonView-iOS"
-            ReferencedContainer = "container:SkeletonView.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -51,17 +50,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "52D6D97B1BEFF229002C0205"
-            BuildableName = "SkeletonView.framework"
-            BlueprintName = "SkeletonView-iOS"
-            ReferencedContainer = "container:SkeletonView.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -72,9 +60,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "52D6D97B1BEFF229002C0205"
+            BlueprintIdentifier = "F556F56426CD1F3900A80B83"
             BuildableName = "SkeletonView.framework"
-            BlueprintName = "SkeletonView-iOS"
+            BlueprintName = "SkeletonView tvOS"
             ReferencedContainer = "container:SkeletonView.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
