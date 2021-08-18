@@ -1,4 +1,4 @@
-![](Assets/header2.jpg)
+![](../Assets/header2.jpg)
 
 <p align="center">
     <a href="https://github.com/Juanpe/SkeletonView/actions?query=workflow%3ACI">
@@ -23,12 +23,7 @@
     </a>
 </p>
 
-🌎  번역에 도움을 주신분들: </br>
-[Original](https://github.com/Juanpe/SkeletonView) </br>
-[🇨🇳](https://github.com/Juanpe/SkeletonView/blob/master/README_zh.md)  [@WhatsXie](https://twitter.com/WhatsXie) </br>
-[🇧🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_pt-br.md)  [@brunomunizaf](https://twitter.com/brunomuniz_af) </br>
-[🇰🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_ko.md)  [@techinpark](https://twitter.com/techinpark) </br>
-[🇫🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_fr.md)  [@OmarJalil](https://github.com/OmarJalil)
+**🌎 번역에 도움을 주신분들: [🇬🇧](../README.md) . [🇨🇳](README_zh.md) . [🇧🇷](README_pt-br.md) . [🇰🇷](README_ko.md) . [🇫🇷](/README_fr.md)**
 
 오늘날 거의 대부분의 앱들은 비동기 방식의 API 호출을 사용하는 프로세스를 가지고 있습니다.
 프로세스가 작동하는동안 개발자들은 작업이 실행되고 있다는것을 사용자들에게 보여주기 위해서 로딩 뷰를 배치합니다.
@@ -72,7 +67,7 @@
 
 ## 🎬 사용가이드
 
- [<img src="Assets/thumb_getting_started.png">](https://youtu.be/75kgOhWsPNA)
+ [<img src="../Assets/thumb_getting_started.png">](https://youtu.be/75kgOhWsPNA)
 
 ## 📲 설치 방법
 
@@ -123,7 +118,7 @@ avatarImageView.isSkeletonable = true
 ```
 **인터페이스빌더 / 스토리보드를 이용하는 방법:**
 
-![](Assets/storyboard.png)
+![](../Assets/storyboard.png)
 
 **3.** 당신이 뷰를 세팅할때, **skeleton** 옵션을 사용 할 수 있습니다. 총 **4** 가지 옵션을 지원합니다:
 
@@ -153,16 +148,16 @@ avatarImageView.isSkeletonable = true
 </tr>
 <tr>
 <td width="25%">
-<img src="Assets/solid.png"></img>
+<img src="../Assets/solid.png"></img>
 </td>
 <td width="25%">
-<img src="Assets/gradient.png"></img>
+<img src="../Assets/gradient.png"></img>
 </td>
 <td width="25%">
-<img src="Assets/solid_animated.gif"></img>
+<img src="../Assets/solid_animated.gif"></img>
 </td>
 <td width="25%">
-<img src="Assets/gradient_animated.gif"></img>
+<img src="../Assets/gradient_animated.gif"></img>
 </td>
 </tr>
 </table>
@@ -224,7 +219,7 @@ func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection s
 
 아래의 그림은 `UITableView` 에서 특정한 요소에 skeleton 을 지정하는 방법을 보여주는 이미지 입니다:
 
-![](Assets/tableview_scheme.png)
+![](../Assets/tableview_scheme.png)
 
 위의 이미지에서 보이듯, 테이블 뷰와 셀에 들어가는 UI 요소들에는 적용을 해야하지만, `contentView`에 skeleton을 적용할 필요는 없습니다.
 
@@ -245,7 +240,7 @@ public protocol SkeletonCollectionViewDataSource: UICollectionViewDataSource {
 ### 📰 Multiline text
 
 
-![](Assets/multilines2.png)
+![](../Assets/multilines2.png)
 
 텍스트가 들어있는 요소를 사용한다면, ```SkeletonView``` 에서 텍스트의 라인을 그려줍니다.
 그리고, 원하는 라인 수를 설정할 수 있습니다. 만약   ```numberOfLines``` 을 0으로 설정한다면, 자동으로 필요한 라인수를 계산해서 그려줍니다. 대신 값이 설정되어있다면 설정된 수만큼의 라인이 그려집니다.
@@ -257,8 +252,8 @@ public protocol SkeletonCollectionViewDataSource: UICollectionViewDataSource {
 
 | 속성                                              | 값         | 기본값   | 미리보기                               |
 | ----------------------------------------------- | --------- | ----- | ---------------------------------- |
-| 마지막 라인의 **퍼센트** 를 지정 할 수 있습니다.                  | `0...100` | `70%` | ![](Assets/multiline_lastline.png) |
-| 라인의 **Corner radius** 를 지정할 수 있습니다. (**새로운기능**) | `0...10`  | `0`   | ![](Assets/multiline_corner.png)   |
+| 마지막 라인의 **퍼센트** 를 지정 할 수 있습니다.                  | `0...100` | `70%` | ![](../Assets/multiline_lastline.png) |
+| 라인의 **Corner radius** 를 지정할 수 있습니다. (**새로운기능**) | `0...10`  | `0`   | ![](../Assets/multiline_corner.png)   |
 
 
 
@@ -270,7 +265,7 @@ descriptionTextView.linesCornerRadius = 5
 
 혹은 **IB/Storyboard** 를 이용하실 수 있습니다:
 
-![](Assets/multiline_customize.png)
+![](../Assets/multiline_customize.png)
 
 ### 🎨 Custom colors
 
@@ -292,7 +287,7 @@ view.showGradientSkeleton(usingGradient: gradient) // Gradient
 
 ```UIColor.turquoise, UIColor.greenSea, UIColor.sunFlower, UIColor.flatOrange  ...```
 
-![](Assets/flatcolors.png)
+![](../Assets/flatcolors.png)
 ###### 위 이미지는 [https://flatuicolors.com](https://flatuicolors.com) 사이트에서 발췌했습니다.
 
 ### 🦋 Appearance
@@ -360,12 +355,12 @@ view.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
 
 | 방향                  | 미리보기                                           |
 | ------------------- | ---------------------------------------------- |
-| .leftRight          | ![](Assets/sliding_left_to_right.gif)          |
-| .rightLeft          | ![](Assets/sliding_right_to_left.gif)          |
-| .topBottom          | ![](Assets/sliding_top_to_bottom.gif)          |
-| .bottomTop          | ![](Assets/sliding_bottom_to_top.gif)          |
-| .topLeftBottomRight | ![](Assets/sliding_topLeft_to_bottomRight.gif) |
-| .bottomRightTopLeft | ![](Assets/sliding_bottomRight_to_topLeft.gif) |
+| .leftRight          | ![](../Assets/sliding_left_to_right.gif)          |
+| .rightLeft          | ![](../Assets/sliding_right_to_left.gif)          |
+| .topBottom          | ![](../Assets/sliding_top_to_bottom.gif)          |
+| .bottomTop          | ![](../Assets/sliding_bottom_to_top.gif)          |
+| .topLeftBottomRight | ![](../Assets/sliding_topLeft_to_bottomRight.gif) |
+| .bottomRightTopLeft | ![](../Assets/sliding_bottomRight_to_topLeft.gif) |
 
 > **😉 꿀팁!**
 슬라이딩 애니메이션을 만들기 위한 또다른 방법이 있습니다, 아래의 코드를 참조하세요:
@@ -381,10 +376,10 @@ view.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
 
 | 설정값                             | 결과                                        |
 | ----------------------------------------- | --------------------------------------------- |
-| ![](Assets/no_skeletonable.png)           | ![](Assets/no_skeletonables_result.png)       |
-| ![](Assets/container_no_skeletonable.png) | ![](Assets/no_skeletonables_result.png)       |
-| ![](Assets/container_skeletonable.png)    | ![](Assets/container_skeletonable_result.png) |
-| ![](Assets/all_skeletonables.png)         | ![](Assets/all_skeletonables_result.png)      |
+| ![](../Assets/no_skeletonable.png)           | ![](../Assets/no_skeletonables_result.png)       |
+| ![](../Assets/container_no_skeletonable.png) | ![](../Assets/no_skeletonables_result.png)       |
+| ![](../Assets/container_skeletonable.png)    | ![](../Assets/container_skeletonable_result.png) |
+| ![](../Assets/all_skeletonables.png)         | ![](../Assets/all_skeletonables_result.png)      |
 
 
 ### 🔬 디버그
@@ -398,17 +393,17 @@ var skeletonDescription: String
 ```
 skeleton은 이렇게 생겼습니다:
 
-![](Assets/debug_description.png)
+![](../Assets/debug_description.png)
 
 그리고, 새로운 **디버그 모드**를 활성화 시킬 수 있습니다. 간단하게 `SKELETON_DEBUG` 이라는 환경 변수를 추가해 활성화 하면 됩니다.
 
-![](Assets/debug_mode.png)
+![](../Assets/debug_mode.png)
 
 그런 이후 skeleton이 나오면 Xcode 콘솔창에서 계층 구조를 볼 수 있습니다.
 
 <details>
 <summary>예제를 확인해보세요. </summary>
-<img src="Assets/hierarchy_output.png" />
+<img src="../Assets/hierarchy_output.png" />
 </details>
 
 

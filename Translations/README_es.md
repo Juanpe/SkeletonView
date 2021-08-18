@@ -1,4 +1,4 @@
-![](Assets/header2.jpg)
+![](../Assets/header2.jpg)
 
 <p align="center">
     <a href="https://github.com/Juanpe/SkeletonView/actions?query=workflow%3ACI">
@@ -18,7 +18,7 @@
   • <a href="#️-contribuir">Contribuir</a>
 </p>
 
-**🌎 README está disponible en estos idiomas: [🇬🇧](https://github.com/Juanpe/SkeletonView/blob/master/README.md) . [🇨🇳](https://github.com/Juanpe/SkeletonView/blob/master/README_zh.md) . [🇧🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_pt-br.md) . [🇰🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_ko.md) . [🇫🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_fr.md)**
+**🌎 README está disponible en estos idiomas: [🇬🇧](../README.md) . [🇨🇳](README_zh.md) . [🇧🇷](README_pt-br.md) . [🇰🇷](README_ko.md) . [🇫🇷](/README_fr.md)**
 
 Hoy en día, La mayoría de las apps tiene procesos asíncronos, como peticiones a una API, procesos que tardan mucho tiempo, etc. Mientras estos procesos se están ejecutando, se suele mostrar un aburrido spinner indicando que algo está pasando.
 
@@ -104,7 +104,7 @@ avatarImageView.isSkeletonable = true
 ```
 **Con IB/Storyboards:**
 
-![](Assets/storyboard.png)
+![](../Assets/storyboard.png)
 
 3️⃣ Una vez indicado, solo tienes que mostrar el **skeleton**. Tienes **4** opciones:
 
@@ -134,16 +134,16 @@ avatarImageView.isSkeletonable = true
 </tr>
 <tr>
 <td width="25%">
-<img src="Assets/solid.png"></img>
+<img src="../Assets/solid.png"></img>
 </td>
 <td width="25%">
-<img src="Assets/gradient.png"></img>
+<img src="../Assets/gradient.png"></img>
 </td>
 <td width="25%">
-<img src="Assets/solid_animated.gif"></img>
+<img src="../Assets/solid_animated.gif"></img>
 </td>
 <td width="25%">
-<img src="Assets/gradient_animated.gif"></img>
+<img src="../Assets/gradient_animated.gif"></img>
 </td>
 </tr>
 </table>
@@ -225,7 +225,7 @@ El resto del proceso es exactamente igual que con las `UITableView`.
 
 ### 🔠 Textos
 
-![](Assets/multilines2.png)
+![](../Assets/multilines2.png)
 
 Cuando usas elementos que contienen texto,`SkeletonView` dibujo líneas para simular el texto.
 
@@ -236,8 +236,8 @@ Puedes especificar algunos atributos para estos elementos:
 
 | Atributo | Valores | Por defecto | Vista previa
 | ------- | ------- |------- | -------
-| **Porcentaje de relleno** de la última línea. | `0...100` | `70%` | ![](Assets/multiline_lastline.png)
-| **Radio de las esquinas** de las líneas. | `0...10` | `0` | ![](Assets/multiline_corner.png)
+| **Porcentaje de relleno** de la última línea. | `0...100` | `70%` | ![](../Assets/multiline_lastline.png)
+| **Radio de las esquinas** de las líneas. | `0...10` | `0` | ![](../Assets/multiline_corner.png)
 
 Para modificar alguno de los valores lo puedes hacer **con código**::
 ```swift
@@ -247,7 +247,7 @@ descriptionTextView.linesCornerRadius = 5
 
 O usando **IB/Storyboards**:
 
-![](Assets/multiline_customize.png)
+![](../Assets/multiline_customize.png)
 
 
 ### 🦋 Apariencia
@@ -297,7 +297,7 @@ Además, **SkeletonView** añade 20 colores flat 🤙🏼
 
 ```UIColor.turquoise, UIColor.greenSea, UIColor.sunFlower, UIColor.flatOrange  ...```
 
-![](Assets/flatcolors.png)
+![](../Assets/flatcolors.png)
 ###### Imagen extraída de la web [https://flatuicolors.com](https://flatuicolors.com)
 
 
@@ -338,12 +338,12 @@ view.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
 
 |  Dirección | Vista previa
 |------- | -------
-| .leftRight | ![](Assets/sliding_left_to_right.gif)
-| .rightLeft | ![](Assets/sliding_right_to_left.gif)
-| .topBottom | ![](Assets/sliding_top_to_bottom.gif)
-| .bottomTop | ![](Assets/sliding_bottom_to_top.gif)
-| .topLeftBottomRight | ![](Assets/sliding_topLeft_to_bottomRight.gif)
-| .bottomRightTopLeft | ![](Assets/sliding_bottomRight_to_topLeft.gif)
+| .leftRight | ![](../Assets/sliding_left_to_right.gif)
+| .rightLeft | ![](../Assets/sliding_right_to_left.gif)
+| .topBottom | ![](../Assets/sliding_top_to_bottom.gif)
+| .bottomTop | ![](../Assets/sliding_bottom_to_top.gif)
+| .topLeftBottomRight | ![](../Assets/sliding_topLeft_to_bottomRight.gif)
+| .bottomRightTopLeft | ![](../Assets/sliding_bottomRight_to_topLeft.gif)
 
 > **😉 ¡Truco!**
 >
@@ -379,10 +379,10 @@ La transición por defecto es `crossDissolve(0.25)`
 </tr>
 <tr>
 <td width="50%">
-<img src="Assets/skeleton_transition_nofade.gif"></img>
+<img src="../Assets/skeleton_transition_nofade.gif"></img>
 </td>
 <td width="50%">
-<img src="Assets/skeleton_transition_fade.gif"></img>
+<img src="../Assets/skeleton_transition_fade.gif"></img>
 </td>
 </tr>
 </table>
@@ -408,12 +408,12 @@ view.showSkeleton()
 
 | Configuración | Resultado|
 |:-------:|:-------:|
-|<img src="Assets/no_skeletonable.jpg" width="350"/> | <img src="Assets/no_skeletonables_result.png" width="350"/>|
-|<img src="Assets/container_no_skeletonable.jpg" width="350"/> | <img src="Assets/no_skeletonables_result.png" width="350"/>|
-|<img src="Assets/container_skeletonable.jpg" width="350"/> | <img src="Assets/container_skeletonable_result.png" width="350"/>|
-|<img src="Assets/all_skeletonables.jpg" width="350"/>| <img src="Assets/all_skeletonables_result.png" width="350"/>|
-|<img src="Assets/tableview_no_skeletonable.jpg" width="350"/> | <img src="Assets/tableview_no_skeletonable_result.png" height="350"/>|
-|<img src="Assets/tableview_skeletonable.jpg" width="350"/> | <img src="Assets/tableview_skeletonable_result.png" height="350"/>|
+|<img src="../Assets/no_skeletonable.jpg" width="350"/> | <img src="../Assets/no_skeletonables_result.png" width="350"/>|
+|<img src="../Assets/container_no_skeletonable.jpg" width="350"/> | <img src="../Assets/no_skeletonables_result.png" width="350"/>|
+|<img src="../Assets/container_skeletonable.jpg" width="350"/> | <img src="../Assets/container_skeletonable_result.png" width="350"/>|
+|<img src="../Assets/all_skeletonables.jpg" width="350"/>| <img src="../Assets/all_skeletonables_result.png" width="350"/>|
+|<img src="../Assets/tableview_no_skeletonable.jpg" width="350"/> | <img src="../Assets/tableview_no_skeletonable_result.png" height="350"/>|
+|<img src="../Assets/tableview_skeletonable.jpg" width="350"/> | <img src="../Assets/tableview_skeletonable_result.png" height="350"/>|
 
   
 
@@ -421,7 +421,7 @@ view.showSkeleton()
 
 Esta ilustración muestra como deberías específicar qué elementos son skeletonables cuando estás usando una `UITableView`:
 
-<img src="Assets/tableview_scheme.png" width="700px">
+<img src="../Assets/tableview_scheme.png" width="700px">
 
 
 **Actualiza el skeleton**
@@ -447,17 +447,17 @@ var skeletonDescription: String
 ```
 Y es representada de la siguiente manera:
 
-![](Assets/debug_description.png)
+![](../Assets/debug_description.png)
 
 Para activar el **modo debug**. Solo tienes que añadir una variable de entorno con esta clave `SKELETON_DEBUG` y activarla.
 
-![](Assets/debug_mode.png)
+![](../Assets/debug_mode.png)
 
 Entonces, cuando el skeleton aparece, tu podrás ver la jerarquía de vistas en la consola de Xcode.
 
 <details>
 <summary>Abre para ver un ejemplo </summary>
-<img src="Assets/hierarchy_output.png" />
+<img src="../Assets/hierarchy_output.png" />
 </details>
 
   

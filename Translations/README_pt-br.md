@@ -1,4 +1,4 @@
-![](Assets/header2.jpg)
+![](../Assets/header2.jpg)
 
 <p align="center">
     <a href="https://github.com/Juanpe/SkeletonView/actions?query=workflow%3ACI">
@@ -23,12 +23,7 @@
     </a>
 </p>
 
-🌎  Traduções: </br>
-[Original](https://github.com/Juanpe/SkeletonView) </br>
-[🇨🇳](https://github.com/Juanpe/SkeletonView/blob/master/README_zh.md)  [@WhatsXie](https://twitter.com/WhatsXie) </br>
-[🇧🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_pt-br.md)  [@brunomunizaf](https://twitter.com/brunomuniz_af) </br>
-[🇰🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_ko.md)  [@techinpark](https://twitter.com/techinpark) </br>
-[🇫🇷](https://github.com/Juanpe/SkeletonView/blob/master/README_fr.md)  [@OmarJalil](https://github.com/OmarJalil)
+**🌎 Traduções: [🇬🇧](../README.md) . [🇨🇳](README_zh.md) . [🇧🇷](README_pt-br.md) . [🇰🇷](README_ko.md) . [🇫🇷](/README_fr.md)**
 
 Hoje, quase todos os apps têm processos assíncronos, como requisições de API, processos longos, etc. E enquanto os processos estão ocorrendo, normalmente os desenvolvedores usam uma view que mostra os usuarios que algo está ocorrendo.
 
@@ -117,7 +112,7 @@ avatarImageView.isSkeletonable = true
 ```
 **Usando IB/Storyboards:**
 
-![](Assets/storyboard.png)
+![](../Assets/storyboard.png)
 
 **3.** Uma vez que você setou as views, você pode mostrar o **skeleton**. Para fazê-lo, você tem **4** escolhas:
 
@@ -147,16 +142,16 @@ avatarImageView.isSkeletonable = true
 </tr>
 <tr>
 <td width="25%">
-<img src="Assets/solid.png"></img>
+<img src="../Assets/solid.png"></img>
 </td>
 <td width="25%">
-<img src="Assets/gradient.png"></img>
+<img src="../Assets/gradient.png"></img>
 </td>
 <td width="25%">
-<img src="Assets/solid_animated.gif"></img>
+<img src="../Assets/solid_animated.gif"></img>
 </td>
 <td width="25%">
-<img src="Assets/gradient_animated.gif"></img>
+<img src="../Assets/gradient_animated.gif"></img>
 </td>
 </tr>
 </table>
@@ -226,7 +221,7 @@ O resto do processo é o mesmo da ```UITableView```
 ### 📰 Texto de várias linhas
 
 
-![](Assets/multilines2.png)
+![](../Assets/multilines2.png)
 
 Quando você usar elementos com texto, ```SkeletonView``` desenha linhas para simular o texto.
 Além disso, você pode decidir quantas linhas você quer. Se ```numberOfLines``` está setado para zero (0), haverá um cálculo para saber quantas linhas são necessárias para preencher o skeleton inteiro e será desenhado. Caso contrário, se você setar para um (1) ou qualquer outro número maior que zero, só serão desenhadas aquele número de linhas.
@@ -238,8 +233,8 @@ Você pode setar algumas propriedades para elementos de várias linhas.
 
 | Property | Values | Default | Preview
 | ------- | ------- |------- | -------
-| **Filling percent** of the last line. | `0...100` | `70%` | ![](Assets/multiline_lastline.png)
-| **Corner radius** of lines. (**NEW**) | `0...10` | `0` | ![](Assets/multiline_corner.png)
+| **Filling percent** of the last line. | `0...100` | `70%` | ![](../Assets/multiline_lastline.png)
+| **Corner radius** of lines. (**NEW**) | `0...10` | `0` | ![](../Assets/multiline_corner.png)
 
 
 
@@ -251,7 +246,7 @@ descriptionTextView.linesCornerRadius = 5
 
 Ou, se você preferir use **IB/Storyboard**:
 
-![](Assets/multiline_customize.png)
+![](../Assets/multiline_customize.png)
 
 ### 🎨 Cores customizadas
 
@@ -273,7 +268,7 @@ Além do mais, ```SkeletonView``` tem 20 cores flat 🤙🏼
 
 ```UIColor.turquoise, UIColor.greenSea, UIColor.sunFlower, UIColor.flatOrange  ...```
 
-![](Assets/flatcolors.png)
+![](../Assets/flatcolors.png)
 ###### Imagem capturada do site [https://flatuicolors.com](https://flatuicolors.com)
 
 ### 🦋 Aparência
@@ -341,12 +336,12 @@ view.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
 
 |  Direction | Preview
 |------- | -------
-| .leftRight | ![](Assets/sliding_left_to_right.gif)
-| .rightLeft | ![](Assets/sliding_right_to_left.gif)
-| .topBottom | ![](Assets/sliding_top_to_bottom.gif)
-| .bottomTop | ![](Assets/sliding_bottom_to_top.gif)
-| .topLeftBottomRight | ![](Assets/sliding_topLeft_to_bottomRight.gif)
-| .bottomRightTopLeft | ![](Assets/sliding_bottomRight_to_topLeft.gif)
+| .leftRight | ![](../Assets/sliding_left_to_right.gif)
+| .rightLeft | ![](../Assets/sliding_right_to_left.gif)
+| .topBottom | ![](../Assets/sliding_top_to_bottom.gif)
+| .bottomTop | ![](../Assets/sliding_bottom_to_top.gif)
+| .topLeftBottomRight | ![](../Assets/sliding_topLeft_to_bottomRight.gif)
+| .bottomRightTopLeft | ![](../Assets/sliding_bottomRight_to_topLeft.gif)
 
 > **😉 TRUQUE!**
 Existe outra forma de criar sliding animations, apenas usando este atalho:
@@ -362,10 +357,10 @@ Porque uma imagem vale mais que mil palavras:
 
 | Configuration | Result
 |------- | -------
-|![](Assets/no_skeletonable.png) | ![](Assets/no_skeletonables_result.png)
-|![](Assets/container_no_skeletonable.png) | ![](Assets/no_skeletonables_result.png)
-|![](Assets/container_skeletonable.png) | ![](Assets/container_skeletonable_result.png)
-|![](Assets/all_skeletonables.png) | ![](Assets/all_skeletonables_result.png)
+|![](../Assets/no_skeletonable.png) | ![](../Assets/no_skeletonables_result.png)
+|![](../Assets/container_no_skeletonable.png) | ![](../Assets/no_skeletonables_result.png)
+|![](../Assets/container_skeletonable.png) | ![](../Assets/container_skeletonable_result.png)
+|![](../Assets/all_skeletonables.png) | ![](../Assets/all_skeletonables_result.png)
 
 
 
