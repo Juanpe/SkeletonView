@@ -7,8 +7,20 @@
 //
 //      https://opensource.org/licenses/MIT
 //
-//  PublicSkeletonView.swift
+//  ProcessInfo+Extensions.swift
 //
 //  Created by Juanpe Catalán on 18/8/21.
 
 import Foundation
+
+extension ProcessInfo {
+    
+    enum Constants {
+        static let testConfigurationFilePathKey = "XCTestConfigurationFilePath"
+    }
+    
+    static var isRunningXCTest: Bool {
+        return processInfo.environment[Constants.testConfigurationFilePathKey] != nil
+    }
+    
+}

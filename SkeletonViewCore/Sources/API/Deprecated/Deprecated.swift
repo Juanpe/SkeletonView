@@ -1,0 +1,36 @@
+//
+//  Copyright SkeletonView. All Rights Reserved.
+//
+//  Licensed under the MIT License (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+//
+//      https://opensource.org/licenses/MIT
+//
+//  Deprecated.swift
+//
+//  Created by Juanpe Catalán on 18/8/21.
+
+import Foundation
+
+public extension Notification.Name {
+    
+    @available(*, deprecated, renamed: "skeletonWillAppear")
+    static let willBeginShowingSkeletons = Notification.Name.skeletonWillAppearNotification
+    
+    @available(*, deprecated, renamed: "skeletonDidAppear")
+    static let didShowSkeletons = Notification.Name.skeletonDidAppearNotification
+    
+    @available(*, deprecated, renamed: "skeletonWillUpdate")
+    static let willBeginUpdatingSkeletons = Notification.Name.skeletonWillUpdateNotification
+    
+    @available(*, deprecated, renamed: "skeletonDidUpdate")
+    static let didUpdateSkeletons = Notification.Name.skeletonDidUpdateNotification
+    
+    @available(*, deprecated, renamed: "skeletonWillDisappear")
+    static let willBeginHidingSkeletons = Notification.Name.skeletonWillDisappearNotification
+    
+    @available(*, deprecated, renamed: "skeletonDidDisappear")
+    static let didHideSkeletons = Notification.Name.skeletonDidDisappearNotification
+    
+}

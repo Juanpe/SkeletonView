@@ -115,7 +115,7 @@ extension SkeletonCollectionDataSource: UICollectionViewDataSource {
 extension SkeletonCollectionDataSource {
     private func skeletonViewIfContainerSkeletonIsActive(container: UIView, view: UIView) {
         guard container.isSkeletonActive,
-              let skeletonConfig = container.currentSkeletonConfig else {
+              let skeletonConfig = container._currentSkeletonConfig else {
             return
         }
 
