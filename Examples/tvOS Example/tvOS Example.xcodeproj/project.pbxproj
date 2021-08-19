@@ -44,6 +44,13 @@
 			remoteGlobalIDString = F556F56426CD1F3900A80B83;
 			remoteInfo = "SkeletonView tvOS";
 		};
+		F556F6FE26CE88DC00A80B83 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F556F61826CD224F00A80B83 /* SkeletonView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F556F67126CD458500A80B83;
+			remoteInfo = "SkeletonView tvOS Tests";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +112,7 @@
 				F556F61F26CD224F00A80B83 /* SkeletonView.framework */,
 				F556F62126CD224F00A80B83 /* SkeletonViewTests.xctest */,
 				F556F62326CD224F00A80B83 /* SkeletonView.framework */,
+				F556F6FF26CE88DC00A80B83 /* SkeletonView tvOS Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -188,6 +196,13 @@
 			fileType = wrapper.framework;
 			path = SkeletonView.framework;
 			remoteRef = F556F62226CD224F00A80B83 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F556F6FF26CE88DC00A80B83 /* SkeletonView tvOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SkeletonView tvOS Tests.xctest";
+			remoteRef = F556F6FE26CE88DC00A80B83 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -302,7 +317,7 @@
 				SDKROOT = appletvos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TVOS_DEPLOYMENT_TARGET = 14.5;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
 		};
@@ -356,7 +371,7 @@
 				SDKROOT = appletvos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				TVOS_DEPLOYMENT_TARGET = 14.5;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -376,6 +391,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
 		};
@@ -394,6 +410,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};
