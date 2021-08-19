@@ -88,6 +88,8 @@
 		F556F6D926CE315A00A80B83 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F6D826CE315A00A80B83 /* UICollectionView+Extensions.swift */; };
 		F556F6DA26CE315A00A80B83 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F6D826CE315A00A80B83 /* UICollectionView+Extensions.swift */; };
 		F556F6DD26CE33CE00A80B83 /* UIView+Swizzling.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F6DC26CE33CE00A80B83 /* UIView+Swizzling.swift */; };
+		F556F6E026CE367600A80B83 /* UIView+SkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F6DF26CE367600A80B83 /* UIView+SkeletonView.swift */; };
+		F556F6E126CE367600A80B83 /* UIView+SkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F6DF26CE367600A80B83 /* UIView+SkeletonView.swift */; };
 		OBJ_101 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* Int+Extensions.swift */; };
 		OBJ_103 /* UIColor+Skeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* UIColor+Skeleton.swift */; };
 		OBJ_104 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* UITableView+Extensions.swift */; };
@@ -192,6 +194,7 @@
 		F556F6CE26CE2AB800A80B83 /* SkeletonTextNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonTextNode.swift; sourceTree = "<group>"; };
 		F556F6D826CE315A00A80B83 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 		F556F6DC26CE33CE00A80B83 /* UIView+Swizzling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Swizzling.swift"; sourceTree = "<group>"; };
+		F556F6DF26CE367600A80B83 /* UIView+SkeletonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SkeletonView.swift"; sourceTree = "<group>"; };
 		OBJ_11 /* SkeletonLayerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLayerBuilder.swift; sourceTree = "<group>"; };
 		OBJ_12 /* SkeletonMultilineLayerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonMultilineLayerBuilder.swift; sourceTree = "<group>"; };
 		OBJ_14 /* CollectionSkeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionSkeleton.swift; sourceTree = "<group>"; };
@@ -342,8 +345,6 @@
 		F556F64A26CD2CD100A80B83 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				F556F6D726CE30EE00A80B83 /* Collections */,
-				F556F6B726CE25B100A80B83 /* Models */,
 				F556F6B226CE24DA00A80B83 /* AnimationBuilder */,
 				F556F6DB26CE32DA00A80B83 /* Appearance */,
 				F556F6D726CE30EE00A80B83 /* Collections */,
@@ -403,6 +404,7 @@
 				F556F68226CD48F700A80B83 /* UIView+AssociatedObjects.swift */,
 				OBJ_26 /* UIView+CollectionSkeleton.swift */,
 				F556F69D26CD553B00A80B83 /* UIView+Extensions.swift */,
+				F556F6DF26CE367600A80B83 /* UIView+SkeletonView.swift */,
 				F556F6DC26CE33CE00A80B83 /* UIView+Swizzling.swift */,
 				OBJ_61 /* UIView+Transitions.swift */,
 			);
@@ -535,15 +537,6 @@
 				OBJ_9 /* SkeletonAppearance.swift */,
 			);
 			path = Appearance;
-               sourceTree = "<group>";
-               };
-		F556F6D726CE30EE00A80B83 /* Collections */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_23 /* TableViews */,
-				OBJ_15 /* CollectionViews */,
-			);
-			path = Collections;
 			sourceTree = "<group>";
 		};
 		OBJ_15 /* CollectionViews */ = {
@@ -599,7 +592,7 @@
 			children = (
 				F556F64A26CD2CD100A80B83 /* API */,
 				F556F64B26CD2CD600A80B83 /* Internal */,
-				F556F55F26CD1D4400A80B83 /* Supporting Files */
+				F556F55F26CD1D4400A80B83 /* Supporting Files */,
 			);
 			name = Sources;
 			path = SkeletonViewCore/Sources;
@@ -768,6 +761,7 @@
 			files = (
 				F556F56626CD1F3900A80B83 /* SkeletonAppearance.swift in Sources */,
 				F556F6CA26CE2A4A00A80B83 /* UITextView+IBInspectable.swift in Sources */,
+				F556F6E126CE367600A80B83 /* UIView+SkeletonView.swift in Sources */,
 				F556F56726CD1F3900A80B83 /* SkeletonLayerBuilder.swift in Sources */,
 				F556F6D026CE2AB800A80B83 /* SkeletonTextNode.swift in Sources */,
 				F556F65126CD2DFD00A80B83 /* SkeletonView.swift in Sources */,
@@ -816,7 +810,6 @@
 				F556F68826CD49F900A80B83 /* UIView+IBInspectable.swift in Sources */,
 				F556F6C726CE2A2100A80B83 /* UILabel+IBInspectable.swift in Sources */,
 				F556F6DA26CE315A00A80B83 /* UICollectionView+Extensions.swift in Sources */,
-				F556F6DE26CE33CE00A80B83 /* UIView+Swizzling.swift in Sources */,
 				F556F64E26CD2D3D00A80B83 /* SkeletonDebug.swift in Sources */,
 				F556F6A526CD5A9000A80B83 /* CALayer+Animations.swift in Sources */,
 				F556F58F26CD1F3900A80B83 /* UIView+Transitions.swift in Sources */,
@@ -883,6 +876,7 @@
 				OBJ_122 /* SkeletonGradient.swift in Sources */,
 				F556F6C226CE27FD00A80B83 /* SkeletonType.swift in Sources */,
 				OBJ_123 /* SkeletonLayer.swift in Sources */,
+				F556F6E026CE367600A80B83 /* UIView+SkeletonView.swift in Sources */,
 				F556F6A126CD566C00A80B83 /* UIView+Debug.swift in Sources */,
 				F556F69226CD506C00A80B83 /* Deprecated.swift in Sources */,
 				F556F6B926CE262700A80B83 /* GradientDirection.swift in Sources */,
