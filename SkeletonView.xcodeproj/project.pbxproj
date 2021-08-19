@@ -325,6 +325,7 @@
 		F556F64A26CD2CD100A80B83 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				OBJ_8 /* Appearance */,
 				F556F69026CD505F00A80B83 /* Deprecated */,
 				F556F68C26CD4EB400A80B83 /* FoundationExtensions */,
 				F556F68526CD49E900A80B83 /* UIKitExtensions */,
@@ -544,7 +545,6 @@
 				F556F64B26CD2CD600A80B83 /* Internal */,
 				F556F64A26CD2CD100A80B83 /* API */,
 				F556F55F26CD1D4400A80B83 /* Supporting Files */,
-				OBJ_8 /* Appearance */,
 				OBJ_10 /* Builders */,
 				OBJ_13 /* Collections */,
 				OBJ_40 /* Helpers */,
