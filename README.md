@@ -518,6 +518,14 @@ By default, the user interaction is disabled for skeletonized items, but if you 
 view.isUserInteractionDisabledWhenSkeletonIsActive = false  // The view will be active when the skeleton will be active.
 ```
 
+**Don't use the font line height for the skeleton lines in labels**
+
+False to disable skeleton to auto-adjust to font height for a `UILabel` or `UITextView`. By default, the skeleton lines height is auto-adjusted to font height to more accurately reflect the text in the label rect rather than using the bounding box.
+
+```swift
+label.useFontLineHeight = false
+```
+
 **Delayed show skeleton**
 
 You can delay the presentation of the skeleton if the views update quickly.

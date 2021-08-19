@@ -22,27 +22,36 @@ protocol SkeletonTextNode {
     var multilineCornerRadius: Int { get }
     var multilineSpacing: CGFloat { get }
     var paddingInsets: UIEdgeInsets { get }
-    
+    var usesTextHeightForLines: Bool { get }
 }
 
 enum SkeletonTextNodeAssociatedKeys {
+    
     static var lastLineFillingPercent = "lastLineFillingPercent"
     static var multilineCornerRadius = "multilineCornerRadius"
     static var multilineSpacing = "multilineSpacing"
     static var paddingInsets = "paddingInsets"
     static var backupHeightConstraints = "backupHeightConstraints"
+    static var usesTextHeightForLines = "usesTextHeightForLines"
+    
 }
 
 extension UILabel: SkeletonTextNode {
     
     var lineHeight: CGFloat {
-        if let fontLineHeight = font?.lineHeight {
-            if let heightConstraints = backupHeightConstraints.first?.constant {
-                return (fontLineHeight > heightConstraints) ? heightConstraints : fontLineHeight
-            }
-            return fontLineHeight
+        let constraintsLineHeight = backupHeightConstraints.first?.constant ?? SkeletonAppearance.default.multilineHeight
+        
+        if useFontLineHeight,
+           let fontLineHeight = font?.lineHeight {
+            return fontLineHeight > constraintsLineHeight ? constraintsLineHeight : fontLineHeight
+        } else {
+            return constraintsLineHeight
         }
-        return SkeletonAppearance.default.multilineHeight
+    }
+    
+    var usesTextHeightForLines: Bool {
+        get { return ao_get(pkey: &SkeletonTextNodeAssociatedKeys.usesTextHeightForLines) as? Bool ?? true }
+        set { ao_set(newValue, pkey: &SkeletonTextNodeAssociatedKeys.usesTextHeightForLines) }
     }
     
     var lastLineFillingPercent: Int {
@@ -75,15 +84,19 @@ extension UILabel: SkeletonTextNode {
 extension UITextView: SkeletonTextNode {
     
     var lineHeight: CGFloat {
-        if let fontLineHeight = font?.lineHeight {
-            if let heightConstraints = heightConstraints.first?.constant {
-                return (fontLineHeight > heightConstraints) ? heightConstraints : fontLineHeight
-            }
-            
-            return fontLineHeight
-        }
+        let constraintsLineHeight = heightConstraints.first?.constant ?? SkeletonAppearance.default.multilineHeight
         
-        return SkeletonAppearance.default.multilineHeight
+        if useFontLineHeight,
+           let fontLineHeight = font?.lineHeight {
+            return fontLineHeight > constraintsLineHeight ? constraintsLineHeight : fontLineHeight
+        } else {
+            return constraintsLineHeight
+        }
+    }
+    
+    var usesTextHeightForLines: Bool {
+        get { return ao_get(pkey: &SkeletonTextNodeAssociatedKeys.usesTextHeightForLines) as? Bool ?? true }
+        set { ao_set(newValue, pkey: &SkeletonTextNodeAssociatedKeys.usesTextHeightForLines) }
     }
     
     var numberOfLines: Int {
