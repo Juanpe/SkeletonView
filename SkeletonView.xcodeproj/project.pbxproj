@@ -88,7 +88,6 @@
 		F556F6D926CE315A00A80B83 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F6D826CE315A00A80B83 /* UICollectionView+Extensions.swift */; };
 		F556F6DA26CE315A00A80B83 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F6D826CE315A00A80B83 /* UICollectionView+Extensions.swift */; };
 		F556F6DD26CE33CE00A80B83 /* UIView+Swizzling.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F6DC26CE33CE00A80B83 /* UIView+Swizzling.swift */; };
-		F556F6DE26CE33CE00A80B83 /* UIView+Swizzling.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F6DC26CE33CE00A80B83 /* UIView+Swizzling.swift */; };
 		OBJ_101 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* Int+Extensions.swift */; };
 		OBJ_103 /* UIColor+Skeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* UIColor+Skeleton.swift */; };
 		OBJ_104 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* UITableView+Extensions.swift */; };
@@ -343,6 +342,8 @@
 		F556F64A26CD2CD100A80B83 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				F556F6D726CE30EE00A80B83 /* Collections */,
+				F556F6B726CE25B100A80B83 /* Models */,
 				F556F6B226CE24DA00A80B83 /* AnimationBuilder */,
 				F556F6DB26CE32DA00A80B83 /* Appearance */,
 				F556F6D726CE30EE00A80B83 /* Collections */,
@@ -534,6 +535,15 @@
 				OBJ_9 /* SkeletonAppearance.swift */,
 			);
 			path = Appearance;
+               sourceTree = "<group>";
+               };
+		F556F6D726CE30EE00A80B83 /* Collections */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_23 /* TableViews */,
+				OBJ_15 /* CollectionViews */,
+			);
+			path = Collections;
 			sourceTree = "<group>";
 		};
 		OBJ_15 /* CollectionViews */ = {
@@ -589,7 +599,7 @@
 			children = (
 				F556F64A26CD2CD100A80B83 /* API */,
 				F556F64B26CD2CD600A80B83 /* Internal */,
-				F556F55F26CD1D4400A80B83 /* Supporting Files */,
+				F556F55F26CD1D4400A80B83 /* Supporting Files */
 			);
 			name = Sources;
 			path = SkeletonViewCore/Sources;
