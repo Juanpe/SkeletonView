@@ -8,32 +8,8 @@
 
 import UIKit
 
-public typealias SkeletonLayerAnimation = (CALayer) -> CAAnimation
-
-public enum SkeletonType {
-    case solid
-    case gradient
-    
-    var layer: CALayer {
-        switch self {
-        case .solid:
-            return CALayer()
-        case .gradient:
-            return CAGradientLayer()
-        }
-    }
-    
-    func defaultLayerAnimation(isRTL: Bool) -> SkeletonLayerAnimation {
-        switch self {
-        case .solid:
-            return { $0.pulse }
-        case .gradient:
-            return { SkeletonAnimationBuilder().makeSlidingAnimation(withDirection: isRTL ? .rightLeft : .leftRight) }()
-        }
-    }
-}
-
 struct SkeletonLayer {
+    
     private var maskLayer: CALayer
     private weak var holder: UIView?
     
@@ -118,9 +94,11 @@ struct SkeletonLayer {
         }
         return textView
     }
+    
 }
 
 extension SkeletonLayer {
+    
     func start(_ anim: SkeletonLayerAnimation? = nil, completion: (() -> Void)? = nil) {
         let animation = anim ?? type.defaultLayerAnimation(isRTL: holder?.isRTL ?? false)
         contentLayer.playAnimation(animation, key: "skeletonAnimation", completion: completion)
@@ -129,4 +107,5 @@ extension SkeletonLayer {
     func stopAnimation() {
         contentLayer.stopAnimation(forKey: "skeletonAnimation")
     }
+    
 }

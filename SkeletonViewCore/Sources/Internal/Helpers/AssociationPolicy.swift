@@ -19,7 +19,6 @@ enum AssociationPolicy: UInt {
 
 protocol AssociatedObjects: AnyObject { }
 
-// transparent wrappers
 extension AssociatedObjects {
     /// wrapper around `objc_getAssociatedObject`
     func ao_get(pkey: UnsafeRawPointer) -> Any? {

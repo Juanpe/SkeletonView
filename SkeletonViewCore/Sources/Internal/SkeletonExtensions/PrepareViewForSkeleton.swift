@@ -1,14 +1,20 @@
 //
-//  PrepareForSkeleton.swift
-//  SkeletonView-iOS
+//  Copyright SkeletonView. All Rights Reserved.
+//
+//  Licensed under the MIT License (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+//
+//      https://opensource.org/licenses/MIT
+//
+//  PrepareViewForSkeleton.swift
 //
 //  Created by Juanpe Catalán on 04/11/2017.
-//  Copyright © 2017 SkeletonView. All rights reserved.
-//
 
 import UIKit
 
 extension UIView {
+    
     @objc func prepareViewForSkeleton() {
         if isUserInteractionDisabledWhenSkeletonIsActive {
             isUserInteractionEnabled = false
@@ -18,39 +24,10 @@ extension UIView {
             self?.backgroundColor = .clear
         }
     }
+    
 }
 
 extension UILabel {
-    var desiredHeightBasedOnNumberOfLines: CGFloat {
-        let spaceNeededForEachLine = lineHeight * CGFloat(numberOfLines)
-        let spaceNeededForSpaces = skeletonLineSpacing * CGFloat(numberOfLines - 1)
-        let padding = paddingInsets.top + paddingInsets.bottom
-        
-        return spaceNeededForEachLine + spaceNeededForSpaces + padding
-    }
-    
-    func updateHeightConstraintsIfNeeded() {
-        guard numberOfLines > 1 || numberOfLines == 0 else { return }
-        
-        // Workaround to simulate content when the label is contained in a `UIStackView`.
-        if isSuperviewAStackView, bounds.height == 0 {
-            // This is a placeholder text to simulate content because it's contained in a stack view in order to prevent that the content size will be zero.
-            text = " "
-        }
-        
-        let desiredHeight = desiredHeightBasedOnNumberOfLines
-        if desiredHeight > definedMaxHeight {
-            backupHeightConstraints = heightConstraints
-            NSLayoutConstraint.deactivate(heightConstraints)
-            setHeight(equalToConstant: desiredHeight)
-        }
-    }
-    
-    func restoreBackupHeightConstraintsIfNeeded() {
-        guard !backupHeightConstraints.isEmpty else { return }
-        NSLayoutConstraint.activate(backupHeightConstraints)
-        backupHeightConstraints.removeAll()
-    }
     
     override func prepareViewForSkeleton() {
         backgroundColor = .clear
@@ -68,6 +45,7 @@ extension UILabel {
 }
 
 extension UITextView {
+    
     override func prepareViewForSkeleton() {
         backgroundColor = .clear
         
@@ -80,9 +58,11 @@ extension UITextView {
             self?.textColor = .clear
         }
     }
+    
 }
 
 extension UITextField {
+    
     override func prepareViewForSkeleton() {
         backgroundColor = .clear
         resignFirstResponder()
@@ -92,9 +72,11 @@ extension UITextField {
             self?.placeholder = nil
         }
     }
+    
 }
 
 extension UIImageView {
+    
     override func prepareViewForSkeleton() {
         backgroundColor = .clear
         
@@ -106,9 +88,11 @@ extension UIImageView {
             self?.image = nil
         }
     }
+    
 }
 
 extension UIButton {
+    
     override func prepareViewForSkeleton() {
         backgroundColor = .clear
         
@@ -120,9 +104,11 @@ extension UIButton {
             self?.setTitle(nil, for: .normal)
         }
     }
+    
 }
 
 extension UITableViewHeaderFooterView {
+    
     override func prepareViewForSkeleton() {
         backgroundView?.backgroundColor = .clear
         
@@ -130,4 +116,5 @@ extension UITableViewHeaderFooterView {
             isUserInteractionEnabled = false
         }
     }
+    
 }

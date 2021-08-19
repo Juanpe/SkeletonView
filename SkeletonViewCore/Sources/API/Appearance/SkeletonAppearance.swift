@@ -13,7 +13,7 @@
 import UIKit
 
 public enum SkeletonAppearance {
-    static var `default` = SkeletonViewAppearance.shared
+    public static var `default` = SkeletonViewAppearance.shared
 }
 
 // codebeat:disable[TOO_MANY_IVARS]
@@ -21,19 +21,19 @@ public class SkeletonViewAppearance {
     
     static var shared = SkeletonViewAppearance()
 
-    var tintColor: UIColor = .skeletonDefault
+    public var tintColor: UIColor = .skeletonDefault
 
-    var gradient = SkeletonGradient(baseColor: .skeletonDefault)
+    public var gradient = SkeletonGradient(baseColor: .skeletonDefault)
 
-    var multilineHeight: CGFloat = 15
+    public var multilineHeight: CGFloat = 15
 
-    var multilineSpacing: CGFloat = 10
+    public var multilineSpacing: CGFloat = 10
 
-    var multilineLastLineFillPercent: Int = 70
+    public var multilineLastLineFillPercent: Int = 70
 
-    var multilineCornerRadius: Int = 0
+    public var multilineCornerRadius: Int = 0
 
-    var renderSingleLineAsView: Bool = false
+    public var renderSingleLineAsView: Bool = false
     
 }
 // codebeat:enable[TOO_MANY_IVARS]

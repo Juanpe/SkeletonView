@@ -3,6 +3,7 @@
 import UIKit
 
 extension UIView {
+    
     @objc var subviewsSkeletonables: [UIView] {
         subviewsToSkeleton.filter { $0.isSkeletonable }
     }
@@ -10,9 +11,11 @@ extension UIView {
     @objc var subviewsToSkeleton: [UIView] {
         subviews
     }
+    
 }
 
 extension UITableView {
+    
     override var subviewsToSkeleton: [UIView] {
 		// on `UIViewController'S onViewDidLoad`, the window is still nil.
 		// Some developer trying to call `view.showAnimatedSkeleton()`
@@ -20,6 +23,7 @@ extension UITableView {
 		guard window != nil else { return [] }
         return subviews
     }
+    
 }
 
 extension UITableViewCell {

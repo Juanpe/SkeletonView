@@ -1,14 +1,20 @@
 //
+//  Copyright SkeletonView. All Rights Reserved.
+//
+//  Licensed under the MIT License (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+//
+//      https://opensource.org/licenses/MIT
+//
 //  SkeletonGradient.swift
-//  SkeletonView-iOS
 //
 //  Created by Juanpe Catalán on 05/11/2017.
-//  Copyright © 2017 SkeletonView. All rights reserved.
-//
 
 import UIKit
 
 public struct SkeletonGradient {
+    
     private let gradientColors: [UIColor]
     
     public var colors: [UIColor] {
@@ -22,4 +28,5 @@ public struct SkeletonGradient {
             self.gradientColors = baseColor.makeGradient()
         }
     }
+    
 }
