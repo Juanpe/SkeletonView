@@ -5,6 +5,7 @@ import UIKit
 /// Object that facilitates the creation of skeleton layers,
 /// based on the builder pattern
 class SkeletonLayerBuilder {
+    
     var skeletonType: SkeletonType?
     var colors: [UIColor] = []
     var holder: UIView?
@@ -17,7 +18,7 @@ class SkeletonLayerBuilder {
 
     @discardableResult
     func addColor(_ color: UIColor) -> SkeletonLayerBuilder {
-        return addColors([color])
+        addColors([color])
     }
 
     @discardableResult
@@ -42,4 +43,5 @@ class SkeletonLayerBuilder {
 							 colors: colors,
 							 skeletonHolder: holder)
 	}
+    
 }

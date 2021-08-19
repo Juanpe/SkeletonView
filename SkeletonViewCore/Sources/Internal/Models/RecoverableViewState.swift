@@ -9,6 +9,7 @@
 import UIKit
 
 struct RecoverableViewState {
+    
     var backgroundColor: UIColor?
     var cornerRadius: CGFloat
     var clipToBounds: Bool
@@ -20,6 +21,7 @@ struct RecoverableViewState {
         self.cornerRadius = view.layer.cornerRadius
         self.isUserInteractionsEnabled = view.isUserInteractionEnabled
     }
+    
 }
 
 struct RecoverableTextViewState {

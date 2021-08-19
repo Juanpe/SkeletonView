@@ -14,6 +14,7 @@ protocol Recoverable {
 }
 
 extension UIView: Recoverable {
+    
     var viewState: RecoverableViewState? {
         get { return ao_get(pkey: &ViewAssociatedKeys.viewState) as? RecoverableViewState }
         set { ao_setOptional(newValue, pkey: &ViewAssociatedKeys.viewState) }
@@ -41,9 +42,11 @@ extension UIView: Recoverable {
             }
         }
     }
+    
 }
 
 extension UILabel {
+    
     var labelState: RecoverableTextViewState? {
         get { return ao_get(pkey: &ViewAssociatedKeys.labelViewState) as? RecoverableTextViewState }
         set { ao_setOptional(newValue, pkey: &ViewAssociatedKeys.labelViewState) }
@@ -70,9 +73,11 @@ extension UILabel {
             }
         }
     }
+    
 }
 
 extension UITextView {
+    
     var textState: RecoverableTextViewState? {
         get { return ao_get(pkey: &ViewAssociatedKeys.labelViewState) as? RecoverableTextViewState }
         set { ao_setOptional(newValue, pkey: &ViewAssociatedKeys.labelViewState) }
@@ -93,9 +98,11 @@ extension UITextView {
             }
         }
     }
+    
 }
 
 extension UITextField {
+    
     var textState: RecoverableTextFieldState? {
         get { return ao_get(pkey: &ViewAssociatedKeys.labelViewState) as? RecoverableTextFieldState }
         set { ao_setOptional(newValue, pkey: &ViewAssociatedKeys.labelViewState) }
@@ -120,9 +127,11 @@ extension UITextField {
             }
         }
     }
+    
 }
 
 extension UIImageView {
+    
     var imageState: RecoverableImageViewState? {
         get { return ao_get(pkey: &ViewAssociatedKeys.imageViewState) as? RecoverableImageViewState }
         set { ao_setOptional(newValue, pkey: &ViewAssociatedKeys.imageViewState) }
@@ -139,9 +148,11 @@ extension UIImageView {
             self?.image = self?.image == nil || forced ? self?.imageState?.image : self?.image
         }
     }
+    
 }
 
 extension UIButton {
+    
     var buttonState: RecoverableButtonViewState? {
         get { return ao_get(pkey: &ViewAssociatedKeys.buttonViewState) as? RecoverableButtonViewState }
         set { ao_setOptional(newValue, pkey: &ViewAssociatedKeys.buttonViewState) }
@@ -160,9 +171,11 @@ extension UIButton {
             }
         }
     }
+    
 }
 
 extension UITableViewHeaderFooterView {
+    
     var headerFooterState: RecoverableTableViewHeaderFooterViewState? {
         get { return ao_get(pkey: &ViewAssociatedKeys.headerFooterViewState) as? RecoverableTableViewHeaderFooterViewState }
         set { ao_setOptional(newValue, pkey: &ViewAssociatedKeys.headerFooterViewState) }
@@ -179,4 +192,5 @@ extension UITableViewHeaderFooterView {
             self?.backgroundView?.backgroundColor = self?.headerFooterState?.backgroundViewColor
         }
     }
+    
 }
