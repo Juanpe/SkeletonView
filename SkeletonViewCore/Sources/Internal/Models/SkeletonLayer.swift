@@ -87,8 +87,8 @@ struct SkeletonLayer {
         maskLayer.updateMultilinesLayers(for: config)
     }
     
-    var holderAsTextView: ContainsMultilineText? {
-        guard let textView = holder as? ContainsMultilineText,
+    var holderAsTextView: SkeletonTextNode? {
+        guard let textView = holder as? SkeletonTextNode,
             (textView.numberOfLines == -1 || textView.numberOfLines == 0 || textView.numberOfLines > 1 || textView.numberOfLines == 1 && !SkeletonAppearance.default.renderSingleLineAsView) else {
                 return nil
         }

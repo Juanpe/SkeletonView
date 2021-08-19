@@ -15,6 +15,11 @@ import UIKit
 
 extension UILabel {
     
+    var skeletonPaddingInsets: UIEdgeInsets {
+        get { return paddingInsets }
+        set { paddingInsets = newValue }
+    }
+    
     var desiredHeightBasedOnNumberOfLines: CGFloat {
         let spaceNeededForEachLine = lineHeight * CGFloat(numberOfLines)
         let spaceNeededForSpaces = skeletonLineSpacing * CGFloat(numberOfLines - 1)
