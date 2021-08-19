@@ -8,10 +8,7 @@
 
 import UIKit
 
-public typealias ReusableHeaderFooterIdentifier = String
-
 extension UITableView: CollectionSkeleton {
-    public static let automaticNumberOfSkeletonRows = -1
 
     var estimatedNumberOfRows: Int {
         return Int(ceil(frame.height / rowHeight))
@@ -74,14 +71,19 @@ extension UITableView: CollectionSkeleton {
 
         if reloadAfter { self.reloadData() }
     }
+    
+}
 
-    private func restoreRowHeight() {
+private extension UITableView {
+    
+    func restoreRowHeight() {
         guard let dataSource = self.dataSource as? SkeletonCollectionDataSource else { return }
         rowHeight = dataSource.originalRowHeight
     }
     
-    private func calculateRowHeight() -> CGFloat {
+    func calculateRowHeight() -> CGFloat {
         guard rowHeight == UITableView.automaticDimension else { return rowHeight }
         return estimatedRowHeight
     }
+    
 }
