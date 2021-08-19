@@ -21,10 +21,6 @@ extension UIView {
         superview is UIStackView
     }
     
-    var isSkeletonActive: Bool {
-        return _status == .on || subviewsSkeletonables.contains(where: { $0.isSkeletonActive })
-    }
-    
     var isRTL: Bool {
         if #available(iOS 10.0, *), #available(tvOS 10.0, *) {
             return effectiveUserInterfaceLayoutDirection == .rightToLeft

@@ -13,7 +13,6 @@
 
 import UIKit
 
-/// TODO(codebase refactor): Move this logic to another object.
 extension UIView {
     
     enum Constants {

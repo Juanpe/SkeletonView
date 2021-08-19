@@ -135,7 +135,6 @@ private extension CALayer {
     }
 }
 
-/// TODO(codebase refactor): Move all this logic to another object.
 extension CALayer {
     
     func addMultilinesLayers(for config: SkeletonMultilinesLayerConfig) {

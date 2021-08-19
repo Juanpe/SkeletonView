@@ -43,17 +43,7 @@ public extension UIColor {
     }
     
     var complementaryColor: UIColor {
-        if #available(iOS 13, tvOS 13, *) {
-            return UIColor { [weak self] _ in
-                guard let self = self else {
-                    fatalError("Complementary color can't be calculated because original color is `nil`")
-                }
-                
-                return self.isLight ? self.darker : self.lighter
-            }
-        } else {
-            return isLight ? darker : lighter
-        }
+        isLight ? darker : lighter
     }
     
     var lighter: UIColor {

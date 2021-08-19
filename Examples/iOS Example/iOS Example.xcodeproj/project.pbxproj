@@ -12,8 +12,10 @@
 		F556F5C226CD20A300A80B83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F556F5B926CD20A300A80B83 /* LaunchScreen.storyboard */; };
 		F556F5C326CD20A300A80B83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F556F5BB26CD20A300A80B83 /* Main.storyboard */; };
 		F556F5C426CD20A300A80B83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F5BD26CD20A300A80B83 /* AppDelegate.swift */; };
-		F556F5C626CD20A300A80B83 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F5BF26CD20A300A80B83 /* SceneDelegate.swift */; };
 		F556F5E626CD21D300A80B83 /* SkeletonView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556F5E026CD21CB00A80B83 /* SkeletonView.framework */; };
+		F556F6EE26CE813F00A80B83 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F6E626CE813F00A80B83 /* Cell.swift */; };
+		F556F6EF26CE813F00A80B83 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F6EC26CE813F00A80B83 /* Constants.swift */; };
+		F556F6F026CE813F00A80B83 /* HeaderFooterSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F6ED26CE813F00A80B83 /* HeaderFooterSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,13 @@
 			remoteGlobalIDString = "SkeletonView::SkeletonView";
 			remoteInfo = "SkeletonView iOS";
 		};
+		F556F6EA26CE813F00A80B83 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F556F5D926CD21CB00A80B83 /* SkeletonView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F556F67126CD458500A80B83;
+			remoteInfo = "SkeletonView tvOS Tests";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -55,8 +64,10 @@
 		F556F5BC26CD20A300A80B83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F556F5BD26CD20A300A80B83 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F556F5BE26CD20A300A80B83 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F556F5BF26CD20A300A80B83 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F556F5D926CD21CB00A80B83 /* SkeletonView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SkeletonView.xcodeproj; path = ../../SkeletonView.xcodeproj; sourceTree = "<group>"; };
+		F556F6E626CE813F00A80B83 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		F556F6EC26CE813F00A80B83 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F556F6ED26CE813F00A80B83 /* HeaderFooterSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderFooterSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,13 +102,15 @@
 		F556F5B626CD20A300A80B83 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				F556F6E626CE813F00A80B83 /* Cell.swift */,
+				F556F6EC26CE813F00A80B83 /* Constants.swift */,
+				F556F6ED26CE813F00A80B83 /* HeaderFooterSection.swift */,
 				F556F5B726CD20A300A80B83 /* ViewController.swift */,
 				F556F5B826CD20A300A80B83 /* Assets.xcassets */,
 				F556F5B926CD20A300A80B83 /* LaunchScreen.storyboard */,
 				F556F5BB26CD20A300A80B83 /* Main.storyboard */,
 				F556F5BD26CD20A300A80B83 /* AppDelegate.swift */,
 				F556F5BE26CD20A300A80B83 /* Info.plist */,
-				F556F5BF26CD20A300A80B83 /* SceneDelegate.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -108,6 +121,7 @@
 				F556F5E026CD21CB00A80B83 /* SkeletonView.framework */,
 				F556F5E226CD21CB00A80B83 /* SkeletonViewTests.xctest */,
 				F556F5E426CD21CB00A80B83 /* SkeletonView.framework */,
+				F556F6EB26CE813F00A80B83 /* SkeletonView tvOS Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -193,6 +207,13 @@
 			remoteRef = F556F5E326CD21CB00A80B83 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		F556F6EB26CE813F00A80B83 /* SkeletonView tvOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SkeletonView tvOS Tests.xctest";
+			remoteRef = F556F6EA26CE813F00A80B83 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -213,9 +234,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F556F6EF26CE813F00A80B83 /* Constants.swift in Sources */,
 				F556F5C426CD20A300A80B83 /* AppDelegate.swift in Sources */,
+				F556F6EE26CE813F00A80B83 /* Cell.swift in Sources */,
 				F556F5C026CD20A300A80B83 /* ViewController.swift in Sources */,
-				F556F5C626CD20A300A80B83 /* SceneDelegate.swift in Sources */,
+				F556F6F026CE813F00A80B83 /* HeaderFooterSection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +395,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -390,6 +414,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

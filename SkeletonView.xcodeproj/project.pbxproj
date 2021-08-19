@@ -90,6 +90,8 @@
 		F556F6DD26CE33CE00A80B83 /* UIView+Swizzling.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F6DC26CE33CE00A80B83 /* UIView+Swizzling.swift */; };
 		F556F6E026CE367600A80B83 /* UIView+SkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F6DF26CE367600A80B83 /* UIView+SkeletonView.swift */; };
 		F556F6E126CE367600A80B83 /* UIView+SkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F6DF26CE367600A80B83 /* UIView+SkeletonView.swift */; };
+		F556F6F226CE818B00A80B83 /* UIView+Flags.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F6F126CE818B00A80B83 /* UIView+Flags.swift */; };
+		F556F6F326CE818B00A80B83 /* UIView+Flags.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F6F126CE818B00A80B83 /* UIView+Flags.swift */; };
 		OBJ_101 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* Int+Extensions.swift */; };
 		OBJ_103 /* UIColor+Skeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* UIColor+Skeleton.swift */; };
 		OBJ_104 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* UITableView+Extensions.swift */; };
@@ -195,6 +197,7 @@
 		F556F6D826CE315A00A80B83 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 		F556F6DC26CE33CE00A80B83 /* UIView+Swizzling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Swizzling.swift"; sourceTree = "<group>"; };
 		F556F6DF26CE367600A80B83 /* UIView+SkeletonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SkeletonView.swift"; sourceTree = "<group>"; };
+		F556F6F126CE818B00A80B83 /* UIView+Flags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Flags.swift"; sourceTree = "<group>"; };
 		OBJ_11 /* SkeletonLayerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLayerBuilder.swift; sourceTree = "<group>"; };
 		OBJ_12 /* SkeletonMultilineLayerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonMultilineLayerBuilder.swift; sourceTree = "<group>"; };
 		OBJ_14 /* CollectionSkeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionSkeleton.swift; sourceTree = "<group>"; };
@@ -431,6 +434,7 @@
 				F556F6C526CE2A2100A80B83 /* UILabel+IBInspectable.swift */,
 				F556F6C826CE2A4A00A80B83 /* UITextView+IBInspectable.swift */,
 				F556F6D826CE315A00A80B83 /* UICollectionView+Extensions.swift */,
+				F556F6F126CE818B00A80B83 /* UIView+Flags.swift */,
 			);
 			path = UIKitExtensions;
 			sourceTree = "<group>";
@@ -799,6 +803,7 @@
 				F556F58926CD1F3900A80B83 /* SkeletonFlowHandler.swift in Sources */,
 				F556F58A26CD1F3900A80B83 /* SkeletonGradient.swift in Sources */,
 				F556F6C326CE27FD00A80B83 /* SkeletonType.swift in Sources */,
+				F556F6F326CE818B00A80B83 /* UIView+Flags.swift in Sources */,
 				F556F58B26CD1F3900A80B83 /* SkeletonLayer.swift in Sources */,
 				F556F6A226CD566C00A80B83 /* UIView+Debug.swift in Sources */,
 				F556F69326CD506C00A80B83 /* Deprecated.swift in Sources */,
@@ -842,6 +847,7 @@
 				F556F6CF26CE2AB800A80B83 /* SkeletonTextNode.swift in Sources */,
 				F556F65026CD2DFD00A80B83 /* SkeletonView.swift in Sources */,
 				OBJ_88 /* SkeletonMultilineLayerBuilder.swift in Sources */,
+				F556F6F226CE818B00A80B83 /* UIView+Flags.swift in Sources */,
 				OBJ_89 /* CollectionSkeleton.swift in Sources */,
 				OBJ_90 /* SkeletonCollectionViewProtocols.swift in Sources */,
 				F556F6BF26CE277F00A80B83 /* PrepareViewForSkeleton.swift in Sources */,
