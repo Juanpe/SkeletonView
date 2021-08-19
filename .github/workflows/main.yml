@@ -10,10 +10,12 @@ jobs:
     strategy:
       matrix:
         build-config:    
-          - { target: 'SkeletonView-iOS', destination: 'platform=iOS Simulator,name=iPhone 8', sdk: 'iphonesimulator' }
-          - { target: 'SkeletonView-tvOS', destination: 'platform=tvOS Simulator,name=Apple TV', sdk: 'appletvsimulator' }
-          - { target: 'SkeletonViewExample', destination: 'platform=iOS Simulator,name=iPhone 8', sdk: 'iphonesimulator' }
+          - { scheme: 'SkeletonView iOS', destination: 'platform=iOS Simulator,name=iPhone 8', sdk: 'iphonesimulator' }
+          - { scheme: 'SkeletonView tvOS', destination: 'platform=tvOS Simulator,name=Apple TV', sdk: 'appletvsimulator' }
+          - { scheme: 'iOS Example', destination: 'platform=iOS Simulator,name=iPhone 8', sdk: 'iphonesimulator' }
+          - { scheme: 'tvOS Example', destination: 'platform=tvOS Simulator,name=Apple TV', sdk: 'appletvsimulator' }
     steps:
       - uses: actions/checkout@v2
       - name: Build
-        run: xcodebuild clean build -target '${{ matrix.build-config['target'] }}' -sdk '${{ matrix.build-config['sdk'] }}' -destination '${{ matrix.build-config['destination'] }}'
+        run: xcodebuild clean build -workspace 'SkeletonView.xcworkspace' -scheme '${{ matrix.build-config['scheme'] }}' -sdk '${{ matrix.build-config['sdk'] }}' -destination '${{ matrix.build-config['destination'] }}'
+

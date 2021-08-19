@@ -92,6 +92,7 @@
 		F556F6E126CE367600A80B83 /* UIView+SkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F6DF26CE367600A80B83 /* UIView+SkeletonView.swift */; };
 		F556F6F226CE818B00A80B83 /* UIView+Flags.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F6F126CE818B00A80B83 /* UIView+Flags.swift */; };
 		F556F6F326CE818B00A80B83 /* UIView+Flags.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F6F126CE818B00A80B83 /* UIView+Flags.swift */; };
+		F556F6F626CE876300A80B83 /* UIView+Swizzling.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F6DC26CE33CE00A80B83 /* UIView+Swizzling.swift */; };
 		OBJ_101 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* Int+Extensions.swift */; };
 		OBJ_103 /* UIColor+Skeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* UIColor+Skeleton.swift */; };
 		OBJ_104 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* UITableView+Extensions.swift */; };
@@ -793,6 +794,7 @@
 				F556F57E26CD1F3900A80B83 /* AssociationPolicy.swift in Sources */,
 				F556F6B026CE244100A80B83 /* DispatchQueue+Extensions.swift in Sources */,
 				F556F58026CD1F3900A80B83 /* Recursive.swift in Sources */,
+				F556F6F626CE876300A80B83 /* UIView+Swizzling.swift in Sources */,
 				F556F58126CD1F3900A80B83 /* Swizzling.swift in Sources */,
 				F556F6B626CE258300A80B83 /* GradientDirection+Animations.swift in Sources */,
 				F556F69F26CD553B00A80B83 /* UIView+Extensions.swift in Sources */,
