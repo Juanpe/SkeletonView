@@ -8,6 +8,12 @@
 
 import UIKit
 
+extension UITableView {
+    public static let automaticNumberOfSkeletonRows = -1
+}
+
+public typealias ReusableHeaderFooterIdentifier = String
+
 public protocol SkeletonTableViewDataSource: UITableViewDataSource {
     func numSections(in collectionSkeletonView: UITableView) -> Int
     func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int

@@ -9,6 +9,7 @@
 import UIKit
 
 extension UIView {
+    
     func addDummyDataSourceIfNeeded() {
         guard let collection = self as? CollectionSkeleton,
             !ProcessInfo.isRunningXCTest else { return }
@@ -30,4 +31,5 @@ extension UIView {
         collection.removeDummyDataSource(reloadAfter: reload)
         collection.enableUserInteraction()
     }
+    
 }
