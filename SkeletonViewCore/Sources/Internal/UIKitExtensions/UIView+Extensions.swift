@@ -98,4 +98,80 @@ extension UIView {
         constraints.filter({ "\(type(of: $0))" != "NSContentSizeLayoutConstraint" })
     }
     
+    /// Animations
+    
+    func startSkeletonLayerAnimationBlock(_ anim: SkeletonLayerAnimation? = nil) -> VoidBlock {
+        {
+            self._isSkeletonAnimated = true
+            guard let layer = self._skeletonLayer else { return }
+            layer.start(anim) { [weak self] in
+                self?._isSkeletonAnimated = false
+            }
+        }
+    }
+    
+    var stopSkeletonLayerAnimationBlock: VoidBlock {
+        {
+            self._isSkeletonAnimated = false
+            guard let layer = self._skeletonLayer else { return }
+            layer.stopAnimation()
+        }
+    }
+    
+    /// Skeleton Layer
+    
+    func addSkeletonLayer(skeletonConfig config: SkeletonConfig) {
+        guard let skeletonLayer = SkeletonLayerBuilder()
+            .setSkeletonType(config.type)
+            .addColors(config.colors)
+            .setHolder(self)
+            .build()
+            else { return }
+        
+        self._skeletonLayer = skeletonLayer
+        layer.insertSkeletonLayer(
+            skeletonLayer,
+            atIndex: UInt32.max,
+            transition: config.transition
+        ) { [weak self] in
+            guard let self = self else { return }
+            
+            // Workaround to fix the problem when inserting a sublayer and
+            // the content offset is modified by the system.
+            (self as? UITextView)?.setContentOffset(.zero, animated: false)
+            
+            if config.animated {
+                self.startSkeletonAnimation(config.animation)
+            }
+        }
+        _status = .on
+    }
+    
+    func updateSkeletonLayer(skeletonConfig config: SkeletonConfig) {
+        guard let skeletonLayer = _skeletonLayer else { return }
+        skeletonLayer.update(usingColors: config.colors)
+        if config.animated {
+            startSkeletonAnimation(config.animation)
+        } else {
+            skeletonLayer.stopAnimation()
+        }
+    }
+
+    func layoutSkeletonLayerIfNeeded() {
+        guard let skeletonLayer = _skeletonLayer else { return }
+        skeletonLayer.layoutIfNeeded()
+    }
+    
+    func removeSkeletonLayer() {
+        guard isSkeletonActive,
+            let skeletonLayer = _skeletonLayer,
+            let transitionStyle = _currentSkeletonConfig?.transition else { return }
+        skeletonLayer.stopAnimation()
+        _status = .off
+        skeletonLayer.removeLayer(transition: transitionStyle) {
+            self._skeletonLayer = nil
+            self._currentSkeletonConfig = nil
+        }
+    }
+    
 }
