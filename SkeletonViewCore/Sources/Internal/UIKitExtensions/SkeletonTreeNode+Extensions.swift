@@ -32,7 +32,7 @@ extension SkeletonTreeNode where Base: UIView {
 extension SkeletonTreeNode where Base: UIView {
     
     var dictionaryRepresentation: [String: Any] {
-        let children = children
+        let skeletonableChildren = children
         
         var nodeInfo: [String: Any] = [
             "type": "\(type(of: base))",
@@ -40,8 +40,8 @@ extension SkeletonTreeNode where Base: UIView {
             "isSkeletonable": base.isSkeletonable
         ]
         
-        if !children.isEmpty {
-            nodeInfo["children"] = children.map { $0.dictionaryRepresentation }
+        if !skeletonableChildren.isEmpty {
+            nodeInfo["children"] = skeletonableChildren.map { $0.dictionaryRepresentation }
         }
         
         return nodeInfo
