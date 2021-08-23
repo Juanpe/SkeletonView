@@ -548,14 +548,11 @@ func showGradientSkeleton(usingGradient: SkeletonGradient,
 
 To facilitate the debug tasks when something is not working fine. **`SkeletonView`** has some new tools.
 
-First, `UIView` has available a new property with his skeleton info:
+First, `UIView` has available a property with his skeleton info:
 ```swift
-var skeletonDescription: String
+var sk.skeletonTreeDescription: String
 
 ```
-The skeleton representation looks like this:
-
-![](Assets/debug_description.png)
 
 Besides, you can activate the new **debug mode**. You just add the environment variable `SKELETON_DEBUG` and activate it.
 
@@ -564,10 +561,66 @@ Besides, you can activate the new **debug mode**. You just add the environment v
 Then, when the skeleton appears, you can see the view hierarchy in the Xcode console.
 
 <details>
-<summary>Open to see an output example </summary>
-<img src="Assets/hierarchy_output.png" />
-</details>
-
+```json
+{
+  "children" : [
+    {
+      "type" : "UIView",
+      "isSkeletonable" : true,
+      "children" : [
+        {
+          "type" : "UITextView",
+          "isSkeletonable" : true,
+          "reference" : "0x0000000147853c00"
+        },
+        {
+          "type" : "UIImageView",
+          "reference" : "0x0000000147607f90",
+          "isSkeletonable" : true
+        },
+        {
+          "type" : "UILabel",
+          "reference" : "0x0000000147529e50",
+          "isSkeletonable" : true
+        }
+      ],
+      "reference" : "0x000000014751cfa0"
+    },
+    {
+      "reference" : "0x0000000148039000",
+      "isSkeletonable" : true,
+      "children" : [
+        {
+          "reference" : "0x0000000147635630",
+          "children" : [
+            {
+              "isSkeletonable" : true,
+              "type" : "UIImageView",
+              "reference" : "0x0000000147635ba0"
+            },
+            {
+              "isSkeletonable" : true,
+              "type" : "UILabel",
+              "reference" : "0x0000000147635d70"
+            },
+            {
+              "reference" : "0x0000000147635fe0",
+              "isSkeletonable" : true,
+              "type" : "UITextField"
+            }
+          ],
+          "isSkeletonable" : true,
+          "type" : "Cell"
+        }
+      ],
+      "type" : "UITableView"
+    }
+  ],
+  "type" : "UIView",
+  "isSkeletonable" : true,
+  "reference" : "0x000000014751ce30"
+}
+```
   
 **Supported OS & SDK Versions**
 
