@@ -11,6 +11,7 @@
 		F53D731926D399E100249D46 /* SkeletonTreeNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53D731726D399E100249D46 /* SkeletonTreeNode+Extensions.swift */; };
 		F53D731B26D3A35100249D46 /* SkeletonExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53D731A26D3A35100249D46 /* SkeletonExtended.swift */; };
 		F53D731C26D3A35100249D46 /* SkeletonExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53D731A26D3A35100249D46 /* SkeletonExtended.swift */; };
+		F53D731F26D3AC4000249D46 /* SkeletonTreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F70726D38F3100A80B83 /* SkeletonTreeNode.swift */; };
 		F556F56626CD1F3900A80B83 /* SkeletonAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* SkeletonAppearance.swift */; };
 		F556F56726CD1F3900A80B83 /* SkeletonLayerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* SkeletonLayerBuilder.swift */; };
 		F556F56826CD1F3900A80B83 /* SkeletonMultilineLayerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* SkeletonMultilineLayerBuilder.swift */; };
@@ -829,6 +830,7 @@
 				F556F58D26CD1F3900A80B83 /* SubviewsSkeletonables.swift in Sources */,
 				F556F58E26CD1F3900A80B83 /* SkeletonTransitionStyle.swift in Sources */,
 				F556F6AC26CD5C4900A80B83 /* SkeletonMultilinesLayerConfig.swift in Sources */,
+				F53D731F26D3AC4000249D46 /* SkeletonTreeNode.swift in Sources */,
 				F556F68126CD47CF00A80B83 /* ProcessInfo+Extensions.swift in Sources */,
 				F556F68826CD49F900A80B83 /* UIView+IBInspectable.swift in Sources */,
 				F556F6C726CE2A2100A80B83 /* UILabel+IBInspectable.swift in Sources */,
