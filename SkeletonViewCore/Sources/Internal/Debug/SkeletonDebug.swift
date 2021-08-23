@@ -25,28 +25,10 @@ extension Dictionary {
     }
 }
 
-func printSkeletonHierarchy(in view: UIView) {
-    skeletonLog(view.skeletonHierarchy())
-}
-
 func skeletonLog(_ message: String) {
     #if DEBUG
     if ProcessInfo.processInfo.environment[.debugMode] != nil {
         print(message)
     }
     #endif
-}
-
-extension UIView {
-
-    func skeletonHierarchy(indentationLevel level: Int = 0) -> String {
-        var description = level == 0 ? "\n ⬇⬇ ☠️ Root view hierarchy with Skeletons ⬇⬇ \n" : ""
-        description += "\(level == 0 ? "\n" : 3.whitespaces) \(skeletonDescription) \n"
-        subviewsToSkeleton.forEach {
-            description += (level + 2).whitespaces
-            description += $0.skeletonHierarchy(indentationLevel: level + 1)
-        }
-        return description
-    }
-    
 }

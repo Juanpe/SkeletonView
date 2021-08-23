@@ -11,7 +11,7 @@
 //
 //  Created by Juanpe Catalán on 18/8/21.
 
-import Foundation
+import UIKit
 
 public extension Notification.Name {
     
@@ -32,5 +32,19 @@ public extension Notification.Name {
     
     @available(*, deprecated, renamed: "skeletonDidDisappear")
     static let didHideSkeletons = Notification.Name.skeletonDidDisappearNotification
+    
+}
+
+public extension UIView {
+    
+    @available(*, deprecated, renamed: "sk.treeNodesDescription")
+    var skeletonDescription: String {
+        sk.skeletonTreeDescription
+    }
+    
+    @available(*, deprecated, renamed: "sk.isSkeletonActive")
+    var isSkeletonActive: Bool {
+        sk.isSkeletonActive
+    }
     
 }

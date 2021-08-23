@@ -18,13 +18,13 @@ extension UIView {
     @objc func skeletonLayoutSubviews() {
         guard Thread.isMainThread else { return }
         skeletonLayoutSubviews()
-        guard isSkeletonActive else { return }
+        guard sk.isSkeletonActive else { return }
         layoutSkeletonIfNeeded()
     }
 
     @objc func skeletonTraitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         skeletonTraitCollectionDidChange(previousTraitCollection)
-        guard isSkeletonable, isSkeletonActive, let config = _currentSkeletonConfig else { return }
+        guard isSkeletonable, sk.isSkeletonActive, let config = _currentSkeletonConfig else { return }
         updateSkeleton(skeletonConfig: config)
     }
     

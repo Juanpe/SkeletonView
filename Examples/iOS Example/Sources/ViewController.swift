@@ -76,8 +76,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showOrHideSkeleton(_ sender: Any) {
-        showOrHideSkeletonButton.setTitle((view.isSkeletonActive ? "Show skeleton" : "Hide skeleton"), for: .normal)
-        view.isSkeletonActive ? hideSkeleton() : showSkeleton()
+        showOrHideSkeletonButton.setTitle((view.sk.isSkeletonActive ? "Show skeleton" : "Hide skeleton"), for: .normal)
+        view.sk.isSkeletonActive ? hideSkeleton() : showSkeleton()
     }
     
     @IBAction func transitionDurationStepperAction(_ sender: Any) {
