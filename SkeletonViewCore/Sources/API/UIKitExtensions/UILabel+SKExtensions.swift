@@ -7,14 +7,14 @@
 //
 //      https://opensource.org/licenses/MIT
 //
-//  UITextView+Extensions.swift
+//  UILabel+SKExtensions.swift
 //
-//  Created by Juanpe Catalán on 19/8/21.
+//  Created by Juanpe Catalán on 23/8/21.
 
 import UIKit
 
-extension UITextView {
-
+public extension UILabel {
+    
     var skeletonPaddingInsets: UIEdgeInsets {
         get { return paddingInsets }
         set { paddingInsets = newValue }
