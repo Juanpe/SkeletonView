@@ -560,68 +560,21 @@ Besides, you can activate the new **debug mode**. You just add the environment v
 
 Then, when the skeleton appears, you can see the view hierarchy in the Xcode console.
 
-<details>
 ```
 { 
-  "type" : "UIView",
+  "type" : "UIView", // UITableView, UILabel...
   "isSkeletonable" : true,
   "reference" : "0x000000014751ce30",
   "children" : [
     {
       "type" : "UIView",
       "isSkeletonable" : true,
-      "children" : [
-        {
-          "type" : "UITextView",
-          "isSkeletonable" : true,
-          "reference" : "0x0000000147853c00"
-        },
-        {
-          "type" : "UIImageView",
-          "reference" : "0x0000000147607f90",
-          "isSkeletonable" : true
-        },
-        {
-          "type" : "UILabel",
-          "reference" : "0x0000000147529e50",
-          "isSkeletonable" : true
-        }
-      ],
+      "children" : [ ... ],
       "reference" : "0x000000014751cfa0"
-    },
-    {
-      "reference" : "0x0000000148039000",
-      "isSkeletonable" : true,
-      "children" : [
-        {
-          "reference" : "0x0000000147635630",
-          "children" : [
-            {
-              "isSkeletonable" : true,
-              "type" : "UIImageView",
-              "reference" : "0x0000000147635ba0"
-            },
-            {
-              "isSkeletonable" : true,
-              "type" : "UILabel",
-              "reference" : "0x0000000147635d70"
-            },
-            {
-              "reference" : "0x0000000147635fe0",
-              "isSkeletonable" : true,
-              "type" : "UITextField"
-            }
-          ],
-          "isSkeletonable" : true,
-          "type" : "Cell"
-        }
-      ],
-      "type" : "UITableView"
     }
   ]
 }
 ```
-</details>
   
 **Supported OS & SDK Versions**
 
