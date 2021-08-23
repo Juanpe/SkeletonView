@@ -548,14 +548,11 @@ func showGradientSkeleton(usingGradient: SkeletonGradient,
 
 To facilitate the debug tasks when something is not working fine. **`SkeletonView`** has some new tools.
 
-First, `UIView` has available a new property with his skeleton info:
+First, `UIView` has available a property with his skeleton info:
 ```swift
-var skeletonDescription: String
+var sk.skeletonTreeDescription: String
 
 ```
-The skeleton representation looks like this:
-
-![](Assets/debug_description.png)
 
 Besides, you can activate the new **debug mode**. You just add the environment variable `SKELETON_DEBUG` and activate it.
 
@@ -563,11 +560,21 @@ Besides, you can activate the new **debug mode**. You just add the environment v
 
 Then, when the skeleton appears, you can see the view hierarchy in the Xcode console.
 
-<details>
-<summary>Open to see an output example </summary>
-<img src="Assets/hierarchy_output.png" />
-</details>
-
+```
+{ 
+  "type" : "UIView", // UITableView, UILabel...
+  "isSkeletonable" : true,
+  "reference" : "0x000000014751ce30",
+  "children" : [
+    {
+      "type" : "UIView",
+      "isSkeletonable" : true,
+      "children" : [ ... ],
+      "reference" : "0x000000014751cfa0"
+    }
+  ]
+}
+```
   
 **Supported OS & SDK Versions**
 

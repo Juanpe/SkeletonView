@@ -20,7 +20,7 @@ class SkeletonFlowHandler: SkeletonFlowDelegate {
     }
 
     func didShowSkeletons(rootView: UIView) {
-        printSkeletonHierarchy(in: rootView)
+        skeletonLog(rootView.sk.skeletonTreeDescription)
         NotificationCenter.default.post(name: .skeletonWillAppearNotification, object: rootView, userInfo: nil)
     }
 

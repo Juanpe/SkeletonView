@@ -38,7 +38,7 @@ extension UIView {
     }
     
     @objc func appDidEnterBackground() {
-        UserDefaults.standard.set((isSkeletonActive && _isSkeletonAnimated), forKey: Constants.needAnimatedSkeletonKey)
+        UserDefaults.standard.set((sk.isSkeletonActive && _isSkeletonAnimated), forKey: Constants.needAnimatedSkeletonKey)
     }
     
     @objc func willTerminateNotification() {

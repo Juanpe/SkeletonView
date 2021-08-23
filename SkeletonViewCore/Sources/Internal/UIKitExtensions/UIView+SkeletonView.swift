@@ -30,7 +30,7 @@ extension UIView {
 
     func recursiveLayoutSkeletonIfNeeded(root: UIView? = nil) {
         subviewsSkeletonables.recursiveSearch(leafBlock: {
-            guard isSkeletonable, isSkeletonActive else { return }
+            guard isSkeletonable, sk.isSkeletonActive else { return }
             layoutSkeletonLayerIfNeeded()
             if let config = _currentSkeletonConfig, config.animated, !_isSkeletonAnimated {
                 startSkeletonAnimation(config.animation)
@@ -45,7 +45,7 @@ extension UIView {
     }
 
     func recursiveHideSkeleton(reloadDataAfter reload: Bool, transition: SkeletonTransitionStyle, root: UIView? = nil) {
-        guard isSkeletonActive else { return }
+        guard sk.isSkeletonActive else { return }
         if isHiddenWhenSkeletonIsActive {
             isHidden = false
         }
@@ -70,7 +70,7 @@ extension UIView {
 private extension UIView {
     
     func showSkeletonIfNotActive(skeletonConfig config: SkeletonConfig) {
-        guard !isSkeletonActive else { return }
+        guard !sk.isSkeletonActive else { return }
         saveViewState()
 
         prepareViewForSkeleton()
@@ -81,7 +81,7 @@ private extension UIView {
         if isHiddenWhenSkeletonIsActive {
             isHidden = true
         }
-        guard isSkeletonable && !isSkeletonActive else { return }
+        guard isSkeletonable && !sk.isSkeletonActive else { return }
         _currentSkeletonConfig = config
         swizzleLayoutSubviews()
         swizzleTraitCollectionDidChange()
@@ -98,7 +98,7 @@ private extension UIView {
     }
     
     func recursiveUpdateSkeleton(skeletonConfig config: SkeletonConfig, root: UIView? = nil) {
-        guard isSkeletonActive else { return }
+        guard sk.isSkeletonActive else { return }
         _currentSkeletonConfig = config
         updateDummyDataSourceIfNeeded()
         subviewsSkeletonables.recursiveSearch(leafBlock: {

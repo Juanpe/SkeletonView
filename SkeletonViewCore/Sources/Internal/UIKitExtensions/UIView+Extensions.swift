@@ -13,6 +13,14 @@
 
 import UIKit
 
+extension SkeletonViewExtension where ExtendedType: UIView {
+    
+    var treeNode: SkeletonTreeNode<ExtendedType> {
+        SkeletonTreeNode<ExtendedType>(self.type)
+    }
+    
+}
+
 extension UIView {
 
     /// Flags
@@ -159,7 +167,7 @@ extension UIView {
     }
     
     func removeSkeletonLayer() {
-        guard isSkeletonActive,
+        guard sk.isSkeletonActive,
             let skeletonLayer = _skeletonLayer,
             let transitionStyle = _currentSkeletonConfig?.transition else { return }
         skeletonLayer.stopAnimation()

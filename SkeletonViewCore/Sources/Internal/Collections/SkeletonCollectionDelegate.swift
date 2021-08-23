@@ -55,7 +55,7 @@ extension SkeletonCollectionDelegate: UICollectionViewDelegate { }
 
 extension SkeletonCollectionDelegate {
     private func skeletonViewIfContainerSkeletonIsActive(container: UIView, view: UIView) {
-        guard container.isSkeletonActive,
+        guard container.sk.isSkeletonActive,
               let skeletonConfig = container._currentSkeletonConfig else {
             return
         }
