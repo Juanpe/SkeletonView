@@ -561,8 +561,11 @@ Besides, you can activate the new **debug mode**. You just add the environment v
 Then, when the skeleton appears, you can see the view hierarchy in the Xcode console.
 
 <details>
-```json
-{
+```
+{ 
+  "type" : "UIView",
+  "isSkeletonable" : true,
+  "reference" : "0x000000014751ce30",
   "children" : [
     {
       "type" : "UIView",
@@ -615,12 +618,10 @@ Then, when the skeleton appears, you can see the view hierarchy in the Xcode con
       ],
       "type" : "UITableView"
     }
-  ],
-  "type" : "UIView",
-  "isSkeletonable" : true,
-  "reference" : "0x000000014751ce30"
+  ]
 }
 ```
+</details>
   
 **Supported OS & SDK Versions**
 
