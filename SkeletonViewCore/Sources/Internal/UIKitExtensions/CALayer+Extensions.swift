@@ -108,7 +108,7 @@ private extension CALayer {
     
     func calculatedWidthForLine(at index: Int, totalLines: Int, lastLineFillPercent: Int, paddingInsets: UIEdgeInsets) -> CGFloat {
         var width = bounds.width - paddingInsets.left - paddingInsets.right
-        if index == totalLines - 1 && totalLines != 1 {
+        if index == totalLines - 1 {
             width = width * CGFloat(lastLineFillPercent) / 100
         }
         return width
@@ -197,7 +197,7 @@ extension CALayer {
                               width: size.width,
                               height: size.height)
 
-        if index == totalLines - 1 && totalLines != 1 {
+        if index == totalLines - 1 {
             frame = alignLayerFrame(newFrame, alignment: alignment, isRTL: isRTL)
         } else {
             frame = newFrame
