@@ -50,7 +50,7 @@ extension UILabel: SkeletonTextNode {
     }
     
     var usesTextHeightForLines: Bool {
-        get { return ao_get(pkey: &SkeletonTextNodeAssociatedKeys.usesTextHeightForLines) as? Bool ?? true }
+        get { return ao_get(pkey: &SkeletonTextNodeAssociatedKeys.usesTextHeightForLines) as? Bool ?? SkeletonAppearance.default.useFontLineHeight }
         set { ao_set(newValue, pkey: &SkeletonTextNodeAssociatedKeys.usesTextHeightForLines) }
     }
     
@@ -95,7 +95,7 @@ extension UITextView: SkeletonTextNode {
     }
     
     var usesTextHeightForLines: Bool {
-        get { return ao_get(pkey: &SkeletonTextNodeAssociatedKeys.usesTextHeightForLines) as? Bool ?? true }
+        get { return ao_get(pkey: &SkeletonTextNodeAssociatedKeys.usesTextHeightForLines) as? Bool ?? SkeletonAppearance.default.useFontLineHeight }
         set { ao_set(newValue, pkey: &SkeletonTextNodeAssociatedKeys.usesTextHeightForLines) }
     }
     

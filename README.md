@@ -295,6 +295,8 @@ Default values:
   - *default: `SkeletonGradient(baseColor: .skeletonDefault)`*
 - **multilineHeight**: CGFloat
   - *default: 15*
+- **useFontLineHeight**: Bool
+  - *default: true*
 - **multilineSpacing**: CGFloat
   - *default: 10*
 - **multilineLastLineFillPercent**: Int
@@ -315,6 +317,7 @@ You can also specifiy these line appearance properties on a per-label basis:
 - **linesCornerRadius**: Int
 - **skeletonLineSpacing**: CGFloat
 - **skeletonPaddingInsets**: UIEdgeInsets
+- **useFontLineHeight**: Bool
 
 
 ### 🎨 Custom colors
