@@ -35,4 +35,16 @@ jobs:
         run: |
           set -eo pipefail
           pod lib lint --allow-warnings
-          pod trunk push --allow-warnings           
+          pod trunk push --allow-warnings  
+          
+      - name: Tweet the release
+        uses: ethomson/send-tweet-action@v1
+        with:
+          consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
+          consumer-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
+          access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          access-token-secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+          status: |
+            🎉 New release ${{ steps.publish_release.outputs.tag_name }} is out 🚀
+            Check out all the changes here: 
+            ${{ steps.publish_release.outputs.html_url }} 
