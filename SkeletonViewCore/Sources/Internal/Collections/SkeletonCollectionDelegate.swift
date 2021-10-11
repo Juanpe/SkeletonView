@@ -43,6 +43,30 @@ extension SkeletonCollectionDelegate: UITableViewDelegate {
         originalTableViewDelegate?.tableView?(tableView, didEndDisplaying: cell, forRowAt: indexPath)
     }
 
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return originalTableViewDelegate?.tableView?(tableView, estimatedHeightForRowAt: indexPath) ?? tableView.estimatedRowHeight
+    }
+
+    func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+        return originalTableViewDelegate?.tableView?(tableView, estimatedHeightForHeaderInSection: section) ?? tableView.estimatedSectionHeaderHeight
+    }
+
+    func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
+        return originalTableViewDelegate?.tableView?(tableView, estimatedHeightForFooterInSection: section) ?? tableView.estimatedSectionFooterHeight
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return originalTableViewDelegate?.tableView?(tableView, heightForRowAt: indexPath) ?? tableView.rowHeight
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return originalTableViewDelegate?.tableView?(tableView, heightForHeaderInSection: section) ?? tableView.sectionHeaderHeight
+    }
+
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return originalTableViewDelegate?.tableView?(tableView, heightForFooterInSection: section) ?? tableView.sectionFooterHeight
+    }
+
     private func headerOrFooterView(_ tableView: UITableView, for viewIdentifier: String? ) -> UIView? {
       guard let viewIdentifier = viewIdentifier, let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: viewIdentifier) else { return nil }
       skeletonViewIfContainerSkeletonIsActive(container: tableView, view: header)
