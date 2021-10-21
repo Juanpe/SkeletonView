@@ -23,6 +23,7 @@ protocol SkeletonTextNode {
     var multilineSpacing: CGFloat { get }
     var paddingInsets: UIEdgeInsets { get }
     var usesTextHeightForLines: Bool { get }
+    var shouldCenterTextVertically: Bool { get }
 }
 
 enum SkeletonTextNodeAssociatedKeys {
@@ -79,6 +80,10 @@ extension UILabel: SkeletonTextNode {
         set { ao_set(newValue, pkey: &SkeletonTextNodeAssociatedKeys.backupHeightConstraints) }
     }
     
+    var shouldCenterTextVertically: Bool {
+        true
+    }
+
 }
 
 extension UITextView: SkeletonTextNode {
@@ -129,4 +134,7 @@ extension UITextView: SkeletonTextNode {
         set { ao_set(newValue, pkey: &SkeletonTextNodeAssociatedKeys.paddingInsets) }
     }
     
+    var shouldCenterTextVertically: Bool {
+        false
+    }
 }
