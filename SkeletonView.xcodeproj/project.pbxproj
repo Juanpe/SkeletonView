@@ -99,6 +99,8 @@
 		F556F6E126CE367600A80B83 /* UIView+SkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F6DF26CE367600A80B83 /* UIView+SkeletonView.swift */; };
 		F556F6F626CE876300A80B83 /* UIView+Swizzling.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F6DC26CE33CE00A80B83 /* UIView+Swizzling.swift */; };
 		F556F70826D38F3100A80B83 /* SkeletonTreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F70726D38F3100A80B83 /* SkeletonTreeNode.swift */; };
+		F5C84884274BB6F000004D1A /* SkeletonTextLineHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C84883274BB6F000004D1A /* SkeletonTextLineHeight.swift */; };
+		F5C84885274BB6F000004D1A /* SkeletonTextLineHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C84883274BB6F000004D1A /* SkeletonTextLineHeight.swift */; };
 		OBJ_101 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* Int+Extensions.swift */; };
 		OBJ_103 /* UIColor+Skeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* UIColor+Skeleton.swift */; };
 		OBJ_104 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* UITableView+Extensions.swift */; };
@@ -208,6 +210,7 @@
 		F556F6DC26CE33CE00A80B83 /* UIView+Swizzling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Swizzling.swift"; sourceTree = "<group>"; };
 		F556F6DF26CE367600A80B83 /* UIView+SkeletonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SkeletonView.swift"; sourceTree = "<group>"; };
 		F556F70726D38F3100A80B83 /* SkeletonTreeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonTreeNode.swift; sourceTree = "<group>"; };
+		F5C84883274BB6F000004D1A /* SkeletonTextLineHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonTextLineHeight.swift; sourceTree = "<group>"; };
 		OBJ_11 /* SkeletonLayerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLayerBuilder.swift; sourceTree = "<group>"; };
 		OBJ_12 /* SkeletonMultilineLayerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonMultilineLayerBuilder.swift; sourceTree = "<group>"; };
 		OBJ_14 /* CollectionSkeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionSkeleton.swift; sourceTree = "<group>"; };
@@ -515,6 +518,7 @@
 				OBJ_55 /* SkeletonGradient.swift */,
 				F556F6B826CE262700A80B83 /* GradientDirection.swift */,
 				F556F6C126CE27FD00A80B83 /* SkeletonType.swift */,
+				F5C84883274BB6F000004D1A /* SkeletonTextLineHeight.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -822,6 +826,7 @@
 				F556F6B626CE258300A80B83 /* GradientDirection+Animations.swift in Sources */,
 				F556F69F26CD553B00A80B83 /* UIView+Extensions.swift in Sources */,
 				F556F58526CD1F3900A80B83 /* Recoverable.swift in Sources */,
+				F5C84885274BB6F000004D1A /* SkeletonTextLineHeight.swift in Sources */,
 				F556F58626CD1F3900A80B83 /* RecoverableViewState.swift in Sources */,
 				F556F58726CD1F3900A80B83 /* SkeletonAnimationBuilder.swift in Sources */,
 				F556F58826CD1F3900A80B83 /* SkeletonConfig.swift in Sources */,
@@ -904,6 +909,7 @@
 				F556F69E26CD553B00A80B83 /* UIView+Extensions.swift in Sources */,
 				OBJ_117 /* Recoverable.swift in Sources */,
 				OBJ_118 /* RecoverableViewState.swift in Sources */,
+				F5C84884274BB6F000004D1A /* SkeletonTextLineHeight.swift in Sources */,
 				OBJ_119 /* SkeletonAnimationBuilder.swift in Sources */,
 				OBJ_120 /* SkeletonConfig.swift in Sources */,
 				OBJ_121 /* SkeletonFlowHandler.swift in Sources */,

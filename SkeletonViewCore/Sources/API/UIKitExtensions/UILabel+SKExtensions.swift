@@ -21,3 +21,16 @@ public extension UILabel {
     }
     
 }
+
+public extension SkeletonViewExtension where ExtendedType: UILabel {
+    
+    var textLineHeight: SkeletonTextLineHeight {
+        get {
+            type.textLineHeight
+        }
+        set {
+            type.textLineHeight = newValue
+        }
+    }
+    
+}

@@ -21,3 +21,16 @@ public extension UITextView {
     }
     
 }
+
+public extension SkeletonViewExtension where ExtendedType: UITextView {
+    
+    var textLineHeight: SkeletonTextLineHeight {
+        get {
+            type.textLineHeight
+        }
+        set {
+            type.textLineHeight = newValue
+        }
+    }
+    
+}
