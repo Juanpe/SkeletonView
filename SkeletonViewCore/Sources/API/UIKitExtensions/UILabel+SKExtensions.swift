@@ -16,20 +16,20 @@ import UIKit
 public extension UILabel {
     
     var skeletonPaddingInsets: UIEdgeInsets {
-        get { return paddingInsets }
-        set { paddingInsets = newValue }
-    }
-    
-}
-
-public extension SkeletonViewExtension where ExtendedType: UILabel {
-    
-    var textLineHeight: SkeletonTextLineHeight {
         get {
-            type.textLineHeight
+            paddingInsets
         }
         set {
-            type.textLineHeight = newValue
+            paddingInsets = newValue
+        }
+    }
+    
+    var skeletonTextLineHeight: SkeletonTextLineHeight {
+        get {
+            textLineHeight
+        }
+        set {
+            textLineHeight = newValue
         }
     }
     

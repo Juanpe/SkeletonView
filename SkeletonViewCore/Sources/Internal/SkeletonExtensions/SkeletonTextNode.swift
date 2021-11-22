@@ -45,7 +45,7 @@ extension UILabel: SkeletonTextNode {
         case .fixed(let height):
             return height
         case .relativeToFont:
-            return font?.lineHeight ?? SkeletonAppearance.default.multilineHeight
+            return fontLineHeight ?? SkeletonAppearance.default.multilineHeight
         case .relativeToConstraints:
             guard let constraintsLineHeight = heightConstraints.first?.constant,
                     numberOfLines != 0 else {
@@ -89,6 +89,15 @@ extension UILabel: SkeletonTextNode {
     var shouldCenterTextVertically: Bool {
         true
     }
+    
+    var fontLineHeight: CGFloat? {
+        if let attributes = attributedText?.attributes(at: 0, effectiveRange: nil),
+           let fontAttribute = attributes.first(where: { $0.key == .font }) {
+            return fontAttribute.value as? CGFloat ?? font.lineHeight
+        } else {
+            return font.lineHeight
+        }
+    }
 
 }
 
@@ -99,7 +108,7 @@ extension UITextView: SkeletonTextNode {
         case .fixed(let height):
             return height
         case .relativeToFont:
-            return font?.lineHeight ?? SkeletonAppearance.default.multilineHeight
+            return fontLineHeight ?? SkeletonAppearance.default.multilineHeight
         case .relativeToConstraints:
             return SkeletonAppearance.default.multilineHeight
         }
@@ -143,4 +152,14 @@ extension UITextView: SkeletonTextNode {
     var shouldCenterTextVertically: Bool {
         false
     }
+    
+    var fontLineHeight: CGFloat? {
+        if let attributes = attributedText?.attributes(at: 0, effectiveRange: nil),
+           let fontAttribute = attributes.first(where: { $0.key == .font }) {
+            return fontAttribute.value as? CGFloat ?? font?.lineHeight
+        } else {
+            return font?.lineHeight
+        }
+    }
+    
 }

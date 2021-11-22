@@ -52,7 +52,7 @@ public extension UIView {
 public extension UILabel {
     
     @IBInspectable
-    @available(*, deprecated, renamed: "sk.textLineHeight")
+    @available(*, deprecated, renamed: "skeletonTextLineHeight")
     var useFontLineHeight: Bool {
         get {
             textLineHeight == .relativeToFont
@@ -67,7 +67,7 @@ public extension UILabel {
 public extension UITextView {
     
     @IBInspectable
-    @available(*, deprecated, renamed: "sk.textLineHeight")
+    @available(*, deprecated, renamed: "skeletonTextLineHeight")
     var useFontLineHeight: Bool {
         get {
             textLineHeight == .relativeToFont
