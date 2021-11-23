@@ -19,67 +19,17 @@ class SkeletonDebugTests: XCTestCase {
     func testSkeletonDescriptionWithViewNotSkeletonableNotReturnsSkullEmojiAndChildren() {
         /// given
         let view = UIView()
-        let expectedDescription = "<UIView: \(Unmanaged.passUnretained(view).toOpaque())>"
+        let expectedDictionary: [String : Any] = [
+            "isSkeletonable" : false,
+            "type" : "UIView",
+            "reference" : "\(Unmanaged.passUnretained(view).toOpaque())"
+        ]
         
         /// when
-        let obtainedDescription = view.skeletonDescription
+        let obtainedDictionary = view.sk.treeNode.dictionaryRepresentation
         
         /// then
-        XCTAssertEqual(expectedDescription, obtainedDescription)
-    }
-    
-    func testSkeletonDescriptionWithViewSkeletonableReturnsSkullEmojiButNotChildren() {
-        /// given
-        let view = UIView()
-        view.isSkeletonable = true
-        let expectedDescription = "<UIView: \(Unmanaged.passUnretained(view).toOpaque()) | ☠️ >"
-        
-        /// when
-        let obtainedDescription = view.skeletonDescription
-        
-        /// then
-        XCTAssertEqual(expectedDescription, obtainedDescription)
-    }
-    
-    func testSkeletonDescriptionWithViewSkeletonableAndChildrenReturnsSkullEmojiAndChildren() {
-        /// given
-        let view = UIView()
-        let childView = UIView()
-        view.addSubview(childView)
-        view.isSkeletonable = true
-        childView.isSkeletonable = true
-        let expectedDescription = """
-            <UIView: \(Unmanaged.passUnretained(view).toOpaque()) | (1) subSkeletons | ☠️ >
-            """
-        
-        /// when
-        let obtainedDescription = view.skeletonDescription
-        
-        /// then
-        XCTAssertEqual(expectedDescription, obtainedDescription)
-    }
-    
-    func testSkeletonHierarchyWithSkeletonableViewsReturnsFullHierarchy() {
-        /// given
-        let view = UIView()
-        let childView = UIView()
-        let subchildView = UIView()
-        view.addSubview(childView)
-        childView.addSubview(subchildView)
-        view.isSkeletonable = true
-        childView.isSkeletonable = true
-        subchildView.isSkeletonable = true
-        
-        let expectedDescription = "⬇⬇ ☠️ Root view hierarchy with Skeletons ⬇⬇<UIView:\(Unmanaged.passUnretained(view).toOpaque()) | (1) subSkeletons | ☠️ ><UIView: \(Unmanaged.passUnretained(childView).toOpaque()) | (1) subSkeletons | ☠️ ><UIView: \(Unmanaged.passUnretained(subchildView).toOpaque()) | ☠️ >"
-            .replacingOccurrences(of: " ", with: "")
-        
-        /// when
-        let obtainedDescription = view.skeletonHierarchy()
-            .replacingOccurrences(of: "\n", with: "")
-            .replacingOccurrences(of: " ", with: "")
-        
-        /// then
-        XCTAssertEqual(expectedDescription, obtainedDescription)
+        XCTAssertEqual(expectedDictionary.keys, obtainedDictionary.keys)
     }
 
 }
