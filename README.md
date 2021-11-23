@@ -267,7 +267,7 @@ You can set some properties for multilines elements.
 
 | Property | Type | Default | Preview
 | ------- | ------- |------- | -------
-| **lastLineFillPercent** (*Please note that for views without multiple lines, the single line will be considered as the last line.*)  | `CGFloat` | `70%`| ![](Assets/multiline_lastline.png)
+| **lastLineFillPercent**  | `CGFloat` | `70`| ![](Assets/multiline_lastline.png)
 | **linesCornerRadius**  | `Int` | `0` | ![](Assets/multiline_corner.png)
 | **skeletonLineSpacing**  | `CGFloat` | `10` | ![](Assets/multiline_lineSpacing.png)
 | **skeletonPaddingInsets**  | `UIEdgeInsets` | `.zero` | ![](Assets/multiline_insets.png)
@@ -281,6 +281,12 @@ You can set some properties for multilines elements.
 > ```swift
 > descriptionTextView.skeletonTextLineHeight = .relativeToFont
 > ```
+
+> **📎 NOTE**
+>
+> Please note that for views without multiple lines, the single line will be considered 
+> as the last line.
+
 
 <br />
 
