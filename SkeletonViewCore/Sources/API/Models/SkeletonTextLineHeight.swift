@@ -18,7 +18,7 @@ public enum SkeletonTextLineHeight: Equatable {
     /// Calculates the line height based on the font line height.
     case relativeToFont
     
-    /// Calculates the line height based on the height contraints.
+    /// Calculates the line height based on the height constraints.
     ///
     /// If no constraints exist, the height will be set to the `multilineHeight`
     /// value defined in the `SkeletonAppearance`.
