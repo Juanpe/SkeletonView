@@ -282,7 +282,7 @@ You can set some properties for multilines elements.
 > descriptionTextView.skeletonTextLineHeight = .relativeToFont
 > ```
 
-> **📎 NOTE**
+> **📣 IMPORTANT!**
 >
 > Please note that for views without multiple lines, the single line will be considered 
 > as the last line.
