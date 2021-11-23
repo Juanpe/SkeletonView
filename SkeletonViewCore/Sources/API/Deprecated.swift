@@ -48,3 +48,47 @@ public extension UIView {
     }
     
 }
+
+public extension UILabel {
+    
+    @IBInspectable
+    @available(*, deprecated, renamed: "skeletonTextLineHeight")
+    var useFontLineHeight: Bool {
+        get {
+            textLineHeight == .relativeToFont
+        }
+        set {
+            textLineHeight = newValue ? .relativeToFont : .fixed(SkeletonAppearance.default.multilineHeight)
+        }
+    }
+    
+}
+
+public extension UITextView {
+    
+    @IBInspectable
+    @available(*, deprecated, renamed: "skeletonTextLineHeight")
+    var useFontLineHeight: Bool {
+        get {
+            textLineHeight == .relativeToFont
+        }
+        set {
+            textLineHeight = newValue ? .relativeToFont : .fixed(SkeletonAppearance.default.multilineHeight)
+        }
+    }
+    
+}
+
+public extension SkeletonViewAppearance {
+    
+    @available(*, deprecated, renamed: "textLineHeight")
+    var useFontLineHeight: Bool {
+        get {
+            textLineHeight == .relativeToFont
+        }
+        set {
+            textLineHeight = newValue ? .relativeToFont : .fixed(SkeletonAppearance.default.multilineHeight)
+        }
+    }
+    
+}

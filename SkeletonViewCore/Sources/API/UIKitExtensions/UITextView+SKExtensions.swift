@@ -16,8 +16,21 @@ import UIKit
 public extension UITextView {
 
     var skeletonPaddingInsets: UIEdgeInsets {
-        get { return paddingInsets }
-        set { paddingInsets = newValue }
+        get {
+            paddingInsets
+        }
+        set {
+            paddingInsets = newValue
+        }
+    }
+    
+    var skeletonTextLineHeight: SkeletonTextLineHeight {
+        get {
+            textLineHeight
+        }
+        set {
+            textLineHeight = newValue
+        }
     }
     
 }

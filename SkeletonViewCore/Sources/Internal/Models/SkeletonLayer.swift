@@ -60,7 +60,7 @@ struct SkeletonLayer {
     func addTextLinesIfNeeded() {
         guard let textView = holderAsTextView else { return }
         let config = SkeletonMultilinesLayerConfig(lines: textView.numberOfLines,
-                                                   lineHeight: textView.lineHeight,
+                                                   lineHeight: textView.estimatedLineHeight,
                                                    type: type,
                                                    lastLineFillPercent: textView.lastLineFillingPercent,
                                                    multilineCornerRadius: textView.multilineCornerRadius,
@@ -76,7 +76,7 @@ struct SkeletonLayer {
     func updateLinesIfNeeded() {
         guard let textView = holderAsTextView else { return }
         let config = SkeletonMultilinesLayerConfig(lines: textView.numberOfLines,
-                                                   lineHeight: textView.lineHeight,
+                                                   lineHeight: textView.estimatedLineHeight,
                                                    type: type,
                                                    lastLineFillPercent: textView.lastLineFillingPercent,
                                                    multilineCornerRadius: textView.multilineCornerRadius,

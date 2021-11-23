@@ -32,11 +32,5 @@ public extension UITextView {
         get { return multilineSpacing }
         set { multilineSpacing = newValue }
     }
-    
-    @IBInspectable
-    var useFontLineHeight: Bool {
-        get { usesTextHeightForLines }
-        set { usesTextHeightForLines = newValue }
-    }
 
 }
