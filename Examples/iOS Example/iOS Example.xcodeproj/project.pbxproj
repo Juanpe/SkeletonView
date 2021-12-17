@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E2ACBB57276C671700BAAAAE /* SkeletonView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556F5E026CD21CB00A80B83 /* SkeletonView.framework */; };
+		E2ACBB58276C671700BAAAAE /* SkeletonView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F556F5E026CD21CB00A80B83 /* SkeletonView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F556F5C026CD20A300A80B83 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F5B726CD20A300A80B83 /* ViewController.swift */; };
 		F556F5C126CD20A300A80B83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F556F5B826CD20A300A80B83 /* Assets.xcassets */; };
 		F556F5C226CD20A300A80B83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F556F5B926CD20A300A80B83 /* LaunchScreen.storyboard */; };
 		F556F5C326CD20A300A80B83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F556F5BB26CD20A300A80B83 /* Main.storyboard */; };
 		F556F5C426CD20A300A80B83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F5BD26CD20A300A80B83 /* AppDelegate.swift */; };
-		F556F5E626CD21D300A80B83 /* SkeletonView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F556F5E026CD21CB00A80B83 /* SkeletonView.framework */; };
 		F556F6EE26CE813F00A80B83 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F6E626CE813F00A80B83 /* Cell.swift */; };
 		F556F6EF26CE813F00A80B83 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F6EC26CE813F00A80B83 /* Constants.swift */; };
 		F556F6F026CE813F00A80B83 /* HeaderFooterSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F6ED26CE813F00A80B83 /* HeaderFooterSection.swift */; };
@@ -56,6 +57,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E2ACBB59276C671700BAAAAE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E2ACBB58276C671700BAAAAE /* SkeletonView.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		F556F59F26CD201B00A80B83 /* iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F556F5B726CD20A300A80B83 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F556F5E626CD21D300A80B83 /* SkeletonView.framework in Frameworks */,
+				E2ACBB57276C671700BAAAAE /* SkeletonView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +151,7 @@
 				F556F59B26CD201B00A80B83 /* Sources */,
 				F556F59C26CD201B00A80B83 /* Frameworks */,
 				F556F59D26CD201B00A80B83 /* Resources */,
+				E2ACBB59276C671700BAAAAE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
