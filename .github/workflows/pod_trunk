@@ -1,0 +1,16 @@
+name: Pod trunk
+on: [workflow_dispatch]
+        
+jobs:
+  release_version:
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Deploy to Cocoapods
+        env:
+          COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
+        run: |
+          set -eo pipefail
+          pod lib lint --allow-warnings
+          pod trunk push --allow-warnings  
