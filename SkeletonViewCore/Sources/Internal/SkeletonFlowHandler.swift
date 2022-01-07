@@ -21,15 +21,15 @@ class SkeletonFlowHandler: SkeletonFlowDelegate {
 
     func didShowSkeletons(rootView: UIView) {
         skeletonLog(rootView.sk.skeletonTreeDescription)
-        NotificationCenter.default.post(name: .skeletonWillAppearNotification, object: rootView, userInfo: nil)
+        NotificationCenter.default.post(name: .skeletonDidAppearNotification, object: rootView, userInfo: nil)
     }
 
     func willBeginUpdatingSkeletons(rootView: UIView) {
-        NotificationCenter.default.post(name: .skeletonWillAppearNotification, object: rootView, userInfo: nil)
+        NotificationCenter.default.post(name: .skeletonWillUpdateNotification, object: rootView, userInfo: nil)
     }
 
     func didUpdateSkeletons(rootView: UIView) {
-        NotificationCenter.default.post(name: .skeletonWillAppearNotification, object: rootView, userInfo: nil)
+        NotificationCenter.default.post(name: .skeletonDidUpdateNotification, object: rootView, userInfo: nil)
     }
 
     func willBeginLayingSkeletonsIfNeeded(rootView: UIView) {
