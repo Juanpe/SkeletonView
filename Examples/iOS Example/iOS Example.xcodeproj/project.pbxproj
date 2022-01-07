@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E21D8BB727888D050041DBCE /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21D8BB627888D050041DBCE /* ExampleViewController.swift */; };
 		F556F5C026CD20A300A80B83 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F5B726CD20A300A80B83 /* ViewController.swift */; };
 		F556F5C126CD20A300A80B83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F556F5B826CD20A300A80B83 /* Assets.xcassets */; };
 		F556F5C226CD20A300A80B83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F556F5B926CD20A300A80B83 /* LaunchScreen.storyboard */; };
@@ -57,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E21D8BB627888D050041DBCE /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		F556F59F26CD201B00A80B83 /* iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F556F5B726CD20A300A80B83 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F556F5B826CD20A300A80B83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				F556F6EC26CE813F00A80B83 /* Constants.swift */,
 				F556F6ED26CE813F00A80B83 /* HeaderFooterSection.swift */,
 				F556F5B726CD20A300A80B83 /* ViewController.swift */,
+				E21D8BB627888D050041DBCE /* ExampleViewController.swift */,
 				F556F5B826CD20A300A80B83 /* Assets.xcassets */,
 				F556F5B926CD20A300A80B83 /* LaunchScreen.storyboard */,
 				F556F5BB26CD20A300A80B83 /* Main.storyboard */,
@@ -239,6 +242,7 @@
 				F556F6EE26CE813F00A80B83 /* Cell.swift in Sources */,
 				F556F5C026CD20A300A80B83 /* ViewController.swift in Sources */,
 				F556F6F026CE813F00A80B83 /* HeaderFooterSection.swift in Sources */,
+				E21D8BB727888D050041DBCE /* ExampleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
