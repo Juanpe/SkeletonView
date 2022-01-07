@@ -299,7 +299,7 @@
         <!--Item-->
         <scene sceneID="Cfc-AT-AS1">
             <objects>
-                <viewController id="dv8-ph-Ehg" customClass="ExampleViewController" customModule="iOS_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dv8-ph-Ehg" customClass="UITextViewByCodeViewController" customModule="iOS_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jwx-gI-Qod">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

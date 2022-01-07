@@ -3,7 +3,7 @@
 import UIKit
 import SkeletonView
 
-class ExampleViewController: UIViewController {
+class UITextViewByCodeViewController: UIViewController {
     lazy var textView: UITextView = {
         let tv = UITextView()
         
