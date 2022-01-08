@@ -88,7 +88,7 @@ extension UIView {
     }
 
     var _skeletonableCornerRadius: Float {
-        get { return ao_get(pkey: &ViewAssociatedKeys.skeletonCornerRadius) as? Float ?? Float(SkeletonViewAppearance.shared.skeletonCornerRadius) }
+        get { return ao_get(pkey: &ViewAssociatedKeys.skeletonCornerRadius) as? Float ?? SkeletonViewAppearance.shared.skeletonCornerRadius }
         set { ao_set(newValue, pkey: &ViewAssociatedKeys.skeletonCornerRadius) }
     }
 }
