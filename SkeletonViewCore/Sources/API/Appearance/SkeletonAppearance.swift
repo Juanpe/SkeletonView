@@ -37,5 +37,7 @@ public class SkeletonViewAppearance {
 
     public var renderSingleLineAsView: Bool = false
     
+    public var skeletonCornerRadius: Float = 0
+
 }
 // codebeat:enable[TOO_MANY_IVARS]
