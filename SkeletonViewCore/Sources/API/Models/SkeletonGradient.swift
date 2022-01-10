@@ -29,4 +29,8 @@ public struct SkeletonGradient {
         }
     }
     
+    public init(colors: [UIColor]) {
+        self.gradientColors = colors
+    }
+    
 }
