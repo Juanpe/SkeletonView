@@ -44,14 +44,6 @@ jobs:
           pod lib lint --allow-warnings
           pod trunk push --allow-warnings    
 
-      - name: Communicate on PR released
-        uses: unsplash/comment-on-pr@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          msg: |
-            Congratulations! 🎉 This was released as part of [SkeletonView ${{ steps.publish_release.outputs.tag_name }}](${{ steps.publish_release.outputs.html_url }}) 🚀  
-
       - name: Tweet the release
         uses: ethomson/send-tweet-action@v1
         with:
