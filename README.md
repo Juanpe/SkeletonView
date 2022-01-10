@@ -274,7 +274,21 @@ You can set some properties for multilines elements.
 | **skeletonTextNumberOfLines**  | `SkeletonTextNumberOfLines` | `.inherited` | ![](Assets/multiline_corner.png)
 
 <br />
-👩🏻‍🏫 **How to define the number of lines?**
+
+To modify the percent or radius **using code**, set the properties:
+```swift
+descriptionTextView.lastLineFillPercent = 50
+descriptionTextView.linesCornerRadius = 5
+```
+
+Or, if you prefer use **IB/Storyboard**:
+
+![](Assets/multiline_customize.png)
+
+<br />
+
+**How to define the number of lines?**
+
 
 By default, the number of lines is the same as the value of the `numberOfLines` property. And, if it's set to **zero**, it'll calculate how many lines are needed to populate the whole skeleton and draw it.
 
@@ -285,7 +299,6 @@ For example:
 ```swift
 label.skeletonTextNumberOfLines = 3   // .custom(3)
 ``` 
-
 
 <br />
 
@@ -301,18 +314,6 @@ label.skeletonTextNumberOfLines = 3   // .custom(3)
 > Please note that for views without multiple lines, the single line will be considered 
 > as the last line.
 
-
-<br />
-
-To modify the percent or radius **using code**, set the properties:
-```swift
-descriptionTextView.lastLineFillPercent = 50
-descriptionTextView.linesCornerRadius = 5
-```
-
-Or, if you prefer use **IB/Storyboard**:
-
-![](Assets/multiline_customize.png)
 
 
 ### 🦋 Appearance
