@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F5225F2A278C2BCE0061A9B0 /* SkeletonTextNumberOfLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5225F29278C2BCE0061A9B0 /* SkeletonTextNumberOfLines.swift */; };
+		F5225F2B278C2BCE0061A9B0 /* SkeletonTextNumberOfLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5225F29278C2BCE0061A9B0 /* SkeletonTextNumberOfLines.swift */; };
 		F53D731826D399E100249D46 /* SkeletonTreeNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53D731726D399E100249D46 /* SkeletonTreeNode+Extensions.swift */; };
 		F53D731926D399E100249D46 /* SkeletonTreeNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53D731726D399E100249D46 /* SkeletonTreeNode+Extensions.swift */; };
 		F53D731B26D3A35100249D46 /* SkeletonExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53D731A26D3A35100249D46 /* SkeletonExtended.swift */; };
@@ -151,6 +153,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F5225F29278C2BCE0061A9B0 /* SkeletonTextNumberOfLines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonTextNumberOfLines.swift; sourceTree = "<group>"; };
 		F53D731726D399E100249D46 /* SkeletonTreeNode+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SkeletonTreeNode+Extensions.swift"; sourceTree = "<group>"; };
 		F53D731A26D3A35100249D46 /* SkeletonExtended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonExtended.swift; sourceTree = "<group>"; };
 		F53D732226D3C3A800249D46 /* UILabel+SKExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+SKExtensions.swift"; sourceTree = "<group>"; };
@@ -519,6 +522,7 @@
 				F556F6B826CE262700A80B83 /* GradientDirection.swift */,
 				F556F6C126CE27FD00A80B83 /* SkeletonType.swift */,
 				F5C84883274BB6F000004D1A /* SkeletonTextLineHeight.swift */,
+				F5225F29278C2BCE0061A9B0 /* SkeletonTextNumberOfLines.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -834,6 +838,7 @@
 				F556F58A26CD1F3900A80B83 /* SkeletonGradient.swift in Sources */,
 				F556F6C326CE27FD00A80B83 /* SkeletonType.swift in Sources */,
 				F556F58B26CD1F3900A80B83 /* SkeletonLayer.swift in Sources */,
+				F5225F2B278C2BCE0061A9B0 /* SkeletonTextNumberOfLines.swift in Sources */,
 				F556F6A226CD566C00A80B83 /* UIView+SKExtensions.swift in Sources */,
 				F556F69326CD506C00A80B83 /* Deprecated.swift in Sources */,
 				F556F6BA26CE262700A80B83 /* GradientDirection.swift in Sources */,
@@ -917,6 +922,7 @@
 				F556F6C226CE27FD00A80B83 /* SkeletonType.swift in Sources */,
 				OBJ_123 /* SkeletonLayer.swift in Sources */,
 				F556F6E026CE367600A80B83 /* UIView+SkeletonView.swift in Sources */,
+				F5225F2A278C2BCE0061A9B0 /* SkeletonTextNumberOfLines.swift in Sources */,
 				F556F6A126CD566C00A80B83 /* UIView+SKExtensions.swift in Sources */,
 				F556F69226CD506C00A80B83 /* Deprecated.swift in Sources */,
 				F556F6B926CE262700A80B83 /* GradientDirection.swift in Sources */,
