@@ -33,14 +33,13 @@ jobs:
           commit_message: 'Bump version ${{ steps.publish_release.outputs.tag_name }}'
         env:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   
-         
-      - name: Install Cocoapods
-        run: gem install cocoapods
 
       - name: Deploy to Cocoapods
+        continue-on-error: true
         env:
           COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
         run: |
+          gem install cocoapods
           set -eo pipefail
           pod lib lint --allow-warnings
           pod trunk push --allow-warnings    
