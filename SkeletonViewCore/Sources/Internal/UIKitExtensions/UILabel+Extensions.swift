@@ -16,15 +16,15 @@ import UIKit
 extension UILabel {
     
     var desiredHeightBasedOnNumberOfLines: CGFloat {
-        let spaceNeededForEachLine = estimatedLineHeight * CGFloat(numberOfLines)
-        let spaceNeededForSpaces = skeletonLineSpacing * CGFloat(numberOfLines - 1)
+        let spaceNeededForEachLine = estimatedLineHeight * CGFloat(estimatedNumberOfLines)
+        let spaceNeededForSpaces = skeletonLineSpacing * CGFloat(estimatedNumberOfLines - 1)
         let padding = paddingInsets.top + paddingInsets.bottom
         
         return spaceNeededForEachLine + spaceNeededForSpaces + padding
     }
     
     func updateHeightConstraintsIfNeeded() {
-        guard numberOfLines > 1 || numberOfLines == 0 else { return }
+        guard estimatedNumberOfLines > 1 || estimatedNumberOfLines == 0 else { return }
         
         // Workaround to simulate content when the label is contained in a `UIStackView`.
         if isSuperviewAStackView, bounds.height == 0 {

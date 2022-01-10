@@ -261,7 +261,6 @@ The rest of the process is the same as ```UITableView```
 ![](Assets/multilines2.png)
 
 When using elements with text, ```SkeletonView``` draws lines to simulate text.
-Besides, you can decide how many lines you want. If  ```numberOfLines``` is set to zero, it will calculate how many lines needed to populate the whole skeleton and it will be drawn. Instead, if you set it to one, two or any number greater than zero, it will only draw this number of lines.
 
 You can set some properties for multilines elements.
 
@@ -272,6 +271,34 @@ You can set some properties for multilines elements.
 | **skeletonLineSpacing**  | `CGFloat` | `10` | ![](Assets/multiline_lineSpacing.png)
 | **skeletonPaddingInsets**  | `UIEdgeInsets` | `.zero` | ![](Assets/multiline_insets.png)
 | **skeletonTextLineHeight**  | `SkeletonTextLineHeight` | `.fixed(15)` | ![](Assets/multiline_lineHeight.png)
+| **skeletonTextNumberOfLines**  | `SkeletonTextNumberOfLines` | `.inherited` | ![](Assets/multiline_corner.png)
+
+<br />
+
+To modify the percent or radius **using code**, set the properties:
+```swift
+descriptionTextView.lastLineFillPercent = 50
+descriptionTextView.linesCornerRadius = 5
+```
+
+Or, if you prefer use **IB/Storyboard**:
+
+![](Assets/multiline_customize.png)
+
+<br />
+
+**How to define the number of lines?**
+
+
+By default, the number of lines is the same as the value of the `numberOfLines` property. And, if it's set to **zero**, it'll calculate how many lines are needed to populate the whole skeleton and draw it.
+
+However, if you want to set a specific number of skeleton lines you can do it by setting the `skeletonTextNumberOfLines` property. This property has two possible values, `inherited` which returns `numberOfLines` value and `custom(Int)` which returns the specific number of lines specified as the associated value. 
+
+For example:
+
+```swift
+label.skeletonTextNumberOfLines = 3   // .custom(3)
+``` 
 
 <br />
 
@@ -287,18 +314,6 @@ You can set some properties for multilines elements.
 > Please note that for views without multiple lines, the single line will be considered 
 > as the last line.
 
-
-<br />
-
-To modify the percent or radius **using code**, set the properties:
-```swift
-descriptionTextView.lastLineFillPercent = 50
-descriptionTextView.linesCornerRadius = 5
-```
-
-Or, if you prefer use **IB/Storyboard**:
-
-![](Assets/multiline_customize.png)
 
 
 ### 🦋 Appearance

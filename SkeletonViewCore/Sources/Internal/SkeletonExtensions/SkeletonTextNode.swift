@@ -17,7 +17,7 @@ protocol SkeletonTextNode {
     
     var textLineHeight: SkeletonTextLineHeight { get }
     var estimatedLineHeight: CGFloat { get }
-    var numberOfLines: Int { get }
+    var estimatedNumberOfLines: Int { get }
     var textAlignment: NSTextAlignment { get }
     var lastLineFillingPercent: Int { get }
     var multilineCornerRadius: Int { get }
@@ -35,6 +35,7 @@ enum SkeletonTextNodeAssociatedKeys {
     static var paddingInsets = "paddingInsets"
     static var backupHeightConstraints = "backupHeightConstraints"
     static var textLineHeight = "textLineHeight"
+    static var skeletonNumberOfLines = "skeletonNumberOfLines"
     
 }
 
@@ -48,17 +49,31 @@ extension UILabel: SkeletonTextNode {
             return fontLineHeight ?? SkeletonAppearance.default.multilineHeight
         case .relativeToConstraints:
             guard let constraintsLineHeight = heightConstraints.first?.constant,
-                    numberOfLines != 0 else {
+                  estimatedNumberOfLines != 0 else {
                 return SkeletonAppearance.default.multilineHeight
             }
             
-            return constraintsLineHeight / CGFloat(numberOfLines)
+            return constraintsLineHeight / CGFloat(estimatedNumberOfLines)
         }
     }
     
     var textLineHeight: SkeletonTextLineHeight {
         get { return ao_get(pkey: &SkeletonTextNodeAssociatedKeys.textLineHeight) as? SkeletonTextLineHeight ?? SkeletonAppearance.default.textLineHeight }
         set { ao_set(newValue, pkey: &SkeletonTextNodeAssociatedKeys.textLineHeight) }
+    }
+    
+    var skeletonNumberOfLines: SkeletonTextNumberOfLines {
+        get { return ao_get(pkey: &SkeletonTextNodeAssociatedKeys.skeletonNumberOfLines) as? SkeletonTextNumberOfLines ?? SkeletonTextNumberOfLines.inherited }
+        set { ao_set(newValue, pkey: &SkeletonTextNodeAssociatedKeys.skeletonNumberOfLines) }
+    }
+    
+    var estimatedNumberOfLines: Int {
+        switch skeletonNumberOfLines {
+        case .inherited:
+            return numberOfLines
+        case .custom(let lines):
+            return lines >= 0 ? lines : 1
+        }
     }
     
     var lastLineFillingPercent: Int {
@@ -119,8 +134,18 @@ extension UITextView: SkeletonTextNode {
         set { ao_set(newValue, pkey: &SkeletonTextNodeAssociatedKeys.textLineHeight) }
     }
     
-    var numberOfLines: Int {
-        -1
+    var skeletonNumberOfLines: SkeletonTextNumberOfLines {
+        get { return ao_get(pkey: &SkeletonTextNodeAssociatedKeys.skeletonNumberOfLines) as? SkeletonTextNumberOfLines ?? SkeletonTextNumberOfLines.inherited }
+        set { ao_set(newValue, pkey: &SkeletonTextNodeAssociatedKeys.skeletonNumberOfLines) }
+    }
+    
+    var estimatedNumberOfLines: Int {
+        switch skeletonNumberOfLines {
+        case .inherited:
+            return -1
+        case .custom(let lines):
+            return lines >= -1 ? lines : 1
+        }
     }
     
     var lastLineFillingPercent: Int {
