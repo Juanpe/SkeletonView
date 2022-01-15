@@ -1,5 +1,5 @@
-daysUntilStale: 7
-daysUntilClose: 7
+daysUntilStale: 5
+daysUntilClose: 3
 onlyLabels:
   - awaiting user input
 staleLabel: given up
