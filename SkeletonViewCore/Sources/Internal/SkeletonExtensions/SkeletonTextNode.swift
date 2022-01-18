@@ -106,9 +106,11 @@ extension UILabel: SkeletonTextNode {
     }
     
     var fontLineHeight: CGFloat? {
-        if let attributes = attributedText?.attributes(at: 0, effectiveRange: nil),
-           let fontAttribute = attributes.first(where: { $0.key == .font }) {
-            return fontAttribute.value as? CGFloat ?? font.lineHeight
+        if let attributedText = attributedText,
+           attributedText.length > 0 {
+            let attributes = attributedText.attributes(at: 0, effectiveRange: nil)
+            let fontAttribute = attributes.first(where: { $0.key == .font })
+            return fontAttribute?.value as? CGFloat ?? font.lineHeight
         } else {
             return font.lineHeight
         }
@@ -179,9 +181,11 @@ extension UITextView: SkeletonTextNode {
     }
     
     var fontLineHeight: CGFloat? {
-        if let attributes = attributedText?.attributes(at: 0, effectiveRange: nil),
-           let fontAttribute = attributes.first(where: { $0.key == .font }) {
-            return fontAttribute.value as? CGFloat ?? font?.lineHeight
+        if let attributedText = attributedText,
+           attributedText.length > 0 {
+            let attributes = attributedText.attributes(at: 0, effectiveRange: nil)
+            let fontAttribute = attributes.first(where: { $0.key == .font })
+            return fontAttribute?.value as? CGFloat ?? font?.lineHeight
         } else {
             return font?.lineHeight
         }
