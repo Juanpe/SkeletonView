@@ -12,8 +12,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
           
-      - name: Setup fastlane
-        run: brew install fastlane
+      - name: Setup Environment
+        run: |
+          brew install fastlane
+          brew install cocoapods
             
       - name: Publish release
         id: publish_release
@@ -39,7 +41,6 @@ jobs:
         env:
           COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
         run: |
-          gem install cocoapods
           set -eo pipefail
           pod lib lint --allow-warnings
           pod trunk push --allow-warnings    
