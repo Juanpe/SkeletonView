@@ -218,7 +218,9 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tdu-YQ-saq">
                                         <rect key="frame" x="263" y="69" width="94" height="30"/>
-                                        <state key="normal" title="Hide skeleton"/>
+                                        <state key="normal" title="Hide skeleton">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="showOrHideSkeleton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ma1-WX-Dzy"/>
                                         </connections>
