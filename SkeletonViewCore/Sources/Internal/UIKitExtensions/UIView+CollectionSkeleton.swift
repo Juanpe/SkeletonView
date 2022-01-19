@@ -28,7 +28,7 @@ extension UIView {
         guard let collection = self as? CollectionSkeleton,
             !ProcessInfo.isRunningXCTest else { return }
         _status = .off
-        collection.removeDummyDataSource(reloadAfter: reload)
+//        collection.removeDummyDataSource(reloadAfter: reload)
         collection.enableUserInteraction()
     }
     
