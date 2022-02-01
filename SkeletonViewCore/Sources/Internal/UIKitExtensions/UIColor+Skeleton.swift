@@ -43,6 +43,16 @@ public extension UIColor {
     }
     
     var complementaryColor: UIColor {
+        if #available(iOS 13, tvOS 13, *) {
+            return UIColor { _ in
+                self.createComplementaryColor()
+            }
+        } else {
+            return createComplementaryColor()
+        }
+    }
+    
+    private func createComplementaryColor() -> UIColor {
         isLight ? darker : lighter
     }
     
