@@ -28,12 +28,12 @@ struct SkeletonLayer {
         self.maskLayer.bounds = holder.definedMaxBounds
         self.maskLayer.cornerRadius = CGFloat(holder.skeletonCornerRadius)
         addTextLinesIfNeeded()
-        self.maskLayer.tint(withColors: colors)
+        self.maskLayer.tint(withColors: colors, traitCollection: holder.traitCollection)
     }
     
     func update(usingColors colors: [UIColor]) {
         layoutIfNeeded()
-        maskLayer.tint(withColors: colors)
+        maskLayer.tint(withColors: colors, traitCollection: holder?.traitCollection)
     }
 
     func layoutIfNeeded() {

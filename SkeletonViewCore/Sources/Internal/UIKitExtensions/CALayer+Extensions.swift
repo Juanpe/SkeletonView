@@ -15,11 +15,15 @@ import UIKit
 
 extension CAGradientLayer {
     
-    override func tint(withColors colors: [UIColor]) {
+    override func tint(withColors colors: [UIColor], traitCollection: UITraitCollection?) {
         skeletonSublayers.recursiveSearch(leafBlock: {
-            self.colors = colors.map { $0.cgColor }
+            if #available(iOS 13.0, tvOS 13, *), let traitCollection = traitCollection {
+                self.colors = colors.map { $0.resolvedColor(with: traitCollection).cgColor }
+            } else {
+                self.colors = colors.map { $0.cgColor }
+            }
         }) {
-            $0.tint(withColors: colors)
+            $0.tint(withColors: colors, traitCollection: traitCollection)
         }
     }
     
@@ -35,11 +39,15 @@ extension CALayer {
         return sublayers?.filter { $0.name == Constants.skeletonSubLayersName } ?? [CALayer]()
     }
     
-    @objc func tint(withColors colors: [UIColor]) {
+    @objc func tint(withColors colors: [UIColor], traitCollection: UITraitCollection?) {
         skeletonSublayers.recursiveSearch(leafBlock: {
-            backgroundColor = colors.first?.cgColor
+            if #available(iOS 13.0, tvOS 13, *), let traitCollection = traitCollection {
+                backgroundColor = colors.first?.resolvedColor(with: traitCollection).cgColor
+            } else {
+                backgroundColor = colors.first?.cgColor
+            }
         }) {
-            $0.tint(withColors: colors)
+            $0.tint(withColors: colors, traitCollection: traitCollection)
         }
     }
     
