@@ -103,6 +103,8 @@ extension SkeletonCollectionDataSource: UICollectionViewDataSource {
                         at indexPath: IndexPath) -> UICollectionReusableView {
         if let viewIdentifier = originalCollectionViewDataSource?.collectionSkeletonView(collectionView, supplementaryViewIdentifierOfKind: kind, at: indexPath) {
             let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: viewIdentifier, for: indexPath)
+
+            originalCollectionViewDataSource?.collectionSkeletonView(collectionView, prepareViewForSkeleton: view, at: indexPath)
             skeletonizeViewIfContainerSkeletonIsActive(container: collectionView, view: view)
             return view
         }

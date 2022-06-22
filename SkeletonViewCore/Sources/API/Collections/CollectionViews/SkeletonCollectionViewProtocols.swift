@@ -15,6 +15,7 @@ public protocol SkeletonCollectionViewDataSource: UICollectionViewDataSource {
     func collectionSkeletonView(_ skeletonView: UICollectionView, supplementaryViewIdentifierOfKind: String, at indexPath: IndexPath) -> ReusableCellIdentifier?
     func collectionSkeletonView(_ skeletonView: UICollectionView, skeletonCellForItemAt indexPath: IndexPath) -> UICollectionViewCell?
     func collectionSkeletonView(_ skeletonView: UICollectionView, prepareCellForSkeleton cell: UICollectionViewCell, at indexPath: IndexPath)
+    func collectionSkeletonView(_ skeletonView: UICollectionView, prepareViewForSkeleton view: UICollectionReusableView, at indexPath: IndexPath)
 }
 
 public extension SkeletonCollectionViewDataSource {
@@ -35,6 +36,8 @@ public extension SkeletonCollectionViewDataSource {
     }
 
     func collectionSkeletonView(_ skeletonView: UICollectionView, prepareCellForSkeleton cell: UICollectionViewCell, at indexPath: IndexPath) { }
+
+    func collectionSkeletonView(_ skeletonView: UICollectionView, prepareViewForSkeleton view: UICollectionReusableView, at indexPath: IndexPath) { }
 }
 
 public protocol SkeletonCollectionViewDelegate: UICollectionViewDelegate { }
