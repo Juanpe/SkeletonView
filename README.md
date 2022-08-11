@@ -90,6 +90,10 @@ dependencies: [
 ]
 ```
 
+> 📣 **IMPORTANT!** 
+>
+> Since version 1.30.0, `SkeletonView` supports **XCFrameworks**, so if you want to install it as a **XCFramework**, please use [this repo](https://github.com/Juanpe/SkeletonView-XCFramework.git) instead.
+
 
 ## 🐒 Usage
 
