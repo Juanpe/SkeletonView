@@ -61,11 +61,6 @@ extension UITableView: CollectionSkeleton {
     func removeDummyDataSource(reloadAfter: Bool) {
         guard let dataSource = self.dataSource as? SkeletonCollectionDataSource else { return }
         restoreRowHeight()
-        
-        for cell in self.visibleCells {
-            cell.hideSkeleton()
-        }
-        
         self.skeletonDataSource = nil
         self.dataSource = dataSource.originalTableViewDataSource
 
