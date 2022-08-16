@@ -21,7 +21,18 @@ extension UITableView {
 		// Some developer trying to call `view.showAnimatedSkeleton()`
 		// when the request or data is loading which sometimes happens before the ViewDidAppear
 		guard window != nil else { return [] }
-        return subviews
+        
+        var result = [UIView]()
+
+        for subview in subviews {
+            if String(describing: type(of: subview)) == "UITableViewWrapperView" {
+                result.append(contentsOf: subview.subviews)
+            } else {
+                result.append(subview)
+            }
+        }
+        
+        return result
     }
     
 }
