@@ -1,0 +1,18 @@
+name: 'Close stale issues and PRs'
+on:
+  schedule:
+    - cron: '30 5 * * *'
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@v4
+        with:
+          close-issue-message: 'Closing this issue after a prolonged period of inactivity. If this issue is still present in the latest release, please feel free to create a new issue with up-to-date information.'
+          stale-issue-message: '🤖 This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions 🙂'
+          days-before-stale: 5
+          days-before-close: 3
+          enable-statistics: true
+          operations-per-run: 60
+          only-labels: 'awaiting user input'
