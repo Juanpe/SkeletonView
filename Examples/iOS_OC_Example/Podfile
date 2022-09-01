@@ -1,0 +1,14 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'iOS_OC_Example' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+  
+  # Local SkeletonView
+  pod 'SkeletonView', :path => '../../'
+
+  # Pods for iOS_OC_Example
+  pod 'Masonry'
+
+end

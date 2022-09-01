@@ -1,0 +1,23 @@
+PODS:
+  - Masonry (1.1.0)
+  - SkeletonView (1.30.1)
+
+DEPENDENCIES:
+  - Masonry
+  - SkeletonView (from `../../`)
+
+SPEC REPOS:
+  trunk:
+    - Masonry
+
+EXTERNAL SOURCES:
+  SkeletonView:
+    :path: "../../"
+
+SPEC CHECKSUMS:
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  SkeletonView: f1e8e19841be437746f07b7dc7ce4d028b698b96
+
+PODFILE CHECKSUM: 6c548fe25eec25036b44687638a0311877e87f67
+
+COCOAPODS: 1.11.3
