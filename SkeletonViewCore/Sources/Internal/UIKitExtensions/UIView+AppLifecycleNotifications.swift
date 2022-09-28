@@ -22,11 +22,11 @@ extension UIView {
     func startObservingAppLifecycleNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(appDidBecomeActive), name: .applicationDidBecomeActiveNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(appDidEnterBackground), name: .applicationDidEnterForegroundNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(willTerminateNotification), name: .applicationDidEnterForegroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(willTerminateNotification), name: .applicationWillTerminateNotification, object: nil)
     }
     
     func stopObservingAppLifecycleNotications() {
-        NotificationCenter.default.removeObserver(self, name: .applicationDidEnterForegroundNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .applicationDidBecomeActiveNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: .applicationDidEnterForegroundNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: .applicationWillTerminateNotification, object: nil)
     }
