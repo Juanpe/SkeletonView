@@ -163,47 +163,45 @@ avatarImageView.isSkeletonable = true
   
 
 
-### 🌿 Collections
+### 🌿 Sammlungen
 
-```SkeletonView``` is compatible with ```UITableView``` and ```UICollectionView```.
+```SkeletonView``` ist kompatibel mit ```UITableView``` und ```UICollectionView```.
 
 
 **UITableView**
 
-If you want to show the skeleton in a ```UITableView```, you need to conform to ```SkeletonTableViewDataSource``` protocol.
+Wenn sie das Skelett in eines ```UITableView``'s anzeigen wollen, müssen dieses dem ```SkeletonTableViewDataSource``-Protokoll entsprechen.
 
 ``` swift
 public protocol SkeletonTableViewDataSource: UITableViewDataSource {
-    func numSections(in collectionSkeletonView: UITableView) -> Int // Default: 1
+    func numSections(in collectionSkeletonView: UITableView) -> Int // Standard: 1
     func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int
     func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier
-    func collectionSkeletonView(_ skeletonView: UITableView, skeletonCellForRowAt indexPath: IndexPath) -> UITableViewCell? // Default: nil
+    func collectionSkeletonView(_ skeletonView: UITableView, skeletonCellForRowAt indexPath: IndexPath) -> UITableViewCell? // Standard: nil
     func collectionSkeletonView(_ skeletonView: UITableView, prepareCellForSkeleton cell: UITableViewCell, at indexPath: IndexPath)
 }
 ```
-As you can see, this protocol inherits from ```UITableViewDataSource```, so you can replace this protocol with the skeleton protocol.
+Wie sie sehen können, erbt dieses Protokoll von ```UITableViewDataSource``, so dass sie dieses Protokoll durch das Skelettprotokoll ersetzen können.
 
-This protocol has a default implementation for some methods. For example, the number of rows for each section is calculated in runtime:
+Dieses Protokoll hat eine Standardimplementierung für einige Methoden. Zum Beispiel wird die Anzahl der Zeilen für jeden Abschnitt in Echtzeit berechnet:
 
 ``` swift
 func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int
-// Default:
-// It calculates how many cells need to populate whole tableview
+// Standard:
+// Es wird berechnet, wie viele Zellen benötigt werden, um die gesamte Tabellenansicht zu füllen
 ```
 
-> 📣 **IMPORTANT!** 
+> 📣 **WICHTIG!** 
 >
-> If you return `UITableView.automaticNumberOfSkeletonRows` in the above method, it acts like the default behavior (i.e. it calculates how many cells needed to populate the whole tableview).
+> Wenn sie in der obigen Methode `UITableView.automaticNumberOfSkeletonRows` zurückgeben, verhält es sich wie das Standardverhalten (d.h. es wird berechnet, wie viele Zellen benötigt werden, um den gesamten Tableview zu füllen).
 
-There is only one method you need to implement to let Skeleton know the cell identifier. This method doesn't have default implementation:
+Es gibt nur eine Methode, die sie implementieren müssen, damit Skeleton den Zellen ID kennt. Diese Methode hat keine Standardimplementierung:
  ``` swift
  func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
     return "CellIdentifier"
 }
  ```
- 
- By default, the library dequeues the cells from each indexPath, but you can also do this if you want to make some changes before the skeleton appears:
- ``` swift
+Standardmäßig entfernt die library die Zellen aus jedem indexPath, aber sie können dies auch tun, wenn sie einige Änderungen vornehmen möchten, bevor das Skelett erscheint:
  func collectionSkeletonView(_ skeletonView: UITableView, skeletonCellForRowAt indexPath: IndexPath) -> UITableViewCell? {
      let cell = skeletonView.dequeueReusableCell(withIdentifier: "CellIdentifier", for: indexPath) as? Cell
      cell?.textField.isHidden = indexPath.row == 0
@@ -211,7 +209,7 @@ There is only one method you need to implement to let Skeleton know the cell ide
  }
  ```
  
-If you prefer to leave the deque part to the library you can configure the cell using this method:
+Wenn sie es vorziehen, den deque-Teil der Bibliothek zu überlassen, können sie die Zelle mit dieser Methode konfigurieren:
  ``` swift
  func collectionSkeletonView(_ skeletonView: UITableView, prepareCellForSkeleton cell: UITableViewCell, at indexPath: IndexPath) {
      let cell = cell as? Cell
@@ -219,22 +217,21 @@ If you prefer to leave the deque part to the library you can configure the cell 
  }
  ```
 
- 
-Besides, you can skeletonize both the headers and footers. You need to conform to `SkeletonTableViewDelegate` protocol.
+Außerdem können sie sowohl die Kopf- als auch die Fußzeilen skelettieren. Diese müssen nur dem Protokoll "SkeletonTableViewDelegate" entsprechen.
 
 ```swift
 public protocol SkeletonTableViewDelegate: UITableViewDelegate {
-    func collectionSkeletonView(_ skeletonView: UITableView, identifierForHeaderInSection section: Int) -> ReusableHeaderFooterIdentifier? // default: nil
-    func collectionSkeletonView(_ skeletonView: UITableView, identifierForFooterInSection section: Int) -> ReusableHeaderFooterIdentifier? // default: nil
+    func collectionSkeletonView(_ skeletonView: UITableView, identifierForHeaderInSection section: Int) -> ReusableHeaderFooterIdentifier? // standard: nil
+    func collectionSkeletonView(_ skeletonView: UITableView, identifierForFooterInSection section: Int) -> ReusableHeaderFooterIdentifier? // standard: nil
 }
 ```
 
-> 📣 **IMPORTANT!** 
+> 📣 **WICHTIG!**
 > 
-> 1️⃣ If you are using resizable cells (**`tableView.rowHeight = UITableViewAutomaticDimension`**), it's mandatory define the **`estimatedRowHeight`**.
+> 1️⃣ Wenn sie größenvariable Zellen verwenden (**`tableView.rowHeight = UITableViewAutomaticDimension`**), ist es zwingend erforderlich, die **`estimatedRowHeight`** zu definieren.
 > 
-> 2️⃣ When you add elements in a **`UITableViewCell`** you should add it to **`contentView`** and not to the cell directly.
-> ```swift
+> 2️⃣ Wenn man Elemente in einer **`UITableViewCell`** hinzufügt, sollte man sie dem **`contentView`** hinzufügen und nicht direkt in der Zelle.
+> ``swift
 > self.contentView.addSubview(titleLabel) ✅         
 > self.addSubview(titleLabel) ❌
 > ```
@@ -243,21 +240,21 @@ public protocol SkeletonTableViewDelegate: UITableViewDelegate {
 
 **UICollectionView**
 
-For `UICollectionView`, you need to conform to `SkeletonCollectionViewDataSource` protocol.
+Für `UICollectionView` müssen sie dem Protokoll `SkeletonCollectionViewDataSource` entsprechen.
 
 ``` swift
 public protocol SkeletonCollectionViewDataSource: UICollectionViewDataSource {
-    func numSections(in collectionSkeletonView: UICollectionView) -> Int  // default: 1
+    func numSections(in collectionSkeletonView: UICollectionView) -> Int  // standard: 1
     func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> ReusableCellIdentifier
-    func collectionSkeletonView(_ skeletonView: UICollectionView, supplementaryViewIdentifierOfKind: String, at indexPath: IndexPath) -> ReusableCellIdentifier? // default: nil
-    func collectionSkeletonView(_ skeletonView: UICollectionView, skeletonCellForItemAt indexPath: IndexPath) -> UICollectionViewCell?  // default: nil
+    func collectionSkeletonView(_ skeletonView: UICollectionView, supplementaryViewIdentifierOfKind: String, at indexPath: IndexPath) -> ReusableCellIdentifier? // standard: nil
+    func collectionSkeletonView(_ skeletonView: UICollectionView, skeletonCellForItemAt indexPath: IndexPath) -> UICollectionViewCell?  // standard: nil
     func collectionSkeletonView(_ skeletonView: UICollectionView, prepareCellForSkeleton cell: UICollectionViewCell, at indexPath: IndexPath)
     func collectionSkeletonView(_ skeletonView: UICollectionView, prepareViewForSkeleton view: UICollectionReusableView, at indexPath: IndexPath)
 }
 ```
 
-The rest of the process is the same as ```UITableView```
+Der Rest des Prozesses ist derselbe wie bei ```UITableView``
 
 
 ### 🔠 Texts
