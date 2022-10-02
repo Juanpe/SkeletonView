@@ -13,55 +13,55 @@
 </p>
 
 <p align="center">
-    <a href="#-features">Features</a>
-  • <a href="#-guides">Guides</a>
+    <a href="#-funktionen">Funktionen</a>
+  • <a href="#-anleitungen">Anleitungen</a>
   • <a href="#-installation">Installation</a>
-  • <a href="#-usage">Usage</a>
-  • <a href="#-miscellaneous">Miscellaneous</a>
-  • <a href="#️-contributing">Contributing</a>
+  • <a href="#-verwendung">Verwendung</a>
+  • <a href="#-sonstiges">Sonstiges</a>
+  • <a href="#️-beitragen">Beitragen</a>
 </p>
 
-**🌎 README is available in other languages:  [🇪🇸](Translations/README_es.md) . [🇨🇳](Translations/README_zh.md) . [🇧🇷](Translations/README_pt-br.md) . [🇰🇷](Translations/README_ko.md) . [🇫🇷](Translations/README_fr.md)**
+**🌎 README ist auch in anderen Sprachen verfügbar: [🇬🇧](../README.md) . [🇪🇸](README_es.md) . [🇨🇳](README_zh.md) . [🇧🇷]README_pt-br.md) . [🇰🇷](README_ko.md) . [🇫🇷](README_fr.md) . [🇩🇪](README_de.md)**
 
-Today almost all apps have async processes, such as API requests, long running processes, etc. While the processes are working, usually developers place a loading view to show users that something is going on.
+Heutzutage haben fast alle Anwendungen async-Prozesse, z.B. API-Anfragen, lang laufende Prozesse, usw. Während die Prozesse arbeiten, platzieren die Entwickler in der Regel eine Ladeansicht, um den Benutzern zu zeigen, dass im Hintergrund etwas vor sich geht.
 
-**SkeletonView** has been conceived to address this need, an elegant way to show users that something is happening and also prepare them for which contents are waiting.
+**SkeletonView** wurde entwickelt, um dieses Bedürfnis zu befriedigen, indem auf eine elegante Art und Weise, den Nutzern gezeigt wird, dass etwas passiert und sie gleichzeitig darauf vorbereitet, welche Inhalte sie erwarten.
 
-Enjoy it! 🙂
+Viel Spaß damit! 🙂
 
 
 ##
-- [🌟 Features](#-features)
-- [🎬 Guides](#-guides)
+- [🌟 Funktionen](#-funktionen)
+- [🎬 Anleitungen](#-anleitungen)
 - [📲 Installation](#-installation)
-- [🐒 Usage](#-usage)
-  - [🌿 Collections](#-collections)
-  - [🔠 Texts](#-texts)
-  - [🦋 Appearance](#-appearance)
-  - [🎨 Custom colors](#-custom-colors)
-  - [🏃‍♀️ Animations](#️-animations)
-  - [🏄 Transitions](#-transitions)
-- [✨ Miscellaneous](#-miscellaneous)
-- [❤️ Contributing](#️-contributing)
-- [📢 Mentions](#-mentions)
-- [🏆 Sponsors](#-sponsors)
-- [👨🏻‍💻 Author](#-author)
-- [👮🏻 License](#-license)
+- [🐒 Verwendung](#-verwendung)
+  - [🌿 Sammlungen](#-sammlungen)
+  - [🔠 Texte](#-texte)
+  - [🦋 Erscheinungsbild](#-erscheinungsbild)
+  - [🎨 Benutzerdefinierte Farben](#-benutzerdefinierte-farben)
+  - [🏃‍♀️ Animationen](#️-animationen)
+  - [🏄 Übergänge](#-übergänge)
+- [✨ Sonstiges](#-sonstiges)
+- [❤️ Beitragen](#️-beitragen)
+- [📢 Erwähnungen](#-erwähnungen)
+- [🏆 Sponsoren](#-sponsoren)
+- [👨🏻‍💻 Autor](#-autor)
+- [👮🏻 Lizenz](#-lizenz)
 
 
 
-## 🌟 Features
+## 🌟 Funktionen
 
-* Easy to use
-* All UIViews are skeletonables
-* Fully customizable
+* Einfach zu benutzen
+* Alle UIViews sind skelettierbar
+* Vollständig anpassbar
 * Universal (iPhone & iPad)
-* Interface Builder friendly
-* Simple Swift syntax
-* Lightweight readable codebase
+* Freundlicher interface builder
+* Einfache Swift-Syntax
+* Leicht lesbarer code
 
 
-## 🎬 Guides
+## 🎬 Anleitungen
 
 | [![](https://img.youtube.com/vi/75kgOhWsPNA/maxresdefault.jpg)](https://youtu.be/75kgOhWsPNA)|[![](https://img.youtube.com/vi/MVCiM_VdxVA/maxresdefault.jpg)](https://youtu.be/MVCiM_VdxVA)|[![](https://img.youtube.com/vi/Qq3Evspeea8/maxresdefault.jpg)](https://youtu.be/Qq3Evspeea8)|[![](https://img.youtube.com/vi/Zx1Pg1gPfxA/maxresdefault.jpg)](https://www.youtube.com/watch?v=Zx1Pg1gPfxA)
 |:---:  | :---:  | :---: | :---:
@@ -90,9 +90,9 @@ dependencies: [
 ]
 ```
 
-> 📣 **IMPORTANT!** 
+> 📣 **WICHTIG!** 
 >
-> Since version 1.30.0, `SkeletonView` supports **XCFrameworks**, so if you want to install it as a **XCFramework**, please use [this repo](https://github.com/Juanpe/SkeletonView-XCFramework.git) instead.
+> Seit Version 1.30.0 unterstützt `SkeletonView` **XCFrameworks**, wenn sie es also als **XCFramework** installieren möchten, verwenden sie bitte stattdessen [dieses Repo](https://github.com/Juanpe/SkeletonView-XCFramework.git).
 
 
 ## 🐒 Usage
