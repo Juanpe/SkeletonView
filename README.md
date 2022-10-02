@@ -13,40 +13,40 @@
 </p>
 
 <p align="center">
-    <a href="#-features">Features</a>
-  • <a href="#-guides">Guides</a>
+    <a href="#-funktionen">Funktionen</a>
+  • <a href="#-anleitungen">Anleitungen</a>
   • <a href="#-installation">Installation</a>
-  • <a href="#-usage">Usage</a>
-  • <a href="#-miscellaneous">Miscellaneous</a>
-  • <a href="#️-contributing">Contributing</a>
+  • <a href="#-verwendung">Verwendung</a>
+  • <a href="#-sonstiges">Sonstiges</a>
+  • <a href="#️-beitragen">Beitragen</a>
 </p>
 
-**🌎 README is available in other languages:  [🇪🇸](Translations/README_es.md) . [🇨🇳](Translations/README_zh.md) . [🇧🇷](Translations/README_pt-br.md) . [🇰🇷](Translations/README_ko.md) . [🇫🇷](Translations/README_fr.md) . [🇩🇪](Translations/README_de.md)**
+**🌎 README ist auch in anderen Sprachen verfügbar: [🇬🇧](../README.md) . [🇪🇸](README_es.md) . [🇨🇳](README_zh.md) . [🇧🇷]README_pt-br.md) . [🇰🇷](README_ko.md) . [🇫🇷](README_fr.md) . [🇩🇪](README_de.md)**
 
-Today almost all apps have async processes, such as API requests, long running processes, etc. While the processes are working, usually developers place a loading view to show users that something is going on.
+Heutzutage haben fast alle Anwendungen async-Prozesse, z.B. API-Anfragen, lang laufende Prozesse, usw. Während die Prozesse arbeiten, platzieren die Entwickler in der Regel eine Ladeansicht, um den Benutzern zu zeigen, dass im Hintergrund etwas vor sich geht.
 
-**SkeletonView** has been conceived to address this need, an elegant way to show users that something is happening and also prepare them for which contents are waiting.
+**SkeletonView** wurde entwickelt, um dieses Bedürfnis zu befriedigen, indem auf eine elegante Art und Weise, den Nutzern gezeigt wird, dass etwas passiert und sie gleichzeitig darauf vorbereitet, welche Inhalte sie erwarten.
 
-Enjoy it! 🙂
+Viel Spaß damit! 🙂
 
 
 ##
-- [🌟 Features](#-features)
-- [🎬 Guides](#-guides)
+- [🌟 Funktionen](#-funktionen)
+- [🎬 Anleitungen](#-anleitungen)
 - [📲 Installation](#-installation)
-- [🐒 Usage](#-usage)
-  - [🌿 Collections](#-collections)
-  - [🔠 Texts](#-texts)
-  - [🦋 Appearance](#-appearance)
-  - [🎨 Custom colors](#-custom-colors)
-  - [🏃‍♀️ Animations](#️-animations)
-  - [🏄 Transitions](#-transitions)
-- [✨ Miscellaneous](#-miscellaneous)
-- [❤️ Contributing](#️-contributing)
-- [📢 Mentions](#-mentions)
-- [🏆 Sponsors](#-sponsors)
-- [👨🏻‍💻 Author](#-author)
-- [👮🏻 License](#-license)
+- [🐒 Verwendung](#-verwendung)
+  - [🌿 Sammlungen](#-sammlungen)
+  - [🔠 Texte](#-texte)
+  - [🦋 Erscheinungsbild](#-erscheinungsbild)
+  - [🎨 Benutzerdefinierte Farben](#-benutzerdefinierte-farben)
+  - [🏃‍♀️ Animationen](#️-animationen)
+  - [🏄 Übergänge](#-übergänge)
+- [✨ Sonstiges](#-sonstiges)
+- [❤️ Beitragen](#️-beitragen)
+- [📢 Erwähnungen](#-erwähnungen)
+- [🏆 Sponsoren](#-sponsoren)
+- [👨🏻‍💻 Autor](#-autor)
+- [👮🏻 Lizenz](#-lizenz)
 
 
 
