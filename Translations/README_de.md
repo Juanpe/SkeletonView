@@ -95,49 +95,49 @@ dependencies: [
 > Seit Version 1.30.0 unterstützt `SkeletonView` **XCFrameworks**, wenn sie es also als **XCFramework** installieren möchten, verwenden sie bitte stattdessen [dieses Repo](https://github.com/Juanpe/SkeletonView-XCFramework.git).
 
 
-## 🐒 Usage
+## 🐒 Verwendung
 
-Only **3** steps needed to use `SkeletonView`:
+Nur **3** Schritte sind erforderlich, um `SkeletonView` zu verwenden:
 
-1️⃣ Import SkeletonView in proper place.
+1️⃣ Importieren sie SkeletonView an der richtigen Stelle.
 ```swift
 import SkeletonView
 ```
 
-2️⃣ Now, set which views will be `skeletonables`. You achieve this in two ways:
+2️⃣ Legen sie nun fest, welche Ansichten `skelettierbar` sein sollen. Dies können sie auf zwei Arten erreichen:
 
-**Using code:**
+**Durch code:**
 ```swift
 avatarImageView.isSkeletonable = true
 ```
-**Using IB/Storyboards:**
+**Durch IB/Storyboards:**
 
 ![](Assets/storyboard.png)
 
-3️⃣ Once you've set the views, you can show the **skeleton**. To do so, you have **4** choices:
+3️⃣ Sobald sie die Views eingestellt haben, können sie das **Skelett** anzeigen. Dazu haben sie **4** Auswahlmöglichkeiten:
 
 ```swift
-(1) view.showSkeleton()                 // Solid
-(2) view.showGradientSkeleton()         // Gradient
-(3) view.showAnimatedSkeleton()         // Solid animated
-(4) view.showAnimatedGradientSkeleton() // Gradient animated
+(1) view.showSkeleton()                 // Solide
+(2) view.showGradientSkeleton()         // Farbverlauf
+(3) view.showAnimatedSkeleton()         // Solide animiert
+(4) view.showAnimatedGradientSkeleton() // Farbverlauf animiert
 ```
 
-**Preview**
+**Vorschau**
 
 <table>
 <tr>
 <td width="25%">
-<center>Solid</center>
+<center>Solide</center>
 </td>
 <td width="25%">
-<center>Gradient</center>
+<center>Farbverlauf</center>
 </td>
 <td width="25%">
-<center>Solid Animated</center>
+<center>Solide animiert</center>
 </td>
 <td width="25%">
-<center>Gradient Animated</center>
+<center>Farbverlauf animiert</center>
 </td>
 </tr>
 <tr>
@@ -156,10 +156,9 @@ avatarImageView.isSkeletonable = true
 </tr>
 </table>
 
-
-> 📣 **IMPORTANT!** 
+> 📣 **WICHTIG!** 
 >
-> `SkeletonView` is recursive, so if you want show the skeleton in all skeletonable views, you only need to call the show method in the main container view. For example, with `UIViewControllers`.
+> `SkeletonView` ist rekursiv, wenn sie also das Skelett in allen skelettierbaren Views anzeigen wollen, müssen sie nur die show-Methode in der Haupt-Container-View aufrufen. Zum Beispiel mit `UIViewControllers`.
 
   
 
