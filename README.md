@@ -61,7 +61,7 @@ Viel Spaß damit! 🙂
 * Leicht lesbarer code
 
 
-## 🎬 Guides
+## 🎬 Anleitungen
 
 | [![](https://img.youtube.com/vi/75kgOhWsPNA/maxresdefault.jpg)](https://youtu.be/75kgOhWsPNA)|[![](https://img.youtube.com/vi/MVCiM_VdxVA/maxresdefault.jpg)](https://youtu.be/MVCiM_VdxVA)|[![](https://img.youtube.com/vi/Qq3Evspeea8/maxresdefault.jpg)](https://youtu.be/Qq3Evspeea8)|[![](https://img.youtube.com/vi/Zx1Pg1gPfxA/maxresdefault.jpg)](https://www.youtube.com/watch?v=Zx1Pg1gPfxA)
 |:---:  | :---:  | :---: | :---:
@@ -90,9 +90,9 @@ dependencies: [
 ]
 ```
 
-> 📣 **IMPORTANT!** 
+> 📣 **WICHTIG!** 
 >
-> Since version 1.30.0, `SkeletonView` supports **XCFrameworks**, so if you want to install it as a **XCFramework**, please use [this repo](https://github.com/Juanpe/SkeletonView-XCFramework.git) instead.
+> Seit Version 1.30.0 unterstützt `SkeletonView` **XCFrameworks**, wenn sie es also als **XCFramework** installieren möchten, verwenden sie bitte stattdessen [dieses Repo](https://github.com/Juanpe/SkeletonView-XCFramework.git).
 
 
 ## 🐒 Usage
