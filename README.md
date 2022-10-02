@@ -50,15 +50,15 @@ Viel Spaß damit! 🙂
 
 
 
-## 🌟 Features
+## 🌟 Funktionen
 
-* Easy to use
-* All UIViews are skeletonables
-* Fully customizable
+* Einfach zu benutzen
+* Alle UIViews sind skelettierbar
+* Vollständig anpassbar
 * Universal (iPhone & iPad)
-* Interface Builder friendly
-* Simple Swift syntax
-* Lightweight readable codebase
+* Freundlicher interface builder
+* Einfache Swift-Syntax
+* Leicht lesbarer code
 
 
 ## 🎬 Guides
