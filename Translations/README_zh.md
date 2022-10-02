@@ -23,7 +23,7 @@
     </a>
 </p>
 
-**🌎 翻译: [🇬🇧](../README.md) . [🇨🇳](README_zh.md) . [🇧🇷](README_pt-br.md) . [🇰🇷](README_ko.md) . [🇫🇷](README_fr.md)**
+**🌎 翻译: [🇬🇧](../README.md) . [🇨🇳](README_zh.md) . [🇧🇷](README_pt-br.md) . [🇰🇷](README_ko.md) . [🇫🇷](README_fr.md) . [🇩🇪](README_de.md)**
 
 今天，几乎所有的应用程序都有异步流程，例如：Api请求、长时间运行的流程等。虽然流程正在运行，但通常开发人员会设置一个加载视图来向用户显示正在发生的事情。
 
