@@ -319,7 +319,7 @@ label.skeletonTextNumberOfLines = 3   // .custom(3)
 
 ### 🦋 Erscheinungsbild
 
-Die Skelette haben ein Standardaussehen. Wenn Sie also die Farbe, den Farbverlauf oder Mehrlinien-Eigenschaften nicht angeben, verwendet `SkeletonView` die Standardwerte.
+Die Skelette haben ein Standardaussehen. Wenn sie also die Farbe, den Farbverlauf oder Mehrlinien-Eigenschaften nicht angeben, verwendet `SkeletonView` die Standardwerte.
 
 Standardwerte:
 - **tintColor**: `UIColor`
@@ -337,7 +337,7 @@ Standardwerte:
 - **skeletonCornerRadius**: `CGFloat` (IBInspectable)(Macht ihre Skelettansicht mit Ecken)
   - *standard: 0*
 
-Um diese Standardwerte zu erhalten, können Sie `SkeletonAppearance.default` verwenden. Mit dieser Variable können Sie auch die Werte einstellen:
+Um diese Standardwerte zu erhalten, können sie `SkeletonAppearance.default` verwenden. Mit dieser Variable können sie auch die Werte einstellen:
 ```swift
 SkeletonAppearance.default.multilineHeight = 20
 SkeletonAppearance.default.tintColor = .green
@@ -375,33 +375,33 @@ Außerdem bietet **SkeletonView** 20 flache Farben 🤙🏼.
 ###### Bild von der Website [https://flatuicolors.com](https://flatuicolors.com) entnommen
 
 
-### 🏃‍♀️ Animations
+### 🏃‍♀️ Animationen
 
-**SkeletonView** has two built-in animations, *pulse* for solid skeletons and *sliding* for gradients.
+**SkeletonView** hat zwei eingebaute Animationen, *pulse* für einfarbige Skelette und *sliding* für Farbverläufe.
 
-Besides, if you want to do your own skeleton animation, it's really easy.
+Außerdem ist es sehr einfach, eine eigene Skelettanimationen zu erstellen.
 
 
-Skeleton provides the `showAnimatedSkeleton` function which has a ```SkeletonLayerAnimation``` closure where you can define your custom animation.
+Skeleton bietet die Funktion `showAnimatedSkeleton`, die eine Closure ```SkeletonLayerAnimation``` besitzt, in der sie Ihre eigene Animation definieren können.
 
 ```swift
 public typealias SkeletonLayerAnimation = (CALayer) -> CAAnimation
 ```
 
-You can call the function like this:
+Sie können die Funktion wie folgt aufrufen:
 
 ```swift
 view.showAnimatedSkeleton { (layer) -> CAAnimation in
   let animation = CAAnimation()
-  // Customize here your animation
+  // Passen sie hier Ihre Animation an
 
   return animation
 }
 ```
 
-It's available ```SkeletonAnimationBuilder```. It's a builder to make ```SkeletonLayerAnimation```.
+Es ist ein ```SkeletonAnimationBuilder``` verfügbar. Es ist ein Builder um ```SkeletonLayerAnimation``` zu erstellen.
 
-Today, you can create **sliding animations** for gradients, deciding the **direction** and setting the **duration** of the animation (default = 1.5s).
+Heute kann man **Gleitanimationen** für Farbverläufe erstellen, indem man die **Richtung** und die **Dauer** der Animation festlegt (Standard = 1,5s).
 
 ```swift
 // func makeSlidingAnimation(withDirection direction: GradientDirection, duration: CFTimeInterval = 1.5) -> SkeletonLayerAnimation
@@ -411,9 +411,9 @@ view.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
 
 ```
 
-```GradientDirection``` is an enum, with theses cases:
+````GradientDirection``` ist ein enum, mit den folgenden cases:
 
-|  Direction | Preview
+| Richtung | Vorschau
 |------- | -------
 | .leftRight | ![](Assets/sliding_left_to_right.gif)
 | .rightLeft | ![](Assets/sliding_right_to_left.gif)
@@ -424,7 +424,7 @@ view.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
 
 > **😉 TRICK!**
 >
-> Exist another way to create sliding animations, just using this shortcut:
+> Es gibt noch eine andere Möglichkeit, Schiebeanimationen zu erstellen, indem man einfach diese Abkürzung benutzt:
 > ```swift
 > let animation = GradientDirection.leftToRight.slidingAnimation()
 > ```
