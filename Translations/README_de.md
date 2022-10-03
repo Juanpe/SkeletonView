@@ -257,15 +257,15 @@ public protocol SkeletonCollectionViewDataSource: UICollectionViewDataSource {
 Der Rest des Prozesses ist derselbe wie bei ```UITableView``
 
 
-### 🔠 Texts
+### 🔠 Texte
 
 ![](Assets/multilines2.png)
 
-When using elements with text, ```SkeletonView``` draws lines to simulate text.
+Wenn Elemente mit Text verwendet werden, zeichnet ```SkeletonView`` Linien, um Text zu simulieren.
 
-You can set some properties for multilines elements.
+Sie können einige Variablen für mehrzeilige Elemente einstellen.
 
-| Property | Type | Default | Preview
+| Variable | Typ | Standard | Vorschau
 | ------- | ------- |------- | -------
 | **lastLineFillPercent**  | `CGFloat` | `70`| ![](Assets/multiline_lastline.png)
 | **linesCornerRadius**  | `Int` | `0` | ![](Assets/multiline_corner.png)
@@ -276,26 +276,26 @@ You can set some properties for multilines elements.
 
 <br />
 
-To modify the percent or radius **using code**, set the properties:
+Um den Prozentsatz oder den Radius **mit Hilfe von Code** zu ändern, legen sie diese Variablen fest:
 ```swift
 descriptionTextView.lastLineFillPercent = 50
 descriptionTextView.linesCornerRadius = 5
 ```
 
-Or, if you prefer use **IB/Storyboard**:
+Oder, wenn sie es vorziehen, verwenden sie **IB/Storyboard**:
 
 ![](Assets/multiline_customize.png)
 
 <br />
 
-**How to define the number of lines?**
+**Wie kann die Anzahl der Zeilen festgelegt werden?**
 
 
-By default, the number of lines is the same as the value of the `numberOfLines` property. And, if it's set to **zero**, it'll calculate how many lines are needed to populate the whole skeleton and draw it.
+Standardmäßig entspricht die Anzahl der Linien dem Wert der Variable `numberOfLines`. Und wenn es auf **null** gesetzt ist, wird berechnet, wie viele Linien benötigt werden, um das gesamte Skelett zu füllen und es zu zeichnen.
 
-However, if you want to set a specific number of skeleton lines you can do it by setting the `skeletonTextNumberOfLines` property. This property has two possible values, `inherited` which returns `numberOfLines` value and `custom(Int)` which returns the specific number of lines specified as the associated value. 
+Wenn sie jedoch eine bestimmte Anzahl von Zeilen für das Skelett festlegen möchten, können sie dies mit der Variable `skeletonTextNumberOfLines` tun. Diese Variable hat zwei mögliche Werte: `inherited`, der den Wert `numberOfLines` zurückgibt, und `custom(Int)`, der die spezifische Anzahl von Zeilen zurückgibt, die als zugehöriger Wert angegeben wurde. 
 
-For example:
+Zum Beispiel:
 
 ```swift
 label.skeletonTextNumberOfLines = 3   // .custom(3)
@@ -303,17 +303,17 @@ label.skeletonTextNumberOfLines = 3   // .custom(3)
 
 <br />
 
-> **⚠️ DEPRECATED!**
+> **⚠️ VERALTET!**
 >
-> **useFontLineHeight** has been deprecated. You can use **skeletonTextLineHeight** instead:
+> **useFontLineHeight** wurde abgeschafft. Sie können stattdessen **skeletonTextLineHeight** verwenden:
 > ```swift
 > descriptionTextView.skeletonTextLineHeight = .relativeToFont
 > ```
 
-> **📣 IMPORTANT!**
+> **📣 WICHTIG!**
 >
-> Please note that for views without multiple lines, the single line will be considered 
-> as the last line.
+> Bitte beachten sie, dass bei Ansichten ohne mehrere Zeilen die einzelne Zeile
+> als letzte Zeile betrachtet wird.
 
 
 
