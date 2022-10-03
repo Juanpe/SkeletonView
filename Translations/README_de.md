@@ -1,4 +1,4 @@
-![](Assets/header2.jpg)
+![](../Assets/header2.jpg)
 
 <p align="center">
     <a href="https://github.com/Juanpe/SkeletonView/actions?query=workflow%3ACI">
@@ -112,7 +112,7 @@ avatarImageView.isSkeletonable = true
 ```
 **Durch IB/Storyboards:**
 
-![](Assets/storyboard.png)
+![](../Assets/storyboard.png)
 
 3️⃣ Sobald sie die Views eingestellt haben, können sie das **Skelett** anzeigen. Dazu haben sie **4** Auswahlmöglichkeiten:
 
@@ -142,16 +142,16 @@ avatarImageView.isSkeletonable = true
 </tr>
 <tr>
 <td width="25%">
-<img src="Assets/solid.png"></img>
+<img src="../Assets/solid.png"></img>
 </td>
 <td width="25%">
-<img src="Assets/gradient.png"></img>
+<img src="../Assets/gradient.png"></img>
 </td>
 <td width="25%">
-<img src="Assets/solid_animated.gif"></img>
+<img src="../Assets/solid_animated.gif"></img>
 </td>
 <td width="25%">
-<img src="Assets/gradient_animated.gif"></img>
+<img src="../Assets/gradient_animated.gif"></img>
 </td>
 </tr>
 </table>
@@ -260,7 +260,7 @@ Der Rest des Prozesses ist derselbe wie bei ```UITableView```
 
 ### 🔠 Texte
 
-![](Assets/multilines2.png)
+![](../Assets/multilines2.png)
 
 Wenn Elemente mit Text verwendet werden, zeichnet ```SkeletonView``` Linien, um Text zu simulieren.
 
@@ -268,12 +268,12 @@ Sie können einige Variablen für mehrzeilige Elemente einstellen.
 
 | Variable | Typ | Standard | Vorschau
 | ------- | ------- |------- | -------
-| **lastLineFillPercent**  | `CGFloat` | `70`| ![](Assets/multiline_lastline.png)
-| **linesCornerRadius**  | `Int` | `0` | ![](Assets/multiline_corner.png)
-| **skeletonLineSpacing**  | `CGFloat` | `10` | ![](Assets/multiline_lineSpacing.png)
-| **skeletonPaddingInsets**  | `UIEdgeInsets` | `.zero` | ![](Assets/multiline_insets.png)
-| **skeletonTextLineHeight**  | `SkeletonTextLineHeight` | `.fixed(15)` | ![](Assets/multiline_lineHeight.png)
-| **skeletonTextNumberOfLines**  | `SkeletonTextNumberOfLines` | `.inherited` | ![](Assets/multiline_corner.png)
+| **lastLineFillPercent**  | `CGFloat` | `70`| ![](../Assets/multiline_lastline.png)
+| **linesCornerRadius**  | `Int` | `0` | ![](../Assets/multiline_corner.png)
+| **skeletonLineSpacing**  | `CGFloat` | `10` | ![](../Assets/multiline_lineSpacing.png)
+| **skeletonPaddingInsets**  | `UIEdgeInsets` | `.zero` | ![](../Assets/multiline_insets.png)
+| **skeletonTextLineHeight**  | `SkeletonTextLineHeight` | `.fixed(15)` | ![](../Assets/multiline_lineHeight.png)
+| **skeletonTextNumberOfLines**  | `SkeletonTextNumberOfLines` | `.inherited` | ![](../Assets/multiline_corner.png)
 
 <br />
 
@@ -285,7 +285,7 @@ descriptionTextView.linesCornerRadius = 5
 
 Oder, wenn sie es vorziehen, verwenden sie **IB/Storyboard**:
 
-![](Assets/multiline_customize.png)
+![](../Assets/multiline_customize.png)
 
 <br />
 
@@ -372,7 +372,7 @@ Außerdem bietet **SkeletonView** 20 flache Farben 🤙🏼.
 
 ```UIColor.turquoise, UIColor.greenSea, UIColor.sunFlower, UIColor.flatOrange ...```
 
-![](Assets/flatcolors.png)
+![](../Assets/flatcolors.png)
 ###### Bild von der Website [https://flatuicolors.com](https://flatuicolors.com) entnommen
 
 
@@ -416,12 +416,12 @@ view.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
 
 | Richtung | Vorschau
 |------- | -------
-| .leftRight | ![](Assets/sliding_left_to_right.gif)
-| .rightLeft | ![](Assets/sliding_right_to_left.gif)
-| .topBottom | ![](Assets/sliding_top_to_bottom.gif)
-| .bottomTop | ![](Assets/sliding_bottom_to_top.gif)
-| .topLeftBottomRight | ![](Assets/sliding_topLeft_to_bottomRight.gif)
-| .bottomRightTopLeft | ![](Assets/sliding_bottomRight_to_topLeft.gif)
+| .leftRight | ![](../Assets/sliding_left_to_right.gif)
+| .rightLeft | ![](../Assets/sliding_right_to_left.gif)
+| .topBottom | ![](../Assets/sliding_top_to_bottom.gif)
+| .bottomTop | ![](../Assets/sliding_bottom_to_top.gif)
+| .topLeftBottomRight | ![](../Assets/sliding_topLeft_to_bottomRight.gif)
+| .bottomRightTopLeft | ![](../Assets/sliding_bottomRight_to_topLeft.gif)
 
 > **😉 TRICK!**
 >
@@ -459,10 +459,10 @@ The default value is  `crossDissolve(0.25)`
 </tr>
 <tr>
 <td width="50%">
-<img src="Assets/skeleton_transition_nofade.gif"></img>
+<img src="../Assets/skeleton_transition_nofade.gif"></img>
 </td>
 <td width="50%">
-<img src="Assets/skeleton_transition_fade.gif"></img>
+<img src="../Assets/skeleton_transition_fade.gif"></img>
 </td>
 </tr>
 </table>
@@ -487,12 +487,12 @@ view.showSkeleton()
 
 | Configuration | Result|
 |:-------:|:-------:|
-|<img src="Assets/no_skeletonable.jpg" width="350"/> | <img src="Assets/no_skeletonables_result.png" width="350"/>|
-|<img src="Assets/container_no_skeletonable.jpg" width="350"/> | <img src="Assets/no_skeletonables_result.png" width="350"/>|
-|<img src="Assets/container_skeletonable.jpg" width="350"/> | <img src="Assets/container_skeletonable_result.png" width="350"/>|
-|<img src="Assets/all_skeletonables.jpg" width="350"/>| <img src="Assets/all_skeletonables_result.png" width="350"/>|
-|<img src="Assets/tableview_no_skeletonable.jpg" width="350"/> | <img src="Assets/tableview_no_skeletonable_result.png" height="350"/>|
-|<img src="Assets/tableview_skeletonable.jpg" width="350"/> | <img src="Assets/tableview_skeletonable_result.png" height="350"/>|
+|<img src="../Assets/no_skeletonable.jpg" width="350"/> | <img src="../Assets/no_skeletonables_result.png" width="350"/>|
+|<img src="../Assets/container_no_skeletonable.jpg" width="350"/> | <img src="../Assets/no_skeletonables_result.png" width="350"/>|
+|<img src="../Assets/container_skeletonable.jpg" width="350"/> | <img src="../Assets/container_skeletonable_result.png" width="350"/>|
+|<img src="../Assets/all_skeletonables.jpg" width="350"/>| <img src="../Assets/all_skeletonables_result.png" width="350"/>|
+|<img src="../Assets/tableview_no_skeletonable.jpg" width="350"/> | <img src="../Assets/tableview_no_skeletonable_result.png" height="350"/>|
+|<img src="../Assets/tableview_skeletonable.jpg" width="350"/> | <img src="../Assets/tableview_skeletonable_result.png" height="350"/>|
 
   
 
@@ -581,7 +581,7 @@ var sk.skeletonTreeDescription: String
 
 Besides, you can activate the new **debug mode**. You just add the environment variable `SKELETON_DEBUG` and activate it.
 
-![](Assets/debug_mode.png)
+![](../Assets/debug_mode.png)
 
 Then, when the skeleton appears, you can see the view hierarchy in the Xcode console.
 
