@@ -351,28 +351,28 @@ SkeletonAppearance.default.tintColor = .green
 > ```
 
 
-### 🎨 Custom colors
+### 🎨 Benutzerdefinierte Farben
 
-You can decide which color the skeleton is tinted with. You only need to pass as a parameter the color or gradient you want.
+Sie können entscheiden, mit welcher Farbe das Skelett eingefärbt wird. Sie brauchen nur die gewünschte Farbe oder den gewünschten Farbverlauf als Parameter zu übergeben.
 
-**Using solid colors**
+**Verwendung von Volltonfarben**
 ```swift
-view.showSkeleton(usingColor: UIColor.gray) // Solid
-// or
+view.showSkeleton(usingColor: UIColor.gray) // Einfarbig
+// oder
 view.showSkeleton(usingColor: UIColor(red: 25.0, green: 30.0, blue: 255.0, alpha: 1.0))
 ```
-**Using gradients**
-``` swift
+**Verwendung von Farbverläufen**
+```swift
 let gradient = SkeletonGradient(baseColor: UIColor.midnightBlue)
-view.showGradientSkeleton(usingGradient: gradient) // Gradient
+view.showGradientSkeleton(usingGradient: gradient) // Farbverlauf
 ```
 
-Besides, **SkeletonView** features 20 flat colors 🤙🏼
+Außerdem bietet **SkeletonView** 20 flache Farben 🤙🏼.
 
-```UIColor.turquoise, UIColor.greenSea, UIColor.sunFlower, UIColor.flatOrange  ...```
+```UIColor.turquoise, UIColor.greenSea, UIColor.sunFlower, UIColor.flatOrange ...```
 
 ![](Assets/flatcolors.png)
-###### Image captured from website [https://flatuicolors.com](https://flatuicolors.com)
+###### Bild von der Website [https://flatuicolors.com](https://flatuicolors.com) entnommen
 
 
 ### 🏃‍♀️ Animations
