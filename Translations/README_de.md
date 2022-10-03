@@ -170,7 +170,7 @@ avatarImageView.isSkeletonable = true
 
 **UITableView**
 
-Wenn sie das Skelett in eines ```UITableView``'s anzeigen wollen, müssen dieses dem ```SkeletonTableViewDataSource``-Protokoll entsprechen.
+Wenn sie das Skelett in eines ```UITableView```'s anzeigen wollen, müssen dieses dem ```SkeletonTableViewDataSource```-Protokoll entsprechen.
 
 ``` swift
 public protocol SkeletonTableViewDataSource: UITableViewDataSource {
@@ -181,7 +181,7 @@ public protocol SkeletonTableViewDataSource: UITableViewDataSource {
     func collectionSkeletonView(_ skeletonView: UITableView, prepareCellForSkeleton cell: UITableViewCell, at indexPath: IndexPath)
 }
 ```
-Wie sie sehen können, erbt dieses Protokoll von ```UITableViewDataSource``, so dass sie dieses Protokoll durch das Skelettprotokoll ersetzen können.
+Wie sie sehen können, erbt dieses Protokoll von ```UITableViewDataSource```, so dass sie dieses Protokoll durch das Skelettprotokoll ersetzen können.
 
 Dieses Protokoll hat eine Standardimplementierung für einige Methoden. Zum Beispiel wird die Anzahl der Zeilen für jeden Abschnitt in Echtzeit berechnet:
 
@@ -231,7 +231,7 @@ public protocol SkeletonTableViewDelegate: UITableViewDelegate {
 > 1️⃣ Wenn sie größenvariable Zellen verwenden (**`tableView.rowHeight = UITableViewAutomaticDimension`**), ist es zwingend erforderlich, die **`estimatedRowHeight`** zu definieren.
 > 
 > 2️⃣ Wenn man Elemente in einer **`UITableViewCell`** hinzufügt, sollte man sie dem **`contentView`** hinzufügen und nicht direkt in der Zelle.
-> ``swift
+> ```swift
 > self.contentView.addSubview(titleLabel) ✅         
 > self.addSubview(titleLabel) ❌
 > ```
@@ -254,14 +254,14 @@ public protocol SkeletonCollectionViewDataSource: UICollectionViewDataSource {
 }
 ```
 
-Der Rest des Prozesses ist derselbe wie bei ```UITableView``
+Der Rest des Prozesses ist derselbe wie bei ```UITableView```
 
 
 ### 🔠 Texte
 
 ![](Assets/multilines2.png)
 
-Wenn Elemente mit Text verwendet werden, zeichnet ```SkeletonView`` Linien, um Text zu simulieren.
+Wenn Elemente mit Text verwendet werden, zeichnet ```SkeletonView``` Linien, um Text zu simulieren.
 
 Sie können einige Variablen für mehrzeilige Elemente einstellen.
 
@@ -411,7 +411,7 @@ view.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
 
 ```
 
-````GradientDirection``` ist ein enum, mit den folgenden cases:
+```GradientDirection``` ist ein enum, mit den folgenden cases:
 
 | Richtung | Vorschau
 |------- | -------
