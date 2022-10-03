@@ -317,35 +317,35 @@ label.skeletonTextNumberOfLines = 3   // .custom(3)
 
 
 
-### 🦋 Appearance
+### 🦋 Erscheinungsbild
 
-The skeletons have a default appearance. So, when you don't specify the color, gradient or multilines properties, `SkeletonView` uses the default values.
+Die Skelette haben ein Standardaussehen. Wenn Sie also die Farbe, den Farbverlauf oder Mehrlinien-Eigenschaften nicht angeben, verwendet `SkeletonView` die Standardwerte.
 
-Default values:
+Standardwerte:
 - **tintColor**: `UIColor`
-    - *default: `.skeletonDefault` (same as `.clouds` but adaptive to dark mode)*
+    - *standard: `.skeletonDefault` (gleich wie `.clouds`, aber anpassungsfähig an den dunklen Modus)*
 - **gradient**: SkeletonGradient
-  - *default: `SkeletonGradient(baseColor: .skeletonDefault)`*
+  - *standard: `SkeletonGradient(baseColor: .skeletonDefault)`*
 - **multilineHeight**: `CGFloat`
-  - *default: 15*
+  - *standard: 15*
 - **multilineSpacing**: `CGFloat`
-  - *default: 10*
+  - *standard: 10*
 - **multilineLastLineFillPercent**: `Int`
-  - *default: 70*
+  - *standard: 70*
 - **multilineCornerRadius**: `Int`
-  - *default: 0*
-- **skeletonCornerRadius**: `CGFloat` (IBInspectable)  (Make your skeleton view with corner)
-  - *default: 0*
+  - *standard: 0*
+- **skeletonCornerRadius**: `CGFloat` (IBInspectable)(Macht ihre Skelettansicht mit Ecken)
+  - *standard: 0*
 
-To get these default values you can use `SkeletonAppearance.default`. Using this property you can set the values as well:
+Um diese Standardwerte zu erhalten, können Sie `SkeletonAppearance.default` verwenden. Mit dieser Variable können Sie auch die Werte einstellen:
 ```swift
 SkeletonAppearance.default.multilineHeight = 20
 SkeletonAppearance.default.tintColor = .green
 ```
 
-> **⚠️ DEPRECATED!**
+> **⚠️ VERALTET!**
 >
-> **useFontLineHeight** has been deprecated. You can use **textLineHeight** instead:
+> **useFontLineHeight** wurde abgeschafft. Sie können stattdessen **textLineHeight** verwenden:
 > ```swift
 > SkeletonAppearance.default.textLineHeight = .relativeToFont
 > ```
