@@ -383,7 +383,7 @@ Außerdem bietet **SkeletonView** 20 flache Farben 🤙🏼.
 Außerdem ist es sehr einfach, eine eigene Skelettanimationen zu erstellen.
 
 
-Skeleton bietet die Funktion `showAnimatedSkeleton`, die eine Closure ```SkeletonLayerAnimation``` besitzt, in der sie Ihre eigene Animation definieren können.
+Skeleton bietet die Funktion `showAnimatedSkeleton`, die eine Closure ```SkeletonLayerAnimation``` besitzt, in der sie ihre eigene Animation definieren können.
 
 ```swift
 public typealias SkeletonLayerAnimation = (CALayer) -> CAAnimation
@@ -394,7 +394,7 @@ Sie können die Funktion wie folgt aufrufen:
 ```swift
 view.showAnimatedSkeleton { (layer) -> CAAnimation in
   let animation = CAAnimation()
-  // Passen sie hier Ihre Animation an
+  // Passen sie hier ihre Animation an
 
   return animation
 }
@@ -432,29 +432,29 @@ view.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
 
   
 
-### 🏄 Transitions
+### 🏄 Übergänge
 
-**SkeletonView** has built-in transitions to **show** or **hide** the skeletons in a *smoother* way 🤙
+**SkeletonView** hat eingebaute Übergänge, um die Skelette auf eine *ruhigere* Weise **ein- und auszublenden** 🤙.
 
-To use the transition, simply add the ```transition``` parameter to your ```showSkeleton()``` or ```hideSkeleton()``` function with the transition time, like this:
+Um den Übergang zu benutzen, fügen Sie einfach den Parameter ```transition``` zu ihrer Funktion ```showSkeleton()``` oder ```hideSkeleton()``` mit der Übergangszeit hinzu, wie hier:
 
 ```swift
-view.showSkeleton(transition: .crossDissolve(0.25))     //Show skeleton cross dissolve transition with 0.25 seconds fade time
-view.hideSkeleton(transition: .crossDissolve(0.25))     //Hide skeleton cross dissolve transition with 0.25 seconds fade time
+view.showSkeleton(transition: .crossDissolve(0.25))     //Einblenden des Skeleton mit Querauflösen-Übergang mit 0,25 Sekunden Übergangszeit
+view.hideSkeleton(transition: .crossDissolve(0.25))     //Ausblenden des Skeleton mit Querauflösen-Übergang mit 0,25 Sekunden Übergangszeit
 
 ```
 
-The default value is  `crossDissolve(0.25)`
+Der Standardwert ist `crossDissolve(0.25)`
 
-**Preview**
+**Vorschau**
 
 <table>
 <tr>
 <td width="50%">
-<center>None</center>
+<center>Keinen</center>
 </td>
 <td width="50%">
-<center>Cross dissolve</center>
+<center>Querauflösen</center>
 </td>
 </tr>
 <tr>
