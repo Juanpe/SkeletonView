@@ -436,7 +436,7 @@ view.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
 
 **SkeletonView** hat eingebaute Übergänge, um die Skelette auf eine *ruhigere* Weise **ein- und auszublenden** 🤙.
 
-Um den Übergang zu benutzen, fügen Sie einfach den Parameter ```transition``` zu ihrer Funktion ```showSkeleton()``` oder ```hideSkeleton()``` mit der Übergangszeit hinzu, wie hier:
+Um den Übergang zu benutzen, fügen sie einfach den Parameter ```transition``` zu ihrer Funktion ```showSkeleton()``` oder ```hideSkeleton()``` mit der Übergangszeit hinzu, wie hier:
 
 ```swift
 view.showSkeleton(transition: .crossDissolve(0.25))     //Einblenden des Skeleton mit Querauflösen-Übergang mit 0,25 Sekunden Übergangszeit
@@ -468,24 +468,24 @@ Der Standardwert ist `crossDissolve(0.25)`
 </table>
 
 
-## ✨ Miscellaneous 
+## ✨ Sonstiges 
 
   
 
-**Hierarchy**
+**Hierarchie**
 
-Since ```SkeletonView``` is recursive, and we want skeleton to be very efficient, we want to stop recursion as soon as possible. For this reason, you must set the container view as `Skeletonable`, because Skeleton will stop looking for `skeletonable` subviews as soon as a view is not Skeletonable, breaking then the recursion.
+Da ```SkeletonView``` rekursiv ist, und wir wollen, dass Skeleton sehr effizient ist, wollen wir die Rekursion so schnell wie möglich beenden. Aus diesem Grund müssen sie die Container-Ansicht auf `Skeletonable` setzen, denn Skeleton wird aufhören, nach `skeletonable` Unteransichten zu suchen, sobald eine Ansicht nicht skelettierbar ist, und damit die Rekursion beenden.
 
-Because an image is worth a thousand words:
+Denn ein Bild sagt mehr als tausend Worte:
 
-In this example we have a `UIViewController` with a `ContainerView` and a `UITableView`. When the view is ready, we show the skeleton using this method:
+In diesem Beispiel haben wir einen `UIViewController` mit einem `ContainerView` und einem `UITableView`. Wenn der View fertig ist, zeigen wir das Skelett mit dieser Methode:
 ```
 view.showSkeleton()
 ```
 
 > ```isSkeletonable```= ☠️
 
-| Configuration | Result|
+| Konfiguration | Ergebnis|
 |:-------:|:-------:|
 |<img src="../Assets/no_skeletonable.jpg" width="350"/> | <img src="../Assets/no_skeletonables_result.png" width="350"/>|
 |<img src="../Assets/container_no_skeletonable.jpg" width="350"/> | <img src="../Assets/no_skeletonables_result.png" width="350"/>|
@@ -496,11 +496,11 @@ view.showSkeleton()
 
   
 
-**Skeleton views layout**
+**Skelettansichten-Layout**
 
-Sometimes skeleton layout may not fit your layout because the parent view bounds have changed. ~For example, rotating the device.~
+Manchmal kann es vorkommen, dass das Skelett-Layout nicht zu ihrem Layout passt, weil sich die Grenzen der übergeordneten Ansicht geändert haben. ~Zum Beispiel, wenn sie das Gerät drehen.
 
-You can relayout the skeleton views like so:
+Sie können die Skelettansichten wie folgt neu anordnen:
 
 ```swift
 override func viewDidLayoutSubviews() {
@@ -508,52 +508,52 @@ override func viewDidLayoutSubviews() {
 }
 ```
 
-> 📣 **IMPORTANT!** 
+> 📣 **WICHTIG!** 
 > 
-> You shouldn't call this method. From **version 1.8.1** you don't need to call this method, the library does automatically. So, you can use this method **ONLY** in the cases when you need to update the layout of the skeleton manually.
+> Sie sollten diese Methode nicht aufrufen. Ab **Version 1.8.1** brauchen sie diese Methode nicht mehr aufzurufen, die Bibliothek macht das automatisch. Sie können diese Methode also **NUR** in den Fällen verwenden, in denen sie das Layout des Skeletts manuell aktualisieren müssen.
 
 
   
 
-**Update skeleton**
+**Skelett aktualisieren**
 
-You can change the skeleton configuration at any time like its colour, animation, etc. with the following methods:
-
-```swift
-(1) view.updateSkeleton()                 // Solid
-(2) view.updateGradientSkeleton()         // Gradient
-(3) view.updateAnimatedSkeleton()         // Solid animated
-(4) view.updateAnimatedGradientSkeleton() // Gradient animated
-```
-
-**Hiding views when the animation starts**
-
-Sometimes you wanna hide some view when the animation starts, so there is a quick property that you can use to make this happen:
+Sie können die Konfiguration des Skeletts jederzeit ändern, wie z.B. seine Farbe, Animation, etc. mit den folgenden Methoden:
 
 ```swift
-view.isHiddenWhenSkeletonIsActive = true  // This works only when isSkeletonable = true
+(1) view.updateSkeleton()                 // Einfarbig
+(2) view.updateGradientSkeleton()         // Farbverlauf
+(3) view.updateAnimatedSkeleton()         // Einfarbig animiert
+(4) view.updateAnimatedGradientSkeleton() // Farbverlauf animiert
 ```
 
-**Don't modify user interaction when the skeleton is active**
+**Ausblenden von Ansichten, wenn die Animation beginnt**
 
-
-By default, the user interaction is disabled for skeletonized items, but if you don't want to modify the user interaction indicator when skeleton is active, you can use the `isUserInteractionDisabledWhenSkeletonIsActive` property:
+Manchmal möchte man einige Ansichten ausblenden, wenn die Animation beginnt. Dafür gibt es eine praktische Variable, die man benutzen kann:
 
 ```swift
-view.isUserInteractionDisabledWhenSkeletonIsActive = false  // The view will be active when the skeleton will be active.
+view.isHiddenWhenSkeletonIsActive = true  // Dies funktioniert nur, wenn isSkeletonable = true
 ```
 
-**Don't use the font line height for the skeleton lines in labels**
+**Benutzerinteraktion nicht ändern, wenn das Skelett aktiv ist**
 
-False to disable skeleton to auto-adjust to font height for a `UILabel` or `UITextView`. By default, the skeleton lines height is auto-adjusted to font height to more accurately reflect the text in the label rect rather than using the bounding box.
+
+Standardmäßig ist die Benutzerinteraktion für skelettierte Elemente deaktiviert, aber wenn sie den Indikator für die Benutzerinteraktion nicht ändern wollen, wenn das Skelett aktiv ist, können sie die Variable `isUserInteractionDisabledWhenSkeletonIsActive` verwenden:
+
+```swift
+view.isUserInteractionDisabledWhenSkeletonIsActive = false  // Die Ansicht wird aktiv sein, wenn das Skelett aktiv ist.
+```
+
+**Zeilenhöhe der Schriftart für die Skelettlinien in Labels nicht verwenden**
+
+`False`, um die automatische Anpassung des Skeletts an die Schrifthöhe für ein `UILabel` oder `UITextView` zu deaktivieren. Standardmäßig wird die Höhe der Skelettlinien automatisch an die Schrifthöhe angepasst, um den Text im Label-Rect genauer wiederzugeben, anstatt die Bounding Box zu verwenden.
 
 ```swift
 label.useFontLineHeight = false
 ```
 
-**Delayed show skeleton**
+**Skelett verzögert anzeigen**
 
-You can delay the presentation of the skeleton if the views update quickly.
+Sie können die Darstellung des Skeletts verzögern, wenn die Ansichten schnell aktualisiert werden.
 
 ```swift
 func showSkeleton(usingColor: UIColor,
@@ -571,19 +571,19 @@ func showGradientSkeleton(usingGradient: SkeletonGradient,
 
 **Debug**
 
-To facilitate the debug tasks when something is not working fine. **`SkeletonView`** has some new tools.
+Um die Debug-Aufgaben zu erleichtern, wenn etwas nicht richtig funktioniert, hat **`SkeletonView`** einige neue Werkzeuge.
 
-First, `UIView` has available a property with his skeleton info:
+Erstens, `UIView` hat eine Variable mit seinen Skelett-Informationen zur Verfügung:
 ```swift
 var sk.skeletonTreeDescription: String
 
 ```
 
-Besides, you can activate the new **debug mode**. You just add the environment variable `SKELETON_DEBUG` and activate it.
+Außerdem können sie den neuen **Debug-Modus** aktivieren. Fügen sie einfach die Umgebungsvariable `SKELETON_DEBUG` hinzu um ihn zu aktivieren.
 
 ![](../Assets/debug_mode.png)
 
-Then, when the skeleton appears, you can see the view hierarchy in the Xcode console.
+Wenn das Skelett dann erscheint, können sie die Ansichtshierarchie in der Xcode-Konsole sehen.
 
 ```
 { 
@@ -601,7 +601,7 @@ Then, when the skeleton appears, you can see the view hierarchy in the Xcode con
 }
 ```
   
-**Supported OS & SDK Versions**
+**Unterstützte OS & SDK-Versionen**
 
 * iOS 9.0+
 * tvOS 9.0+
