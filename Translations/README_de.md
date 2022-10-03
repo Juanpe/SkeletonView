@@ -202,6 +202,7 @@ Es gibt nur eine Methode, die sie implementieren müssen, damit Skeleton den Zel
 }
  ```
 Standardmäßig entfernt die library die Zellen aus jedem indexPath, aber sie können dies auch tun, wenn sie einige Änderungen vornehmen möchten, bevor das Skelett erscheint:
+``` swift
  func collectionSkeletonView(_ skeletonView: UITableView, skeletonCellForRowAt indexPath: IndexPath) -> UITableViewCell? {
      let cell = skeletonView.dequeueReusableCell(withIdentifier: "CellIdentifier", for: indexPath) as? Cell
      cell?.textField.isHidden = indexPath.row == 0
