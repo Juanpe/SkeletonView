@@ -117,9 +117,9 @@ avatarImageView.isSkeletonable = true
 3️⃣ Sobald sie die Views eingestellt haben, können sie das **Skelett** anzeigen. Dazu haben sie **4** Auswahlmöglichkeiten:
 
 ```swift
-(1) view.showSkeleton()                 // Vollton
+(1) view.showSkeleton()                 // Einfarbig
 (2) view.showGradientSkeleton()         // Farbverlauf
-(3) view.showAnimatedSkeleton()         // Vollton animiert
+(3) view.showAnimatedSkeleton()         // Einfarbig animiert
 (4) view.showAnimatedGradientSkeleton() // Farbverlauf animiert
 ```
 
@@ -128,13 +128,13 @@ avatarImageView.isSkeletonable = true
 <table>
 <tr>
 <td width="25%">
-<center>Vollton</center>
+<center>Einfarbig</center>
 </td>
 <td width="25%">
 <center>Farbverlauf</center>
 </td>
 <td width="25%">
-<center>Vollton animiert</center>
+<center>Einfarbig animiert</center>
 </td>
 <td width="25%">
 <center>Farbverlauf animiert</center>
