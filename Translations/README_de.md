@@ -607,19 +607,19 @@ Wenn das Skelett dann erscheint, können sie die Ansichtshierarchie in der Xcode
 * tvOS 9.0+
 * Swift 5.3
 
-## ❤️ Contributing
-This is an open source project, so feel free to contribute. How?
+## ❤️ Beitragen
+Dies ist ein Open-Source-Projekt, sie können also gerne dazu beitragen. Wie?
 
-- Open an [issue](https://github.com/Juanpe/SkeletonView/issues/new).
-- Send feedback via [email](mailto://juanpecatalan.com).
-- Propose your own fixes, suggestions and open a pull request with the changes.
+- Eröffnen sie ein [issue](https://github.com/Juanpe/SkeletonView/issues/new).
+- Senden sie Feedback über [email](mailto://juanpecatalan.com).
+- Schlagen sie ihre eigenen Korrekturen und Vorschläge vor und öffnen sie einen Pull Request mit den Änderungen.
 
-See [all contributors](https://github.com/Juanpe/SkeletonView/graphs/contributors)
+Siehe [alle Mitwirkenden](https://github.com/Juanpe/SkeletonView/graphs/contributors)
 
-For more information, please read the [contributing guidelines](https://github.com/Juanpe/SkeletonView/blob/main/CONTRIBUTING.md).
+Für weitere Informationen lesen sie bitte die [contributing guidelines](https://github.com/Juanpe/SkeletonView/blob/main/CONTRIBUTING.md).
 
 
-## 📢 Mentions
+## 📢 Erwähnungen
 
 - [iOS Dev Weekly #327](https://iosdevweekly.com/issues/327#start)
 - [Hacking with Swift Articles](https://www.hackingwithswift.com/articles/40/skeletonview-makes-loading-content-beautiful)
@@ -635,21 +635,21 @@ For more information, please read the [contributing guidelines](https://github.c
 - [Swift News #36](https://www.youtube.com/watch?v=mAGpsQiy6so)
 - [Best iOS articles, new tools & more](https://medium.com/flawless-app-stories/best-ios-articles-new-tools-more-fcbe673e10d)
 
-## 🏆 Sponsors
+## 🏆 Sponsoren
 
-Open-source projects cannot live long without your help. If you find **SkeletonView** is useful, please consider supporting this 
-project by becoming a sponsor. 
+Open-Source-Projekte leben nicht lange ohne ihre Hilfe. Wenn sie **SkeletonView** nützlich finden, ziehen sie bitte in Betracht, dieses 
+Projekt zu unterstützen, indem sie ein Sponsor werden. 
 
-Become a sponsor through [GitHub Sponsors](https://github.com/sponsors/Juanpe) :heart:
+Werden sie Sponsor über [GitHub Sponsors] (https://github.com/sponsors/Juanpe) :heart:
 
-## 👨🏻‍💻 Author
+## 👨🏻‍💻 Autor
 
 [Juanpe Catalán](http://www.twitter.com/JuanpeCatalan)
 
 <a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/CDou4xtIK"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy me a coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;"><span style="margin-left:5px"></span></a>
 
 
-## 👮🏻 License
+## 👮🏻 Lizenz
 
 ```
 MIT License
