@@ -25,12 +25,12 @@
 
 Heutzutage haben fast alle Anwendungen async-Prozesse, z.B. API-Anfragen, lang laufende Prozesse, usw. Während die Prozesse arbeiten, platzieren die Entwickler in der Regel eine Ladeansicht, um den Benutzern zu zeigen, dass im Hintergrund etwas vor sich geht.
 
-**SkeletonView** wurde entwickelt, um dieses Bedürfnis zu befriedigen, indem auf eine elegante Art und Weise, den Nutzern gezeigt wird, dass etwas passiert und sie gleichzeitig darauf vorbereitet, welche Inhalte sie erwarten.
+**SkeletonView** wurde entwickelt, um dieses Bedürfnis zu befriedigen, indem auf eine elegante Art und Weise den Nutzern gezeigt wird, dass etwas passiert und sie gleichzeitig darauf vorbereitet, welche Inhalte sie erwarten.
 
 Viel Spaß damit! 🙂
 
-
 ##
+
 - [🌟 Funktionen](#-funktionen)
 - [🎬 Anleitungen](#-anleitungen)
 - [📲 Installation](#-installation)
@@ -90,31 +90,33 @@ dependencies: [
 ]
 ```
 
-> 📣 **WICHTIG!** 
+> 📣 **WICHTIG!**
 >
-> Seit Version 1.30.0 unterstützt `SkeletonView` **XCFrameworks**, wenn sie es also als **XCFramework** installieren möchten, verwenden sie bitte stattdessen [dieses Repo](https://github.com/Juanpe/SkeletonView-XCFramework.git).
-
+> Seit Version 1.30.0 unterstützt `SkeletonView` **XCFrameworks**, wenn du es also als **XCFramework** installieren möchtest, verwende bitte stattdessen [dieses Repo](https://github.com/Juanpe/SkeletonView-XCFramework.git).
 
 ## 🐒 Verwendung
 
 Nur **3** Schritte sind erforderlich, um `SkeletonView` zu verwenden:
 
-1️⃣ Importieren sie SkeletonView an der richtigen Stelle.
+1️⃣ Importiere SkeletonView an der richtigen Stelle.
+
 ```swift
 import SkeletonView
 ```
 
-2️⃣ Legen sie nun fest, welche Ansichten `skelettierbar` sein sollen. Dies können sie auf zwei Arten erreichen:
+2️⃣ Lege nun fest, welche Ansichten `skelettierbar` sein sollen. Dies kannst du auf zwei Arten erreichen:
 
 **Durch code:**
+
 ```swift
 avatarImageView.isSkeletonable = true
 ```
+
 **Durch IB/Storyboards:**
 
 ![](../Assets/storyboard.png)
 
-3️⃣ Sobald sie die Views eingestellt haben, können sie das **Skelett** anzeigen. Dazu haben sie **4** Auswahlmöglichkeiten:
+3️⃣ Sobald du die Views eingestellt hast, kannst du das **Skelett** anzeigen. Dazu hast du **4** Auswahlmöglichkeiten:
 
 ```swift
 (1) view.showSkeleton()                 // Einfarbig
@@ -156,21 +158,17 @@ avatarImageView.isSkeletonable = true
 </tr>
 </table>
 
-> 📣 **WICHTIG!** 
+> 📣 **WICHTIG!**
 >
-> `SkeletonView` ist rekursiv, wenn sie also das Skelett in allen skelettierbaren Views anzeigen wollen, müssen sie nur die show-Methode in der Haupt-Container-View aufrufen. Zum Beispiel mit `UIViewControllers`.
-
-  
-
+> `SkeletonView` ist rekursiv, wenn du also das Skelett in allen skelettierbaren Views anzeigen willst, musst du nur die show-Methode in der Haupt-Container-View aufrufen. Zum Beispiel mit `UIViewControllers`.
 
 ### 🌿 Sammlungen
 
 ```SkeletonView``` ist kompatibel mit ```UITableView``` und ```UICollectionView```.
 
-
 **UITableView**
 
-Wenn sie das Skelett in eines ```UITableView```'s anzeigen wollen, müssen dieses dem ```SkeletonTableViewDataSource```-Protokoll entsprechen.
+Wenn du das Skelett in ```UITableView```'s anzeigen willst, müssen diese dem ```SkeletonTableViewDataSource```-Protokoll entsprechen.
 
 ``` swift
 public protocol SkeletonTableViewDataSource: UITableViewDataSource {
@@ -181,7 +179,8 @@ public protocol SkeletonTableViewDataSource: UITableViewDataSource {
     func collectionSkeletonView(_ skeletonView: UITableView, prepareCellForSkeleton cell: UITableViewCell, at indexPath: IndexPath)
 }
 ```
-Wie sie sehen können, erbt dieses Protokoll von ```UITableViewDataSource```, so dass sie dieses Protokoll durch das Skelettprotokoll ersetzen können.
+
+Wie du sehen kannst, erbt dieses Protokoll von ```UITableViewDataSource```, so dass du dieses Protokoll durch das Skelettprotokoll ersetzen kannst.
 
 Dieses Protokoll hat eine Standardimplementierung für einige Methoden. Zum Beispiel wird die Anzahl der Zeilen für jeden Abschnitt in Echtzeit berechnet:
 
@@ -191,17 +190,20 @@ func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection s
 // Es wird berechnet, wie viele Zellen benötigt werden, um die gesamte Tabellenansicht zu füllen
 ```
 
-> 📣 **WICHTIG!** 
+> 📣 **WICHTIG!**
 >
-> Wenn sie in der obigen Methode `UITableView.automaticNumberOfSkeletonRows` zurückgeben, verhält es sich wie das Standardverhalten (d.h. es wird berechnet, wie viele Zellen benötigt werden, um den gesamten Tableview zu füllen).
+> Wenn du in der obigen Methode `UITableView.automaticNumberOfSkeletonRows` zurückgibst, verhält es sich wie das Standardverhalten (d.h. es wird berechnet, wie viele Zellen benötigt werden, um den gesamten Tableview zu füllen).
 
-Es gibt nur eine Methode, die sie implementieren müssen, damit Skeleton den Zellen ID kennt. Diese Methode hat keine Standardimplementierung:
+Es gibt nur eine Methode, die du implementieren musst, damit Skeleton die Zellen ID kennt. Diese Methode hat keine Standardimplementierung:
+
  ``` swift
  func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
     return "CellIdentifier"
 }
  ```
-Standardmäßig entfernt die library die Zellen aus jedem indexPath, aber sie können dies auch tun, wenn sie einige Änderungen vornehmen möchten, bevor das Skelett erscheint:
+
+Standardmäßig entfernt die library die Zellen aus jedem indexPath, aber du kannst dies auch tun, wenn du einige Änderungen vornehmen möchtest, bevor das Skelett erscheint:
+
 ``` swift
  func collectionSkeletonView(_ skeletonView: UITableView, skeletonCellForRowAt indexPath: IndexPath) -> UITableViewCell? {
      let cell = skeletonView.dequeueReusableCell(withIdentifier: "CellIdentifier", for: indexPath) as? Cell
@@ -209,8 +211,9 @@ Standardmäßig entfernt die library die Zellen aus jedem indexPath, aber sie k�
      return cell
  }
  ```
- 
-Wenn sie es vorziehen, den deque-Teil der Bibliothek zu überlassen, können sie die Zelle mit dieser Methode konfigurieren:
+
+Wenn du es vorziehst, den deque-Teil der Bibliothek zu überlassen, kannst du die Zelle mit dieser Methode konfigurieren:
+
  ``` swift
  func collectionSkeletonView(_ skeletonView: UITableView, prepareCellForSkeleton cell: UITableViewCell, at indexPath: IndexPath) {
      let cell = cell as? Cell
@@ -218,7 +221,7 @@ Wenn sie es vorziehen, den deque-Teil der Bibliothek zu überlassen, können sie
  }
  ```
 
-Außerdem können sie sowohl die Kopf- als auch die Fußzeilen skelettieren. Diese müssen nur dem Protokoll "SkeletonTableViewDelegate" entsprechen.
+Außerdem kannst du sowohl die Kopf- als auch die Fußzeilen skelettieren. Diese müssen nur dem Protokoll "SkeletonTableViewDelegate" entsprechen.
 
 ```swift
 public protocol SkeletonTableViewDelegate: UITableViewDelegate {
@@ -228,20 +231,19 @@ public protocol SkeletonTableViewDelegate: UITableViewDelegate {
 ```
 
 > 📣 **WICHTIG!**
-> 
-> 1️⃣ Wenn sie größenvariable Zellen verwenden (**`tableView.rowHeight = UITableViewAutomaticDimension`**), ist es zwingend erforderlich, die **`estimatedRowHeight`** zu definieren.
-> 
+>
+> 1️⃣ Wenn du größenvariable Zellen verwendest (**`tableView.rowHeight = UITableViewAutomaticDimension`**), ist es zwingend erforderlich, die **`estimatedRowHeight`** zu definieren.
+>
 > 2️⃣ Wenn man Elemente in einer **`UITableViewCell`** hinzufügt, sollte man sie dem **`contentView`** hinzufügen und nicht direkt in der Zelle.
+>
 > ```swift
 > self.contentView.addSubview(titleLabel) ✅         
 > self.addSubview(titleLabel) ❌
 > ```
 
-  
-
 **UICollectionView**
 
-Für `UICollectionView` müssen sie dem Protokoll `SkeletonCollectionViewDataSource` entsprechen.
+Für `UICollectionView` musst du dem Protokoll `SkeletonCollectionViewDataSource` entsprechen.
 
 ``` swift
 public protocol SkeletonCollectionViewDataSource: UICollectionViewDataSource {
@@ -257,14 +259,13 @@ public protocol SkeletonCollectionViewDataSource: UICollectionViewDataSource {
 
 Der Rest des Prozesses ist derselbe wie bei ```UITableView```
 
-
 ### 🔠 Texte
 
 ![](../Assets/multilines2.png)
 
 Wenn Elemente mit Text verwendet werden, zeichnet ```SkeletonView``` Linien, um Text zu simulieren.
 
-Sie können einige Variablen für mehrzeilige Elemente einstellen.
+Du kannst einige Variablen für mehrzeilige Elemente einstellen.
 
 | Variable | Typ | Standard | Vorschau
 | ------- | ------- |------- | -------
@@ -277,13 +278,14 @@ Sie können einige Variablen für mehrzeilige Elemente einstellen.
 
 <br />
 
-Um den Prozentsatz oder den Radius **mit Hilfe von Code** zu ändern, legen sie diese Variablen fest:
+Um den Prozentsatz oder den Radius **mit Hilfe von Code** zu ändern, lege diese Variablen fest:
+
 ```swift
 descriptionTextView.lastLineFillPercent = 50
 descriptionTextView.linesCornerRadius = 5
 ```
 
-Oder, wenn sie es vorziehen, verwenden sie **IB/Storyboard**:
+Oder, wenn du es vorziehst, verwende **IB/Storyboard**:
 
 ![](../Assets/multiline_customize.png)
 
@@ -291,40 +293,39 @@ Oder, wenn sie es vorziehen, verwenden sie **IB/Storyboard**:
 
 **Wie kann die Anzahl der Zeilen festgelegt werden?**
 
-
 Standardmäßig entspricht die Anzahl der Linien dem Wert der Variable `numberOfLines`. Und wenn es auf **null** gesetzt ist, wird berechnet, wie viele Linien benötigt werden, um das gesamte Skelett zu füllen und es zu zeichnen.
 
-Wenn sie jedoch eine bestimmte Anzahl von Zeilen für das Skelett festlegen möchten, können sie dies mit der Variable `skeletonTextNumberOfLines` tun. Diese Variable hat zwei mögliche Werte: `inherited`, der den Wert `numberOfLines` zurückgibt, und `custom(Int)`, der die spezifische Anzahl von Zeilen zurückgibt, die als zugehöriger Wert angegeben wurde. 
+Wenn du jedoch eine bestimmte Anzahl von Zeilen für das Skelett festlegen möchtest, kannst du dies mit der Variable `skeletonTextNumberOfLines` tun. Diese Variable hat zwei mögliche Werte: `inherited`, der den Wert `numberOfLines` zurückgibt, und `custom(Int)`, der die spezifische Anzahl von Zeilen zurückgibt, die als zugehöriger Wert angegeben wurde.
 
 Zum Beispiel:
 
 ```swift
 label.skeletonTextNumberOfLines = 3   // .custom(3)
-``` 
+```
 
 <br />
 
 > **⚠️ VERALTET!**
 >
-> **useFontLineHeight** wurde abgeschafft. Sie können stattdessen **skeletonTextLineHeight** verwenden:
+> **useFontLineHeight** wurde abgeschafft. Du kannst stattdessen **skeletonTextLineHeight** verwenden:
+>
 > ```swift
 > descriptionTextView.skeletonTextLineHeight = .relativeToFont
 > ```
 
 > **📣 WICHTIG!**
 >
-> Bitte beachten sie, dass bei Ansichten ohne mehrere Zeilen die einzelne Zeile
+> Bitte beachte, dass bei Ansichten ohne mehrere Zeilen die einzelne Zeile
 > als letzte Zeile betrachtet wird.
-
-
 
 ### 🦋 Erscheinungsbild
 
-Die Skelette haben ein Standardaussehen. Wenn sie also die Farbe, den Farbverlauf oder Mehrlinien-Eigenschaften nicht angeben, verwendet `SkeletonView` die Standardwerte.
+Die Skelette haben ein Standardaussehen. Wenn du also die Farbe, den Farbverlauf oder Mehrlinien-Eigenschaften nicht angibst, verwendet `SkeletonView` die Standardwerte.
 
 Standardwerte:
+
 - **tintColor**: `UIColor`
-    - *standard: `.skeletonDefault` (gleich wie `.clouds`, aber anpassungsfähig an den dunklen Modus)*
+  - *standard: `.skeletonDefault` (gleich wie `.clouds`, aber anpassungsfähig an den dunklen Modus)*
 - **gradient**: SkeletonGradient
   - *standard: `SkeletonGradient(baseColor: .skeletonDefault)`*
 - **multilineHeight**: `CGFloat`
@@ -338,7 +339,8 @@ Standardwerte:
 - **skeletonCornerRadius**: `CGFloat` (IBInspectable)(Macht ihre Skelettansicht mit Ecken)
   - *standard: 0*
 
-Um diese Standardwerte zu erhalten, können sie `SkeletonAppearance.default` verwenden. Mit dieser Variable können sie auch die Werte einstellen:
+Um diese Standardwerte zu erhalten, kannst du `SkeletonAppearance.default` verwenden. Mit dieser Variable kannst du auch die Werte einstellen:
+
 ```swift
 SkeletonAppearance.default.multilineHeight = 20
 SkeletonAppearance.default.tintColor = .green
@@ -346,23 +348,26 @@ SkeletonAppearance.default.tintColor = .green
 
 > **⚠️ VERALTET!**
 >
-> **useFontLineHeight** wurde abgeschafft. Sie können stattdessen **textLineHeight** verwenden:
+> **useFontLineHeight** wurde abgeschafft. Du kannst stattdessen **textLineHeight** verwenden:
+>
 > ```swift
 > SkeletonAppearance.default.textLineHeight = .relativeToFont
 > ```
 
-
 ### 🎨 Benutzerdefinierte Farben
 
-Sie können entscheiden, mit welcher Farbe das Skelett eingefärbt wird. Sie brauchen nur die gewünschte Farbe oder den gewünschten Farbverlauf als Parameter zu übergeben.
+Du kannst entscheiden, mit welcher Farbe das Skelett eingefärbt wird. Du brauchst nur die gewünschte Farbe oder den gewünschten Farbverlauf als Parameter zu übergeben.
 
 **Verwendung von Volltonfarben**
+
 ```swift
 view.showSkeleton(usingColor: UIColor.gray) // Einfarbig
 // oder
 view.showSkeleton(usingColor: UIColor(red: 25.0, green: 30.0, blue: 255.0, alpha: 1.0))
 ```
+
 **Verwendung von Farbverläufen**
+
 ```swift
 let gradient = SkeletonGradient(baseColor: UIColor.midnightBlue)
 view.showGradientSkeleton(usingGradient: gradient) // Farbverlauf
@@ -382,19 +387,18 @@ Außerdem bietet **SkeletonView** 20 flache Farben 🤙🏼.
 
 Außerdem ist es sehr einfach, eine eigene Skelettanimationen zu erstellen.
 
-
-Skeleton bietet die Funktion `showAnimatedSkeleton`, die eine Closure ```SkeletonLayerAnimation``` besitzt, in der sie ihre eigene Animation definieren können.
+Skeleton bietet die Funktion `showAnimatedSkeleton`, die eine Closure ```SkeletonLayerAnimation``` besitzt, in der du deine eigene Animation definieren kannst.
 
 ```swift
 public typealias SkeletonLayerAnimation = (CALayer) -> CAAnimation
 ```
 
-Sie können die Funktion wie folgt aufrufen:
+Du kannst die Funktion wie folgt aufrufen:
 
 ```swift
 view.showAnimatedSkeleton { (layer) -> CAAnimation in
   let animation = CAAnimation()
-  // Passen sie hier ihre Animation an
+  // Passe hier ihre Animation an
 
   return animation
 }
@@ -426,17 +430,16 @@ view.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
 > **😉 TRICK!**
 >
 > Es gibt noch eine andere Möglichkeit, Schiebeanimationen zu erstellen, indem man einfach diese Abkürzung benutzt:
+>
 > ```swift
 > let animation = GradientDirection.leftToRight.slidingAnimation()
 > ```
-
-  
 
 ### 🏄 Übergänge
 
 **SkeletonView** hat eingebaute Übergänge, um die Skelette auf eine *ruhigere* Weise **ein- und auszublenden** 🤙.
 
-Um den Übergang zu benutzen, fügen sie einfach den Parameter ```transition``` zu ihrer Funktion ```showSkeleton()``` oder ```hideSkeleton()``` mit der Übergangszeit hinzu, wie hier:
+Um den Übergang zu benutzen, füge einfach den Parameter ```transition``` zu ihrer Funktion ```showSkeleton()``` oder ```hideSkeleton()``` mit der Übergangszeit hinzu, wie hier:
 
 ```swift
 view.showSkeleton(transition: .crossDissolve(0.25))     //Einblenden des Skeleton mit Querauflösen-Übergang mit 0,25 Sekunden Übergangszeit
@@ -467,18 +470,16 @@ Der Standardwert ist `crossDissolve(0.25)`
 </tr>
 </table>
 
-
-## ✨ Sonstiges 
-
-  
+## ✨ Sonstiges
 
 **Hierarchie**
 
-Da ```SkeletonView``` rekursiv ist, und wir wollen, dass Skeleton sehr effizient ist, wollen wir die Rekursion so schnell wie möglich beenden. Aus diesem Grund müssen sie die Container-Ansicht auf `Skeletonable` setzen, denn Skeleton wird aufhören, nach `skeletonable` Unteransichten zu suchen, sobald eine Ansicht nicht skelettierbar ist, und damit die Rekursion beenden.
+Da ```SkeletonView``` rekursiv ist, und wir wollen, dass Skeleton sehr effizient ist, wollen wir die Rekursion so schnell wie möglich beenden. Aus diesem Grund musst du die Container-Ansicht auf `Skeletonable` setzen, denn Skeleton wird aufhören, nach `skeletonable` Unteransichten zu suchen, sobald eine Ansicht nicht skelettierbar ist, und damit die Rekursion beenden.
 
 Denn ein Bild sagt mehr als tausend Worte:
 
 In diesem Beispiel haben wir einen `UIViewController` mit einem `ContainerView` und einem `UITableView`. Wenn der View fertig ist, zeigen wir das Skelett mit dieser Methode:
+
 ```
 view.showSkeleton()
 ```
@@ -494,13 +495,11 @@ view.showSkeleton()
 |<img src="../Assets/tableview_no_skeletonable.jpg" width="350"/> | <img src="../Assets/tableview_no_skeletonable_result.png" height="350"/>|
 |<img src="../Assets/tableview_skeletonable.jpg" width="350"/> | <img src="../Assets/tableview_skeletonable_result.png" height="350"/>|
 
-  
-
 **Skelettansichten-Layout**
 
-Manchmal kann es vorkommen, dass das Skelett-Layout nicht zu ihrem Layout passt, weil sich die Grenzen der übergeordneten Ansicht geändert haben. ~Zum Beispiel, wenn sie das Gerät drehen.
+Manchmal kann es vorkommen, dass das Skelett-Layout nicht zu ihrem Layout passt, weil sich die Grenzen der übergeordneten Ansicht geändert haben. ~Zum Beispiel, wenn du das Gerät drehst.
 
-Sie können die Skelettansichten wie folgt neu anordnen:
+Du kannst die Skelettansichten wie folgt neu anordnen:
 
 ```swift
 override func viewDidLayoutSubviews() {
@@ -508,16 +507,13 @@ override func viewDidLayoutSubviews() {
 }
 ```
 
-> 📣 **WICHTIG!** 
-> 
-> Sie sollten diese Methode nicht aufrufen. Ab **Version 1.8.1** brauchen sie diese Methode nicht mehr aufzurufen, die Bibliothek macht das automatisch. Sie können diese Methode also **NUR** in den Fällen verwenden, in denen sie das Layout des Skeletts manuell aktualisieren müssen.
-
-
-  
+> 📣 **WICHTIG!**
+>
+> Du solltest diese Methode nicht aufrufen. Ab **Version 1.8.1** brauchst du diese Methode nicht mehr aufzurufen, die Bibliothek macht das automatisch. Du kannst diese Methode also **NUR** in den Fällen verwenden, in denen du das Layout des Skeletts manuell aktualisieren musst.
 
 **Skelett aktualisieren**
 
-Sie können die Konfiguration des Skeletts jederzeit ändern, wie z.B. seine Farbe, Animation, etc. mit den folgenden Methoden:
+Du kannst die Konfiguration des Skeletts jederzeit ändern, wie z.B. seine Farbe, Animation, etc. mit den folgenden Methoden:
 
 ```swift
 (1) view.updateSkeleton()                 // Einfarbig
@@ -536,8 +532,7 @@ view.isHiddenWhenSkeletonIsActive = true  // Dies funktioniert nur, wenn isSkele
 
 **Benutzerinteraktion nicht ändern, wenn das Skelett aktiv ist**
 
-
-Standardmäßig ist die Benutzerinteraktion für skelettierte Elemente deaktiviert, aber wenn sie den Indikator für die Benutzerinteraktion nicht ändern wollen, wenn das Skelett aktiv ist, können sie die Variable `isUserInteractionDisabledWhenSkeletonIsActive` verwenden:
+Standardmäßig ist die Benutzerinteraktion für skelettierte Elemente deaktiviert, aber wenn du den Indikator für die Benutzerinteraktion nicht ändern willst, wenn das Skelett aktiv ist, kannst du die Variable `isUserInteractionDisabledWhenSkeletonIsActive` verwenden:
 
 ```swift
 view.isUserInteractionDisabledWhenSkeletonIsActive = false  // Die Ansicht wird aktiv sein, wenn das Skelett aktiv ist.
@@ -553,7 +548,7 @@ label.useFontLineHeight = false
 
 **Skelett verzögert anzeigen**
 
-Sie können die Darstellung des Skeletts verzögern, wenn die Ansichten schnell aktualisiert werden.
+Du kannst die Darstellung des Skeletts verzögern, wenn die Ansichten schnell aktualisiert werden.
 
 ```swift
 func showSkeleton(usingColor: UIColor,
@@ -574,16 +569,17 @@ func showGradientSkeleton(usingGradient: SkeletonGradient,
 Um die Debug-Aufgaben zu erleichtern, wenn etwas nicht richtig funktioniert, hat **`SkeletonView`** einige neue Werkzeuge.
 
 Erstens, `UIView` hat eine Variable mit seinen Skelett-Informationen zur Verfügung:
+
 ```swift
 var sk.skeletonTreeDescription: String
 
 ```
 
-Außerdem können sie den neuen **Debug-Modus** aktivieren. Fügen sie einfach die Umgebungsvariable `SKELETON_DEBUG` hinzu um ihn zu aktivieren.
+Außerdem kannst du den neuen **Debug-Modus** aktivieren. Füge einfach die Umgebungsvariable `SKELETON_DEBUG` hinzu um ihn zu aktivieren.
 
 ![](../Assets/debug_mode.png)
 
-Wenn das Skelett dann erscheint, können sie die Ansichtshierarchie in der Xcode-Konsole sehen.
+Wenn das Skelett dann erscheint, kannst du die Ansichtshierarchie in der Xcode-Konsole sehen.
 
 ```
 { 
@@ -603,21 +599,21 @@ Wenn das Skelett dann erscheint, können sie die Ansichtshierarchie in der Xcode
   
 **Unterstützte OS & SDK-Versionen**
 
-* iOS 9.0+
-* tvOS 9.0+
-* Swift 5.3
+- iOS 9.0+
+- tvOS 9.0+
+- Swift 5.3
 
 ## ❤️ Beitragen
-Dies ist ein Open-Source-Projekt, sie können also gerne dazu beitragen. Wie?
 
-- Eröffnen sie ein [issue](https://github.com/Juanpe/SkeletonView/issues/new).
-- Senden sie Feedback über [email](mailto://juanpecatalan.com).
-- Schlagen sie ihre eigenen Korrekturen und Vorschläge vor und öffnen sie einen Pull Request mit den Änderungen.
+Dies ist ein Open-Source-Projekt, du kannst also gerne dazu beitragen. Wie?
+
+- Eröffne ein [issue](https://github.com/Juanpe/SkeletonView/issues/new).
+- Sende Feedback über [email](mailto://juanpecatalan.com).
+- Schlage deine eigenen Korrekturen und Vorschläge vor und öffne einen Pull Request mit den Änderungen.
 
 Siehe [alle Mitwirkenden](https://github.com/Juanpe/SkeletonView/graphs/contributors)
 
-Für weitere Informationen lesen sie bitte die [contributing guidelines](https://github.com/Juanpe/SkeletonView/blob/main/CONTRIBUTING.md).
-
+Für weitere Informationen lies bitte die [contributing guidelines](https://github.com/Juanpe/SkeletonView/blob/main/CONTRIBUTING.md).
 
 ## 📢 Erwähnungen
 
@@ -637,17 +633,16 @@ Für weitere Informationen lesen sie bitte die [contributing guidelines](https:/
 
 ## 🏆 Sponsoren
 
-Open-Source-Projekte leben nicht lange ohne ihre Hilfe. Wenn sie **SkeletonView** nützlich finden, ziehen sie bitte in Betracht, dieses 
-Projekt zu unterstützen, indem sie ein Sponsor werden. 
+Open-Source-Projekte leben nicht lange ohne ihre Hilfe. Wenn du **SkeletonView** nützlich findest, ziehe bitte in Betracht, dieses
+Projekt zu unterstützen, indem du ein Sponsor wirst.
 
-Werden sie Sponsor über [GitHub Sponsors] (https://github.com/sponsors/Juanpe) :heart:
+Werde Sponsor über [GitHub Sponsors] (<https://github.com/sponsors/Juanpe>) :heart:
 
 ## 👨🏻‍💻 Autor
 
 [Juanpe Catalán](http://www.twitter.com/JuanpeCatalan)
 
 <a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/CDou4xtIK"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy me a coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;"><span style="margin-left:5px"></span></a>
-
 
 ## 👮🏻 Lizenz
 
