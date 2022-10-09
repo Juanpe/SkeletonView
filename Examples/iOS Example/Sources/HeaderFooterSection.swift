@@ -4,12 +4,14 @@ import UIKit
 
 class HeaderFooterSection: UITableViewHeaderFooterView {
     
+    private let numberOflinesCornerRadius = 10
+
     lazy var titleLabel: UILabel = {
         let label =  UILabel()
 
         label.text = "      "
         label.isSkeletonable = true
-        label.linesCornerRadius = 10
+        label.linesCornerRadius = numberOflinesCornerRadius
 
         return label
     }()
