@@ -24,23 +24,38 @@ struct RecoverableViewState {
     
 }
 
-struct RecoverableTextViewState {
+struct RecoverableLabelState {
+    var attributedText: NSAttributedString? // we mess with `textColor`, which impacts attributed string if defined
+    var text: String? // we mess with `text` if the label is within a `UIStackView`
     var textColor: UIColor?
-    
+
     init(view: UILabel) {
+        if let attributedText = view.attributedText {
+            self.attributedText = attributedText
+        } else {
+            self.text = view.text
+        }
         self.textColor = view.textColor
     }
+}
+
+struct RecoverableTextViewState {
+    var attributedText: NSAttributedString? // we mess with `textColor`, which impacts attributed string if defined
+    var textColor: UIColor?
     
     init(view: UITextView) {
+        self.attributedText = view.attributedText
         self.textColor = view.textColor
     }
 }
 
 struct RecoverableTextFieldState {
+    var attributedText: NSAttributedString? // we mess with `textColor`, which impacts attributed string if defined
     var textColor: UIColor?
     var placeholder: String?
 
     init(view: UITextField) {
+        self.attributedText = view.attributedText
         self.textColor = view.textColor
         self.placeholder = view.placeholder
     }
