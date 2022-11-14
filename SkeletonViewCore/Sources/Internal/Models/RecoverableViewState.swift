@@ -13,12 +13,14 @@ struct RecoverableViewState {
     var backgroundColor: UIColor?
     var cornerRadius: CGFloat
     var clipToBounds: Bool
+    var borderColor: CGColor?
     var isUserInteractionsEnabled: Bool
     
     init(view: UIView) {
         self.backgroundColor = view.backgroundColor
         self.clipToBounds = view.layer.masksToBounds
         self.cornerRadius = view.layer.cornerRadius
+        self.borderColor = view.layer.borderColor
         self.isUserInteractionsEnabled = view.isUserInteractionEnabled
     }
     
@@ -70,10 +72,20 @@ struct RecoverableImageViewState {
 }
 
 struct RecoverableButtonViewState {
+    var state: UIControl.State
+    var attributedTitle: NSAttributedString?
     var title: String?
+    var titleColor: UIColor?
+    var image: UIImage?
+    var backgroundImage: UIImage?
     
     init(view: UIButton) {
-        self.title = view.titleLabel?.text
+        self.state = view.state
+        self.attributedTitle = view.attributedTitle(for: state)
+        self.title = view.title(for: state)
+        self.titleColor = view.titleColor(for: state)
+        self.image = view.image(for: state)
+        self.backgroundImage = view.backgroundImage(for: state)
     }
 }
 
