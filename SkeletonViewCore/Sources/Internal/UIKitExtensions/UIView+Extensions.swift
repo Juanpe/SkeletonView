@@ -125,9 +125,17 @@ extension UIView {
     /// Skeleton Layer
     
     func addSkeletonLayer(skeletonConfig config: SkeletonConfig) {
+        let colors:[UIColor]
+        if config.colors.count == 1{
+            colors = usingDesignatedColor ? [designatedColor] : config.colors
+        }else{
+            colors = config.colors
+        }
+        
+        
         guard let skeletonLayer = SkeletonLayerBuilder()
             .setSkeletonType(config.type)
-            .addColors(config.colors)
+            .addColors(colors)
             .setHolder(self)
             .build()
             else { return }

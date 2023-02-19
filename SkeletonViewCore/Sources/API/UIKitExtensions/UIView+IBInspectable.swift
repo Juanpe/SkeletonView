@@ -39,4 +39,15 @@ public extension UIView {
         set { _skeletonableCornerRadius = newValue }
     }
     
+    @IBInspectable
+    var designatedColor:UIColor{
+        get{ _designatedColor }
+        set{ _designatedColor = newValue }
+    }
+    
+    @IBInspectable
+    var usingDesignatedColor:Bool{
+        get{ _usingDesignatedColor }
+        set{ _usingDesignatedColor = newValue }
+    }
 }
