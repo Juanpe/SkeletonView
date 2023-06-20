@@ -99,7 +99,7 @@ extension UIView {
     }
     
     var nonContentSizeLayoutConstraints: [NSLayoutConstraint] {
-        constraints.filter({ "\(type(of: $0))" != "NSContentSizeLayoutConstraint" })
+        constraints.filter({ type(of: $0) == NSLayoutConstraint.self })
     }
     
     /// Animations
