@@ -16,22 +16,22 @@ import UIKit
 // codebeat:disable[TOO_MANY_IVARS]
 enum ViewAssociatedKeys {
     
-    static var skeletonable = "skeletonable"
-    static var hiddenWhenSkeletonIsActive = "hiddenWhenSkeletonIsActive"
-    static var status = "status"
-    static var skeletonLayer = "layer"
-    static var flowDelegate = "flowDelegate"
-    static var isSkeletonAnimated = "isSkeletonAnimated"
-    static var viewState = "viewState"
-    static var labelViewState = "labelViewState"
-    static var imageViewState = "imageViewState"
-    static var buttonViewState = "buttonViewState"
-    static var headerFooterViewState = "headerFooterViewState"
-    static var currentSkeletonConfig = "currentSkeletonConfig"
-    static var skeletonCornerRadius = "skeletonCornerRadius"
-    static var disabledWhenSkeletonIsActive = "disabledWhenSkeletonIsActive"
-    static var delayedShowSkeletonWorkItem = "delayedShowSkeletonWorkItem"
-    
+    static var skeletonable: UInt8 = 0
+    static var hiddenWhenSkeletonIsActive: UInt8 = 0
+    static var status: UInt8 = 0
+    static var skeletonLayer: UInt8 = 0
+    static var flowDelegate: UInt8 = 0
+    static var isSkeletonAnimated: UInt8 = 0
+    static var viewState: UInt8 = 0
+    static var labelViewState: UInt8 = 0
+    static var imageViewState: UInt8 = 0
+    static var buttonViewState: UInt8 = 0
+    static var headerFooterViewState: UInt8 = 0
+    static var currentSkeletonConfig: UInt8 = 0
+    static var skeletonCornerRadius: UInt8 = 0
+    static var disabledWhenSkeletonIsActive: UInt8 = 0
+    static var delayedShowSkeletonWorkItem: UInt8 = 0
+
 }
 // codebeat:enable[TOO_MANY_IVARS]
 

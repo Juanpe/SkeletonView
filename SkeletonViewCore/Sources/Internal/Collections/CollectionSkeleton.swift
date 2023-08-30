@@ -9,8 +9,8 @@
 import UIKit
 
 enum CollectionAssociatedKeys {
-    static var dummyDataSource = "dummyDataSource"
-    static var dummyDelegate = "dummyDelegate"
+    static var dummyDataSource: UInt8 = 0
+    static var dummyDelegate: UInt8 = 0
 }
 
 protocol CollectionSkeleton {

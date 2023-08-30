@@ -29,14 +29,14 @@ protocol SkeletonTextNode {
 
 enum SkeletonTextNodeAssociatedKeys {
     
-    static var lastLineFillingPercent = "lastLineFillingPercent"
-    static var multilineCornerRadius = "multilineCornerRadius"
-    static var multilineSpacing = "multilineSpacing"
-    static var paddingInsets = "paddingInsets"
-    static var backupHeightConstraints = "backupHeightConstraints"
-    static var textLineHeight = "textLineHeight"
-    static var skeletonNumberOfLines = "skeletonNumberOfLines"
-    
+    static var lastLineFillingPercent: UInt8 = 0
+    static var multilineCornerRadius: UInt8 = 0
+    static var multilineSpacing: UInt8 = 0
+    static var paddingInsets: UInt8 = 0
+    static var backupHeightConstraints: UInt8 = 0
+    static var textLineHeight: UInt8 = 0
+    static var skeletonNumberOfLines: UInt8 = 0
+
 }
 
 extension UILabel: SkeletonTextNode {
