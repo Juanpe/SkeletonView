@@ -7,9 +7,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
           
-      - name: Setup fastlane
-        run: brew install fastlane
-            
       - name: Publish release
         id: publish_release
         uses: release-drafter/release-drafter@v5
