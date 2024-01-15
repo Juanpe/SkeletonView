@@ -6,7 +6,9 @@ extension UIView {
     
     func startTransition(transitionBlock: @escaping () -> Void) {
         guard let transitionStyle = _currentSkeletonConfig?.transition,
-              transitionStyle != .none else {
+              transitionStyle != .none,
+              // transition causes hidden view to show
+              !isHidden else {
             transitionBlock()
             return
         }
