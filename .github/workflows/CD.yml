@@ -8,14 +8,9 @@ on:
 jobs:
   release_version:
     if: github.event.pull_request.milestone == null && github.event.pull_request.merged == true
-    runs-on: ubuntu-latest
+    runs-on: macOS-latest
     steps:
       - uses: actions/checkout@v2
-          
-      - name: Setup Environment
-        run: |
-          brew install fastlane
-          brew install cocoapods
             
       - name: Publish release
         id: publish_release
