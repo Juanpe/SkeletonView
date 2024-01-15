@@ -10,27 +10,41 @@ import UIKit
 import SkeletonView
 
 class ViewController: UIViewController {
+    
+    // MARK: - Constants
+    
+    private let estimatedRowHeight = 120.0
+    private let estimatedSectionFooterHeight = 20.0
+    private let estimatedSectionHeaderHeight = 20.0
+    
+    struct AccessibilityIdentifier {
+        static let tableViewHeaderIdentifier = "HeaderIdentifier"
+        static let tableViewFooterIdentifier = "FooterIdentifier"
+    }
+
+    // MARK: - IBOutlet
+    
     @IBOutlet weak var tableview: UITableView! {
         didSet {
             tableview.rowHeight = UITableView.automaticDimension
             tableview.sectionHeaderHeight = UITableView.automaticDimension
             tableview.sectionFooterHeight = UITableView.automaticDimension
-            tableview.estimatedRowHeight = 120.0
-            tableview.estimatedSectionFooterHeight = 20.0
-            tableview.estimatedSectionHeaderHeight = 20.0
-            tableview.register(HeaderFooterSection.self, forHeaderFooterViewReuseIdentifier: "HeaderIdentifier")
-            tableview.register(HeaderFooterSection.self, forHeaderFooterViewReuseIdentifier: "FooterIdentifier")
+            tableview.estimatedRowHeight = self.estimatedRowHeight
+            tableview.estimatedSectionFooterHeight = self.estimatedSectionFooterHeight
+            tableview.estimatedSectionHeaderHeight = estimatedSectionHeaderHeight
+            tableview.register(HeaderFooterSection.self, forHeaderFooterViewReuseIdentifier: AccessibilityIdentifier.tableViewHeaderIdentifier)
+            tableview.register(HeaderFooterSection.self, forHeaderFooterViewReuseIdentifier: AccessibilityIdentifier.tableViewFooterIdentifier)
         }
     }
     
-    @IBOutlet weak var avatarImage: UIImageView! {
+    @IBOutlet private weak var avatarImage: UIImageView! {
         didSet {
             avatarImage.layer.cornerRadius = avatarImage.frame.width/2
             avatarImage.layer.masksToBounds = true
-        } 
+        }
     }
     
-    @IBOutlet weak var colorSelectedView: UIView! {
+    @IBOutlet private weak var colorSelectedView: UIView! {
         didSet {
             colorSelectedView.layer.cornerRadius = 5
             colorSelectedView.layer.masksToBounds = true
@@ -38,16 +52,19 @@ class ViewController: UIViewController {
         }
     }
 
-    @IBOutlet weak var switchAnimated: UISwitch!
-    @IBOutlet weak var skeletonTypeSelector: UISegmentedControl!
-    @IBOutlet weak var showOrHideSkeletonButton: UIButton!
-    @IBOutlet weak var transitionDurationLabel: UILabel!
-    @IBOutlet weak var transitionDurationStepper: UIStepper!
+    @IBOutlet private weak var switchAnimated: UISwitch!
+    @IBOutlet private  weak var skeletonTypeSelector: UISegmentedControl!
+    @IBOutlet private weak var showOrHideSkeletonButton: UIButton!
+    @IBOutlet private weak var transitionDurationLabel: UILabel!
+    @IBOutlet private weak var transitionDurationStepper: UIStepper!
     
     var type: SkeletonType {
         return skeletonTypeSelector.selectedSegmentIndex == 0 ? .solid : .gradient
     }
     
+    
+    // MARK: - Life Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableview.isSkeletonable = true
@@ -154,6 +171,8 @@ class ViewController: UIViewController {
         })
     }
 }
+
+// MARK: - Extensions
 
 extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
