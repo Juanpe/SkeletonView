@@ -27,6 +27,7 @@ struct SkeletonLayer {
         self.maskLayer.anchorPoint = .zero
         self.maskLayer.bounds = holder.definedMaxBounds
         self.maskLayer.cornerRadius = CGFloat(holder.skeletonCornerRadius)
+        self.maskLayer.zPosition = CGFloat(Float.greatestFiniteMagnitude) // CoreAnimation complains if CGFloat is used
         addTextLinesIfNeeded()
         self.maskLayer.tint(withColors: colors, traitCollection: holder.traitCollection)
     }
