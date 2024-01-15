@@ -16,21 +16,21 @@ import UIKit
 // codebeat:disable[TOO_MANY_IVARS]
 enum ViewAssociatedKeys {
     
-    static var skeletonable = "skeletonable"
-    static var hiddenWhenSkeletonIsActive = "hiddenWhenSkeletonIsActive"
-    static var status = "status"
-    static var skeletonLayer = "layer"
-    static var flowDelegate = "flowDelegate"
-    static var isSkeletonAnimated = "isSkeletonAnimated"
-    static var viewState = "viewState"
-    static var labelViewState = "labelViewState"
-    static var imageViewState = "imageViewState"
-    static var buttonViewState = "buttonViewState"
-    static var headerFooterViewState = "headerFooterViewState"
-    static var currentSkeletonConfig = "currentSkeletonConfig"
-    static var skeletonCornerRadius = "skeletonCornerRadius"
-    static var disabledWhenSkeletonIsActive = "disabledWhenSkeletonIsActive"
-    static var delayedShowSkeletonWorkItem = "delayedShowSkeletonWorkItem"
+    static var skeletonable: StaticString = "skeletonable"
+    static var hiddenWhenSkeletonIsActive: StaticString = "hiddenWhenSkeletonIsActive"
+    static var status: StaticString = "status"
+    static var skeletonLayer: StaticString = "layer"
+    static var flowDelegate: StaticString = "flowDelegate"
+    static var isSkeletonAnimated: StaticString = "isSkeletonAnimated"
+    static var viewState: StaticString = "viewState"
+    static var labelViewState: StaticString = "labelViewState"
+    static var imageViewState: StaticString = "imageViewState"
+    static var buttonViewState: StaticString = "buttonViewState"
+    static var headerFooterViewState: StaticString = "headerFooterViewState"
+    static var currentSkeletonConfig: StaticString = "currentSkeletonConfig"
+    static var skeletonCornerRadius: StaticString = "skeletonCornerRadius"
+    static var disabledWhenSkeletonIsActive: StaticString = "disabledWhenSkeletonIsActive"
+    static var delayedShowSkeletonWorkItem: StaticString = "delayedShowSkeletonWorkItem"
     
 }
 // codebeat:enable[TOO_MANY_IVARS]

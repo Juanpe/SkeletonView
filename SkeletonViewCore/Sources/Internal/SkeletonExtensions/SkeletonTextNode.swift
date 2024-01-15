@@ -29,13 +29,13 @@ protocol SkeletonTextNode {
 
 enum SkeletonTextNodeAssociatedKeys {
     
-    static var lastLineFillingPercent = "lastLineFillingPercent"
-    static var multilineCornerRadius = "multilineCornerRadius"
-    static var multilineSpacing = "multilineSpacing"
-    static var paddingInsets = "paddingInsets"
-    static var backupHeightConstraints = "backupHeightConstraints"
-    static var textLineHeight = "textLineHeight"
-    static var skeletonNumberOfLines = "skeletonNumberOfLines"
+    static var lastLineFillingPercent: StaticString = "lastLineFillingPercent"
+    static var multilineCornerRadius: StaticString = "multilineCornerRadius"
+    static var multilineSpacing: StaticString = "multilineSpacing"
+    static var paddingInsets: StaticString = "paddingInsets"
+    static var backupHeightConstraints: StaticString = "backupHeightConstraints"
+    static var textLineHeight: StaticString = "textLineHeight"
+    static var skeletonNumberOfLines: StaticString = "skeletonNumberOfLines"
     
 }
 
