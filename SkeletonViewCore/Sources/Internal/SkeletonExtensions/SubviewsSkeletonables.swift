@@ -25,7 +25,7 @@ extension UITableView {
         var result = [UIView]()
 
         for subview in subviews {
-            if String(describing: type(of: subview)) == "UITableViewWrapperView" {
+            if let superview = subview.superview?.superview, superview.isKind(of: UITableView.self) {
                 result.append(contentsOf: subview.subviews)
             } else {
                 result.append(subview)
