@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D59B92E92BC3BA0200FC8D39 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 0AEC95C32AF537B600CD241A /* PrivacyInfo.xcprivacy */; };
+		D59B92EB2BC3BA6200FC8D39 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 0AEC95C32AF537B600CD241A /* PrivacyInfo.xcprivacy */; };
 		F5225F2A278C2BCE0061A9B0 /* SkeletonTextNumberOfLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5225F29278C2BCE0061A9B0 /* SkeletonTextNumberOfLines.swift */; };
 		F5225F2B278C2BCE0061A9B0 /* SkeletonTextNumberOfLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5225F29278C2BCE0061A9B0 /* SkeletonTextNumberOfLines.swift */; };
 		F53D731826D399E100249D46 /* SkeletonTreeNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53D731726D399E100249D46 /* SkeletonTreeNode+Extensions.swift */; };
@@ -643,6 +645,7 @@
 				F556F65626CD312100A80B83 /* Swiftlint */,
 				F556F56526CD1F3900A80B83 /* Sources */,
 				F556F59026CD1F3900A80B83 /* Frameworks */,
+				D59B92EA2BC3BA5C00FC8D39 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -678,6 +681,7 @@
 				F556F65526CD311200A80B83 /* Swiftlint */,
 				OBJ_85 /* Sources */,
 				OBJ_128 /* Frameworks */,
+				D59B92E82BC3B9FC00FC8D39 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -741,6 +745,22 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D59B92E82BC3B9FC00FC8D39 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D59B92E92BC3BA0200FC8D39 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D59B92EA2BC3BA5C00FC8D39 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D59B92EB2BC3BA6200FC8D39 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F556F66F26CD458500A80B83 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
