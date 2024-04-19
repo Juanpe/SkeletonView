@@ -181,6 +181,7 @@ extension ViewController: SkeletonTableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellIdentifier", for: indexPath) as! Cell
         cell.label1.text = "cell -> \(indexPath.row)"
+        cell.textField.isHidden = indexPath.row == 0
         return cell
     }
     
