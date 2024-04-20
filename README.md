@@ -520,7 +520,7 @@ override func viewDidLayoutSubviews() {
 
 **Update skeleton**
 
-You can change the skeleton configuration at any time like its colour, animation, etc. with the following methods:
+You can change the skeleton configuration at any time like its color, animation, etc. with the following methods:
 
 ```swift
 (1) view.updateSkeleton()                 // Solid
