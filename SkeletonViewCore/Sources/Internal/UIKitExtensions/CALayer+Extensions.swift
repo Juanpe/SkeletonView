@@ -76,7 +76,13 @@ extension CALayer {
         animation.fromValue = from
         animation.toValue = to
         animation.duration = duration
-        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        
+        if #available(iOS 12.0, *) {
+            animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        } else {
+            animation.timingFunction = CAMediaTimingFunction(controlPoints: 0.42, 0.0, 0.58, 1.0)
+        }
+
         DispatchQueue.main.async { CATransaction.setCompletionBlock(completion) }
         add(animation, forKey: "setOpacityAnimation")
         DispatchQueue.main.async { CATransaction.commit() }

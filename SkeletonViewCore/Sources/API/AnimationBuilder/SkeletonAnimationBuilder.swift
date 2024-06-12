@@ -27,7 +27,11 @@ public class SkeletonAnimationBuilder {
             let animGroup = CAAnimationGroup()
             animGroup.animations = [startPointAnim, endPointAnim]
             animGroup.duration = duration
-            animGroup.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
+            if #available(iOS 12.0, *) {
+                animGroup.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
+            } else {
+                animGroup.timingFunction = CAMediaTimingFunction(controlPoints: 0.42, 0.0, 1.0, 1.0)
+            }
             animGroup.repeatCount = .infinity
             animGroup.autoreverses = autoreverses
             animGroup.isRemovedOnCompletion = false
