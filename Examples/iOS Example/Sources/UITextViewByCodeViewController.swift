@@ -4,11 +4,18 @@ import UIKit
 import SkeletonView
 
 class UITextViewByCodeViewController: UIViewController {
+    
+    private let numberOflinesCornerRadius = 10
+    private let topAnchorConstraintConst: CGFloat = 10
+    private let leftAnchorConstraintConst: CGFloat = 10
+    private let rightAnchorConstraintConst: CGFloat = -10
+    private let heightAnchorConstraintConst: CGFloat = 100
+
     lazy var textView: UITextView = {
         let tv = UITextView()
         
         tv.text = "              "
-        tv.linesCornerRadius = 10
+        tv.linesCornerRadius = numberOflinesCornerRadius
         tv.isSkeletonable = true
         tv.translatesAutoresizingMaskIntoConstraints = false
         
@@ -32,10 +39,10 @@ class UITextViewByCodeViewController: UIViewController {
     }
     
     func setupElementsConstraints() {
-        textView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
-        textView.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: 10).isActive = true
-        textView.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor, constant: -10).isActive = true
-        textView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        textView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: topAnchorConstraintConst).isActive = true
+        textView.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: leftAnchorConstraintConst).isActive = true
+        textView.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor, constant: rightAnchorConstraintConst).isActive = true
+        textView.heightAnchor.constraint(equalToConstant: heightAnchorConstraintConst).isActive = true
     }
     
     func showSkeletonForElements() {
