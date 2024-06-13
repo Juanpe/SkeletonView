@@ -22,6 +22,7 @@ extension UIView {
         
         startTransition { [weak self] in
             self?.backgroundColor = .clear
+            self?.layer.borderColor = nil
         }
     }
     
@@ -101,7 +102,13 @@ extension UIButton {
         }
         
         startTransition { [weak self] in
-            self?.setTitle(nil, for: .normal)
+            guard let self = self else { return }
+
+            self.setTitle(nil, for: self.state)
+            self.setTitleColor(nil, for: self.state)
+            self.setAttributedTitle(nil, for: self.state)
+            self.setImage(nil, for: self.state)
+            self.setBackgroundImage(nil, for: self.state)
         }
     }
     
