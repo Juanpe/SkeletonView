@@ -16,25 +16,25 @@ import UIKit
 public extension UIView {
     
     @IBInspectable
-    var isSkeletonable: Bool {
+    open var isSkeletonable: Bool {
         get { _skeletonable }
         set { _skeletonable = newValue }
     }
     
     @IBInspectable
-    var isHiddenWhenSkeletonIsActive: Bool {
+    open var isHiddenWhenSkeletonIsActive: Bool {
         get { _hiddenWhenSkeletonIsActive }
         set { _hiddenWhenSkeletonIsActive = newValue }
     }
     
     @IBInspectable
-    var isUserInteractionDisabledWhenSkeletonIsActive: Bool {
+    open var isUserInteractionDisabledWhenSkeletonIsActive: Bool {
         get { _disabledWhenSkeletonIsActive }
         set { _disabledWhenSkeletonIsActive = newValue }
     }
 
     @IBInspectable
-    var skeletonCornerRadius: Float {
+    open var skeletonCornerRadius: Float {
         get { _skeletonableCornerRadius }
         set { _skeletonableCornerRadius = newValue }
     }
