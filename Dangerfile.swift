@@ -3,19 +3,26 @@ import Danger
 let danger = Danger()
 let github = danger.github
 
- // Make it more obvious that a PR is a work in progress and shouldn't be merged yet
+// Make it more obvious that a PR is a work in progress and shouldn't be merged yet
 if danger.github.pullRequest.title.contains("WIP") {
     warn("PR is classed as Work in Progress")
 }
 
 // Warn, asking to update all README files if only English README are updated
-let enReameModified = danger.git.modifiedFiles.contains { $0.contains("README.md") }
-let zhReameModified = danger.git.modifiedFiles.contains { $0.contains("README_zh.md") }
-let koReameModified = danger.git.modifiedFiles.contains { $0.contains("README_ko.md") }
-let ptBrReameModified = danger.git.modifiedFiles.contains { $0.contains("README_pt-br.md") }
-let otherLanguagesReadmeHaveBeenModified = zhReameModified && koReameModified && ptBrReameModified
+let enReadmeModified = danger.git.modifiedFiles.contains { $0.contains("README.md") }
+let zhReadmeModified = danger.git.modifiedFiles.contains { $0.contains("README_zh.md") }
+let koReadmeModified = danger.git.modifiedFiles.contains { $0.contains("README_ko.md") }
+let ptBrReadmeModified = danger.git.modifiedFiles.contains { $0.contains("README_pt-br.md") }
+let trReadmeModified = danger.git.modifiedFiles.contains { $0.contains("README_tr.md") }
+let frReadmeModified = danger.git.modifiedFiles.contains { $0.contains("README_fr.md") }
+let deReadmeModified = danger.git.modifiedFiles.contains { $0.contains("README_de.md") }
+let esReadmeModified = danger.git.modifiedFiles.contains { $0.contains("README_es.md") }
 
-if (enReameModified && !otherLanguagesReadmeHaveBeenModified) {
+let otherLanguagesReadmeHaveBeenModified =
+    zhReadmeModified && koReadmeModified && ptBrReadmeModified && trReadmeModified
+    && frReadmeModified && deReadmeModified && esReadmeModified
+
+if enReameModified && !otherLanguagesReadmeHaveBeenModified {
     warn("Consider **also** updating the README for other languages.")
 }
 
@@ -26,8 +33,12 @@ if (danger.github.pullRequest.additions ?? 0) > 500 {
 
 // Added (or removed) library files need to be added (or removed) from the
 // Xcode project to avoid breaking things.
-let addedSwiftLibraryFiles = danger.git.createdFiles.contains { $0.fileType == .swift && $0.hasPrefix("Sources") }
-let deletedSwiftLibraryFiles = danger.git.deletedFiles.contains { $0.fileType == .swift && $0.hasPrefix("Sources") }
+let addedSwiftLibraryFiles = danger.git.createdFiles.contains {
+    $0.fileType == .swift && $0.hasPrefix("Sources")
+}
+let deletedSwiftLibraryFiles = danger.git.deletedFiles.contains {
+    $0.fileType == .swift && $0.hasPrefix("Sources")
+}
 let modifiedXcodeProject = danger.git.modifiedFiles.contains { $0.contains(".xcodeproj") }
 if (addedSwiftLibraryFiles || deletedSwiftLibraryFiles) && !modifiedXcodeProject {
     fail("Added or removed files require the Xcode project to be updated.")

@@ -24,7 +24,7 @@
 </p>
 
 
-**🌎 Traductions: [🇬🇧](../README.md) . [🇨🇳](README_zh.md) . [🇧🇷](README_pt-br.md) . [🇰🇷](README_ko.md) . [🇫🇷](README_fr.md) . [🇩🇪](README_de.md)**
+**🌎 Traductions: [🇬🇧](../README.md) . [🇨🇳](README_zh.md) . [🇧🇷](README_pt-br.md) . [🇰🇷](README_ko.md) . [🇫🇷](README_fr.md) . [🇩🇪](README_de.md) . [🇹🇷](README_tr.md)**
 
 Aujourd'hui, presque toutes les applications ont des processus asynchrones, tels que les requêtes Api, les processus de longue durée, etc. Et pendant que les processus fonctionnent, les développeurs affichent généralement une vue de chargement pour montrer aux utilisateurs que quelque chose se passe.
 
