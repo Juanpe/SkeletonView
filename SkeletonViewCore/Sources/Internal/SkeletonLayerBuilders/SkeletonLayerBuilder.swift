@@ -4,6 +4,7 @@ import UIKit
 
 /// Object that facilitates the creation of skeleton layers,
 /// based on the builder pattern
+@MainActor
 class SkeletonLayerBuilder {
     
     var skeletonType: SkeletonType?

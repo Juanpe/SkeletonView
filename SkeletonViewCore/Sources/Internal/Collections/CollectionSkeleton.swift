@@ -8,11 +8,13 @@
 
 import UIKit
 
+@MainActor
 enum CollectionAssociatedKeys {
     static var dummyDataSource = "dummyDataSource"
     static var dummyDelegate = "dummyDelegate"
 }
 
+@MainActor
 protocol CollectionSkeleton {
     
     var skeletonDataSource: SkeletonCollectionDataSource? { get set }
@@ -27,6 +29,7 @@ protocol CollectionSkeleton {
     
 }
 
+@MainActor
 extension CollectionSkeleton where Self: UIScrollView {
     
     var estimatedNumberOfRows: Int { return 0 }

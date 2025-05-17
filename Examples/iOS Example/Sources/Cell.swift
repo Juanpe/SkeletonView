@@ -16,7 +16,7 @@ class Cell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        setUpInputAccessoryView()
+        // setUpInputAccessoryView()
     }
 
     func setUpInputAccessoryView() {

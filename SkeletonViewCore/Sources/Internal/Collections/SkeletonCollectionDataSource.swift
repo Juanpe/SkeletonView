@@ -114,6 +114,7 @@ extension SkeletonCollectionDataSource: UICollectionViewDataSource {
     
 }
 
+@MainActor
 extension SkeletonCollectionDataSource {
     private func skeletonizeViewIfContainerSkeletonIsActive(container: UIView, view: UIView) {
         guard container.sk.isSkeletonActive,

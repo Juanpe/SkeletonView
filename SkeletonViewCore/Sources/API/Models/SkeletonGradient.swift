@@ -13,6 +13,7 @@
 
 import UIKit
 
+@MainActor
 public struct SkeletonGradient {
     
     private let gradientColors: [UIColor]

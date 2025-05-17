@@ -12,11 +12,13 @@
 
 import UIKit
 
+@MainActor
 public enum SkeletonAppearance {
     public static var `default` = SkeletonViewAppearance.shared
 }
 
 // codebeat:disable[TOO_MANY_IVARS]
+@MainActor
 public class SkeletonViewAppearance {
     
     static var shared = SkeletonViewAppearance()

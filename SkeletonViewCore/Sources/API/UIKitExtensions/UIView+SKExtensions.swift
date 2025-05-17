@@ -13,6 +13,7 @@
 
 import UIKit
 
+@MainActor
 public extension SkeletonViewExtension where ExtendedType: UIView {
     
     /// Returns a string that describes the hierarchy of the skeleton, indicating

@@ -13,6 +13,7 @@
 
 import UIKit
 
+@MainActor
 public enum SkeletonType {
     
     case solid

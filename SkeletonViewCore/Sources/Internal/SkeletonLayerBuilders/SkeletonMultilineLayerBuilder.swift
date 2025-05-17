@@ -4,6 +4,7 @@ import UIKit
 
 /// Object that facilitates the creation of skeleton layers for multiline
 /// elements, based on the builder pattern
+@MainActor
 class SkeletonMultilineLayerBuilder {
     
     var skeletonType: SkeletonType?

@@ -54,6 +54,7 @@ extension SkeletonCollectionDelegate: UITableViewDelegate {
 // MARK: - UICollectionViewDelegate
 extension SkeletonCollectionDelegate: UICollectionViewDelegate { }
 
+@MainActor
 private extension SkeletonCollectionDelegate {
     
     func skeletonizeViewIfContainerSkeletonIsActive(container: UIView, view: UIView) {

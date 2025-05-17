@@ -15,6 +15,7 @@ import UIKit
 
 extension UIView: SkeletonViewExtended { }
 
+@MainActor
 extension SkeletonTreeNode where Base: UIView {
     
     var children: [SkeletonTreeNode<UIView>] {
@@ -29,6 +30,7 @@ extension SkeletonTreeNode where Base: UIView {
 
 // MARK: Debug
 
+@MainActor
 extension SkeletonTreeNode where Base: UIView {
     
     var dictionaryRepresentation: [String: Any] {

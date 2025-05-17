@@ -13,6 +13,7 @@
 
 import Foundation
 
+@MainActor
 extension DispatchQueue {
     
     private static var _onceTracker = [String]()

@@ -180,6 +180,7 @@ extension ViewController: SkeletonTableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellIdentifier", for: indexPath) as! Cell
+        cell.setUpInputAccessoryView()
         cell.label1.text = "cell -> \(indexPath.row)"
         return cell
     }

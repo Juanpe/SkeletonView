@@ -13,6 +13,7 @@
 
 import UIKit
 
+@MainActor
 protocol SkeletonTextNode {
     
     var textLineHeight: SkeletonTextLineHeight { get }
@@ -27,6 +28,7 @@ protocol SkeletonTextNode {
     
 }
 
+@MainActor
 enum SkeletonTextNodeAssociatedKeys {
     
     static var lastLineFillingPercent = "lastLineFillingPercent"
@@ -39,6 +41,7 @@ enum SkeletonTextNodeAssociatedKeys {
     
 }
 
+@MainActor
 extension UILabel: SkeletonTextNode {
     
     var estimatedLineHeight: CGFloat {

@@ -14,6 +14,7 @@
 import UIKit
 
 // codebeat:disable[TOO_MANY_IVARS]
+@MainActor
 enum ViewAssociatedKeys {
     
     static var skeletonable = "skeletonable"

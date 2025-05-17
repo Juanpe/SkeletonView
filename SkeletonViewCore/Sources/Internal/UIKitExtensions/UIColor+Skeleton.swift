@@ -3,6 +3,7 @@
 import UIKit
 
 // codebeat:disable[TOO_MANY_IVARS]
+@MainActor
 public extension UIColor {
     
     static var greenSea     = UIColor(0x16a085)
@@ -62,6 +63,7 @@ public extension UIColor {
     
 }
 
+@MainActor
 extension UIColor {
     
     convenience init(_ hex: UInt) {

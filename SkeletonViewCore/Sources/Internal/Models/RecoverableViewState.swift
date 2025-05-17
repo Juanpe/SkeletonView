@@ -8,6 +8,7 @@
 
 import UIKit
 
+@MainActor
 struct RecoverableViewState {
     
     var backgroundColor: UIColor?
@@ -24,6 +25,7 @@ struct RecoverableViewState {
     
 }
 
+@MainActor
 struct RecoverableLabelState {
     var attributedText: NSAttributedString? // we mess with `textColor`, which impacts attributed string if defined
     var text: String? // we mess with `text` if the label is within a `UIStackView`
@@ -39,6 +41,7 @@ struct RecoverableLabelState {
     }
 }
 
+@MainActor
 struct RecoverableTextViewState {
     var attributedText: NSAttributedString? // we mess with `textColor`, which impacts attributed string if defined
     var textColor: UIColor?
@@ -49,6 +52,7 @@ struct RecoverableTextViewState {
     }
 }
 
+@MainActor
 struct RecoverableTextFieldState {
     var attributedText: NSAttributedString? // we mess with `textColor`, which impacts attributed string if defined
     var textColor: UIColor?
@@ -61,6 +65,7 @@ struct RecoverableTextFieldState {
     }
 }
 
+@MainActor
 struct RecoverableImageViewState {
     var image: UIImage?
     
@@ -69,6 +74,7 @@ struct RecoverableImageViewState {
     }
 }
 
+@MainActor
 struct RecoverableButtonViewState {
     var title: String?
     
@@ -77,6 +83,7 @@ struct RecoverableButtonViewState {
     }
 }
 
+@MainActor
 struct RecoverableTableViewHeaderFooterViewState {
     var backgroundViewColor: UIColor?
     

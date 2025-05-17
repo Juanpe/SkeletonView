@@ -8,6 +8,7 @@
 
 import UIKit
 
+@MainActor
 extension UITableView: CollectionSkeleton {
 
     var estimatedNumberOfRows: Int {

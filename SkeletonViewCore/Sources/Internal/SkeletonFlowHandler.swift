@@ -2,6 +2,7 @@
 
 import UIKit
 
+@MainActor
 protocol SkeletonFlowDelegate: AnyObject {
     func willBeginShowingSkeletons(rootView: UIView)
     func didShowSkeletons(rootView: UIView)
@@ -13,6 +14,7 @@ protocol SkeletonFlowDelegate: AnyObject {
     func didHideSkeletons(rootView: UIView)
 }
 
+@MainActor
 class SkeletonFlowHandler: SkeletonFlowDelegate {
     func willBeginShowingSkeletons(rootView: UIView) {
         NotificationCenter.default.post(name: .skeletonWillAppearNotification, object: rootView, userInfo: nil)

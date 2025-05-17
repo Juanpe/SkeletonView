@@ -13,6 +13,7 @@
 
 import UIKit
 
+@MainActor
 extension CAGradientLayer {
     
     override func tint(withColors colors: [UIColor], traitCollection: UITraitCollection?) {
@@ -29,6 +30,7 @@ extension CAGradientLayer {
     
 }
 
+@MainActor
 extension CALayer {
     
     enum Constants {
@@ -94,6 +96,7 @@ extension CALayer {
     
 }
 
+@MainActor
 private extension CALayer {
     
     func alignLayerFrame(_ rect: CGRect, paddingInsets: UIEdgeInsets, alignment: NSTextAlignment, isRTL: Bool) -> CGRect {
@@ -144,6 +147,7 @@ private extension CALayer {
     }
 }
 
+@MainActor
 extension CALayer {
     
     func addMultilinesLayers(for config: SkeletonMultilinesLayerConfig) {

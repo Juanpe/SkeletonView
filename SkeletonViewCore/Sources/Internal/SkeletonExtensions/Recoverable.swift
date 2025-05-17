@@ -8,11 +8,13 @@
 
 import UIKit
 
+@MainActor
 protocol Recoverable {
     func saveViewState()
     func recoverViewState(forced: Bool)
 }
 
+@MainActor
 extension UIView: Recoverable {
     
     var viewState: RecoverableViewState? {
@@ -48,8 +50,14 @@ extension UIView: Recoverable {
 extension UILabel {
     
     var labelState: RecoverableLabelState? {
-        get { return ao_get(pkey: &ViewAssociatedKeys.labelViewState) as? RecoverableLabelState }
-        set { ao_setOptional(newValue, pkey: &ViewAssociatedKeys.labelViewState) }
+        get {
+            // Safely retrieve the associated object
+            return ao_get(pkey: &ViewAssociatedKeys.labelViewState) as? RecoverableLabelState
+        }
+        set {
+            // Safely set the associated object
+            ao_setOptional(newValue, pkey: &ViewAssociatedKeys.labelViewState)
+        }
     }
     
     override func saveViewState() {
