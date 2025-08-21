@@ -13,7 +13,7 @@
 import UIKit
 
 public enum SkeletonAppearance {
-    public static var `default` = SkeletonViewAppearance.shared
+    public static let `default` = SkeletonViewAppearance.shared
 }
 
 // codebeat:disable[TOO_MANY_IVARS]
