@@ -12,6 +12,11 @@ let package = Package(
         .library(
             name: "SkeletonView",
             targets: ["SkeletonView"]
+        ),
+        .library(
+            name: "SkeletonView-Dynamic",
+            type: .dynamic,
+            targets: ["SkeletonView"]
         )
     ],
     targets: [
