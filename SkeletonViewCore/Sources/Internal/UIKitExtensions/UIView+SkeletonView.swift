@@ -64,8 +64,9 @@ extension UIView {
             isHidden = false
         }
         _currentSkeletonConfig?.transition = transition
-        unSwizzleLayoutSubviews()
-        unSwizzleTraitCollectionDidChange()
+        // Leave the UIView swizzles in place. Un-swizzling while another hook
+        // captured the skeleton IMP (e.g. Smart Invert) can recurse forever.
+        // Swizzled methods already no-op when no skeleton is active.
         removeDummyDataSourceIfNeeded(reloadAfter: reload)
         subviewsSkeletonables.recursiveSearch(leafBlock: {
             recoverViewState(forced: false)
